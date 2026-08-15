@@ -185,3 +185,13 @@ This release begins the controlled `SCAF-RUN` L1/L2 normative tranche after the 
 The remaining TIME cleanup is limited to splitting synchronization relationship semantics from dependent temporal-claim validity and making staged INT/RUN/ROB forward references precise. The new RUN text is derived from the frozen SCAF authority home for Runtime Behavior, State & Operational Lifecycle and does not bulk-promote donor-specific state-machine, RTOS, task/thread or recovery mechanisms.
 
 Review focus for this RC is whether RUN cleanly owns operational-state meaning and transition consistency without re-owning INT semantic contracts, TIME measurable temporal/capacity properties, LIFE boot/reset/power/update lifecycle, ROB fault/degradation/recovery semantics, CFG persistent-state authority or OBS evidence representation; and whether RUN Project-Applicable Obligations remain Framework-Scan scannable before ROB authoring begins.
+
+## 12. v0.0.2rc07 Normative Rewrite Coverage
+
+This release begins the controlled `SCAF-ROB` L1/L2 normative tranche after the rc06 independent RUN review found no Critical or Major issues, accepted RUN as Stable after minor cleanup, and confirmed a clean RUN/ROB authority boundary. The Authority Kernel / CTX / ARCH / INT / TIME baselines remain substantively unchanged.
+
+The localized RUN cleanup distinguishes Project Design Authority from runtime authoritative-current-state responsibility, normalizes framework-boundary relation grammar and improves requirement atomicity without changing the RUN authority home. Supporting Evidence-state terminology is completed using evidence-sufficiency language.
+
+The ROB text is derived from the frozen SCAF robustness/resilience authority home and controlled mapping evidence. It does **not** bulk-promote donor-specific watchdog, heartbeat, retry, failover, reset, crash-recorder, RTOS or other mechanism wording; Draft/RC/mixed-maturity and executable-only donor semantics remain subject to donor-specific promotion/deep-audit gates.
+
+Review focus for this RC is whether ROB cleanly owns fault/error/failure meaning, health/failure determination and resilience outcomes without re-owning RUN operational-state representation, LIFE lifecycle transactions, INT contract/session semantics, TIME measurable bounds, ARCH structural/Domain boundaries, CFG persistent-state authority, OBS evidence semantics or external safety/security/risk source authority; and whether ROB Project-Applicable Obligations remain Framework-Scan scannable before LIFE authoring begins.

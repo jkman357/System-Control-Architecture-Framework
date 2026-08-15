@@ -1,6 +1,6 @@
 # SCAF-ARCH — System / Node / Role / Domain Architecture Obligations
 
-**Release:** v0.0.2rc06  
+**Release:** v0.0.2rc07  
 **Concern:** `SCAF-ARCH`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

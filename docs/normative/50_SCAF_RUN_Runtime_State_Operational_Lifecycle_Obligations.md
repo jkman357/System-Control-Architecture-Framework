@@ -1,6 +1,6 @@
 # SCAF-RUN — Runtime Behavior, State & Operational Lifecycle Obligations
 
-**Release:** v0.0.2rc06  
+**Release:** v0.0.2rc07  
 **Concern:** `SCAF-RUN`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -41,13 +41,13 @@ The **Project Design Authority Defines Project Instance / Decision** for actual 
 
 The project **SHALL** identify each operational/state domain whose state or transition can materially affect an applicable Function, Capability, Service, Interaction, architecture decision, temporal claim or verification obligation.
 
-### `SCAF-RUN-002` — State authority and authoritative representation
+### `SCAF-RUN-002` — Project state-model authority and runtime authoritative-state responsibility
 
 **Target:** Project-Applicable Obligation
 
-For each material operational/state domain, the Project Design Authority **SHALL** define the project responsibility that is authoritative for the state decision and the representation or controlled source by which other project responsibilities determine the authoritative operational state.
+For each material operational/state domain, the Project Design Authority **SHALL** define the actual project state model and assign the project runtime responsibility that determines and/or maintains the authoritative current operational state. The project **SHALL** also define the controlled representation or source by which other project responsibilities determine that authoritative current state.
 
-An artifact, variable, message or diagnostic record **SHALL NOT** be treated as the design authority merely because it carries or records the runtime state.
+A display, artifact, variable, cache, message, request or diagnostic/evidence record **SHALL NOT** become the runtime authoritative-state responsibility, nor the Project Design Authority, merely because it carries, requests, displays or records a state value.
 
 ### `SCAF-RUN-003` — Operational-state semantics and invariants
 
@@ -61,7 +61,7 @@ Where unknown, indeterminate or transitional state can occur and is material, th
 
 **Target:** Project-Applicable Obligation
 
-For each material operational/state domain, the project **SHALL** define the permitted source-to-target state transitions and prohibit or otherwise explicitly disposition transitions that are not permitted by the controlled state model.
+For each material operational/state domain, the project **SHALL** define the permitted source-to-target state transitions and define the controlled project outcome/handling semantics for attempted transitions that are not permitted by the controlled state model.
 
 ### `SCAF-RUN-005` — Transition conditions and resulting-state semantics
 
@@ -69,7 +69,7 @@ For each material operational/state domain, the project **SHALL** define the per
 
 Where transition correctness depends on a trigger, request, precondition, guard, completion condition or other controlled input, the project **SHALL** identify the applicable controlled condition and define how satisfaction/non-satisfaction of that condition maps to the operational-state transition and resulting state.
 
-The source semantics of an Interaction event, temporal condition, lifecycle condition or resilience condition remain with the applicable `SCAF-INT`, `SCAF-TIME`, `SCAF-LIFE` or `SCAF-ROB` authority; `SCAF-RUN` defines how the controlled input participates in the operational-state transition.
+**Boundary note (informative):** Source semantics for an Interaction event, temporal condition, lifecycle condition or resilience condition remain under the applicable `SCAF-INT`, `SCAF-TIME`, `SCAF-LIFE` or `SCAF-ROB` framework authority. `SCAF-RUN` defines framework obligations only for how a controlled input participates in operational-state transition semantics.
 
 ### `SCAF-RUN-006` — Readiness and availability state semantics
 
@@ -77,7 +77,7 @@ The source semantics of an Interaction event, temporal condition, lifecycle cond
 
 Where readiness or availability is material, the project **SHALL** define the applicable operational readiness/availability states, the project criteria for asserting them, and the Service/Function consequence represented by each state.
 
-The project **SHALL** trace the required Service/Function consequence to the applicable `SCAF-CTX` source. Where readiness/availability depends on a fault or health decision, the corresponding failure/health criterion remains sourced from the applicable `SCAF-ROB` decision or obligation; RUN only uses that controlled result in the operational-state model. Failure interpretation, degradation strategy and recovery response remain governed by `SCAF-ROB`.
+**Boundary note (informative):** Where readiness/availability depends on a fault or health decision, the applicable `SCAF-ROB` controlled decision/obligation supplies the failure/health semantics. RUN uses that controlled result in the operational-state model without taking ownership of failure interpretation, degradation strategy or recovery response.
 
 ### `SCAF-RUN-007` — Generic operational start/stop/suspend/resume lifecycle
 
@@ -85,7 +85,7 @@ The project **SHALL** trace the required Service/Function consequence to the app
 
 Where start, stop, suspend, resume or equivalent operational lifecycle behavior is material after applicable platform activation, the project **SHALL** define the relevant operational states, permitted transitions and entry/exit conditions.
 
-This requirement does not define boot, power, reset or update lifecycle transactions; those remain under `SCAF-LIFE`.
+**Boundary note (informative):** This requirement does not define boot, power, reset or update lifecycle transactions; those remain under `SCAF-LIFE`.
 
 ### `SCAF-RUN-008` — CTX operating-mode to operational-state mapping
 
@@ -103,9 +103,9 @@ Where completion of a boot, reset, power or update lifecycle transaction does no
 
 **Target:** Project-Applicable Obligation
 
-Where multiple participants observe, derive, cache or act on the same material operational state, the project **SHALL** define the authoritative state source/responsibility and the consistency/divergence semantics necessary to prevent ambiguous operational decisions.
+Where multiple participants observe, derive, cache or act on the same material operational state, the project **SHALL** define the authoritative current-state source/responsibility and the consistency/divergence semantics necessary to prevent ambiguous operational decisions.
 
-Any measurable delay, age, synchronization or capacity limit used to establish that consistency **SHALL** be defined through applicable `SCAF-TIME` project decisions; exchange semantics remain under `SCAF-INT`.
+**Boundary note (informative):** Exchange semantics remain under `SCAF-INT`; measurable temporal/capacity conditions used to establish cross-participant consistency remain under `SCAF-TIME`.
 
 ### `SCAF-RUN-011` — Operational Incarnation identity
 
@@ -132,6 +132,18 @@ Each material operational-state domain and transition decision **SHALL** trace t
 **Target:** Project-Applicable Obligation
 
 Changes to operational states, authoritative state responsibility, transition semantics, readiness/availability criteria, CTX-mode mapping, cross-participant consistency or Operational Incarnation rules **SHALL** trigger re-evaluation of affected Interface, timing, robustness, lifecycle, configuration, observability, security and verification obligations.
+
+### `SCAF-RUN-020` — Readiness / availability consequence trace
+
+**Target:** Project-Applicable Obligation
+
+Where readiness or availability is material, the project **SHALL** trace the Service/Function consequence represented by each readiness/availability state to the applicable controlled `SCAF-CTX` source and to applicable external safety/security/risk constraints where those constraints govern the consequence.
+
+### `SCAF-RUN-021` — Cross-participant measurable-consistency constraint trace
+
+**Target:** Project-Applicable Obligation
+
+Where cross-participant operational-state consistency depends on a measurable delay, age, synchronization, capacity or other TIME-owned property, the project **SHALL** trace the RUN consistency decision to the applicable controlled `SCAF-TIME` project decision; where it depends on exchange semantics, the project **SHALL** trace to the applicable `SCAF-INT` contract decision.
 
 ## 4. Framework Normative Invariants
 
@@ -161,23 +173,35 @@ RUN may use those controlled inputs to define operational-state transitions with
 
 `SCAF-RUN` **SHALL NOT** become the source authority for fault/error/failure interpretation, health classification, containment, degradation strategy, recovery, repair, resynchronization or reintegration; those runtime resilience semantics belong to `SCAF-ROB`.
 
-Where a ROB-controlled condition is represented in the project operational-state model, RUN controls the state-model representation while ROB controls the failure/resilience meaning and required response.
+`SCAF-ROB` **Defines Framework Semantics / Obligation** for the applicable failure/health/resilience condition and required resilience outcome. `SCAF-RUN` **Defines Framework Semantics / Obligation** for operational-state representation, permitted-transition/result and authoritative current-state consistency semantics. The **Project Design Authority Defines Project Instance / Decision** for the actual project mapping and state model.
 
-### `SCAF-RUN-018` — RUN / CFG / OBS state boundary
+### `SCAF-RUN-018` — RUN / CFG persistent-state boundary
 
 **Target:** Framework Normative Invariant
 
 `SCAF-RUN` **Defines Framework Semantics / Obligation** for current operational-state meaning and transition consistency.
 
-`SCAF-CFG` retains authority for configuration and persistent operational-state ownership/version/migration semantics where persistence is required. `SCAF-OBS` retains authority for observing, representing, preserving and exporting runtime state/transition evidence. Persistence or observation of a state **SHALL NOT** transfer operational-state semantic authority to CFG or OBS.
+`SCAF-CFG` retains primary framework semantic authority for configuration and persistent operational-state ownership/version/migration semantics where persistence is required. Persistence of a state **SHALL NOT** transfer RUN operational-state semantic authority to CFG.
 
-### `SCAF-RUN-019` — Operating-mode and identity partition
+### `SCAF-RUN-019` — CTX operating-mode / RUN operational-state boundary
 
 **Target:** Framework Normative Invariant
 
 Mission/context significance of material operating modes belongs to `SCAF-CTX`; operational runtime representation/transition semantics belong to `SCAF-RUN` where those modes are realized as state. `SCAF-RUN` **SHALL NOT** redefine the mission/context significance of an operating mode merely because the mode is represented by runtime state.
 
-Operational Incarnation belongs to `SCAF-RUN`; Boot Incarnation belongs to `SCAF-LIFE`; Protocol/Connection Session Identity belongs to `SCAF-INT`; Time Epoch / Time Domain belongs to `SCAF-TIME`; `SCAF-OBS` may record/correlate these identities without redefining them.
+### `SCAF-RUN-022` — RUN / OBS evidence boundary
+
+**Target:** Framework Normative Invariant
+
+`SCAF-RUN` **Defines Framework Semantics / Obligation** for authoritative current operational-state meaning and state-transition/result consistency.
+
+`SCAF-OBS` **Defines Framework Semantics / Obligation** for observing, representing, preserving and exporting runtime state/transition/incarnation evidence. Observation or preservation of a state **SHALL NOT** transfer runtime authoritative-state responsibility or RUN semantic authority to OBS.
+
+### `SCAF-RUN-023` — Operational / boot / session / time identity partition
+
+**Target:** Framework Normative Invariant
+
+Operational Incarnation / Operational State Generation belongs to `SCAF-RUN`; Boot Incarnation / Boot Generation belongs to `SCAF-LIFE`; Protocol / Connection Session Identity belongs to `SCAF-INT`; Time Epoch / Time Domain belongs to `SCAF-TIME`. `SCAF-OBS` may record or correlate these identities without redefining their primary semantics.
 
 ## 5. Required Project Decisions / Records
 
@@ -186,13 +210,13 @@ The following table is informative and does not create additional normative requ
 | Decision / record | Project-side authority / provenance |
 |---|---|
 | Material operational/state-domain inventory | Project Design Authority |
-| State authority / authoritative runtime representation | Project Design Authority |
+| Project state model / runtime authoritative-state responsibility and representation | Project Design Authority |
 | Operational-state meanings / invariants | Project Design Authority, constrained by CTX/ROB/external authority where applicable |
 | Permitted transitions / transition conditions | Project Design Authority |
-| Readiness / availability state criteria | Project Design Authority, traced to applicable CTX need and ROB constraints where applicable |
+| Readiness / availability state criteria and consequence trace | Project Design Authority, traced to applicable CTX need/external constraints and ROB-controlled health/failure inputs where applicable |
 | Operational start/stop/suspend/resume semantics | Project Design Authority, constrained by LIFE handoff where applicable |
 | CTX mode ↔ RUN state mapping | Project Design Authority |
-| Cross-participant state-consistency semantics | Project Design Authority, constrained by INT/TIME decisions |
+| Cross-participant state-consistency semantics and cross-concern constraint trace | Project Design Authority, constrained by INT/TIME decisions |
 | Operational Incarnation semantics | Project Design Authority |
 | State-change request versus transition-result semantics | Project Design Authority, constrained by INT/CFG source decisions as applicable |
 

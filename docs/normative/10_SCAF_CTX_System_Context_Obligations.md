@@ -1,6 +1,6 @@
 # SCAF-CTX — System Context, Mission, Function & Service Obligations
 
-**Release:** v0.0.2rc06  
+**Release:** v0.0.2rc07  
 **Concern:** `SCAF-CTX`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

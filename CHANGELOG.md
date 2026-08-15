@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.0.2rc07 — 2026-08-15
+
+SCAF-ROB controlled L1/L2 normative tranche after independent rc06 review cleared the RUN architecture gate and allowed ROB authoring to begin with localized RUN cleanup.
+
+### Added
+
+- `docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md`;
+- L1 authority boundaries for Fault/Error/Failure semantics, health/failure determination, detectability/latent conditions, propagation, runtime containment, tolerance/degradation/failover/reconfiguration, recovery/repair/retry and reintegration;
+- project obligations for distributed partition/reconciliation resilience, correlated/common-mode faults, cascading/recovery-storm behavior, resource-exhaustion/long-run resilience, lifecycle/configuration failure response and robustness observability;
+- explicit ROB/RUN, ROB/ARCH, ROB/TIME, ROB/INT, ROB/LIFE, ROB/OBS/ASSUR, ROB/CFG, external safety/security/risk and ROB/PROF realization boundaries.
+
+### Changed
+
+- clarified `SCAF-RUN-002` so Project Design Authority defines the project state model and assigns runtime authoritative-current-state responsibility, while state carriers/requests/logs do not become runtime state authority;
+- normalized Project-Applicable RUN boundary prose as informative notes or separate trace obligations;
+- replaced non-canonical `RUN controls / ROB controls` wording with Authority Kernel framework-semantics plus Project Design Authority project-instance grammar;
+- split RUN/CFG from RUN/OBS and CTX operating-mode from incarnation-identity framework invariants;
+- added atomic readiness/availability consequence trace and cross-participant measurable-consistency trace obligations;
+- replaced RUN `disposition` wording that could be confused with SCAF-APP Disposition vocabulary;
+- completed supporting Evidence-state terminology by replacing generic evidence `Accepted` with `Sufficient`;
+- updated the Authority Kernel gate-table release label and README/read-coverage position for rc07;
+- retained the frozen v0.0.1 architecture baseline and stable Authority Kernel / CTX / ARCH / INT / TIME authority homes.
+
+### Deliberately Not Added
+
+- `SCAF-LIFE`, `SCAF-OBS`, `SCAF-CFG` or `SCAF-SEC` normative tranches;
+- new top-level taxonomy or core metamodel entities;
+- universal watchdog/heartbeat/redundancy/voting/retry/failover/reset mechanisms;
+- L3/L4 mechanism or implementation guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc06 — 2026-08-15
 
 SCAF-RUN controlled L1/L2 normative tranche after independent rc05 review cleared INT/TIME authority boundaries and allowed RUN authoring to begin.

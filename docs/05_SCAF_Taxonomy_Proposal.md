@@ -577,7 +577,7 @@ Failed
 Not Required
 Required
 Available
-Accepted
+Sufficient
 Insufficient
 ```
 
