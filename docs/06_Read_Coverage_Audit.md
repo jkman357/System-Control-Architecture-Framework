@@ -24,7 +24,7 @@ The fourth level is intentionally incomplete because SCAF requires taxonomy and 
 
 ### Files not read
 
-**None.** All 72 Gen1 files were opened/read at machine-text level during the rc1/rc03 archaeology work.
+**None.** All 72 Gen1 files were opened/read at machine-text level during the rc1–rc04 archaeology work.
 
 ### Files not yet deeply audited requirement-by-requirement
 
@@ -62,13 +62,13 @@ These artifacts were read and their roles were analyzed. Their individual execut
 
 ### Deferred deep audit
 
-The primary README contains both generic architecture and candidate implementation contracts. rc03 maps generic architecture concepts but does not adopt every API, record layout, ABI, memory budget, persistence layout or RC implementation recommendation as SCAF policy.
+The primary README contains both generic architecture and candidate implementation contracts. rc04 maps generic architecture concepts but does not adopt every API, record layout, ABI, memory budget, persistence layout or RC implementation recommendation as SCAF policy.
 
 ## 4. Independent Review Coverage
 
-The v0.0.1rc1 and v0.0.1rc02 independent architecture reviews were read and used as correction input.
+The v0.0.1rc1, v0.0.1rc02 and v0.0.1rc03 independent architecture reviews were read and used as correction input.
 
-Review findings incorporated through rc03 include:
+Review findings incorporated through rc04 include:
 
 - separation of authority planes;
 - Node metamodel correction and Function/Service first-class model;
@@ -84,7 +84,13 @@ Review findings incorporated through rc03 include:
 - configuration/persistent-state authority;
 - `SCAF-TIME` ownership of timebase/synchronization with OBS recording provenance;
 - security architecture interface boundary to external/project security authority;
-- source identity vs retrievability distinction.
+- source identity vs retrievability distinction;
+- one canonical Concern -> Project Design -> Realization -> Assurance chain with APP cross-cutting;
+- full authority-grammar usage rather than ambiguous bare `Defines`;
+- Service/Capability and subordinate System/Node clarification;
+- ROB/LIFE/OBS/ASSUR boundary tightening;
+- Security Authority vs Project Design Authority separation;
+- complete Framework Scan state/closure proof on selected worked items.
 
 The review itself is not treated as a normative SCAF source.
 
@@ -104,7 +110,7 @@ This prevents a broad archaeology pass from being presented as completed normati
 
 ## 6. Tabletop Architecture / Application Coverage
 
-rc03 retains three non-normative architecture exercises:
+rc04 retains three non-normative architecture exercises:
 
 1. single MCU system;
 2. PC + multiple MCU system;
@@ -112,18 +118,24 @@ rc03 retains three non-normative architecture exercises:
 
 At taxonomy level, all three remain representable without new ad-hoc top-level categories.
 
-rc03 additionally runs a worked Framework Scan against the PC + multiple MCU archetype across eleven concerns. It exercises:
+rc04 runs complete-state worked Framework Scan traces against the PC + multiple MCU archetype for selected concerns. Each worked item instantiates:
 
 ```text
-Concern
- -> Applicability / Consequence
- -> Required Decision
- -> Project Design Authority output
- -> Verification / Evidence
+Concern / Obligation
+ -> Applicability State
+ -> Failure Consequence
+ -> Decision State
+ -> Risk State
+ -> Project Design Authority Output
+ -> Realization Responsibility
+ -> Source-Owned Satisfaction Condition
+ -> Verification State / Method
+ -> Evidence State / Item
+ -> Closure / Deviation + Acceptance Authority
  -> Re-evaluation Trigger
 ```
 
-The exercise also exposes the greenfield bootstrap loop: provisional CTX/ARCH is refined by scan decisions and must then be re-scanned. This demonstrates an operating model beyond simple representability, but remains architecture evidence rather than project verification.
+The exercise also exposes the greenfield bootstrap loop: provisional CTX/ARCH is refined by scan decisions and then re-scanned. It demonstrates closure semantics without making `SCAF-ASSUR` or `SCAF-APP` the project design/closure authority.
 
 ## 7. Why “Machine-read” Is Not “Fully Absorbed”
 
@@ -140,13 +152,14 @@ In particular, executable artifacts may encode invariants not fully repeated in 
 5. executable invariants hidden in test fixtures/validators;
 6. Coordinator/software-specific mechanisms vs system-level properties;
 7. runtime diagnostics vs incident evidence vs assurance evidence;
-8. Framework Scan closure and re-evaluation semantics;
-9. implementation-profile precedence/composition after profile axes stabilize.
+8. donor retrievability and requirement-level source-semantic reproducibility;
+9. implementation-profile precedence/composition after profile axes stabilize;
+10. Draft/RC donor and executable-invariant audit before normative promotion/freeze.
 
 ## 9. Audit Conclusion
 
 There are **no unread input files** among the two donor source archives used for the archaeology work.
 
-However, there are intentionally deferred **deep normative audits**. v0.0.1rc03 should therefore be treated as:
+However, there are intentionally deferred **deep normative audits**. v0.0.1rc04 should therefore be treated as:
 
-> **an architecture/taxonomy convergence baseline with an explicit project-authority chain and worked application evidence, not a completed migration proof.**
+> **an architecture-closure baseline that permits controlled normative rewrite, with explicit donor-promotion and migration-completion gates; it is not a completed migration proof.**

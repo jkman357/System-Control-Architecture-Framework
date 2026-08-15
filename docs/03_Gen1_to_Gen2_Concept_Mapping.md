@@ -72,16 +72,16 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | Protocol vs transport separation | `Protocol_YAML_Definition_Guide.md` | §1.4 Transport-Neutral Contract; framework §3.7 Protocol and Transport Decoupling | Baseline v1.1.7 | `SCAF-INT` | Keep | Apply to broader interaction technologies | High | Partial |
 | Message/event/stream semantics | `Protocol_YAML_Definition_Guide.md` | §8 Message Model; §10 Telemetry and Streaming | Baseline v1.1.7 | `SCAF-INT` | Keep | Extend to IPC/shared memory/register/DMA/RPC where applicable | High | Partial |
 | Compatibility / evolution | `Protocol_Compatibility_Rules.md` | Part II §5–10; Part III §11–15; Part IV §16–19 | Draft for Review v1.1.0 | `SCAF-INT` | Move | Generalize to versioned interfaces while preserving protocol specialization | Medium | Deferred |
-| Identifier / namespace governance | `Protocol_YAML_Definition_Guide.md`; `Protocol_Registry_Governance.md` | Guide §5 Namespace, Service, and ID Allocation; Registry authority sections | Baseline + Draft | `SCAF-INT`, `SCAF-GOV` | Merge | Split namespace rules from repository governance | Medium | Deferred |
+| Identifier / namespace governance | `Protocol_YAML_Definition_Guide.md` [Baseline v1.1.7]; `Protocol_Registry_Governance.md` [Draft/review-state donor] | Guide §5 Namespace, Service, and ID Allocation; Registry authority sections | Per-donor binding | `SCAF-INT`, `SCAF-GOV` | Merge | Split namespace rules from repository governance | Medium | Deferred |
 | Secure-session mechanics | `Protocol_Security_Profile.md` | Secure session / authentication / replay / rekey sections | Draft for Review v1.1.0 | `SCAF-SEC`, `SCAF-INT` | Move | Security defines constraints; protocol profile realizes mechanics | Medium | Deferred |
 | Timing budget | `Coordinator_Node_Control_Framework.md` | Part IV §4.3–4.5 Sample/Record Period, Timing Budget, Bandwidth Budget | Baseline v1.1.7 | `SCAF-TIME` | Move | Elevate to system temporal correctness | High | Partial |
-| Queue / bounded backpressure | `Coordinator_Node_Control_Framework.md`; `Coordinator_Concurrency_Guide.md` | Framework §4.7 Queue and Buffer Policy; Concurrency §6 Bounded Queues and Backpressure | Baseline + Draft | `SCAF-TIME`, `SCAF-ROB` | Merge | Separate capacity definition from overload resilience response | High | Partial |
+| Queue / bounded backpressure | `Coordinator_Node_Control_Framework.md` [Baseline v1.1.7]; `Coordinator_Concurrency_Guide.md` [Draft for Review v1.1.0] | Framework §4.7 Queue and Buffer Policy; Concurrency §6 Bounded Queues and Backpressure | Per-donor binding | `SCAF-TIME`, `SCAF-ROB` | Merge | Separate capacity definition from overload resilience response | High | Partial |
 | Concurrency ownership | `Coordinator_Concurrency_Guide.md` | §2 Explicit Concurrency Model; §3 Thread and State Ownership; §8 Timeout Ownership; §9 Synchronization | Draft for Review v1.1.0 | `SCAF-TIME`, `SCAF-PROF` | Merge | Core states required ownership; profiles realize mechanisms | Medium | Deferred |
-| Stale data / freshness | `Coordinator_Node_Control_Framework.md`; UI guidance | Framework §4.9 Stale Data | Baseline v1.1.7 | `SCAF-INT`, `SCAF-TIME`, `SCAF-ROB`, `SCAF-SEC` | Merge | One semantic owner plus explicit cross-concern constraints | High | Partial |
-| Link/reconnect behavior | `Coordinator_Node_Control_Framework.md`; `Protocol_Compatibility_Rules.md` | Framework §5.6 Link Management State Machine; Compatibility §15 Reconnect and Reconciliation | Baseline + Draft | `SCAF-ROB`, `SCAF-INT` | Merge | Generalize communication failure/recovery/partition handling | High | Partial |
+| Stale data / freshness | `Coordinator_Node_Control_Framework.md` [Baseline v1.1.7]; Coordinator UI guidance [separate donor; maturity must be confirmed before promotion] | Framework §4.9 Stale Data; UI stale/visibility guidance | Per-donor binding | `SCAF-INT`, `SCAF-TIME`, `SCAF-ROB`, `SCAF-SEC` | Merge | One semantic owner plus explicit cross-concern constraints | High | Partial |
+| Link/reconnect behavior | `Coordinator_Node_Control_Framework.md` [Baseline v1.1.7]; `Protocol_Compatibility_Rules.md` [Draft for Review v1.1.0] | Framework §5.6 Link Management State Machine; Compatibility §15 Reconnect and Reconciliation | Per-donor binding | `SCAF-ROB`, `SCAF-INT` | Merge | Generalize communication failure/recovery/partition handling | High | Partial |
 | Boot / reset / recovery | `Node_Software_Engineering_Rules.md` | §24 Reset Cause and Recovery; §25 Startup Sequence; §26 Shutdown and Power Transition | Draft for Review v1.1.0 | `SCAF-LIFE` | Move | Generalize beyond software Node | Medium | Deferred |
-| Firmware update | `Coordinator_Node_Control_Framework.md`; Node Rules | Framework §2.11.8 Firmware Update Coordination; Node §38–40.1 | Baseline + Draft | `SCAF-LIFE` | Merge | System lifecycle authority across heterogeneous nodes | High | Partial |
-| Configuration ownership | `Node_Software_Engineering_Rules.md`; Application Analysis | Node §34 Configuration Ownership; Application §8.2 Configuration | Draft + Baseline | `SCAF-CFG` | Merge | Create explicit configuration lifecycle authority | High | Partial |
+| Firmware update | `Coordinator_Node_Control_Framework.md` [Baseline v1.1.7]; `Node_Software_Engineering_Rules.md` [Draft for Review v1.1.0] | Framework §2.11.8 Firmware Update Coordination; Node §38–40.1 | Per-donor binding | `SCAF-LIFE` | Merge | System lifecycle authority across heterogeneous nodes | High | Partial |
+| Configuration ownership | `Node_Software_Engineering_Rules.md` [Draft for Review v1.1.0]; `Framework_Application_Analysis_Template.md` [Baseline v1.1.9] | Node §34 Configuration Ownership; Application §8.2 Configuration | Per-donor binding | `SCAF-CFG` | Merge | Create explicit configuration lifecycle authority | High | Partial |
 | Persistent operational state | `Node_Software_Engineering_Rules.md` | §35 Persistent State | Draft for Review v1.1.0 | `SCAF-CFG`, `SCAF-LIFE` | Move | Separate operational persistence from incident evidence persistence | Medium | Deferred |
 | Local safety / degraded state | `Node_Software_Engineering_Rules.md` | §19 Local Safety Ownership; §20 Fault Classification; §22 Degraded and Safe States | Draft for Review v1.1.0 | `SCAF-ROB` | Rewrite | Require project safety/hazard authority for safety-significant Safe State definition | Medium | Deferred |
 | Fault injection | `Node_Software_Engineering_Rules.md` | §43 Fault Injection | Draft for Review v1.1.0 | `SCAF-ASSUR` | Move | Treat as assurance, not runtime fault lifecycle | Medium | Deferred |
@@ -94,9 +94,9 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | Evidence accessibility/export | Crash Recorder `README.md` | §B13 Automatic Export; §B14 Manual UI Role; §B15–B16 Export Failure/Completion | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-PROF` | Move | Define accessibility intent; keep media/UI mechanics in profiles | High | Partial |
 | Fault/error/failure semantic chain | — | — | SCAF New | `SCAF-ROB` | New | Introduce explicit condition→activation→error→propagation→service failure→consequence model | High | New |
 | Fault-tolerance mechanisms | — | — | SCAF New | `SCAF-ROB` | New | Add redundancy/failover/reconfiguration/repair/resynchronization/reintegration | High | New |
-| Cross-cutting domains | Gen1 isolation/reset/security/resource concepts | Multiple anchors above | Mixed | `SCAF-ARCH` | Rewrite | Model Fault/Reset/Power/Security/Resource domains independently of Node | High | Partial |
-| Distributed incident time provenance | Crash Recorder timestamp/boot-epoch concepts + SCAF extension | A16 Timestamp and Ordering; B32 Boot Epoch | Supplemental + SCAF New | `SCAF-OBS` | Rewrite | Add synchronization quality, uncertainty and causal correlation across Nodes | High | Partial |
-| Implementation rulebooks | C# / Embedded C rules | Full language authorities | Baseline + Draft | `SCAF-PROF` | Move | Keep language/runtime mechanisms outside system concern authority | High | Deferred |
+| Cross-cutting domains | Gen1 isolation/reset/security/resource donors [mixed maturity; each donor must be individually bound before promotion] | Multiple anchors above | Per-donor binding required | `SCAF-ARCH` | Rewrite | Model Fault/Reset/Power/Security/Resource domains independently of Node | High | Partial |
+| Distributed incident time provenance | Crash Recorder timestamp/boot-epoch concepts [Specification RC v1.0.1rc03] + SCAF time-semantics extension [SCAF New] | A16 Timestamp and Ordering; B32 Boot Epoch | Per-donor binding | `SCAF-TIME`, `SCAF-OBS` | Rewrite | `SCAF-TIME` defines synchronization/uncertainty semantics; `SCAF-OBS` records provenance/quality and cross-node correlation evidence | High | Partial |
+| Implementation rulebooks | C# / Embedded C rule donors [mixed Baseline/Draft maturity; bind individual authority before promotion] | Full language authorities | Per-donor binding required | `SCAF-PROF` | Move | Keep language/runtime mechanisms outside system concern authority | High | Deferred |
 | Machine-verifiable governance | schemas/tools/tests/workflow | repository artifacts | Repository artifact | `SCAF-GOV`, `SCAF-ASSUR` | Retire | Rebuild only after stable human authority and machine contracts | High | Deferred |
 
 
@@ -125,7 +125,7 @@ A concept can cross several concerns without creating duplicate authority when t
 
 ### Freshness
 
-- `SCAF-INT` **Defines** data-age / ordering / validity contract semantics.
+- `SCAF-INT` **Defines Framework Semantics / Obligation** for data-age / ordering / validity contract semantics; the Project Design Authority defines project-specific limits/behavior.
 - `SCAF-TIME` **Constrains** temporal budgets and measurable age limits.
 - `SCAF-ROB` **Constrains** behavior when freshness guarantees are lost.
 - `SCAF-SEC` **Constrains** anti-replay / hostile-staleness behavior where security-relevant.
@@ -133,15 +133,15 @@ A concept can cross several concerns without creating duplicate authority when t
 
 ### Containment
 
-- `SCAF-ARCH` **Defines** containment-domain boundaries and ownership.
-- `SCAF-ROB` **Defines/Constrains** runtime behavior under fault propagation across those boundaries.
+- `SCAF-ARCH` **Defines Framework Semantics / Obligation** for containment-domain modeling; the Project Design Authority defines actual project domain boundaries/ownership.
+- `SCAF-ROB` **Defines Framework Semantics / Obligation / Constrains** runtime behavior required under fault propagation across those boundaries.
 - `SCAF-SEC` **Constrains** behavior under malicious or compromised-node propagation.
 - `SCAF-PROF` **Realizes** the required mechanisms.
 - `SCAF-ASSUR` **Verifies** containment properties.
 
 ### Incident Evidence
 
-- `SCAF-OBS` **Defines** required evidence semantics and accessibility.
+- `SCAF-OBS` **Defines Framework Semantics / Obligation** for required evidence semantics and accessibility; the Project Design Authority defines the project evidence architecture.
 - `SCAF-LIFE` **Constrains** survivability across reset/boot/power transitions.
 - `SCAF-ROB` **Constrains** what failures/effects must be observable.
 - `SCAF-PROF` **Realizes** retention/persistence/export mechanisms.

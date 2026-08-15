@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc03**.
+This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc04**.
 
 ## 2. Gen1 Formal Baseline
 
@@ -73,9 +73,22 @@ Treatment:
 - not a normative SCAF source;
 - used to challenge framework-vs-project authority, plane relations, CTX/ARCH dependency ownership, assurance ownership, Framework Scan startup usability, timebase authority, security scope and migration reproducibility.
 
+
+### rc03 Review
+
+**Input:** `SCAF-v0.0.1rc03-independent-architecture-review.md`  
+**SHA-256:** `9ebf16ef4569cb31e5d846bd16571d82634d78232ca64fd3549bfd4210d7054c`
+
+Treatment:
+
+- independent architecture/framework review evidence for rc04;
+- not a normative SCAF source;
+- confirmed that the architecture skeleton and framework-vs-project authority split are structurally viable;
+- used to close canonical authority-diagram consistency, authority-grammar usage, Framework Scan closure semantics, Service/Capability and hierarchical System/Node ambiguity, ROB/LIFE/OBS boundaries, security-vs-project authority wording and multi-source migration traceability.
+
 ## 5. Analysis Boundary
 
-v0.0.1rc03 performs:
+v0.0.1rc04 performs:
 
 1. preservation of complete Gen1 and supplemental repository inventory;
 2. document-role analysis;
@@ -88,12 +101,15 @@ v0.0.1rc03 performs:
 9. Framework Scan lifecycle restructuring;
 10. overlap / obsolescence / gap analysis refresh;
 11. three representative tabletop architecture exercises;
-12. one end-to-end worked Framework Scan on the PC + multiple MCU archetype;
-13. read-coverage and deep-audit-state audit.
+12. complete-state/closure worked Framework Scan traces for selected concerns in the PC + multiple MCU archetype;
+13. canonical concern/Project Design/Realization/Assurance authority-chain closure;
+14. read-coverage and deep-audit-state audit.
+
+It permits **controlled normative rewrite** of the architecture kernel and audited/high-confidence content, while retaining donor-promotion gates.
 
 It does **not** yet perform:
 
-- full normative rewrite;
+- broad/unrestricted normative rewrite;
 - final authority registry design;
 - final Framework Scan enum/schema freeze;
 - schema implementation;
@@ -124,7 +140,7 @@ The source archives are intentionally not copied into the SCAF source repository
 
 However, **identity is not retrievability**. An independent reviewer cannot reproduce source-semantic review from SHA-256 alone unless the exact donor snapshot is obtainable. Before migration completion or normative freeze, each donor snapshot must therefore gain an immutable/retrievable locator such as a repository commit/tag, release artifact locator, or controlled archive reference.
 
-Current rc03 status:
+Current rc04 status:
 
 - source identity: **available**;
 - source anchors: **available for mapped core concepts**;

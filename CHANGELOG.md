@@ -2,6 +2,37 @@
 
 All notable changes to **System Control Architecture Framework (SCAF)** are recorded here.
 
+## v0.0.1rc04 — 2026-08-15
+
+Architecture-closure / controlled-rewrite-entry release candidate.
+
+### Changed
+
+- accepted the rc03 independent review conclusion that the SCAF skeleton is converged enough for **controlled normative rewrite**;
+- established one canonical authority model: Concern -> Project Design -> Realization -> Assurance, with `SCAF-APP` cross-cutting for disposition/trace and Governance governing the authorities;
+- removed ambiguous bare `Defines` authority headings in system concerns and applied the full Framework-vs-Project authority grammar consistently;
+- broke the Service/Capability circular definition and clarified subordinate System vs subordinate Node scope semantics;
+- tightened the Node-boundary test so physical boundaries or verification tasks alone do not create Nodes;
+- clarified `SCAF-ROB` vs `SCAF-LIFE` vs `SCAF-OBS` vs `SCAF-ASSUR` ownership for lifecycle failure, health decisions, evidence and verification;
+- clarified Security Authority vs Project Design Authority: security authority owns threat/objective/risk constraints, while Project Design owns actual trust boundaries and architecture decisions;
+- corrected the README robustness model so prevention/avoidance is design/realization strategy rather than Assurance ownership;
+- replaced the broad eleven-row Framework Scan proof with complete state/authority/closure traces for selected concerns;
+- clarified that Assurance verifies evidence sufficiency, source/project/risk authorities accept applicable closure, and `SCAF-APP` records the closure/deviation trace;
+- strengthened per-donor maturity binding in multi-source migration rows and aligned distributed incident time provenance with both `SCAF-TIME` and `SCAF-OBS`;
+- removed stale release-specific fixture wording from the Gen1 inventory;
+- moved the project gate from architecture discovery to **controlled authority-preserving normative rewrite** while keeping migration/promotion/freeze gates explicit.
+
+### Deliberately Not Added
+
+- new top-level taxonomy branches;
+- CI / GitHub Actions;
+- validators or final schemas;
+- generated checklists;
+- broad MCU / FPGA / DSP / C / C# rulebooks;
+- full cybersecurity or safety frameworks;
+- frozen Draft/RC donor semantics;
+- claims of completed Gen1 migration.
+
 ## v0.0.1rc03 — 2026-08-15
 
 Authority-semantics and project-application convergence release candidate.

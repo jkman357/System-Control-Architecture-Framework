@@ -2,45 +2,45 @@
 
 ## 1. Purpose
 
-This document identifies structural problems that must be resolved before large-scale SCAF normative rewriting.
+This document identifies structural problems that must be resolved before or during controlled SCAF normative rewriting.
 
 ## 2. Primary Structural Finding
 
 Gen1 contains substantial reusable engineering content. The main migration risk is not missing documents; it is **duplicate or ambiguous authority created by Gen1 role/document boundaries and by rc1's mixed taxonomy dimensions**.
 
-v0.0.1rc03 therefore treats authority structure as the first design problem.
+v0.0.1rc04 treats the authority kernel as closed enough for controlled normative rewrite while preserving explicit promotion/migration gates.
 
-## 3. Resolved / Substantially Improved in rc03
+## 3. Resolved / Substantially Improved through rc04
 
 ### 3.1 Mixed taxonomy planes
 
 rc1 placed system concerns, project application, assurance, implementation, tooling and engineering process as peer branches.
 
-**rc03 decision:** separate five authority planes and make tooling/AI supporting mechanisms rather than peer system concerns.
+**rc04 retained/closure decision:** separate five authority planes and make tooling/AI supporting mechanisms rather than peer system concerns.
 
 ### 3.2 Node-centric replacement risk
 
 Replacing Host/Device with Node alone is insufficient.
 
-**rc03 decision:** add Function/Service/Capability, Interface, Interaction and cross-cutting Domains as first-class metamodel concepts; define Node boundary criteria.
+**rc04 retained/closure decision:** add Function/Service/Capability, Interface, Interaction and cross-cutting Domains as first-class metamodel concepts; define Node boundary criteria.
 
 ### 3.3 Migration action vocabulary
 
 rc1 mixed `Keep/Move/Merge/Rewrite/Retire/New` with `Elevate/Generalize/Rebuild`.
 
-**rc03 decision:** separate **Disposition** from **Transformation**.
+**rc04 retained/closure decision:** separate **Disposition** from **Transformation**.
 
 ### 3.4 Framework Scan state mixing
 
 Applicability, risk, decision, verification and evidence are different state axes.
 
-**rc03 decision:** model them as independent dimensions in a single decision/evidence lifecycle.
+**rc04 retained/closure decision:** model them as independent dimensions in a single decision/evidence lifecycle.
 
 ### 3.5 Linear fault lifecycle
 
 `Prevention -> Detection -> Containment -> Recovery` mixes design-time assurance with runtime behavior.
 
-**rc03 decision:** separate fault/error/failure semantics, runtime resilience response and assurance.
+**rc04 retained/closure decision:** separate fault/error/failure semantics, runtime resilience response and assurance.
 
 ## 4. Remaining Authority-Overlap Risks
 
@@ -241,7 +241,7 @@ SCAF must define a home for:
 
 rc1 mixed platform, execution model, language, HMI, transport, storage and reference architecture in one profile list.
 
-rc03 treats profiles as composable axes:
+rc04 retains profiles as composable axes:
 
 ```text
 Compute / deployment technology
@@ -283,6 +283,13 @@ Priority before normative rewrite:
 The current task is **ambiguity reduction**, not document-count growth.
 
 
-## rc03 Authority Convergence Note
+## rc04 Authority Closure Note
 
-rc03 explicitly separates SCAF normative concern authority from Project Design Authority. SCAF defines framework semantics/obligations; controlled project design artifacts define actual project-specific architecture values; `SCAF-APP` dispositions/traces; `SCAF-ASSUR` verifies. This prevents Framework Scan or assurance artifacts from becoming duplicate design authorities.
+rc04 retains the rc03 separation of SCAF normative concern authority from Project Design Authority and makes the canonical chain explicit: SCAF defines framework semantics/obligations; Project Design Authority defines project-specific architecture values; Project Realization implements them; `SCAF-ASSUR` verifies/evaluates evidence; `SCAF-APP` cross-cuts by dispositioning/tracing state and closure. Framework Scan and assurance artifacts therefore do not become duplicate design authorities.
+
+Additional closure rules:
+
+- `SCAF-LIFE` owns lifecycle transaction/state semantics; `SCAF-ROB` owns failure-response properties when those lifecycle operations fail.
+- `SCAF-ROB` owns health/failure decision and resilience response; `SCAF-OBS` owns observation/representation/preservation/export of health and incident evidence.
+- external/project Security Authority owns threat assumptions, security objectives and risk acceptance; Project Design Authority owns the actual integrated architecture decisions.
+- controlled normative rewrite is now permitted, but Draft/RC donor promotion, executable-invariant migration and final migration proof remain gated.

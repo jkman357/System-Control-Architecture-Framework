@@ -207,7 +207,7 @@ Gen1 includes:
 
 Assessment:
 
-This demonstrates a mature intent: rules should eventually become machine-verifiable where practical. However, these files are strongly coupled to Gen1 paths, schemas, authority names and claim model. They should **not** be copied into v0.0.1rc03.
+This demonstrates a mature intent: rules should eventually become machine-verifiable where practical. However, these files are strongly coupled to Gen1 paths, schemas, authority names and claim model. They should **not** be copied into v0.0.1rc04.
 
 The durable SCAF principle is:
 
