@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc05  
+**Version:** v0.0.2rc06  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-15
 
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc05 INT/TIME Authority Boundary Closure Position
+## v0.0.2rc06 RUN L1/L2 Normative Tranche Position
 
-v0.0.2rc05 is a targeted INT/TIME authority-boundary correction after independent review of rc04 found **no Critical issues**, accepted the Authority Kernel, confirmed CTX/ARCH stable, and identified three Major TIME boundary defects to close before starting `SCAF-RUN`. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc06 begins the `SCAF-RUN` L1/L2 normative tranche after independent review of rc05 found **no Critical or Major issues**, accepted INT as Stable, accepted TIME as Stable after minor cleanup, accepted the CTX -> ARCH -> INT -> TIME authority chain, and confirmed that INT/TIME leave a clean authority space for RUN. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
 Current normative documents are:
 
@@ -48,10 +48,13 @@ Current normative documents are:
 - `docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md`
 - `docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md`
 - `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md`
+- `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md`
 
-This RC preserves the rc04 INT/TIME tranche while tightening its authority boundaries. `SCAF-INT` remains the framework semantic authority for Interface/Interaction/data-contract semantics. `SCAF-TIME` is the framework semantic authority for measurable temporal/timebase/synchronization properties and for execution/concurrency/capacity/resource constraints only insofar as they establish explicitly TIME-owned measurable properties. Interface semantic ordering remains INT; runtime state/transition consistency remains RUN; detection/health classification and resilience/recovery after timing/resource violation remain ROB. Actual project contract values and temporal/resource values remain Project Design Authority decisions. Freshness remains intentionally cross-cut: INT defines semantic state meaning, while TIME defines measurable age/timebase/threshold semantics used to evaluate it.
+This RC first closes the remaining non-blocking TIME cleanup by splitting clock/synchronization relationship semantics from dependent temporal-claim validity when the required relationship becomes unusable. It then establishes `SCAF-RUN` as the framework semantic authority for operational/service state meaning, transition consistency, readiness/availability representation, generic operational lifecycle behavior and Operational Incarnation. Actual project states, transitions, readiness criteria and runtime state authorities remain Project Design Authority decisions.
 
-`SCAF-RUN` and later concern tranches remain deferred. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
+RUN explicitly consumes but does not re-own INT Interface/Interaction semantics or TIME measurable temporal/capacity/resource properties. Boot/power/reset/update lifecycle remains `SCAF-LIFE`; failure/health/degradation/recovery semantics remain `SCAF-ROB`; persistent operational-state semantics remain `SCAF-CFG`; operational evidence remains `SCAF-OBS`.
+
+`SCAF-ROB` and later concern tranches remain deferred pending independent review of this RUN tranche. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
 
 Normative precedence for this RC is:
 
@@ -63,7 +66,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc05 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc06 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -264,13 +267,14 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md` | L1/L2 System / Node / Role / Domain architecture obligations |
 | `docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md` | L1/L2 Interface / Interaction / data-contract obligations |
 | `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md` | L1/L2 timing / timebase / concurrency / capacity / margin obligations |
+| `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md` | L1/L2 operational state / transition / readiness / Operational Incarnation obligations |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc05.**
+**No CI is included in v0.0.2rc06.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -303,29 +307,29 @@ v0.0.2rc02   # targeted normative precision correction
 v0.0.2rc03   # target/authority precision closure
 v0.0.2rc04   # INT + TIME controlled L1/L2 normative tranche
 v0.0.2rc05   # targeted INT/TIME authority-boundary closure
+v0.0.2rc06   # RUN controlled L1/L2 normative tranche
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc05 is in **controlled L1/L2 normative rewrite — targeted INT/TIME authority-boundary closure**.
+v0.0.2rc06 is in **controlled L1/L2 normative rewrite — SCAF-RUN tranche**.
 
 Open scope in this RC:
 
-- preserve the reviewed Authority Kernel / CTX / ARCH baselines;
-- tighten `SCAF-INT` Interaction-to-Interface linkage, external participant coverage and validity criteria;
-- close `SCAF-TIME` concurrency ownership, synchronization-loss claim validity and TIME/ROB long-run/detection boundaries;
-- distinguish INT semantic ordering from TIME chronological/temporal ordering;
-- preserve INT/TIME freshness and session/epoch authority boundaries;
-- re-review Framework Scan scannability and CTX -> ARCH -> INT -> TIME authority continuity.
+- preserve the reviewed Authority Kernel / CTX / ARCH / INT baselines;
+- retain TIME as stable after minor cleanup and split synchronization-relationship semantics from dependent-claim validity;
+- establish `SCAF-RUN` operational/service state, state-transition, readiness/availability and Operational Incarnation obligations;
+- preserve RUN boundaries against INT semantic contracts, TIME measurable temporal/capacity properties, LIFE boot/reset/power/update lifecycle and ROB failure/degradation/recovery semantics;
+- test RUN Project-Applicable Obligations through Framework Scan before ROB authoring begins.
 
 Still closed/gated:
 
 - top-level taxonomy expansion without a concrete authority-home failure;
 - broad Draft/RC or mixed-maturity donor promotion;
 - executable-invariant promotion before schema/test/validator extraction and review;
-- `SCAF-RUN` and later concern normative tranches until the rc05 INT/TIME boundary corrections are independently reviewed;
+- `SCAF-ROB` and later concern normative tranches until the rc06 RUN tranche is independently reviewed;
 - L3 mechanism catalogs such as watchdog/heartbeat/CRC/ECC pattern guidance;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
 - final schema, validator, generated checklist or CI enforcement;

@@ -1,6 +1,6 @@
 # SCAF-TIME — Timing, Concurrency, Capacity & Resource Margin Obligations
 
-**Release:** v0.0.2rc05  
+**Release:** v0.0.2rc06  
 **Concern:** `SCAF-TIME`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -57,7 +57,13 @@ Where both elapsed-time/chronological-ordering semantics and calendar/wall-clock
 
 Where timestamps, deadlines, freshness, chronological ordering or coordinated temporal behavior depend on more than one clock/timebase, the project **SHALL** define the required synchronization relationship, permitted drift/offset/uncertainty and the conditions under which the relationship is considered usable.
 
-The project **SHALL** identify temporal claims that depend on that relationship and define whether each claim remains valid, becomes invalid, or requires a controlled degraded/re-evaluation condition when the required clock relationship is not usable. The project **SHALL** trace any resulting contract, operational-state or resilience consequence to the applicable `SCAF-INT`, `SCAF-RUN` or `SCAF-ROB` obligation.
+### `SCAF-TIME-020` — Dependent temporal-claim validity under clock-relationship loss
+
+**Target:** Project-Applicable Obligation
+
+Where a temporal claim depends on a synchronization or clock/timebase relationship, the project **SHALL** identify that dependency and define whether the claim remains valid, becomes invalid, or enters a controlled degraded/re-evaluation state when the required relationship is not usable.
+
+The project **SHALL** trace any resulting contract, operational-state or resilience consequence to the applicable controlled `SCAF-INT`, `SCAF-RUN` or `SCAF-ROB` requirement, decision or obligation as available in the current project/framework stage. `SCAF-TIME` does not define the downstream runtime or resilience response.
 
 ### `SCAF-TIME-005` — Time Domain and Time Epoch
 
@@ -180,6 +186,7 @@ The following table is informative and does not create additional normative requ
 | Material timing/capacity property inventory | Project Design Authority |
 | Timebase / clock identity and authority | Project Design Authority |
 | Synchronization / drift / uncertainty model | Project Design Authority |
+| Dependent temporal-claim validity / re-evaluation on clock-relationship loss | Project Design Authority, traced to applicable INT/RUN/ROB controlled requirement or decision |
 | Time Domain / Time Epoch model | Project Design Authority |
 | Deadline / period / latency / jitter values | Project Design Authority |
 | Freshness age/timebase/threshold values | Project Design Authority, constrained by `SCAF-INT` contract semantics |

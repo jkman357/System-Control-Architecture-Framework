@@ -1,5 +1,33 @@
 # Changelog
 
+## v0.0.2rc06 — 2026-08-15
+
+SCAF-RUN controlled L1/L2 normative tranche after independent rc05 review cleared INT/TIME authority boundaries and allowed RUN authoring to begin.
+
+### Added
+
+- `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md`;
+- L1 authority boundaries for operational/service state meaning, state domains, transition consistency, readiness/availability, generic operational lifecycle and Operational Incarnation;
+- project obligations for state authority, state invariants, permitted transitions, transition conditions, readiness/availability criteria, CTX-mode mapping, LIFE-to-RUN handoff, cross-participant state consistency and Operational Incarnation;
+- explicit RUN/INT/TIME, RUN/LIFE, RUN/ROB, RUN/CFG/OBS and operating-mode/incarnation framework invariants.
+
+### Changed
+
+- split `SCAF-TIME-004` clock/synchronization relationship semantics from dependent temporal-claim validity under clock-relationship loss by adding `SCAF-TIME-020`;
+- normalized staged forward-reference wording so TIME can trace consequences to controlled INT/RUN/ROB requirements, decisions or obligations without requiring future normative IDs to already exist;
+- normalized the supporting Framework Scan evidence-state wording from generic `Accepted` to evidence-sufficiency language;
+- updated README and read-coverage status for the RUN tranche;
+- retained the frozen v0.0.1 architecture baseline and stable Authority Kernel / CTX / ARCH / INT baselines.
+
+### Deliberately Not Added
+
+- `SCAF-ROB`, `SCAF-LIFE`, `SCAF-OBS`, `SCAF-CFG` or `SCAF-SEC` normative tranches;
+- new top-level taxonomy or core metamodel entities;
+- state-machine implementation patterns, RTOS/task/thread rules or scheduling mechanisms;
+- L3/L4 mechanism or implementation guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc05 — 2026-08-15
 
 Targeted INT/TIME authority-boundary closure after independent review of v0.0.2rc04.

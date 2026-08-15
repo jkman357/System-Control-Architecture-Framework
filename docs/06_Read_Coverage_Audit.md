@@ -176,3 +176,12 @@ This release retains the reviewed Authority Kernel / `SCAF-CTX` / `SCAF-ARCH` ba
 The INT/TIME normative text remains derived from the frozen SCAF architecture authority homes and controlled mapping evidence. It does **not** bulk-promote donor-specific Draft/RC wording, schema-only invariants, validator-only invariants or test-fixture-only semantics. Those remain subject to donor-specific promotion/deep-audit gates.
 
 Review focus for this closure RC is whether INT semantic ordering, RUN operational-state consistency, TIME measurable temporal/capacity/resource properties and ROB detection/recovery authority remain non-overlapping; whether synchronization-loss claims close cleanly; and whether INT/TIME Project-Applicable Obligations are Framework-Scan scannable before `SCAF-RUN` begins.
+
+
+## 11. v0.0.2rc06 Normative Rewrite Coverage
+
+This release begins the controlled `SCAF-RUN` L1/L2 normative tranche after the rc05 independent closure review accepted INT as Stable, TIME as Stable after minor cleanup, and confirmed a clean authority space for RUN. The Authority Kernel / CTX / ARCH / INT baselines remain substantively unchanged.
+
+The remaining TIME cleanup is limited to splitting synchronization relationship semantics from dependent temporal-claim validity and making staged INT/RUN/ROB forward references precise. The new RUN text is derived from the frozen SCAF authority home for Runtime Behavior, State & Operational Lifecycle and does not bulk-promote donor-specific state-machine, RTOS, task/thread or recovery mechanisms.
+
+Review focus for this RC is whether RUN cleanly owns operational-state meaning and transition consistency without re-owning INT semantic contracts, TIME measurable temporal/capacity properties, LIFE boot/reset/power/update lifecycle, ROB fault/degradation/recovery semantics, CFG persistent-state authority or OBS evidence representation; and whether RUN Project-Applicable Obligations remain Framework-Scan scannable before ROB authoring begins.

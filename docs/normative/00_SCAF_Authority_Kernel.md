@@ -1,6 +1,6 @@
 # SCAF Authority Kernel
 
-**Release:** v0.0.2rc05  
+**Release:** v0.0.2rc06  
 **Layer:** L1 Authority Kernel  
 **Status:** Normative RC
 

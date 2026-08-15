@@ -809,7 +809,7 @@ This exercise proves the independent state dimensions and closure authority on s
 | Realization responsibility | MCU telemetry producer, transport/serialization realization and PC presentation layer implement the contract; responsibility may be split but remains traced. |
 | Applicable Satisfaction Basis | `SCAF-INT/TIME/ROB` obligation semantics + the Project Design Authority's controlled freshness/ordering/stale-behavior values; data outside that basis is never represented or consumed as valid current data and required stale/degraded behavior occurs. |
 | Verification state / method | **Required -> Planned -> Passed** using injected delay/drop/reorder/clock-skew scenarios and boundary-value timing tests. |
-| Evidence state / item | **Required -> Available -> Accepted** — test report, traces and contract-version identity are linked to the decision. |
+| Evidence state / item | **Required -> Available -> Sufficient / Insufficient** — test report, traces and contract-version identity are linked to the decision. |
 | Closure / deviation and authority | Project Interface/Design Authority accepts the implemented project decision; verification authority confirms evidence sufficiency; project risk authority accepts any residual risk; `SCAF-APP` records the resulting closure/deviation and links all authorities/evidence. |
 | Re-evaluation trigger | telemetry rate/transport/UI semantics, clock model, freshness threshold, criticality or consumer behavior changes; failed verification re-opens the item. |
 
@@ -826,7 +826,7 @@ This exercise proves the independent state dimensions and closure authority on s
 | Realization responsibility | Supervisory PC logic, MCU local recovery logic and any shared-bus/resource mechanism realize the approved behavior. |
 | Applicable Satisfaction Basis | `SCAF-ROB/ARCH` obligation semantics + the Project Design Authority's containment, degraded-service and recovery/reintegration decisions + applicable risk constraints; a single scoped Node failure does not violate the approved containment basis and recovery/reintegration occurs only under defined conditions. |
 | Verification state / method | **Required -> Planned -> Passed** using peer-loss, timeout, restart, shared-resource stress and repeated recovery fault injection. |
-| Evidence state / item | **Required -> Available -> Accepted** — fault-injection report, state/event traces, reset cause + boot-incarnation identity + applicable protocol/operational incarnation identity, and unresolved-anomaly disposition. |
+| Evidence state / item | **Required -> Available -> Sufficient / Insufficient** — fault-injection report, state/event traces, reset cause + boot-incarnation identity + applicable protocol/operational incarnation identity, and unresolved-anomaly disposition. |
 | Closure / deviation and authority | Project Verification / Assurance Authority determines evidence sufficiency; the applicable underlying requirement/design/risk/deviation authority accepts the corresponding closure in that authority capacity; `SCAF-APP` records closure/disposition and the re-open trigger. |
 | Re-evaluation trigger | shared-resource topology, recovery mechanism, service criticality, Node/domain boundary or lifecycle/update behavior changes. |
 
