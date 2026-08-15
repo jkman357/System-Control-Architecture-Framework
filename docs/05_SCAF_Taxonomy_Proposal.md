@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the **v0.0.1rc05 conceptual architecture** for System Control Architecture Framework (SCAF).
+This document records the **v0.0.1 frozen conceptual architecture / authority-kernel baseline** for System Control Architecture Framework (SCAF).
 
 It is intentionally not a final file/directory plan. The purpose is to stabilize ontology, authority and application semantics as the architecture kernel for controlled normative rewriting.
 
@@ -833,13 +833,13 @@ This exercise proves the independent state dimensions and closure authority on s
 
 ### 10.5 Tabletop conclusion
 
-The rc05 metamodel can describe all three representative archetypes **without adding an ad-hoc top-level taxonomy branch**.
+The v0.0.1 metamodel can describe all three representative archetypes **without adding an ad-hoc top-level taxonomy branch**.
 
 The three architecture exercises establish representability; the worked Archetype B scan now demonstrates complete state/authority/closure traces for selected concerns. This is sufficient to begin controlled normative rewrite, while migration-completion and donor-promotion gates remain separate.
 
 ## 11. Current Rewrite Gate
 
-**Controlled normative rewrite remains permitted from v0.0.1rc05.**
+**Controlled L1/L2 normative rewrite is permitted from the frozen v0.0.1 architecture baseline and proceeds on the next development line.**
 
 The architecture skeleton is considered converged enough to stop taxonomy exploration. Initial rewrite scope is intentionally bounded to:
 
@@ -857,6 +857,6 @@ The following remain gated and must not be silently promoted/frozen:
 - donor source-semantic reproducibility until immutable/retrievable donor locators exist;
 - final machine-readable schema / validator / CI enforcement;
 - broad implementation rulebooks and pattern catalogs before the corresponding L1/L2 authority/obligation content is stable;
-- a non-RC release until the user explicitly declares **freeze**.
+- modification of the frozen v0.0.1 baseline in place; semantic changes proceed on a new RC development line.
 
 These are **migration/promotion/completion gates**, not reasons to add new top-level taxonomy branches.

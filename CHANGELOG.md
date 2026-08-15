@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.0.1 — 2026-08-15
+
+Frozen architecture-convergence / authority-kernel baseline.
+
+### Release Decision
+
+- frozen from the reviewed `v0.0.1rc05` baseline after independent review reported **no Critical architecture issues**;
+- architecture discovery is closed for this baseline;
+- top-level taxonomy expansion is closed unless a future concrete project demonstrates an authority-home failure that cannot be resolved within the existing model;
+- Framework Scan is accepted as a new-project startup architecture decision mechanism;
+- controlled L1/L2 normative rewrite is permitted on the next development line;
+- MD-first / No-CI remains in effect.
+
+### Freeze Scope
+
+The v0.0.1 freeze locks the architecture-convergence baseline and authority kernel. It does **not** claim:
+
+- completed Gen1 requirement-by-requirement migration;
+- broad normative promotion of Draft/RC or mixed-maturity donor semantics;
+- extraction of all schema/validator/test-fixture executable invariants;
+- final machine-readable schema, validator or CI enforcement;
+- completion of L1/L2 normative content, L3 pattern catalogs or L4 implementation guidance.
+
+Known lexical/authority-language cleanup identified by the rc05 independent review is intentionally deferred to `v0.0.2rc01` controlled rewrite rather than reopening the v0.0.1 architecture-convergence cycle.
+
+### Deliberately Not Added
+
+- new top-level taxonomy branches or core metamodel entities;
+- CI / GitHub Actions;
+- validators or final schemas;
+- broad implementation rulebooks or mechanism catalogs.
+
 All notable changes to **System Control Architecture Framework (SCAF)** are recorded here.
 
 ## v0.0.1rc05 — 2026-08-15
@@ -154,4 +186,4 @@ Initial Framework Gen2 repository-archaeology / taxonomy working draft.
 
 ## Release Rule
 
-RC versions remain mutable only by creating the next RC. A non-RC release is produced only after an explicit freeze decision.
+RC versions remain mutable only by creating the next RC. A non-RC release is produced only after an explicit freeze decision. `v0.0.1` was frozen on 2026-08-15 from the reviewed `v0.0.1rc05` baseline; future semantic work continues on a new RC development line and does not modify v0.0.1 in place.

@@ -8,7 +8,7 @@ This document identifies structural problems that must be resolved before or dur
 
 Gen1 contains substantial reusable engineering content. The main migration risk is not missing documents; it is **duplicate or ambiguous authority created by Gen1 role/document boundaries and by rc1's mixed taxonomy dimensions**.
 
-v0.0.1rc05 treats the authority kernel as closed enough for controlled normative rewrite while preserving explicit promotion/migration gates.
+The frozen v0.0.1 baseline treats the authority kernel as closed enough for controlled normative rewrite while preserving explicit promotion/migration gates.
 
 ## 3. Resolved / Substantially Improved through rc05
 
@@ -241,7 +241,7 @@ SCAF now has authority homes for these concepts; controlled normative elaboratio
 
 rc1 mixed platform, execution model, language, HMI, transport, storage and reference architecture in one profile list.
 
-rc05 retains profiles as composable axes:
+v0.0.1 retains profiles as composable axes:
 
 ```text
 Compute / deployment technology
@@ -283,7 +283,7 @@ Priority before broad normative expansion / donor promotion / freeze:
 The current task is **controlled normative elaboration with authority preservation**, not taxonomy expansion or document-count growth.
 
 
-## rc05 Authority-Kernel Cleanup Note
+## v0.0.1 Frozen Authority-Kernel Baseline Note
 
 rc05 retains the separation of SCAF normative concern authority from Project Design Authority and makes the canonical chain explicit: SCAF defines framework semantics/obligations; Project Design Authority defines project-specific architecture values; Project Realization implements them; `SCAF-ASSUR` verifies/evaluates evidence; `SCAF-APP` cross-cuts by dispositioning/tracing state and closure. Framework Scan and assurance artifacts therefore do not become duplicate design authorities.
 

@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.1rc05  
-**Status:** Authority-kernel cleanup / controlled normative rewrite baseline release candidate  
+**Version:** v0.0.1  
+**Status:** Frozen architecture-convergence / authority-kernel baseline  
 **Date:** 2026-08-15
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -28,7 +28,7 @@ It refers to system-level coordination and architectural control concerns such a
 
 ## Source Position
 
-Four input classes are kept distinct in this RC:
+Four input classes are kept distinct in this release:
 
 1. **Gen1 formal baseline** — `host-device-control-framework`.
 2. **Supplemental resilience source** — `Embedded_Incident_Crash_Recorder_Framework`.
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this RC:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## RC05 Architecture Position
+## v0.0.1 Frozen Architecture Position
 
-v0.0.1rc05 is a thin **authority-kernel cleanup RC** following the rc04 independent review. Architecture discovery and top-level taxonomy expansion remain closed. This RC canonicalizes the remaining authority-plane, time/session identity, satisfaction-basis and migration-trace semantics before controlled L1/L2 normative content is expanded.
+v0.0.1 freezes the reviewed **architecture-convergence / authority-kernel baseline** reached in rc05. Architecture discovery and top-level taxonomy expansion are closed for this baseline. Controlled L1/L2 normative elaboration proceeds in the next development line; the frozen v0.0.1 release is not modified in place.
 
 ### Canonical authority model
 
@@ -206,7 +206,7 @@ Re-evaluation Trigger / re-scan
 
 Applicability, decision, risk, verification and evidence are separate state dimensions. Closure is not owned by `SCAF-ASSUR`: Assurance verifies/evaluates evidence; the authority that owns the underlying requirement, project design decision, risk acceptance or deviation accepts the relevant closure, while `SCAF-APP` records the disposition and trace.
 
-The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` now carries complete state/authority/closure traces for selected concerns instead of using a broad row count as proof.
+The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/authority/closure traces for selected concerns instead of using a broad row count as proof.
 
 ## Repository Content
 
@@ -219,13 +219,13 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` now carries complete stat
 | `docs/04_Overlap_Obsolescence_and_Gap_Analysis.md` | Duplicate authority, outdated framing, resolved coverage, remaining promotion/audit gaps and rewrite priorities |
 | `docs/05_SCAF_Taxonomy_Proposal.md` | SCAF authority planes, metamodel, concern taxonomy and tabletop validation |
 | `docs/06_Read_Coverage_Audit.md` | Read coverage, mapping confidence and deferred deep-audit record |
-| `CHANGELOG.md` | RC history |
+| `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.1rc05.**
+**No CI is included in v0.0.1.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -242,7 +242,7 @@ Human semantic authority
 
 ## Release Policy
 
-Discussion and iterative releases use RC versions. A non-RC version is created only after an explicit **freeze** decision.
+Discussion and iterative releases use RC versions. A non-RC version is created only after an explicit **freeze** decision. Frozen releases are not modified in place; semantic work continues on a new RC development line.
 
 Current sequence:
 
@@ -252,13 +252,14 @@ v0.0.1rc02
 v0.0.1rc03
 v0.0.1rc04
 v0.0.1rc05
+v0.0.1       # frozen architecture-convergence baseline
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.1rc05 preserves the closed architecture-discovery phase and serves as the cleaned authority-kernel baseline for **controlled normative rewrite**.
+v0.0.1 is the frozen architecture-convergence / authority-kernel baseline. It permits the next development line to begin **controlled L1/L2 normative rewrite** without reopening architecture discovery or top-level taxonomy expansion.
 
 Permitted initial rewrite scope:
 
@@ -268,12 +269,13 @@ Permitted initial rewrite scope:
 - high-confidence Gen1 **Baseline** donor concepts after source-anchor/maturity confirmation;
 - project-application and assurance semantics that preserve the canonical authority chain.
 
-Not yet permitted as frozen SCAF authority without additional audit:
+Not yet eligible for broad normative promotion or migration-completion claims without additional audit:
 
 - Draft/RC donor-derived requirements that have not been reconciled;
 - invariants known only through schemas, validators or executable fixtures and not yet extracted;
 - claims of completed Gen1 migration;
-- normative freeze / non-RC release;
 - broad implementation rulebooks, final schemas, validators or CI enforcement.
 
-Donor source identity is available, but immutable/retrievable donor snapshot locators remain pending. This is a **migration/promotion gate**, not a reason to reopen the SCAF taxonomy.
+Donor source identity is available, but immutable/retrievable donor snapshot locators remain pending. This is a **migration/promotion gate**, not a reason to reopen the SCAF taxonomy. The v0.0.1 freeze applies to this architecture-convergence baseline; it does not assert final Gen1 migration proof or blanket promotion of unaudited donor semantics.
+
+**Next development line:** `v0.0.2rc01` — controlled L1/L2 normative rewrite.

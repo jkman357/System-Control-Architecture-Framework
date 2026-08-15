@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc05**.
+This document records the exact source and review inputs used for the frozen **System Control Architecture Framework (SCAF) v0.0.1** architecture-convergence baseline.
 
 ## 2. Gen1 Formal Baseline
 
@@ -98,9 +98,25 @@ Treatment:
 - confirmed no new Critical architecture flaw and accepted controlled normative rewrite;
 - used to canonicalize the five SCAF framework planes vs project-side Project Design Authority, split time epoch from boot/session/operational incarnation identity, replace source-owned satisfaction wording with Applicable Satisfaction Basis, align migration targets with current authority semantics and remove stale rewrite-gate wording.
 
+
+### rc05 Review
+
+**Input:** `SCAF-v0.0.1rc05-independent-architecture-review.md`  
+**SHA-256:** `b76cb97be2dddca4f1591059e782c5a9dfe4ea5b51392beabe932dca6b003c7b`
+
+Treatment:
+
+- independent authority-kernel / architecture-convergence gate review for the v0.0.1 freeze decision;
+- not a normative SCAF source;
+- reported **no Critical architecture issue**;
+- directed architecture discovery and top-level taxonomy expansion to stop;
+- accepted Framework Scan as a new-project startup architecture decision mechanism;
+- accepted controlled L1/L2 normative rewrite with minor authority-language cleanup during the next development line;
+- retained broad donor promotion, final migration proof and machine-enforcement work as separate future gates.
+
 ## 5. Analysis Boundary
 
-v0.0.1rc05 performs:
+The frozen v0.0.1 baseline preserves the rc05 architecture-convergence work:
 
 1. preservation of complete Gen1 and supplemental repository inventory;
 2. document-role analysis;
@@ -121,7 +137,7 @@ v0.0.1rc05 performs:
 17. migration-map alignment with the current authority model and per-donor promotion gates;
 18. read-coverage and deep-audit-state audit.
 
-It permits **controlled normative rewrite** of the architecture kernel and audited/high-confidence content, while retaining donor-promotion gates.
+It permits the next development line to perform **controlled L1/L2 normative rewrite** of the architecture kernel and audited/high-confidence content, while retaining donor-promotion gates.
 
 It does **not** yet perform:
 
@@ -154,9 +170,9 @@ A source maturity marker is part of migration evidence. “Found in Gen1” is n
 
 The source archives are intentionally not copied into the SCAF source repository. Their archive names and SHA-256 digests identify the analyzed inputs, and source-section anchors in `03_Gen1_to_Gen2_Concept_Mapping.md` provide human-readable trace points.
 
-However, **identity is not retrievability**. An independent reviewer cannot reproduce source-semantic review from SHA-256 alone unless the exact donor snapshot is obtainable. Before migration completion or normative freeze, each donor snapshot must therefore gain an immutable/retrievable locator such as a repository commit/tag, release artifact locator, or controlled archive reference.
+However, **identity is not retrievability**. An independent reviewer cannot reproduce source-semantic review from SHA-256 alone unless the exact donor snapshot is obtainable. Before migration completion or broad normative promotion of donor-derived content, each donor snapshot must therefore gain an immutable/retrievable locator such as a repository commit/tag, release artifact locator, or controlled archive reference.
 
-Current rc05 status:
+Frozen v0.0.1 source-evidence status:
 
 - source identity: **available**;
 - source anchors: **available for mapped core concepts**;

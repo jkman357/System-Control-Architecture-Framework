@@ -66,7 +66,7 @@ The primary README contains both generic architecture and candidate implementati
 
 ## 4. Independent Review Coverage
 
-The v0.0.1rc1, v0.0.1rc02, v0.0.1rc03 and v0.0.1rc04 independent architecture reviews were read and used as correction input.
+The v0.0.1rc1, v0.0.1rc02, v0.0.1rc03, v0.0.1rc04 and v0.0.1rc05 independent architecture reviews were read and used as correction / gate evidence.
 
 Review findings incorporated through rc05 include:
 
@@ -115,7 +115,7 @@ This prevents a broad archaeology pass from being presented as completed normati
 
 ## 6. Tabletop Architecture / Application Coverage
 
-rc05 retains three non-normative architecture exercises:
+v0.0.1 retains three non-normative architecture exercises:
 
 1. single MCU system;
 2. PC + multiple MCU system;
@@ -123,7 +123,7 @@ rc05 retains three non-normative architecture exercises:
 
 At taxonomy level, all three remain representable without new ad-hoc top-level categories.
 
-rc05 retains complete-state worked Framework Scan traces against the PC + multiple MCU archetype for selected concerns. Each worked item instantiates:
+v0.0.1 retains complete-state worked Framework Scan traces against the PC + multiple MCU archetype for selected concerns. Each worked item instantiates:
 
 ```text
 Concern / Obligation
@@ -159,12 +159,12 @@ In particular, executable artifacts may encode invariants not fully repeated in 
 7. runtime diagnostics vs incident evidence vs assurance evidence;
 8. donor retrievability and requirement-level source-semantic reproducibility;
 9. implementation-profile precedence/composition after profile axes stabilize;
-10. Draft/RC donor and executable-invariant audit before normative promotion/freeze.
+10. Draft/RC donor and executable-invariant audit before broad normative promotion or migration-completion claims.
 
 ## 9. Audit Conclusion
 
 There are **no unread input files** among the two donor source archives used for the archaeology work.
 
-However, there are intentionally deferred **deep normative audits**. v0.0.1rc05 should therefore be treated as:
+However, there are intentionally deferred **deep normative audits**. The frozen v0.0.1 release should therefore be treated as:
 
-> **an architecture-closure baseline that permits controlled normative rewrite, with explicit donor-promotion and migration-completion gates; it is not a completed migration proof.**
+> **a frozen architecture-convergence / authority-kernel baseline that permits the next development line to perform controlled normative rewrite, with explicit donor-promotion and migration-completion gates; it is not a completed migration proof.**
