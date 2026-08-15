@@ -1,6 +1,6 @@
 # SCAF-ARCH — System / Node / Role / Domain Architecture Obligations
 
-**Release:** v0.0.2rc02  
+**Release:** v0.0.2rc03  
 **Concern:** `SCAF-ARCH`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -33,11 +33,15 @@ The **Project Design Authority Defines Project Instance / Decision** for actual 
 
 The project **SHALL** define a structural architecture sufficient to realize applicable `SCAF-CTX` Functions, Capabilities, Services and logical dependency needs.
 
-### `SCAF-ARCH-002` — Node-decomposition applicability and boundary decision
+### `SCAF-ARCH-002` — Node-decomposition applicability
 
 **Target:** Project-Applicable Obligation
 
 The project **SHALL** determine whether Node decomposition is Applicable for representing independently meaningful architecture responsibilities, lifecycle/interaction identities, controlled obligations or subordinate-System abstractions at the current reasoning scope.
+
+### `SCAF-ARCH-016` — Node-boundary decision, when Applicable
+
+**Target:** Project-Applicable Obligation
 
 Where Node decomposition is Applicable, the Project Design Authority **SHALL** define and justify Node boundaries using architecture criteria rather than automatically mapping Nodes to chips, boards, processes, threads, FPGA blocks or network endpoints.
 
@@ -89,8 +93,6 @@ The project **SHALL NOT** assume Node boundary and Domain boundary are equivalen
 
 Where containment reasoning is Applicable, the Project Design Authority **SHALL** identify the actual structural/Domain boundaries that are inputs to downstream `SCAF-ROB` containment analysis.
 
-`SCAF-ARCH` **Defines Framework Semantics / Obligation** for representing those structural/Domain boundaries; it **SHALL NOT** define the runtime fault-containment response owned by `SCAF-ROB`.
-
 ### `SCAF-ARCH-009` — Subordinate System versus subordinate Node
 
 **Target:** Project-Applicable Obligation
@@ -139,9 +141,19 @@ The project **SHALL** keep `SCAF-CTX` logical Service dependencies distinguishab
 
 **Target:** Project-Applicable Obligation
 
-Where a shared resource, shared provider or common infrastructure creates a material coupled-failure or capacity dependency, the project **SHALL** represent that structural dependency sufficiently for downstream `SCAF-ROB` and `SCAF-TIME` analysis.
+Where a shared resource, shared provider or common infrastructure creates a material coupled-failure or capacity dependency, the project **SHALL** represent the affected structural dependency, participating System/Node responsibilities and shared dependency source so that downstream `SCAF-ROB` and `SCAF-TIME` obligations can reference the same controlled architecture relationship.
 
-## 4. Required Project Decisions / Records
+## 4. Framework Normative Invariants
+
+### `SCAF-ARCH-017` — ARCH / ROB containment authority boundary
+
+**Target:** Framework Normative Invariant
+
+`SCAF-ARCH` **Defines Framework Semantics / Obligation** for structural and Domain-boundary representation used by containment reasoning.
+
+`SCAF-ARCH` **SHALL NOT** define project runtime fault-containment response; runtime failure, containment and recovery-response semantics remain under `SCAF-ROB`.
+
+## 5. Required Project Decisions / Records
 
 The following table summarizes expected project outputs from the obligations above; it is informative and does not create additional normative requirements.
 
@@ -156,7 +168,7 @@ The following table summarizes expected project outputs from the obligations abo
 | Subordinate System vs subordinate Node treatment | Project Design Authority |
 | Controlled architecture artifact(s) | Records Project Design Authority decisions; artifact is not the authority role |
 
-## 5. Concern Boundaries
+## 6. Concern Boundaries
 
 - `SCAF-CTX` **Defines Framework Semantics / Obligation** for logical mission/function/service context and logical dependency semantics.
 - `SCAF-INT` **Defines Framework Semantics / Obligation** for interface, interaction and data-contract semantics.
@@ -167,6 +179,6 @@ The following table summarizes expected project outputs from the obligations abo
 - `SCAF-PROF` may **Constrain / Guide Realization**; **Project Realization** performs actual realization.
 - `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for assurance/evidence rules; **Project Verification / Assurance Authority Verifies** the project realization/decision against the Applicable Satisfaction Basis.
 
-## 6. Non-Normative Example
+## 7. Non-Normative Example
 
 A SoC, FPGA and DSP may be one Node, several Nodes, or a subordinate System plus Nodes depending on responsibility, lifecycle, interaction and authority boundaries. SCAF does not decide the count from technology names and does not require Node decomposition when it adds no independently meaningful architecture reasoning. The project makes the applicable structural decisions and then applies interaction, timing, robustness, lifecycle and assurance obligations to the resulting structure.

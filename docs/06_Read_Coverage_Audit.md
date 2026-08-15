@@ -169,6 +169,6 @@ However, there are intentionally deferred **deep normative audits**. The frozen 
 
 > **a frozen architecture-convergence / authority-kernel baseline that permits the next development line to perform controlled normative rewrite, with explicit donor-promotion and migration-completion gates; it is not a completed migration proof.**
 
-## 10. v0.0.2rc02 Normative Rewrite Coverage
+## 10. v0.0.2rc03 Normative Rewrite Coverage
 
-This release continues the controlled Authority Kernel, `SCAF-CTX` and `SCAF-ARCH` tranche as a targeted normative-precision correction after rc01 review. Donor-specific deep audit remains a separate promotion gate; no Draft/RC or executable-only donor invariant is silently promoted by these new documents.
+This release closes the remaining target-class and authority-source precision defects in the controlled Authority Kernel, `SCAF-CTX` and `SCAF-ARCH` tranche after rc02 review. Donor-specific deep audit remains a separate promotion gate; no Draft/RC or executable-only donor invariant is silently promoted by these documents.

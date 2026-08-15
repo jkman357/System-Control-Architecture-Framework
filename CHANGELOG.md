@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.0.2rc03 — 2026-08-15
+
+Target/authority precision closure release after independent review of v0.0.2rc02. The frozen v0.0.1 architecture baseline remains unchanged.
+
+### Changed
+
+- split mixed requirement targets so Project-Applicable Obligations no longer contain SCAF framework self-rules;
+- separated `SCAF-CTX-007` project consequence/outcome obligations from the `SCAF-CTX` / `SCAF-ROB` / safety-authority framework boundary invariant;
+- restored applicable safety/hazard authority as the source authority for safety-significant safety objectives/conditions and risk-acceptance basis, with Project Design Authority integrating those inputs into architecture;
+- separated `SCAF-ARCH-008` project containment-structure inputs from the framework-level ARCH/ROB containment-authority invariant;
+- separated Decision from Deviation and Verification Obligation from Verification Execution/Result State in `SCAF-AK-003`;
+- split evidence-sufficiency evaluation from underlying closure authority by adding `SCAF-AK-012`;
+- moved the unqualified relation-language prohibition into the explicit `SCAF-AK-011` Framework Normative Invariant;
+- split Node-decomposition applicability from Node-boundary definition into `SCAF-ARCH-002` and `SCAF-ARCH-016`;
+- tightened `SCAF-CTX-003` Function traceability and `SCAF-ARCH-015` shared-dependency representation wording;
+- normalized frozen-reference wording so current development-line semantics no longer carry stale rc01 labels or outdated evidence/acceptance language.
+
+### Deliberately Not Added
+
+- `SCAF-INT`, `SCAF-TIME` or `SCAF-RUN` normative tranches;
+- new top-level taxonomy branches or core metamodel entities;
+- L3 mechanism catalogs or L4 implementation rulebooks;
+- schema, validator, CI or generated checklist machinery;
+- broad donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc02 — 2026-08-15
 
 Targeted normative-precision correction release after independent review of v0.0.2rc01. The frozen v0.0.1 architecture baseline remains unchanged.

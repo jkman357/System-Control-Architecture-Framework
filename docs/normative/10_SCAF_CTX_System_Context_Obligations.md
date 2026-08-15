@@ -1,6 +1,6 @@
 # SCAF-CTX — System Context, Mission, Function & Service Obligations
 
-**Release:** v0.0.2rc02  
+**Release:** v0.0.2rc03  
 **Concern:** `SCAF-CTX`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -23,9 +23,11 @@
 - consequence-of-service-loss and required continuity/degradation outcome reasoning;
 - assumptions that materially affect architecture decisions.
 
-The **Project Design Authority Defines Project Instance / Decision** for the actual project boundary, mission/function/service model, provider/consumer relationships, logical dependencies, consequence/criticality decisions and applicable assumptions, subject to applicable external-authority constraints.
+The **Project Design Authority Defines Project Instance / Decision** for the actual project boundary, mission/function/service model, provider/consumer relationships, logical dependencies, ordinary mission consequence/continuity/degraded-service architecture outcomes and applicable assumptions, subject to applicable external-authority constraints.
 
-`SCAF-CTX` does not define the project topology, structural allocation, runtime failover/recovery behavior or implementation mechanism.
+For safety-significant conditions, the applicable project safety/hazard authority remains the source authority for the safety objective/condition and risk-acceptance basis. The Project Design Authority integrates those controlled safety inputs into the project architecture; it does not replace their source authority.
+
+`SCAF-CTX` does not define the project topology, structural allocation, runtime failover/recovery behavior, safety-significant safe condition or implementation mechanism.
 
 ## 3. Normative Obligations
 
@@ -47,7 +49,7 @@ The project **SHALL** identify the mission, objective, use case or equivalent pu
 
 **Target:** Project-Applicable Obligation
 
-The project **SHALL** identify the Functions required to achieve applicable System objectives at a level sufficient to support architecture allocation, dependency reasoning and verification planning.
+The project **SHALL** identify the Functions required to achieve applicable System objectives.
 
 ### `SCAF-CTX-004` — Capabilities
 
@@ -79,9 +81,9 @@ The logical dependency model **SHALL** remain distinguishable from later structu
 
 For each Function or Service whose loss or degradation can materially affect mission or required operation, the project **SHALL** identify the relevant consequence.
 
-Where continuity, degraded operation or a safety/risk-related outcome is required, the project **SHALL** identify the required outcome/constraint at the context level and preserve the provenance of any applicable external safety, security, regulatory or risk authority.
+For ordinary mission continuity or degraded-service needs, the project **SHALL** identify the required context-level outcome and its authority provenance.
 
-`SCAF-CTX` **SHALL NOT** select or own runtime failover, recovery or containment behavior. Those response semantics belong to `SCAF-ROB`; safety-significant conditions remain constrained by the applicable safety/hazard authority.
+For a safety-significant safety objective/condition or risk-acceptance basis, the project **SHALL** preserve the applicable safety/hazard authority as the source authority and **SHALL** trace how the Project Design Authority integrates that controlled input into the project architecture.
 
 ### `SCAF-CTX-008` — External actors and authorities
 
@@ -105,7 +107,7 @@ An assumption whose invalidation can change architecture decisions **SHALL** hav
 
 The project **SHALL** maintain the material CTX Functions, Capabilities, Services, dependencies, consequences, assumptions and external constraints with stable references or controlled identifiers sufficient for downstream architecture decisions to trace to their motivating context.
 
-`SCAF-CTX-010` does not create a second context-to-architecture justification authority; `SCAF-ARCH` owns the framework obligation for structural decisions to trace to applicable context.
+`SCAF-CTX-010` does not create a second context-to-architecture justification authority; `SCAF-ARCH` **Defines Framework Semantics / Obligation** for structural decisions to trace to applicable context.
 
 ### `SCAF-CTX-011` — Context changes require re-scan
 
@@ -119,7 +121,23 @@ Changes to System scope, mission, required Service, provider/consumer relationsh
 
 Where operating modes materially change required behavior, dependencies, risk, continuity/degradation expectation or verification basis, the project **SHALL** identify those operating modes and their context significance.
 
-## 4. Required Project Decisions / Records
+### `SCAF-CTX-013` — Function traceability
+
+**Target:** Project-Applicable Obligation
+
+Each material Function **SHALL** trace to at least one applicable objective, requirement source or equivalent controlled mission input.
+
+## 4. Framework Normative Invariants
+
+### `SCAF-CTX-014` — CTX / ROB / safety-authority boundary
+
+**Target:** Framework Normative Invariant
+
+`SCAF-CTX` **SHALL NOT** define or select project runtime failover, recovery or containment behavior; those runtime resilience-response semantics belong to `SCAF-ROB`.
+
+`SCAF-CTX` **SHALL NOT** become the source authority for a safety-significant safety objective/condition or its risk-acceptance basis; those remain owned by the applicable project safety/hazard authority.
+
+## 5. Required Project Decisions / Records
 
 The following table summarizes expected project outputs from the obligations above; it is informative and does not create additional normative requirements.
 
@@ -131,12 +149,13 @@ The following table summarizes expected project outputs from the obligations abo
 | Function / Capability / Service model | Project Design Authority |
 | Provider / consumer relationships | Project Design Authority |
 | Logical dependency model | Project Design Authority |
-| Consequence / continuity / degraded-service outcome | Project Design Authority, constrained by applicable external safety/security/regulatory/risk authority |
+| Ordinary mission consequence / continuity / degraded-service outcome | Project Design Authority, constrained by applicable external authorities |
+| Safety-significant safety objective/condition and risk-acceptance basis | Applicable safety/hazard authority; integrated into architecture by Project Design Authority |
 | Material assumptions / external constraints | Applicable source authority; integrated into architecture by Project Design Authority |
 
 The Framework Scan may **Disposition / Trace** these decisions but does not own them.
 
-## 5. Concern Boundaries
+## 6. Concern Boundaries
 
 - `SCAF-ARCH` **Defines Framework Semantics / Obligation** for structural allocation, topology, Nodes and Domains.
 - `SCAF-INT` **Defines Framework Semantics / Obligation** for interface, interaction and data-contract semantics.
@@ -145,6 +164,6 @@ The Framework Scan may **Disposition / Trace** these decisions but does not own 
 - `SCAF-SEC` **Constrains** architecture using security-originated objectives/constraints from the applicable security authority.
 - `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for assurance/evidence rules; Project Verification / Assurance Authority **Verifies** applicable CTX obligations and project decisions.
 
-## 6. Non-Normative Example
+## 7. Non-Normative Example
 
 A project may identify a logical Service `Command Delivery` provided to an actuator-control Function. `SCAF-CTX` requires the logical need, provider/consumer relation, consequence of Service loss and any required continuity/degradation outcome to be understood. It does not decide whether that Service is realized through UART, CAN, shared memory or another mechanism, nor does it select the runtime failover behavior.

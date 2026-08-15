@@ -1,6 +1,6 @@
 # SCAF Authority Kernel
 
-**Release:** v0.0.2rc02  
+**Release:** v0.0.2rc03  
 **Layer:** L1 Authority Kernel  
 **Status:** Normative RC
 
@@ -114,8 +114,8 @@ Project Verification / Assurance Authority
     Verifies against the Applicable Satisfaction Basis
 
 SCAF-APP cross-cuts the chain by Dispositioning / Tracing
-applicability, decision/deviation, risk, verification,
-evidence, closure and re-evaluation state.
+applicability, decision, deviation, risk, verification obligation,
+verification result/state, evidence, closure and re-evaluation state.
 
 SCAF-PROF may Constrain / Guide Realization.
 SCAF-ASSUR defines the verification/evidence semantics used
@@ -144,23 +144,23 @@ The project **SHALL** distinguish:
 2. the Controlled Decision itself; and
 3. the Authoritative Artifact that records the decision.
 
-A document, record, schema or tool **SHALL NOT** be treated as the decision authority merely because it stores the decision.
+A document, record, schema or tool **SHALL NOT** be treated as the decision authority merely because it stores the decision. A Framework Scan or equivalent project-application record **SHALL NOT** replace the Authoritative Artifact or Project Design Authority.
 
 ### `SCAF-AK-003` — Project Application state dimensions
 
 **Target:** Project-Applicable Obligation
 
-A Framework Scan or equivalent `SCAF-APP` record **SHALL** keep the following project-state dimensions distinguishable when applicable:
+A Framework Scan or equivalent `SCAF-APP` record **SHALL** keep the following project dimensions distinguishable when applicable:
 
 - applicability state;
-- decision/deviation state;
+- decision state;
+- deviation state;
 - risk state;
-- verification state/obligation;
+- verification obligation;
+- verification execution/result state;
 - evidence state;
 - closure state; and
 - re-evaluation trigger/trace.
-
-The record **SHALL NOT** replace the authoritative project architecture artifact or Project Design Authority.
 
 ### `SCAF-AK-004` — Project Realization separation from SCAF-PROF
 
@@ -168,7 +168,7 @@ The record **SHALL NOT** replace the authoritative project architecture artifact
 
 Project Realization **SHALL** remain the project-side responsibility/activity that implements the Controlled Decision.
 
-Applicable `SCAF-PROF` content **MAY** Constrain or Guide Realization, but **SHALL NOT** be represented as the project realization actor.
+Applicable `SCAF-PROF` content **MAY** Constrain or Guide Realization, but the project **SHALL NOT** represent that framework-side content as the project realization actor.
 
 ### `SCAF-AK-005` — Project verification separation from SCAF-ASSUR
 
@@ -193,17 +193,23 @@ The basis **SHALL** trace, as applicable, to:
 
 The Applicable Satisfaction Basis is a trace construct and **SHALL NOT** create a new authority.
 
-### `SCAF-AK-007` — Evidence sufficiency and closure authority
+### `SCAF-AK-007` — Evidence sufficiency evaluation
 
 **Target:** Project-Applicable Obligation
 
 The Project Verification / Assurance Authority **SHALL** determine whether project evidence is sufficient for the applicable verification claim by applying `SCAF-ASSUR` semantics and the Applicable Satisfaction Basis.
 
-Evidence sufficiency **SHALL NOT** by itself grant authority to accept the underlying requirement, design decision, risk, deviation or other project obligation.
+Evidence sufficiency **SHALL NOT** by itself grant authority to accept or close the underlying requirement, design decision, risk, deviation or other project obligation.
 
-The authority that owns the underlying requirement, design decision, risk acceptance or deviation **SHALL** retain the corresponding closure authority. If project governance reassigns that underlying authority, the reassigned role **SHALL** be explicit and shall act in that underlying authority capacity, not merely in its verification role.
+### `SCAF-AK-012` — Underlying closure authority
 
-`SCAF-APP` **SHALL** record closure/disposition trace without becoming that closure authority.
+**Target:** Project-Applicable Obligation
+
+The authority that owns the underlying requirement, design decision, risk acceptance or deviation **SHALL** retain the corresponding closure authority.
+
+If project governance reassigns that underlying authority, the reassigned role **SHALL** be explicit and **SHALL** act in that underlying authority capacity, not merely in a verification role.
+
+The project **SHALL** record closure/disposition trace through `SCAF-APP` or an equivalent controlled project-application record without treating that record as the closure authority.
 
 ### `SCAF-AK-008` — Cross-cutting concerns and project-instance ownership
 
@@ -241,6 +247,8 @@ SCAF normative concern documents **SHALL** use relation language that preserves 
 
 Where a SCAF concern does not own a project-instance value, it **SHALL** use relations such as **Constrains**, **Observes**, **Guides Realization** or framework-side assurance semantics rather than wording that implies duplicate project-instance ownership.
 
+Unqualified `Defines`, `owns`, `acceptance` and `Realizes` **SHALL NOT** be used in normative authority declarations where they could obscure framework-side/project-side authority, evidence-sufficiency, or closure semantics.
+
 ## 7. Relation Grammar for Normative Documents
 
 - **Defines Framework Semantics / Obligation** — framework-side semantic/normative owner.
@@ -250,13 +258,11 @@ Where a SCAF concern does not own a project-instance value, it **SHALL** use rel
 - **Realizes** — Project Realization implements a Controlled Decision / required property.
 - **Observes** — runtime observation/evidence of a property without becoming its source authority.
 - **Verifies** — Project Verification / Assurance Authority demonstrates/evaluates satisfaction.
-- **Dispositions / Traces** — project application record of applicability, decision/deviation, risk, verification, evidence, closure and re-evaluation state.
-
-Unqualified `Defines`, `owns`, `acceptance` and `Realizes` **SHOULD** be avoided where they could obscure the framework-side/project-side distinction.
+- **Dispositions / Traces** — project application record of applicability, decision, deviation, risk, verification obligation/result, evidence, closure and re-evaluation state.
 
 ## 8. Rewrite and Promotion Gates
 
-| Gate | Meaning in v0.0.2rc02 |
+| Gate | Meaning in v0.0.2rc03 |
 |---|---|
 | Architecture convergence | Passed by frozen v0.0.1 baseline |
 | Controlled L1/L2 rewrite | Open |

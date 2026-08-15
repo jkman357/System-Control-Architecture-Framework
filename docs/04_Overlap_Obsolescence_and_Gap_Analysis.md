@@ -165,7 +165,7 @@ Controlled normative elaboration must ask:
 
 For safety-relevant projects, project safety/hazard authority must define the safety-significant condition/strategy. SCAF may define:
 
-- which project authority owns entry/exit decisions;
+- which project authority **Defines Project Instance / Decision** for entry/exit decisions;
 - state-transition behavior;
 - interaction requirements;
 - observability;

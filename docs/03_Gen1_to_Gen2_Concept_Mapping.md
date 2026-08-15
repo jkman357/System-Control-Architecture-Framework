@@ -182,6 +182,6 @@ The correct current interpretation is:
 
 > **source-anchored migration hypothesis with explicit confidence and audit state**, not final migration proof.
 
-## 8. v0.0.2rc01 Rewrite Use
+## 8. v0.0.2 Controlled Rewrite Use
 
-The migration map may identify content eligible to **enter controlled rewrite**, but this is not a normative-promotion credential. v0.0.2rc01 uses the frozen architecture home and source/maturity/audit metadata to bound rewrite scope. Draft/RC/mixed-maturity donors and executable-only invariants remain gated until individually reconciled.
+The migration map may identify content eligible to **enter controlled rewrite**, but this is not a normative-promotion credential. The v0.0.2 development line uses the frozen architecture home and source/maturity/audit metadata to bound rewrite scope. Draft/RC/mixed-maturity donors and executable-only invariants remain gated until individually reconciled.

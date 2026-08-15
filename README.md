@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc02  
+**Version:** v0.0.2rc03  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-15
 
@@ -37,17 +37,17 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc02 Targeted Normative Precision Position
+## v0.0.2rc03 Target/Authority Precision Closure Position
 
-v0.0.2rc02 is the targeted correction release after independent review of the first L1/L2 rewrite tranche. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc03 is the target/authority precision closure release after independent review of rc02. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
-This release keeps the same three normative documents and corrects authority precision before expanding to another concern tranche:
+This release keeps the same three normative documents and closes the remaining mixed-target and safety-authority wording defects before any expansion to another concern tranche:
 
 - `docs/normative/00_SCAF_Authority_Kernel.md`
 - `docs/normative/10_SCAF_CTX_System_Context_Obligations.md`
 - `docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md`
 
-The rc02 tranche corrects normative authority leakage identified in rc01 without reopening architecture. It explicitly distinguishes **Project-Applicable Obligations** from **Framework Normative Invariants**, restores project-side verification/evidence decisions to Project Verification / Assurance Authority, narrows CTX/ROB/safety boundaries, and makes Node decomposition conditional on architecture applicability. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
+The rc03 tranche preserves the rc02 authority corrections and additionally separates mixed requirement targets in CTX/ARCH, restores safety-significant condition source ownership to the applicable safety/hazard authority, separates Decision from Deviation and Verification Obligation from Verification Result/State, and tightens requirement atomicity where the previous wording could be copied into later concern tranches. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
 
 Normative precedence for this RC is:
 
@@ -59,7 +59,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc02 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc03 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -264,7 +264,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc02.**
+**No CI is included in v0.0.2rc03.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -294,20 +294,21 @@ v0.0.1rc05
 v0.0.1       # frozen architecture-convergence baseline
 v0.0.2rc01   # first controlled L1/L2 normative rewrite
 v0.0.2rc02   # targeted normative precision correction
+v0.0.2rc03   # target/authority precision closure
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc02 is in **controlled L1/L2 normative rewrite — targeted correction**.
+v0.0.2rc03 is in **controlled L1/L2 normative rewrite — target/authority precision closure**.
 
 Open scope in this RC:
 
-- Authority Kernel normative language;
-- `SCAF-CTX` L1/L2 obligations;
-- `SCAF-ARCH` L1/L2 obligations;
-- lexical/authority cleanup needed to preserve the frozen v0.0.1 model.
+- Authority Kernel target/state/closure grammar;
+- `SCAF-CTX` target separation and safety-authority source ownership;
+- `SCAF-ARCH` target separation and Node/containment obligation atomicity;
+- lexical/authority cleanup needed to make this tranche safe as a baseline for later concern authoring.
 
 Still closed/gated:
 

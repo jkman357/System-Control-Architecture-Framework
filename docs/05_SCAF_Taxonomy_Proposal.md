@@ -1,6 +1,6 @@
 # SCAF Taxonomy Proposal
 
-> **Frozen architecture reference:** The v0.0.1 taxonomy/authority structure is frozen as the architecture baseline. v0.0.2rc01 normative L1/L2 content is authored under `docs/normative/`; this file remains the architecture reference rather than the sole normative requirements source.
+> **Frozen architecture reference:** The v0.0.1 taxonomy/authority structure is frozen as the architecture baseline. Controlled v0.0.2 L1/L2 normative content is authored under `docs/normative/`; this file remains the architecture reference rather than the sole normative requirements source.
 
 ## 1. Purpose
 
@@ -827,7 +827,7 @@ This exercise proves the independent state dimensions and closure authority on s
 | Applicable Satisfaction Basis | `SCAF-ROB/ARCH` obligation semantics + the Project Design Authority's containment, degraded-service and recovery/reintegration decisions + applicable risk constraints; a single scoped Node failure does not violate the approved containment basis and recovery/reintegration occurs only under defined conditions. |
 | Verification state / method | **Required -> Planned -> Passed** using peer-loss, timeout, restart, shared-resource stress and repeated recovery fault injection. |
 | Evidence state / item | **Required -> Available -> Accepted** — fault-injection report, state/event traces, reset cause + boot-incarnation identity + applicable protocol/operational incarnation identity, and unresolved-anomaly disposition. |
-| Closure / deviation and authority | Project Architecture/Robustness Design Authority accepts the project decision/realization; verification authority accepts evidence sufficiency; risk authority accepts residual risk/deviation if any; `SCAF-APP` records closure and the re-open trigger. |
+| Closure / deviation and authority | Project Verification / Assurance Authority determines evidence sufficiency; the applicable underlying requirement/design/risk/deviation authority accepts the corresponding closure in that authority capacity; `SCAF-APP` records closure/disposition and the re-open trigger. |
 | Re-evaluation trigger | shared-resource topology, recovery mechanism, service criticality, Node/domain boundary or lifecycle/update behavior changes. |
 
 **Observed startup loop:** the first scan pass produces provisional CTX/ARCH decisions. Those decisions change the scope and dependencies used by later concerns, so the scan re-enters CTX/ARCH rather than running once as a linear checklist.
@@ -842,7 +842,7 @@ The three architecture exercises establish representability; the worked Archetyp
 
 ## 11. Current Rewrite Gate
 
-**Controlled L1/L2 normative rewrite is active in v0.0.2rc01 and is based on the frozen v0.0.1 architecture baseline.**
+**Controlled L1/L2 normative rewrite is active on the v0.0.2 development line and is based on the frozen v0.0.1 architecture baseline.**
 
 The architecture skeleton remains closed to taxonomy exploration unless a concrete project demonstrates an authority-home failure. The first normative tranche is intentionally bounded to:
 
