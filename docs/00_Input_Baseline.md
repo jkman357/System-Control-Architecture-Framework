@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc04**.
+This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc05**.
 
 ## 2. Gen1 Formal Baseline
 
@@ -86,9 +86,21 @@ Treatment:
 - confirmed that the architecture skeleton and framework-vs-project authority split are structurally viable;
 - used to close canonical authority-diagram consistency, authority-grammar usage, Framework Scan closure semantics, Service/Capability and hierarchical System/Node ambiguity, ROB/LIFE/OBS boundaries, security-vs-project authority wording and multi-source migration traceability.
 
+### rc04 Review
+
+**Input:** `SCAF-v0.0.1rc04-independent-architecture-review(1).md`  
+**SHA-256:** `96aafa8b0ad9d184327ec364acc948765327ace3cb3617b145c629358552ef51`
+
+Treatment:
+
+- independent architecture/framework review evidence for rc05;
+- not a normative SCAF source;
+- confirmed no new Critical architecture flaw and accepted controlled normative rewrite;
+- used to canonicalize the five SCAF framework planes vs project-side Project Design Authority, split time epoch from boot/session/operational incarnation identity, replace source-owned satisfaction wording with Applicable Satisfaction Basis, align migration targets with current authority semantics and remove stale rewrite-gate wording.
+
 ## 5. Analysis Boundary
 
-v0.0.1rc04 performs:
+v0.0.1rc05 performs:
 
 1. preservation of complete Gen1 and supplemental repository inventory;
 2. document-role analysis;
@@ -103,7 +115,11 @@ v0.0.1rc04 performs:
 11. three representative tabletop architecture exercises;
 12. complete-state/closure worked Framework Scan traces for selected concerns in the PC + multiple MCU archetype;
 13. canonical concern/Project Design/Realization/Assurance authority-chain closure;
-14. read-coverage and deep-audit-state audit.
+14. five-plane vs project-side authority canonicalization;
+15. time epoch / boot incarnation / protocol-session / operational-incarnation semantic partition;
+16. Applicable Satisfaction Basis trace semantics;
+17. migration-map alignment with the current authority model and per-donor promotion gates;
+18. read-coverage and deep-audit-state audit.
 
 It permits **controlled normative rewrite** of the architecture kernel and audited/high-confidence content, while retaining donor-promotion gates.
 
@@ -140,7 +156,7 @@ The source archives are intentionally not copied into the SCAF source repository
 
 However, **identity is not retrievability**. An independent reviewer cannot reproduce source-semantic review from SHA-256 alone unless the exact donor snapshot is obtainable. Before migration completion or normative freeze, each donor snapshot must therefore gain an immutable/retrievable locator such as a repository commit/tag, release artifact locator, or controlled archive reference.
 
-Current rc04 status:
+Current rc05 status:
 
 - source identity: **available**;
 - source anchors: **available for mapped core concepts**;

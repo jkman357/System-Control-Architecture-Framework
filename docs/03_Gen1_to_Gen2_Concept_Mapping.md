@@ -40,7 +40,7 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | `SCAF-CTX` | System Context, Mission, Function & Service |
 | `SCAF-ARCH` | System / Node / Role / Domain Architecture |
 | `SCAF-INT` | Interfaces, Interaction & Data Contracts |
-| `SCAF-RUN` | Runtime Behavior, State & Lifecycle |
+| `SCAF-RUN` | Runtime Behavior, State & Operational Lifecycle |
 | `SCAF-TIME` | Timing, Concurrency, Capacity & Resource Margin |
 | `SCAF-ROB` | Robustness & Resilience |
 | `SCAF-LIFE` | Boot, Power, Reset & Update Lifecycle |
@@ -60,7 +60,9 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | System architecture baseline | `Coordinator_Node_Control_Framework.md` | Part I §1.1–1.4 Framework Position / System Layers / Layer Responsibilities | Baseline v1.1.7 | `SCAF-ARCH` | Rewrite | Generalize beyond Coordinator/embedded framing | High | Partial |
 | Control-role authority | `Coordinator_Node_Control_Framework.md` | §1.6 Control Role and State Authority; §2.2–2.4 Coordinator/Node/Role Relativity | Baseline v1.1.7 | `SCAF-ARCH` | Merge | Convert fixed classes to contextual Role semantics | High | Partial |
 | Role relativity | `Coordinator_Node_Control_Framework.md` | §2.4 Role Relativity | Baseline v1.1.7 | `SCAF-ARCH` | Keep | Elevate to core metamodel | High | Partial |
-| Node identity / capability | `Coordinator_Node_Control_Framework.md` | §2.8 Node Identity and Capability; §2.11.1–2.11.3 | Baseline v1.1.7 | `SCAF-ARCH` | Merge | Separate Node identity from address/route/session and from physical device identity | High | Partial |
+| Node identity | `Coordinator_Node_Control_Framework.md` | §2.8 Node Identity and Capability; §2.11.1–2.11.3 | Baseline v1.1.7 | `SCAF-ARCH` | Merge | Separate architectural Node identity from address/route/session and physical device identity | High | Partial |
+| Capability semantics / service-facing meaning | `Coordinator_Node_Control_Framework.md` | §2.8 Node Identity and Capability; §2.11.1–2.11.3 | Baseline v1.1.7 | `SCAF-CTX` | Rewrite | Generalize capability semantics independently of Node identity and implementation technology | High | Partial |
+| Capability allocation | `Coordinator_Node_Control_Framework.md` | §2.8 Node Identity and Capability; §2.11.1–2.11.3 | Baseline v1.1.7 | `SCAF-ARCH` | Move | Treat project-specific placement/allocation as architecture decision constrained by CTX semantics | High | Partial |
 | Single/multi-node topology | `Coordinator_Node_Control_Framework.md` | §2.11 Single-Node and Multi-Node Architecture Baseline | Baseline v1.1.7 | `SCAF-ARCH` | Keep | Generalize to hierarchical/heterogeneous systems | High | Partial |
 | Per-node isolation | `Coordinator_Node_Control_Framework.md` | §2.11.2 Per-Node Context and Isolation | Baseline v1.1.7 | `SCAF-ARCH`, `SCAF-ROB` | Move | Split architecture domain definition from fault/runtime containment behavior | High | Partial |
 | Function / service model | `Framework_Application_Analysis_Template.md` | §6.2 Services; §8 Functional Analysis | Baseline v1.1.9 | `SCAF-CTX` | Rewrite | Elevate service/function/dependency to first-class system model | High | Partial |
@@ -89,13 +91,13 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | Runtime operational logs | `Coordinator_Logging_Guide.md` | logging identity/correlation/structured diagnostic sections | Draft for Review v1.1.1 | `SCAF-OBS`, `SCAF-PROF` | Merge | Core defines observability intent; implementation profile realizes logging | Medium | Deferred |
 | First-abnormal-state localization | Crash Recorder `README.md` | Part A §A4–A8 Probe Layers / First-Fault Latch / Timeline / Breadcrumbs | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-ROB` | Merge | Generalize evidence objective; keep recorder mechanics subordinate | High | Partial |
 | Evidence survivability | Crash Recorder `README.md` | Part B §B8–B18 Evidence State/Persistence/Crash Loop; Part E Evidence Quality vs Survivability | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-LIFE` | Merge | Generalize survival classes and boot salvage | High | Partial |
-| Reset cause / boot epoch | Crash Recorder `README.md` | §B31 Reset Cause as Evidence; §B32 Boot Epoch | Specification RC v1.0.1rc03 | `SCAF-LIFE`, `SCAF-OBS` | Merge | Generalize correlation semantics | High | Partial |
+| Reset cause / boot incarnation | Crash Recorder `README.md` | §B31 Reset Cause as Evidence; §B32 Boot Epoch | Specification RC v1.0.1rc03 | `SCAF-LIFE`, `SCAF-OBS` | Merge | Generalize donor “boot epoch” into LIFE-owned boot-incarnation identity recorded by OBS; do not confuse it with TIME-owned time epoch | High | Partial |
 | Observer effect | Crash Recorder `README.md` | §A23 Observer-Effect Audit; §B37 Observer-Effect Audit | Specification RC v1.0.1rc03 | `SCAF-ASSUR`, `SCAF-OBS` | Merge | Elevate diagnostic self-interference as assurance obligation | High | Partial |
 | Evidence accessibility/export | Crash Recorder `README.md` | §B13 Automatic Export; §B14 Manual UI Role; §B15–B16 Export Failure/Completion | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-PROF` | Move | Define accessibility intent; keep media/UI mechanics in profiles | High | Partial |
 | Fault/error/failure semantic chain | — | — | SCAF New | `SCAF-ROB` | New | Introduce explicit condition→activation→error→propagation→service failure→consequence model | High | New |
 | Fault-tolerance mechanisms | — | — | SCAF New | `SCAF-ROB` | New | Add redundancy/failover/reconfiguration/repair/resynchronization/reintegration | High | New |
 | Cross-cutting domains | Gen1 isolation/reset/security/resource donors [mixed maturity; each donor must be individually bound before promotion] | Multiple anchors above | Per-donor binding required | `SCAF-ARCH` | Rewrite | Model Fault/Reset/Power/Security/Resource domains independently of Node | High | Partial |
-| Distributed incident time provenance | Crash Recorder timestamp/boot-epoch concepts [Specification RC v1.0.1rc03] + SCAF time-semantics extension [SCAF New] | A16 Timestamp and Ordering; B32 Boot Epoch | Per-donor binding | `SCAF-TIME`, `SCAF-OBS` | Rewrite | `SCAF-TIME` defines synchronization/uncertainty semantics; `SCAF-OBS` records provenance/quality and cross-node correlation evidence | High | Partial |
+| Distributed incident time / incarnation provenance | Crash Recorder timestamp/boot-epoch concepts [Specification RC v1.0.1rc03] + SCAF time-semantics extension [SCAF New] | A16 Timestamp and Ordering; B32 Boot Epoch | Per-donor binding | `SCAF-TIME`, `SCAF-LIFE`, `SCAF-INT`, `SCAF-RUN`, `SCAF-OBS` | Rewrite | TIME defines time epoch/synchronization/uncertainty; LIFE owns boot incarnation; INT owns protocol/session identity; RUN owns operational incarnation where applicable; OBS records provenance/quality/correlation evidence | High | Partial |
 | Implementation rulebooks | C# / Embedded C rule donors [mixed Baseline/Draft maturity; bind individual authority before promotion] | Full language authorities | Per-donor binding required | `SCAF-PROF` | Move | Keep language/runtime mechanisms outside system concern authority | High | Deferred |
 | Machine-verifiable governance | schemas/tools/tests/workflow | repository artifacts | Repository artifact | `SCAF-GOV`, `SCAF-ASSUR` | Retire | Rebuild only after stable human authority and machine contracts | High | Deferred |
 
@@ -116,6 +118,10 @@ A row-level label such as `Baseline + Draft` is not sufficient evidence for norm
 | Firmware update | `Node_Software_Engineering_Rules.md` — §38–40.1 | Draft for Review v1.1.0 | Node-specific lifecycle/detail donor requiring reconciliation |
 | Configuration ownership | `Framework_Application_Analysis_Template.md` — §8.2 Configuration | Baseline donor | project application/configuration decision evidence |
 | Configuration ownership | `Node_Software_Engineering_Rules.md` — §34 Configuration Ownership | Draft for Review v1.1.0 | ownership specialization remains donor input pending audit |
+| Stale data / freshness | `Coordinator_Node_Control_Framework.md` — §4.9 Stale Data | Baseline v1.1.7 | baseline donor semantics can support controlled rewrite after anchor-level audit |
+| Stale data / freshness | Coordinator UI stale/visibility guidance — exact donor/anchor pending | Maturity pending | **not eligible for normative promotion** until donor identity, maturity and anchor are bound |
+| Cross-cutting domains | Gen1 reset/isolation/security/resource donor family | Mixed / unresolved per donor | destination is clear, but each donor must be individually identified and anchored before promotion |
+| Implementation rulebooks | C# / Embedded C rule donors | Mixed Baseline/Draft | profile destination is clear; individual normative rules require per-document/per-anchor audit before promotion |
 
 Therefore `High` mapping confidence means the SCAF destination is clear; it does **not** upgrade a Draft/RC donor to Baseline maturity.
 

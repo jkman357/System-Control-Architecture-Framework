@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.1rc04  
-**Status:** Architecture closure / controlled normative rewrite entry release candidate  
+**Version:** v0.0.1rc05  
+**Status:** Authority-kernel cleanup / controlled normative rewrite baseline release candidate  
 **Date:** 2026-08-15
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -37,22 +37,29 @@ Four input classes are kept distinct in this RC:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## RC04 Architecture Position
+## RC05 Architecture Position
 
-v0.0.1rc04 is a **closure RC** following the rc03 independent review. It does not reopen taxonomy discovery. It keeps the existing SCAF architecture skeleton and closes localized authority/consistency issues before controlled normative content is expanded.
+v0.0.1rc05 is a thin **authority-kernel cleanup RC** following the rc04 independent review. Architecture discovery and top-level taxonomy expansion remain closed. This RC canonicalizes the remaining authority-plane, time/session identity, satisfaction-basis and migration-trace semantics before controlled L1/L2 normative content is expanded.
 
 ### Canonical authority model
 
 There is one canonical authority direction:
 
 ```text
-                         Framework / Governance
-                           governs all below
-                                  |
-                                  v
+SCAF framework side                                      Project side
+
+Framework / Governance
+  governs SCAF authority semantics, sources,
+  precedence and change/release rules
+           |
+           v
 SCAF Concern Authority -> Project Design Authority -> Project Realization -> Assurance
           \_______________________________________________________________/
                     SCAF-APP cross-cut trace / disposition
+
+Project Design Authority and Project Realization are project-side authorities/artifacts
+constrained by applicable SCAF obligations; they are not governed as organizational
+authorities by SCAF Framework / Governance.
 ```
 
 Interpretation:
@@ -62,7 +69,8 @@ Interpretation:
 - **Project Realization** implements the project decision using applicable technologies and mechanisms.
 - **Assurance** verifies the applicable obligation, project decision and realization, and judges evidence sufficiency without redefining the underlying system property.
 - **SCAF-APP / Framework Scan** cross-cuts the chain by recording applicability, decision, risk, deviation, verification, evidence, closure and re-evaluation trace. It is not a sequential delivery stage and does not become the project architecture authority.
-- **Framework / Governance** governs the SCAF authorities and their change/release semantics; it does not replace project design authority.
+- **Project Design Authority** is a project-side decision authority, not a sixth SCAF framework plane. Authoritative project artifacts (architecture specifications, interface contracts, configuration decisions, etc.) record its decisions but are not themselves the authority role.
+- **Framework / Governance** governs SCAF normative sources, authority semantics, precedence and change/release rules. It does **not** govern project organization, Project Design Authority or Project Realization; those project-side authorities are constrained by applicable SCAF obligations.
 
 Supporting tooling and AI-assisted engineering are **not** peer system-taxonomy branches.
 
@@ -187,7 +195,7 @@ Project Design Authority
         ↓
 Project Realization
         ↓
-Source-owned Satisfaction Condition
+Applicable Satisfaction Basis
         ↓
 Verification + Evidence
         ↓
@@ -208,7 +216,7 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` now carries complete stat
 | `docs/01_Gen1_Repository_Inventory.md` | Complete Gen1 and supplemental file inventory with artifact disposition |
 | `docs/02_Document_Role_Analysis.md` | Role and content analysis by source document family |
 | `docs/03_Gen1_to_Gen2_Concept_Mapping.md` | Source-anchored Gen1/supplemental -> SCAF concept mapping |
-| `docs/04_Overlap_Obsolescence_and_Gap_Analysis.md` | Duplicate authority, outdated framing, overlap and unresolved gaps |
+| `docs/04_Overlap_Obsolescence_and_Gap_Analysis.md` | Duplicate authority, outdated framing, resolved coverage, remaining promotion/audit gaps and rewrite priorities |
 | `docs/05_SCAF_Taxonomy_Proposal.md` | SCAF authority planes, metamodel, concern taxonomy and tabletop validation |
 | `docs/06_Read_Coverage_Audit.md` | Read coverage, mapping confidence and deferred deep-audit record |
 | `CHANGELOG.md` | RC history |
@@ -217,7 +225,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.1rc04.**
+**No CI is included in v0.0.1rc05.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -243,13 +251,14 @@ v0.0.1rc1   # historical first RC spelling
 v0.0.1rc02
 v0.0.1rc03
 v0.0.1rc04
+v0.0.1rc05
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.1rc04 closes the architecture-discovery phase and permits **controlled normative rewrite**.
+v0.0.1rc05 preserves the closed architecture-discovery phase and serves as the cleaned authority-kernel baseline for **controlled normative rewrite**.
 
 Permitted initial rewrite scope:
 

@@ -2,6 +2,36 @@
 
 All notable changes to **System Control Architecture Framework (SCAF)** are recorded here.
 
+## v0.0.1rc05 — 2026-08-15
+
+Authority-kernel cleanup / controlled-rewrite baseline release candidate.
+
+### Changed
+
+- accepted the rc04 independent review conclusion that no Critical architecture flaw remains and controlled normative rewrite may continue;
+- clarified that the five authority planes are **SCAF framework planes** and that Project Design Authority is a project-side authority bridge rather than an implicit sixth SCAF plane;
+- narrowed Framework / Governance to SCAF normative-source, authority, precedence and release/change governance, explicitly excluding organizational governance of project design/realization;
+- separated authority roles from the controlled artifacts that record their decisions;
+- renamed `SCAF-RUN` to **Runtime Behavior, State & Operational Lifecycle** without changing the concern ID;
+- partitioned Time Epoch / Time Domain (`SCAF-TIME`), Boot Incarnation (`SCAF-LIFE`), Protocol/Connection Session Identity (`SCAF-INT`), Operational Incarnation (`SCAF-RUN`) and OBS-recorded provenance/correlation;
+- replaced ambiguous `source-owned satisfaction condition` wording with **Applicable Satisfaction Basis**, traceable to SCAF obligations, Project Design Authority values and applicable external authority constraints;
+- aligned worked Framework Scan closure examples with the Applicable Satisfaction Basis terminology;
+- split Gen1 Node identity / capability mapping into Node identity, capability semantics and capability allocation destinations;
+- reframed Crash Recorder `boot epoch` as LIFE-owned boot-incarnation identity recorded by OBS, distinct from TIME-owned time epoch;
+- strengthened per-donor promotion gating for stale-data, domain and implementation-rulebook donor families;
+- reframed resolved robustness areas as coverage requiring normative elaboration rather than unresolved taxonomy gaps;
+- changed stale `before normative rewrite` wording to controlled-rewrite / broad-expansion / promotion / freeze priorities;
+- retained MD-first / No-CI policy and stopped top-level taxonomy expansion.
+
+### Deliberately Not Added
+
+- new top-level taxonomy branches or concerns;
+- CI / GitHub Actions;
+- validators or final schemas;
+- broad L3 mechanism catalogs or L4 implementation rulebooks;
+- frozen Draft/RC donor semantics;
+- claims of completed Gen1 migration or normative freeze.
+
 ## v0.0.1rc04 — 2026-08-15
 
 Architecture-closure / controlled-rewrite-entry release candidate.

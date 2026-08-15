@@ -24,7 +24,7 @@ The fourth level is intentionally incomplete because SCAF requires taxonomy and 
 
 ### Files not read
 
-**None.** All 72 Gen1 files were opened/read at machine-text level during the rc1–rc04 archaeology work.
+**None.** All 72 Gen1 files were opened/read at machine-text level during the rc1–rc05 archaeology / authority-kernel work.
 
 ### Files not yet deeply audited requirement-by-requirement
 
@@ -62,13 +62,13 @@ These artifacts were read and their roles were analyzed. Their individual execut
 
 ### Deferred deep audit
 
-The primary README contains both generic architecture and candidate implementation contracts. rc04 maps generic architecture concepts but does not adopt every API, record layout, ABI, memory budget, persistence layout or RC implementation recommendation as SCAF policy.
+The primary README contains both generic architecture and candidate implementation contracts. rc05 maps generic architecture concepts but does not adopt every API, record layout, ABI, memory budget, persistence layout or RC implementation recommendation as SCAF policy.
 
 ## 4. Independent Review Coverage
 
-The v0.0.1rc1, v0.0.1rc02 and v0.0.1rc03 independent architecture reviews were read and used as correction input.
+The v0.0.1rc1, v0.0.1rc02, v0.0.1rc03 and v0.0.1rc04 independent architecture reviews were read and used as correction input.
 
-Review findings incorporated through rc04 include:
+Review findings incorporated through rc05 include:
 
 - separation of authority planes;
 - Node metamodel correction and Function/Service first-class model;
@@ -91,6 +91,11 @@ Review findings incorporated through rc04 include:
 - ROB/LIFE/OBS/ASSUR boundary tightening;
 - Security Authority vs Project Design Authority separation;
 - complete Framework Scan state/closure proof on selected worked items.
+- five-plane model clarified as SCAF framework planes with Project Design Authority kept project-side;
+- Governance scope narrowed to SCAF authority/change semantics rather than project organizational governance;
+- time epoch separated from boot incarnation, protocol/session identity and operational incarnation;
+- Applicable Satisfaction Basis terminology introduced to preserve multi-authority acceptance provenance;
+- migration rows realigned for capability semantics/allocation and incident time/incarnation provenance.
 
 The review itself is not treated as a normative SCAF source.
 
@@ -110,7 +115,7 @@ This prevents a broad archaeology pass from being presented as completed normati
 
 ## 6. Tabletop Architecture / Application Coverage
 
-rc04 retains three non-normative architecture exercises:
+rc05 retains three non-normative architecture exercises:
 
 1. single MCU system;
 2. PC + multiple MCU system;
@@ -118,7 +123,7 @@ rc04 retains three non-normative architecture exercises:
 
 At taxonomy level, all three remain representable without new ad-hoc top-level categories.
 
-rc04 runs complete-state worked Framework Scan traces against the PC + multiple MCU archetype for selected concerns. Each worked item instantiates:
+rc05 retains complete-state worked Framework Scan traces against the PC + multiple MCU archetype for selected concerns. Each worked item instantiates:
 
 ```text
 Concern / Obligation
@@ -128,7 +133,7 @@ Concern / Obligation
  -> Risk State
  -> Project Design Authority Output
  -> Realization Responsibility
- -> Source-Owned Satisfaction Condition
+ -> Applicable Satisfaction Basis
  -> Verification State / Method
  -> Evidence State / Item
  -> Closure / Deviation + Acceptance Authority
@@ -160,6 +165,6 @@ In particular, executable artifacts may encode invariants not fully repeated in 
 
 There are **no unread input files** among the two donor source archives used for the archaeology work.
 
-However, there are intentionally deferred **deep normative audits**. v0.0.1rc04 should therefore be treated as:
+However, there are intentionally deferred **deep normative audits**. v0.0.1rc05 should therefore be treated as:
 
 > **an architecture-closure baseline that permits controlled normative rewrite, with explicit donor-promotion and migration-completion gates; it is not a completed migration proof.**

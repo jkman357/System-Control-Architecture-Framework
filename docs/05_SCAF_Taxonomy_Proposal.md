@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the **v0.0.1rc04 conceptual architecture** for System Control Architecture Framework (SCAF).
+This document defines the **v0.0.1rc05 conceptual architecture** for System Control Architecture Framework (SCAF).
 
 It is intentionally not a final file/directory plan. The purpose is to stabilize ontology, authority and application semantics as the architecture kernel for controlled normative rewriting.
 
@@ -16,7 +16,7 @@ Control theory, signal processing or motor-control algorithms may be relevant pr
 
 ## 3. Authority Planes
 
-rc1 mixed several ontology planes into one branch list. rc04 retains the separated planes and fixes one canonical authority relationship across them.
+rc1 mixed several ontology planes into one branch list. rc05 retains five **SCAF framework planes** and one canonical authority relationship to project-side design/realization. Project Design Authority is an external project-side authority bridge, not a sixth SCAF framework plane.
 
 ### Plane A — Framework / Governance
 
@@ -45,7 +45,7 @@ Primary concerns:
 - `SCAF-CTX` System Context, Mission, Function & Service;
 - `SCAF-ARCH` System / Node / Role / Domain Architecture;
 - `SCAF-INT` Interfaces, Interaction & Data Contracts;
-- `SCAF-RUN` Runtime Behavior, State & Lifecycle;
+- `SCAF-RUN` Runtime Behavior, State & Operational Lifecycle;
 - `SCAF-TIME` Timing, Concurrency, Capacity & Resource Margin;
 - `SCAF-ROB` Robustness & Resilience;
 - `SCAF-LIFE` Boot, Power, Reset & Update Lifecycle;
@@ -61,7 +61,7 @@ Primary concern:
 
 - `SCAF-APP` Framework Scan / Applicability Analysis.
 
-This plane **Dispositions** SCAF concerns for a project. It is neither the source authority for the underlying SCAF obligation nor the authority that defines the project-specific architecture value. The latter belongs to the project's designated **Project Design Authority** (for example, an architecture specification, interface contract, configuration authority, hazard/security decision, or equivalent controlled design artifact).
+This plane **Dispositions** SCAF concerns for a project. It is neither the source authority for the underlying SCAF obligation nor the authority that defines the project-specific architecture value. The latter belongs to the project's designated **Project Design Authority**, a project-side decision authority. Controlled architecture specifications, interface contracts, configuration records and similar artifacts record authoritative project decisions but are not themselves the authority role.
 
 ### Plane D — Assurance / Evidence
 
@@ -78,6 +78,12 @@ Purpose: provide technology-/runtime-/language-specific mechanisms for satisfyin
 Primary concern:
 
 - `SCAF-PROF` Realization / Implementation Profiles.
+
+### Relationship to Project-Side Authority
+
+The five planes above are **SCAF framework planes**. They define SCAF authority, project-application semantics, assurance semantics and realization guidance. They do not replace project governance or project architecture authority.
+
+The **Project Design Authority** is the project-side bridge between applicable SCAF concern obligations and the project's actual architecture decisions. **Project Realization** implements those decisions. SCAF Framework / Governance governs SCAF normative sources, precedence and change/release semantics; it does not organizationally govern Project Design Authority or Project Realization.
 
 ### Supporting Mechanisms — Not Peer Taxonomy Branches
 
@@ -231,7 +237,7 @@ Projects may add domain types when justified.
 
 ## 5. Authority Relation Grammar
 
-Cross-cutting does not mean duplicate authority. rc04 retains the distinction between **framework-level normative authority** and **project-instance design authority** and uses one canonical chain across all documents.
+Cross-cutting does not mean duplicate authority. rc05 retains the distinction between **framework-level normative authority** and **project-instance design authority** and uses one canonical chain across all documents.
 
 | Relation | Meaning | Typical owner |
 |---|---|---|
@@ -310,12 +316,13 @@ The **Project Design Authority** defines the actual project boundary, actors, mi
 - data representation/serialization;
 - validity, freshness, ordering and provenance contract semantics;
 - compatibility/evolution;
+- protocol / connection session identity and generation semantics where applicable;
 - negative behavior;
 - machine-readable contract applicability.
 
 **Constrained by:** Security, Timing, Robustness and Lifecycle concerns as applicable.
 
-### 6.4 `SCAF-RUN` — Runtime Behavior, State & Lifecycle
+### 6.4 `SCAF-RUN` — Runtime Behavior, State & Operational Lifecycle
 
 **Defines Framework Semantics / Obligation for:**
 
@@ -325,6 +332,7 @@ The **Project Design Authority** defines the actual project boundary, actors, mi
 - normal/start/stop/suspend/resume behavior;
 - service availability state;
 - cross-node state consistency;
+- operational-state incarnation/generation semantics where needed to distinguish restarted or replaced runtime state;
 - generic lifecycle transition obligations.
 
 Partition rule: `SCAF-RUN` covers **service/operational state lifecycle**. `SCAF-LIFE` covers **platform/system activation, boot, reset, power and update lifecycle**. Specialized configuration/interface/security lifecycle authorities remain in `SCAF-CFG`, `SCAF-INT` and `SCAF-SEC`.
@@ -336,7 +344,7 @@ Partition rule: `SCAF-RUN` covers **service/operational state lifecycle**. `SCAF
 - clock/timebase identity and authority;
 - monotonic vs wall-clock semantics;
 - synchronization model, drift and uncertainty;
-- epoch/session/time-domain semantics;
+- time-epoch and time-domain semantics;
 - deadlines/periods/latency/jitter;
 - time budgets and temporal invariants;
 - execution/concurrency ownership requirements;
@@ -346,6 +354,14 @@ Partition rule: `SCAF-RUN` covers **service/operational state lifecycle**. `SCAF
 - margin/headroom;
 - starvation/fairness/overload constraints;
 - long-duration accumulation budgets.
+
+Identity/time partition:
+
+- **Time Epoch / Time Domain** semantics belong to `SCAF-TIME`.
+- **Boot Incarnation / Boot Generation** belongs to `SCAF-LIFE`.
+- **Protocol / Connection Session Identity** belongs to `SCAF-INT`.
+- **Operational State Incarnation** belongs to `SCAF-RUN` where applicable.
+- `SCAF-OBS` records these identities, time provenance and correlation metadata as evidence; it does not redefine their primary semantics.
 
 Profiles **Realize** RTOS/thread/ISR/FPGA scheduling and language/runtime mechanisms.
 
@@ -415,6 +431,7 @@ For a safety-relevant project, the applicable project safety/hazard authority de
 - power-on/off and brownout-relevant behavior;
 - reset taxonomy and reset-domain behavior;
 - reset cause;
+- boot incarnation / boot generation identity;
 - boot ordering/readiness;
 - retained-state validity;
 - bootloader/application boundary;
@@ -439,7 +456,8 @@ For a safety-relevant project, the applicable project safety/hazard authority de
 
 - first abnormal vs final crash distinction;
 - evidence identity/provenance;
-- local ordering and boot/session epoch;
+- local evidence ordering;
+- recorded boot incarnation, protocol/session identity and operational incarnation as defined by their source concerns;
 - observed time provenance / clock source identity;
 - recorded synchronization quality/uncertainty defined by `SCAF-TIME`;
 - cross-node evidence correlation and causal correlation;
@@ -573,7 +591,7 @@ Initial project framing
   -> required design decision
   -> Project Design Authority / actual project value
   -> realization responsibility
-  -> source-owned satisfaction condition
+  -> Applicable Satisfaction Basis
   -> verification obligation / method
   -> evidence
   -> closure / deviation
@@ -592,12 +610,21 @@ A project may need distinct:
 - Verification Owner;
 - Risk Acceptance Owner.
 
-SCAF does not require four fields in rc04, but it rejects the assumption that one generic `Owner` is always sufficient.
+SCAF does not require four fields in rc05, but it rejects the assumption that one generic `Owner` is always sufficient.
 
 
 ### 7.5 Closure semantics
 
-Closure is not a new single-owner authority. It is a recorded disposition reached after the relevant source-owned condition has been evaluated.
+Closure is not a new single-owner authority. It is a recorded disposition reached after the applicable **Satisfaction Basis** has been evaluated.
+
+The **Applicable Satisfaction Basis** is a traceable combination, as applicable, of:
+
+- SCAF concern semantics / obligation;
+- Project Design Authority values, thresholds or architecture decisions;
+- external authority constraints (for example safety, security or risk authority);
+- any explicitly controlled acceptance condition derived from those sources.
+
+It does not create a new authority and is not owned by `SCAF-ASSUR`.
 
 - `SCAF-ASSUR` / project verification authority **Verifies** the obligation/decision and evaluates evidence sufficiency.
 - the authority that owns the underlying project decision, requirement, risk acceptance or deviation accepts the corresponding closure as applicable;
@@ -622,7 +649,7 @@ Therefore an `ASSUR closure` is not a valid substitute for Project Design Author
 - unresolved anomaly handling;
 - conformance/deviation evidence.
 
-Underlying system-property satisfaction conditions and thresholds are defined by the applicable SCAF concern plus the Project Design Authority; `SCAF-ASSUR` does not redefine them.
+The Applicable Satisfaction Basis is derived from the applicable SCAF concern, Project Design Authority and any applicable external authority constraints. `SCAF-ASSUR` defines verification/evidence-sufficiency semantics and does not redefine the underlying property, project threshold or external acceptance constraint.
 
 Fault injection belongs here as an assurance activity, though injection targets may be defined by `SCAF-ROB`, `SCAF-LIFE`, `SCAF-INT`, `SCAF-SEC`, etc.
 
@@ -661,7 +688,7 @@ A project may use several axes at once. Profiles **Realize** system requirements
 
 ## 10. Tabletop Architecture Validation
 
-These exercises are not full project analyses. They test whether the rc04 metamodel requires ad-hoc taxonomy exceptions.
+These exercises are not full project analyses. They test whether the rc05 metamodel requires ad-hoc taxonomy exceptions.
 
 ### 10.1 Archetype A — Single MCU System
 
@@ -777,7 +804,7 @@ This exercise proves the independent state dimensions and closure authority on s
 | Risk state | **Open -> Mitigated** after stale-state handling, bounded age policy and negative-behavior design are accepted. Residual operational risk remains with the project risk authority. |
 | Project Design Authority output | Controlled interface/data contract + timing decision defining the actual freshness limits, provenance and stale behavior. |
 | Realization responsibility | MCU telemetry producer, transport/serialization realization and PC presentation layer implement the contract; responsibility may be split but remains traced. |
-| Source-owned satisfaction condition | Data outside the project-defined validity/ordering contract is never represented or consumed as valid current data; required stale/degraded behavior occurs. |
+| Applicable Satisfaction Basis | `SCAF-INT/TIME/ROB` obligation semantics + the Project Design Authority's controlled freshness/ordering/stale-behavior values; data outside that basis is never represented or consumed as valid current data and required stale/degraded behavior occurs. |
 | Verification state / method | **Required -> Planned -> Passed** using injected delay/drop/reorder/clock-skew scenarios and boundary-value timing tests. |
 | Evidence state / item | **Required -> Available -> Accepted** — test report, traces and contract-version identity are linked to the decision. |
 | Closure / deviation and authority | Project Interface/Design Authority accepts the implemented project decision; verification authority confirms evidence sufficiency; project risk authority accepts any residual risk; `SCAF-APP` records the resulting closure/deviation and links all authorities/evidence. |
@@ -794,9 +821,9 @@ This exercise proves the independent state dimensions and closure authority on s
 | Risk state | **Open -> Mitigated** after architecture and fault-response decisions; residual common-mode/shared-resource risk is separately owned/accepted. |
 | Project Design Authority output | Fault/domain architecture + failure-response state model + project recovery limits. |
 | Realization responsibility | Supervisory PC logic, MCU local recovery logic and any shared-bus/resource mechanism realize the approved behavior. |
-| Source-owned satisfaction condition | A single scoped Node failure does not violate the project-defined containment boundary; the healthy service follows its approved degraded/continued behavior; recovery/reintegration occurs only under defined conditions. |
+| Applicable Satisfaction Basis | `SCAF-ROB/ARCH` obligation semantics + the Project Design Authority's containment, degraded-service and recovery/reintegration decisions + applicable risk constraints; a single scoped Node failure does not violate the approved containment basis and recovery/reintegration occurs only under defined conditions. |
 | Verification state / method | **Required -> Planned -> Passed** using peer-loss, timeout, restart, shared-resource stress and repeated recovery fault injection. |
-| Evidence state / item | **Required -> Available -> Accepted** — fault-injection report, state/event traces, reset/session identity and unresolved-anomaly disposition. |
+| Evidence state / item | **Required -> Available -> Accepted** — fault-injection report, state/event traces, reset cause + boot-incarnation identity + applicable protocol/operational incarnation identity, and unresolved-anomaly disposition. |
 | Closure / deviation and authority | Project Architecture/Robustness Design Authority accepts the project decision/realization; verification authority accepts evidence sufficiency; risk authority accepts residual risk/deviation if any; `SCAF-APP` records closure and the re-open trigger. |
 | Re-evaluation trigger | shared-resource topology, recovery mechanism, service criticality, Node/domain boundary or lifecycle/update behavior changes. |
 
@@ -806,13 +833,13 @@ This exercise proves the independent state dimensions and closure authority on s
 
 ### 10.5 Tabletop conclusion
 
-The rc04 metamodel can describe all three representative archetypes **without adding an ad-hoc top-level taxonomy branch**.
+The rc05 metamodel can describe all three representative archetypes **without adding an ad-hoc top-level taxonomy branch**.
 
 The three architecture exercises establish representability; the worked Archetype B scan now demonstrates complete state/authority/closure traces for selected concerns. This is sufficient to begin controlled normative rewrite, while migration-completion and donor-promotion gates remain separate.
 
 ## 11. Current Rewrite Gate
 
-**Controlled normative rewrite is permitted from v0.0.1rc04.**
+**Controlled normative rewrite remains permitted from v0.0.1rc05.**
 
 The architecture skeleton is considered converged enough to stop taxonomy exploration. Initial rewrite scope is intentionally bounded to:
 
