@@ -1,288 +1,283 @@
-# Overlap, Obsolescence, Responsibility Overlap, and Gap Analysis
+# Overlap, Obsolescence and Gap Analysis
 
-## 1. Summary
+## 1. Purpose
 
-Gen1 is content-rich but structurally mature around its own history. Gen2 should correct four different classes of problem:
+This document identifies structural problems that must be resolved before large-scale SCAF normative rewriting.
 
-1. **duplicate or distributed authority**;
-2. **Gen1-specific framing that is no longer the right abstraction**;
-3. **responsibility overlap between architecture, implementation and verification**;
-4. **system resilience gaps that are missing or only implicit**.
+## 2. Primary Structural Finding
 
-## 2. Major Overlaps
+Gen1 contains substantial reusable engineering content. The main migration risk is not missing documents; it is **duplicate or ambiguous authority created by Gen1 role/document boundaries and by rc1's mixed taxonomy dimensions**.
 
-### 2.1 Master Framework vs Specialized Protocol / Security / Update Rules
+v0.0.1rc02 therefore treats authority structure as the first design problem.
 
-The master Framework contains substantial normative detail on protocol, security, firmware update, runtime and implementation boundaries while specialized documents also govern those areas.
+## 3. Resolved / Substantially Improved in rc02
 
-Risk:
+### 3.1 Mixed taxonomy planes
 
-- same topic can evolve in two places;
-- “one rule, one authority” becomes harder to maintain;
-- reviewers need routing knowledge before they can know which wording wins.
+rc1 placed system concerns, project application, assurance, implementation, tooling and engineering process as peer branches.
 
-Gen2 direction:
+**rc02 decision:** separate five authority planes and make tooling/AI supporting mechanisms rather than peer system concerns.
 
-- master architecture defines concern boundaries and mandatory decisions;
-- topic authorities define detailed normative behavior;
-- implementation profiles define realization rules.
+### 3.2 Node-centric replacement risk
 
-### 2.2 Application Analysis vs Conformance Checklists
+Replacing Host/Device with Node alone is insufficient.
 
-The application template already asks many architecture, timing, topology, recovery, security and validation questions. Framework/Protocol/Coding checklists ask related questions again.
+**rc02 decision:** add Function/Service/Capability, Interface, Interaction and cross-cutting Domains as first-class metamodel concepts; define Node boundary criteria.
 
-Gen2 direction:
+### 3.3 Migration action vocabulary
 
-Use one **Framework Scan record** as the source of applicability and obligation. Specialized checklists are generated/referenced views of that record rather than separate competing decision inventories.
+rc1 mixed `Keep/Move/Merge/Rewrite/Retire/New` with `Elevate/Generalize/Rebuild`.
 
-### 2.3 Protocol Guide vs Protocol Template
+**rc02 decision:** separate **Disposition** from **Transformation**.
 
-Both are very large and include structural guidance, examples and review expectations.
+### 3.4 Framework Scan state mixing
 
-Gen2 direction:
+Applicability, risk, decision, verification and evidence are different state axes.
 
-- concise normative interface-contract model;
-- separate reusable template/example;
-- machine schema only after model stability.
+**rc02 decision:** model them as independent dimensions in a single decision/evidence lifecycle.
 
-### 2.4 Coordinator Rules vs Coordinator Topic Guides
+### 3.5 Linear fault lifecycle
 
-Architecture, concurrency, logging, testing and UI have valid specialization, but responsibilities overlap with the master Coordinator rules and master Framework.
+`Prevention -> Detection -> Containment -> Recovery` mixes design-time assurance with runtime behavior.
 
-Gen2 direction:
+**rc02 decision:** separate fault/error/failure semantics, runtime resilience response and assurance.
 
-General rules go to System/Node/Runtime/Observability; role-specific desktop/HMI patterns remain profiles.
+## 4. Remaining Authority-Overlap Risks
 
-### 2.5 Validation Evidence vs Incident Evidence
+### 4.1 Freshness
 
-These are different kinds of evidence:
+Potential donors/consumers: Interface, Timing, Robustness and Security.
 
-- **engineering assurance evidence** proves a design/verification claim;
-- **runtime incident evidence** survives a system failure and supports diagnosis.
+Resolution rule:
 
-They should share identity, provenance, integrity and retention principles but must not be conflated.
+- Interface defines data validity/age/order semantics;
+- Timing constrains temporal budgets;
+- Robustness defines behavior after freshness loss;
+- Security constrains hostile/replay freshness;
+- Assurance verifies.
 
-## 3. Outdated or Too-Narrow Framing
+### 4.2 Containment
 
-### 3.1 Host / Device and Coordinator / Node as structural anchors
+Potential donors/consumers: Architecture, Robustness and Security.
 
-Gen1 already recognizes role relativity, which is a strong foundation. Gen2 should complete that idea: roles are assigned to Nodes for an interaction or responsibility; they do not define the entire system taxonomy.
+Resolution rule:
 
-### 3.2 “Cross-Platform Embedded Control” as Framework boundary
+- Architecture defines domain boundaries;
+- Robustness defines runtime fault-containment behavior;
+- Security specializes adversarial containment requirements;
+- profiles realize mechanisms;
+- assurance verifies.
 
-The existing master document already includes PC, Linux SBC, mobile app and service-tool cases, but its title and many implementation discussions remain embedded-centric.
+### 4.3 Lifecycle
 
-Gen2 must natively support:
+Lifecycle currently appears in Node behavior, session/connection behavior, boot/update and credentials.
 
-- MCU;
-- PC;
-- SoC;
-- FPGA;
-- DSP;
-- heterogeneous systems;
-- mixed runtime and hardware/software partitions.
+Resolution rule:
 
-### 3.3 Software-only Node engineering
+- `SCAF-RUN` owns generic operational state/lifecycle semantics;
+- `SCAF-LIFE` owns boot/power/reset/update lifecycle;
+- `SCAF-INT` owns interface/session lifecycle contracts;
+- `SCAF-CFG` owns configuration lifecycle;
+- `SCAF-SEC` owns credential/security lifecycle.
 
-An FPGA node may have clocks, reset domains, CDC, register interfaces, FIFOs, watchdog/status logic and fault containment without conventional tasks, heap, exceptions or source-code layering. A DSP may have real-time pipeline constraints distinct from a desktop coordinator.
+Each must state its relation rather than claiming generic lifecycle authority.
 
-Therefore Node engineering must be technology-neutral at core and technology-specific below it.
+### 4.4 Evidence
 
-## 4. Responsibility Boundary Problems to Correct
+Runtime incident evidence and verification evidence are related but not identical.
 
-| Problem | Gen1 Pattern | Gen2 Correction |
-|---|---|---|
-| System requirement vs implementation rule | Framework and coding guides both mention bounded memory/concurrency | Core defines required property; profile defines realization |
-| Protocol security vs system security | secure-session details dominate security material | security robustness covers system assets, availability, privilege, failure and recovery; protocol crypto is a profile |
-| Diagnostics vs logging | logging is strongest on Coordinator side | observability model applies to every relevant node and interaction |
-| Recovery ownership | reconnect, update rollback, errors and boot recovery are separate | one recovery lifecycle with domain-specific mechanisms |
-| Verification ownership | several checklist families | scan item creates explicit verification/evidence obligation |
-| Node isolation | mostly multi-node coordinator concern | explicit containment domain across system architecture |
+Resolution rule:
 
-## 5. Gen2 Gaps
+- `SCAF-OBS` defines operational/diagnostic/incident evidence semantics;
+- `SCAF-ASSUR` defines engineering verification evidence and acceptance;
+- runtime evidence may become assurance evidence only when provenance, identity, reproducibility/interpretability and acceptance conditions are satisfied.
 
-### 5.1 Fault Model and Fault Lifecycle
+## 5. Outdated or Too-Narrow Gen1 Framing
 
-Gen1 has error handling and many defensive rules but lacks one system-level lifecycle connecting:
+| Gen1 framing | SCAF treatment |
+|---|---|
+| Host / Device as primary architecture | Retire as top-level taxonomy; preserve only where project roles truly match |
+| Coordinator / Node as parallel document domains | Replace with System/Service/Node/Role/Interaction/Domain model |
+| Embedded system as framework boundary | Move embedded constraints to realization profiles |
+| Protocol as dominant interface form | Generalize to broader interface/interaction contracts |
+| Coordinator UI/concurrency/logging as general architecture | Split system properties from desktop/HMI realization mechanisms |
+| Validation checklist mirroring document folders | Regenerate only after concern authorities stabilize |
+| Repository paths as governance authority | Preserve governance intent; rebuild path-specific enforcement later |
+| Secure session as primary security model | Keep as profile; broaden to system security robustness |
+
+## 6. Robustness / Resilience Gaps
+
+### 6.1 Fault / Error / Failure semantics
+
+SCAF needs explicit semantic separation:
 
 ```text
-Prevent
-  -> Detect
-  -> Contain
-  -> Escalate
-  -> Recover / Degrade / Enter Safe State
-  -> Diagnose
-  -> Preserve Evidence
-  -> Verify
+Fault source / condition
+  -> activation
+  -> erroneous state
+  -> propagation
+  -> service failure
+  -> system consequence
 ```
 
-This should become a core Gen2 model.
+This is now an explicit `SCAF-ROB` concern and must precede detailed normative rules.
 
-### 5.2 Runtime Health Monitoring
+### 6.2 Fault-tolerance mechanisms
 
-Needed decisions include:
+Gen1 and the Crash Recorder contain detection, watchdog, degradation, recovery and evidence ideas, but SCAF needs an explicit home for:
 
-- what health means for each node/service/interface;
-- local vs system health ownership;
-- heartbeat/checkpoint semantics;
-- liveness vs correctness vs freshness;
-- watchdog scope;
-- false-positive / false-negative behavior;
-- escalation and recovery thresholds;
-- health evidence and observability.
+- redundancy;
+- failover;
+- masking/tolerance;
+- reconfiguration;
+- repair;
+- state resynchronization;
+- reintegration;
+- recovery after prolonged degraded operation.
 
-### 5.3 Explicit Fault Containment and Propagation Analysis
+### 6.3 Diagnostic coverage and latent faults
 
-Per-node isolation exists in Gen1, but Gen2 needs explicit containment domains and propagation paths for:
+SCAF must ask:
 
-- shared memory;
-- shared bus;
-- shared clock/power/reset;
-- common storage;
-- common services;
-- coordinator failure;
-- malformed/stale/corrupt data;
-- resource exhaustion;
-- security compromise.
+- which faults are detectable;
+- maximum detection latency;
+- which faults remain latent;
+- health-monitor failure behavior;
+- diagnostic coverage evidence;
+- whether a degraded monitor can falsely indicate health.
 
-### 5.4 Graceful Degradation
+### 6.4 Distributed failure semantics
 
-Gen1 discusses partial results and some safe behavior, but not a unified degradation contract.
+Needed for heterogeneous/multi-node systems:
 
-Gen2 should ask:
+- network partition;
+- split brain / stale ownership;
+- reconnect reconciliation;
+- replay after reconnect;
+- correlated/common-mode failures;
+- cascading recovery;
+- recovery storms;
+- peer recovery dependencies.
 
-- which service can be lost independently;
-- what reduced capability remains;
-- how degraded mode is entered/exited;
-- whether a degraded state is safe and diagnosable;
-- what must be communicated to peer nodes/operators;
-- how degraded operation is verified.
+### 6.5 Safe State authority boundary
 
-### 5.5 Safe State
+`Safe State` cannot be universally invented by SCAF.
 
-Safe state must become a defined project decision, not a phrase attached only to firmware update or specific faults.
+For safety-relevant projects, project safety/hazard authority must define the safety-significant condition/strategy. SCAF may define:
 
-Required analysis:
-
-- trigger;
-- owning node/domain;
-- commanded vs autonomous entry;
-- power/reset interaction;
-- persistence across reboot;
-- exit authorization;
+- who owns entry/exit decisions;
+- state-transition behavior;
+- interaction requirements;
 - observability;
-- verification evidence.
+- verification/evidence obligations.
 
-### 5.6 Incident Evidence and First-Abnormal-State
+### 6.6 Long-run robustness
 
-This is the largest gap filled by the supplemental recorder source. Gen2 requires a technology-neutral incident-evidence model with optional retained/persistent implementation profiles.
+Still required as a first-class concern:
 
-### 5.7 Boot / Power / Reset as a Full Lifecycle Concern
+- counter wrap;
+- timestamp wrap;
+- queue/backlog accumulation;
+- storage/log growth;
+- fragmentation where applicable;
+- retry escalation;
+- leaked state/resources;
+- persistent-state drift;
+- clock drift / resynchronization;
+- wear / endurance;
+- repeated recovery stress.
 
-Gen1 has firmware update and bootloader material, but Gen2 should explicitly analyze:
+## 7. Function / Service / Dependency Gap
 
-- cold boot / warm reset / watchdog / brownout / external reset / software reset;
-- reset domain interactions;
-- initialization order and readiness;
-- retained state validity;
-- incomplete transaction recovery;
-- early-boot fault containment;
-- reset cause evidence;
-- power-fail boundaries.
+A Node-health model alone is insufficient. System consequence is expressed through service/function loss or degradation.
 
-### 5.8 Data Integrity and Freshness
+SCAF therefore needs to model:
 
-Gen1 has safe decoding, stale data and protocol validation. Gen2 should expand this to end-to-end data properties:
+- required System Function / Service;
+- provider(s);
+- consumer(s);
+- dependencies;
+- criticality / mission impact;
+- degraded service level;
+- availability/recovery priority;
+- alternative/redundant providers where applicable.
 
-- validity;
-- completeness;
-- age/freshness;
-- ordering;
-- uniqueness / duplicate handling;
-- consistency across replicas/participants;
-- integrity during storage and transfer;
-- provenance and version;
-- invalidation rules;
-- recovery after partial update.
+This is essential for meaningful graceful degradation, failover and safe behavior.
 
-### 5.9 Resource Margin and Overload
+## 8. Configuration / Persistent Operational State Gap
 
-A budget is not enough. Gen2 should distinguish:
+Gen1 explicitly contains configuration and persistence, but rc1 did not provide a clear authority home.
+
+`SCAF-CFG` now owns the architecture semantics for:
+
+- configuration ownership;
+- defaults;
+- provisioning;
+- validation;
+- version/migration;
+- atomic update/commit;
+- persistence;
+- rollback/recovery after corruption;
+- calibration/parameter state;
+- synchronization across nodes;
+- distinction between configuration persistence and incident-evidence persistence.
+
+## 9. Distributed Incident Evidence Gap
+
+Single-node timestamps are not enough for system-level incident reconstruction.
+
+SCAF must define a home for:
+
+- timestamp provenance;
+- clock source;
+- synchronization state/quality;
+- uncertainty bounds where available;
+- boot/session epoch;
+- local ordering;
+- cross-node correlation ID;
+- causal correlation when synchronized wall time is unavailable.
+
+## 10. Implementation Profile Composition Risk
+
+rc1 mixed platform, execution model, language, HMI, transport, storage and reference architecture in one profile list.
+
+rc02 treats profiles as composable axes:
 
 ```text
-nominal use
-worst-case analyzed use
-reserved margin
-hard capacity
-overload behavior
-recovery behavior
-long-run accumulation
+Compute / deployment technology
+Execution model
+Language / runtime
+Interaction / transport realization
+Persistence / storage realization
+Human-interface realization
+Optional reference architecture / subsystem pattern
 ```
 
-Resources can include CPU, memory, stack, queue depth, bandwidth, storage, write endurance, handles, tasks/threads, DMA channels, FPGA logic/memory, power and other project-relevant capacities.
+A project may select several axes simultaneously. Profiles do not own the system requirement; they realize it.
 
-### 5.10 Long-Run Robustness
+## 11. Machine-Verifiable Tooling Gap
 
-Not sufficiently first-class in Gen1. Examples:
+Gen1 has schemas, validators, fixtures and CI. Their concepts are valuable, but their executable form is coupled to Gen1 structure.
 
-- memory/resource leaks;
-- counter/sequence wrap;
-- timestamp rollover;
-- log/storage growth;
-- flash wear;
-- queue drift/accumulation;
-- retry storms;
-- reconnect loops;
-- repeated update/recovery cycles;
-- clock drift and stale-state accumulation;
-- days/weeks/months soak behavior.
+Current decision:
 
-### 5.11 Security Robustness
+```text
+Do not copy CI.
+Do not freeze schema.
+Do not migrate validators yet.
+Do not lose their semantic invariants.
+```
 
-Gen1 has good protocol security detail, but Gen2 must also consider:
+Before SCAF tooling is rebuilt, the deep audit must mine invariants that exist only in tests/schema/validators.
 
-- denial-of-service / resource abuse;
-- malformed but authenticated input;
-- compromised or untrusted node containment;
-- credential expiry/loss/rotation failure;
-- security service unavailable;
-- secure recovery;
-- fail-secure vs fail-operational vs safe-state tradeoff;
-- audit evidence.
+## 12. Current Gap Priority
 
-### 5.12 Fault Injection
+Priority before normative rewrite:
 
-Gen1 has negative protocol fixtures and robust testing concepts but lacks a unified system fault-injection method.
+1. confirm core metamodel and Node/domain boundaries;
+2. confirm authority relations and concern homes;
+3. review source-anchored migration mapping and Draft/RC donor semantics;
+4. validate Framework Scan lifecycle against real project archetypes;
+5. deep-audit schema/test/tool invariants before declaring migration completeness.
 
-Candidate fault classes:
-
-- communication drop/corruption/delay/reorder/duplicate;
-- memory corruption / invalid state;
-- task/thread stall;
-- timing overrun;
-- storage failure / torn write;
-- power loss / reset;
-- resource exhaustion;
-- peer disappearance / reboot;
-- update interruption;
-- security failure;
-- sensor/actuator invalidity;
-- clock/reset-domain faults where applicable.
-
-### 5.13 Observer Effect
-
-Diagnostics, probes, tracing, health checks and incident recorders can alter timing, memory layout, scheduling or failure behavior. Gen2 should explicitly require observer-effect assessment where instrumentation is non-trivial.
-
-## 6. What Should Not Be Added Yet
-
-v0.0.1rc1 should not create:
-
-- a separate normative document for every gap listed above;
-- MCU, PC, FPGA and DSP rulebooks before the core taxonomy stabilizes;
-- schemas for an unsettled scan model;
-- CI around temporary filenames and directory structures;
-- copied Gen1 validators that enforce Gen1 concepts.
-
-## 7. Conclusion
-
-The Gen2 design problem is primarily **authority and abstraction restructuring**, followed by resilience completion. Adding more documents before that restructuring would increase the exact risk the Framework is intended to reduce: duplicated rules and unclear responsibility.
+The current task is **ambiguity reduction**, not document-count growth.

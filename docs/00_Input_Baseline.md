@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document records the exact source inputs used for Framework Gen2 v0.0.1rc1.
+This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc02**.
 
 ## 2. Gen1 Formal Baseline
 
@@ -13,9 +13,9 @@ This document records the exact source inputs used for Framework Gen2 v0.0.1rc1.
 Treatment:
 
 - formal Gen1 historical baseline;
-- source material for concept extraction and mapping;
+- source material for concept extraction and migration mapping;
 - not modified in place;
-- Gen2 does not inherit its directory layout by default.
+- SCAF does not inherit its directory layout by default.
 
 Notable self-declared baseline documents include:
 
@@ -29,7 +29,7 @@ Notable self-declared baseline documents include:
 - `CSharp_Coding_Rules.md` — v1.0.5, Baseline;
 - `Repository_Validation_Checklist.md` — v1.1.3, Baseline.
 
-Other authorities are marked Draft for Review or RC inside Gen1 and are treated according to their declared status rather than silently promoted.
+Other authorities are marked Draft for Review or RC inside Gen1. SCAF mapping records source maturity rather than silently promoting them.
 
 ## 3. Supplemental Resilience Source
 
@@ -39,51 +39,73 @@ Other authorities are marked Draft for Review or RC inside Gen1 and are treated 
 
 Primary specification:
 
-- `README.md`
-- version `v1.0.1rc03`
-- date `2026-08-14`
-- generic embedded-system scope
+- `README.md`;
+- version `v1.0.1rc03`;
+- date `2026-08-14`;
+- generic embedded-system scope.
 
 Treatment:
 
-- supplemental source for robustness, resilience, diagnostics, evidence survivability, recovery, and observer-effect concepts;
+- supplemental donor for robustness, resilience, diagnostics, evidence survivability, recovery and observer-effect concepts;
 - **not** counted as Gen1 original content;
-- implementation-contract material is not automatically promoted into Gen2 system-level rules;
-- generic concepts are separated from recorder-specific reference implementation details.
+- generic concepts are separated from recorder-specific API/ABI, record-layout, RAM-budget and implementation recommendations.
 
-## 4. Analysis Boundary
+## 4. Independent Review Input
 
-v0.0.1rc1 performs:
+**Input:** `framework-gen2-v0.0.1rc1-independent-architecture-review.md`  
+**SHA-256:** `99df555ece83b597c2ecd031ddbae09ca15c20beea6cf04c333eaf99309bd158`
 
-1. repository inventory;
+Treatment:
+
+- review evidence and correction input for rc02;
+- not a normative SCAF source;
+- used to challenge taxonomy planes, Node metamodel, migration evidence, robustness semantics and Framework Scan responsibility;
+- review findings are incorporated only where independently accepted into rc02 architecture decisions.
+
+## 5. Analysis Boundary
+
+v0.0.1rc02 performs:
+
+1. preservation of complete Gen1 and supplemental repository inventory;
 2. document-role analysis;
-3. concept extraction;
-4. Gen1 -> Gen2 mapping;
-5. overlap / obsolescence / gap analysis;
-6. taxonomy proposal;
-7. read-coverage audit.
+3. source-anchored concept migration mapping;
+4. source-maturity and mapping-confidence recording;
+5. authority-plane separation;
+6. minimum core-metamodel definition;
+7. authority-relation grammar definition;
+8. robustness / resilience conceptual restructuring;
+9. Framework Scan lifecycle restructuring;
+10. overlap / obsolescence / gap analysis refresh;
+11. three representative tabletop architecture exercises;
+12. read-coverage and deep-audit-state audit.
 
-It does not yet perform:
+It does **not** yet perform:
 
 - full normative rewrite;
 - final authority registry design;
-- final Framework Scan schema;
+- final Framework Scan enum/schema freeze;
 - schema implementation;
 - validator implementation;
 - test fixture migration;
 - CI migration;
-- reference implementation migration.
+- reference implementation migration;
+- complete requirement-by-requirement reconciliation of every Gen1 test/schema/tool invariant.
 
-## 5. Provenance Rule
+## 6. Provenance Classes
 
-Every future Gen2 concept should be traceable to one or more of:
+Every future SCAF concept should be traceable to one or more of:
 
 ```text
 Gen1 Baseline
+Gen1 Draft / RC Donor
 Supplemental Crash Recorder
-Gen2 New Requirement
+SCAF New Architecture Requirement
 External Requirement / Standard
 Project-Specific Decision
 ```
 
-This prevents new material from being mistaken for inherited baseline behavior and prevents supplemental implementation detail from silently becoming universal system policy.
+A source maturity marker is part of migration evidence. “Found in Gen1” is not equivalent to “accepted Gen1 baseline requirement.”
+
+## 7. Reproducibility Note
+
+The source archives are intentionally not copied into the SCAF source repository. Their archive names and SHA-256 digests identify the analyzed inputs. Source-section anchors in `03_Gen1_to_Gen2_Concept_Mapping.md` provide human-readable trace points for migration review.

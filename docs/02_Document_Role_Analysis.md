@@ -14,7 +14,7 @@ Assessment:
 
 - valuable as navigation and authority-routing precedent;
 - too tightly coupled to Gen1's Coordinator / Node / Protocol / Coding Rules directory model;
-- should be rewritten after Gen2 taxonomy converges.
+- should be rewritten after SCAF taxonomy converges.
 
 ### `authority-registry.yaml`
 
@@ -25,7 +25,7 @@ Assessment:
 - one of Gen1's strongest governance concepts;
 - solves authority collision and task-routing problems;
 - should survive conceptually;
-- current entries and paths cannot be copied because the Gen2 authority graph will change.
+- current entries and paths cannot be copied because the SCAF authority graph will change.
 
 ### Legal / contribution / protection files
 
@@ -60,7 +60,7 @@ Major content:
 
 Assessment:
 
-This is the largest Gen1 concept donor. It should **not** be renamed and reused unchanged. Its durable concepts should be decomposed into Gen2 system concerns. `Coordinator` becomes a role; `embedded` becomes an implementation profile rather than the Framework boundary.
+This is the largest Gen1 concept donor. It should **not** be renamed and reused unchanged. Its durable concepts should be decomposed into SCAF system concerns. `Coordinator` becomes a role; `embedded` becomes an implementation profile rather than the Framework boundary.
 
 ### `Framework_Application_Analysis_Template.md`
 
@@ -82,7 +82,7 @@ Major content:
 
 Assessment:
 
-This is the direct ancestor of Gen2 **Framework Scan / Applicability Analysis**. It is valuable but too large, partly duplicate with validation checklists, and organized around applying existing Gen1 modules. Gen2 should rewrite it as a taxonomy-driven scan where each concern can produce applicability, risk, decision, verification and evidence obligations.
+This is the direct ancestor of SCAF **Framework Scan / Applicability Analysis**. It is valuable but too large, partly duplicate with validation checklists, and organized around applying existing Gen1 modules. SCAF should rewrite it as a taxonomy-driven scan where each concern can produce applicability, risk, decision, verification and evidence obligations.
 
 ### `AI_Engineering_Usage_Guide.md`
 
@@ -107,7 +107,7 @@ Strengths:
 - multi-node targeting represented in machine-readable form;
 - evolution, code generation and validation treated as first-class concerns.
 
-Gen2 disposition:
+SCAF disposition:
 
 - preserve as **Interface & Data Contract** capabilities;
 - do not assume every system interface is a Host/Device command protocol;
@@ -135,7 +135,7 @@ Strengths:
 - simulator, race, conflict and multi-node tests;
 - stale-state and immutable operation targeting in UI.
 
-Gen2 issue:
+SCAF issue:
 
 `Coordinator` is a useful role but not a universal top-level class. A PC process may be a coordinator in one relationship and a subordinate node in another. A SoC may supervise MCUs while itself being controlled by a service system. FPGA logic may participate without having a conventional UI/application architecture.
 
@@ -153,7 +153,7 @@ Assessment:
 
 - useful core donor for node ownership and isolation;
 - current emphasis is software realization;
-- Gen2 Node must also describe FPGA/DSP/SoC/hardware-assisted nodes and nodes split across heterogeneous compute domains;
+- SCAF Node must also describe FPGA/DSP/SoC/hardware-assisted nodes and nodes split across heterogeneous compute domains;
 - therefore the document should be rewritten into a technology-neutral Node Engineering model with implementation profiles below it.
 
 ## 7. Coding Rules Family
@@ -168,7 +168,7 @@ Large, detailed rules for product-owned C#/.NET implementation, including types,
 
 Assessment:
 
-Both are valuable but are **implementation authorities**, not system architecture authorities. Gen2 should retain them as profiles or linked companion standards. The system Framework should specify the property to achieve (bounded memory, deterministic ownership, safe arithmetic, explicit concurrency, etc.); language-specific rules explain how that property is achieved in a given implementation.
+Both are valuable but are **implementation authorities**, not system architecture authorities. SCAF should retain them as profiles or linked companion standards. The system Framework should specify the property to achieve (bounded memory, deterministic ownership, safe arithmetic, explicit concurrency, etc.); language-specific rules explain how that property is achieved in a given implementation.
 
 ## 8. Validation / Evidence Family
 
@@ -176,7 +176,7 @@ Both are valuable but are **implementation authorities**, not system architectur
 
 Defines evidence types, evidence state, identity, traceability, reproducibility, environment/tool identification, anomaly handling, retention and integrity.
 
-Assessment: high-value Gen2 donor. Evidence should be connected directly to Framework Scan decisions, verification obligations and runtime incident evidence.
+Assessment: high-value SCAF donor. Evidence should be connected directly to Framework Scan decisions, verification obligations and runtime incident evidence.
 
 ### Conformance / Protocol / Coding / Repository checklists
 
@@ -185,8 +185,8 @@ Role: operationalize the authorities into review gates.
 Assessment:
 
 - useful evidence of how Gen1 translated principles into checks;
-- current checklist boundaries mirror Gen1 documents and therefore should not define Gen2 taxonomy;
-- regenerate narrower checklists after Gen2 concept authority is stable.
+- current checklist boundaries mirror Gen1 documents and therefore should not define SCAF taxonomy;
+- regenerate narrower checklists after SCAF concept authority is stable.
 
 ### AI artifact validation
 
@@ -207,9 +207,9 @@ Gen1 includes:
 
 Assessment:
 
-This demonstrates a mature intent: rules should eventually become machine-verifiable where practical. However, these files are strongly coupled to Gen1 paths, schemas, authority names and claim model. They should **not** be copied into v0.0.1rc1.
+This demonstrates a mature intent: rules should eventually become machine-verifiable where practical. However, these files are strongly coupled to Gen1 paths, schemas, authority names and claim model. They should **not** be copied into v0.0.1rc02.
 
-The durable Gen2 principle is:
+The durable SCAF principle is:
 
 > A stable human authority should precede the schema; a stable schema should precede validators; validators should precede CI enforcement.
 
@@ -238,10 +238,29 @@ Major concept donors:
 
 Assessment:
 
-These concepts fill a major Gen1 gap in **diagnostic survivability** and **postmortem evidence quality**. Recorder-specific APIs, record layouts and 10 KiB retained-RAM suggestions belong in implementation/reference profiles, not universal Gen2 rules.
+These concepts fill a major Gen1 gap in **diagnostic survivability** and **postmortem evidence quality**. Recorder-specific APIs, record layouts and 10 KiB retained-RAM suggestions belong in implementation/reference profiles, not universal SCAF rules.
 
 ## 11. Role Analysis Conclusion
 
 Gen1 should be treated as a rich concept repository rather than a directory template. The strongest reusable ideas are responsibility ownership, machine-readable contracts, protocol/transport separation, explicit lifecycle/state, bounded concurrency/resources, update/rollback, evidence governance and multi-node isolation.
 
-The largest structural change required for Gen2 is to put these ideas under a **system concern taxonomy** rather than under `coordinator`, `node`, `protocol`, `coding-rules`, and `validation` as largely parallel document domains.
+The largest structural change required for SCAF is to put these ideas under a **system concern taxonomy** rather than under `coordinator`, `node`, `protocol`, `coding-rules`, and `validation` as largely parallel document domains.
+
+
+## 12. RC02 Metamodel Correction
+
+The rc1 role analysis correctly identified the need to move beyond Coordinator/Device framing, but the rc02 architecture review showed that a Node-only generalization is still insufficient.
+
+Therefore source concepts are now re-homed against a broader metamodel:
+
+```text
+System
+Function / Service / Capability
+Node
+Role
+Interface
+Interaction
+Cross-cutting Domain
+```
+
+A source document can contribute to several of these entities or concerns. A physical `device` is not automatically a Role, and a chip/process is not automatically a Node. The migration mapping in `03_Gen1_to_Gen2_Concept_Mapping.md` is the current authority for those dispositions.

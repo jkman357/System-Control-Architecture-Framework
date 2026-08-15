@@ -1,100 +1,157 @@
-# Gen1 to Gen2 Concept Mapping
+# Gen1 to SCAF Concept Mapping
 
 ## 1. Mapping Principle
 
-Mapping is performed by **concept**, not by filename. One Gen1 document may feed several Gen2 authorities, and one Gen2 concern may merge concepts from several Gen1 documents plus supplemental sources.
+Mapping is performed by **concept**, not by filename or Gen1 directory. One source artifact may contribute to several SCAF concerns, and one SCAF concern may merge concepts from several Gen1 documents plus supplemental sources.
 
-## 2. Core Mapping
+This RC separates two questions that rc1 mixed together:
 
-| Concept | Gen1 Source | Supplemental Source | Gen2 Target | Action | Notes |
-|---|---|---|---|---|---|
-| System architecture baseline | Master Framework | — | System Model & Architecture | **Rewrite** | Remove embedded-only and fixed Coordinator/Node framing |
-| Coordinator / Device roles | Master Framework, Coordinator docs, Node rules | — | Node Role Model | **Rewrite** | Coordinator/device/gateway/supervisor become role profiles |
-| Role relativity | Master Framework | — | Node Role Model | **Keep / Elevate** | Strong Gen1 idea; becomes central in Gen2 |
-| Node identity / capability | Master Framework, Protocol Guide, Registry Governance | — | Node Identity, Capability & Lifecycle | **Merge** | Separate identity/address/route/session remains valid |
-| Single-node / multi-node topology | Master Framework, Application Analysis | — | System Topology & Interaction Model | **Keep / Generalize** | Extend to heterogeneous and hierarchical systems |
-| Per-node isolation | Master Framework, Coordinator docs | — | Fault / Resource / State Containment | **Move / Elevate** | Treat as system resilience property, not only coordinator design |
-| Layering / responsibility boundaries | Framework, Coordinator, Node rules | — | Architecture & Responsibility | **Merge** | One authority; implementation profiles specialize it |
-| Protocol single source of truth | Protocol Guide / Template | — | Interface & Data Contract | **Keep / Generalize** | Apply beyond command/response protocols |
-| Protocol vs transport separation | Framework, Protocol Guide | — | Interaction Layering | **Keep** | Stable system principle |
-| Message / event / stream separation | Framework, Protocol Guide | — | Interaction Semantics | **Keep / Generalize** | Include IPC/shared memory/register/DMA where applicable |
-| Compatibility / evolution | Protocol Compatibility Rules | — | Interface Lifecycle & Compatibility | **Move** | No longer protocol-only where versioned interfaces exist |
-| Identifier registry | Registry Governance | — | Identity & Namespace Governance | **Move** | Apply to node/interface/event/evidence IDs as appropriate |
-| Secure session | Framework, Security Profile | — | Security Robustness | **Merge** | Keep cryptographic/session material as a profile |
-| Authentication / authorization | Security Profile | — | Security Robustness | **Move** | Link to safe failure and recovery behavior |
-| Replay / counter / rekey | Security Profile | — | Security Profile | **Move** | Specialized protocol security mechanism |
-| Control plane / data plane | Framework | — | Interaction & Runtime Architecture | **Keep** | Useful separation where applicable, not mandatory for every node |
-| Timing budget | Framework, Application Analysis | — | Timing & Temporal Correctness | **Elevate** | Becomes cross-system concern |
-| Bandwidth budget | Framework, Application Analysis | — | Capacity / Resource Margin | **Move** | Include compute, memory, queues, I/O, storage, thermal/power if project-relevant |
-| Queue / buffer / backpressure | Framework, Coordinator Concurrency | — | Concurrency & Resource Robustness | **Merge** | Bounded overload behavior becomes resilience concern |
-| Stale data | Framework, UI Guide | — | Data Integrity & Freshness | **Elevate** | Expand to validity, age, sequence, provenance and consistency |
-| Link management / reconnect | Framework, Coordinator docs | — | Communication Robustness | **Move** | Treat failure/retry/recovery/partition explicitly |
-| Wireless specifics | Framework | — | Transport Profile | **Move** | Optional transport specialization |
-| Firmware update | Framework, Application Analysis, Security Profile | — | Boot / Update / Rollback | **Merge** | System lifecycle authority, not protocol subtopic |
-| Rollback | Framework | — | Recovery + Update | **Elevate** | Connect to health validation and safe activation |
-| Safe state during update | Framework | — | Safe State & Degraded Operation | **Merge** | Generalize beyond update |
-| RTOS / bare-metal | Framework, Embedded C rules | — | MCU / Embedded Runtime Profile | **Move** | Not core system taxonomy |
-| BSP / HAL / driver boundary | Framework, Node / Coding rules | — | Implementation Architecture Profile | **Move** | Applicable mainly to software/embedded nodes |
-| Static memory / bounded allocation | Framework, Embedded C rules | recorder static config | Resource Robustness + Embedded C Profile | **Merge** | System property + implementation rule separated |
-| C implementation rules | Embedded C Coding Rules | implementation examples | Embedded C Profile | **Move** | Keep detailed rules outside core |
-| C# implementation rules | CSharp Coding Rules | — | C#/.NET Profile | **Move** | Keep detailed rules outside core |
-| UI engineering | Coordinator UI Guide | — | HMI / Operator Interface Profile | **Move** | Optional node/profile concern |
-| Logging | Coordinator Logging Guide | recorder evidence model | Observability / Diagnostics | **Merge** | Separate routine logging from incident evidence |
-| Test layering | Coordinator Testing Guide | validation matrix | Verification Strategy | **Merge** | Generalize beyond coordinator |
-| Evidence identity / traceability | Validation Evidence Guide | build identity / boot epoch | Verification & Evidence | **Elevate / Merge** | Connect design evidence and runtime evidence without conflating them |
-| Framework conformance | Conformance Checklist, claim schema | — | Framework Scan + Conformance | **Rewrite** | Taxonomy-driven claim boundary and evidence obligations |
-| Protocol conformance | Protocol Checklist / schema / fixtures | — | Interface Verification | **Move / Rebuild** | Machine-verifiable layer after stable schema |
-| Repository validation | Repository checklist / validators / CI | — | Framework Governance Tooling | **Retire / Rebuild later** | Do not make repository structure part of system taxonomy |
-| AI task routing / validation | AI guides | — | Engineering Governance | **Move** | Optional process authority |
-| Fault prevention | Coding rules, architecture rules, security | low coupling / invariants | Robustness & Resilience | **Merge / Elevate** | Gen1 is fragmented; create explicit system-level concern |
-| Fault detection | Errors/diagnostics in several docs | invariants, probes, first-abnormal latch | Fault Detection & Runtime Health | **New authority from merged sources** | Needs unified detection model |
-| Runtime health monitoring | Diagnostics fragments | recorder self-health, checkpoints/invariants | Runtime Health Monitoring | **New** | Must cover node/system health, not recorder only |
-| Fault containment | Per-node isolation, safety boundaries | failure isolation, degraded recorder | Fault Containment | **Elevate** | Explicit containment domains and propagation paths needed |
-| Fault escalation | Error / alarm handling fragments | first-abnormal/fatal distinction | Fault Escalation | **New / Rewrite** | Define escalation criteria, ownership and evidence |
-| Recovery | reconnect, rollback, error recovery | boot recovery, salvage, persistence | Recovery | **Merge / Elevate** | Make recovery a lifecycle, not scattered mechanism |
-| Graceful degradation | partial results / stale UI / safe update | degraded recorder mode | Graceful Degradation | **New authority** | Need service-level degradation semantics |
-| Safe state | safety/update sections | recovery mode boundary | Safe State | **Elevate** | Define trigger, owner, entry/exit, observability and verification |
-| Incident evidence | logging / validation evidence only partly related | complete recorder architecture | Diagnostics & Incident Evidence | **New authority from supplemental source** | Keep runtime evidence distinct from design-validation evidence |
-| First-abnormal-state | not explicit | strong source | Incident Evidence | **New** | Key diagnostic principle |
-| Evidence survivability | not explicit | retained RAM, persistence, torn-write, export | Incident Evidence Survivability | **New** | Include reset/power-loss survivability classes |
-| Boot / reset cause evidence | partial boot/update | reset taxonomy, boot epoch, early boot | Boot / Power / Reset | **New / Merge** | Expand lifecycle beyond firmware update |
-| Power-loss boundary | limited | explicit persistence boundary | Power / Persistence Robustness | **New** | Needed for state/evidence/data integrity |
-| Watchdog behavior | implementation fragments | watchdog integration | Runtime Health & Recovery | **New / Merge** | Policy and evidence both required |
-| Data integrity | protocol validation / safe decode | torn-write / completeness metadata | Data Integrity & Freshness | **New authority from merged sources** | End-to-end semantics needed |
-| Resource margin | budgets | recorder memory/timing impact | Capacity & Resource Margin | **Elevate** | Include headroom and overload behavior, not just calculated usage |
-| Long-run robustness | limited | crash loop, wear budget, retry bounds | Long-Run Robustness | **New** | Include leaks, counters, wear, drift, queue accumulation, repeated recovery |
-| Security robustness | security profile | recorder failure isolation indirectly | Security Robustness | **Rewrite / Elevate** | Availability and recovery aspects beyond secure session |
-| Fault injection | negative fixtures / tests | known-bug validation | Fault Injection & Adversarial Verification | **New authority** | Systematic fault campaigns absent as top-level method |
-| Observer effect | not explicit | explicit audit | Verification & Diagnostics | **New** | Required for probes/health/logging that can perturb behavior |
-| Verification evidence | validation docs | recorder validation matrix | Verification & Evidence | **Merge / Elevate** | Tie each applicable concern to evidence requirement |
-| Framework application | Application Analysis Template | recorder phased adoption | Framework Scan | **Rewrite** | One scan model spanning architecture + robustness + verification |
+1. **Disposition** — what happens to the source artifact/concept in migration?
+2. **Transformation** — how must the concept change in abstraction or structure?
 
-## 3. Gen2 Disposition Rules
+## 2. Disposition Vocabulary
 
-### Keep
+| Disposition | Meaning |
+|---|---|
+| `Keep` | Preserve substantially unchanged as a SCAF concept/artifact role |
+| `Move` | Preserve but relocate under a different SCAF authority |
+| `Merge` | Consolidate with overlapping concepts into one authority |
+| `Rewrite` | Preserve intent but replace framing / responsibility model substantially |
+| `Retire` | Do not carry the source artifact/concept forward as an independent SCAF authority |
+| `New` | New SCAF concept required because no source provides sufficient authority |
 
-Use when the concept already has the right abstraction and authority boundary. Example: protocol/transport separation.
+Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and `Rebuild` are **not** dispositions.
 
-### Move
+## 3. Source-Maturity Vocabulary
 
-Use when the concept is valid but belongs elsewhere in the new taxonomy. Example: C# rules become an implementation profile.
+| Source maturity | Meaning in migration |
+|---|---|
+| `Baseline` | Accepted Gen1 baseline donor |
+| `Draft for Review` | Useful donor, but not silently promoted to accepted Gen1 baseline semantics |
+| `Specification RC` | Supplemental RC donor; generic architecture may be adopted after SCAF review |
+| `Repository artifact` | Tool/schema/test/governance evidence; semantics may need extraction before migration |
+| `SCAF New` | New architecture decision introduced by SCAF |
 
-### Merge
+## 4. Target Concern IDs
 
-Use when several Gen1 documents describe the same system property from different roles. Example: concurrency/resource isolation across Framework, Coordinator and Node documents.
+| ID | Concern |
+|---|---|
+| `SCAF-GOV` | Framework Governance & Authority |
+| `SCAF-CTX` | System Context, Mission, Function & Service |
+| `SCAF-ARCH` | System / Node / Role / Domain Architecture |
+| `SCAF-INT` | Interfaces, Interaction & Data Contracts |
+| `SCAF-RUN` | Runtime Behavior, State & Lifecycle |
+| `SCAF-TIME` | Timing, Concurrency, Capacity & Resource Margin |
+| `SCAF-ROB` | Robustness & Resilience |
+| `SCAF-LIFE` | Boot, Power, Reset & Update Lifecycle |
+| `SCAF-OBS` | Observability, Diagnostics & Incident Evidence |
+| `SCAF-SEC` | Security Robustness |
+| `SCAF-CFG` | Configuration & Persistent Operational State |
+| `SCAF-APP` | Project Application / Framework Scan |
+| `SCAF-ASSUR` | Verification, Fault Injection & Evidence |
+| `SCAF-PROF` | Realization / Implementation Profiles |
 
-### Rewrite
+## 5. Source-Anchored Core Mapping
 
-Use when the concept is important but current wording assumes Gen1 roles, directories, software technology or embedded scope.
+`Anchor` uses source headings as stable human-readable trace points. Line numbers are deliberately not the primary anchor because source edits can shift lines without changing section identity.
 
-### Retire
+| Concept | Source document | Anchor | Source maturity | SCAF target | Disposition | Transformation | Confidence | Deep audit |
+|---|---|---|---|---|---|---|---|---|
+| System architecture baseline | `Coordinator_Node_Control_Framework.md` | Part I §1.1–1.4 Framework Position / System Layers / Layer Responsibilities | Baseline v1.1.7 | `SCAF-ARCH` | Rewrite | Generalize beyond Coordinator/embedded framing | High | Partial |
+| Control-role authority | `Coordinator_Node_Control_Framework.md` | §1.6 Control Role and State Authority; §2.2–2.4 Coordinator/Node/Role Relativity | Baseline v1.1.7 | `SCAF-ARCH` | Merge | Convert fixed classes to contextual Role semantics | High | Partial |
+| Role relativity | `Coordinator_Node_Control_Framework.md` | §2.4 Role Relativity | Baseline v1.1.7 | `SCAF-ARCH` | Keep | Elevate to core metamodel | High | Partial |
+| Node identity / capability | `Coordinator_Node_Control_Framework.md` | §2.8 Node Identity and Capability; §2.11.1–2.11.3 | Baseline v1.1.7 | `SCAF-ARCH` | Merge | Separate Node identity from address/route/session and from physical device identity | High | Partial |
+| Single/multi-node topology | `Coordinator_Node_Control_Framework.md` | §2.11 Single-Node and Multi-Node Architecture Baseline | Baseline v1.1.7 | `SCAF-ARCH` | Keep | Generalize to hierarchical/heterogeneous systems | High | Partial |
+| Per-node isolation | `Coordinator_Node_Control_Framework.md` | §2.11.2 Per-Node Context and Isolation | Baseline v1.1.7 | `SCAF-ARCH`, `SCAF-ROB` | Move | Split architecture domain definition from fault/runtime containment behavior | High | Partial |
+| Function / service model | `Framework_Application_Analysis_Template.md` | §6.2 Services; §8 Functional Analysis | Baseline v1.1.9 | `SCAF-CTX` | Rewrite | Elevate service/function/dependency to first-class system model | High | Partial |
+| System context / operating modes | `Framework_Application_Analysis_Template.md` | §3.3 System Context; §3.4 Scope; §3.5 Operating Modes | Baseline v1.1.9 | `SCAF-CTX` | Keep | Generalize | High | Partial |
+| Project responsibility matrix | `Framework_Application_Analysis_Template.md` | §7.1–7.4 Responsibility Boundary | Baseline v1.1.9 | `SCAF-APP`, `SCAF-ARCH` | Rewrite | Separate framework authority from project disposition/ownership | High | Partial |
+| Framework application analysis | `Framework_Application_Analysis_Template.md` | §1.3 Expected Outputs; §1.4 Decision Criteria; §5 Framework Application Map | Baseline v1.1.9 | `SCAF-APP` | Rewrite | Rebuild as multi-axis Framework Scan lifecycle | High | Partial |
+| Protocol single source of truth | `Protocol_YAML_Definition_Guide.md` | §1.1 Single Source of Truth; §1.2 Machine-Readable, Human-Readable, and Testable | Baseline v1.1.7 | `SCAF-INT` | Keep | Generalize from protocol-only contract to interface/data contracts | High | Partial |
+| Product semantics vs representation | `Protocol_YAML_Definition_Guide.md` | §1.3 Product Semantics and Wire Format Shall Be Separated | Baseline v1.1.7 | `SCAF-INT` | Keep | Generalize | High | Partial |
+| Protocol vs transport separation | `Protocol_YAML_Definition_Guide.md` | §1.4 Transport-Neutral Contract; framework §3.7 Protocol and Transport Decoupling | Baseline v1.1.7 | `SCAF-INT` | Keep | Apply to broader interaction technologies | High | Partial |
+| Message/event/stream semantics | `Protocol_YAML_Definition_Guide.md` | §8 Message Model; §10 Telemetry and Streaming | Baseline v1.1.7 | `SCAF-INT` | Keep | Extend to IPC/shared memory/register/DMA/RPC where applicable | High | Partial |
+| Compatibility / evolution | `Protocol_Compatibility_Rules.md` | Part II §5–10; Part III §11–15; Part IV §16–19 | Draft for Review v1.1.0 | `SCAF-INT` | Move | Generalize to versioned interfaces while preserving protocol specialization | Medium | Deferred |
+| Identifier / namespace governance | `Protocol_YAML_Definition_Guide.md`; `Protocol_Registry_Governance.md` | Guide §5 Namespace, Service, and ID Allocation; Registry authority sections | Baseline + Draft | `SCAF-INT`, `SCAF-GOV` | Merge | Split namespace rules from repository governance | Medium | Deferred |
+| Secure-session mechanics | `Protocol_Security_Profile.md` | Secure session / authentication / replay / rekey sections | Draft for Review v1.1.0 | `SCAF-SEC`, `SCAF-INT` | Move | Security defines constraints; protocol profile realizes mechanics | Medium | Deferred |
+| Timing budget | `Coordinator_Node_Control_Framework.md` | Part IV §4.3–4.5 Sample/Record Period, Timing Budget, Bandwidth Budget | Baseline v1.1.7 | `SCAF-TIME` | Move | Elevate to system temporal correctness | High | Partial |
+| Queue / bounded backpressure | `Coordinator_Node_Control_Framework.md`; `Coordinator_Concurrency_Guide.md` | Framework §4.7 Queue and Buffer Policy; Concurrency §6 Bounded Queues and Backpressure | Baseline + Draft | `SCAF-TIME`, `SCAF-ROB` | Merge | Separate capacity definition from overload resilience response | High | Partial |
+| Concurrency ownership | `Coordinator_Concurrency_Guide.md` | §2 Explicit Concurrency Model; §3 Thread and State Ownership; §8 Timeout Ownership; §9 Synchronization | Draft for Review v1.1.0 | `SCAF-TIME`, `SCAF-PROF` | Merge | Core states required ownership; profiles realize mechanisms | Medium | Deferred |
+| Stale data / freshness | `Coordinator_Node_Control_Framework.md`; UI guidance | Framework §4.9 Stale Data | Baseline v1.1.7 | `SCAF-INT`, `SCAF-TIME`, `SCAF-ROB`, `SCAF-SEC` | Merge | One semantic owner plus explicit cross-concern constraints | High | Partial |
+| Link/reconnect behavior | `Coordinator_Node_Control_Framework.md`; `Protocol_Compatibility_Rules.md` | Framework §5.6 Link Management State Machine; Compatibility §15 Reconnect and Reconciliation | Baseline + Draft | `SCAF-ROB`, `SCAF-INT` | Merge | Generalize communication failure/recovery/partition handling | High | Partial |
+| Boot / reset / recovery | `Node_Software_Engineering_Rules.md` | §24 Reset Cause and Recovery; §25 Startup Sequence; §26 Shutdown and Power Transition | Draft for Review v1.1.0 | `SCAF-LIFE` | Move | Generalize beyond software Node | Medium | Deferred |
+| Firmware update | `Coordinator_Node_Control_Framework.md`; Node Rules | Framework §2.11.8 Firmware Update Coordination; Node §38–40.1 | Baseline + Draft | `SCAF-LIFE` | Merge | System lifecycle authority across heterogeneous nodes | High | Partial |
+| Configuration ownership | `Node_Software_Engineering_Rules.md`; Application Analysis | Node §34 Configuration Ownership; Application §8.2 Configuration | Draft + Baseline | `SCAF-CFG` | Merge | Create explicit configuration lifecycle authority | High | Partial |
+| Persistent operational state | `Node_Software_Engineering_Rules.md` | §35 Persistent State | Draft for Review v1.1.0 | `SCAF-CFG`, `SCAF-LIFE` | Move | Separate operational persistence from incident evidence persistence | Medium | Deferred |
+| Local safety / degraded state | `Node_Software_Engineering_Rules.md` | §19 Local Safety Ownership; §20 Fault Classification; §22 Degraded and Safe States | Draft for Review v1.1.0 | `SCAF-ROB` | Rewrite | Require project safety/hazard authority for safety-significant Safe State definition | Medium | Deferred |
+| Fault injection | `Node_Software_Engineering_Rules.md` | §43 Fault Injection | Draft for Review v1.1.0 | `SCAF-ASSUR` | Move | Treat as assurance, not runtime fault lifecycle | Medium | Deferred |
+| Evidence model | `Validation_Evidence_Guide.md` | Part I Evidence Model; Part III Identity/Traceability/Reproducibility; Part IV Result/Review Control | Draft for Review v1.1.0 | `SCAF-ASSUR` | Merge | Connect evidence to SCAF concern/decision/verification trace | Medium | Deferred |
+| Runtime operational logs | `Coordinator_Logging_Guide.md` | logging identity/correlation/structured diagnostic sections | Draft for Review v1.1.1 | `SCAF-OBS`, `SCAF-PROF` | Merge | Core defines observability intent; implementation profile realizes logging | Medium | Deferred |
+| First-abnormal-state localization | Crash Recorder `README.md` | Part A §A4–A8 Probe Layers / First-Fault Latch / Timeline / Breadcrumbs | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-ROB` | Merge | Generalize evidence objective; keep recorder mechanics subordinate | High | Partial |
+| Evidence survivability | Crash Recorder `README.md` | Part B §B8–B18 Evidence State/Persistence/Crash Loop; Part E Evidence Quality vs Survivability | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-LIFE` | Merge | Generalize survival classes and boot salvage | High | Partial |
+| Reset cause / boot epoch | Crash Recorder `README.md` | §B31 Reset Cause as Evidence; §B32 Boot Epoch | Specification RC v1.0.1rc03 | `SCAF-LIFE`, `SCAF-OBS` | Merge | Generalize correlation semantics | High | Partial |
+| Observer effect | Crash Recorder `README.md` | §A23 Observer-Effect Audit; §B37 Observer-Effect Audit | Specification RC v1.0.1rc03 | `SCAF-ASSUR`, `SCAF-OBS` | Merge | Elevate diagnostic self-interference as assurance obligation | High | Partial |
+| Evidence accessibility/export | Crash Recorder `README.md` | §B13 Automatic Export; §B14 Manual UI Role; §B15–B16 Export Failure/Completion | Specification RC v1.0.1rc03 | `SCAF-OBS`, `SCAF-PROF` | Move | Define accessibility intent; keep media/UI mechanics in profiles | High | Partial |
+| Fault/error/failure semantic chain | — | — | SCAF New | `SCAF-ROB` | New | Introduce explicit condition→activation→error→propagation→service failure→consequence model | High | New |
+| Fault-tolerance mechanisms | — | — | SCAF New | `SCAF-ROB` | New | Add redundancy/failover/reconfiguration/repair/resynchronization/reintegration | High | New |
+| Cross-cutting domains | Gen1 isolation/reset/security/resource concepts | Multiple anchors above | Mixed | `SCAF-ARCH` | Rewrite | Model Fault/Reset/Power/Security/Resource domains independently of Node | High | Partial |
+| Distributed incident time provenance | Crash Recorder timestamp/boot-epoch concepts + SCAF extension | A16 Timestamp and Ordering; B32 Boot Epoch | Supplemental + SCAF New | `SCAF-OBS` | Rewrite | Add synchronization quality, uncertainty and causal correlation across Nodes | High | Partial |
+| Implementation rulebooks | C# / Embedded C rules | Full language authorities | Baseline + Draft | `SCAF-PROF` | Move | Keep language/runtime mechanisms outside system concern authority | High | Deferred |
+| Machine-verifiable governance | schemas/tools/tests/workflow | repository artifacts | Repository artifact | `SCAF-GOV`, `SCAF-ASSUR` | Retire | Rebuild only after stable human authority and machine contracts | High | Deferred |
 
-Use for an artifact that should not exist in Gen2 in its current form. It does not imply that all ideas in that file are discarded.
+## 6. Cross-Concern Authority Examples
 
-### New
+A concept can cross several concerns without creating duplicate authority when the relation is explicit.
 
-Use where no sufficient Gen1 authority exists. Supplemental material can reduce the amount of truly new design, but its provenance remains explicit.
+### Freshness
 
-## 4. Mapping Conclusion
+- `SCAF-INT` **Defines** data-age / ordering / validity contract semantics.
+- `SCAF-TIME` **Constrains** temporal budgets and measurable age limits.
+- `SCAF-ROB` **Constrains** behavior when freshness guarantees are lost.
+- `SCAF-SEC` **Constrains** anti-replay / hostile-staleness behavior where security-relevant.
+- `SCAF-ASSUR` **Verifies** the applicable obligations.
 
-The highest-value Gen2 transformation is not “Host -> Node” renaming. It is the conversion from a **role/document-domain framework** into a **system-property framework** where roles and implementation technologies are profiles beneath stable system concerns.
+### Containment
+
+- `SCAF-ARCH` **Defines** containment-domain boundaries and ownership.
+- `SCAF-ROB` **Defines/Constrains** runtime behavior under fault propagation across those boundaries.
+- `SCAF-SEC` **Constrains** behavior under malicious or compromised-node propagation.
+- `SCAF-PROF` **Realizes** the required mechanisms.
+- `SCAF-ASSUR` **Verifies** containment properties.
+
+### Incident Evidence
+
+- `SCAF-OBS` **Defines** required evidence semantics and accessibility.
+- `SCAF-LIFE` **Constrains** survivability across reset/boot/power transitions.
+- `SCAF-ROB` **Constrains** what failures/effects must be observable.
+- `SCAF-PROF` **Realizes** retention/persistence/export mechanisms.
+- `SCAF-ASSUR` **Verifies** evidence quality and observer-effect limits.
+
+## 7. Artifact Disposition vs Concept Disposition
+
+A source artifact can have several concept outcomes. Example:
+
+```text
+Coordinator_Software_Engineering_Rules.md
+    general layering / ownership concepts -> Merge into SCAF core concerns
+    desktop async mechanisms              -> Move to realization profiles
+    Coordinator-only taxonomy             -> Retire as top-level classification
+    original artifact as SCAF authority   -> Retire / replace later
+```
+
+Therefore the complete file inventory remains an **artifact-level preliminary disposition**, while this document is the more important **concept-level migration map**.
+
+## 8. Migration Evidence Status
+
+The mapping above is strong enough for architecture convergence, but it is **not yet a requirement-by-requirement migration baseline**.
+
+Remaining work includes:
+
+- deep audit of Gen1 Draft/RC donors before any semantics are promoted as normative SCAF requirements;
+- extraction of invariants encoded only in schemas, validators and negative/positive test fixtures;
+- contradiction review where multiple source authorities cover the same topic;
+- final target authority IDs after taxonomy freeze.
+
+The correct current interpretation is:
+
+> **source-anchored migration hypothesis with explicit confidence and audit state**, not final migration proof.
