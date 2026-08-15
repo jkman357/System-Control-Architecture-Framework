@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc02**.
+This document records the exact source and review inputs used for **System Control Architecture Framework (SCAF) v0.0.1rc03**.
 
 ## 2. Gen1 Formal Baseline
 
@@ -57,14 +57,25 @@ Treatment:
 
 Treatment:
 
-- review evidence and correction input for rc02;
+- review evidence and correction input for rc03;
 - not a normative SCAF source;
 - used to challenge taxonomy planes, Node metamodel, migration evidence, robustness semantics and Framework Scan responsibility;
-- review findings are incorporated only where independently accepted into rc02 architecture decisions.
+- review findings are incorporated only where independently accepted into rc03 architecture decisions.
+
+### rc02 Review
+
+**Input:** `System-Control-Architecture-Framework-v0.0.1rc02-independent-review.md`  
+**SHA-256:** `5a24461595e6814db6caf54f797614f2b27cf9ec0481215d5f3fc49a35caf961`
+
+Treatment:
+
+- independent architecture/framework review evidence for rc03;
+- not a normative SCAF source;
+- used to challenge framework-vs-project authority, plane relations, CTX/ARCH dependency ownership, assurance ownership, Framework Scan startup usability, timebase authority, security scope and migration reproducibility.
 
 ## 5. Analysis Boundary
 
-v0.0.1rc02 performs:
+v0.0.1rc03 performs:
 
 1. preservation of complete Gen1 and supplemental repository inventory;
 2. document-role analysis;
@@ -77,7 +88,8 @@ v0.0.1rc02 performs:
 9. Framework Scan lifecycle restructuring;
 10. overlap / obsolescence / gap analysis refresh;
 11. three representative tabletop architecture exercises;
-12. read-coverage and deep-audit-state audit.
+12. one end-to-end worked Framework Scan on the PC + multiple MCU archetype;
+13. read-coverage and deep-audit-state audit.
 
 It does **not** yet perform:
 
@@ -106,6 +118,15 @@ Project-Specific Decision
 
 A source maturity marker is part of migration evidence. “Found in Gen1” is not equivalent to “accepted Gen1 baseline requirement.”
 
-## 7. Reproducibility Note
+## 7. Reproducibility / Retrievability Note
 
-The source archives are intentionally not copied into the SCAF source repository. Their archive names and SHA-256 digests identify the analyzed inputs. Source-section anchors in `03_Gen1_to_Gen2_Concept_Mapping.md` provide human-readable trace points for migration review.
+The source archives are intentionally not copied into the SCAF source repository. Their archive names and SHA-256 digests identify the analyzed inputs, and source-section anchors in `03_Gen1_to_Gen2_Concept_Mapping.md` provide human-readable trace points.
+
+However, **identity is not retrievability**. An independent reviewer cannot reproduce source-semantic review from SHA-256 alone unless the exact donor snapshot is obtainable. Before migration completion or normative freeze, each donor snapshot must therefore gain an immutable/retrievable locator such as a repository commit/tag, release artifact locator, or controlled archive reference.
+
+Current rc03 status:
+
+- source identity: **available**;
+- source anchors: **available for mapped core concepts**;
+- immutable/retrievable donor snapshot locator: **pending**;
+- independent source-semantic reproducibility: **not yet complete**.

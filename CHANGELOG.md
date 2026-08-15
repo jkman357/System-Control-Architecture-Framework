@@ -2,6 +2,36 @@
 
 All notable changes to **System Control Architecture Framework (SCAF)** are recorded here.
 
+## v0.0.1rc03 — 2026-08-15
+
+Authority-semantics and project-application convergence release candidate.
+
+### Changed
+
+- separated **SCAF Concern Authority** from **Project Design Authority** so framework semantics/obligations cannot be confused with project-specific architecture values;
+- clarified that `SCAF-APP` dispositions/traces project state but does not become the project architecture authority;
+- clarified that `SCAF-ASSUR` owns verification/evidence sufficiency, not underlying system-property thresholds;
+- replaced the README's linear five-plane pipeline with non-linear governance / concern / project-design / realization / assurance relations;
+- partitioned `SCAF-CTX` logical mission/service dependencies from `SCAF-ARCH` structural allocation/realization dependencies;
+- defined `SCAF-RUN` as service/operational lifecycle and `SCAF-LIFE` as platform/system boot/reset/power/update lifecycle;
+- moved primary timebase/clock/synchronization semantics to `SCAF-TIME` and added Clock/Time Domain;
+- limited `SCAF-OBS` to observing/recording time provenance and synchronization quality for evidence;
+- scoped `SCAF-SEC` as a system-control architecture interface to external/project cybersecurity authority rather than a replacement threat/risk framework;
+- changed reference subsystems/patterns from a profile axis to a Realization Plane pattern category;
+- made Framework Scan explicitly iterative for greenfield startup;
+- added an end-to-end worked Framework Scan for the PC + multiple MCU archetype across eleven concerns;
+- added per-donor source-maturity binding examples for multi-source migration rows;
+- distinguished donor **source identity** from **source retrievability** and kept immutable donor locators as an explicit remaining gate item;
+- incorporated the v0.0.1rc02 independent architecture review as non-normative correction input.
+
+### Deliberately Not Added
+
+- CI / GitHub Actions;
+- validators or schemas;
+- generated checklists;
+- new normative rulebooks;
+- large-scale normative rewrite.
+
 ## v0.0.1rc02 — 2026-08-15
 
 Architecture / taxonomy convergence release candidate.

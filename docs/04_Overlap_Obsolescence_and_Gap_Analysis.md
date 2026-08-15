@@ -8,39 +8,39 @@ This document identifies structural problems that must be resolved before large-
 
 Gen1 contains substantial reusable engineering content. The main migration risk is not missing documents; it is **duplicate or ambiguous authority created by Gen1 role/document boundaries and by rc1's mixed taxonomy dimensions**.
 
-v0.0.1rc02 therefore treats authority structure as the first design problem.
+v0.0.1rc03 therefore treats authority structure as the first design problem.
 
-## 3. Resolved / Substantially Improved in rc02
+## 3. Resolved / Substantially Improved in rc03
 
 ### 3.1 Mixed taxonomy planes
 
 rc1 placed system concerns, project application, assurance, implementation, tooling and engineering process as peer branches.
 
-**rc02 decision:** separate five authority planes and make tooling/AI supporting mechanisms rather than peer system concerns.
+**rc03 decision:** separate five authority planes and make tooling/AI supporting mechanisms rather than peer system concerns.
 
 ### 3.2 Node-centric replacement risk
 
 Replacing Host/Device with Node alone is insufficient.
 
-**rc02 decision:** add Function/Service/Capability, Interface, Interaction and cross-cutting Domains as first-class metamodel concepts; define Node boundary criteria.
+**rc03 decision:** add Function/Service/Capability, Interface, Interaction and cross-cutting Domains as first-class metamodel concepts; define Node boundary criteria.
 
 ### 3.3 Migration action vocabulary
 
 rc1 mixed `Keep/Move/Merge/Rewrite/Retire/New` with `Elevate/Generalize/Rebuild`.
 
-**rc02 decision:** separate **Disposition** from **Transformation**.
+**rc03 decision:** separate **Disposition** from **Transformation**.
 
 ### 3.4 Framework Scan state mixing
 
 Applicability, risk, decision, verification and evidence are different state axes.
 
-**rc02 decision:** model them as independent dimensions in a single decision/evidence lifecycle.
+**rc03 decision:** model them as independent dimensions in a single decision/evidence lifecycle.
 
 ### 3.5 Linear fault lifecycle
 
 `Prevention -> Detection -> Containment -> Recovery` mixes design-time assurance with runtime behavior.
 
-**rc02 decision:** separate fault/error/failure semantics, runtime resilience response and assurance.
+**rc03 decision:** separate fault/error/failure semantics, runtime resilience response and assurance.
 
 ## 4. Remaining Authority-Overlap Risks
 
@@ -241,7 +241,7 @@ SCAF must define a home for:
 
 rc1 mixed platform, execution model, language, HMI, transport, storage and reference architecture in one profile list.
 
-rc02 treats profiles as composable axes:
+rc03 treats profiles as composable axes:
 
 ```text
 Compute / deployment technology
@@ -281,3 +281,8 @@ Priority before normative rewrite:
 5. deep-audit schema/test/tool invariants before declaring migration completeness.
 
 The current task is **ambiguity reduction**, not document-count growth.
+
+
+## rc03 Authority Convergence Note
+
+rc03 explicitly separates SCAF normative concern authority from Project Design Authority. SCAF defines framework semantics/obligations; controlled project design artifacts define actual project-specific architecture values; `SCAF-APP` dispositions/traces; `SCAF-ASSUR` verifies. This prevents Framework Scan or assurance artifacts from becoming duplicate design authorities.

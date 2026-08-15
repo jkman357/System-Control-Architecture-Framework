@@ -45,7 +45,7 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | `SCAF-ROB` | Robustness & Resilience |
 | `SCAF-LIFE` | Boot, Power, Reset & Update Lifecycle |
 | `SCAF-OBS` | Observability, Diagnostics & Incident Evidence |
-| `SCAF-SEC` | Security Robustness |
+| `SCAF-SEC` | Security Architecture Interface & Robustness |
 | `SCAF-CFG` | Configuration & Persistent Operational State |
 | `SCAF-APP` | Project Application / Framework Scan |
 | `SCAF-ASSUR` | Verification, Fault Injection & Evidence |
@@ -98,6 +98,26 @@ Transformation terms such as `Generalize`, `Elevate`, `Split`, `Specialize`, and
 | Distributed incident time provenance | Crash Recorder timestamp/boot-epoch concepts + SCAF extension | A16 Timestamp and Ordering; B32 Boot Epoch | Supplemental + SCAF New | `SCAF-OBS` | Rewrite | Add synchronization quality, uncertainty and causal correlation across Nodes | High | Partial |
 | Implementation rulebooks | C# / Embedded C rules | Full language authorities | Baseline + Draft | `SCAF-PROF` | Move | Keep language/runtime mechanisms outside system concern authority | High | Deferred |
 | Machine-verifiable governance | schemas/tools/tests/workflow | repository artifacts | Repository artifact | `SCAF-GOV`, `SCAF-ASSUR` | Retire | Rebuild only after stable human authority and machine contracts | High | Deferred |
+
+
+### 5.1 Multi-Source Maturity Binding
+
+A row-level label such as `Baseline + Draft` is not sufficient evidence for normative promotion. When a concept has multiple donors, maturity is bound to the individual source/anchor. Examples from the table above:
+
+| Concept | Source / Anchor | Source Maturity | Promotion meaning |
+|---|---|---|---|
+| Identifier / namespace governance | `Protocol_YAML_Definition_Guide.md` — §5 Namespace, Service, and ID Allocation | Baseline v1.1.7 | accepted donor semantics may be candidates for preservation |
+| Identifier / namespace governance | `Protocol_Registry_Governance.md` — registry authority sections | Draft / review-state donor | enhancement/authority semantics require reconciliation before promotion |
+| Queue / bounded backpressure | `Coordinator_Node_Control_Framework.md` — §4.7 Queue and Buffer Policy | Baseline v1.1.7 | bounded-policy semantics are baseline donor evidence |
+| Queue / bounded backpressure | `Coordinator_Concurrency_Guide.md` — §6 Bounded Queues and Backpressure | Draft for Review v1.1.0 | concurrency-specific enhancement remains donor input, not silently promoted baseline |
+| Link / reconnect behavior | `Coordinator_Node_Control_Framework.md` — §5.6 Link Management State Machine | Baseline v1.1.7 | baseline reconnect semantics |
+| Link / reconnect behavior | `Protocol_Compatibility_Rules.md` — §15 Reconnect and Reconciliation | Draft for Review v1.1.0 | reconciliation extensions require deep audit before normative adoption |
+| Firmware update | `Coordinator_Node_Control_Framework.md` — §2.11.8 Firmware Update Coordination | Baseline v1.1.7 | baseline coordination semantics |
+| Firmware update | `Node_Software_Engineering_Rules.md` — §38–40.1 | Draft for Review v1.1.0 | Node-specific lifecycle/detail donor requiring reconciliation |
+| Configuration ownership | `Framework_Application_Analysis_Template.md` — §8.2 Configuration | Baseline donor | project application/configuration decision evidence |
+| Configuration ownership | `Node_Software_Engineering_Rules.md` — §34 Configuration Ownership | Draft for Review v1.1.0 | ownership specialization remains donor input pending audit |
+
+Therefore `High` mapping confidence means the SCAF destination is clear; it does **not** upgrade a Draft/RC donor to Baseline maturity.
 
 ## 6. Cross-Concern Authority Examples
 

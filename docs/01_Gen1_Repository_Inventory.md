@@ -28,7 +28,7 @@ The action column describes the **SCAF artifact disposition**, not whether the u
 | 1 | `.gitattributes` | 23 | — | — | Repository text-normalization policy | **Retire** | Do not carry repository mechanics into taxonomy RC; reintroduce later if needed. |
 | 2 | `.github/CODEOWNERS` | 30 | — | — | External repository ownership enforcement map | **Retire** | Governance concept is valid; file is coupled to Gen1 repository paths and ownership. |
 | 3 | `.github/REPOSITORY_PROTECTION.md` | 44 | — | — | External trust / release protection requirements | **Move** | Move concepts to SCAF Governance; do not copy path-specific controls yet. |
-| 4 | `.github/workflows/document-validation.yml` | 36 | — | — | GitHub Actions validation workflow | **Retire** | No CI in v0.0.1rc02; future tooling must follow stable SCAF contracts. |
+| 4 | `.github/workflows/document-validation.yml` | 36 | — | — | GitHub Actions validation workflow | **Retire** | No CI in v0.0.1rc03; future tooling must follow stable SCAF contracts. |
 | 5 | `CHANGELOG.md` | 271 | — | — | Gen1 revision history | **Keep** | Preserve as historical source only; SCAF has its own changelog. |
 | 6 | `CONTRIBUTING.md` | 37 | — | — | Contribution and IP policy | **Rewrite** | Legal/governance intent may remain, but SCAF repository scope and contribution model must be re-established. |
 | 7 | `LICENSE` | 37 | — | — | Repository legal terms | **Keep** | Carried into SCAF analysis RC unless separately changed. |

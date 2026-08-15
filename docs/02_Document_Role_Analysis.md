@@ -207,7 +207,7 @@ Gen1 includes:
 
 Assessment:
 
-This demonstrates a mature intent: rules should eventually become machine-verifiable where practical. However, these files are strongly coupled to Gen1 paths, schemas, authority names and claim model. They should **not** be copied into v0.0.1rc02.
+This demonstrates a mature intent: rules should eventually become machine-verifiable where practical. However, these files are strongly coupled to Gen1 paths, schemas, authority names and claim model. They should **not** be copied into v0.0.1rc03.
 
 The durable SCAF principle is:
 
@@ -247,9 +247,9 @@ Gen1 should be treated as a rich concept repository rather than a directory temp
 The largest structural change required for SCAF is to put these ideas under a **system concern taxonomy** rather than under `coordinator`, `node`, `protocol`, `coding-rules`, and `validation` as largely parallel document domains.
 
 
-## 12. RC02 Metamodel Correction
+## 12. Metamodel Correction Retained in rc03
 
-The rc1 role analysis correctly identified the need to move beyond Coordinator/Device framing, but the rc02 architecture review showed that a Node-only generalization is still insufficient.
+The rc1 role analysis correctly identified the need to move beyond Coordinator/Device framing, and the subsequent independent review/convergence work showed that a Node-only generalization is still insufficient.
 
 Therefore source concepts are now re-homed against a broader metamodel:
 

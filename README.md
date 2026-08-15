@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.1rc02  
+**Version:** v0.0.1rc03  
 **Status:** Architecture / taxonomy convergence release candidate  
 **Date:** 2026-08-15
 
@@ -36,25 +36,45 @@ Three inputs are kept distinct in this RC:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## RC02 Architecture Position
+## RC03 Architecture Position
 
-v0.0.1rc02 responds to the v0.0.1rc1 independent architecture review by separating several dimensions that rc1 had mixed together.
+v0.0.1rc03 incorporates the rc1 and rc02 independent architecture reviews. It preserves the rc02 skeleton while closing the remaining framework-vs-project authority ambiguity and exercising the Framework Scan operating model.
 
-SCAF now distinguishes five authority planes:
+SCAF now distinguishes five planes without treating them as a linear delivery pipeline:
 
 ```text
-Framework / Governance Plane
-        ↓ governs
-System Concern Plane
-        ↓ instantiated by
-Project Application Plane
-        ↓ produces obligations for
-Assurance / Evidence Plane
-        ↓ verified against realizations in
-Realization / Implementation Plane
+                         Framework / Governance
+                                  |
+                                  v
+                         System Concern Authority
+                         /        |        \
+                        /         |         \
+             Project Application |     Realization / Implementation
+                        \         |         /
+                         \        v        /
+                         Project Design Authority
+                                  |
+                                  v
+                         Assurance / Evidence
 ```
 
-Supporting tooling and AI-assisted engineering are **not** peer system-taxonomy branches. They are downstream/supporting mechanisms.
+The key authority chain is:
+
+```text
+SCAF Concern Authority
+    defines framework semantics / obligation / required decision
+        ↓
+Project Design Authority
+    defines the project-specific architecture value or design decision
+        ↓
+SCAF-APP
+    dispositions applicability and traces decision / risk / deviation state
+        ↓
+SCAF-ASSUR
+    verifies the applicable obligation, project decision and realization
+```
+
+Project Application is therefore a trace/disposition mechanism, not the owner of the project architecture. Assurance is not the owner of the underlying system-property threshold. Supporting tooling and AI-assisted engineering are **not** peer system-taxonomy branches.
 
 ## Core Metamodel
 
@@ -64,15 +84,20 @@ The core model is no longer `System -> Node -> Role` alone.
 System
  ├─ Function / Service / Capability
  ├─ Node
- │   └─ Role(s) in context
  ├─ Interface
  ├─ Interaction
  └─ Domain
      ├─ Fault
      ├─ Reset
      ├─ Power
-     ├─ Security
-     └─ Resource
+     ├─ Security / Trust
+     ├─ Resource
+     └─ Clock / Time
+
+Node --plays--> Role (in context)
+Node --provides/consumes--> Service
+Interaction --connects--> participants
+Interface --realizes--> interaction boundary
 ```
 
 Important constraints:
@@ -89,12 +114,13 @@ Important constraints:
 
 To avoid duplicate authority, SCAF uses explicit relation language:
 
-- **Defines** — primary normative authority for the concept.
+- **Defines Framework Semantics / Obligation** — SCAF concern authority defines the concept, required consideration, constraint, or decision obligation.
+- **Defines Project Instance / Decision** — the project design authority defines the actual project-specific boundary, topology, allocation, threshold, state, or other architecture value.
 - **Constrains** — adds required conditions without taking over primary ownership.
 - **Realizes** — implementation/profile mechanism used to satisfy a system property.
 - **Observes** — supplies runtime visibility or incident evidence about a property.
-- **Verifies** — demonstrates that an obligation or property is satisfied.
-- **Dispositions** — records a project-specific applicability/decision state without becoming the normative source.
+- **Verifies** — demonstrates that an applicable obligation, project decision, or realization is satisfied.
+- **Dispositions** — records project applicability/decision/risk/deviation state without becoming either SCAF normative authority or project design authority.
 
 ## Robustness / Resilience Position
 
@@ -175,7 +201,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.1rc02.**
+**No CI is included in v0.0.1rc03.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -196,12 +222,20 @@ Discussion and iterative releases use RC versions. A non-RC version is created o
 Current sequence:
 
 ```text
-v0.0.1rc1
+v0.0.1rc1   # historical first RC spelling
 v0.0.1rc02
+v0.0.1rc03
 ```
+
+The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.1rc02 is still a convergence RC, not permission for large-scale normative rewriting.
+v0.0.1rc03 remains a convergence RC and does **not** authorize large-scale normative rewriting.
 
-Before the rewrite gate is opened, the remaining evidence work includes deeper source-semantic reconciliation and independent review of the rc02 authority model. The three representative tabletop archetypes in `docs/05_SCAF_Taxonomy_Proposal.md` are used to test whether the metamodel can represent single-MCU, PC+multi-MCU, and heterogeneous SoC/FPGA/DSP systems without ad-hoc taxonomy exceptions.
+This RC closes the rc02 blocking ambiguity between SCAF normative authority and project-instance design authority and adds a worked Framework Scan exercise. Remaining gate evidence is narrower:
+
+- independent review of the rc03 authority chain;
+- deeper audit/reconciliation of Gen1 Draft/RC donors and executable invariants before declaring migration complete;
+- immutable/retrievable donor snapshot references before source-semantic review is considered independently reproducible;
+- confirmation that the worked Framework Scan does not require ad-hoc state or authority exceptions.

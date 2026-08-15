@@ -2,7 +2,7 @@
 
 ## 1. Purpose
 
-This document defines the **v0.0.1rc02 conceptual architecture** for System Control Architecture Framework (SCAF).
+This document defines the **v0.0.1rc03 conceptual architecture** for System Control Architecture Framework (SCAF).
 
 It is intentionally not a final file/directory plan. The purpose is to stabilize ontology, authority and application semantics before large-scale normative rewriting.
 
@@ -16,7 +16,7 @@ Control theory, signal processing or motor-control algorithms may be relevant pr
 
 ## 3. Authority Planes
 
-rc1 mixed several ontology planes into one branch list. rc02 separates them.
+rc1 mixed several ontology planes into one branch list. rc03 separates them.
 
 ### Plane A — Framework / Governance
 
@@ -50,18 +50,18 @@ Primary concerns:
 - `SCAF-ROB` Robustness & Resilience;
 - `SCAF-LIFE` Boot, Power, Reset & Update Lifecycle;
 - `SCAF-OBS` Observability, Diagnostics & Incident Evidence;
-- `SCAF-SEC` Security Robustness;
+- `SCAF-SEC` Security Architecture Interface & Robustness;
 - `SCAF-CFG` Configuration & Persistent Operational State.
 
 ### Plane C — Project Application
 
-Purpose: instantiate SCAF against a project and record decisions.
+Purpose: instantiate SCAF against a project and record applicability, decision, risk, deviation and trace state.
 
 Primary concern:
 
 - `SCAF-APP` Framework Scan / Applicability Analysis.
 
-This plane **Dispositions** SCAF concerns for a project. It does not become the source authority for the underlying SCAF obligation.
+This plane **Dispositions** SCAF concerns for a project. It is neither the source authority for the underlying SCAF obligation nor the authority that defines the project-specific architecture value. The latter belongs to the project's designated **Project Design Authority** (for example, an architecture specification, interface contract, configuration authority, hazard/security decision, or equivalent controlled design artifact).
 
 ### Plane D — Assurance / Evidence
 
@@ -218,57 +218,78 @@ Required domain types to consider:
 - Reset Domain;
 - Power Domain;
 - Security/Trust Domain;
-- Resource Domain.
+- Resource Domain;
+- Clock / Time Domain.
 
 Projects may add domain types when justified.
 
 ## 5. Authority Relation Grammar
 
-Cross-cutting does not mean duplicate authority.
+Cross-cutting does not mean duplicate authority. rc03 distinguishes **framework-level normative authority** from **project-instance design authority**.
 
-| Relation | Meaning |
-|---|---|
-| **Defines** | Primary normative owner of the concept/property |
-| **Constrains** | Adds conditions/limits to a concept owned elsewhere |
-| **Realizes** | Implements a required property through a technology/profile mechanism |
-| **Observes** | Provides runtime visibility/evidence about a property |
-| **Verifies** | Demonstrates satisfaction of an obligation/property |
-| **Dispositions** | Records project-specific applicability/decision/exception status |
+| Relation | Meaning | Typical owner |
+|---|---|---|
+| **Defines Framework Semantics / Obligation** | Defines SCAF semantics, required consideration, constraint, or required project decision | SCAF concern authority |
+| **Defines Project Instance / Decision** | Defines the actual project-specific architecture value, boundary, topology, allocation, threshold, state, or selected design | Project Design Authority |
+| **Constrains** | Adds conditions/limits to an item owned elsewhere | SCAF concern or external/project authority |
+| **Realizes** | Implements a required property through a technology/profile mechanism | Project realization / implementation |
+| **Observes** | Provides runtime visibility/evidence about a property | Observability/diagnostic realization |
+| **Verifies** | Demonstrates satisfaction of an applicable obligation, project decision, or realization | `SCAF-ASSUR` / project verification authority |
+| **Dispositions** | Records project applicability, decision state, risk, deviation and trace status | `SCAF-APP` |
 
-A topic should have one primary definition authority, even if several concerns constrain/observe/verify it.
+Required authority chain:
+
+```text
+SCAF Concern Authority
+    Defines Framework Semantics / Obligation
+        ↓
+Project Design Authority
+    Defines Project Instance / Decision
+        ↓
+Project Realization
+    Realizes the decision / obligation
+        ↓
+SCAF-ASSUR / Project Verification Authority
+    Verifies satisfaction and evidence sufficiency
+
+SCAF-APP cross-cuts the chain by Dispositioning and tracing
+applicability, decisions, risks, deviations, verification and evidence.
+```
+
+A Framework Scan does not become a project architecture specification. Conversely, a project design artifact does not redefine SCAF semantics.
 
 ## 6. System Concern Taxonomy
 
 ### 6.1 `SCAF-CTX` — System Context, Mission, Function & Service
 
-**Defines:**
+**Defines Framework Semantics / Obligation for:**
 
-- system boundary and external actors;
-- intended mission/use cases/operating modes;
+- system boundary and external-actor definition criteria;
+- mission/use-case/operating-mode framing;
 - assumptions/constraints/unknowns;
-- Function / Service / Capability model;
-- provider/consumer/dependency relationships;
-- service criticality and consequence of loss;
-- required degraded service levels where project-defined;
+- Function / Service / Capability semantics;
+- logical provider/consumer/service-dependency semantics;
+- service criticality and consequence-of-loss analysis;
+- required consideration of degraded service levels;
 - project safety/security context references.
 
-Does **not** own project disposition records; `SCAF-APP` dispositions applicability.
+The **Project Design Authority** defines the actual project boundary, actors, mission model, service catalog, logical service dependencies, criticality and project-specific values. `SCAF-APP` dispositions and traces applicability; it does not own those design values.
 
 ### 6.2 `SCAF-ARCH` — System / Node / Role / Domain Architecture
 
-**Defines:**
+**Defines Framework Semantics / Obligation for:**
 
-- Node boundaries and hierarchy;
-- role assignments and role relativity;
+- Node-boundary and hierarchy criteria;
+- role-assignment and role-relativity semantics;
 - responsibility/authority ownership;
-- topology;
-- capability placement;
+- structural topology;
+- capability/service allocation;
 - shared-resource ownership;
-- Fault/Reset/Power/Security/Resource domain boundaries;
-- dependency architecture;
+- Fault/Reset/Power/Security/Resource/Clock domain modeling;
+- structural realization dependencies;
 - aggregation/composition.
 
-Implementation technology is not part of the core Node definition.
+`SCAF-CTX` owns logical mission/service dependency semantics; `SCAF-ARCH` owns structural allocation and realization-dependency semantics. The **Project Design Authority** defines the actual Node/domain boundaries, topology, allocations and structural dependencies for the project. Implementation technology is not part of the core Node definition.
 
 ### 6.3 `SCAF-INT` — Interfaces, Interaction & Data Contracts
 
@@ -300,12 +321,16 @@ Implementation technology is not part of the core Node definition.
 - cross-node state consistency;
 - generic lifecycle transition obligations.
 
-Specialized lifecycle authorities remain in `SCAF-LIFE`, `SCAF-CFG`, `SCAF-INT` and `SCAF-SEC`.
+Partition rule: `SCAF-RUN` covers **service/operational state lifecycle**. `SCAF-LIFE` covers **platform/system activation, boot, reset, power and update lifecycle**. Specialized configuration/interface/security lifecycle authorities remain in `SCAF-CFG`, `SCAF-INT` and `SCAF-SEC`.
 
 ### 6.5 `SCAF-TIME` — Timing, Concurrency, Capacity & Resource Margin
 
 **Defines:**
 
+- clock/timebase identity and authority;
+- monotonic vs wall-clock semantics;
+- synchronization model, drift and uncertainty;
+- epoch/session/time-domain semantics;
 - deadlines/periods/latency/jitter;
 - time budgets and temporal invariants;
 - execution/concurrency ownership requirements;
@@ -400,9 +425,9 @@ For a safety-relevant project, applicable project safety/hazard authority **Defi
 - first abnormal vs final crash distinction;
 - evidence identity/provenance;
 - local ordering and boot/session epoch;
-- time provenance / clock source;
-- synchronization quality/uncertainty where available;
-- cross-node correlation and causal correlation;
+- observed time provenance / clock source identity;
+- recorded synchronization quality/uncertainty defined by `SCAF-TIME`;
+- cross-node evidence correlation and causal correlation;
 - evidence quality, survivability and accessibility;
 - recorder/observer self-health;
 - low-coupling observation and observer-effect limits;
@@ -410,24 +435,25 @@ For a safety-relevant project, applicable project safety/hazard authority **Defi
 
 Recorder-specific APIs, memory layouts and storage mechanisms belong in realization/reference profiles.
 
-### 6.9 `SCAF-SEC` — Security Robustness
+### 6.9 `SCAF-SEC` — Security Architecture Interface & Robustness
 
-**Defines / constrains:**
+SCAF does **not** replace a project's cybersecurity/threat/risk authority. When security is applicable, the external/project security authority defines threat assumptions, security objectives, risk acceptance and security-significant project decisions.
 
-- trust boundaries and assets;
-- peer identity/authentication/authorization;
-- confidentiality/integrity where required;
-- anti-replay and hostile freshness;
-- key/credential lifecycle;
+`SCAF-SEC` **Defines Framework Semantics / Obligation and constrains architecture for:**
+
+- representation of assets and trust/security domains;
+- peer identity/authentication/authorization architecture obligations;
+- confidentiality/integrity architecture obligations where required by project security authority;
+- anti-replay and hostile freshness interfaces with `SCAF-INT` / `SCAF-TIME`;
+- key/credential lifecycle architecture interfaces;
 - privilege separation;
-- malformed/hostile input;
-- resource-abuse resistance;
-- compromised-node containment;
+- malformed/hostile input and resource-abuse resistance;
+- compromised-node containment with `SCAF-ROB` / `SCAF-ARCH`;
 - secure boot/update linkage;
-- security-service failure and secure recovery;
+- security-service failure and recovery interfaces;
 - security incident evidence requirements.
 
-Protocol secure-session mechanics are subordinate realizations/profiles.
+The **Project Design Authority**, informed by the applicable security authority, defines actual trust boundaries, selected mechanisms and project values. Protocol secure-session mechanics are subordinate realizations/profiles.
 
 ### 6.10 `SCAF-CFG` — Configuration & Persistent Operational State
 
@@ -456,16 +482,18 @@ SCAF Concern / Normative Obligation
         ↓
 Project Applicability
         ↓
-Project Decision / Deviation
+Required Project Decision
         ↓
-Implementation Responsibility
+Project Design Authority defines actual value / design
+        ↓
+Project Realization
         ↓
 Verification Obligation
         ↓
 Evidence
 ```
 
-A Framework Scan cannot silently create or delete a SCAF requirement. It records project-specific disposition and may create **project obligations** such as a required design decision, risk treatment, verification activity or evidence item.
+A Framework Scan cannot silently create or delete a SCAF requirement and cannot substitute for the project architecture/design artifact. It records project-specific disposition and may expose **project obligations** such as a required design decision, risk treatment, verification activity or evidence item.
 
 ### 7.2 Independent state dimensions
 
@@ -522,18 +550,23 @@ These values are provisional conceptual examples, not frozen schema enums.
 ### 7.3 Scan lifecycle
 
 ```text
-Concern
-  -> scope
+Initial project framing
+  -> provisional CTX
+  -> Concern / scope
   -> applicability
   -> failure consequence / risk
-  -> design decision
-  -> responsibility
-  -> verification obligation
-  -> acceptance criteria
+  -> required design decision
+  -> Project Design Authority / actual project value
+  -> realization responsibility
+  -> source-owned satisfaction condition
+  -> verification obligation / method
   -> evidence
   -> closure / deviation
   -> re-evaluation trigger
+  -> update CTX/ARCH and re-scan when decisions change the system model
 ```
+
+The startup model is intentionally iterative. Greenfield projects are not expected to have a complete system boundary, service model or architecture before the first scan pass.
 
 ### 7.4 Ownership is not necessarily singular
 
@@ -544,16 +577,16 @@ A project may need distinct:
 - Verification Owner;
 - Risk Acceptance Owner.
 
-SCAF does not require four fields in rc02, but it rejects the assumption that one generic `Owner` is always sufficient.
+SCAF does not require four fields in rc03, but it rejects the assumption that one generic `Owner` is always sufficient.
 
 ## 8. Assurance and Realization Planes
 
 ### 8.1 `SCAF-ASSUR` — Verification, Fault Injection & Evidence
 
-**Defines:**
+**Defines Framework Semantics / Obligation for:**
 
-- verification obligation types;
-- acceptance criteria;
+- verification obligation types and methods;
+- evidence sufficiency / pass-fail evaluation procedure;
 - review/test/analysis/inspection evidence;
 - evidence identity, traceability and reproducibility;
 - fault-injection assurance;
@@ -561,6 +594,8 @@ SCAF does not require four fields in rc02, but it rejects the assumption that on
 - observer-effect verification;
 - unresolved anomaly handling;
 - conformance/deviation evidence.
+
+Underlying system-property satisfaction conditions and thresholds are defined by the applicable SCAF concern plus the Project Design Authority; `SCAF-ASSUR` does not redefine them.
 
 Fault injection belongs here as an assurance activity, though injection targets may be defined by `SCAF-ROB`, `SCAF-LIFE`, `SCAF-INT`, `SCAF-SEC`, etc.
 
@@ -576,28 +611,30 @@ Candidate axes:
 4. **Interaction / transport realization** — UART, RS-485, CAN, Ethernet, BLE, shared memory, IPC, register bus, DMA, etc.
 5. **Persistence / storage realization** — internal flash, external flash, FRAM, file system, database, remote service, etc.
 6. **Human-interface realization** — LCD/HMI/desktop/web/service-tool patterns where applicable.
-7. **Reference subsystem / pattern** — e.g. incident recorder reference architecture.
+
+**Reference subsystems / reusable patterns** (for example an incident recorder reference architecture) may also live in the Realization Plane, but they are not profile axes.
 
 A project may use several axes at once. Profiles **Realize** system requirements; they do not replace system concern authority.
 
 ## 9. Cross-Cutting Authority Matrix
 
-| Topic | Defines | Constrains / Observes | Realizes | Verifies / Dispositions |
-|---|---|---|---|---|
-| Service criticality / consequence | `SCAF-CTX` | `SCAF-ROB`, safety/security project authorities | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Node / domain boundary | `SCAF-ARCH` | `SCAF-ROB`, `SCAF-SEC`, `SCAF-LIFE` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Interface freshness semantics | `SCAF-INT` | `SCAF-TIME`, `SCAF-ROB`, `SCAF-SEC` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Runtime state ownership | `SCAF-RUN` | `SCAF-ROB`, `SCAF-LIFE` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Timing/resource budget | `SCAF-TIME` | `SCAF-ROB` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Fault containment behavior | `SCAF-ROB` using domains from `SCAF-ARCH` | `SCAF-SEC`, `SCAF-LIFE` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Boot/reset/update | `SCAF-LIFE` | `SCAF-ROB`, `SCAF-SEC`, `SCAF-CFG`, `SCAF-OBS` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Incident evidence semantics | `SCAF-OBS` | `SCAF-LIFE`, `SCAF-ROB`, `SCAF-SEC` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Configuration lifecycle | `SCAF-CFG` | `SCAF-LIFE`, `SCAF-SEC`, `SCAF-ROB` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
-| Project applicability | SCAF concern authority defines source obligation | `SCAF-APP` dispositions project state | project implementation | `SCAF-ASSUR` verifies evidence |
+| Topic | SCAF Defines Framework Obligation | Project Defines Instance / Decision | Constrains / Observes | Realizes | Verifies / Dispositions |
+|---|---|---|---|---|---|
+| Service criticality / consequence | `SCAF-CTX` | project context/service authority | `SCAF-ROB`, safety/security authorities | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Node / domain boundary | `SCAF-ARCH` | project architecture authority | `SCAF-ROB`, `SCAF-SEC`, `SCAF-LIFE`, `SCAF-TIME` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Interface freshness semantics | `SCAF-INT`, temporal semantics from `SCAF-TIME` | project interface authority | `SCAF-ROB`, `SCAF-SEC` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Runtime state ownership | `SCAF-RUN` | project state-machine/runtime authority | `SCAF-ROB`, `SCAF-LIFE` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Timebase / synchronization | `SCAF-TIME` | project timing/clock authority | `SCAF-OBS` observes quality | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Timing/resource budget | `SCAF-TIME` | project architecture/performance authority | `SCAF-ROB` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Fault containment behavior | `SCAF-ROB` using domain semantics from `SCAF-ARCH` | project robustness/architecture authority | `SCAF-SEC`, `SCAF-LIFE` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Boot/reset/update | `SCAF-LIFE` | project lifecycle/update authority | `SCAF-ROB`, `SCAF-SEC`, `SCAF-CFG`, `SCAF-OBS` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Incident evidence semantics | `SCAF-OBS` | project diagnostic/evidence authority | `SCAF-LIFE`, `SCAF-ROB`, `SCAF-SEC`, `SCAF-TIME` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Configuration lifecycle | `SCAF-CFG` | project configuration authority | `SCAF-LIFE`, `SCAF-SEC`, `SCAF-ROB` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
+| Security architecture interface | `SCAF-SEC` | project architecture authority informed by security authority | `SCAF-ROB`, `SCAF-INT`, `SCAF-TIME`, `SCAF-LIFE` | `SCAF-PROF` | `SCAF-ASSUR`, `SCAF-APP` |
 
 ## 10. Tabletop Architecture Validation
 
-These exercises are not full project analyses. They test whether the rc02 metamodel requires ad-hoc taxonomy exceptions.
+These exercises are not full project analyses. They test whether the rc03 metamodel requires ad-hoc taxonomy exceptions.
 
 ### 10.1 Archetype A — Single MCU System
 
@@ -698,22 +735,44 @@ Architecture decisions exposed by SCAF:
 
 **Result:** representable without declaring SoC/FPGA/DSP themselves universal Node classes and without forcing domain boundaries to match Node boundaries.
 
-### 10.4 Tabletop conclusion
+### 10.4 Worked Framework Scan — Archetype B
 
-The rc02 metamodel can describe all three representative archetypes **without adding an ad-hoc top-level taxonomy branch**.
+This exercise goes beyond representability and tests the project-start decision/evidence chain for the PC + multiple MCU archetype. Values are illustrative project decisions, not normative SCAF defaults.
 
-This is useful architecture evidence, but it is not enough by itself to open the normative rewrite gate. Remaining migration-evidence and independent-review work is recorded in `06_Read_Coverage_Audit.md`.
+| Concern | Applicability / consequence | Required decision | Project Design Authority output | Verification / evidence | Re-evaluation trigger |
+|---|---|---|---|---|---|
+| `SCAF-CTX` system boundary | Applicable; unclear boundary creates ownership gaps | define PC app, MCU A/B, external operator and external services in/out of scope | controlled system-context diagram + scope statement | architecture review evidence | new external service / deployment boundary |
+| `SCAF-CTX` service dependency | Applicable; supervisor loss may affect configuration/visibility but not necessarily local control | define which services depend on PC vs remain autonomous | service dependency model + consequence-of-loss table | scenario review against loss of N1 | change in service criticality or autonomy |
+| `SCAF-ARCH` Node/domain boundaries | Applicable; shared reset/power/fault assumptions can cause hidden coupling | define N1/N2/N3 Nodes and fault/reset/power/security domains | architecture allocation/domain diagram | review against Node boundary test and failure scenarios | hardware/deployment topology change |
+| `SCAF-INT` freshness | Applicable; stale telemetry may mislead operator | define age/ordering validity contract for each telemetry class | interface/data contract with stale behavior | injected delay/drop/reorder test + trace | rate/transport/UI behavior change |
+| `SCAF-TIME` timebase | Applicable; cross-node timeout/evidence correlation depends on clock semantics | define monotonic clocks, synchronization source, allowed uncertainty | project timing/time-domain decision | clock drift/sync-loss test + recorded uncertainty | clock source, sync protocol or tolerance change |
+| `SCAF-ROB` partial failure | Applicable; one MCU may fail while peer remains healthy | define containment, degraded service, retry/failover/recovery limits | robustness decision + failure response state model | fault injection / peer-loss scenarios | new shared resource or recovery mechanism |
+| `SCAF-LIFE` update | Applicable; mixed versions can create incompatible behavior | define update order, compatibility window, activation and rollback | multi-node update/rollback design | interrupted-update and version-skew test evidence | protocol/version/update mechanism change |
+| `SCAF-CFG` configuration authority | Applicable; conflicting writes can corrupt coordinated behavior | define authoritative owner, version, atomicity and resync rules | configuration ownership/migration contract | power-loss/update/reconnect persistence tests | new config source or schema version |
+| `SCAF-OBS` incident correlation | Applicable; faults may span nodes | define correlation ID, boot/session identity, time provenance and export path | diagnostic/evidence architecture | cross-node incident reconstruction exercise | logging/timebase/reset architecture change |
+| `SCAF-SEC` trust boundary | Applicable when PC/external link is exposed; compromise may propagate | security authority defines objectives; project architecture defines trust boundary and containment | security-context reference + architecture constraint decision | security review / negative-input / privilege evidence as applicable | threat model, external exposure or credential model change |
+| `SCAF-ASSUR` closure | Applicable to all selected concerns | define verification method and evidence sufficiency for each source-owned condition | project verification plan linked to concern + design artifact | accepted evidence record / unresolved anomaly record | failed verification, design change, new risk |
+
+**Observed startup loop:** the first scan pass produces provisional CTX/ARCH decisions. Those decisions then change the scope and dependencies used by later concerns, so the scan must re-enter CTX/ARCH rather than run once as a linear checklist.
+
+**Result:** the current state dimensions and authority chain can carry an end-to-end project-start exercise without inventing a new status category or allowing `SCAF-APP` to become the project architecture authority.
+
+### 10.5 Tabletop conclusion
+
+The rc03 metamodel can describe all three representative archetypes **without adding an ad-hoc top-level taxonomy branch**.
+
+The three architecture exercises establish representability; the worked Archetype B scan additionally demonstrates a provisional project-start operating model. Independent review and remaining migration-evidence work are still required before the normative rewrite gate opens.
 
 ## 11. Current Rewrite Gate
 
 Do **not** start large-scale normative content production yet.
 
-Recommended gate conditions:
+rc03 closes the rc02 blocking authority ambiguity by separating SCAF normative authority from Project Design Authority and demonstrates one worked Framework Scan. Remaining gate conditions are:
 
-1. independent review of rc02 authority planes/metamodel;
-2. resolution of any new Critical authority ambiguity;
-3. deeper audit of Gen1 Draft/RC donors used for core SCAF semantics;
-4. extraction of durable invariants from schemas/tests/validators before declaring Gen1 migration complete;
-5. agreement that Framework Scan lifecycle can drive real project decisions rather than merely populate a checklist.
+1. independent review of the rc03 authority semantics and worked scan;
+2. deeper audit of Gen1 Draft/RC donors used for core SCAF semantics;
+3. extraction/reconciliation of durable invariants from schemas/tests/validators before declaring Gen1 migration complete;
+4. immutable/retrievable donor snapshot references sufficient for independent source-semantic re-review;
+5. confirmation that security/timebase/CTX-vs-ARCH boundaries remain stable under review.
 
-Only after these converge should SCAF expand into formal normative authority documents.
+If these converge without a new Critical architecture ambiguity, the next gate may move to **controlled normative rewrite** rather than further taxonomy expansion.

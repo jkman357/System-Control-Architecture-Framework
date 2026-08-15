@@ -24,7 +24,7 @@ The fourth level is intentionally incomplete because SCAF requires taxonomy and 
 
 ### Files not read
 
-**None.** All 72 Gen1 files were opened/read at machine-text level during the rc1/rc02 archaeology work.
+**None.** All 72 Gen1 files were opened/read at machine-text level during the rc1/rc03 archaeology work.
 
 ### Files not yet deeply audited requirement-by-requirement
 
@@ -62,27 +62,29 @@ These artifacts were read and their roles were analyzed. Their individual execut
 
 ### Deferred deep audit
 
-The primary README contains both generic architecture and candidate implementation contracts. rc02 maps generic architecture concepts but does not adopt every API, record layout, ABI, memory budget, persistence layout or RC implementation recommendation as SCAF policy.
+The primary README contains both generic architecture and candidate implementation contracts. rc03 maps generic architecture concepts but does not adopt every API, record layout, ABI, memory budget, persistence layout or RC implementation recommendation as SCAF policy.
 
 ## 4. Independent Review Coverage
 
-The v0.0.1rc1 independent architecture review was read and used as correction input.
+The v0.0.1rc1 and v0.0.1rc02 independent architecture reviews were read and used as correction input.
 
-Review findings incorporated into rc02 include:
+Review findings incorporated through rc03 include:
 
 - separation of authority planes;
-- Node metamodel correction;
-- Function/Service first-class model;
-- source-anchored migration evidence;
-- separation of disposition/transformation;
-- robustness semantic restructuring;
-- fault-tolerance/distributed-failure gaps;
-- Safe State authority boundary;
-- Framework Scan multi-axis lifecycle;
-- implementation-profile composition;
+- Node metamodel correction and Function/Service first-class model;
+- framework normative authority vs Project Design Authority separation;
+- non-linear plane relation;
+- CTX logical-service dependency vs ARCH structural-realization dependency partition;
+- ASSUR evidence/verification ownership without stealing source-concern thresholds;
+- source-anchored migration evidence and per-donor maturity binding;
+- robustness semantic restructuring and fault-tolerance/distributed-failure coverage;
+- Safe State external authority boundary;
+- Framework Scan multi-axis iterative lifecycle plus one worked project-start scan;
+- composable implementation-profile axes;
 - configuration/persistent-state authority;
-- distributed incident time/correlation concerns;
-- coverage wording correction.
+- `SCAF-TIME` ownership of timebase/synchronization with OBS recording provenance;
+- security architecture interface boundary to external/project security authority;
+- source identity vs retrievability distinction.
 
 The review itself is not treated as a normative SCAF source.
 
@@ -100,21 +102,28 @@ New SCAF concept
 
 This prevents a broad archaeology pass from being presented as completed normative migration.
 
-## 6. Tabletop Architecture Coverage
+## 6. Tabletop Architecture / Application Coverage
 
-rc02 includes three non-normative architecture exercises:
+rc03 retains three non-normative architecture exercises:
 
 1. single MCU system;
 2. PC + multiple MCU system;
 3. SoC + FPGA + DSP heterogeneous system.
 
-Result at taxonomy level:
+At taxonomy level, all three remain representable without new ad-hoc top-level categories.
 
-- all three can be represented without new ad-hoc top-level categories;
-- Node boundaries can remain project-specific while fault/reset/power/security/resource domains remain independently expressible;
-- Function/Service dependencies expose system consequence better than Node health alone.
+rc03 additionally runs a worked Framework Scan against the PC + multiple MCU archetype across eleven concerns. It exercises:
 
-These tabletop exercises are architecture evidence only, not substitute project verification.
+```text
+Concern
+ -> Applicability / Consequence
+ -> Required Decision
+ -> Project Design Authority output
+ -> Verification / Evidence
+ -> Re-evaluation Trigger
+```
+
+The exercise also exposes the greenfield bootstrap loop: provisional CTX/ARCH is refined by scan decisions and must then be re-scanned. This demonstrates an operating model beyond simple representability, but remains architecture evidence rather than project verification.
 
 ## 7. Why “Machine-read” Is Not “Fully Absorbed”
 
@@ -136,8 +145,8 @@ In particular, executable artifacts may encode invariants not fully repeated in 
 
 ## 9. Audit Conclusion
 
-There are **no unread input files** among the two source archives used for the rc1/rc02 archaeology work.
+There are **no unread input files** among the two donor source archives used for the archaeology work.
 
-However, there are intentionally deferred **deep normative audits**. v0.0.1rc02 should therefore be treated as:
+However, there are intentionally deferred **deep normative audits**. v0.0.1rc03 should therefore be treated as:
 
-> **an architecture/taxonomy convergence baseline with improved traceability, not a completed migration proof.**
+> **an architecture/taxonomy convergence baseline with an explicit project-authority chain and worked application evidence, not a completed migration proof.**
