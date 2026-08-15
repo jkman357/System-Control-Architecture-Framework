@@ -1,6 +1,6 @@
 # SCAF-CTX — System Context, Mission, Function & Service Obligations
 
-**Release:** v0.0.2rc03  
+**Release:** v0.0.2rc04  
 **Concern:** `SCAF-CTX`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -75,15 +75,25 @@ The project **SHALL** identify logical dependencies whose loss, degradation, sta
 
 The logical dependency model **SHALL** remain distinguishable from later structural realization dependencies defined by the Project Design Authority under `SCAF-ARCH` obligations.
 
-### `SCAF-CTX-007` — Service-loss consequence and required outcome
+### `SCAF-CTX-007` — Service-loss consequence
 
 **Target:** Project-Applicable Obligation
 
 For each Function or Service whose loss or degradation can materially affect mission or required operation, the project **SHALL** identify the relevant consequence.
 
-For ordinary mission continuity or degraded-service needs, the project **SHALL** identify the required context-level outcome and its authority provenance.
+### `SCAF-CTX-015` — Ordinary continuity / degraded-service outcome
 
-For a safety-significant safety objective/condition or risk-acceptance basis, the project **SHALL** preserve the applicable safety/hazard authority as the source authority and **SHALL** trace how the Project Design Authority integrates that controlled input into the project architecture.
+**Target:** Project-Applicable Obligation
+
+Where ordinary mission continuity or degraded-service behavior is required, the project **SHALL** identify the required context-level outcome and its authority provenance.
+
+### `SCAF-CTX-016` — Safety-significant source-authority provenance
+
+**Target:** Project-Applicable Obligation
+
+Where a safety-significant safety objective/condition or risk-acceptance basis applies, the project **SHALL** preserve the applicable safety/hazard authority as the source authority.
+
+The project **SHALL** trace how the Project Design Authority integrates that controlled safety input into the project architecture without replacing its source-authority provenance.
 
 ### `SCAF-CTX-008` — External actors and authorities
 

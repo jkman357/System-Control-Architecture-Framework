@@ -304,7 +304,7 @@ The **Project Design Authority** defines the actual project boundary, actors, mi
 - structural realization dependencies;
 - aggregation/composition.
 
-`SCAF-CTX` owns logical mission/service dependency semantics; `SCAF-ARCH` owns structural allocation and realization-dependency semantics. The **Project Design Authority** defines the actual Node/domain boundaries, topology, allocations and structural dependencies for the project. Implementation technology is not part of the core Node definition.
+`SCAF-CTX` **Defines Framework Semantics / Obligation** for logical mission/service dependency semantics; `SCAF-ARCH` **Defines Framework Semantics / Obligation** for structural allocation and realization-dependency semantics. The **Project Design Authority** defines the actual Node/domain boundaries, topology, allocations and structural dependencies for the project. Implementation technology is not part of the core Node definition.
 
 ### 6.3 `SCAF-INT` — Interfaces, Interaction & Data Contracts
 
@@ -416,10 +416,10 @@ Not every project uses every step. Framework Scan determines applicability and r
 
 #### ROB / LIFE / OBS boundary
 
-- `SCAF-ROB` owns framework semantics for failure/health decision, containment, tolerance, degradation and recovery behavior.
-- `SCAF-LIFE` owns boot/power/reset/update transaction and state semantics; when a lifecycle operation fails, `SCAF-ROB` defines the required resilience properties while `SCAF-LIFE` retains lifecycle sequence/atomicity/activation/rollback semantics.
-- `SCAF-OBS` owns observation, representation, preservation and export of health/diagnostic/incident evidence; it does not redefine what constitutes a failure or what resilience action is required.
-- `SCAF-ASSUR` verifies these obligations and evidence sufficiency; it does not own the runtime behavior.
+- `SCAF-ROB` **Defines Framework Semantics / Obligation** for failure/health decision, containment, tolerance, degradation and recovery behavior.
+- `SCAF-LIFE` **Defines Framework Semantics / Obligation** for boot/power/reset/update transaction and state semantics; when a lifecycle operation fails, `SCAF-ROB` defines the required resilience properties while `SCAF-LIFE` retains lifecycle sequence/atomicity/activation/rollback semantics.
+- `SCAF-OBS` **Defines Framework Semantics / Obligation** for observation, representation, preservation and export of health/diagnostic/incident evidence; it does not redefine what constitutes a failure or what resilience action is required.
+- `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for verification and evidence-sufficiency criteria; the Project Verification / Assurance Authority verifies the applicable project obligations and determines actual project evidence sufficiency. `SCAF-ASSUR` does not own the runtime behavior.
 
 #### Safe State boundary
 

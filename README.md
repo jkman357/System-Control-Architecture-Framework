@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc03  
+**Version:** v0.0.2rc04  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-15
 
@@ -37,17 +37,21 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc03 Target/Authority Precision Closure Position
+## v0.0.2rc04 INT + TIME Normative Tranche Position
 
-v0.0.2rc03 is the target/authority precision closure release after independent review of rc02. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc04 begins the next controlled L1/L2 normative tranche after independent review found **no Critical or Major issues** in the rc03 Authority Kernel / CTX / ARCH closure. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
-This release keeps the same three normative documents and closes the remaining mixed-target and safety-authority wording defects before any expansion to another concern tranche:
+Current normative documents are:
 
 - `docs/normative/00_SCAF_Authority_Kernel.md`
 - `docs/normative/10_SCAF_CTX_System_Context_Obligations.md`
 - `docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md`
+- `docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md`
+- `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md`
 
-The rc03 tranche preserves the rc02 authority corrections and additionally separates mixed requirement targets in CTX/ARCH, restores safety-significant condition source ownership to the applicable safety/hazard authority, separates Decision from Deviation and Verification Obligation from Verification Result/State, and tightens requirement atomicity where the previous wording could be copied into later concern tranches. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
+This RC first applies the rc03 minor authority-language/atomicity cleanup, then adds `SCAF-INT` and `SCAF-TIME` L1/L2 obligations. `SCAF-INT` owns Interface/Interaction/data-contract semantics; `SCAF-TIME` owns measurable temporal/timebase/synchronization/concurrency/capacity semantics. Actual project contract values and temporal/resource values remain Project Design Authority decisions. Freshness is intentionally cross-cut: INT defines the semantic state contract, while TIME defines the measurable age/timebase/threshold semantics used to evaluate it.
+
+`SCAF-RUN` and later concern tranches remain deferred. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
 
 Normative precedence for this RC is:
 
@@ -59,7 +63,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc03 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc04 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -207,7 +211,7 @@ Several intentionally cross-cutting topics have explicit primary-authority parti
 
 - **ROB vs LIFE** — `SCAF-LIFE` defines lifecycle transaction/state semantics for boot, power, reset and update. `SCAF-ROB` defines the required fault-response/tolerance/recovery behavior when lifecycle operations fail or propagate faults.
 - **ROB vs OBS** — `SCAF-ROB` defines failure/health decision semantics and resilience behavior. `SCAF-OBS` defines how health/diagnostic/evidence information is observed, represented, preserved and exported.
-- **ROB vs ASSUR** — `SCAF-ROB` defines resilience obligations; `SCAF-ASSUR` defines how those obligations are verified and what evidence is sufficient.
+- **ROB vs ASSUR** — `SCAF-ROB` defines resilience obligations; `SCAF-ASSUR` defines verification semantics and evidence-sufficiency criteria for those obligations; Project Verification / Assurance Authority evaluates actual project evidence.
 - **Security Authority vs Project Design Authority** — project/external security authority defines threat assumptions, security objectives, security risk evaluation/acceptance and externally imposed security constraints. Project Design Authority integrates those constraints into actual trust boundaries, allocations, mechanisms and architecture values. A security team may also act as Project Design Authority for a decision, but that is one explicit role, not a second competing design authority.
 
 ## Framework Scan / Applicability Analysis
@@ -258,13 +262,15 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/normative/00_SCAF_Authority_Kernel.md` | Normative authority vocabulary, chain, satisfaction/closure and rewrite/promotion gates |
 | `docs/normative/10_SCAF_CTX_System_Context_Obligations.md` | L1/L2 System Context / Function / Capability / Service obligations |
 | `docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md` | L1/L2 System / Node / Role / Domain architecture obligations |
+| `docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md` | L1/L2 Interface / Interaction / data-contract obligations |
+| `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md` | L1/L2 timing / timebase / concurrency / capacity / margin obligations |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc03.**
+**No CI is included in v0.0.2rc04.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -295,26 +301,29 @@ v0.0.1       # frozen architecture-convergence baseline
 v0.0.2rc01   # first controlled L1/L2 normative rewrite
 v0.0.2rc02   # targeted normative precision correction
 v0.0.2rc03   # target/authority precision closure
+v0.0.2rc04   # INT + TIME controlled L1/L2 normative tranche
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc03 is in **controlled L1/L2 normative rewrite — target/authority precision closure**.
+v0.0.2rc04 is in **controlled L1/L2 normative rewrite — INT + TIME tranche**.
 
 Open scope in this RC:
 
-- Authority Kernel target/state/closure grammar;
-- `SCAF-CTX` target separation and safety-authority source ownership;
-- `SCAF-ARCH` target separation and Node/containment obligation atomicity;
-- lexical/authority cleanup needed to make this tranche safe as a baseline for later concern authoring.
+- minor Authority Kernel / CTX supporting cleanup carried forward from rc03 review;
+- `SCAF-INT` Interface / Interaction / data-contract L1/L2 obligations;
+- `SCAF-TIME` timebase / temporal / concurrency / capacity / resource-margin L1/L2 obligations;
+- explicit INT/TIME freshness and identity authority boundaries;
+- cross-concern scannability and duplicate-authority review.
 
 Still closed/gated:
 
 - top-level taxonomy expansion without a concrete authority-home failure;
 - broad Draft/RC or mixed-maturity donor promotion;
 - executable-invariant promotion before schema/test/validator extraction and review;
+- `SCAF-RUN` and later concern normative tranches until the current INT/TIME tranche is reviewed;
 - L3 mechanism catalogs such as watchdog/heartbeat/CRC/ECC pattern guidance;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
 - final schema, validator, generated checklist or CI enforcement;

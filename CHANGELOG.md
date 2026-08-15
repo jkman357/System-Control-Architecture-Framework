@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.0.2rc04 — 2026-08-15
+
+INT + TIME controlled L1/L2 normative tranche.
+
+### Added
+
+- `docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md`;
+- `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md`;
+- explicit INT/TIME freshness-state versus measurable-time authority boundary;
+- explicit protocol-session versus Time Epoch / Boot Incarnation / Operational Incarnation authority partition in normative form;
+- project obligations for Interface/Interaction identity, contract semantics, validity/provenance/order/freshness, compatibility/evolution and session identity;
+- project obligations for timebase, synchronization, temporal budgets, concurrency, queue/capacity, resource margin and long-duration bounded-growth properties.
+
+### Changed
+
+- accepted the rc03 independent review result that Authority Kernel / CTX / ARCH have no remaining Critical or Major closure defects;
+- split `SCAF-CTX-007` consequence, ordinary continuity/degradation and safety-source provenance into more atomic project obligations;
+- split underlying closure authority from SCAF-APP closure/disposition trace in the Authority Kernel;
+- removed the remaining `verification obligation/result` lexical collapse from the Authority Kernel relation grammar;
+- normalized supporting `SCAF-ASSUR` wording to framework-side verification/evidence-sufficiency criteria plus project-side evidence evaluation;
+- updated README and read-coverage status for the INT + TIME tranche.
+
+### Deliberately Not Added
+
+- `SCAF-RUN` normative tranche;
+- new top-level taxonomy or core metamodel entities;
+- L3 watchdog/heartbeat/CRC/ECC/retry/failover mechanism catalogs;
+- L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc03 — 2026-08-15
 
 Target/authority precision closure release after independent review of v0.0.2rc02. The frozen v0.0.1 architecture baseline remains unchanged.
