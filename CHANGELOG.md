@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.0.2rc05 — 2026-08-15
+
+Targeted INT/TIME authority-boundary closure after independent review of v0.0.2rc04.
+
+### Changed
+
+- tightened `SCAF-TIME-008` so TIME defines concurrency constraints only when needed to establish an explicitly TIME-owned measurable temporal/capacity/resource property;
+- added an explicit TIME/INT/RUN concurrency-and-ordering framework invariant so INT keeps semantic ordering and RUN keeps operational-state/transition consistency;
+- removed ROB detection/health authority from `SCAF-TIME-012`, leaving TIME with measurable starvation/fairness/overload bounds and prevention/bounding constraints;
+- narrowed `SCAF-TIME-013` to accumulation model, operating horizon, measurable bound/capacity and margin, leaving exhaustion detection and rollover/renewal/degradation/recovery behavior to the applicable downstream concern;
+- closed synchronization-loss semantics in `SCAF-TIME-004` by requiring dependent temporal claims to define validity/invalidation/re-evaluation behavior when the required clock relationship is unusable;
+- normalized TIME wording to distinguish chronological/temporal ordering from `SCAF-INT` semantic ordering;
+- strengthened `SCAF-INT-002` to preserve the frozen Interaction-to-Interface boundary relation and added a conditional separately-controlled Interface identity obligation;
+- widened `SCAF-INT-003` participant coverage to external Systems/actors/applicable external participants without forcing Node modeling;
+- strengthened `SCAF-INT-006` with explicit validity-state assignment criteria and contract-consequence trace;
+- retained the frozen v0.0.1 architecture baseline and stable Authority Kernel / CTX / ARCH normative baselines.
+
+### Deliberately Not Added
+
+- `SCAF-RUN` normative tranche;
+- new top-level taxonomy or core metamodel entities;
+- new Capacity or Concurrency top-level concerns;
+- ROB normative elaboration beyond preserving its frozen authority boundary;
+- L3/L4 mechanism or implementation guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc04 — 2026-08-15
 
 INT + TIME controlled L1/L2 normative tranche.

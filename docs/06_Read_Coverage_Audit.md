@@ -169,10 +169,10 @@ However, there are intentionally deferred **deep normative audits**. The frozen 
 
 > **a frozen architecture-convergence / authority-kernel baseline that permits the next development line to perform controlled normative rewrite, with explicit donor-promotion and migration-completion gates; it is not a completed migration proof.**
 
-## 10. v0.0.2rc04 Normative Rewrite Coverage
+## 10. v0.0.2rc05 Normative Rewrite Coverage
 
-This release retains the reviewed Authority Kernel / `SCAF-CTX` / `SCAF-ARCH` baseline, applies the rc03 minor lexical/atomicity cleanup, and adds the first controlled `SCAF-INT` and `SCAF-TIME` L1/L2 obligations.
+This release retains the reviewed Authority Kernel / `SCAF-CTX` / `SCAF-ARCH` baseline and the rc04 `SCAF-INT` / `SCAF-TIME` tranche, then applies targeted corrections from the rc04 independent normative architecture review. The corrections close TIME concurrency ownership, TIME/ROB detection and long-run boundaries, synchronization-loss dependent-claim validity, and minor INT Interface/participant/validity-contract gaps.
 
-The INT/TIME normative text is derived from the frozen SCAF architecture authority homes and controlled mapping evidence. It does **not** bulk-promote donor-specific Draft/RC wording, schema-only invariants, validator-only invariants or test-fixture-only semantics. Those remain subject to donor-specific promotion/deep-audit gates.
+The INT/TIME normative text remains derived from the frozen SCAF architecture authority homes and controlled mapping evidence. It does **not** bulk-promote donor-specific Draft/RC wording, schema-only invariants, validator-only invariants or test-fixture-only semantics. Those remain subject to donor-specific promotion/deep-audit gates.
 
-Review focus for this tranche is requirement target integrity, INT/TIME freshness/timebase authority separation, project-value ownership, Framework Scan scannability and L1/L2 layer discipline.
+Review focus for this closure RC is whether INT semantic ordering, RUN operational-state consistency, TIME measurable temporal/capacity/resource properties and ROB detection/recovery authority remain non-overlapping; whether synchronization-loss claims close cleanly; and whether INT/TIME Project-Applicable Obligations are Framework-Scan scannable before `SCAF-RUN` begins.

@@ -1,6 +1,6 @@
 # SCAF-INT — Interfaces, Interaction & Data Contract Obligations
 
-**Release:** v0.0.2rc04  
+**Release:** v0.0.2rc05  
 **Concern:** `SCAF-INT`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -41,17 +41,27 @@ The **Project Design Authority Defines Project Instance / Decision** for the act
 
 The project **SHALL** identify each material Interaction whose correctness, availability, data meaning or failure can affect an applicable Function, Capability, Service, architecture decision or verification obligation.
 
-### `SCAF-INT-002` — Interface identity, when Applicable
+### `SCAF-INT-002` — Interaction-to-Interface boundary
 
 **Target:** Project-Applicable Obligation
 
-Where an Interaction requires a separately controlled Interface contract, the Project Design Authority **SHALL** define a stable Interface identity and the contract boundary to which project obligations apply.
+For each material Interaction, the project **SHALL** identify the applicable Interface boundary or boundaries through which the Interaction contract is exposed or realized.
+
+This obligation preserves the frozen metamodel relation between a meaningful Interaction and its applicable Interface boundary without requiring every Interface boundary to have a separately controlled identity.
+
+### `SCAF-INT-019` — Separately controlled Interface identity
+
+**Target:** Project-Applicable Obligation
+
+Where an Interface contract requires independently controlled identity, versioning, ownership, lifecycle or verification, the Project Design Authority **SHALL** define a stable Interface identity and the controlled contract boundary to which those project obligations apply.
 
 ### `SCAF-INT-003` — Participants, Roles and direction
 
 **Target:** Project-Applicable Obligation
 
-For each material Interaction, the project **SHALL** identify the participating System/Node responsibilities, applicable Roles, and the direction or relationship needed to prevent sender/receiver, provider/consumer, initiator/responder or equivalent responsibility ambiguity.
+For each material Interaction, the project **SHALL** identify the participating Systems/Nodes and, where applicable, external Systems, external actors or other applicable external participants, together with applicable Roles and the direction or relationship needed to prevent sender/receiver, provider/consumer, initiator/responder or equivalent responsibility ambiguity.
+
+An external participant **SHALL NOT** be modeled as a Node solely to satisfy this obligation.
 
 ### `SCAF-INT-004` — Interaction semantic class
 
@@ -73,13 +83,15 @@ Where material, the contract **SHALL** include applicable units, domains/ranges,
 
 **Target:** Project-Applicable Obligation
 
-Where data can be valid, invalid, unavailable, unknown, substituted, derived or otherwise qualified, the project **SHALL** define the applicable validity states and provenance semantics that a consumer needs to interpret the data safely and consistently.
+Where data can be valid, invalid, unavailable, unknown, substituted, derived or otherwise qualified, the project **SHALL** define the applicable validity states, the criteria or conditions used to assign those states, and the provenance semantics needed for a consumer to interpret the data consistently.
+
+Where a validity state changes the contract outcome, the project **SHALL** define the applicable consumer-visible contract consequence or trace to the controlled requirement that defines that consequence.
 
 ### `SCAF-INT-007` — Ordering semantics
 
 **Target:** Project-Applicable Obligation
 
-Where ordering can affect correctness or interpretation, the project **SHALL** define the required ordering semantics, including the meaning of duplicate, missing, reordered or superseded information where applicable.
+Where semantic ordering can affect correctness or interpretation, the project **SHALL** define the required Interaction/data-contract ordering semantics, including the meaning of duplicate, missing, reordered or superseded information where applicable.
 
 ### `SCAF-INT-008` — Freshness-state contract
 
@@ -139,7 +151,7 @@ Changes to Interface identity, participants, contract meaning, validity/freshnes
 
 **Target:** Framework Normative Invariant
 
-`SCAF-INT` **Defines Framework Semantics / Obligation** for the semantic meaning of valid/current/stale/expired/ordered Interaction data.
+`SCAF-INT` **Defines Framework Semantics / Obligation** for the semantic meaning of valid/current/stale/expired Interaction data and for semantic ordering within an Interface/Interaction contract.
 
 `SCAF-INT` **SHALL NOT** own measurable timebase, synchronization, age-limit, deadline or temporal-uncertainty semantics; those belong to `SCAF-TIME`.
 
@@ -166,7 +178,8 @@ The following table is informative and does not create additional normative requ
 | Decision / record | Project-side authority / provenance |
 |---|---|
 | Material Interaction inventory | Project Design Authority |
-| Interface identity / contract boundary | Project Design Authority |
+| Interaction-to-Interface boundary mapping | Project Design Authority |
+| Separately controlled Interface identity / contract boundary, when Applicable | Project Design Authority |
 | Participants / Roles / direction | Project Design Authority |
 | Interaction semantic form | Project Design Authority |
 | Data meaning / representation contract | Project Design Authority, constrained by applicable source authorities |
