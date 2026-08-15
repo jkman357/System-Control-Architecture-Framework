@@ -195,3 +195,14 @@ The localized RUN cleanup distinguishes Project Design Authority from runtime au
 The ROB text is derived from the frozen SCAF robustness/resilience authority home and controlled mapping evidence. It does **not** bulk-promote donor-specific watchdog, heartbeat, retry, failover, reset, crash-recorder, RTOS or other mechanism wording; Draft/RC/mixed-maturity and executable-only donor semantics remain subject to donor-specific promotion/deep-audit gates.
 
 Review focus for this RC is whether ROB cleanly owns fault/error/failure meaning, health/failure determination and resilience outcomes without re-owning RUN operational-state representation, LIFE lifecycle transactions, INT contract/session semantics, TIME measurable bounds, ARCH structural/Domain boundaries, CFG persistent-state authority, OBS evidence semantics or external safety/security/risk source authority; and whether ROB Project-Applicable Obligations remain Framework-Scan scannable before LIFE authoring begins.
+
+
+## 13. v0.0.2rc08 Normative Rewrite Coverage
+
+This release begins the controlled `SCAF-LIFE` L1/L2 normative tranche after the rc07 independent ROB review found no Critical or Major issues, accepted ROB as Stable after minor cleanup, and confirmed clean ROB/RUN, ROB/LIFE, ROB/INT, ROB/TIME, ROB/ARCH, ROB/CFG, ROB/OBS and external-authority boundaries. The Authority Kernel / CTX / ARCH / INT / TIME / RUN baselines remain substantively unchanged.
+
+The localized ROB cleanup separates detectability from diagnostic coverage, separates recovery/repair outcome from retry/escalation termination, clarifies risk-authority provenance, separates ROB/OBS from ROB/ASSUR invariants and normalizes health/authority vocabulary without changing the ROB authority home.
+
+The LIFE text is derived from the frozen SCAF Boot, Power, Reset & Update Lifecycle authority home and controlled donor mapping evidence. It does **not** bulk-promote donor-specific bootloader, firmware-slot, flash-write, reset-register, update-protocol, power-sequencing, RTOS or other implementation wording; Draft/RC/mixed-maturity and executable-only donor semantics remain subject to donor-specific promotion/deep-audit gates.
+
+Review focus for this RC is whether LIFE cleanly owns lifecycle transaction/state/result, atomicity, activation/rollback and Boot Incarnation semantics without re-owning RUN readiness/current-state, ROB failure-response, INT contract/session, TIME measurable properties, ARCH structural boundaries, CFG persistent-state authority, OBS evidence semantics or external safety/security/risk source authority; and whether LIFE Project-Applicable Obligations remain Framework-Scan scannable before OBS authoring begins.

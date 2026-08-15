@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.0.2rc08 — 2026-08-15
+
+SCAF-LIFE controlled L1/L2 normative tranche after independent rc07 review cleared the ROB architecture gate and allowed LIFE authoring to begin with localized ROB cleanup.
+
+### Added
+
+- `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md`;
+- L1 authority boundaries for boot/power/reset/update/activation/rollback lifecycle transaction/state/result semantics and Boot Incarnation / Boot Generation;
+- project obligations for lifecycle authority/result responsibility, request-versus-result semantics, LIFE-to-RUN readiness handoff, reset classification/cause, retained-state validity, power lifecycle, update preconditions/atomicity/activation/rollback/resume and multi-participant lifecycle coordination;
+- explicit LIFE/RUN, LIFE/ROB, LIFE/TIME, LIFE/INT, LIFE/CFG, LIFE/OBS, identity-partition, LIFE/ARCH, external safety/security/risk and LIFE/PROF realization boundaries.
+
+### Changed
+
+- split `SCAF-ROB-005` detectability/latent-condition disposition from diagnostic-coverage objective by adding `SCAF-ROB-031`;
+- split `SCAF-ROB-011` recovery/repair outcome from retry/escalation termination by adding `SCAF-ROB-032`;
+- clarified `SCAF-ROB-014` so residual-risk decision/acceptance is explicitly made by the applicable risk authority;
+- split `SCAF-ROB-027` ROB/OBS evidence-observation boundary from ROB/ASSUR evidence-sufficiency boundary by adding `SCAF-ROB-033`;
+- normalized health/failure terminology so ROB classifications/decision outcomes are not confused with RUN operational states;
+- replaced residual `approved` and project-actor-like ROB prose with controlled Authority Kernel relation language;
+- updated README, Authority Kernel gate label and read-coverage position for rc08;
+- retained the frozen v0.0.1 architecture baseline and stable Authority Kernel / CTX / ARCH / INT / TIME / RUN authority homes.
+
+### Deliberately Not Added
+
+- `SCAF-OBS`, `SCAF-CFG` or `SCAF-SEC` normative tranches;
+- new top-level taxonomy or core metamodel entities;
+- universal bootloader/A-B partition/update protocol/reset sequence/power sequencing/watchdog/recovery mechanisms;
+- L3/L4 mechanism or implementation guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc07 — 2026-08-15
 
 SCAF-ROB controlled L1/L2 normative tranche after independent rc06 review cleared the RUN architecture gate and allowed ROB authoring to begin with localized RUN cleanup.

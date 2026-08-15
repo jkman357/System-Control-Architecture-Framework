@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc07  
+**Version:** v0.0.2rc08  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-15
 
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc07 ROB L1/L2 Normative Tranche Position
+## v0.0.2rc08 LIFE L1/L2 Normative Tranche Position
 
-v0.0.2rc07 begins the `SCAF-ROB` L1/L2 normative tranche after independent rc06 review found **no Critical or Major issues**, accepted RUN as **Stable after minor cleanup**, confirmed every reviewed RUN cross-boundary gate as Pass, and explicitly allowed ROB authoring to begin while the localized RUN cleanup is completed. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc08 begins the `SCAF-LIFE` L1/L2 normative tranche after independent rc07 review found **no Critical or Major issues**, accepted ROB as **Stable after minor cleanup**, confirmed all reviewed ROB cross-boundary gates as Pass, and explicitly allowed LIFE authoring to begin while localized ROB cleanup is completed. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
 Current normative documents are:
 
@@ -50,14 +50,15 @@ Current normative documents are:
 - `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md`
 - `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md`
 - `docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md`
+- `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md`
 
-This RC first completes the localized RUN authoring cleanup: design-time Project Design Authority is separated from runtime authoritative-current-state responsibility, framework-boundary prose is normalized, RUN/ROB relation language is returned to the Authority Kernel grammar, independent RUN/CFG, RUN/OBS, CTX-mode and incarnation-identity invariants are separated, and the supporting Evidence state uses evidence-sufficiency terminology.
+This RC first completes the localized ROB review cleanup: detectability/latent-condition semantics are separated from diagnostic-coverage objective, recovery/repair outcome is separated from retry/escalation termination, residual-risk acceptance provenance is made explicit, ROB/OBS and ROB/ASSUR invariants are separated, health-classification terminology is kept distinct from RUN operational-state semantics, and remaining non-canonical `approved`/authority prose is normalized.
 
-The new `SCAF-ROB` tranche establishes L1/L2 authority for Fault/Error/Failure semantics, health/failure determination, detectability/latent conditions, propagation, runtime containment, tolerance/degradation/failover/reconfiguration, recovery/repair/retry, resynchronization/reintegration, partition/reconciliation, correlated/cascading failures and long-run resilience outcomes. Actual project failure classifications, health criteria, resilience outcomes and ROB-to-RUN mappings remain Project Design Authority decisions.
+The new `SCAF-LIFE` tranche establishes L1/L2 authority for boot/power/reset/update/activation/rollback lifecycle transaction/state/result semantics, authoritative lifecycle result responsibility, request-versus-result semantics, lifecycle completion/commit/abort, LIFE-to-RUN readiness handoff, Boot Incarnation / Boot Generation, reset classification/cause, retained-state validity, update preconditions/atomicity/activation/rollback/resume, multi-participant lifecycle coordination and lifecycle observability/traceability.
 
-ROB explicitly does not re-own CTX Service consequence, ARCH structural/Domain boundaries, INT contract/session semantics, TIME measurable limits, RUN state representation, LIFE lifecycle transactions, CFG persistent-state authority, OBS evidence representation or external safety/security/risk source authority. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
+LIFE explicitly does not re-own RUN operational-state/readiness semantics, ROB failure/resilience response, INT request/session/compatibility semantics, TIME measurable lifecycle constraints, ARCH structural/Domain topology, CFG persistent configuration/state source authority, OBS evidence semantics or external safety/security/risk source authority. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
 
-`SCAF-LIFE` and later concern tranches remain deferred pending independent review of this ROB tranche.
+`SCAF-OBS` and later concern tranches remain deferred pending independent review of this LIFE tranche.
 
 Normative precedence for this RC is:
 
@@ -69,7 +70,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc07 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc08 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -272,13 +273,14 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md` | L1/L2 timing / timebase / concurrency / capacity / margin obligations |
 | `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md` | L1/L2 operational state / transition / readiness / Operational Incarnation obligations |
 | `docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md` | L1/L2 fault/error/failure / health / containment / degradation / recovery / resilience obligations |
+| `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md` | L1/L2 boot / power / reset / update / activation / rollback lifecycle obligations |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc07.**
+**No CI is included in v0.0.2rc08.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -313,29 +315,31 @@ v0.0.2rc04   # INT + TIME controlled L1/L2 normative tranche
 v0.0.2rc05   # targeted INT/TIME authority-boundary closure
 v0.0.2rc06   # RUN controlled L1/L2 normative tranche
 v0.0.2rc07   # ROB controlled L1/L2 normative tranche + RUN minor closure
+v0.0.2rc08   # LIFE controlled L1/L2 normative tranche + ROB minor closure
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc07 is in **controlled L1/L2 normative rewrite — SCAF-ROB tranche**.
+v0.0.2rc08 is in **controlled L1/L2 normative rewrite — SCAF-LIFE tranche**.
 
 Open scope in this RC:
 
-- preserve the reviewed Authority Kernel / CTX / ARCH / INT / TIME baselines;
-- retain RUN as stable after localized review cleanup and preserve its operational-state / transition authority;
-- establish `SCAF-ROB` Fault/Error/Failure, health/detection, propagation/containment, degradation/tolerance, recovery/reintegration and long-run resilience obligations;
-- preserve ROB boundaries against RUN state-model authority, LIFE lifecycle transaction authority, INT contract/session semantics, TIME measurable bounds, ARCH structural/Domain boundaries, CFG persistent-state authority, OBS evidence semantics and external safety/security/risk source authority;
-- test ROB Project-Applicable Obligations through Framework Scan before LIFE authoring begins.
+- preserve the reviewed Authority Kernel / CTX / ARCH / INT / TIME / RUN baselines;
+- retain ROB as stable after localized review cleanup and preserve its fault/health/resilience authority;
+- establish `SCAF-LIFE` boot/power/reset/update/activation/rollback transaction/state/result obligations;
+- establish lifecycle request-versus-result, atomicity/commit/abort, activation/rollback/resume and Boot Incarnation semantics;
+- preserve LIFE boundaries against RUN readiness/current-state authority, ROB failure-response authority, INT contract/session semantics, TIME measurable lifecycle properties, ARCH structural boundaries, CFG persistent-state authority, OBS evidence semantics and external safety/security/risk source authority;
+- test LIFE Project-Applicable Obligations through Framework Scan before OBS authoring begins.
 
 Still closed/gated:
 
 - top-level taxonomy expansion without a concrete authority-home failure;
 - broad Draft/RC or mixed-maturity donor promotion;
 - executable-invariant promotion before schema/test/validator extraction and review;
-- `SCAF-LIFE` and later concern normative tranches until the rc07 ROB tranche is independently reviewed;
-- L3 mechanism catalogs such as watchdog/heartbeat/redundancy/failover/retry implementation guidance;
+- `SCAF-OBS` and later concern normative tranches until the rc08 LIFE tranche is independently reviewed;
+- L3 bootloader/A-B-layout/update-protocol/reset/power-sequencing/retry/recovery mechanism guidance;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
 - final schema, validator, generated checklist or CI enforcement;
 - final migration proof or normative freeze.

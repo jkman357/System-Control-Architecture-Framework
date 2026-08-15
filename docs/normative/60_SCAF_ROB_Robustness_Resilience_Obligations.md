@@ -1,6 +1,6 @@
 # SCAF-ROB — Robustness & Resilience Obligations
 
-**Release:** v0.0.2rc07  
+**Release:** v0.0.2rc08  
 **Concern:** `SCAF-ROB`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -9,7 +9,7 @@
 
 `SCAF-ROB` **Defines Framework Semantics / Obligation** for fault/error/failure meaning, health/failure determination, propagation, runtime containment, tolerance, degradation, failover/reconfiguration, recovery/repair/retry, resynchronization/reintegration, distributed failure/reconciliation, correlated/cascading failure and long-run resilience outcomes without prescribing a watchdog, heartbeat, redundancy topology, retry algorithm, recovery implementation or other realization mechanism.
 
-`SCAF-ROB` is the primary framework semantic authority for deciding what a material abnormal/failure/health condition means at runtime and what resilience outcome is required where that concern is Applicable. The **Project Design Authority Defines Project Instance / Decision** for the actual project failure classifications, health criteria, containment/tolerance/degradation/recovery decisions, mappings to the RUN operational-state model and project-specific resilience values.
+`SCAF-ROB` **Defines Framework Semantics / Obligation** governing project interpretation of material abnormal/failure/health conditions and required resilience outcomes where the concern is Applicable. The **Project Design Authority Defines Project Instance / Decision** for the actual project failure classifications, health criteria, containment/tolerance/degradation/recovery decisions, mappings to the RUN operational-state model and project-specific resilience values.
 
 `SCAF-ROB` consumes controlled context/structure/contract/timing/state/lifecycle/configuration/security inputs from other concerns. It does not redefine `SCAF-CTX` Service consequence, `SCAF-ARCH` structural/Domain boundaries, `SCAF-INT` contract semantics, `SCAF-TIME` measurable limits, `SCAF-RUN` operational-state representation, `SCAF-LIFE` lifecycle transaction semantics, `SCAF-CFG` persistent-state authority or `SCAF-OBS` evidence representation/preservation/export.
 
@@ -61,13 +61,19 @@ Each material Service failure or System consequence used to drive a ROB decision
 
 **Target:** Project-Applicable Obligation
 
-Where health or failure determination is material, the project **SHALL** define the applicable health/failure states or decision outcomes, the criteria and controlled inputs by which they are assigned, and the project meaning/consequence of unknown, indeterminate or unavailable health information where such a condition can occur.
+Where health or failure determination is material, the project **SHALL** define the applicable health/failure classifications or decision outcomes, the criteria and controlled inputs by which they are assigned, and the project meaning/consequence of unknown, indeterminate or unavailable health information where such a condition can occur.
 
-### `SCAF-ROB-005` — Detectability, latent condition and diagnostic-coverage requirement
+### `SCAF-ROB-005` — Detectability and latent-condition disposition
 
 **Target:** Project-Applicable Obligation
 
-For each material robustness concern, the project **SHALL** determine whether the relevant condition/effect must be detectable during the required operating context, may remain latent for a controlled period/context, or is otherwise handled by an approved architecture basis. Where detection or diagnostic coverage is required, the project **SHALL** define the required detection/coverage property and its consequence if not achieved.
+For each material robustness concern, the project **SHALL** determine whether the relevant condition/effect must be detectable during the required operating context, may remain latent for a controlled period/context, or is otherwise addressed by a controlled architecture basis established by the Project Design Authority or applicable source authority.
+
+### `SCAF-ROB-031` — Diagnostic-coverage objective
+
+**Target:** Project-Applicable Obligation
+
+Where detection or diagnostic coverage is required for a material robustness concern, the project **SHALL** define the required detection/coverage property, the controlled criteria by which achievement is evaluated, and the consequence if the required coverage is not achieved.
 
 **Boundary note (informative):** Measurable detection latency or timing bounds are controlled through `SCAF-TIME`; verification/evidence-sufficiency semantics are controlled through `SCAF-ASSUR` and Project Verification / Assurance Authority.
 
@@ -95,7 +101,7 @@ The project **SHALL** define what constitutes containment success/failure at the
 
 **Target:** Project-Applicable Obligation
 
-Where continued Service or preservation of an approved property may depend on tolerance, masking, redundancy, failover or reconfiguration, the project **SHALL** determine which of those resilience outcomes are Applicable and define the required project outcome, eligibility/selection criteria and consequence when the required outcome cannot be established.
+Where continued Service or preservation of a controlled required property may depend on tolerance, masking, redundancy, failover or reconfiguration, the project **SHALL** determine which of those resilience outcomes are Applicable and define the required project outcome, eligibility/selection criteria and consequence when the required outcome cannot be established.
 
 This obligation does not prescribe a redundancy topology, voting scheme, failover mechanism or reconfiguration algorithm.
 
@@ -105,15 +111,21 @@ This obligation does not prescribe a redundancy topology, voting scheme, failove
 
 Where degraded operation is material, the project **SHALL** define the required degraded Function/Service outcome, the conditions under which the degradation requirement applies, and the controlled consequence when the required degraded outcome cannot be maintained.
 
-The degraded-Service requirement **SHALL** trace to the applicable `SCAF-CTX` consequence and to applicable safety/security/risk authority constraints. The actual operational-state representation/mapping remains a `SCAF-RUN` Project Design Authority decision.
+The degraded-Service requirement **SHALL** trace to the applicable `SCAF-CTX` consequence and to applicable safety/security/risk authority constraints. The actual operational-state representation/mapping remains a Project Design Authority decision under applicable `SCAF-RUN` obligations.
 
-### `SCAF-ROB-011` — Recovery / repair / retry outcome and termination criteria
+### `SCAF-ROB-011` — Recovery / repair outcome and completion criteria
 
 **Target:** Project-Applicable Obligation
 
-Where recovery, repair or retry is Applicable, the project **SHALL** define the required recovery outcome, the criteria for determining recovery success/failure, and the controlled retry/escalation/termination condition needed to prevent indefinite or ambiguous recovery behavior.
+Where recovery or repair is Applicable, the project **SHALL** define the required recovery/repair outcome and the controlled criteria for determining successful completion, failed completion or inability to establish the required outcome.
 
-**Boundary note (informative):** Measurable retry/recovery time, count, rate or resource limits are controlled through applicable `SCAF-TIME` project decisions; RUN represents resulting operational state/transition semantics.
+### `SCAF-ROB-032` — Retry / escalation termination semantics
+
+**Target:** Project-Applicable Obligation
+
+Where retry or repeated recovery/escalation is Applicable, the project **SHALL** define the controlled termination/escalation condition and the required project consequence when continued retry/recovery is no longer permitted or cannot establish the required resilience outcome.
+
+**Boundary note (informative):** Measurable retry/recovery time, count, rate or resource limits are controlled through applicable `SCAF-TIME` project decisions; `SCAF-RUN` defines framework obligations for resulting operational-state/transition representation.
 
 ### `SCAF-ROB-012` — Resynchronization / reintegration criteria
 
@@ -135,7 +147,7 @@ Where communication partition, disconnect or later reconnection can create stale
 
 **Target:** Project-Applicable Obligation
 
-Where redundancy, separation or independent recovery claims rely on independence assumptions, the project **SHALL** identify material common-mode/correlated failure sources or shared dependencies that can invalidate those assumptions and define the required project treatment or residual-risk decision/acceptance under the applicable risk authority.
+Where redundancy, separation or independent recovery claims rely on independence assumptions, the project **SHALL** identify material common-mode/correlated failure sources or shared dependencies that can invalidate those assumptions and define the required project treatment. Where residual risk remains, the project **SHALL** trace to the controlled residual-risk decision/acceptance made by the applicable risk authority.
 
 ### `SCAF-ROB-015` — Cascading failure / recovery-storm / peer-dependency resilience
 
@@ -227,13 +239,19 @@ The **Project Design Authority Defines Project Instance / Decision** for the act
 
 `SCAF-ROB` **Defines Framework Semantics / Obligation** for resilience properties required when those lifecycle operations fail. ROB **SHALL NOT** redefine lifecycle sequencing/atomicity/activation/rollback semantics merely to specify a failure response.
 
-### `SCAF-ROB-027` — ROB / OBS / ASSUR evidence boundary
+### `SCAF-ROB-027` — ROB / OBS evidence-observation boundary
 
 **Target:** Framework Normative Invariant
 
 `SCAF-ROB` **Defines Framework Semantics / Obligation** for what constitutes the applicable health/failure/resilience condition and required resilience outcome.
 
-`SCAF-OBS` **Defines Framework Semantics / Obligation** for observation, representation, preservation and export of health/diagnostic/incident evidence. `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for verification/evidence-sufficiency criteria, while Project Verification / Assurance Authority evaluates actual evidence sufficiency. Observation or an evidence-sufficiency determination **SHALL NOT** redefine ROB failure meaning or required resilience behavior.
+`SCAF-OBS` **Defines Framework Semantics / Obligation** for observation, representation, provenance/correlation, preservation and export of health/diagnostic/incident evidence. Observation **SHALL NOT** redefine ROB failure meaning or required resilience behavior.
+
+### `SCAF-ROB-033` — ROB / ASSUR evidence-sufficiency boundary
+
+**Target:** Framework Normative Invariant
+
+`SCAF-ASSUR` **Defines Framework Semantics / Obligation** for verification/evidence-sufficiency criteria, while Project Verification / Assurance Authority evaluates actual project evidence sufficiency. An evidence-sufficiency determination **SHALL NOT** redefine ROB failure meaning, required resilience behavior or underlying closure authority.
 
 ### `SCAF-ROB-028` — ROB / CFG persistent-state boundary
 
@@ -271,13 +289,15 @@ The following table is informative and does not create additional normative requ
 | Fault/Error/Failure semantic classification | Project Design Authority, constrained by applicable source authority |
 | Service/System consequence trace | CTX-controlled source + applicable external authority; integrated by Project Design Authority |
 | Health/failure criteria and indeterminate-health semantics | Project Design Authority |
-| Detectability / latent-condition / diagnostic-coverage requirement | Project Design Authority, verified using SCAF-ASSUR semantics |
+| Detectability / latent-condition decision | Project Design Authority / applicable source authority |
+| Diagnostic-coverage objective | Project Design Authority, verified using SCAF-ASSUR semantics |
 | Health-monitor/supervisor failure consequence | Project Design Authority |
 | Propagation path / affected dependencies | Project Design Authority, traced to ARCH/INT/TIME/RUN/LIFE as applicable |
 | Runtime containment outcome | Project Design Authority, using controlled ARCH boundary decisions |
 | Tolerance/masking/redundancy/failover/reconfiguration outcome | Project Design Authority |
 | Degraded-Service outcome | Project Design Authority, constrained by CTX and applicable external authorities |
-| Recovery/repair/retry outcome and termination criteria | Project Design Authority, constrained by TIME values where applicable |
+| Recovery/repair outcome and completion criteria | Project Design Authority |
+| Retry/escalation termination semantics | Project Design Authority, constrained by TIME values where applicable |
 | Resynchronization / reintegration criteria | Project Design Authority |
 | Partition / reconciliation resilience requirement | Project Design Authority, constrained by INT contract/session decisions |
 | Common-mode / correlated failure assumptions | Project Design Authority / applicable risk authority |
@@ -305,4 +325,4 @@ The following table is informative and does not create additional normative requ
 
 ## 7. Non-Normative Example
 
-A multi-participant service may require a scoped participant failure not to cascade through a shared resource and may require an approved degraded Service outcome until reintegration criteria are met. `SCAF-ARCH` supplies the controlled structural/Domain boundaries, `SCAF-ROB` requires the project to define the containment/degradation/reintegration outcomes, `SCAF-RUN` represents the resulting project operational states/transitions, `SCAF-TIME` supplies any measurable detection/recovery/capacity limits, and `SCAF-OBS` supplies evidence semantics. Whether the realization uses a watchdog, redundant provider, reconnect algorithm, reset action or another mechanism is outside L1/L2 ROB normative scope.
+A multi-participant service may require a scoped participant failure not to cascade through a shared resource and may require an controlled required degraded Service outcome until reintegration criteria are met. `SCAF-ARCH` supplies the controlled structural/Domain boundaries, `SCAF-ROB` requires the project to define the containment/degradation/reintegration outcomes, `SCAF-RUN` represents the resulting project operational states/transitions, `SCAF-TIME` supplies any measurable detection/recovery/capacity limits, and `SCAF-OBS` supplies evidence semantics. Whether the realization uses a watchdog, redundant provider, reconnect algorithm, reset action or another mechanism is outside L1/L2 ROB normative scope.
