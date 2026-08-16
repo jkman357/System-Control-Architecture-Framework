@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc11  
+**Version:** v0.0.2rc12  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-16
 
@@ -37,11 +37,11 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc11 Integrated L1/L2 Consolidation Position
+## v0.0.2rc12 SCAF-SEC L1/L2 Normative Tranche Position
 
-v0.0.2rc11 is a deliberately narrow **integrated L1/L2 consolidation RC** after independent rc10 review found **no Critical or Major issues**, accepted CFG as **Stable after minor cleanup**, and judged the pre-SEC backbone **Stable after targeted consolidation**. No new concern tranche is added in this release. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc12 begins the controlled **SCAF-SEC L1/L2 normative tranche** after independent rc11 integrated review found **no Critical or Major issues**, judged CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG Stable, and explicitly cleared SEC to start with parallel minor cleanup. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
-Current normative documents remain:
+Current normative documents are:
 
 - `docs/normative/00_SCAF_Authority_Kernel.md`
 - `docs/normative/10_SCAF_CTX_System_Context_Obligations.md`
@@ -53,10 +53,13 @@ Current normative documents remain:
 - `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md`
 - `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md`
 - `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md`
+- `docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md`
 
-This RC performs only targeted pre-SEC consolidation: it narrows CFG corruption/loss language so CFG owns source-state interpretation/restoration eligibility and resulting CFG state while ROB retains resilience recovery; completes derived-value provenance; normalizes CFG Project-Applicable boundary notes; hardens semantic CFG identity against physical storage locators; tightens the CFG-to-OBS observation handoff; explicitly states that INT-valid/delivered data does not itself establish CFG acceptance/commit/activation; and normalizes older RUN/ROB/LIFE/OBS forward references to the current authoritative-source grammar.
+This RC establishes Security Authority -> SCAF-SEC -> Project Design Authority separation; security asset/trust/identity/authentication/authorization architecture obligations; confidentiality/integrity and hostile-freshness interfaces; credential/key lifecycle architecture interfaces; privilege/separation, hostile-input/resource-abuse and compromise-containment obligations; security-sensitive LIFE/CFG/OBS/ROB/TIME/RUN/INT/ARCH boundaries; and explicit SEC/ASSUR/PROF separation. It does not replace threat/risk/regulatory acceptance authority and does not prescribe cryptographic, credential, secure-storage, secure-boot, firewall, sandbox or access-control mechanisms.
 
-No new SCAF-SEC normative content is authored in rc11. L3 mechanism catalogs, L4 implementation/verification guidance, schema, validator and CI remain gated. Independent review of this consolidation RC is the next gate before SEC authoring.
+Parallel minor cleanup normalizes older informative boundary prose, replaces residual non-canonical `owned by` / `configuration ownership` wording, and keeps forward-reference/authority grammar aligned with the integrated rc11 backbone.
+
+L3 mechanism catalogs, L4 implementation/verification guidance, schema, validator and CI remain gated. The next gate is independent SCAF-SEC review; after SEC stabilizes, one final integrated L1/L2 consolidation review is expected before L3 begins.
 
 Normative precedence for this RC is:
 
@@ -68,7 +71,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc11 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc12 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -274,13 +277,14 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md` | L1/L2 boot / power / reset / update / activation / rollback lifecycle obligations |
 | `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md` | L1/L2 observability / diagnostics / incident-evidence identity / provenance / correlation / preservation obligations |
 | `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md` | L1/L2 configuration / persistent operational-state source / version / migration / commit / rollback / calibration obligations |
+| `docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md` | L1/L2 security architecture interface / trust / identity / authentication / authorization / protection / security robustness obligations |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc11.**
+**No CI is included in v0.0.2rc12.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -319,32 +323,31 @@ v0.0.2rc08   # LIFE controlled L1/L2 normative tranche + ROB minor closure
 v0.0.2rc09   # OBS controlled L1/L2 normative tranche + LIFE minor closure
 v0.0.2rc10   # CFG controlled L1/L2 normative tranche + OBS minor closure
 v0.0.2rc11   # integrated L1/L2 consolidation before SEC
+v0.0.2rc12   # SEC controlled L1/L2 normative tranche + parallel minor cleanup
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc11 is in **controlled L1/L2 normative rewrite — integrated pre-SEC consolidation**.
+v0.0.2rc12 is in **controlled L1/L2 normative rewrite — SCAF-SEC tranche**.
 
 Open scope in this RC:
 
 - preserve the reviewed Authority Kernel / CTX / ARCH / INT / TIME / RUN / ROB / LIFE / OBS / CFG authority homes;
-- normalize cross-boundary authority grammar and target purity without changing concern ownership;
-- close the targeted CFG/ROB corruption-versus-recovery wording boundary;
-- complete CFG derived-value provenance and semantic-identity hardening;
-- tighten CFG-to-OBS and INT-to-CFG handoff semantics;
-- normalize older CFG forward references in RUN/ROB/LIFE/OBS;
-- synchronize README / CHANGELOG / read-coverage release positioning;
-- independently review the integrated L1/L2 backbone before `SCAF-SEC` authoring.
+- establish SCAF-SEC L1/L2 security-architecture-interface semantics using controlled Security Authority inputs;
+- preserve External Security Authority -> SCAF-SEC -> Project Design Authority separation;
+- establish SEC/ARCH, SEC/INT, SEC/TIME, SEC/RUN, SEC/ROB, SEC/LIFE, SEC/OBS, SEC/CFG, SEC/ASSUR and SEC/PROF boundaries;
+- keep threat assumptions/objectives/risk evaluation/acceptance and regulatory/certification security acceptance with their applicable source authorities;
+- normalize remaining integrated target-purity / authority-grammar wording in parallel without changing stable concern authority homes;
+- independently review SCAF-SEC before the final integrated L1/L2 consolidation gate.
 
 Still closed/gated:
 
 - top-level taxonomy expansion without a concrete authority-home failure;
 - broad Draft/RC or mixed-maturity donor promotion;
 - executable-invariant promotion before schema/test/validator extraction and review;
-- `SCAF-SEC` normative authoring until this integrated consolidation RC is independently reviewed;
-- L3 mechanism catalogs;
+- L3 mechanism catalogs before SEC stabilizes and final integrated L1/L2 consolidation is reviewed;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
 - final schema, validator, generated checklist or CI enforcement;
 - final migration proof or normative freeze.

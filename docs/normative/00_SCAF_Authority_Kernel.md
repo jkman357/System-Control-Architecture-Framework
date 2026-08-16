@@ -1,6 +1,6 @@
 # SCAF Authority Kernel
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Layer:** L1 Authority Kernel  
 **Status:** Normative RC
 
@@ -268,7 +268,7 @@ Unqualified `Defines`, `owns`, `acceptance` and `Realizes` **SHALL NOT** be used
 
 ## 8. Rewrite and Promotion Gates
 
-| Gate | Meaning in v0.0.2rc11 |
+| Gate | Meaning in v0.0.2rc12 |
 |---|---|
 | Architecture convergence | Passed by frozen v0.0.1 baseline |
 | Controlled L1/L2 rewrite | Open |

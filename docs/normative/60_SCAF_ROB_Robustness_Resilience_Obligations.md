@@ -1,6 +1,6 @@
 # SCAF-ROB — Robustness & Resilience Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-ROB`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -33,7 +33,7 @@
 
 The **Project Design Authority Defines Project Instance / Decision** for actual project fault assumptions, health/failure criteria, propagation/containment decisions, degraded-service/recovery outcomes, failure-response mappings, resilience limits and reintegration criteria, constrained by applicable external safety/security/risk authority inputs.
 
-`SCAF-ROB` does not define universal failure names, a universal `Fault/Degraded/Recovery/Safe` RUN state model, project structural Domain boundaries, timing budgets, communication protocols, lifecycle transaction sequences, persistent configuration ownership, evidence storage/export mechanisms or security threat/risk acceptance authority.
+`SCAF-ROB` does not define universal failure names, a universal `Fault/Degraded/Recovery/Safe` RUN state model, project structural Domain boundaries, timing budgets, communication protocols, lifecycle transaction sequences, authoritative configuration/persistent-state source/value semantics, evidence storage/export mechanisms or security threat/risk acceptance authority.
 
 ## 3. Project-Applicable Obligations
 
@@ -103,7 +103,7 @@ The project **SHALL** define what constitutes containment success/failure at the
 
 Where continued Service or preservation of a controlled required property may depend on tolerance, masking, redundancy, failover or reconfiguration, the project **SHALL** determine which of those resilience outcomes are Applicable and define the required project outcome, eligibility/selection criteria and consequence when the required outcome cannot be established.
 
-This obligation does not prescribe a redundancy topology, voting scheme, failover mechanism or reconfiguration algorithm.
+**Boundary note (informative):** this obligation does not prescribe a redundancy topology, voting scheme, failover mechanism or reconfiguration algorithm.
 
 ### `SCAF-ROB-010` — Graceful degradation and degraded-Service outcome
 
@@ -111,7 +111,9 @@ This obligation does not prescribe a redundancy topology, voting scheme, failove
 
 Where degraded operation is material, the project **SHALL** define the required degraded Function/Service outcome, the conditions under which the degradation requirement applies, and the controlled consequence when the required degraded outcome cannot be maintained.
 
-The degraded-Service requirement **SHALL** trace to the applicable `SCAF-CTX` consequence and to applicable safety/security/risk authority constraints. The actual operational-state representation/mapping remains a Project Design Authority decision under applicable `SCAF-RUN` obligations.
+The degraded-Service requirement **SHALL** trace to the applicable `SCAF-CTX` consequence and to applicable safety/security/risk authority constraints.
+
+**Boundary note (informative):** the actual operational-state representation/mapping remains a Project Design Authority decision under applicable `SCAF-RUN` obligations.
 
 ### `SCAF-ROB-011` — Recovery / repair outcome and completion criteria
 
@@ -161,7 +163,7 @@ Where one failure, recovery action or peer dependency can trigger cascading fail
 
 Where violation of a controlled `SCAF-TIME` capacity/resource/accumulation bound or other long-duration condition can materially affect robustness, the project **SHALL** define the health/failure interpretation and required containment/degradation/recovery outcome for the violated condition.
 
-`SCAF-TIME` retains the measurable bound, horizon, threshold, capacity and margin semantics; ROB defines the resilience meaning/response after the controlled condition is violated.
+**Boundary note (informative):** `SCAF-TIME` retains the measurable bound, horizon, threshold, capacity and margin semantics; `SCAF-ROB` **Defines Framework Semantics / Obligation** for the resilience meaning/response after the controlled condition is violated.
 
 ### `SCAF-ROB-017` — Lifecycle-operation failure response
 

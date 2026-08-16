@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.0.2rc12 — 2026-08-16
+
+SCAF-SEC controlled L1/L2 normative tranche after independent rc11 integrated review found no Critical/Major issues, accepted CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG as Stable, and cleared SEC to start with parallel minor consolidation cleanup.
+
+### Added
+
+- `docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md`;
+- L1 authority separation for External Security Authority -> SCAF-SEC -> Project Design Authority;
+- project obligations for security-relevant assets/subjects/trust relationships, security identity, authentication, authorization, confidentiality, integrity/authenticity, hostile freshness/anti-replay and credential/key lifecycle architecture semantics;
+- project obligations for privilege/separation, security-sensitive control paths, hostile input/resource abuse, compromise/trust loss, compromise containment, security degradation/downgrade, security-service dependency and trust re-establishment eligibility;
+- project obligations for security-sensitive LIFE/CFG relationships, security evidence needs, multi-participant security-decision consistency, verification-claim trace and re-evaluation;
+- explicit SEC/ARCH, SEC/INT, SEC/TIME, SEC/RUN, SEC/ROB, SEC/LIFE, SEC/OBS, SEC/CFG, SEC/ASSUR, identity-partition and SEC/PROF realization boundaries.
+
+### Changed
+
+- normalized older Project-Applicable boundary/non-prescription explanatory prose as informative notes where identified by the rc11 integrated review;
+- replaced `SCAF-INT-017` non-canonical `owned by SCAF-ROB` wording with Authority Kernel framework-semantics grammar;
+- replaced the stale ROB `persistent configuration ownership` phrase with authoritative CFG source/value semantics;
+- synchronized README, Authority Kernel release labels and read-coverage position for the SEC tranche;
+- retained the frozen v0.0.1 architecture baseline and stable CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG authority homes.
+
+### Deliberately Not Added
+
+- new top-level taxonomy or core metamodel entities;
+- universal threat model, security objective, risk-acceptance policy or certification acceptance authority;
+- universal encryption/signature algorithm, key size, certificate/PKI, secure element, TPM/HSM, secure-boot implementation, firewall, sandbox, credential store, password/token format or access-control mechanism;
+- L3 pattern/mechanism catalog or L4 implementation/verification guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc11 — 2026-08-16
 
 Integrated L1/L2 consolidation after independent rc10 review accepted CFG as Stable after minor cleanup and judged the CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG backbone Stable after targeted consolidation. No new concern tranche is added.

@@ -1,6 +1,6 @@
 # SCAF-INT — Interfaces, Interaction & Data Contract Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-INT`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -131,7 +131,7 @@ Where Interface or data-contract evolution can affect independently developed, d
 
 Where malformed, unsupported, unknown, duplicate, out-of-order, stale, unauthorized or otherwise non-conforming Interaction input can occur and is material, the project **SHALL** define the contract-level handling outcome and authority provenance.
 
-This obligation defines the contract outcome; runtime resilience/recovery behavior after an Interaction failure or violation remains under applicable `SCAF-ROB` obligations.
+**Boundary note (informative):** this obligation defines the contract outcome; runtime resilience/recovery behavior after an Interaction failure or violation remains under applicable `SCAF-ROB` obligations.
 
 ### `SCAF-INT-014` — Contract trace to context and architecture
 
@@ -161,7 +161,7 @@ Changes to Interface identity, participants, contract meaning, validity/freshnes
 
 `SCAF-INT` **Defines Framework Semantics / Obligation** for the Interaction/data-contract result of a negative or invalid exchange.
 
-`SCAF-INT` **SHALL NOT** redefine runtime resilience/recovery behavior owned by `SCAF-ROB` or security objectives/risk acceptance owned by the applicable security authority. `SCAF-SEC` may Constrain INT contracts using those controlled security inputs.
+`SCAF-INT` **SHALL NOT** redefine runtime resilience/recovery behavior for which `SCAF-ROB` **Defines Framework Semantics / Obligation**, or security objectives/risk acceptance for which the applicable Security Authority remains source authority. `SCAF-SEC` **Defines Framework Semantics / Obligation** for applying controlled security constraints to INT contracts without replacing either authority.
 
 ### `SCAF-INT-018` — Session-identity partition
 

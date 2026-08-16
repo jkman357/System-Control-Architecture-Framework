@@ -1,6 +1,6 @@
 # SCAF-LIFE — Boot, Power, Reset & Update Lifecycle Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-LIFE`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -85,7 +85,7 @@ Lifecycle completion **SHALL NOT** be treated as proof of RUN readiness unless t
 
 **Target:** Project-Applicable Obligation
 
-Where boot, reset, re-establishment, replacement or re-creation of a **LIFE-controlled boot/lifecycle instance** can make lifecycle evidence, retained state, interaction state or operational state ambiguous across lifecycle instances, the project **SHALL** define Boot Incarnation / Boot Generation identity semantics sufficient to distinguish the relevant lifecycle-created instances. Runtime-only restart, replacement or re-creation of operational state remains governed by the applicable `SCAF-RUN` Operational Incarnation decision.
+Where boot, reset, re-establishment, replacement or re-creation of a **LIFE-controlled boot/lifecycle instance** can make lifecycle evidence, retained state, interaction state or operational state ambiguous across lifecycle instances, the project **SHALL** define Boot Incarnation / Boot Generation identity semantics sufficient to distinguish the relevant lifecycle-created instances. **Boundary note (informative):** runtime-only restart, replacement or re-creation of operational state remains governed by the applicable `SCAF-RUN` Operational Incarnation decision.
 
 The project **SHALL** keep Boot Incarnation distinguishable from `SCAF-RUN` Operational Incarnation, `SCAF-INT` Protocol/Connection Session Identity and `SCAF-TIME` Time Epoch / Time Domain.
 
@@ -95,7 +95,7 @@ The project **SHALL** keep Boot Incarnation distinguishable from `SCAF-RUN` Oper
 
 Where reset cause, reset class or reset scope can materially affect lifecycle, recovery, retained-state validity, evidence interpretation or operational behavior, the project **SHALL** define the applicable reset classifications/causes and their controlled lifecycle meaning/consequence.
 
-This obligation does not require a universal reset taxonomy or a specific hardware reset-cause register.
+**Boundary note (informative):** this obligation does not require a universal reset taxonomy or a specific hardware reset-cause register.
 
 ### `SCAF-LIFE-009` — Reset-domain and coordinated reset consequence
 
@@ -117,7 +117,7 @@ Where RAM, persistent operational state, configuration, calibration, queued work
 
 Where power-on, power-off, power-loss, brownout or partial-power lifecycle conditions can materially affect lifecycle correctness, the project **SHALL** define the applicable lifecycle state/result semantics, required transition outcome and controlled consequence for incomplete or indeterminate power-lifecycle progression.
 
-This obligation does not prescribe a power-sequencing circuit, supervisor IC, voltage threshold or hardware reset mechanism.
+**Boundary note (informative):** this obligation does not prescribe a power-sequencing circuit, supervisor IC, voltage threshold or hardware reset mechanism.
 
 ### `SCAF-LIFE-012` — Update transaction applicability and authoritative-result responsibility
 
@@ -131,7 +131,7 @@ Where software, firmware, programmable logic, configuration-bearing image or oth
 
 Where bootstrap, staging, lifecycle-recovery, update-management or equivalent lifecycle responsibilities are distinct from the realization that provides normal active Service, the project **SHALL** define the controlled lifecycle responsibility boundary, the **lifecycle responsibility handoff**, and the conditions under which the active realization becomes lifecycle-eligible for subsequent RUN readiness evaluation, consistent with the PDA-assigned lifecycle authoritative-result responsibility in `SCAF-LIFE-003`.
 
-This obligation does not require a dedicated bootloader, recovery partition, updater component or separate executable image.
+**Boundary note (informative):** this obligation does not require a dedicated bootloader, recovery partition, updater component or separate executable image.
 
 ### `SCAF-LIFE-014` — Update preconditions and controlled source inputs
 
@@ -151,7 +151,7 @@ Where partial application of an update or lifecycle change can create a material
 
 **Target:** Project-Applicable Obligation
 
-Where an updated, replaced or newly prepared realization requires a distinct activation decision, the project **SHALL** define the controlled activation criteria, authoritative activation result and relationship between transaction completion and the **lifecycle-activated / lifecycle-eligible realization or lifecycle result**. Service readiness/availability remains governed by the applicable `SCAF-RUN` decision.
+Where an updated, replaced or newly prepared realization requires a distinct activation decision, the project **SHALL** define the controlled activation criteria, authoritative activation result and relationship between transaction completion and the **lifecycle-activated / lifecycle-eligible realization or lifecycle result**. **Boundary note (informative):** Service readiness/availability remains governed by the applicable `SCAF-RUN` decision.
 
 **Boundary note (informative):** A ROB-controlled health/failure determination may be a controlled activation input; `SCAF-ROB` does not thereby become lifecycle activation authority.
 
@@ -161,7 +161,7 @@ Where an updated, replaced or newly prepared realization requires a distinct act
 
 Where rollback is Applicable, the project **SHALL** define rollback eligibility, the lifecycle transaction/result semantics of rollback, the authoritative rollback completion/failure criteria and the controlled consequence when rollback cannot establish the required lifecycle result.
 
-This obligation does not prescribe image slots, copy direction, rollback algorithm or storage layout.
+**Boundary note (informative):** this obligation does not prescribe image slots, copy direction, rollback algorithm or storage layout.
 
 ### `SCAF-LIFE-018` — Interrupted transaction / resume semantics
 
@@ -175,7 +175,7 @@ Where a lifecycle transaction may be interrupted by reset, power loss, communica
 
 Where a lifecycle transaction spans multiple participants, Nodes, domains or updateable responsibilities, the project **SHALL** define the required coordination relationship, authoritative transaction/result responsibility, permitted partial-progress condition and required consistency before the coordinated lifecycle transaction is considered complete.
 
-This obligation does not prescribe a consensus protocol, coordinator algorithm, leader election, two-phase commit implementation or transport.
+**Boundary note (informative):** this obligation does not prescribe a consensus protocol, coordinator algorithm, leader election, two-phase commit implementation or transport.
 
 ### `SCAF-LIFE-020` — Lifecycle failure handoff to ROB
 

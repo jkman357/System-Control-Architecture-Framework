@@ -1,6 +1,6 @@
 # SCAF-OBS — Observability, Diagnostics & Incident Evidence Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-OBS`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -102,7 +102,7 @@ Correlation, timestamp proximity or recorder order **SHALL NOT** by itself estab
 
 For each material evidence class, the project **SHALL** define the evidence-quality information needed to interpret availability, completeness, truncation, corruption, uncertainty, dropped/missing observation, indeterminate provenance or other evidence limitations that can materially affect use of the evidence.
 
-This obligation defines evidence representation/quality semantics; it does not determine `SCAF-ASSUR` evidence sufficiency.
+**Boundary note (informative):** this obligation defines evidence representation/quality semantics; it does not determine `SCAF-ASSUR` evidence sufficiency.
 
 ### `SCAF-OBS-011` — Observer / recorder self-health
 
@@ -110,7 +110,7 @@ This obligation defines evidence representation/quality semantics; it does not d
 
 Where a monitor, observer, recorder, logger, diagnostic responsibility or evidence path can materially affect confidence in observation/evidence, the project **SHALL** define the required self-health/availability indication or controlled limitation semantics and the project consequence when the observation responsibility is unavailable, unhealthy or indeterminate.
 
-This obligation does not require a dedicated recorder/monitor component.
+**Boundary note (informative):** this obligation does not require a dedicated recorder/monitor component.
 
 ### `SCAF-OBS-012` — Loss-of-observation semantics
 
@@ -152,7 +152,7 @@ Where incident investigation requires distinction between a first-observed abnor
 
 Where reconstruction of a material incident depends on a sequence of observations, the project **SHALL** define the required evidence scope/timeline relationship, participating evidence sources and correlation basis sufficiently to reconstruct the material sequence within project-defined uncertainty/coverage limits.
 
-This obligation does not prescribe a pre-trigger/post-trigger buffer, ring buffer or storage layout.
+**Boundary note (informative):** this obligation does not prescribe a pre-trigger/post-trigger buffer, ring buffer or storage layout.
 
 ### `SCAF-OBS-018` — Evidence preservation / lifecycle survivability
 
@@ -168,7 +168,7 @@ Where evidence must remain available across a reset, boot, power transition, upd
 
 Where early-boot failure, repeated reset/crash-loop behavior or pre-operational failure can materially defeat normal evidence collection, the project **SHALL** define the evidence that must remain observable/recoverable, the applicable Boot Incarnation/correlation basis and the controlled consequence when such evidence cannot be obtained.
 
-This obligation does not prescribe retained RAM, flash logging, crash recorder, bootloader storage or another salvage mechanism.
+**Boundary note (informative):** this obligation does not prescribe retained RAM, flash logging, crash recorder, bootloader storage or another salvage mechanism.
 
 ### `SCAF-OBS-020` — Source-defined identity recording
 

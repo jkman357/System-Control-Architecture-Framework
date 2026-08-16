@@ -1,6 +1,6 @@
 # SCAF-CTX — System Context, Mission, Function & Service Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-CTX`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -117,7 +117,7 @@ An assumption whose invalidation can change architecture decisions **SHALL** hav
 
 The project **SHALL** maintain the material CTX Functions, Capabilities, Services, dependencies, consequences, assumptions and external constraints with stable references or controlled identifiers sufficient for downstream architecture decisions to trace to their motivating context.
 
-`SCAF-CTX-010` does not create a second context-to-architecture justification authority; `SCAF-ARCH` **Defines Framework Semantics / Obligation** for structural decisions to trace to applicable context.
+**Boundary note (informative):** `SCAF-CTX-010` does not create a second context-to-architecture justification authority; `SCAF-ARCH` **Defines Framework Semantics / Obligation** for structural decisions to trace to applicable context.
 
 ### `SCAF-CTX-011` — Context changes require re-scan
 

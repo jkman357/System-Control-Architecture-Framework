@@ -1,6 +1,6 @@
 # SCAF-ARCH — System / Node / Role / Domain Architecture Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-ARCH`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -109,7 +109,7 @@ If a subordinate System is abstracted as a participant/Node at a parent-System l
 
 Material `SCAF-ARCH` project decisions **SHALL** trace to the Project Design Authority designated under the SCAF Authority Kernel or to an explicit coordinated decision rule permitted by that kernel.
 
-This requirement applies the kernel to `SCAF-ARCH`; it does not redefine Project Design Authority semantics.
+**Boundary note (informative):** this requirement applies the kernel to `SCAF-ARCH`; it does not redefine Project Design Authority semantics.
 
 ### `SCAF-ARCH-011` — Architecture decision records
 
@@ -117,7 +117,7 @@ This requirement applies the kernel to `SCAF-ARCH`; it does not redefine Project
 
 Authoritative architecture artifacts **SHALL** record applicable `SCAF-ARCH` Controlled Decisions and authority provenance at a level sufficient for realization and verification trace.
 
-This requirement does not make the artifact itself an authority role.
+**Boundary note (informative):** this requirement does not make the artifact itself an authority role.
 
 ### `SCAF-ARCH-012` — Architecture change and re-evaluation
 

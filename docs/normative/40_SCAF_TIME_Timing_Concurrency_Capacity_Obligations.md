@@ -1,6 +1,6 @@
 # SCAF-TIME — Timing, Concurrency, Capacity & Resource Margin Obligations
 
-**Release:** v0.0.2rc11  
+**Release:** v0.0.2rc12  
 **Concern:** `SCAF-TIME`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -63,7 +63,9 @@ Where timestamps, deadlines, freshness, chronological ordering or coordinated te
 
 Where a temporal claim depends on a synchronization or clock/timebase relationship, the project **SHALL** identify that dependency and define whether the claim remains valid, becomes invalid, or enters a controlled degraded/re-evaluation state when the required relationship is not usable.
 
-The project **SHALL** trace any resulting contract, operational-state or resilience consequence to the applicable controlled `SCAF-INT`, `SCAF-RUN` or `SCAF-ROB` requirement, decision or obligation as available in the current project/framework stage. `SCAF-TIME` does not define the downstream runtime or resilience response.
+The project **SHALL** trace any resulting contract, operational-state or resilience consequence to the applicable controlled `SCAF-INT`, `SCAF-RUN` or `SCAF-ROB` requirement, decision or obligation as available in the current project/framework stage.
+
+**Boundary note (informative):** `SCAF-TIME` does not define the downstream runtime or resilience response.
 
 ### `SCAF-TIME-005` — Time Domain and Time Epoch
 
@@ -83,7 +85,7 @@ Where deadline, period, latency or jitter materially affects correctness or requ
 
 Where an applicable `SCAF-INT` contract uses age/freshness to distinguish current, stale, expired or invalid information, the Project Design Authority **SHALL** define the measurable age reference, timebase, threshold/tolerance and uncertainty needed to evaluate that contract.
 
-This requirement supplies temporal evaluation semantics; `SCAF-INT` retains authority for the contract meaning of the freshness state.
+**Boundary note (informative):** this requirement supplies temporal evaluation semantics; `SCAF-INT` retains authority for the contract meaning of the freshness state.
 
 ### `SCAF-TIME-008` — TIME-owned concurrency and interference constraints
 
