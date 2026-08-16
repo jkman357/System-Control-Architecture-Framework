@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc06  
+**Development Release:** v0.0.3rc07  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -216,7 +216,7 @@ Those belong to later L4 implementation / verification guidance or project-speci
 
 ## 11. Initial Development Priority
 
-The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc06 across:
+The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc07 across:
 
 1. `SUP` — supervision / liveness / progress detection;
 2. `REC` — bounded retry / escalation;
@@ -225,7 +225,7 @@ The catalog-contract gate has passed and the first deliberately small representa
 5. `LCM` — update / activation / rollback lifecycle;
 6. `EVD` — retained incident evidence / pre-post event recording.
 
-`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. The first seven entries have now demonstrated stable metadata, trace, primary-family, composition and L3/L4 semantics through independent review and closure. The rc05 lifecycle review validated all seven as M2 and independently judged all seven `READY FOR AVAILABLE`; v0.0.3rc06 records the explicit catalog acceptance. Broad second-tranche authoring remains separately gated.
+`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. The first seven entries have now demonstrated stable metadata, trace, primary-family, composition and L3/L4 semantics through independent review and closure. The rc06 independent review validated the explicit availability acceptance for all seven entries. v0.0.3rc07 opens only a descriptive coverage / second-tranche planning gate; broad authoring remains separately gated.
 
 
 ## 12. v0.0.3rc03 Initial Pattern-Tranche Gate
@@ -336,3 +336,27 @@ The rc06 independent review shall verify that:
 - no L4 implementation/verification prescription, schema, validator, generated registry/index, CI, code generation or executable-governance work is opened by this lifecycle transition.
 
 A successful rc06 review closes the **initial seven-pattern availability-acceptance gate**. Opening a second tranche, M3 multi-context validation, L4 guidance, or executable governance remains a separate explicit decision.
+
+
+## 16. v0.0.3rc07 Catalog Coverage / Second-Tranche Planning Gate
+
+The independent v0.0.3rc06 availability-acceptance review returned:
+
+```text
+INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
+```
+
+It validated 7 / 7 availability acceptances, 7 / 7 pattern-body non-regression checks, frozen-baseline integrity and the accepted availability semantics with no new Critical, Major, Minor or Trivial finding.
+
+v0.0.3rc07 therefore closes the initial seven-pattern availability milestone and opens a **planning-only** gate before any second-tranche authoring. The planning artifact is `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md`.
+
+The rc07 review shall verify that:
+
+- trace-reference coverage is not misrepresented as satisfaction, applicability, compliance or catalog completeness;
+- zero/low direct pattern coverage in AK/CTX/ARCH/RUN is not automatically treated as a defect;
+- proposed second-tranche categories are reusable mechanism intents rather than restated L2 obligations;
+- FTL/TIM/SYN candidate expansion does not reopen concern authority or duplicate existing Pattern identities;
+- the SEC hold is appropriately conservative and does not imply SEC obligations are optional;
+- no new Pattern ID, M3/M4 claim, L4 guidance or executable-governance mechanism is introduced in rc07.
+
+Only a successful rc07 planning review may authorize a later RC to allocate a small second tranche.

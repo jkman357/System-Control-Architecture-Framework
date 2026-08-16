@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc06  
+**Development Release:** v0.0.3rc07  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** Initial representative L3 pattern availability-acceptance RC; all seven entries Available / M2
+**Status:** L3 catalog coverage / second-tranche planning RC; seven existing entries remain Available / M2
 
 ## 1. Purpose
 
@@ -30,26 +30,19 @@ Project Verification / Assurance evaluates project evidence
 Pattern selection by itself does not satisfy an L2 obligation.
 
 
-## 2. v0.0.3rc06 Scope
+## 2. v0.0.3rc07 Scope
 
-The independent v0.0.3rc05 maturity / availability review returned `INITIAL L3 PATTERN-LIFECYCLE GATE: YES`, validated **7 / 7 `M2 VALID`**, independently judged **7 / 7 `READY FOR AVAILABLE`**, and opened no new Critical, Major, Minor or Trivial finding.
-
-v0.0.3rc06 therefore records the explicit catalog-maintainer acceptance decision for the same seven published entries:
+The independent v0.0.3rc06 availability-acceptance review returned:
 
 ```text
-Candidate -> Available
-M2 — Architecture Reviewed remains unchanged
-Introduced In: v0.0.3rc03 remains unchanged
+INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
 ```
 
-The pattern mechanism bodies, authority boundaries and L2 trace semantics are not re-authored to obtain availability. This RC is intentionally limited to:
+It validated **7 / 7 `AVAILABLE ACCEPTANCE VALID`**, confirmed 7 / 7 pattern-body non-regression, and opened no Critical, Major, Minor or Trivial finding. The initial seven-pattern availability milestone is therefore closed.
 
-- recording the entry-by-entry availability acceptance decision and its review evidence basis;
-- updating all seven pattern Catalog Status values from Candidate to Available;
-- preserving M2 maturity, stable identity/family and original introduction history;
-- updating current release/index/navigation/gate wording.
+v0.0.3rc07 does not author new patterns. It adds a controlled **trace-reference coverage audit and second-tranche planning decision surface** while preserving the current seven entries as `Available / M2`.
 
-`Available` means accepted for project consideration under the current catalog release. It does not imply project applicability, recommendation, selection, compliance, verification, implementation correctness or L2 satisfaction.
+The audit distinguishes numeric trace-reference coverage from obligation satisfaction or catalog completeness and identifies a small set of candidate mechanism categories for independent review before any new Pattern ID is allocated.
 
 ## 3. Files
 
@@ -60,7 +53,8 @@ The pattern mechanism bodies, authority boundaries and L2 trace semantics are no
 | `02_L3_Trace_and_Selection_Model.md` | L2→L3 trace relations, project selection states and satisfaction boundary |
 | `03_L3_Pattern_Index.md` | Human-readable catalog index; not a trace authority |
 | `04_L3_Initial_Tranche_Lifecycle_Decision.md` | Historical rc05 M2 decision record and availability-readiness gate |
-| `05_L3_Initial_Tranche_Availability_Acceptance.md` | rc06 explicit entry-by-entry Candidate→Available catalog acceptance record |
+| `05_L3_Initial_Tranche_Availability_Acceptance.md` | Historical rc06 explicit entry-by-entry Candidate→Available catalog acceptance record |
+| `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md` | rc07 descriptive trace-reference coverage audit and controlled second-tranche candidate planning |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -73,9 +67,10 @@ If L3 work exposes a genuine architecture-level contradiction in the frozen base
 
 ## 5. Closed Gates
 
-The following remain outside v0.0.3rc06:
+The following remain outside v0.0.3rc07:
 
 - automatic project selection or L2 satisfaction inferred from `Available` status;
+- any second-tranche Pattern ID allocation before the rc07 planning gate passes;
 - uncontrolled/bulk second-tranche pattern expansion;
 - M3 / M4 maturity claims without their separate evidence gates;
 - L4 implementation guidance;

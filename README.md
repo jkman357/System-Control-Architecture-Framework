@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc06  
-**Status:** L3 Pattern / Mechanism Catalog Architecture RC  
+**Version:** v0.0.3rc07  
+**Status:** L3 Catalog Coverage / Second-Tranche Planning RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,29 +38,25 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.3rc06 L3 Pattern / Mechanism Catalog Position
+## v0.0.3rc07 L3 Pattern / Mechanism Catalog Position
 
-The independent v0.0.3rc05 maturity / availability review returned:
-
-```text
-INITIAL L3 PATTERN-LIFECYCLE GATE: YES
-```
-
-The review validated **7 / 7 `M2 VALID`**, judged **7 / 7 `READY FOR AVAILABLE`**, found no new or regression Critical/Major/Minor/Trivial issue, reconfirmed the frozen v0.0.2 normative tree byte-stable at exactly 294 unique normative requirement IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants, and reconfirmed the same seven published immutable `SCAF-PAT-*` identities.
-
-v0.0.3rc06 is therefore a **controlled initial-tranche availability-acceptance RC**. The catalog maintainer explicitly transitions all seven existing entries from `Candidate` to `Available` while preserving `M2 — Architecture Reviewed`, immutable Pattern identity/family and `Introduced In: v0.0.3rc03`.
+The independent v0.0.3rc06 availability-acceptance review returned:
 
 ```text
-Available
-        = accepted for project consideration
-        ≠ project applicability / recommendation / selection
-        ≠ compliance / verification
-        ≠ L2 satisfaction
+INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
 ```
 
-No eighth Pattern ID, family move, `Supersedes` event, second tranche, M3/M4 claim, L4 guidance, schema, validator, CI, code generation or executable-governance mechanism is introduced. The frozen `docs/normative/` files remain v0.0.2 and are not modified in place.
+The review validated **7 / 7 `AVAILABLE ACCEPTANCE VALID`**, confirmed **7 / 7 pattern-body non-regression**, found no new Critical/Major/Minor/Trivial issue, reconfirmed the frozen v0.0.2 normative tree byte-stable at exactly 294 unique normative requirement IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants, and confirmed the same seven immutable published identities remain `Available / M2`.
 
-The next immediate gate is an **independent rc06 availability-acceptance review**. It shall verify that the status transition is supported by the rc05 entry-by-entry readiness evidence, that architecture/trace content did not change to obtain availability, and that the accepted L3 authority/lifecycle boundaries remain intact.
+v0.0.3rc07 therefore closes the initial seven-pattern availability milestone and opens a **coverage / second-tranche planning RC**. It does not author an eighth Pattern.
+
+The new planning document is:
+
+- `docs/l3/06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md`
+
+It reports descriptive **trace-reference coverage** only. Current Pattern trace metadata references 60 distinct frozen Project-Applicable Obligations. Two Framework Normative Invariants additionally appear only as provenance/mechanism-boundary references and are excluded from trace-coverage counts. This is not a compliance, satisfaction or catalog-completeness metric, and an unreferenced L2 obligation is not automatically an L3 gap.
+
+The immediate gate is an independent **rc07 catalog coverage / second-tranche planning review**. Only after that gate passes may a later RC allocate a small second tranche. M3/M4, L4, schema, validator, CI, code generation and executable governance remain separately gated.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -316,7 +312,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.3rc06.**
+**No CI is included in v0.0.3rc07.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -366,6 +362,7 @@ v0.0.3rc03   # first representative Candidate/M1 L3 pattern tranche
 v0.0.3rc04   # localized initial-tranche trace cleanup
 v0.0.3rc05   # initial-tranche M2 maturity decision; Candidate status retained
 v0.0.3rc06   # initial-tranche availability acceptance; seven entries Available / M2
+v0.0.3rc07   # L3 trace-reference coverage audit / second-tranche planning; no new Pattern ID
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -373,38 +370,14 @@ The historical `rc1` tag/name is retained as released. From `rc02` onward this l
 
 ## Current Gate
 
-v0.0.3rc06 is the **initial-tranche availability-acceptance RC** after the v0.0.3rc05 independent lifecycle review returned:
+v0.0.3rc07 is the **L3 catalog coverage / second-tranche planning RC** after the v0.0.3rc06 independent availability-acceptance review returned:
 
 ```text
-INITIAL L3 PATTERN-LIFECYCLE GATE: YES
+INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
 ```
 
-Frozen and unchanged upstream:
+All seven published entries remain `Available / M2`; no Pattern architecture body, immutable identity/family or frozen L1/L2 obligation is reopened.
 
-- the v0.0.1 architecture / authority baseline as carried forward;
-- Authority Kernel and CTX / ARCH / INT / TIME / RUN / ROB / LIFE / OBS / CFG / SEC v0.0.2 L1/L2 normative semantics;
-- all 294 frozen requirement IDs and Target classes;
-- primary authority homes, identity partitions, source/evidence/sufficiency/closure separation and Framework Scan semantics;
-- donor-promotion gates and the L1/L2 mechanism-neutral boundary.
+The immediate gate is an **independent rc07 coverage / planning review**. It shall validate the trace-reference coverage semantics, concern-level interpretation, second-tranche prioritization criteria and proposed candidate categories before any new Pattern ID is allocated.
 
-Open for controlled development in this RC:
-
-- explicit `Candidate`→`Available` catalog acceptance for the same seven published Pattern IDs after 7 / 7 `READY FOR AVAILABLE` independent recommendations;
-- preservation of M2 maturity, immutable Pattern identity/family and `Introduced In: v0.0.3rc03`;
-- regression checking that pattern architecture bodies, many-to-many L2 trace, PDA authority, external source authority, composition guidance and L3/L4 separation remain unchanged by the lifecycle transition.
-
-The immediate gate is an **independent rc06 availability-acceptance review**. `Available` shall be interpreted only as accepted for project consideration; it must not be inferred as universal applicability, recommendation, project selection, compliance, verification or L2 satisfaction.
-
-Still closed/gated:
-
-- modification of frozen v0.0.2 normative files in place;
-- top-level taxonomy or core-metamodel reopening without a genuine architecture-level contradiction;
-- uncontrolled/bulk second-tranche expansion;
-- M3/M4 maturity claims without their separate evidence gates;
-- broad L4 MCU/PC/SoC/FPGA/DSP implementation or verification rulebooks;
-- machine-readable pattern schema / authority registry;
-- validator, generated reverse-trace index, generated checklist or CI enforcement;
-- code generation / executable governance;
-- broad Draft/RC or mixed-maturity donor promotion.
-
-**Controlled rewrite eligibility is not normative-promotion eligibility.** Donor-derived statements retain their source maturity/audit gate until individually reconciled.
+A successful rc07 review may authorize only a **small controlled second tranche** in a later RC. It does not authorize M3/M4, L4 or executable governance.

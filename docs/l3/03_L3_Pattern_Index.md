@@ -1,11 +1,13 @@
 # SCAF L3 Pattern Index
 
-**Development Release:** v0.0.3rc06  
+**Development Release:** v0.0.3rc07  
 **Status:** Navigation index; not trace authority
 
 ## 1. Current Catalog State
 
-v0.0.3rc06 carries forward exactly the same **seven published pattern identities** and records the explicit catalog acceptance decision after the rc05 lifecycle review validated **7 / 7 M2** and judged **7 / 7 READY FOR AVAILABLE**. Every entry is now `Catalog Status: Available` and remains `M2 — Architecture Reviewed`.
+v0.0.3rc07 carries forward exactly the same **seven published pattern identities** as `Available / M2` after the independent rc06 availability-acceptance review returned `INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES` with 7 / 7 acceptance-valid and 7 / 7 pattern-body non-regression results.
+
+rc07 performs no lifecycle change. It adds a descriptive trace-reference coverage audit and plans a small second tranche without allocating any new Pattern ID.
 
 The authoritative human-readable upstream trace remains inside each pattern file. This index is navigation only.
 
@@ -37,12 +39,12 @@ The authoritative human-readable upstream trace remains inside each pattern file
 | `SCAF-PAT-EVD-001` | Pre/Post-Trigger Retained Incident Evidence Ring | `EVD` | Composite Pattern | Available | M2 |
 
 
-## 4. rc06 Availability-Acceptance Position
+## 4. rc07 Coverage / Planning Position
 
-The rc05 independent lifecycle review validated all seven M2 states and independently recommended all seven entries as `READY FOR AVAILABLE`. v0.0.3rc06 records the separate catalog-maintainer acceptance decision without changing maturity or pattern architecture.
+The rc06 independent review closed the initial seven-pattern availability milestone. All seven current entries remain `Available / M2` with unchanged identity/family and architecture content.
 
-`Available` means accepted for project consideration. It does not mean universally recommended, automatically applicable, selected by a project, compliant, verified, or sufficient for L2 satisfaction.
+The new planning authority for this RC is `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md`. Its numeric trace-reference coverage view is descriptive only and is not a compliance, satisfaction or completeness score.
 
 ## 5. Expansion Gate
 
-The initial seven-pattern availability transition is the only catalog expansion/lifecycle action in rc06. A second pattern tranche, M3/M4 maturity, L4 guidance, machine-readable schema, validator, generated registry/index, CI, code generation and executable governance remain separately gated.
+No expansion occurs in rc07. A later RC may allocate a small second tranche only after the independent rc07 coverage/planning review passes. M3/M4 maturity, L4 guidance, machine-readable schema, validator, generated registry/index, CI, code generation and executable governance remain separately gated.

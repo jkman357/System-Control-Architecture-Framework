@@ -1,3 +1,43 @@
+## v0.0.3rc07 — 2026-08-16
+
+L3 catalog trace-reference coverage and second-tranche planning after the independent v0.0.3rc06 availability-acceptance review returned **PASS / `INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES`**, validated **7 / 7 `AVAILABLE ACCEPTANCE VALID`**, confirmed **7 / 7 pattern-body non-regression**, and opened no Critical, Major, Minor or Trivial finding.
+
+### Added
+
+- added `docs/l3/06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md` as a descriptive, human-readable coverage and expansion-planning artifact;
+- established **trace-reference coverage** semantics that explicitly do not mean project applicability, compliance, obligation satisfaction or catalog completeness;
+- recorded the current seven-pattern explicit trace surface: 60 distinct frozen Project-Applicable Obligations; two additional Framework Invariants appear only as provenance/mechanism-boundary references and are excluded from trace-coverage counts;
+- added concern-level coverage counts and interpretations that distinguish expected low pattern coverage in AK/CTX/ARCH/RUN from actual reusable mechanism opportunities;
+- added a controlled second-tranche prioritization model based on mechanism reuse, L2 leverage, taxonomy stress value, cross-concern value, technology neutrality, non-duplication and reviewability;
+- proposed seven planning-only candidate categories across FTL, TIM, SYN, EVD and PST without allocating any Pattern ID;
+- retained SEC realization behind a separate security-specific abstraction/review gate.
+
+### Preserved
+
+- exactly seven published Pattern IDs, all `Available / M2` and all introduced in v0.0.3rc03;
+- existing Pattern mechanism bodies, L2 trace relations, immutable primary families and lifecycle states;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace semantics and the prohibition on generic L2→L3 `satisfies` shortcuts;
+- Project Design Authority ownership of actual mechanism selection/configuration;
+- L3/L4 boundary and later gates on M3/M4, L4 and executable governance.
+
+### Deliberately Not Added / Promoted
+
+- no eighth Pattern ID or second-tranche Pattern entry;
+- no change to `Available / M2` lifecycle state of the initial seven patterns;
+- no M3/M4 maturity claim;
+- no SEC Pattern entry;
+- no L4 implementation/verification guidance;
+- no schema, validator, generated registry/index, CI, code generation or executable-governance machinery.
+
+### Gate
+
+- independently review whether trace-reference coverage is represented correctly and cannot be confused with satisfaction/compliance/completeness;
+- verify concern-level low coverage is not automatically treated as a catalog defect;
+- review each proposed second-tranche category for reusable mechanism intent, family fit, non-duplication and L3/L4 safety;
+- decide which candidate categories, if any, may receive Pattern IDs in the next RC;
+- keep security realization, M3/M4, L4 and executable-governance work separately gated.
+
 # Changelog
 
 ## v0.0.3rc06 — 2026-08-16
