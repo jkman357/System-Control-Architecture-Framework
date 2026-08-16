@@ -1,3 +1,43 @@
+## v0.0.4rc04 — 2026-08-16
+
+Focused repository-state documentation cleanup after the independent v0.0.4rc03 serialization review returned **`V0.0.4 INITIAL AUTHORITY-REGISTRY SERIALIZATION GATE: YES, AFTER MINOR CLEANUP`**, accepted the 294-record registry population, and opened one Minor finding, `R3-01`, against stale current-state/navigation text in the root README.
+
+### Changed
+
+- updated root release identity to v0.0.4rc04 / Authority-Registry Release-State Documentation Cleanup RC;
+- synchronized the root README repository file map with `authority-registry.yaml`, the rc03 serialization record, and the rc04 cleanup record;
+- corrected CI / Automation Position to state that registry serialization is already accepted and schema/validator remain future scope;
+- extended the release sequence through rc03 and current rc04;
+- corrected Current Governance State so rc03 is the accepted serialization stage and rc04 is the focused `R3-01` cleanup stage;
+- synchronized executable-governance navigation and current-gate text to the rc04 cleanup state;
+- added `docs/executable-governance/03_SCAF_v0.0.4rc04_Authority_Registry_Release_State_Documentation_Cleanup.md`.
+
+### Preserved
+
+- `authority-registry.yaml` byte-for-byte from rc03, including all 294 `representation_release = v0.0.4rc03` values;
+- accepted authority-model semantics and rc02 determinism closure;
+- accepted rc03 serialization format, population and ownership contract;
+- frozen v0.0.2 L1/L2 normative content and 294 / 218 / 76 inventory;
+- frozen v0.0.3 L3 content, twelve Pattern identities, lifecycle/maturity and trace semantics;
+- canonical Markdown precedence and project/L3 authority boundaries.
+
+### Deliberately Not Added
+
+- no schema or validator implementation;
+- no test fixtures or regression-test framework;
+- no generator or generated reverse indexes/views;
+- no CI enforcement or code generation;
+- no automatic applicability inference;
+- no machine-readable L2→L3 relation vocabulary;
+- no new L3 Pattern, SEC-primary realization, M3/M4 or L4 work.
+
+### Gate
+
+- independently verify `R3-01` is fully closed;
+- verify root README current-state/navigation text is internally consistent with accepted rc03 serialization and current rc04 cleanup status;
+- verify `authority-registry.yaml`, accepted authority-model/serialization contracts, `docs/normative/`, and `docs/l3/` are unchanged from rc03;
+- return an explicit `V0.0.4 AUTHORITY-REGISTRY RELEASE-STATE CLEANUP GATE` decision.
+
 ## v0.0.4rc03 — 2026-08-16
 
 Initial controlled serialization of the frozen v0.0.2 L1/L2 authority inventory after the independent v0.0.4rc02 review returned **`V0.0.4 AUTHORITY-MODEL DETERMINISM CLOSURE GATE: YES`**, resolved upstream `R1-01`, and found no remaining blocking issue.
