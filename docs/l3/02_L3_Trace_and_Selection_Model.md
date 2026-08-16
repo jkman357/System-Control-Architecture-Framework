@@ -1,11 +1,11 @@
 # SCAF L3 Trace and Selection Model
 
-**Development Release:** v0.0.3rc02  
+**Development Release:** v0.0.3rc03  
 **Status:** Development contract
 
 ## 1. Purpose
 
-This document defines how future L3 Pattern / Mechanism entries trace to the frozen v0.0.2 L1/L2 baseline and how projects may record pattern evaluation/selection without confusing catalog use with requirement satisfaction.
+This document defines how L3 Pattern / Mechanism entries trace to the frozen v0.0.2 L1/L2 baseline and how projects may record pattern evaluation/selection without confusing catalog use with requirement satisfaction.
 
 ## 2. Trace Cardinality
 
@@ -21,7 +21,7 @@ This is expected and does not create duplicate concern authority because L3 does
 
 ## 3. Allowed Upstream Trace Relations
 
-Future pattern entries use three upstream relation classes.
+Pattern entries use three upstream relation classes.
 
 ### 3.1 Primary Realization Candidate
 

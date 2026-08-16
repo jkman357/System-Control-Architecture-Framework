@@ -1,5 +1,39 @@
 # Changelog
 
+## v0.0.3rc03 — 2026-08-16
+
+Initial representative L3 Pattern / Mechanism tranche after the v0.0.3rc02 focused closure review returned **PASS / `L3 CATALOG-CONTRACT CLOSURE GATE: YES`**.
+
+### Added
+
+- published the first seven permanent L3 Pattern identities as `Candidate / M1` entries:
+  - `SCAF-PAT-SUP-001` — Heartbeat / Liveness Supervision;
+  - `SCAF-PAT-SUP-002` — Independent Watchdog with Escalation;
+  - `SCAF-PAT-REC-001` — Bounded Retry with Escalation;
+  - `SCAF-PAT-COM-001` — Reconnect plus State Reconciliation;
+  - `SCAF-PAT-PST-001` — Atomic Dual-Copy Persistent State;
+  - `SCAF-PAT-LCM-001` — Transactional Update with Rollback;
+  - `SCAF-PAT-EVD-001` — Pre/Post-Trigger Retained Incident Evidence Ring;
+- added family directories only for mechanism families that now contain published entries;
+- added pattern-level metadata, L2 trace, PDA-decision, composition, failure-mode, provenance and L3/L4 boundary content for the initial tranche.
+
+### Changed
+
+- closed rc02 review Trivial `R2-01` by aligning the root README gate wording with the completed focused rc02 closure review and the open rc03 initial-pattern tranche;
+- advanced L3 governance/metadata/trace/template development labels to v0.0.3rc03;
+- updated the L3 index from zero-pattern planning state to the seven-entry Candidate/M1 navigation state;
+- made the accepted contract explicitly applicable to current as well as future pattern entries;
+- opened the independent initial-tranche conformance review gate while keeping `Available` promotion and broad catalog expansion closed.
+
+### Preserved
+
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace semantics and the prohibition on generic L2→L3 `satisfies` shortcuts;
+- Project Design Authority ownership of project mechanism selection/configuration;
+- separation among Catalog Status, Pattern Maturity and project-side Pattern Selection State;
+- the mechanism-family primary-identity rule and post-publication immutability;
+- L3/L4 boundary and the gates on schema, validator, CI, code generation and executable governance.
+
 ## v0.0.3rc02 — 2026-08-16
 
 Focused L3 catalog-contract cleanup after the independent v0.0.3rc01 architecture review returned **PASS WITH MINOR CLEANUP / L3 CATALOG-CONTRACT GATE: YES, AFTER MINOR CLEANUP**, with no Critical or Major findings.

@@ -1,9 +1,9 @@
 # SCAF L3 Pattern Template
 
-**Development Release:** v0.0.3rc02  
-**Status:** Authoring template; no pattern identity allocated
+**Development Release:** v0.0.3rc03  
+**Status:** Authoring template for additional Candidate entries
 
-> **Template only — do not assign a `SCAF-PAT-*` ID until the catalog contract gate is cleared.**
+> **Template only — new Pattern IDs may be assigned only through the controlled catalog-development/review process. Published IDs are stable and shall not be reused.**
 
 ## Metadata
 

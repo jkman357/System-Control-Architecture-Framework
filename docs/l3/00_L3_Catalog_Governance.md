@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc02  
+**Development Release:** v0.0.3rc03  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -135,7 +135,7 @@ Rules:
 9. Version numbers are not embedded in pattern IDs; repository release history carries version state.
 10. Frozen L1/L2 concern IDs such as `SCAF-ROB-*` or `SCAF-CFG-*` are never reused as pattern IDs.
 
-No `SCAF-PAT-*` ID is instantiated in v0.0.3rc02.
+v0.0.3rc03 instantiates the seven Candidate/M1 Pattern IDs listed in Section 12. These published identities are now governed by the stable-ID and primary-family rules above.
 
 ## 7. Catalog Status
 
@@ -204,28 +204,47 @@ Those belong to later L4 implementation / verification guidance or project-speci
 
 ## 11. Initial Development Priority
 
-The recommended first pattern tranche, after this catalog contract passes review, is intentionally small and representative:
+The catalog-contract gate has passed and v0.0.3rc03 instantiates the first deliberately small representative tranche across:
 
 1. `SUP` — supervision / liveness / progress detection;
-2. `REC` — bounded retry / escalation / reconciliation;
-3. `PST` — persistent-state integrity / atomicity;
-4. `LCM` — update / activation / rollback lifecycle;
-5. `EVD` — retained incident evidence / pre-post event recording;
-6. `COM` — freshness / sequence / reconnect interaction resilience.
+2. `REC` — bounded retry / escalation;
+3. `COM` — reconnect / interaction reconciliation;
+4. `PST` — persistent-state integrity / atomicity;
+5. `LCM` — update / activation / rollback lifecycle;
+6. `EVD` — retained incident evidence / pre-post event recording.
 
-`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` patterns should expand after the first representative set proves the metadata, trace and selection model.
+`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. Broad second-tranche authoring is gated until the first seven Candidate/M1 entries demonstrate that metadata, trace, primary-family, composition and L3/L4 semantics remain stable under actual use.
 
-## 12. v0.0.3rc02 Gate
 
-Before the first instantiated `SCAF-PAT-*` identities are allocated, a focused independent closure review shall determine whether:
+## 12. v0.0.3rc03 Initial Pattern-Tranche Gate
 
-- rc01 findings L3-01 through L3-05 are resolved without reopening the frozen L1/L2 baseline;
-- illustrative Pattern ID placeholders cannot be interpreted as allocated or reserved identities;
-- the primary family is selected by principal reusable mechanism intent and is immutable after ID publication;
-- catalog `Constraint Input` targets are frozen L2 obligations rather than future project Controlled Decision artifacts;
-- `Required PDA Decisions` remains distinct from externally owned safety/security/regulatory/risk authority inputs;
-- `Subsumes` and `Supersedes` remain distinct composition/lifecycle relations;
-- the L3 taxonomy remains mechanism-oriented and subordinate to frozen L1/L2 authority;
-- pattern selection cannot be misread as requirement satisfaction and valid alternate/project-specific mechanisms remain permitted;
-- L2→L3 trace remains many-to-many, status/maturity/selection semantics remain separated, and the L3/L4 boundary prevents implementation-rule creep;
-- no v0.0.2 normative file was modified.
+The v0.0.3rc02 focused closure review returned:
+
+```text
+L3 CATALOG-CONTRACT CLOSURE GATE: YES
+```
+
+v0.0.3rc03 therefore allocates the first seven permanent pattern identities as **Candidate / M1** entries solely to stress-test the accepted catalog contract:
+
+- `SCAF-PAT-SUP-001` — Heartbeat / Liveness Supervision;
+- `SCAF-PAT-SUP-002` — Independent Watchdog with Escalation;
+- `SCAF-PAT-REC-001` — Bounded Retry with Escalation;
+- `SCAF-PAT-COM-001` — Reconnect plus State Reconciliation;
+- `SCAF-PAT-PST-001` — Atomic Dual-Copy Persistent State;
+- `SCAF-PAT-LCM-001` — Transactional Update with Rollback;
+- `SCAF-PAT-EVD-001` — Pre/Post-Trigger Retained Incident Evidence Ring.
+
+These identities are now published and therefore subject to the stable-ID and primary-family immutability rules in this document. Their `Candidate` status does not imply universal recommendation, project selection or L2 satisfaction.
+
+Before any entry is promoted to `Available` or the catalog expands materially, independent review shall determine whether:
+
+- each pattern remains subordinate to the frozen L2 authority and does not redefine its traced obligations;
+- the L2 trace relations are accurate, many-to-many and free of generic `satisfies` shortcuts;
+- the primary family reflects principal reusable mechanism intent, especially for cross-cutting `SCAF-PAT-COM-001`;
+- required PDA decisions preserve actual project selection/configuration authority;
+- external source-authority constraints remain external inputs rather than catalog/PDA-owned objectives;
+- the patterns remain L3 architecture mechanisms and do not leak numeric/device/API/code/test-procedure L4 detail;
+- composition relations are guidance rather than automatic project dependency truth;
+- provenance, including the supplemental incident-recorder RC donor, does not imply uncontrolled donor promotion;
+- all seven IDs are unique, stable and consistent with the catalog index;
+- the frozen v0.0.2 normative tree remains byte-stable.

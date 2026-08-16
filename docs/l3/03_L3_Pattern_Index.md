@@ -1,51 +1,52 @@
 # SCAF L3 Pattern Index
 
-**Development Release:** v0.0.3rc02  
-**Status:** Navigation / planning index; not trace authority
+**Development Release:** v0.0.3rc03  
+**Status:** Navigation index; not trace authority
 
 ## 1. Current Catalog State
 
-v0.0.3rc02 intentionally contains **zero instantiated `SCAF-PAT-*` patterns**.
+v0.0.3rc03 introduces the first representative tranche of **seven published pattern identities**. Every entry is `Catalog Status: Candidate` and `Maturity: M1 — Structured` pending independent tranche review.
 
-The purpose of this RC is to stabilize the catalog architecture, metadata, trace and selection semantics before bulk content is authored.
+The authoritative human-readable upstream trace remains inside each pattern file. This index is navigation only.
 
 ## 2. Mechanism Families
 
-| Family | Name | Current Pattern Count | Development Priority |
+| Family | Name | Current Pattern Count | Development Position |
 |---|---|---:|---|
-| `SUP` | Supervision & Detection | 0 | First tranche |
-| `COM` | Interaction Resilience | 0 | First tranche |
-| `REC` | Recovery & Reintegration | 0 | First tranche |
+| `SUP` | Supervision & Detection | 2 | Initial tranche |
+| `COM` | Interaction Resilience | 1 | Initial tranche / cross-family stress case |
+| `REC` | Recovery & Reintegration | 1 | Initial tranche |
 | `FTL` | Fault Tolerance & Isolation | 0 | Later |
 | `TIM` | Timing & Capacity Realization | 0 | Later |
-| `PST` | Persistent State Integrity | 0 | First tranche |
-| `LCM` | Lifecycle Management | 0 | First tranche |
-| `EVD` | Evidence & Incident Recording | 0 | First tranche |
+| `PST` | Persistent State Integrity | 1 | Initial tranche |
+| `LCM` | Lifecycle Management | 1 | Initial tranche |
+| `EVD` | Evidence & Incident Recording | 1 | Initial tranche |
 | `SYN` | Distributed Consistency & Reconciliation | 0 | Later |
 | `SEC` | Security Realization | 0 | Later / controlled expansion |
 
-## 3. Representative First-Tranche Candidates
+## 3. Published Candidate Entries
 
-The following are planning candidates only. They are **not pattern IDs, not accepted pattern names and not catalog entries in this release**.
+| Pattern ID | Pattern Name | Family | Kind | Status | Maturity |
+|---|---|---|---|---|---|
+| `SCAF-PAT-SUP-001` | Heartbeat / Liveness Supervision | `SUP` | Mechanism | Candidate | M1 |
+| `SCAF-PAT-SUP-002` | Independent Watchdog with Escalation | `SUP` | Mechanism | Candidate | M1 |
+| `SCAF-PAT-REC-001` | Bounded Retry with Escalation | `REC` | Mechanism | Candidate | M1 |
+| `SCAF-PAT-COM-001` | Reconnect plus State Reconciliation | `COM` | Composite Pattern | Candidate | M1 |
+| `SCAF-PAT-PST-001` | Atomic Dual-Copy Persistent State | `PST` | Mechanism | Candidate | M1 |
+| `SCAF-PAT-LCM-001` | Transactional Update with Rollback | `LCM` | Composite Pattern | Candidate | M1 |
+| `SCAF-PAT-EVD-001` | Pre/Post-Trigger Retained Incident Evidence Ring | `EVD` | Composite Pattern | Candidate | M1 |
 
-- heartbeat / liveness supervision;
-- independent watchdog escalation;
-- bounded retry with escalation;
-- reconnect plus state reconciliation;
-- atomic dual-copy persistent state;
-- transactional update plus rollback;
-- retained incident evidence;
-- pre/post-trigger evidence ring.
+## 4. Tranche Review Purpose
 
-These candidates should be used first to stress-test the L3 contract because they cross ROB/TIME/OBS/INT/LIFE/CFG boundaries and expose whether the model preserves multiple valid mechanisms.
+The first tranche intentionally prioritizes architecture stress over coverage. Review should test:
 
-## 4. Expansion Gate
+- whether `SUP` patterns preserve the distinction between observation/supervision and project health/recovery authority;
+- whether `REC` remains bounded and does not become an implementation retry policy;
+- whether `SCAF-PAT-COM-001` can remain one COM identity while accurately cross-tracing ROB/CFG/RUN and later composing with SYN mechanisms;
+- whether `PST` describes atomicity/authority without storage-layout creep;
+- whether `LCM` separates transfer, commit, activation, rollback and RUN readiness;
+- whether `EVD` preserves incident chronology/survivability without promoting recorder-specific donor implementation details.
 
-Do not allocate the first `SCAF-PAT-*` IDs until independent review confirms that:
+## 5. Expansion Gate
 
-- the family taxonomy is stable enough for initial use;
-- metadata fields are sufficient without creating implementation overreach;
-- L2 trace is many-to-many and does not imply satisfaction;
-- Project Design Authority remains the project selection authority;
-- pattern alternatives and project-specific mechanisms remain permitted;
-- L3/L4 separation is clear.
+Do not promote these entries to `Available` or add a broad second tranche until independent review confirms that the first seven entries conform to the accepted catalog contract and preserve the frozen v0.0.2 authority baseline.
