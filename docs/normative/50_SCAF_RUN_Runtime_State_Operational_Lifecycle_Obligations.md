@@ -1,6 +1,6 @@
 # SCAF-RUN — Runtime Behavior, State & Operational Lifecycle Obligations
 
-**Release:** v0.0.2rc15  
+**Release:** v0.0.2  
 **Concern:** `SCAF-RUN`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

@@ -1,5 +1,53 @@
 # Changelog
 
+## v0.0.2 — 2026-08-16
+
+Frozen L1/L2 Baseline.
+
+This release is created by explicit governance freeze decision after the independent `v0.0.2rc15` L1/L2 freeze-candidate audit returned **Yes**, with no Critical, Major, Minor or Trivial issues. The audit verified the rc15 archive SHA-256, confirmed all 294 parsed requirement blocks are stable relative to rc14, and found no cross-boundary, identity, source/evidence/closure, Framework Scan, L3/L4 or donor-promotion regression.
+
+### Frozen
+
+- Authority Kernel;
+- SCAF-CTX;
+- SCAF-ARCH;
+- SCAF-INT;
+- SCAF-TIME;
+- SCAF-RUN;
+- SCAF-ROB;
+- SCAF-LIFE;
+- SCAF-OBS;
+- SCAF-CFG;
+- SCAF-SEC;
+- 294 normative requirement IDs;
+- 218 Project-Applicable Obligations;
+- 76 Framework Normative Invariants;
+- primary authority homes and reviewed cross-boundary semantics;
+- Boot / Operational / Session / Time Epoch / CFG / Security / OBS identity separation;
+- source / evidence / evidence-sufficiency / underlying-closure separation;
+- Framework Scan semantics;
+- donor-promotion and L1/L2 mechanism-neutrality gates.
+
+### Normative Semantic Change from v0.0.2rc15
+
+- **None intended.**
+- The freeze action changes release/freeze state only.
+- Normative documents change release metadata from `v0.0.2rc15` to `v0.0.2`; requirement blocks remain unchanged.
+
+### Not Included in the Frozen Baseline
+
+- L3 pattern / mechanism catalogs;
+- L4 implementation / verification guidance;
+- schema;
+- validator;
+- CI;
+- generated conformance tooling.
+
+### Governance
+
+- `v0.0.2` is frozen and must not be modified in place.
+- Later L3/L4 or executable-governance work must trace to this frozen L1/L2 baseline and use a new development version when normative evolution is required.
+
 ## v0.0.2rc15 — 2026-08-16
 
 Freeze-candidate release-hygiene closure after the independent rc14 audit found no Critical/Major issues, confirmed the four rc13 editorial findings Resolved, found no normative/cross-boundary/identity/Framework-Scan/L3-L4/donor-promotion regression, and returned the freeze gate Yes after one trivial non-semantic README cleanup.

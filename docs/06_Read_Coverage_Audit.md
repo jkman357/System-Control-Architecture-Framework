@@ -270,3 +270,11 @@ This release adds no concern tranche, changes no requirement ID or Target class,
 
 The complete CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG -> SEC L1/L2 backbone and all rc14 editorial closures are carried forward unchanged for a narrow rc15 freeze-candidate audit. L3/L4, schema, validator, CI and generated conformance tooling remain closed pending an explicit L1/L2 freeze decision.
 
+## 21. v0.0.2 Frozen L1/L2 Baseline Coverage
+
+This release performs the explicit governance freeze after the independent `v0.0.2rc15` freeze-candidate audit returned **Yes**. No concern tranche, requirement ID, Target class or intended normative semantic change is added by the freeze action.
+
+The frozen baseline contains Authority Kernel plus CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG -> SEC L1/L2 normative semantics, 294 normative requirement IDs, 218 Project-Applicable Obligations and 76 Framework Normative Invariants.
+
+L3/L4, schema, validator, CI and generated conformance tooling remain outside this frozen baseline. Future downstream work must trace to the frozen L1/L2 obligations and must not mutate `v0.0.2` in place.
+
