@@ -1,3 +1,46 @@
+## v0.0.4rc03 — 2026-08-16
+
+Initial controlled serialization of the frozen v0.0.2 L1/L2 authority inventory after the independent v0.0.4rc02 review returned **`V0.0.4 AUTHORITY-MODEL DETERMINISM CLOSURE GATE: YES`**, resolved upstream `R1-01`, and found no remaining blocking issue.
+
+### Added
+
+- added repository-root `authority-registry.yaml` as the first machine-readable SCAF authority representation;
+- serialized exactly 294 frozen L1/L2 normative requirement records;
+- reproduced exactly 218 `Project-Applicable Obligation` and 76 `Framework Normative Invariant` source Target classifications;
+- used exactly one record per frozen requirement ID and excluded all `SCAF-PAT-*` identities;
+- populated the accepted deterministic values `record_kind = normative_requirement`, `layer = l1_l2_normative_authority`, `source_anchor = id`, `source_release = v0.0.2`, `representation_release = v0.0.4rc03`, `status = represented`, and empty `relations`;
+- added `docs/executable-governance/02_SCAF_v0.0.4rc03_Initial_Authority_Registry_Serialization.md` to define the concrete YAML shape, controlled-curated ownership, audit reproducibility, completeness claim and review gate;
+- synchronized current README and executable-governance navigation to the rc03 serialization stage.
+
+### Preserved
+
+- frozen normative Markdown as canonical semantic authority over the machine-readable registry;
+- frozen v0.0.2 L1/L2 semantics, IDs, Target classes and 294 / 218 / 76 inventory;
+- frozen v0.0.3 L3 Pattern bodies, twelve identities, `Available / M2` states, trace semantics and L3/L4 boundary;
+- accepted rc02 deterministic authority-record semantics without adding per-record inferred layers or new status vocabulary;
+- project Applicability / PDA / realization / verification / evidence / closure boundaries;
+- initial `relations` as empty and non-semantic until a separately reviewed relation contract exists.
+
+### Deliberately Not Added
+
+- no schema or validator;
+- no generator or hybrid registry ownership;
+- no generated registry/reverse index;
+- no CI enforcement or code generation;
+- no automatic project applicability inference;
+- no machine-readable L2→L3 relations;
+- no new L3 Pattern, third tranche, SEC-primary realization, M3/M4 or L4 work.
+
+### Gate
+
+- independently verify YAML parseability and exact rc03 record shape;
+- verify 294 / 294 unique IDs and exact 218 / 76 source classification reproduction;
+- verify every record resolves through `source_path` + `source_anchor == id` to exactly one canonical source requirement block;
+- verify all deterministic constants and empty `relations` values;
+- verify there are no `SCAF-PAT-*` records and no project-owned state fields;
+- verify rc02→rc03 frozen `docs/normative/` and `docs/l3/` byte/hash non-regression;
+- return an explicit `V0.0.4 INITIAL AUTHORITY-REGISTRY SERIALIZATION GATE` decision.
+
 ## v0.0.4rc02 — 2026-08-16
 
 Focused authority-model determinism cleanup after the independent v0.0.4rc01 review returned **PASS CONDITIONALLY / `V0.0.4 AUTHORITY-MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP`** with 0 Critical, 0 Major, 1 Minor (`R1-01`) and 0 Trivial findings.

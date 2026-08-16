@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc02  
-**Status:** Authority-Model Determinism Cleanup RC  
+**Version:** v0.0.4rc03  
+**Status:** Initial Authority-Registry Serialization RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,36 +38,44 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc02 Executable-Governance Development Position
+## v0.0.4rc03 Executable-Governance Development Position
 
-v0.0.4rc02 is the focused determinism-cleanup RC after the independent v0.0.4rc01 authority-model foundation review returned `V0.0.4 AUTHORITY-MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP` with one blocking Minor finding, `R1-01`.
-
-The accepted authority direction remains unchanged: the canonical normative source is the frozen Markdown under `docs/normative/`, while any future machine-readable registry is a subordinate controlled representation/index and cannot override or complete source semantics.
-
-The initial future registry population remains bounded to the frozen v0.0.2 L1/L2 normative inventory:
+v0.0.4rc03 is the first controlled machine-readable authority-registry serialization RC. It follows the independent v0.0.4rc02 review decision:
 
 ```text
-294 unique normative requirement IDs
+V0.0.4 AUTHORITY-MODEL DETERMINISM CLOSURE GATE: YES
+```
+
+The accepted rc02 authority model remains the governing semantic contract. Frozen normative Markdown under `docs/normative/` remains the canonical semantic authority; `authority-registry.yaml` is a subordinate controlled representation/index and cannot override, amend, reinterpret, or complete source semantics.
+
+The repository-root registry serializes exactly the frozen v0.0.2 L1/L2 normative inventory under review:
+
+```text
+294 unique authority records
 218 Project-Applicable Obligations
 76 Framework Normative Invariants
+0 SCAF-PAT-* records
 ```
 
-rc02 closes the serialization ambiguity identified by `R1-01` with deterministic initial rules:
+Every initial record uses the deterministic contract already accepted in rc02:
 
 ```text
-layer         = l1_l2_normative_authority
-source_anchor = id
-status        = represented
-relations     = empty / omitted unless separately reviewed
+record_kind            = normative_requirement
+layer                  = l1_l2_normative_authority
+source_anchor          = id
+source_release         = v0.0.2
+representation_release = v0.0.4rc03
+status                 = represented
+relations              = []
 ```
 
-`source_anchor = id` means the resolver must find exactly one matching requirement heading/block inside the declared canonical `source_path`; renderer-generated Markdown slugs are not canonical authority locators. `status = represented` is representation-only state and implies no source/project lifecycle, applicability, compliance, verification, closure, maturity, availability or Pattern selection.
+The registry is a **controlled curated representation** for rc03. No generator is claimed or included. An independent review must be able to reconstruct the expected population from the frozen requirement headings, exact `Target` values, source paths, and accepted deterministic constants.
 
-The frozen v0.0.3 twelve `SCAF-PAT-*` identities remain downstream L3 Pattern catalog artifacts and are not normative authority records.
+The frozen v0.0.3 twelve `SCAF-PAT-*` identities remain downstream L3 Pattern catalog artifacts and are not normative authority records. Project applicability, Project Design Authority, project design/realization, verification/evidence, deviation/risk acceptance, closure, and Pattern selection remain outside the framework authority registry.
 
-v0.0.4rc02 intentionally does **not** add the 294-record registry serialization, schema, validator, generated reverse indexes, CI enforcement, code generation, automatic applicability inference, new L3 Patterns, M3/M4 or L4 guidance.
+v0.0.4rc03 intentionally does **not** add schema, validator, generated reverse indexes, CI enforcement, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
 
-The current gate is whether `R1-01` is fully closed so that a later controlled RC may serialize the initial 294-record authority registry.
+The current gate is whether the 294-record serialization is complete, source-faithful, non-authority-expanding, and ready to become the input of a later schema/structural-validator RC.
 
 
 ## v0.0.3 Frozen L3 Baseline Position

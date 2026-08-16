@@ -1,0 +1,2947 @@
+# SCAF machine-readable authority registry
+# Representation release: v0.0.4rc03
+# Canonical semantic authority remains the frozen Markdown under docs/normative/.
+# This file is a subordinate controlled representation/index and is not a normative source.
+# Initial population: exactly 294 frozen v0.0.2 L1/L2 authority records.
+# Record ordering is non-authoritative. relations is intentionally empty in rc03.
+records:
+  - id: SCAF-AK-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-AK-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/00_SCAF_Authority_Kernel.md
+    source_anchor: SCAF-AK-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CTX-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/10_SCAF_CTX_System_Context_Obligations.md
+    source_anchor: SCAF-CTX-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ARCH-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md
+    source_anchor: SCAF-ARCH-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-INT-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md
+    source_anchor: SCAF-INT-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-TIME-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md
+    source_anchor: SCAF-TIME-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-021
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-021
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-022
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-022
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-RUN-023
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md
+    source_anchor: SCAF-RUN-023
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-031
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-031
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-032
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-032
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-021
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-021
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-022
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-022
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-023
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-023
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-024
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-024
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-025
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-025
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-026
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-026
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-027
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-027
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-033
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-033
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-028
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-028
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-029
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-029
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-ROB-030
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md
+    source_anchor: SCAF-ROB-030
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-021
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-021
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-022
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-022
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-023
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-023
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-024
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-024
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-025
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-025
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-026
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-026
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-027
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-027
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-028
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-028
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-029
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-029
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-030
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-030
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-031
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-031
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-032
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-032
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-LIFE-033
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md
+    source_anchor: SCAF-LIFE-033
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-021
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-021
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-022
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-022
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-023
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-023
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-024
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-024
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-025
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-025
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-026
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-026
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-027
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-027
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-028
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-028
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-029
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-029
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-030
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-030
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-031
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-031
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-032
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-032
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-033
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-033
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-034
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-034
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-035
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-035
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-036
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-036
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-037
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-037
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-038
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-038
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-039
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-039
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-OBS-040
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md
+    source_anchor: SCAF-OBS-040
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-021
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-021
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-022
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-022
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-023
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-023
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-024
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-024
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-025
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-025
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-026
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-026
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-027
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-027
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-028
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-028
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-029
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-029
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-030
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-030
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-031
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-031
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-032
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-032
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-033
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-033
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-034
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-034
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-035
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-035
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-036
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-036
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-037
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-037
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-CFG-038
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md
+    source_anchor: SCAF-CFG-038
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-001
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-001
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-002
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-002
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-003
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-003
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-004
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-004
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-005
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-005
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-006
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-006
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-007
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-007
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-008
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-008
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-009
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-009
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-010
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-010
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-011
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-011
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-012
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-012
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-013
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-013
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-014
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-014
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-015
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-015
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-016
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-016
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-017
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-017
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-018
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-018
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-019
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-019
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-020
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-020
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-021
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-021
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-022
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-022
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-023
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-023
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-024
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-024
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-025
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-025
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-026
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-026
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-027
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-027
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-028
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-028
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-029
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-029
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-030
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Project-Applicable Obligation
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-030
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-031
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-031
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-032
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-032
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-033
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-033
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-034
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-034
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-035
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-035
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-036
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-036
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-037
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-037
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-038
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-038
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-039
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-039
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-040
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-040
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-041
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-041
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
+  - id: SCAF-SEC-042
+    record_kind: normative_requirement
+    layer: l1_l2_normative_authority
+    authority_class: Framework Normative Invariant
+    source_path: docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md
+    source_anchor: SCAF-SEC-042
+    source_release: v0.0.2
+    representation_release: v0.0.4rc03
+    status: represented
+    relations: []
