@@ -1,5 +1,34 @@
 # Changelog
 
+## v0.0.2rc13 — 2026-08-16
+
+Final integrated L1/L2 consolidation after independent rc12 SCAF-SEC review found no Critical/Major issues, judged SEC Stable after minor cleanup, confirmed SEC integration with the existing L1/L2 backbone as Pass, and cleared SCAF to enter final consolidation before a freeze-candidate decision.
+
+### Changed
+
+- corrected `SCAF-SEC-024` to reference the normative `SCAF-SEC-038` SEC/OBS boundary;
+- clarified `SCAF-SEC-017` so `SCAF-ROB` resilience obligations apply where resource abuse is robustness-significant;
+- narrowed `SCAF-SEC-023` from ambiguous `CFG-controlled authorization` wording to authorization-related CFG input/fact semantics while preserving Security Authority and CFG source authority;
+- normalized residual ROB structural-boundary wording to an applicable Project Design Authority decision under SCAF-ARCH;
+- normalized residual CTX safety/hazard source-authority wording without changing safety/risk acceptance authority;
+- consolidated current release/gate wording for the complete CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG/SEC L1/L2 backbone;
+- synchronized README, Authority Kernel release label, read-coverage position and current freeze-candidate gate.
+
+### Deliberately Not Added
+
+- new top-level concerns or core metamodel entities;
+- SCAF taxonomy changes or architecture rediscovery;
+- L3 pattern / mechanism catalogs;
+- L4 implementation / verification guidance;
+- cryptographic, resilience, lifecycle, logging, configuration or protocol implementation mechanisms;
+- schema, validator, CI or generated conformance tooling.
+
+### Gate
+
+- perform independent final integrated L1/L2 review;
+- determine whether the complete L1/L2 backbone is suitable as a freeze candidate;
+- keep L3 closed until the integrated review passes and an explicit freeze decision is made.
+
 ## v0.0.2rc12 — 2026-08-16
 
 SCAF-SEC controlled L1/L2 normative tranche after independent rc11 integrated review found no Critical/Major issues, accepted CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG as Stable, and cleared SEC to start with parallel minor consolidation cleanup.

@@ -1,6 +1,6 @@
 # SCAF-OBS — Observability, Diagnostics & Incident Evidence Obligations
 
-**Release:** v0.0.2rc12  
+**Release:** v0.0.2rc13  
 **Concern:** `SCAF-OBS`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

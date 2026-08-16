@@ -1,6 +1,6 @@
 # SCAF-SEC — Security Architecture Interface & Robustness Obligations
 
-**Release:** v0.0.2rc12  
+**Release:** v0.0.2rc13  
 **Concern:** `SCAF-SEC`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -164,7 +164,7 @@ Where malformed, adversarially crafted, abusive or otherwise hostile input can m
 
 **Target:** Project-Applicable Obligation
 
-Where adversarial or unauthorized use of CPU, memory, storage, bandwidth, queue capacity, connection/session capacity, service calls or other controlled resources can materially affect a security objective or required Service, the project **SHALL** define the security consequence and required security eligibility/limitation decision using applicable `SCAF-TIME` measurable resource/capacity properties and `SCAF-ROB` resilience obligations.
+Where adversarial or unauthorized use of CPU, memory, storage, bandwidth, queue capacity, connection/session capacity, service calls or other controlled resources can materially affect a security objective or required Service, the project **SHALL** define the security consequence and required security eligibility/limitation decision using applicable `SCAF-TIME` measurable resource/capacity properties and, where robustness-significant, applicable `SCAF-ROB` resilience obligations.
 
 ### `SCAF-SEC-018` — Compromise / trust-loss significance
 
@@ -210,7 +210,7 @@ A security eligibility/authorization result **SHALL NOT** by itself establish LI
 
 **Target:** Project-Applicable Obligation
 
-Where security decisions depend on CFG-controlled authorization, trust, credential reference, integrity/confidentiality policy input, security mode or other configuration/persistent-state fact, the project **SHALL** trace the security decision to the applicable authoritative `SCAF-CFG` source/value/version/validity/commit semantics and define the security consequence when that controlled CFG fact is unavailable, invalid, incompatible, unknown or not security-eligible.
+Where security decisions depend on an authorization-related CFG input/fact, trust-related configuration, credential reference, integrity/confidentiality policy input, security mode or other configuration/persistent-state fact, the project **SHALL** trace the security decision to the applicable authoritative `SCAF-CFG` source/value/version/validity/commit semantics and define the security consequence when that controlled CFG fact is unavailable, invalid, incompatible, unknown or not security-eligible.
 
 The security relevance of a CFG value **SHALL NOT** transfer CFG source authority to SEC.
 
@@ -220,7 +220,7 @@ The security relevance of a CFG value **SHALL NOT** transfer CFG source authorit
 
 Where operation, diagnosis, incident response, security verification or investigation depends on observing a security-relevant fact/decision/result, the project **SHALL** identify the source-defined security fact/decision/result that must be observable and trace the observation/evidence need to an applicable `SCAF-OBS` project decision.
 
-**Boundary note (informative):** `SCAF-OBS-038` carries the normative SEC/OBS authority partition; SEC does not define OBS evidence identity/provenance/quality/preservation/correlation/export semantics merely because the evidence is security-relevant.
+**Boundary note (informative):** `SCAF-SEC-038` carries the normative SEC/OBS authority partition; SEC does not define OBS evidence identity/provenance/quality/preservation/correlation/export semantics merely because the evidence is security-relevant.
 
 ### `SCAF-SEC-025` — Multi-participant security-decision consistency
 

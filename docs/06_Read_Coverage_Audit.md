@@ -238,7 +238,7 @@ The consolidation narrows CFG/ROB corruption-versus-recovery terminology, comple
 
 No new donor class is promoted by these edits. The release continues to exclude schema, validator, CI, L3 mechanism catalogs, L4 implementation guidance and `SCAF-SEC` normative authoring. Review focus is whether the existing CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG L1/L2 backbone is integrated-clean enough to open the SEC tranche without taxonomy reopen.
 
-## 18. v0.0.2rc12 SEC Normative Rewrite Coverage
+## 17. v0.0.2rc12 SEC Normative Rewrite Coverage
 
 This release begins the controlled `SCAF-SEC` L1/L2 normative tranche after the rc11 independent integrated consolidation review found no Critical/Major issues, judged the CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG backbone Stable after minor cleanup, and cleared SEC authoring to begin with parallel lexical/target-purity cleanup.
 
@@ -249,4 +249,12 @@ The tranche remains technology-neutral and does **not** bulk-promote donor-speci
 Review focus for rc12 is whether SEC cleanly defines the security architecture interface without re-owning ARCH structure, INT contract/session semantics, TIME measurable properties, RUN current state, ROB general resilience response, LIFE transaction results, OBS evidence authority, CFG source authority, ASSUR evidence-sufficiency semantics or external Security/Risk/Regulatory acceptance authority; and whether SEC Project-Applicable Obligations are Framework-Scan scannable.
 
 After SEC reaches a stable L1/L2 baseline, one final integrated L1/L2 consolidation review is expected before L3 Pattern / Mechanism Catalog authoring begins.
+
+## 18. v0.0.2rc13 Final Integrated L1/L2 Consolidation Coverage
+
+This release adds no new concern tranche and does not reopen taxonomy. It performs the final integrated L1/L2 consolidation after the independent rc12 SCAF-SEC review found no Critical/Major issues, judged SEC Stable after minor cleanup, confirmed SEC integration with the existing CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG backbone as Pass, and cleared final consolidation to begin.
+
+The consolidation closes the rc12 SEC cross-reference and authority-precision findings, including the SEC/OBS invariant reference, robustness-significant qualification for resource-abuse handoff to ROB, and authorization-related CFG input wording. It also normalizes the specifically reviewed residual CTX/ROB authority-role grammar without changing concern authority homes.
+
+No donor class is newly promoted by these edits. Schema, validator, CI, L3 pattern/mechanism catalogs and L4 implementation guidance remain excluded. Review focus for rc13 is whether the complete CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG -> SEC L1/L2 backbone is integrated-clean, Framework-Scan compatible, source/evidence/closure disciplined, identity-consistent and suitable to become an explicit L1/L2 freeze candidate before L3 authoring.
 

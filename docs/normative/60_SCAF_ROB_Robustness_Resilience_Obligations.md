@@ -1,6 +1,6 @@
 # SCAF-ROB — Robustness & Resilience Obligations
 
-**Release:** v0.0.2rc12  
+**Release:** v0.0.2rc13  
 **Concern:** `SCAF-ROB`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -95,7 +95,7 @@ For each material fault/error/failure concern, the project **SHALL** identify th
 
 Where containment is required, the project **SHALL** define the required runtime containment outcome and the controlled `SCAF-ARCH` structural/Domain boundaries or responsibilities on which the containment claim depends.
 
-The project **SHALL** define what constitutes containment success/failure at the behavior level without allowing ROB to redefine the actual structural Domain boundary owned by the applicable architecture decision.
+The project **SHALL** define what constitutes containment success/failure at the behavior level without allowing ROB to redefine the actual structural Domain boundary defined by the applicable Project Design Authority decision under `SCAF-ARCH` obligations.
 
 ### `SCAF-ROB-009` — Tolerance / masking / redundancy / failover / reconfiguration applicability
 

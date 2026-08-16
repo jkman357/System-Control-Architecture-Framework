@@ -1,6 +1,6 @@
 # SCAF-CTX — System Context, Mission, Function & Service Obligations
 
-**Release:** v0.0.2rc12  
+**Release:** v0.0.2rc13  
 **Concern:** `SCAF-CTX`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -145,7 +145,7 @@ Each material Function **SHALL** trace to at least one applicable objective, req
 
 `SCAF-CTX` **SHALL NOT** define or select project runtime failover, recovery or containment behavior; those runtime resilience-response semantics belong to `SCAF-ROB`.
 
-`SCAF-CTX` **SHALL NOT** become the source authority for a safety-significant safety objective/condition or its risk-acceptance basis; those remain owned by the applicable project safety/hazard authority.
+`SCAF-CTX` **SHALL NOT** become the source authority for a safety-significant safety objective/condition or its risk-acceptance basis; those remain source-authority decisions of the applicable project safety/hazard authority.
 
 ## 5. Required Project Decisions / Records
 
