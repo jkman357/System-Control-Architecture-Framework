@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc07  
-**Status:** L3 Catalog Coverage / Second-Tranche Planning RC  
+**Version:** v0.0.3rc08  
+**Status:** Controlled Second Representative L3 Pattern Tranche RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -312,7 +312,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.3rc07.**
+**No CI is included in v0.0.3rc08.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -363,6 +363,7 @@ v0.0.3rc04   # localized initial-tranche trace cleanup
 v0.0.3rc05   # initial-tranche M2 maturity decision; Candidate status retained
 v0.0.3rc06   # initial-tranche availability acceptance; seven entries Available / M2
 v0.0.3rc07   # L3 trace-reference coverage audit / second-tranche planning; no new Pattern ID
+v0.0.3rc08   # controlled second representative tranche; FTL/TIM/SYN Candidate/M1 patterns
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -370,14 +371,14 @@ The historical `rc1` tag/name is retained as released. From `rc02` onward this l
 
 ## Current Gate
 
-v0.0.3rc07 is the **L3 catalog coverage / second-tranche planning RC** after the v0.0.3rc06 independent availability-acceptance review returned:
+v0.0.3rc08 is the **controlled second representative L3 Pattern tranche RC** after the independent v0.0.3rc07 planning review returned:
 
 ```text
-INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
+L3 SECOND-TRANCHE PLANNING GATE: YES
 ```
 
-All seven published entries remain `Available / M2`; no Pattern architecture body, immutable identity/family or frozen L1/L2 obligation is reopened.
+The first seven published entries remain `Available / M2`. rc08 publishes five additional `Candidate / M1` identities in the previously empty FTL/TIM/SYN families. No existing Pattern architecture body, immutable family/lifecycle state or frozen L1/L2 obligation is reopened.
 
-The immediate gate is an **independent rc07 coverage / planning review**. It shall validate the trace-reference coverage semantics, concern-level interpretation, second-tranche prioritization criteria and proposed candidate categories before any new Pattern ID is allocated.
+The immediate gate is an **independent rc08 second-tranche Pattern review**. It shall validate the five new entries entry-by-entry for primary-family identity, L2 trace classification, PDA/source-authority boundaries, non-duplication/composition with existing Patterns and L3/L4 conformance.
 
-A successful rc07 review may authorize only a **small controlled second tranche** in a later RC. It does not authorize M3/M4, L4 or executable governance.
+The rc07-approved EVD export/transformation category remains deferred; the PST configuration-activation/source-precedence proposal remains rejected/reframe; SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.

@@ -1,3 +1,44 @@
+## v0.0.3rc08 — 2026-08-16
+
+Controlled second representative L3 Pattern tranche after the independent v0.0.3rc07 coverage / second-tranche planning review returned **PASS / `L3 SECOND-TRANCHE PLANNING GATE: YES`**, approved six later-authoring categories, rejected/reframed the PST configuration-activation proposal, preserved the SEC-primary hold, and opened no Critical, Major, Minor or Trivial release finding.
+
+### Added
+
+- added `docs/l3/07_L3_Second_Tranche_Authoring_Decision.md` recording the rc07 category dispositions and the deliberately limited rc08 authoring scope;
+- published five new permanent Pattern identities as `Candidate / M1` entries:
+  - `SCAF-PAT-FTL-001` — Failure-Domain Containment / Isolation;
+  - `SCAF-PAT-FTL-002` — Controlled Failover with Graceful Degradation;
+  - `SCAF-PAT-TIM-001` — Bounded Queue / Backpressure / Overload Protection;
+  - `SCAF-PAT-TIM-002` — Timebase / Clock-Relationship / Epoch Validity;
+  - `SCAF-PAT-SYN-001` — Generation/Epoch-Based Cross-Participant State Convergence;
+- opened the previously empty `FTL`, `TIM` and `SYN` mechanism families with structured architecture-level entries;
+- added explicit cross-family composition/boundary statements for FTL containment versus failover, TIM capacity versus ROB/INT authority, and SYN convergence versus existing COM reconnect semantics.
+
+### Preserved
+
+- the initial seven published Pattern identities as `Available / M2`, all still `Introduced In: v0.0.3rc03`;
+- initial seven Pattern architecture/trace content unchanged except current Development Release metadata;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace semantics and the prohibition on generic L2→L3 `satisfies` shortcuts;
+- Project Design Authority ownership of project mechanism selection/configuration and external source-authority ownership;
+- L3/L4 boundary and separate later gates.
+
+### Deliberately Deferred / Rejected
+
+- the rc07-approved Evidence Retrieval / Export / Transformation Integrity (`EVD`) category is deferred to keep rc08 focused on the new FTL/TIM/SYN family stress test;
+- no ID is allocated for Controlled Configuration Activation / Source Precedence (`PST`), which remains `REJECT / REFRAME` pending a stable principal mechanism/family basis;
+- no SEC-primary Pattern is authored before the dedicated security-realization gate;
+- no new Pattern is promoted beyond Candidate/M1;
+- no M3/M4, L4, schema, validator, generated registry/index, CI, code generation or executable governance is introduced.
+
+### Gate
+
+- independently review all five new Candidate/M1 Patterns for family fit, trace classification, PDA/source-authority preservation, non-duplication, composition and L3/L4 conformance;
+- verify `FTL-001` does not redefine ARCH Domains and `FTL-002` remains distinct from containment/retry/universal redundancy;
+- verify TIM entries preserve TIME-owned measurable semantics while INT/ROB/RUN retain their downstream authorities;
+- verify `SYN-001` complements rather than reclassifies/duplicates `SCAF-PAT-COM-001` and does not prescribe consensus/leader algorithms;
+- reconfirm the initial seven Available/M2 entries and frozen v0.0.2 baseline are non-regressed;
+- do not auto-promote the five new entries or open the deferred/rejected/security/L4/executable-governance scopes from this authoring RC alone.
 ## v0.0.3rc07 — 2026-08-16
 
 L3 catalog trace-reference coverage and second-tranche planning after the independent v0.0.3rc06 availability-acceptance review returned **PASS / `INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES`**, validated **7 / 7 `AVAILABLE ACCEPTANCE VALID`**, confirmed **7 / 7 pattern-body non-regression**, and opened no Critical, Major, Minor or Trivial finding.

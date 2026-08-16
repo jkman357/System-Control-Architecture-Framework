@@ -1,6 +1,6 @@
 # SCAF-PAT-LCM-001 — Transactional Update with Rollback
 
-**Development Release:** v0.0.3rc07  
+**Development Release:** v0.0.3rc08  
 **Pattern Family:** `LCM` — Lifecycle Management  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Available  

@@ -1,6 +1,11 @@
 # L3 Catalog Placement
 
-v0.0.3rc07 carries forward the same seven published SCAF L3 Pattern / Mechanism entries as `Available / M2` after the independently accepted rc06 availability milestone. rc07 adds coverage/second-tranche planning only and does not allocate another Pattern ID.
+v0.0.3rc08 publishes a controlled second representative tranche after the rc07 independent planning review returned `L3 SECOND-TRANCHE PLANNING GATE: YES`.
+
+The catalog now contains **twelve** published identities:
+
+- seven initial-tranche entries remain `Available / M2`;
+- five newly published second-tranche entries are `Candidate / M1`.
 
 Family paths are:
 
@@ -17,6 +22,6 @@ catalog/SYN/
 catalog/SEC/
 ```
 
-Only families with current entries require committed directories. Pattern identity is based on the immutable primary mechanism family after publication. Cross-concern coverage belongs in pattern metadata through L2 trace relations rather than by duplicating the same pattern under multiple family paths.
+Pattern identity is based on the immutable primary mechanism family after publication. Cross-concern coverage belongs in pattern metadata through L2 trace relations rather than by duplicating the same pattern under multiple family paths.
 
-All seven entries remain `Available / M2` in v0.0.3rc07. `Available` means accepted for project consideration under the current catalog release; it does not imply project applicability, selection, recommendation, compliance, verification or L2 satisfaction. M2 remains the independent architecture-review maturity state.
+The new FTL/TIM/SYN entries do not change the lifecycle state of the initial seven. `Candidate / M1` for the new entries means structured Pattern content awaiting independent architecture/trace review; it does not imply `Available`, project selection, recommendation, compliance, verification or L2 satisfaction.

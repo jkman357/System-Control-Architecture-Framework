@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc07  
+**Development Release:** v0.0.3rc08  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** L3 catalog coverage / second-tranche planning RC; seven existing entries remain Available / M2
+**Status:** controlled second representative Pattern tranche; initial seven remain Available/M2; five new entries are Candidate/M1
 
 ## 1. Purpose
 
@@ -27,22 +27,29 @@ Project Realization implements
 Project Verification / Assurance evaluates project evidence
 ```
 
-Pattern selection by itself does not satisfy an L2 obligation.
+Pattern publication, availability or project selection by itself does not satisfy an L2 obligation.
 
+## 2. v0.0.3rc08 Scope
 
-## 2. v0.0.3rc07 Scope
-
-The independent v0.0.3rc06 availability-acceptance review returned:
+The independent v0.0.3rc07 coverage / second-tranche planning review returned:
 
 ```text
-INITIAL L3 PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
+L3 SECOND-TRANCHE PLANNING GATE: YES
 ```
 
-It validated **7 / 7 `AVAILABLE ACCEPTANCE VALID`**, confirmed 7 / 7 pattern-body non-regression, and opened no Critical, Major, Minor or Trivial finding. The initial seven-pattern availability milestone is therefore closed.
+It found no Critical/Major/Minor/Trivial release finding and approved six candidate categories for later controlled authoring while rejecting/reframing the PST configuration-activation proposal.
 
-v0.0.3rc07 does not author new patterns. It adds a controlled **trace-reference coverage audit and second-tranche planning decision surface** while preserving the current seven entries as `Available / M2`.
+v0.0.3rc08 deliberately authors **five** of the six approved categories to open the previously empty `FTL`, `TIM` and `SYN` families:
 
-The audit distinguishes numeric trace-reference coverage from obligation satisfaction or catalog completeness and identifies a small set of candidate mechanism categories for independent review before any new Pattern ID is allocated.
+- `SCAF-PAT-FTL-001` — Failure-Domain Containment / Isolation;
+- `SCAF-PAT-FTL-002` — Controlled Failover with Graceful Degradation;
+- `SCAF-PAT-TIM-001` — Bounded Queue / Backpressure / Overload Protection;
+- `SCAF-PAT-TIM-002` — Timebase / Clock-Relationship / Epoch Validity;
+- `SCAF-PAT-SYN-001` — Generation/Epoch-Based Cross-Participant State Convergence.
+
+All five are `Candidate / M1`. The first seven published entries remain `Available / M2` with unchanged architecture/trace content apart from the current Development Release field.
+
+The rc07-approved EVD export/transformation category is intentionally deferred; no ID is allocated for the rejected/reframe PST candidate; SEC-primary realization remains separately gated.
 
 ## 3. Files
 
@@ -53,8 +60,9 @@ The audit distinguishes numeric trace-reference coverage from obligation satisfa
 | `02_L3_Trace_and_Selection_Model.md` | L2→L3 trace relations, project selection states and satisfaction boundary |
 | `03_L3_Pattern_Index.md` | Human-readable catalog index; not a trace authority |
 | `04_L3_Initial_Tranche_Lifecycle_Decision.md` | Historical rc05 M2 decision record and availability-readiness gate |
-| `05_L3_Initial_Tranche_Availability_Acceptance.md` | Historical rc06 explicit entry-by-entry Candidate→Available catalog acceptance record |
-| `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md` | rc07 descriptive trace-reference coverage audit and controlled second-tranche candidate planning |
+| `05_L3_Initial_Tranche_Availability_Acceptance.md` | Historical rc06 Candidate→Available acceptance record |
+| `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md` | Historical rc07 trace-reference coverage audit / second-tranche planning artifact |
+| `07_L3_Second_Tranche_Authoring_Decision.md` | rc08 authoring scope, rc07 category dispositions and five new Pattern allocations |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -64,21 +72,24 @@ The complete `docs/normative/` tree remains the frozen v0.0.2 L1/L2 baseline in 
 
 If L3 work exposes a genuine architecture-level contradiction in the frozen baseline, that issue must be raised explicitly as a separate governance event. It must not be repaired indirectly through L3 wording.
 
+## 5. Current Gate / Closed Work
 
-## 5. Closed Gates
+The immediate gate is an independent review of the five new `Candidate / M1` entries. The review must preserve:
 
-The following remain outside v0.0.3rc07:
+- the stable IDs/families/lifecycle states of the first seven `Available / M2` entries;
+- the rc07 decision to keep FTL containment and failover as distinct Pattern intents;
+- the TIM/ROB/INT authority partitions;
+- the SYN/COM complementarity boundary;
+- Project Design Authority and external-source authority;
+- the L3/L4 boundary.
 
-- automatic project selection or L2 satisfaction inferred from `Available` status;
-- any second-tranche Pattern ID allocation before the rc07 planning gate passes;
-- uncontrolled/bulk second-tranche pattern expansion;
-- M3 / M4 maturity claims without their separate evidence gates;
-- L4 implementation guidance;
-- L4 verification procedures or test cases;
-- machine-readable pattern schema;
-- authority registry;
-- validator;
-- generated reverse-trace index;
-- CI enforcement;
-- code generation;
-- other executable-governance work.
+The following remain outside v0.0.3rc08:
+
+- promotion of the five new entries to M2 or `Available` before review/closure;
+- the deferred EVD export/transformation authoring unless separately opened later;
+- the rejected/reframe PST configuration-activation candidate;
+- SEC-primary Pattern authoring without the dedicated security-realization gate;
+- uncontrolled/bulk catalog expansion;
+- M3/M4 maturity claims;
+- L4 implementation or verification guidance;
+- schema, authority registry, validator, generated reverse-trace index, CI, code generation or executable governance.

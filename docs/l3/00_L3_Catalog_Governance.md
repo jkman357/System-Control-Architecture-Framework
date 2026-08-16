@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc07  
+**Development Release:** v0.0.3rc08  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -216,16 +216,16 @@ Those belong to later L4 implementation / verification guidance or project-speci
 
 ## 11. Initial Development Priority
 
-The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc07 across:
+The catalog-contract gate has passed and the initial seven-pattern tranche introduced in v0.0.3rc03 remains `Available / M2`. After the independent rc07 planning gate passed, v0.0.3rc08 opens a deliberately small second representative tranche in the previously empty `FTL`, `TIM` and `SYN` families.
 
-1. `SUP` — supervision / liveness / progress detection;
-2. `REC` — bounded retry / escalation;
-3. `COM` — reconnect / interaction reconciliation;
-4. `PST` — persistent-state integrity / atomicity;
-5. `LCM` — update / activation / rollback lifecycle;
-6. `EVD` — retained incident evidence / pre-post event recording.
+Current published inventory:
 
-`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. The first seven entries have now demonstrated stable metadata, trace, primary-family, composition and L3/L4 semantics through independent review and closure. The rc06 independent review validated the explicit availability acceptance for all seven entries. v0.0.3rc07 opens only a descriptive coverage / second-tranche planning gate; broad authoring remains separately gated.
+1. initial seven entries — `SUP` / `REC` / `COM` / `PST` / `LCM` / `EVD`, all `Available / M2`;
+2. second-tranche `SCAF-PAT-FTL-001` and `SCAF-PAT-FTL-002`, `Candidate / M1`;
+3. second-tranche `SCAF-PAT-TIM-001` and `SCAF-PAT-TIM-002`, `Candidate / M1`;
+4. second-tranche `SCAF-PAT-SYN-001`, `Candidate / M1`.
+
+The rc07-approved EVD export/transformation category is intentionally deferred. The PST configuration-activation/source-precedence proposal was rejected/reframe and is not allocated. Technology-sensitive SEC-primary realization remains behind the dedicated security-realization gate. Broad/bulk authoring remains gated.
 
 
 ## 12. v0.0.3rc03 Initial Pattern-Tranche Gate
@@ -360,3 +360,36 @@ The rc07 review shall verify that:
 - no new Pattern ID, M3/M4 claim, L4 guidance or executable-governance mechanism is introduced in rc07.
 
 Only a successful rc07 planning review may authorize a later RC to allocate a small second tranche.
+
+
+## 17. v0.0.3rc08 Controlled Second-Tranche Pattern Gate
+
+The independent v0.0.3rc07 coverage / second-tranche planning review returned:
+
+```text
+L3 SECOND-TRANCHE PLANNING GATE: YES
+```
+
+It approved six categories for later controlled authoring, rejected/reframed the PST configuration-activation/source-precedence category, preserved the SEC-primary hold, and found no Critical/Major/Minor/Trivial release finding.
+
+v0.0.3rc08 allocates five of the six approved categories as `Candidate / M1` entries:
+
+- `SCAF-PAT-FTL-001` — Failure-Domain Containment / Isolation;
+- `SCAF-PAT-FTL-002` — Controlled Failover with Graceful Degradation;
+- `SCAF-PAT-TIM-001` — Bounded Queue / Backpressure / Overload Protection;
+- `SCAF-PAT-TIM-002` — Timebase / Clock-Relationship / Epoch Validity;
+- `SCAF-PAT-SYN-001` — Generation/Epoch-Based Cross-Participant State Convergence.
+
+The immediate independent review shall determine whether:
+
+- `FTL-001` consumes controlled ARCH Domain/structural boundaries rather than redefining topology;
+- `FTL-002` remains distinct from containment, generic recovery retry and universal redundancy/voting prescriptions;
+- `TIM-001` realizes bounded demand/capacity while preserving INT semantic-loss/order authority and ROB post-violation response authority;
+- `TIM-002` realizes clock-relationship qualification/validity without prescribing synchronization technology or taking downstream INT/RUN/ROB authority;
+- `SYN-001` is a reusable convergence mechanism that remains complementary to the immutable `SCAF-PAT-COM-001` reconnect identity and does not become a consensus/leader protocol;
+- all five traces use Primary / Supporting / Constraint relations accurately and preserve unresolved PDA decisions;
+- all five remain L3 architecture mechanisms without L4 implementation/test prescription;
+- the first seven `Available / M2` entries remain non-regressed;
+- the frozen v0.0.2 normative baseline remains byte-stable.
+
+A successful rc08 review may permit a later focused cleanup or entry-by-entry M2/readiness decision for the five new patterns. It does not auto-promote them and does not authorize the deferred EVD category, rejected PST category, SEC-primary realization, M3/M4, L4 or executable governance.
