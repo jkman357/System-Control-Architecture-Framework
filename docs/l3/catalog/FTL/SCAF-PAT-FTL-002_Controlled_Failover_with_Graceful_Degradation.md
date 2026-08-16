@@ -1,9 +1,9 @@
 # SCAF-PAT-FTL-002 — Controlled Failover with Graceful Degradation
 
-**Development Release:** v0.0.3rc10  
+**Development Release:** v0.0.3rc11  
 **Pattern Family:** `FTL` — Fault Tolerance & Isolation  
 **Pattern Kind:** Composite Pattern  
-**Catalog Status:** Candidate  
+**Catalog Status:** Available  
 **Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc08
 
@@ -15,7 +15,7 @@
 | Pattern Name | Controlled Failover with Graceful Degradation |
 | Pattern Family | `FTL` |
 | Pattern Kind | Composite Pattern |
-| Catalog Status | Candidate |
+| Catalog Status | Available |
 | Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc08 |
 | Primary L2 Trace | `SCAF-ROB-009`, `SCAF-ROB-010` |

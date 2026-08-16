@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc10  
+**Development Release:** v0.0.3rc11  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** second-tranche lifecycle decision; initial seven Available/M2; five second-tranche entries Candidate/M2
+**Status:** second-tranche availability acceptance; all twelve published entries Available/M2
 
 ## 1. Purpose
 
@@ -29,19 +29,19 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern publication, availability or project selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc10 Scope
+## 2. v0.0.3rc11 Scope
 
-The independent v0.0.3rc09 focused trace-closure review returned:
+The independent v0.0.3rc10 maturity / availability review returned:
 
 ```text
-L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES
+L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES
 ```
 
-It confirmed `R8-01` Resolved, found no new regression finding and permitted a later maturity/readiness review for the five second-tranche entries.
+It validated **5 / 5 M2**, judged **5 / 5 READY FOR AVAILABLE**, confirmed 12 / 12 controlled Pattern-body non-regression checks and found no new Critical/Major/Minor/Trivial issue.
 
-v0.0.3rc10 therefore records their deliberate advancement to `M2 — Architecture Reviewed` while retaining `Catalog Status: Candidate`. The initial seven remain `Available / M2`.
+v0.0.3rc11 therefore records the explicit `Candidate`→`Available` catalog acceptance for the five second-tranche entries. M2 maturity, IDs, primary families and `Introduced In: v0.0.3rc08` remain unchanged. The initial seven remain `Available / M2`.
 
-No Pattern mechanism/trace body is re-authored for this lifecycle move. The rc10 review must separately validate M2 and availability readiness entry by entry.
+No Pattern mechanism/trace body is re-authored for this lifecycle move. `Available` means accepted for project consideration under the current catalog release; it does not imply project applicability, recommendation, selection, compliance, verification, implementation correctness or L2 satisfaction.
 
 ## 3. Files
 
@@ -56,7 +56,8 @@ No Pattern mechanism/trace body is re-authored for this lifecycle move. The rc10
 | `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md` | Historical rc07 trace-reference coverage audit / second-tranche planning artifact |
 | `07_L3_Second_Tranche_Authoring_Decision.md` | Historical rc08 authoring scope, rc07 category dispositions and five new Pattern allocations |
 | `08_L3_Second_Tranche_Trace_Cleanup.md` | Historical rc09 localized `R8-01` trace-cleanup decision and focused closure boundary |
-| `09_L3_Second_Tranche_Lifecycle_Decision.md` | rc10 M2 maturity decision and separate availability-readiness gate |
+| `09_L3_Second_Tranche_Lifecycle_Decision.md` | Historical rc10 M2 maturity decision and availability-readiness gate |
+| `10_L3_Second_Tranche_Availability_Acceptance.md` | rc11 explicit second-tranche Candidate→Available acceptance record |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -68,21 +69,23 @@ If L3 work exposes a genuine architecture-level contradiction in the frozen base
 
 ## 5. Current Gate / Closed Work
 
-The immediate gate is an independent **rc10 second-tranche maturity / availability-readiness review**. For each of `FTL-001`, `FTL-002`, `TIM-001`, `TIM-002` and `SYN-001`, review must separately determine M2 validity and later availability readiness.
+The immediate gate is an independent **rc11 second-tranche availability-acceptance review**.
 
-The review must also reconfirm:
+The review must reconfirm:
 
-- the initial seven remain `Available / M2` and non-regressed;
-- exactly twelve published IDs remain;
-- `FTL-001` continues to treat `SCAF-ROB-007` as a Constraint Input;
+- all twelve published Patterns are `Available / M2` with stable IDs/families/history;
+- the five second-tranche status transitions are directly supported by rc10 `READY FOR AVAILABLE` evidence;
+- the transition did not rewrite mechanism architecture or L2 trace semantics;
+- `FTL-001` retains `SCAF-ROB-007` as Constraint Input and `SCAF-ROB-015` as Supporting;
 - the frozen v0.0.2 normative baseline remains byte-stable;
-- M2 does not imply `Available`, project selection, recommendation, compliance or L2 satisfaction.
+- `Available` does not imply project selection, recommendation, compliance, verification or L2 satisfaction.
 
-The following remain outside v0.0.3rc10:
+The following remain outside v0.0.3rc11:
 
-- Candidate→Available transition for the five second-tranche entries;
-- deferred EVD export/transformation authoring;
+- the approved-but-deferred EVD export/transformation Pattern;
 - rejected/reframe PST configuration-activation authoring;
 - SEC-primary Pattern authoring;
 - third-tranche/bulk expansion;
-- M3/M4, L4, schema, validator, generated registry/index, CI, code generation or executable governance.
+- M3/M4;
+- L4;
+- schema, validator, generated registry/reverse index, CI, code generation or executable governance.

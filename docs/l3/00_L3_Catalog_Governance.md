@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc10  
+**Development Release:** v0.0.3rc11  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -221,9 +221,9 @@ The catalog-contract gate has passed and the initial seven-pattern tranche intro
 Current published inventory:
 
 1. initial seven entries — `SUP` / `REC` / `COM` / `PST` / `LCM` / `EVD`, all `Available / M2`;
-2. second-tranche `SCAF-PAT-FTL-001` and `SCAF-PAT-FTL-002`, `Candidate / M1`;
-3. second-tranche `SCAF-PAT-TIM-001` and `SCAF-PAT-TIM-002`, `Candidate / M1`;
-4. second-tranche `SCAF-PAT-SYN-001`, `Candidate / M1`.
+2. second-tranche `SCAF-PAT-FTL-001` and `SCAF-PAT-FTL-002`, `Available / M2`;
+3. second-tranche `SCAF-PAT-TIM-001` and `SCAF-PAT-TIM-002`, `Available / M2`;
+4. second-tranche `SCAF-PAT-SYN-001`, `Available / M2`.
 
 The rc07-approved EVD export/transformation category is intentionally deferred. The PST configuration-activation/source-precedence proposal was rejected/reframe and is not allocated. Technology-sensitive SEC-primary realization remains behind the dedicated security-realization gate. Broad/bulk authoring remains gated.
 
@@ -437,3 +437,36 @@ The rc10 independent review shall answer two separate questions for every second
 2. **Availability readiness:** is the entry sufficiently bounded and complete for a later explicit `Candidate`→`Available` transition without implying project recommendation, applicability, compliance or L2 satisfaction?
 
 A successful rc10 review may permit a later explicit availability-acceptance RC for all, some or none of the five entries. It does not itself change Catalog Status and does not authorize deferred EVD authoring, rejected PST authoring, SEC-primary realization, third-tranche expansion, M3/M4, L4 or executable governance.
+
+## 20. v0.0.3rc11 Second-Tranche Availability Acceptance Gate
+
+The independent v0.0.3rc10 maturity / availability review returned:
+
+```text
+L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES
+```
+
+It independently validated **5 / 5 M2** and judged **5 / 5 READY FOR AVAILABLE**, verified 12 / 12 controlled Pattern-body non-regression hashes, preserved the rc09 `FTL-001` trace closure, and opened no new Critical/Major/Minor/Trivial finding.
+
+v0.0.3rc11 therefore records the explicit catalog-maintainer transition for the five second-tranche entries:
+
+```text
+Catalog Status: Candidate -> Available
+Maturity: M2 — Architecture Reviewed (unchanged)
+Introduced In: v0.0.3rc08 (unchanged)
+```
+
+This is a catalog lifecycle decision only. `Available` means accepted for project consideration under the current catalog release. It does not establish universal applicability, project recommendation/selection, compliance, verification, implementation correctness or L2 satisfaction.
+
+The rc11 independent review shall confirm that:
+
+- each status transition is supported by rc10 entry-by-entry readiness evidence;
+- all twelve IDs and immutable primary families remain stable;
+- the five second-tranche Pattern bodies/trace relations are unchanged except Development Release and Catalog Status metadata;
+- the initial seven change only current Development Release metadata;
+- all twelve remain M2 and no M3/M4 evidence claim is introduced;
+- `FTL-001` retains `SCAF-ROB-007` as Constraint Input and `SCAF-ROB-015` as Supporting Realization;
+- the frozen v0.0.2 normative tree remains byte-stable;
+- no third tranche, deferred EVD authoring, rejected PST revival, SEC-primary authoring, L4 or executable-governance work is introduced.
+
+A successful rc11 review closes the second-tranche availability-acceptance milestone only. Any further catalog expansion, M3/M4 validation, L4 guidance or executable-governance work requires a separate explicit gate.

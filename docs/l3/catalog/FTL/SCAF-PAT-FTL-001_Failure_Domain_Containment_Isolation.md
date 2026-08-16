@@ -1,9 +1,9 @@
 # SCAF-PAT-FTL-001 — Failure-Domain Containment / Isolation
 
-**Development Release:** v0.0.3rc10  
+**Development Release:** v0.0.3rc11  
 **Pattern Family:** `FTL` — Fault Tolerance & Isolation  
 **Pattern Kind:** Mechanism  
-**Catalog Status:** Candidate  
+**Catalog Status:** Available  
 **Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc08
 
@@ -15,7 +15,7 @@
 | Pattern Name | Failure-Domain Containment / Isolation |
 | Pattern Family | `FTL` |
 | Pattern Kind | Mechanism |
-| Catalog Status | Candidate |
+| Catalog Status | Available |
 | Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc08 |
 | Primary L2 Trace | `SCAF-ROB-008` |

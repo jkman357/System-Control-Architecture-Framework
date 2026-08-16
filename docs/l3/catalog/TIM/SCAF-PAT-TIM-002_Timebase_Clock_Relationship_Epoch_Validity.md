@@ -1,9 +1,9 @@
 # SCAF-PAT-TIM-002 — Timebase / Clock-Relationship / Epoch Validity
 
-**Development Release:** v0.0.3rc10  
+**Development Release:** v0.0.3rc11  
 **Pattern Family:** `TIM` — Timing & Capacity Realization  
 **Pattern Kind:** Mechanism  
-**Catalog Status:** Candidate  
+**Catalog Status:** Available  
 **Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc08
 
@@ -15,7 +15,7 @@
 | Pattern Name | Timebase / Clock-Relationship / Epoch Validity |
 | Pattern Family | `TIM` |
 | Pattern Kind | Mechanism |
-| Catalog Status | Candidate |
+| Catalog Status | Available |
 | Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc08 |
 | Primary L2 Trace | `SCAF-TIME-004`, `SCAF-TIME-020` |

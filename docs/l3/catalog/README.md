@@ -1,29 +1,19 @@
-# L3 Catalog Placement
+# SCAF L3 Catalog Entries
 
-v0.0.3rc10 is a second-tranche lifecycle-decision release after the independent rc09 focused review returned `L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES`.
+v0.0.3rc11 is a second-tranche availability-acceptance release after the independent rc10 lifecycle review returned `L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES`.
 
-The catalog contains **twelve** published identities:
+Current published catalog state:
 
-- seven initial-tranche entries remain `Available / M2`;
-- five second-tranche entries are now `Candidate / M2`.
+- twelve total published Pattern identities;
+- all twelve are `Available / M2 — Architecture Reviewed`;
+- the initial seven retain `Introduced In: v0.0.3rc03`;
+- the second five retain `Introduced In: v0.0.3rc08`;
+- no Pattern claims M3/M4;
+- no Pattern has a `Supersedes` lifecycle event.
 
-The second-tranche M2 change records completed architecture-review evidence and does not imply `Available`, project selection, recommendation, compliance, verification or L2 satisfaction. No Pattern mechanism/trace body is changed by the lifecycle decision beyond current Development Release and Maturity metadata.
+`Available` means accepted for project consideration. It does not imply project applicability, recommendation, automatic selection, compliance, verification, implementation correctness or L2 satisfaction.
 
-Family paths are:
+The second-tranche acceptance is lifecycle-only: the five Pattern mechanism/trace bodies are preserved from rc10 apart from current Development Release and Catalog Status metadata.
 
-```text
-catalog/SUP/
-catalog/COM/
-catalog/REC/
-catalog/FTL/
-catalog/TIM/
-catalog/PST/
-catalog/LCM/
-catalog/EVD/
-catalog/SYN/
-catalog/SEC/
-```
+The approved-but-deferred EVD export/transformation category remains unauthored; the rejected/reframe PST proposal remains unauthored; SEC-primary realization remains separately gated.
 
-Pattern identity is based on the immutable primary mechanism family after publication. Cross-concern coverage belongs in pattern metadata through L2 trace relations rather than by duplicating the same pattern under multiple family paths.
-
-The new FTL/TIM/SYN entries do not change the lifecycle state of the initial seven. `Candidate / M1` for the new entries means structured Pattern content awaiting independent architecture/trace review; it does not imply `Available`, project selection, recommendation, compliance, verification or L2 satisfaction.

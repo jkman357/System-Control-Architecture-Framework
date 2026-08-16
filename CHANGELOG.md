@@ -1,3 +1,49 @@
+## v0.0.3rc11 — 2026-08-16
+
+Second-tranche catalog availability acceptance after the independent v0.0.3rc10 maturity / availability review returned **PASS / `L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES`**, validated **5 / 5 `M2 VALID`**, judged **5 / 5 `READY FOR AVAILABLE`**, confirmed **12 / 12 Pattern-body non-regression PASS**, and opened no new Critical, Major, Minor or Trivial finding.
+
+### Changed
+
+- explicitly promoted `SCAF-PAT-FTL-001`, `SCAF-PAT-FTL-002`, `SCAF-PAT-TIM-001`, `SCAF-PAT-TIM-002`, and `SCAF-PAT-SYN-001` from `Catalog Status: Candidate` to `Catalog Status: Available`;
+- retained `M2 — Architecture Reviewed` for all five; no M3/M4 maturity claim is made;
+- retained each second-tranche Pattern ID, immutable primary family and `Introduced In: v0.0.3rc08` value;
+- added `docs/l3/10_L3_Second_Tranche_Availability_Acceptance.md` as the release-scoped explicit catalog acceptance record;
+- updated current README, L3 navigation/index, governance gate and Pattern release/status metadata for v0.0.3rc11.
+
+### Availability Evidence Basis
+
+- rc10 independently validated all five M2 states;
+- rc10 independently judged all five entries `READY FOR AVAILABLE`;
+- rc10 verified 12 / 12 controlled Pattern-body normalized hashes;
+- rc10 opened no cleanup finding and preserved the rc09 `FTL-001` trace closure;
+- the rc10 review performed no automatic Catalog Status transition, preserving the requirement for this later explicit repository lifecycle decision.
+
+### Preserved
+
+- all twelve published Pattern IDs and immutable primary families;
+- the initial seven `Available / M2 / Introduced In: v0.0.3rc03` states;
+- the second five `M2 — Architecture Reviewed / Introduced In: v0.0.3rc08` states;
+- all Pattern architecture/trace bodies apart from current Development Release and the five intended Catalog Status metadata transitions;
+- exactly twelve numeric `SCAF-PAT-*` identities and no `Supersedes` event;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace, PDA/source-authority and L3/L4 boundaries.
+
+### Deliberately Not Added / Promoted
+
+- no thirteenth Pattern ID or third tranche;
+- no M3/M4 promotion;
+- no deferred EVD export/transformation Pattern;
+- no revived rejected/reframe PST configuration-activation Pattern;
+- no SEC-primary Pattern;
+- no L4, schema, validator, generated registry/reverse index, CI, code generation or executable governance.
+
+### Gate
+
+- independently verify all five rc10 readiness recommendations support the rc11 acceptance transitions;
+- verify the transition is lifecycle-only with no mechanism/trace rewrite;
+- verify all twelve IDs/families/history and frozen v0.0.2 baseline remain stable;
+- verify `Available` retains its bounded catalog meaning and does not become project selection/compliance/satisfaction authority.
+
 ## v0.0.3rc10 — 2026-08-16
 
 Second-tranche lifecycle decision after the independent v0.0.3rc09 focused review returned **PASS / `L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES`**, confirmed `R8-01` Resolved and found no new Critical, Major, Minor or Trivial finding.

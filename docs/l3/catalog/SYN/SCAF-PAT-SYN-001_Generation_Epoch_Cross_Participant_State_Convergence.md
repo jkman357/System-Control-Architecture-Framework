@@ -1,9 +1,9 @@
 # SCAF-PAT-SYN-001 — Generation/Epoch-Based Cross-Participant State Convergence
 
-**Development Release:** v0.0.3rc10  
+**Development Release:** v0.0.3rc11  
 **Pattern Family:** `SYN` — Distributed Consistency & Reconciliation  
 **Pattern Kind:** Composite Pattern  
-**Catalog Status:** Candidate  
+**Catalog Status:** Available  
 **Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc08
 
@@ -15,7 +15,7 @@
 | Pattern Name | Generation/Epoch-Based Cross-Participant State Convergence |
 | Pattern Family | `SYN` |
 | Pattern Kind | Composite Pattern |
-| Catalog Status | Candidate |
+| Catalog Status | Available |
 | Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc08 |
 | Primary L2 Trace | `SCAF-CFG-018`, `SCAF-RUN-010` |
