@@ -1,6 +1,6 @@
 # SCAF-OBS — Observability, Diagnostics & Incident Evidence Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-OBS`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -276,7 +276,7 @@ The project **SHALL** re-evaluate affected OBS and dependent project decisions w
 
 **Target:** Framework Normative Invariant
 
-`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration and persistent operational-state ownership/source, defaults, validation, version/migration, commit/rollback, corruption recovery, calibration and synchronization.
+`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration and persistent operational-state authoritative-source/value semantics, defaults, validity, version/migration, commit/CFG-side rollback, corruption/loss interpretation, CFG source-state restoration/result, calibration and synchronization.
 
 `SCAF-OBS` **Defines Framework Semantics / Obligation** for incident/diagnostic evidence identity/provenance/preservation/export. Persistent storage or shared physical media **SHALL NOT** collapse these semantic authority spaces.
 

@@ -1,6 +1,6 @@
 # SCAF-INT — Interfaces, Interaction & Data Contract Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-INT`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

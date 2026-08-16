@@ -1,6 +1,6 @@
 # SCAF-RUN — Runtime Behavior, State & Operational Lifecycle Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-RUN`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -181,7 +181,7 @@ RUN may use those controlled inputs to define operational-state transitions with
 
 `SCAF-RUN` **Defines Framework Semantics / Obligation** for current operational-state meaning and transition consistency.
 
-`SCAF-CFG` retains primary framework semantic authority for configuration and persistent operational-state ownership/version/migration semantics where persistence is required. Persistence of a state **SHALL NOT** transfer RUN operational-state semantic authority to CFG.
+`SCAF-CFG` retains primary framework semantic authority for configuration and persistent operational-state authoritative-source/value/version/migration semantics where persistence is required. Persistence of a state **SHALL NOT** transfer RUN operational-state semantic authority to CFG.
 
 ### `SCAF-RUN-019` — CTX operating-mode / RUN operational-state boundary
 
@@ -231,7 +231,7 @@ The following table is informative and does not create additional normative requ
 - `SCAF-RUN` **Defines Framework Semantics / Obligation** for operational-state meaning, transition consistency, readiness/availability representation and Operational Incarnation.
 - `SCAF-ROB` **Defines Framework Semantics / Obligation** for fault/error/failure, health, containment, degradation and recovery semantics.
 - `SCAF-LIFE` **Defines Framework Semantics / Obligation** for boot/power/reset/update/activation lifecycle and Boot Incarnation.
-- `SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration and persistent operational-state ownership/version/migration semantics.
+- `SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration and persistent operational-state authoritative-source/value/version/migration semantics.
 - `SCAF-OBS` **Observes** and records runtime state/transition/incarnation evidence without becoming source authority.
 - `SCAF-SEC` **Constrains** operational-state decisions using applicable security-authority inputs.
 - `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for assurance/evidence semantics; Project Verification / Assurance Authority **Verifies** RUN obligations against the Applicable Satisfaction Basis.

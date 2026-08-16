@@ -1,17 +1,17 @@
 # SCAF-CFG — Configuration & Persistent Operational State Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-CFG`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
 
 ## 1. Purpose
 
-`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration and persistent operational-state source semantics; configuration/persistent-state classification, identity and provenance; defaults/provisioning; validation and consumption eligibility; version and migration; commit/atomicity; persistence; configuration-side rollback/corruption recovery; calibration/parameter state; multi-participant synchronization/consistency; and activation/use relationships with other concerns without prescribing a configuration file format, database, NVM layout, schema language, validator tool, storage medium, serialization format, protocol, calibration store, registry, key-value system or other realization mechanism.
+`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration and persistent operational-state source semantics; configuration/persistent-state classification, identity and provenance; defaults/provisioning; validation and consumption eligibility; version and migration; commit/atomicity; persistence; configuration-side rollback and corruption/loss/unavailability interpretation with CFG source-state restoration/result semantics; calibration/parameter state; multi-participant synchronization/consistency; and activation/use relationships with other concerns without prescribing a configuration file format, database, NVM layout, schema language, validator tool, storage medium, serialization format, protocol, calibration store, registry, key-value system or other realization mechanism.
 
 The **Project Design Authority Defines Project Instance / Decision** for the actual project configuration/persistent-state classes, source responsibilities, identities, defaults, validation criteria, versions, migration rules, commit/rollback semantics, calibration/parameter decisions, synchronization requirements and project-specific values, constrained by applicable source concerns and external safety/security/regulatory/risk authority inputs.
 
-`SCAF-CFG` defines configuration/persistent-operational-state source semantics. It does not become source authority for `SCAF-RUN` current operational state, `SCAF-LIFE` boot/reset/power/update transaction results, `SCAF-OBS` evidence identity/provenance/preservation, `SCAF-INT` exchange/session semantics, `SCAF-TIME` measurable timing/capacity properties, `SCAF-ROB` health/failure/resilience meaning, or external security/safety/risk acceptance.
+`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent-operational-state source semantics. It does not become source authority for `SCAF-RUN` current operational state, `SCAF-LIFE` boot/reset/power/update transaction results, `SCAF-OBS` evidence identity/provenance/preservation, `SCAF-INT` exchange/session semantics, `SCAF-TIME` measurable timing/capacity properties, `SCAF-ROB` health/failure/resilience meaning, or external security/safety/risk acceptance.
 
 ## 2. L1 Authority Boundary
 
@@ -24,7 +24,7 @@ The **Project Design Authority Defines Project Instance / Decision** for the act
 - validation and project-defined consumption eligibility;
 - version identity, compatibility/migration and migration-result semantics;
 - atomic configuration/persistent-state commit and authoritative resulting state;
-- persistence requirements and controlled configuration-side rollback/corruption recovery;
+- persistence requirements, controlled configuration-side rollback, corruption/loss/unavailability interpretation and CFG source-state restoration/result semantics;
 - calibration/parameter source state and derived-parameter provenance where Applicable;
 - precedence/conflict semantics where multiple controlled sources can propose values;
 - cross-participant synchronization/consistency semantics for configuration/persistent state;
@@ -61,7 +61,7 @@ A file, NVM location, message, cache, UI representation, OBS evidence record or 
 
 **Target:** Project-Applicable Obligation
 
-Where configuration or persistent-state items can be confused, replaced, migrated, replicated, copied, provisioned or correlated across lifecycle instances/participants, the project **SHALL** define the item identity and source provenance needed to distinguish the controlled source/value/version without redefining OBS evidence-item identity or another source concern identity.
+Where configuration or persistent-state items can be confused, replaced, migrated, replicated, copied, provisioned or correlated across lifecycle instances/participants, the project **SHALL** define the item identity and source provenance needed to distinguish the controlled source/value/version without redefining OBS evidence-item identity or another source concern identity. A physical/storage locator such as an address, file path, record key, database key or NVM location may participate in a project identity scheme but **SHALL NOT** by itself establish the semantic CFG item identity.
 
 ### `SCAF-CFG-005` — Defaults / provisioning / initialization
 
@@ -75,7 +75,7 @@ Where a material CFG item can be absent, unprovisioned, newly created, reset to 
 
 For each material CFG item, the project **SHALL** define the controlled validity criteria needed before the item may be treated as valid for its intended configuration/persistent-state purpose, including applicable value/range/relational/version/provenance constraints and the project consequence when validity is false, unknown or cannot be established.
 
-This obligation defines semantic validation criteria; it does not require a schema language or validator implementation.
+**Boundary note (informative):** this obligation defines semantic validation criteria; it does not require a schema language or validator implementation.
 
 ### `SCAF-CFG-007` — Unknown / uninitialized / indeterminate state semantics
 
@@ -103,7 +103,7 @@ Where a material CFG item may require migration across versions, realizations, l
 
 Where partial or interrupted change could create a materially inconsistent, ambiguous or unusable configuration/persistent-state result, the project **SHALL** define the required atomicity/consistency property, commit point/result, incomplete/abort semantics and authoritative resulting state.
 
-This obligation does not prescribe journaling, dual-copy, transactional storage, file-replace, database or another commit mechanism.
+**Boundary note (informative):** this obligation does not prescribe journaling, dual-copy, transactional storage, file-replace, database or another commit mechanism; the normative mechanism boundary is defined by `SCAF-CFG-038`.
 
 ### `SCAF-CFG-011` — Configuration activation / application semantics
 
@@ -125,7 +125,7 @@ Where configuration or persistent-state rollback is Applicable, the project **SH
 
 **Target:** Project-Applicable Obligation
 
-Where corruption, loss, incomplete commit, unavailable storage/source, inconsistent replica or unreadable persistent state can materially affect behavior, the project **SHALL** define the CFG validity/result interpretation and required project treatment, traced to `SCAF-ROB` where the condition is robustness-significant.
+Where corruption, loss, incomplete commit, unavailable storage/source, inconsistent replica or unreadable persistent state can materially affect behavior, the project **SHALL** define the CFG validity/result interpretation, CFG-side source-state disposition/restoration eligibility, authoritative resulting CFG state and the consequence when a controlled CFG source state cannot be established. Where the condition is robustness-significant, the condition and resulting CFG decision **SHALL** trace to the applicable `SCAF-ROB` health/failure/resilience decision without transferring ROB recovery authority into CFG.
 
 ### `SCAF-CFG-014` — Persistent operational-state semantics
 
@@ -145,7 +145,7 @@ Where calibration or parameter state materially affects system behavior, the pro
 
 **Target:** Project-Applicable Obligation
 
-Where a material CFG value is derived, transformed, merged or calculated from other controlled values, the project **SHALL** define the source trace and derivation basis needed to distinguish the derived authoritative CFG value from its source inputs and from OBS evidence representations of the derivation.
+Where a material CFG value is derived, transformed, merged or calculated from other controlled values, the project **SHALL** define the source-input identity and applicable version/context, the derivation basis, the resulting-value provenance, and the controlled consequence when a required source input is invalid, unknown, incompatible or cannot be established. The resulting authoritative CFG value **SHALL** remain distinguishable from its source inputs and from OBS evidence representations of the derivation.
 
 ### `SCAF-CFG-017` — Multiple-source precedence / conflict semantics
 
@@ -159,7 +159,7 @@ Where multiple controlled sources can propose, provision, restore, override or d
 
 Where multiple participants, Nodes, Domains or realizations depend on a common or related configuration/persistent-state decision, the project **SHALL** define the required consistency/synchronization relationship, authoritative source/result responsibility, permitted disagreement/staleness and the consequence when required consistency cannot be established.
 
-Any measurable synchronization age, deadline, rate, capacity or uncertainty remains a project value governed by applicable `SCAF-TIME` decisions.
+**Boundary note (informative):** any measurable synchronization age, deadline, rate, capacity or uncertainty remains a project value governed by applicable `SCAF-TIME` decisions; the normative authority boundary is defined by `SCAF-CFG-031`.
 
 ### `SCAF-CFG-019` — Partition / reconnect / stale-replica configuration consequence
 
@@ -187,13 +187,13 @@ Where a LIFE-controlled boot/reset/update/activation/rollback transaction consum
 
 Where a CFG-controlled persistent operational state influences RUN initialization, readiness, transition or current operational behavior, the project **SHALL** define the controlled mapping/eligibility and the project consequence when the persistent state is missing, stale, invalid or inconsistent.
 
-The resulting authoritative current operational state remains governed by `SCAF-RUN`.
+**Boundary note (informative):** the resulting authoritative current operational state remains governed by `SCAF-RUN`; the normative authority boundary is defined by `SCAF-CFG-029`.
 
 ### `SCAF-CFG-023` — OBS evidence view of configuration facts
 
 **Target:** Project-Applicable Obligation
 
-Where configuration identity/value/version/validation/migration/commit/rollback or corruption-recovery results must be observed for operation, diagnosis, investigation or verification, the project **SHALL** define the OBS evidence representation/provenance/correlation need while preserving the CFG source fact and authoritative source responsibility.
+Where a material CFG identity, value, version, validity decision, migration result, commit/rollback result or source-state restoration/result must be observable for operation, diagnosis, investigation or verification, the project **SHALL** identify the CFG-controlled fact/result/identity that must be observable and trace the observation/evidence need to the applicable `SCAF-OBS` project decision while preserving the CFG source fact and PDA-assigned authoritative source responsibility.
 
 ### `SCAF-CFG-024` — External safety / security / regulatory / risk configuration constraints
 
@@ -245,7 +245,7 @@ The project **SHALL** re-evaluate affected CFG and dependent project decisions w
 
 `SCAF-INT` **Defines Framework Semantics / Obligation** for Interface/Interaction contract meaning, exchanged-data validity, semantic ordering, compatibility/evolution and Protocol/Connection Session Identity.
 
-`SCAF-CFG` may consume configuration data transported through an Interaction but **SHALL NOT** redefine the INT contract/session semantics merely because the exchanged value becomes configuration.
+`SCAF-CFG` may consume configuration data transported through an Interaction but **SHALL NOT** redefine the INT contract/session semantics merely because the exchanged value becomes configuration. INT-valid, successfully delivered or successfully decoded configuration data **SHALL NOT** by itself establish CFG acceptance, commit, activation/application or authoritative CFG source state.
 
 ### `SCAF-CFG-031` — CFG / TIME measurable-property boundary
 
@@ -259,7 +259,7 @@ The project **SHALL** re-evaluate affected CFG and dependent project decisions w
 
 **Target:** Framework Normative Invariant
 
-`SCAF-CFG` **Defines Framework Semantics / Obligation** for invalid/corrupt/missing/inconsistent configuration or persistent-state interpretation and required configuration-side project decisions.
+`SCAF-CFG` **Defines Framework Semantics / Obligation** for invalid/corrupt/missing/inconsistent configuration or persistent-state interpretation, CFG source-state disposition/restoration eligibility and authoritative CFG result semantics.
 
 `SCAF-ROB` **Defines Framework Semantics / Obligation** for Fault/Error/Failure meaning, health determination, containment/degradation/recovery and resilience response when a CFG-controlled condition becomes robustness-significant. CFG **SHALL NOT** re-own the resilience response merely because configuration failure is its trigger.
 
@@ -295,7 +295,7 @@ A configuration artifact, record, database entry, NVM location, file, registry i
 
 **Target:** Framework Normative Invariant
 
-CFG item/version identity is distinct from OBS evidence-item identity, LIFE Boot Incarnation, RUN Operational Incarnation, INT Protocol/Connection Session Identity and TIME Epoch/Time Domain. `SCAF-CFG` may trace/correlate those source identities where configuration applicability depends on them but **SHALL NOT** redefine or merge them.
+CFG item/version identity is distinct from OBS evidence-item identity, LIFE Boot Incarnation, RUN Operational Incarnation, INT Protocol/Connection Session Identity and TIME Epoch/Time Domain. A physical/storage locator such as an address, file path, record key, database key or NVM location may participate in a project identity scheme but **SHALL NOT** by itself establish semantic CFG item/version identity. `SCAF-CFG` may trace/correlate source identities where configuration applicability depends on them but **SHALL NOT** redefine or merge them.
 
 ### `SCAF-CFG-038` — CFG / PROF / Project Realization mechanism boundary
 

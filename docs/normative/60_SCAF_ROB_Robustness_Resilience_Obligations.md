@@ -1,6 +1,6 @@
 # SCAF-ROB — Robustness & Resilience Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-ROB`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -11,7 +11,7 @@
 
 `SCAF-ROB` **Defines Framework Semantics / Obligation** governing project interpretation of material abnormal/failure/health conditions and required resilience outcomes where the concern is Applicable. The **Project Design Authority Defines Project Instance / Decision** for the actual project failure classifications, health criteria, containment/tolerance/degradation/recovery decisions, mappings to the RUN operational-state model and project-specific resilience values.
 
-`SCAF-ROB` consumes controlled context/structure/contract/timing/state/lifecycle/configuration/security inputs from other concerns. It does not redefine `SCAF-CTX` Service consequence, `SCAF-ARCH` structural/Domain boundaries, `SCAF-INT` contract semantics, `SCAF-TIME` measurable limits, `SCAF-RUN` operational-state representation, `SCAF-LIFE` lifecycle transaction semantics, `SCAF-CFG` persistent-state authority or `SCAF-OBS` evidence representation/preservation/export.
+`SCAF-ROB` consumes controlled context/structure/contract/timing/state/lifecycle/configuration/security inputs from other concerns. It does not redefine `SCAF-CTX` Service consequence, `SCAF-ARCH` structural/Domain boundaries, `SCAF-INT` contract semantics, `SCAF-TIME` measurable limits, `SCAF-RUN` operational-state representation, `SCAF-LIFE` lifecycle transaction semantics, `SCAF-CFG` authoritative configuration/persistent-state source semantics or `SCAF-OBS` evidence representation/preservation/export.
 
 ## 2. L1 Authority Boundary
 
@@ -173,7 +173,7 @@ Where failure of a boot, reset, power, update, activation or rollback-related li
 
 **Target:** Project-Applicable Obligation
 
-Where invalid, corrupt, unavailable, inconsistent or otherwise unusable controlled configuration/persistent operational state can materially affect robustness, the project **SHALL** define the required health/failure interpretation and resilience outcome while preserving `SCAF-CFG` authority for the configuration/persistence source, ownership, version and migration semantics.
+Where invalid, corrupt, unavailable, inconsistent or otherwise unusable controlled configuration/persistent operational state can materially affect robustness, the project **SHALL** define the required health/failure interpretation and resilience outcome while preserving `SCAF-CFG` authority for the PDA-assigned authoritative source responsibility and configuration/persistent-state value/version/migration/commit semantics.
 
 ### `SCAF-ROB-019` — Robustness observability requirement
 
@@ -257,7 +257,7 @@ The **Project Design Authority Defines Project Instance / Decision** for the act
 
 **Target:** Framework Normative Invariant
 
-`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent operational-state ownership, authority, validation, version/migration, atomic update/commit and persistence semantics.
+`SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent operational-state authoritative-source/value/validity/version/migration/commit and persistence semantics.
 
 `SCAF-ROB` **Defines Framework Semantics / Obligation** for required robustness/resilience behavior when controlled configuration/persistent state is invalid, corrupt, unavailable or inconsistent. ROB **SHALL NOT** become the configuration source authority.
 
@@ -317,7 +317,7 @@ The following table is informative and does not create additional normative requ
 - `SCAF-RUN` **Defines Framework Semantics / Obligation** for operational-state representation, transition/result/current-state consistency and Operational Incarnation.
 - `SCAF-ROB` **Defines Framework Semantics / Obligation** for fault/error/failure, health determination, propagation/containment, degradation and resilience response.
 - `SCAF-LIFE` **Defines Framework Semantics / Obligation** for boot/power/reset/update/activation/rollback lifecycle transactions/states and Boot Incarnation.
-- `SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent-state source authority and lifecycle.
+- `SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent-state authoritative-source/value/version/migration/commit semantics.
 - `SCAF-OBS` **Defines Framework Semantics / Obligation** for observation, representation, preservation and export of health/incident evidence.
 - `SCAF-SEC` **Defines Framework Semantics / Obligation** for the SCAF security architecture interface/robustness boundary and consumes applicable security-authority objectives/constraints; it does not replace external security risk authority.
 - `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for verification/evidence-sufficiency semantics; Project Verification / Assurance Authority **Verifies** ROB obligations against the Applicable Satisfaction Basis.

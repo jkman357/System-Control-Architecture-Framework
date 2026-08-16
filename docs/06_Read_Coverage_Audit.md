@@ -228,3 +228,12 @@ The localized OBS cleanup removes a framework-self rule from `SCAF-OBS-006` Proj
 The CFG text is derived from the frozen SCAF Configuration & Persistent Operational State authority home and controlled donor mapping evidence. It does **not** bulk-promote configuration file formats, schemas, validators, EEPROM/FRAM/flash layouts, databases, registries, migration engines, journaling, CRC/checksum, synchronization protocols or other L3/L4 realization wording; Draft/RC/mixed-maturity and executable-only donor semantics remain subject to donor-specific promotion/deep-audit gates.
 
 Review focus for this RC is whether CFG cleanly owns configuration/persistent-operational-state source/classification/identity/provenance/default/validity/version/migration/commit/rollback/calibration/synchronization semantics without re-owning OBS evidence, LIFE lifecycle transaction/rollback, RUN current operational state, INT exchange/session, TIME measurable properties, ROB resilience response, ARCH structural boundaries, ASSUR evidence sufficiency or external safety/security/risk authority; and whether CFG Project-Applicable Obligations remain Framework-Scan scannable before the integrated L1/L2 consolidation gate.
+
+
+## 16. v0.0.2rc11 Integrated L1/L2 Consolidation Coverage
+
+This release adds no new concern tranche and does not reopen taxonomy. It performs the targeted pre-SEC consolidation requested by the independent rc10 CFG review after CFG was judged Stable after minor cleanup and the integrated backbone was judged Stable after targeted consolidation.
+
+The consolidation narrows CFG/ROB corruption-versus-recovery terminology, completes derived-value provenance, normalizes CFG Project-Applicable boundary notes, hardens CFG semantic identity against physical storage locators, tightens CFG-to-OBS observability handoff semantics, adds explicit INT-valid/delivered versus CFG-accepted/committed/activated separation, and normalizes older CFG forward references across RUN/ROB/LIFE/OBS.
+
+No new donor class is promoted by these edits. The release continues to exclude schema, validator, CI, L3 mechanism catalogs, L4 implementation guidance and `SCAF-SEC` normative authoring. Review focus is whether the existing CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG L1/L2 backbone is integrated-clean enough to open the SEC tranche without taxonomy reopen.

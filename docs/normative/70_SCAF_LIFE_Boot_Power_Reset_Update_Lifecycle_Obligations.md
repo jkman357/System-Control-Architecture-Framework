@@ -1,6 +1,6 @@
 # SCAF-LIFE — Boot, Power, Reset & Update Lifecycle Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-LIFE`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -11,7 +11,7 @@
 
 The **Project Design Authority Defines Project Instance / Decision** for the actual project lifecycle transaction model, lifecycle states/results, completion/commit/abort criteria, boot/reset/power/update coordination, activation/rollback decisions, Boot Incarnation mapping and project-specific lifecycle values, constrained by applicable external safety/security/regulatory/risk authority inputs.
 
-`SCAF-LIFE` consumes controlled structural, contract, temporal, operational-state, resilience, configuration and observability inputs from other concerns. It does not redefine `SCAF-ARCH` structural allocation, `SCAF-INT` request/session/compatibility semantics, `SCAF-TIME` measurable timing properties, `SCAF-RUN` operational-state/readiness semantics, `SCAF-ROB` failure/health/resilience response, `SCAF-CFG` persistent configuration/state source authority or `SCAF-OBS` evidence representation/preservation/export.
+`SCAF-LIFE` consumes controlled structural, contract, temporal, operational-state, resilience, configuration and observability inputs from other concerns. It does not redefine `SCAF-ARCH` structural allocation, `SCAF-INT` request/session/compatibility semantics, `SCAF-TIME` measurable timing properties, `SCAF-RUN` operational-state/readiness semantics, `SCAF-ROB` failure/health/resilience response, `SCAF-CFG` authoritative configuration/persistent-state source semantics or `SCAF-OBS` evidence representation/preservation/export.
 
 ## 2. L1 Authority Boundary
 
@@ -23,7 +23,7 @@ The **Project Design Authority Defines Project Instance / Decision** for the act
 - boot completion and controlled handoff to `SCAF-RUN` readiness/operational-state evaluation;
 - Boot Incarnation / Boot Generation identity and its distinction from RUN Operational Incarnation, INT Protocol/Connection Session Identity and TIME Epoch/Time Domain;
 - project reset classification/cause semantics and reset-domain consequence where material;
-- retained-state validity requirements across applicable lifecycle transitions while preserving `SCAF-CFG` and `SCAF-OBS` authority;
+- retained-state validity requirements across applicable lifecycle transitions while preserving `SCAF-CFG` source/value/version semantics and `SCAF-OBS` evidence authority;
 - power lifecycle and brownout-relevant lifecycle outcome semantics where material;
 - update transaction coordination, compatibility/precondition inputs, activation and rollback semantics;
 - lifecycle transaction atomicity, interrupted-transaction and resume/rollback outcome semantics where Applicable;
@@ -33,7 +33,7 @@ The **Project Design Authority Defines Project Instance / Decision** for the act
 
 The **Project Design Authority Defines Project Instance / Decision** for actual lifecycle transaction/state models, lifecycle authorities/responsibilities, completion and activation criteria, rollback/resume policies, reset classifications, update coordination and Boot Incarnation rules. External safety/security/regulatory/risk authorities remain source authorities for their own controlled objectives/constraints/acceptance basis.
 
-`SCAF-LIFE` does not define universal lifecycle state names, a universal boot/update state machine, a required A/B image layout, universal reset taxonomy values, a universal rollback algorithm, RUN operational readiness, ROB failure response, CFG persistent-state ownership, OBS recorder/storage mechanisms or universal security authorization mechanisms.
+`SCAF-LIFE` does not define universal lifecycle state names, a universal boot/update state machine, a required A/B image layout, universal reset taxonomy values, a universal rollback algorithm, RUN operational readiness, ROB failure response, CFG authoritative persistent-state source semantics, OBS recorder/storage mechanisms or universal security authorization mechanisms.
 
 ## 3. Project-Applicable Obligations
 
@@ -109,7 +109,7 @@ Where reset affects only part of the System or coordinated participants have dif
 
 Where RAM, persistent operational state, configuration, calibration, queued work, session-related state, incident evidence or other retained information may survive a lifecycle transition, the project **SHALL** define the **lifecycle-transition consumption-eligibility condition** for using that retained information after the transition, using the controlled validity/provenance/version semantics of the applicable source authority, and define the controlled consequence when consumption eligibility cannot be established.
 
-**Boundary note (informative):** `SCAF-CFG` retains persistent configuration/state source/version/migration authority; `SCAF-OBS` retains evidence identity/provenance/preservation semantics; `SCAF-INT` retains session identity/contract semantics; `SCAF-RUN` retains operational-state semantics. LIFE defines only the lifecycle-transition consumption-eligibility decision and handoff context.
+**Boundary note (informative):** `SCAF-CFG` retains PDA-assigned authoritative configuration/persistent-state source responsibility and value/version/migration/commit semantics; `SCAF-OBS` retains evidence identity/provenance/preservation semantics; `SCAF-INT` retains session identity/contract semantics; `SCAF-RUN` retains operational-state semantics. LIFE defines only the lifecycle-transition consumption-eligibility decision and handoff context.
 
 ### `SCAF-LIFE-011` — Power lifecycle / brownout-relevant semantics
 
@@ -241,7 +241,7 @@ A material change to lifecycle transaction/state semantics, boot/reset/power/upd
 
 **Target:** Framework Normative Invariant
 
-`SCAF-CFG` **Defines Framework Semantics / Obligation** for controlled configuration/persistent operational-state ownership, authority, defaults, validation, version/migration, commit/rollback/corruption-recovery and persistence semantics.
+`SCAF-CFG` **Defines Framework Semantics / Obligation** for controlled configuration/persistent operational-state authoritative-source/value semantics, defaults, validity, version/migration, commit/CFG-side rollback, corruption/loss interpretation, CFG source-state restoration/result and persistence semantics.
 
 `SCAF-LIFE` **Defines Framework Semantics / Obligation** for lifecycle transition/transaction conditions, lifecycle activation/rollback and retained-state validity context that consume those controlled CFG decisions. `SCAF-CFG` retains configuration/persistent-state commit/rollback/migration semantics; `SCAF-LIFE` retains boot/update lifecycle activation/rollback transaction semantics. Neither concern **SHALL** take over the other's source authority merely because one project transaction coordinates both.
 
@@ -316,7 +316,7 @@ The following table is informative and does not create additional normative requ
 - `SCAF-RUN` **Defines Framework Semantics / Obligation** for operational readiness/state/transition semantics after LIFE handoff.
 - `SCAF-ROB` **Defines Framework Semantics / Obligation** for failure/health/resilience response when LIFE-controlled operations fail.
 - `SCAF-LIFE` **Defines Framework Semantics / Obligation** for boot/power/reset/update/activation/rollback lifecycle transaction/state/result semantics and Boot Incarnation.
-- `SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent-state source/ownership/version/migration/persistence semantics.
+- `SCAF-CFG` **Defines Framework Semantics / Obligation** for configuration/persistent-state authoritative-source/value/version/migration/commit/persistence semantics.
 - `SCAF-OBS` **Defines Framework Semantics / Obligation** for lifecycle evidence observation/provenance/correlation/preservation/export.
 - `SCAF-SEC` **Defines Framework Semantics / Obligation** for the SCAF security architecture interface/robustness boundary and consumes applicable security-authority objectives/constraints; it does not replace external security risk authority.
 - `SCAF-ASSUR` **Defines Framework Semantics / Obligation** for verification/evidence-sufficiency semantics; Project Verification / Assurance Authority **Verifies** LIFE obligations against the Applicable Satisfaction Basis.

@@ -1,6 +1,6 @@
 # SCAF-TIME — Timing, Concurrency, Capacity & Resource Margin Obligations
 
-**Release:** v0.0.2rc10  
+**Release:** v0.0.2rc11  
 **Concern:** `SCAF-TIME`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

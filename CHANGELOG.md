@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.0.2rc11 — 2026-08-16
+
+Integrated L1/L2 consolidation after independent rc10 review accepted CFG as Stable after minor cleanup and judged the CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG backbone Stable after targeted consolidation. No new concern tranche is added.
+
+### Changed
+
+- narrowed broad CFG `corruption recovery` wording to corruption/loss/unavailability interpretation, CFG source-state disposition/restoration eligibility and authoritative resulting CFG state, while preserving ROB recovery/resilience-response authority;
+- completed `SCAF-CFG-016` derived-value provenance with source identity, version/context, derivation basis, resulting-value provenance and invalid/unknown/incompatible-input consequence;
+- normalized framework-boundary/non-prescription prose in `SCAF-CFG-006`, `SCAF-CFG-010`, `SCAF-CFG-018` and `SCAF-CFG-022` as informative boundary notes;
+- hardened CFG item/version identity so physical storage locators do not by themselves establish semantic CFG identity;
+- rewrote `SCAF-CFG-023` as a CFG-source-fact observability need traced to OBS, rather than CFG defining OBS evidence semantics;
+- added explicit INT-to-CFG hardening: INT-valid/delivered/decoded configuration data does not by itself establish CFG acceptance, commit, activation/application or authoritative CFG source state;
+- normalized older RUN/ROB/LIFE/OBS forward references to PDA-assigned authoritative CFG source responsibility and CFG source/value/version/migration/commit semantics;
+- synchronized README, Authority Kernel release label and read-coverage positioning for the pre-SEC consolidation gate;
+- retained the frozen v0.0.1 architecture baseline and existing concern taxonomy.
+
+### Deliberately Not Added
+
+- `SCAF-SEC` normative tranche;
+- new top-level taxonomy or core metamodel entities;
+- L3 pattern/mechanism catalog;
+- L4 implementation/verification guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc10 — 2026-08-16
 
 SCAF-CFG controlled L1/L2 normative tranche after independent rc09 review cleared the OBS architecture gate and allowed CFG authoring to begin with localized OBS cleanup.
