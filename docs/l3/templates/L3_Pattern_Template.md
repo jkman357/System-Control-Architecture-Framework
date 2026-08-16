@@ -1,6 +1,6 @@
 # SCAF L3 Pattern Template
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Status:** Authoring template for additional Candidate entries
 
 > **Template only — new Pattern IDs may be assigned only through the controlled catalog-development/review process. Published IDs are stable and shall not be reused.**

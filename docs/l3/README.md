@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** Initial representative L3 pattern tranche; all entries Candidate / M1
+**Status:** Initial representative L3 pattern tranche trace-cleanup RC; all entries remain Candidate / M1
 
 ## 1. Purpose
 
@@ -29,21 +29,20 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc03 Scope
+## 2. v0.0.3rc04 Scope
 
-The v0.0.3rc02 focused closure review returned `L3 CATALOG-CONTRACT CLOSURE GATE: YES`. v0.0.3rc03 therefore begins the first deliberately small representative pattern tranche.
+The independent v0.0.3rc03 initial-pattern-tranche review returned `INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP`, with no Critical or Major finding and four localized Minor trace-contract findings (`R3-01` through `R3-04`).
 
-This RC introduces seven permanent pattern identities, all with `Catalog Status: Candidate` and `Maturity: M1 — Structured`:
+v0.0.3rc04 is therefore a narrow trace-cleanup RC. It keeps the same seven published permanent identities and keeps every entry at `Catalog Status: Candidate` and `Maturity: M1 — Structured`. It does **not** add a second tranche or promote any pattern.
 
-- `SCAF-PAT-SUP-001` — Heartbeat / Liveness Supervision;
-- `SCAF-PAT-SUP-002` — Independent Watchdog with Escalation;
-- `SCAF-PAT-REC-001` — Bounded Retry with Escalation;
-- `SCAF-PAT-COM-001` — Reconnect plus State Reconciliation;
-- `SCAF-PAT-PST-001` — Atomic Dual-Copy Persistent State;
-- `SCAF-PAT-LCM-001` — Transactional Update with Rollback;
-- `SCAF-PAT-EVD-001` — Pre/Post-Trigger Retained Incident Evidence Ring.
+Localized cleanup is limited to:
 
-These entries are not yet `Available`. The tranche exists to stress-test the accepted taxonomy, metadata, trace, primary-family, composition, provenance and L3/L4 boundary rules before catalog expansion.
+- `SCAF-PAT-SUP-002` — remove the overstated `SCAF-ROB-032` Primary trace and keep LIFE reset semantics as Constraint Inputs rather than Supporting Realization;
+- `SCAF-PAT-REC-001` — add the applicable INT-owned duplicate/order and conditional session-incarnation constraints for Interaction retries;
+- `SCAF-PAT-LCM-001` — add the explicit `SCAF-RUN-009` LIFE-to-RUN readiness handoff constraint;
+- `SCAF-PAT-EVD-001` — add the explicit `SCAF-OBS-009` causal-inference claim-basis constraint.
+
+The other three patterns remain semantically unchanged apart from current-development-release labeling. The next gate is a focused independent closure review of `R3-01` through `R3-04` plus regression checks across all seven published identities.
 
 ## 3. Files
 
@@ -64,7 +63,7 @@ If L3 work exposes a genuine architecture-level contradiction in the frozen base
 
 ## 5. Closed Gates
 
-The following remain outside v0.0.3rc03:
+The following remain outside v0.0.3rc04:
 
 - promotion of Candidate patterns to `Available` before independent tranche review;
 - bulk pattern expansion;

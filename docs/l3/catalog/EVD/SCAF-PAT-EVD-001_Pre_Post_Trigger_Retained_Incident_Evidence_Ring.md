@@ -1,6 +1,6 @@
 # SCAF-PAT-EVD-001 — Pre/Post-Trigger Retained Incident Evidence Ring
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Pattern Family:** `EVD` — Evidence & Incident Recording  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Candidate  
@@ -20,7 +20,7 @@
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-OBS-016`, `SCAF-OBS-017`, `SCAF-OBS-018` |
 | Supporting L2 Trace | `SCAF-OBS-010`, `SCAF-OBS-011`, `SCAF-OBS-012`, `SCAF-OBS-019`, `SCAF-OBS-020`, `SCAF-OBS-021` |
-| Constraint Inputs | `SCAF-OBS-013`, `SCAF-TIME-002`, `SCAF-TIME-011`, `SCAF-LIFE-010` |
+| Constraint Inputs | `SCAF-OBS-009`, `SCAF-OBS-013`, `SCAF-TIME-002`, `SCAF-TIME-011`, `SCAF-LIFE-010` |
 | Profile Facets | Embedded/PC/SoC; volatile, retained or persistent evidence tiers; local or multi-source incident evidence |
 | Provenance / Reference Basis | Frozen SCAF obligation-derived synthesis plus controlled reference to supplemental `Embedded_Incident_Crash_Recorder_Framework` v1.0.1rc03 (RC donor; no API/layout promotion) |
 
@@ -64,6 +64,7 @@ The pattern is not sufficient where the required source data never exists at the
 
 ### 5.3 Constraint Inputs
 
+- `SCAF-OBS-009` — any causal/root-cause or other derived-inference claim using recorder evidence must consume the project-controlled causal-inference basis and evidence limitations; the recorder preserves evidence and uncertainty but does not establish causality by timestamp proximity or recorder order.
 - `SCAF-OBS-013` — recorder overhead/observer effect must remain within project-controlled source concern/TIME constraints.
 - `SCAF-TIME-002` — evidence chronology uses a controlled timebase identity/authority.
 - `SCAF-TIME-011` — RAM/storage/CPU/channel capacity and margin constrain evidence depth/rate.

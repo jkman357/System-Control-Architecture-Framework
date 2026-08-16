@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc03  
+**Version:** v0.0.3rc04  
 **Status:** L3 Pattern / Mechanism Catalog Architecture RC  
 **Date:** 2026-08-16
 
@@ -37,31 +37,23 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.3rc03 L3 Pattern / Mechanism Catalog Position
+## v0.0.3rc04 L3 Pattern / Mechanism Catalog Position
 
-The v0.0.3rc02 **focused independent catalog-contract closure review passed** with:
+The independent v0.0.3rc03 initial-pattern-tranche review returned:
 
 ```text
-L3 CATALOG-CONTRACT CLOSURE GATE: YES
+INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP
 ```
 
-The review confirmed all rc01 Minor findings and the CTX manifest defect resolved, found no Critical/Major/Minor regression, verified the frozen v0.0.2 `docs/normative/` baseline byte-stable, and explicitly judged the next RC safe to begin a small representative `SCAF-PAT-*` tranche. The only remaining rc02 review observation was Trivial `R2-01`, a root-README gate-wording mismatch; this rc03 section closes that release-hygiene item by describing the focused closure result and the now-open initial-pattern gate precisely.
+The review verified the frozen v0.0.2 normative tree byte-stable at exactly 294 unique normative requirement IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants, confirmed exactly seven valid published `SCAF-PAT-*` identities, cleared `SCAF-PAT-COM-001` as a defensible immutable `COM` identity, and found no Critical or Major issue. Four localized Minor trace-contract findings (`R3-01` through `R3-04`) remained.
 
-v0.0.3rc03 therefore introduces the first seven permanent L3 pattern identities, all deliberately held at **Catalog Status: Candidate / Maturity: M1 — Structured**:
+v0.0.3rc04 is a **narrow initial-tranche trace-cleanup RC**. The seven published IDs and their primary families are unchanged, and every pattern remains **Catalog Status: Candidate / Maturity: M1 — Structured**. No new pattern is added and no pattern is promoted.
 
-- `SCAF-PAT-SUP-001` — Heartbeat / Liveness Supervision;
-- `SCAF-PAT-SUP-002` — Independent Watchdog with Escalation;
-- `SCAF-PAT-REC-001` — Bounded Retry with Escalation;
-- `SCAF-PAT-COM-001` — Reconnect plus State Reconciliation;
-- `SCAF-PAT-PST-001` — Atomic Dual-Copy Persistent State;
-- `SCAF-PAT-LCM-001` — Transactional Update with Rollback;
-- `SCAF-PAT-EVD-001` — Pre/Post-Trigger Retained Incident Evidence Ring.
-
-This is a **representative architecture stress-test tranche**, not bulk catalog expansion and not promotion to `Available`. `SCAF-PAT-COM-001` intentionally stresses the COM/REC/SYN cross-family boundary while preserving one immutable primary identity based on principal reusable mechanism intent.
+The localized changes are limited to correcting the SUP-002 ROB/LIFE trace classification, adding INT duplicate/order/session constraints to REC-001 where applicable, adding the RUN readiness-handoff constraint to LCM-001, and adding the OBS causal-inference constraint to EVD-001.
 
 The frozen `docs/normative/` files remain v0.0.2 and are not modified in place. L3 remains framework-side `SCAF-PROF` realization/profile content subordinate to frozen concern authorities. Pattern publication/selection does not by itself satisfy an L2 obligation, and Project Design Authority retains the actual project-specific mechanism selection/configuration decision.
 
-L4 implementation/verification guidance, machine-readable schema, validator, CI, code generation and other executable-governance work remain closed behind later gates. The next immediate gate is an **independent review of the seven Candidate/M1 pattern entries and tranche-level contract conformance** before any pattern is promoted to `Available` or the catalog expands materially.
+L4 implementation/verification guidance, machine-readable schema, validator, CI, code generation and other executable-governance work remain closed behind later gates. The next immediate gate is a **focused independent rc04 closure review of R3-01 through R3-04 plus regression checks across all seven published identities** before any M2/`Available` promotion decision or material catalog expansion.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -317,7 +309,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.3rc03.**
+**No CI is included in v0.0.3rc04.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -364,16 +356,17 @@ v0.0.2       # frozen L1/L2 baseline
 v0.0.3rc01   # L3 catalog architecture / contract RC
 v0.0.3rc02   # L3 catalog contract cleanup / closure RC
 v0.0.3rc03   # first representative Candidate/M1 L3 pattern tranche
+v0.0.3rc04   # localized initial-tranche trace cleanup
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.3rc03 is the **initial representative L3 Pattern / Mechanism tranche** opened only after the v0.0.3rc02 focused independent review returned:
+v0.0.3rc04 is the **localized initial-pattern-tranche trace-cleanup RC** after the v0.0.3rc03 independent review returned:
 
 ```text
-L3 CATALOG-CONTRACT CLOSURE GATE: YES
+INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP
 ```
 
 Frozen and unchanged upstream:
@@ -386,20 +379,19 @@ Frozen and unchanged upstream:
 
 Open for controlled development in this RC:
 
-- the seven published `SCAF-PAT-*` identities listed in the v0.0.3rc03 release position;
+- localized closure of `R3-01` through `R3-04` in `SCAF-PAT-SUP-002`, `SCAF-PAT-REC-001`, `SCAF-PAT-LCM-001` and `SCAF-PAT-EVD-001`;
+- regression checking of all seven published immutable Pattern IDs and primary families;
 - Candidate/M1 pattern metadata and technology-neutral mechanism architecture;
-- many-to-many L2 trace and cross-concern composition stress-testing;
-- primary-family identity validation, especially the COM/REC/SYN overlap case;
-- pattern provenance and L3/L4 boundary review.
+- many-to-many L2 trace precision and cross-concern boundary review.
 
-The immediate gate is an **independent initial-pattern tranche review**. No entry should be promoted from `Candidate` to `Available`, and no broad second tranche should be added, until review confirms that the seven entries preserve frozen L2 authority, Project Design Authority selection/configuration semantics, valid alternative mechanisms, accurate trace relations, stable pattern identity and the L3/L4 boundary.
+The immediate gate is a **focused independent rc04 trace-closure review**. No entry should be promoted from `Candidate` to `Available` or M1 to M2, and no broad second tranche should be added, until the four Minor findings are confirmed Resolved and no blocking regression is found.
 
 Still closed/gated:
 
 - modification of frozen v0.0.2 normative files in place;
 - top-level taxonomy or core-metamodel reopening without a genuine architecture-level contradiction;
-- promotion of the seven rc03 entries to `Available` before tranche review;
-- broad L3 pattern expansion before the initial-tranche review gate;
+- status/maturity promotion before the rc04 focused closure review;
+- broad L3 pattern expansion before the trace-closure gate;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation or verification rulebooks;
 - machine-readable pattern schema / authority registry;
 - validator, generated reverse-trace index, generated checklist or CI enforcement;

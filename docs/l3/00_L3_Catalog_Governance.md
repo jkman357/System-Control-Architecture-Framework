@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -204,7 +204,7 @@ Those belong to later L4 implementation / verification guidance or project-speci
 
 ## 11. Initial Development Priority
 
-The catalog-contract gate has passed and v0.0.3rc03 instantiates the first deliberately small representative tranche across:
+The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc04 across:
 
 1. `SUP` — supervision / liveness / progress detection;
 2. `REC` — bounded retry / escalation;
@@ -248,3 +248,25 @@ Before any entry is promoted to `Available` or the catalog expands materially, i
 - provenance, including the supplemental incident-recorder RC donor, does not imply uncontrolled donor promotion;
 - all seven IDs are unique, stable and consistent with the catalog index;
 - the frozen v0.0.2 normative tree remains byte-stable.
+
+
+## 13. v0.0.3rc04 Initial-Tranche Trace-Closure Gate
+
+The independent v0.0.3rc03 tranche review returned:
+
+```text
+INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP
+```
+
+It found no Critical or Major issue, cleared the `SCAF-PAT-COM-001` COM/REC/SYN identity stress case, and identified four localized Minor trace-contract defects (`R3-01` through `R3-04`). v0.0.3rc04 therefore preserves all seven published identities, families, Candidate status and M1 maturity while correcting only those trace classifications/inputs.
+
+The rc04 focused closure review shall confirm:
+
+- `R3-01`: `SCAF-PAT-SUP-002` no longer overstates `SCAF-ROB-032` as watchdog Primary realization and LIFE reset semantics remain consumed Constraint Inputs rather than watchdog-owned reset realization;
+- `R3-02`: `SCAF-PAT-REC-001` consumes applicable `SCAF-INT-007` duplicate/order semantics for repeated/interleaved Interaction exchanges and, where relevant, `SCAF-INT-010` session-incarnation semantics without transferring INT authority into REC;
+- `R3-03`: `SCAF-PAT-LCM-001` explicitly consumes `SCAF-RUN-009` for LIFE-to-RUN readiness handoff without conflating lifecycle activation with operational readiness;
+- `R3-04`: `SCAF-PAT-EVD-001` explicitly consumes `SCAF-OBS-009` for causal/derived-inference claim basis and does not turn recorder chronology into root-cause authority;
+- all seven published IDs, primary families, Candidate/M1 states and index counts remain stable;
+- no generic L2→L3 `satisfies` shortcut, authority inversion, L4 detail, schema/validator/CI/code-generation/executable-governance work or frozen normative edit is introduced.
+
+A successful rc04 closure review may permit the **next RC** to record successful architecture review and make explicit, entry-by-entry decisions about M2 advancement and/or `Available` status. This gate does not itself auto-promote any pattern and does not authorize uncontrolled bulk catalog expansion.

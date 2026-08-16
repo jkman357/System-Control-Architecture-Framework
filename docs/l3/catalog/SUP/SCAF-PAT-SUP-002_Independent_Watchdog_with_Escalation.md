@@ -1,6 +1,6 @@
 # SCAF-PAT-SUP-002 — Independent Watchdog with Escalation
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Pattern Family:** `SUP` — Supervision & Detection  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  
@@ -18,8 +18,8 @@
 | Catalog Status | Candidate |
 | Maturity | M1 — Structured |
 | Introduced In | v0.0.3rc03 |
-| Primary L2 Trace | `SCAF-ROB-006`, `SCAF-ROB-032` |
-| Supporting L2 Trace | `SCAF-ROB-005`, `SCAF-ROB-011`, `SCAF-LIFE-008`, `SCAF-LIFE-009` |
+| Primary L2 Trace | `SCAF-ROB-006` |
+| Supporting L2 Trace | `SCAF-ROB-005`, `SCAF-ROB-011` |
 | Constraint Inputs | `SCAF-TIME-006`, `SCAF-LIFE-008`, `SCAF-LIFE-009` |
 | Profile Facets | MCU/SoC/PC/distributed node; supervisor may be scheduling-, process-, reset-domain- or hardware-independent |
 | Provenance / Reference Basis | Frozen SCAF obligation-derived architecture synthesis; watchdog mechanism explicitly left to L3 by `SCAF-ROB-030` |
@@ -52,14 +52,11 @@ A watchdog expiry is evidence of a violated supervision condition; it is not aut
 ### 5.1 Primary Realization Candidate
 
 - `SCAF-ROB-006` — provides a candidate monitor/supervisor architecture whose own availability/independence and invalid-output consequences must be explicitly considered.
-- `SCAF-ROB-032` — provides a controlled transition from repeated/missed progress observation to a bounded escalation rather than indefinite retry or silent continuation.
 
 ### 5.2 Supporting Realization
 
 - `SCAF-ROB-005` — can make loss of progress detectable when the project requires detection.
 - `SCAF-ROB-011` — watchdog escalation may initiate a project-selected recovery/repair mechanism with explicit completion criteria.
-- `SCAF-LIFE-008` — where escalation causes reset, the project-defined reset class/cause semantics remain LIFE-controlled.
-- `SCAF-LIFE-009` — where reset scope is partial or coordinated, the reset-domain consequence remains a project lifecycle decision.
 
 ### 5.3 Constraint Inputs
 
@@ -82,7 +79,7 @@ A watchdog expiry is evidence of a violated supervision condition; it is not aut
 
 A supervising responsibility, placed in a project-defined failure context sufficiently independent from the supervised execution, observes a controlled progress/liveness indication. The supervised context cannot indefinitely defer the supervisory decision merely by remaining alive without required progress. If the required observation is not established within the project-defined bound, the watchdog produces a controlled supervision-expiry result and invokes or authorizes the PDA-selected escalation path.
 
-The escalation path is separate from the watchdog identity: the same supervision mechanism may lead to restart, reset, isolation, failover, degraded operation or another project-defined consequence.
+The escalation path is separate from the watchdog identity: the same supervision mechanism may lead to restart, reset, isolation, failover, degraded operation or another project-defined consequence. If that downstream recovery path itself performs retry, repeated recovery or repeated escalation, the applicable `SCAF-ROB-032` termination semantics are evaluated there; the watchdog supervision mechanism does not acquire retry/recovery authority by itself.
 
 ## 8. Variants
 

@@ -1,6 +1,6 @@
 # SCAF-PAT-REC-001 — Bounded Retry with Escalation
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Pattern Family:** `REC` — Recovery & Reintegration  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  
@@ -20,7 +20,7 @@
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-ROB-032`, `SCAF-ROB-011` |
 | Supporting L2 Trace | `SCAF-ROB-015`, `SCAF-ROB-016`, `SCAF-ROB-019` |
-| Constraint Inputs | `SCAF-TIME-006`, `SCAF-TIME-011`, `SCAF-TIME-012`, applicable `SCAF-INT-013` outcomes when retry follows an Interaction failure |
+| Constraint Inputs | `SCAF-TIME-006`, `SCAF-TIME-011`, `SCAF-TIME-012`; conditional `SCAF-INT-007` where retry repeats/interleaves Interaction exchanges; conditional `SCAF-INT-010` where retry continuity crosses/reuses connection sessions; applicable `SCAF-INT-013` outcomes when retry follows an Interaction failure |
 | Profile Facets | Local or distributed recovery; synchronous/asynchronous Interaction; bare metal/RTOS/process/service |
 | Provenance / Reference Basis | Frozen SCAF obligation-derived architecture synthesis; retry mechanism explicitly left to L3 by `SCAF-ROB-030` |
 
@@ -63,6 +63,8 @@ Do not use retry as an automatic response where the operation is not idempotent 
 - `SCAF-TIME-006` — retry delay, total recovery deadline and related temporal limits are project values.
 - `SCAF-TIME-011` — CPU, energy, storage, channel or other retry resource budget/margin may constrain the pattern.
 - `SCAF-TIME-012` — overload/starvation bounds may constrain retry rate or concurrent recovery.
+- `SCAF-INT-007` — where retry repeats or interleaves Interaction exchanges, project-defined duplicate, missing, reordered or superseded semantics constrain whether repetition is semantically legal and how side effects are interpreted.
+- `SCAF-INT-010` — where retry continuity crosses reconnection, replacement or reuse of a connection/session context, project-defined session/incarnation semantics constrain whether retry history and exchanges remain applicable.
 - `SCAF-INT-013` — where retry follows an Interaction result, the contract-level meaning of the negative/unsupported result constrains whether retry is semantically valid.
 
 ## 6. Required PDA Decisions
@@ -110,7 +112,7 @@ The pattern separates **retry eligibility**, **retry budget** and **escalation c
 
 ## 11. Selection Consequences
 
-Selection creates explicit retry state, budget and escalation decisions and may add timing/resource/evidence obligations. Interfaces may need duplicate/idempotency or correlation semantics when retry repeats an exchange.
+Selection creates explicit retry state, budget and escalation decisions and may add timing/resource/evidence obligations. Where retry repeats or interleaves an Interaction exchange, the project must consume the applicable INT-owned duplicate/order/operation semantics; where continuity crosses a connection-session boundary, it must also consume the applicable session/incarnation semantics. The retry pattern does not author those Interface meanings.
 
 ## 12. Composition Relations
 

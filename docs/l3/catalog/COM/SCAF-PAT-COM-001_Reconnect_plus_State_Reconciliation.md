@@ -1,6 +1,6 @@
 # SCAF-PAT-COM-001 — Reconnect plus State Reconciliation
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Pattern Family:** `COM` — Interaction Resilience  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Candidate  

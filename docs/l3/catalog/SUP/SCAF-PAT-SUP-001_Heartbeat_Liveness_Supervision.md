@@ -1,6 +1,6 @@
 # SCAF-PAT-SUP-001 — Heartbeat / Liveness Supervision
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Pattern Family:** `SUP` — Supervision & Detection  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  

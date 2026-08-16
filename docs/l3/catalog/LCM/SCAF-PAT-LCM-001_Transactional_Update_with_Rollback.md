@@ -1,6 +1,6 @@
 # SCAF-PAT-LCM-001 — Transactional Update with Rollback
 
-**Development Release:** v0.0.3rc03  
+**Development Release:** v0.0.3rc04  
 **Pattern Family:** `LCM` — Lifecycle Management  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Candidate  
@@ -20,7 +20,7 @@
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-LIFE-015`, `SCAF-LIFE-017` |
 | Supporting L2 Trace | `SCAF-LIFE-012`, `SCAF-LIFE-014`, `SCAF-LIFE-016`, `SCAF-LIFE-018`, `SCAF-LIFE-020`, `SCAF-LIFE-021`, `SCAF-CFG-021` |
-| Constraint Inputs | `SCAF-CFG-008`, `SCAF-CFG-009`, `SCAF-CFG-010`, applicable `SCAF-SEC-010`, `SCAF-SEC-022` |
+| Constraint Inputs | `SCAF-CFG-008`, `SCAF-CFG-009`, `SCAF-CFG-010`, `SCAF-RUN-009`, applicable `SCAF-SEC-010`, `SCAF-SEC-022` |
 | Profile Facets | Firmware/software/programmable-logic/configuration-bearing image; single or multi-participant lifecycle transaction |
 | Provenance / Reference Basis | Frozen SCAF obligation-derived architecture synthesis; no A/B partition or bootloader implementation is mandated |
 
@@ -67,6 +67,7 @@ Rollback may be impossible or prohibited when data/configuration migration is ir
 - `SCAF-CFG-008` — version identity/compatibility constrains update eligibility.
 - `SCAF-CFG-009` — migration semantics constrain whether update/rollback can establish a valid CFG result.
 - `SCAF-CFG-010` — atomic persistent CFG changes may need coordination with lifecycle commit.
+- `SCAF-RUN-009` — where lifecycle completion/activation does not itself establish operational readiness, the project-defined LIFE-to-RUN handoff condition constrains when the updated realization may enter the applicable RUN readiness/operational state; LIFE retains update/activation result authority and RUN retains readiness-state semantics.
 - `SCAF-SEC-010` — where authenticity/integrity is required, the security result constrains lifecycle eligibility.
 - `SCAF-SEC-022` — security authorization/trust/integrity inputs constrain security-sensitive lifecycle transactions without transferring LIFE authority.
 

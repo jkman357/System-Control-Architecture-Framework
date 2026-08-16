@@ -1,5 +1,43 @@
 # Changelog
 
+## v0.0.3rc04 — 2026-08-16
+
+Localized initial L3 pattern-tranche trace cleanup after the independent v0.0.3rc03 review returned **PASS WITH MINOR CLEANUP / `INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP`**, with no Critical or Major finding and four Minor trace-contract findings.
+
+### Changed
+
+- resolved `R3-01` in `SCAF-PAT-SUP-002` by removing `SCAF-ROB-032` from Primary Realization Candidate trace and removing `SCAF-LIFE-008` / `SCAF-LIFE-009` from Supporting Realization while retaining those LIFE obligations as reset-semantics Constraint Inputs;
+- clarified that any downstream repeated recovery/escalation is where applicable `SCAF-ROB-032` termination semantics are evaluated, without giving the watchdog recovery authority;
+- resolved `R3-02` in `SCAF-PAT-REC-001` by adding conditional `SCAF-INT-007` duplicate/order semantics for repeated/interleaved Interaction exchanges and conditional `SCAF-INT-010` session-incarnation semantics where retry continuity crosses/reuses connection sessions, while retaining `SCAF-INT-013` for negative/non-conforming Interaction outcomes;
+- resolved `R3-03` in `SCAF-PAT-LCM-001` by adding `SCAF-RUN-009` as the explicit LIFE-to-RUN readiness-handoff Constraint Input and preserving separate LIFE update/activation and RUN readiness authorities;
+- resolved `R3-04` in `SCAF-PAT-EVD-001` by adding `SCAF-OBS-009` as the causal/derived-inference claim-basis Constraint Input so recorder evidence cannot self-author root-cause claims;
+- advanced current L3 development labels and release/gate wording to v0.0.3rc04.
+
+### Preserved
+
+- all seven published Pattern IDs and immutable primary families;
+- `Catalog Status: Candidate` and `Maturity: M1 — Structured` for every current pattern;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace semantics and the prohibition on generic L2→L3 `satisfies` shortcuts;
+- Project Design Authority ownership of project mechanism selection/configuration and external source-authority ownership of external constraints;
+- L3/L4 boundary and gates on schema, validator, CI, code generation and executable governance.
+
+### Deliberately Not Added / Promoted
+
+- no eighth Pattern ID or second pattern tranche;
+- no primary-family move, `Supersedes` lifecycle event or Pattern-ID replacement;
+- no Candidate→Available promotion;
+- no M1→M2 promotion;
+- no L4 implementation / verification guidance;
+- no schema, validator, CI or executable-governance machinery.
+
+### Gate
+
+- run a focused independent rc04 closure review of `R3-01` through `R3-04`;
+- regress all seven published IDs, primary families, Candidate/M1 states, index counts and L3/L4 boundaries;
+- reconfirm the frozen v0.0.2 normative tree byte-stable and the 294 / 218 / 76 inventory unchanged;
+- only after successful closure, allow the next RC to make explicit entry-by-entry M2 / `Available` decisions and separately decide whether a second tranche should begin.
+
 ## v0.0.3rc03 — 2026-08-16
 
 Initial representative L3 Pattern / Mechanism tranche after the v0.0.3rc02 focused closure review returned **PASS / `L3 CATALOG-CONTRACT CLOSURE GATE: YES`**.
