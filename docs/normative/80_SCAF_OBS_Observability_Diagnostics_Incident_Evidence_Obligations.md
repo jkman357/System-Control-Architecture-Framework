@@ -1,6 +1,6 @@
 # SCAF-OBS — Observability, Diagnostics & Incident Evidence Obligations
 
-**Release:** v0.0.2rc13  
+**Release:** v0.0.2rc14  
 **Concern:** `SCAF-OBS`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -176,7 +176,7 @@ Where early-boot failure, repeated reset/crash-loop behavior or pre-operational 
 
 Where evidence interpretation depends on lifecycle, operational, interaction/session or temporal incarnation, the project **SHALL** record or otherwise associate the applicable source-defined Boot Incarnation / Boot Generation, Operational Incarnation / Operational State Generation, Protocol / Connection Session Identity and Time Epoch / Time Domain needed for unambiguous interpretation.
 
-The project **SHALL** preserve source provenance and shall not synthesize an OBS-owned replacement identity when a source identity is missing or unknown.
+The project **SHALL** preserve source provenance and **SHALL NOT** synthesize an OBS-owned replacement identity when a source identity is missing or unknown.
 
 ### `SCAF-OBS-021` — Evidence retention / accessibility / expiration
 

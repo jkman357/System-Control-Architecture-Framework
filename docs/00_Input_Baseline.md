@@ -179,6 +179,6 @@ Frozen v0.0.1 source-evidence status:
 - immutable/retrievable donor snapshot locator: **pending**;
 - independent source-semantic reproducibility: **not yet complete**.
 
-## 9. v0.0.2 Controlled Rewrite Derivation Note
+## 8. v0.0.2 Controlled Rewrite Derivation Note
 
 The `v0.0.2` controlled-rewrite development line is derived from the frozen SCAF `v0.0.1` architecture baseline. The frozen source release is not modified in place. New normative content is authored under `docs/normative/` and remains subject to the existing donor maturity/promotion gates.

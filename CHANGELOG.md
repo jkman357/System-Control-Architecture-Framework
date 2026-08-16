@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.0.2rc14 — 2026-08-16
+
+Final editorial closure / L1/L2 freeze candidate after the independent rc13 final integrated review found no Critical/Major issues, judged the complete L1/L2 backbone Stable after minor editorial cleanup, and returned the freeze-candidate gate Yes after those editorial items are closed.
+
+### Changed
+
+- removed the lower-case normative-looking `shall` from Authority Kernel descriptive prose outside a Target-classified requirement block;
+- normalized `SCAF-OBS-020` second prohibition to the canonical `**SHALL NOT**` normative-keyword form;
+- corrected `docs/00_Input_Baseline.md` section numbering so the controlled-rewrite derivation note follows §7 as §8;
+- corrected `docs/03_Gen1_to_Gen2_Concept_Mapping.md` duplicate §8 numbering by renumbering the controlled-rewrite-use section to §9;
+- synchronized README, Authority Kernel release label, current gate and freeze-candidate positioning to v0.0.2rc14.
+
+### Normative Semantic Change
+
+- **None intended.**
+- Requirement IDs, Target classes, primary authority homes, cross-boundary semantics, identity semantics, Framework Scan semantics, verification/evidence/closure semantics and donor-promotion gates are carried forward unchanged from rc13.
+
+### Deliberately Not Added
+
+- new top-level concerns or core metamodel entities;
+- architecture rediscovery or taxonomy changes;
+- L3 pattern / mechanism catalogs;
+- L4 implementation / verification guidance;
+- schema, validator, CI or generated conformance tooling.
+
+### Gate
+
+- perform a narrow independent rc14 freeze-candidate audit;
+- confirm the four rc13 editorial findings are Resolved;
+- confirm the rc13 normative architecture is unchanged except for non-semantic editorial cleanup;
+- if the audit passes, make an explicit governance decision whether to freeze the L1/L2 baseline.
+
 ## v0.0.2rc13 — 2026-08-16
 
 Final integrated L1/L2 consolidation after independent rc12 SCAF-SEC review found no Critical/Major issues, judged SEC Stable after minor cleanup, confirmed SEC integration with the existing L1/L2 backbone as Pass, and cleared SCAF to enter final consolidation before a freeze-candidate decision.

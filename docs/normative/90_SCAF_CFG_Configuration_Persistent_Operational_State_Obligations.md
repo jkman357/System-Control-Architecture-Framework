@@ -1,6 +1,6 @@
 # SCAF-CFG — Configuration & Persistent Operational State Obligations
 
-**Release:** v0.0.2rc13  
+**Release:** v0.0.2rc14  
 **Concern:** `SCAF-CFG`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

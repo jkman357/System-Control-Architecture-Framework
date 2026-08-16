@@ -1,6 +1,6 @@
 # SCAF-LIFE — Boot, Power, Reset & Update Lifecycle Obligations
 
-**Release:** v0.0.2rc13  
+**Release:** v0.0.2rc14  
 **Concern:** `SCAF-LIFE`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

@@ -1,6 +1,6 @@
 # SCAF Authority Kernel
 
-**Release:** v0.0.2rc13  
+**Release:** v0.0.2rc14  
 **Layer:** L1 Authority Kernel  
 **Status:** Normative RC
 
@@ -30,7 +30,7 @@ A Project-Applicable Obligation is expected to map, where relevant, to project a
 
 A **Framework Normative Invariant** constrains SCAF normative content, framework governance, migration/promotion behavior or authoring semantics. It is not itself a project architecture obligation and is not required to map to a Project Design Authority or project Framework Scan item.
 
-A requirement identifier may be retained for traceability, but its target class shall remain explicit.
+A requirement identifier may be retained for traceability, but its target class remains explicit.
 
 ### 2.3 Requirement ID stability
 
@@ -268,7 +268,7 @@ Unqualified `Defines`, `owns`, `acceptance` and `Realizes` **SHALL NOT** be used
 
 ## 8. Rewrite and Promotion Gates
 
-| Gate | Meaning in v0.0.2rc13 |
+| Gate | Meaning in v0.0.2rc14 |
 |---|---|
 | Architecture convergence | Passed by frozen v0.0.1 baseline |
 | Controlled L1/L2 rewrite | Open |
