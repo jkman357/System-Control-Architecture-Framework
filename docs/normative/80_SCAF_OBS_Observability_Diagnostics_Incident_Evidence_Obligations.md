@@ -1,6 +1,6 @@
 # SCAF-OBS — Observability, Diagnostics & Incident Evidence Obligations
 
-**Release:** v0.0.2rc09  
+**Release:** v0.0.2rc10  
 **Concern:** `SCAF-OBS`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -72,7 +72,7 @@ For each material evidence class, the project **SHALL** define the provenance ne
 
 Where evidence interpretation depends on time, age, chronology or synchronization quality, the project **SHALL** record or otherwise associate the controlled time provenance required to interpret the observation, including applicable timebase/clock identity, Time Epoch/Time Domain and uncertainty/synchronization quality defined by `SCAF-TIME`.
 
-OBS **SHALL NOT** create a replacement timebase merely because evidence requires timestamping/correlation.
+**Boundary note (informative):** replacement-timebase prohibition is governed normatively by `SCAF-OBS-033`.
 
 ### `SCAF-OBS-007` — Local evidence chronological ordering
 
@@ -92,7 +92,7 @@ Where observations from multiple participants, Nodes, Domains or evidence source
 
 **Target:** Project-Applicable Obligation
 
-Where evidence is used to support a causal or first-abnormal-state claim, the project **SHALL** define the controlled basis and evidence limitations for that claim and distinguish direct observation, derived inference and unresolved ambiguity.
+Where evidence is used to support a causal or other derived-inference claim, the project **SHALL** define the controlled basis and evidence limitations for that claim and distinguish direct observation, derived inference and unresolved ambiguity.
 
 Correlation, timestamp proximity or recorder order **SHALL NOT** by itself establish root cause, failure classification or source-authority semantics.
 
@@ -124,7 +124,7 @@ Where loss, interruption, overflow, corruption or unavailability of observation/
 
 Where observation can materially perturb a controlled system property, the project **SHALL** identify the affected property and define the required observer-effect constraint or margin using the applicable source concern. Measurable time/capacity/resource limits remain controlled by `SCAF-TIME`; resilience consequence remains controlled by `SCAF-ROB` where Applicable.
 
-OBS does not prescribe the implementation mechanism used to achieve low coupling.
+**Boundary note (informative):** L1/L2 OBS does not prescribe the realization mechanism used to achieve low coupling; the normative mechanism boundary is defined by `SCAF-OBS-040`.
 
 ### `SCAF-OBS-014` — Operational observability requirement
 
@@ -144,7 +144,7 @@ Diagnostic evidence **SHALL NOT** become the health/failure determination merely
 
 **Target:** Project-Applicable Obligation
 
-Where incident investigation requires distinction between an initiating/first abnormal condition and later propagation, terminal failure, crash/reset or recovery outcome, the project **SHALL** define the evidence needed to preserve that distinction and the controlled limitation when the distinction cannot be established.
+Where incident investigation requires distinction between a first-observed abnormal condition/effect and later propagation, terminal failure, crash/reset or recovery outcome, the project **SHALL** define the evidence needed to preserve that distinction and the controlled limitation when the distinction cannot be established. Where an initiating condition is separately claimed, that claim **SHALL** use the controlled causal/inference basis required by `SCAF-OBS-009`.
 
 ### `SCAF-OBS-017` — Incident evidence scope / timeline
 
@@ -160,7 +160,7 @@ This obligation does not prescribe a pre-trigger/post-trigger buffer, ring buffe
 
 Where evidence must remain available across a reset, boot, power transition, update, rollback, activation or other lifecycle transition, the project **SHALL** define the required evidence survivability/correlation outcome and trace it to the controlled `SCAF-LIFE` transaction/result/identity semantics that can affect evidence availability.
 
-OBS defines evidence preservation/survivability semantics; LIFE defines the lifecycle transition/result that creates the survivability context.
+**Boundary note (informative):** the normative OBS/LIFE authority partition is defined by `SCAF-OBS-031`.
 
 ### `SCAF-OBS-019` — Early-boot / crash-loop evidence
 
@@ -178,11 +178,11 @@ Where evidence interpretation depends on lifecycle, operational, interaction/ses
 
 The project **SHALL** preserve source provenance and shall not synthesize an OBS-owned replacement identity when a source identity is missing or unknown.
 
-### `SCAF-OBS-021` — Evidence preservation / retention / accessibility
+### `SCAF-OBS-021` — Evidence retention / accessibility / expiration
 
 **Target:** Project-Applicable Obligation
 
-For each evidence class whose future availability is material, the project **SHALL** define the required preservation/survivability, retention horizon/condition, accessibility and controlled loss/expiration consequence, traced to applicable project/external requirements. Any measurable retention duration/capacity is a project value governed by applicable TIME/resource decisions rather than a universal OBS value.
+For each evidence class whose future availability is material, the project **SHALL** define the required retention horizon/condition, accessibility and controlled expiration/loss consequence, traced to applicable project/external requirements. Lifecycle-crossing evidence preservation/survivability is governed by `SCAF-OBS-018`. Any measurable retention duration/capacity is a project value governed by applicable TIME/resource decisions rather than a universal OBS value.
 
 ### `SCAF-OBS-022` — Evidence retrieval / export semantics
 
@@ -190,7 +190,7 @@ For each evidence class whose future availability is material, the project **SHA
 
 Where evidence must be retrieved or exported, the project **SHALL** define the required evidence identity/provenance/correlation information that must remain associated with the exported representation and the project consequence of partial, transformed, unavailable or ambiguous export.
 
-Transport/interface contract semantics remain governed by `SCAF-INT`; security/access constraints remain governed by applicable security authority/`SCAF-SEC` interfaces.
+**Boundary note (informative):** transport/interface contract semantics remain governed by `SCAF-INT`; security/access constraints remain governed by applicable security authority/`SCAF-SEC` interfaces.
 
 ### `SCAF-OBS-023` — Evidence copy / transformation consistency
 

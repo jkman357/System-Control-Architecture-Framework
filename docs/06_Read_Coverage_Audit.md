@@ -217,3 +217,14 @@ The OBS text is derived from the frozen SCAF Observability, Diagnostics & Incide
 
 Review focus for this RC is whether OBS cleanly owns observation/evidence identity, provenance, correlation, quality/availability, preservation/survivability/accessibility/export and observer-effect/self-health semantics without re-owning RUN state, ROB health/failure meaning, LIFE lifecycle result/Boot Incarnation, INT contract/session, TIME time semantics, CFG persistent-state authority, ASSUR evidence sufficiency or external safety/security/risk authority; and whether OBS Project-Applicable Obligations remain Framework-Scan scannable before CFG authoring begins.
 
+
+
+## 15. v0.0.2rc10 Normative Rewrite Coverage
+
+This release begins the controlled `SCAF-CFG` L1/L2 normative tranche after the rc09 independent OBS review found no Critical or Major issues, accepted OBS as Stable after minor cleanup, and confirmed clean OBS/source, OBS/RUN, OBS/ROB, OBS/LIFE, OBS/INT, OBS/TIME, OBS/CFG, OBS/ASSUR, OBS/ARCH, external-authority, four-way-identity and causal/evidence-sufficiency boundaries. The Authority Kernel / CTX / ARCH / INT / TIME / RUN / ROB / LIFE baselines remain substantively unchanged.
+
+The localized OBS cleanup removes a framework-self rule from `SCAF-OBS-006` Project-Applicable target, normalizes Project-Applicable boundary prose as informative notes, separates causal/derived-inference claims from first-observed abnormal evidence, narrows retention/accessibility from lifecycle survivability, and fixes stale README/editorial residue without changing the OBS authority home.
+
+The CFG text is derived from the frozen SCAF Configuration & Persistent Operational State authority home and controlled donor mapping evidence. It does **not** bulk-promote configuration file formats, schemas, validators, EEPROM/FRAM/flash layouts, databases, registries, migration engines, journaling, CRC/checksum, synchronization protocols or other L3/L4 realization wording; Draft/RC/mixed-maturity and executable-only donor semantics remain subject to donor-specific promotion/deep-audit gates.
+
+Review focus for this RC is whether CFG cleanly owns configuration/persistent-operational-state source/classification/identity/provenance/default/validity/version/migration/commit/rollback/calibration/synchronization semantics without re-owning OBS evidence, LIFE lifecycle transaction/rollback, RUN current operational state, INT exchange/session, TIME measurable properties, ROB resilience response, ARCH structural boundaries, ASSUR evidence sufficiency or external safety/security/risk authority; and whether CFG Project-Applicable Obligations remain Framework-Scan scannable before the integrated L1/L2 consolidation gate.

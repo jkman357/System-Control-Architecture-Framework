@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc09  
+**Version:** v0.0.2rc10  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
-**Date:** 2026-08-15
+**Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
 
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc09 OBS L1/L2 Normative Tranche Position
+## v0.0.2rc10 CFG L1/L2 Normative Tranche Position
 
-v0.0.2rc09 begins the `SCAF-OBS` L1/L2 normative tranche after independent rc08 review found **no Critical or Major issues**, accepted LIFE as **Stable after minor cleanup**, confirmed all reviewed LIFE cross-boundary gates as Pass, and explicitly allowed OBS authoring to begin while localized LIFE cleanup is completed. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc10 begins the `SCAF-CFG` L1/L2 normative tranche after independent rc09 review found **no Critical or Major issues**, accepted OBS as **Stable after minor cleanup**, confirmed the reviewed OBS/source, RUN, ROB, LIFE, INT, TIME, CFG, ASSUR, ARCH, external-authority and four-way-identity gates as Pass, and explicitly allowed CFG authoring to begin while localized OBS cleanup is completed. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
 Current normative documents are:
 
@@ -52,14 +52,15 @@ Current normative documents are:
 - `docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md`
 - `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md`
 - `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md`
+- `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md`
 
-This RC first completes the localized LIFE review cleanup: the `SCAF-LIFE-014` framework self-rule is removed from the Project-Applicable target and retained only as informative boundary guidance backed by existing invariants; Boot Incarnation triggering is narrowed to LIFE-controlled lifecycle instances; retained information is expressed as lifecycle-transition consumption eligibility using source-authority validity/provenance/version semantics; lifecycle transaction responsibility/handoff wording is normalized; activation wording is separated from RUN readiness/availability; continuation criteria no longer use bare safety acceptance wording; and small editorial residue is corrected.
+This RC first completes localized OBS review cleanup: `SCAF-OBS-006` no longer mixes a framework-self invariant into a Project-Applicable target; framework boundary/non-prescription prose in Project-Applicable OBS sections is marked informative where retained; causal/derived-inference semantics are separated from first-observed-abnormal evidence; lifecycle survivability remains in `OBS-018` while `OBS-021` is narrowed to retention/accessibility/expiration; stale README rc08 release/gate text and the remaining ROB non-normative editorial residue are corrected.
 
-The new `SCAF-OBS` tranche establishes L1/L2 authority for operational observability, diagnostics and incident evidence; observed-fact source trace; evidence identity/provenance; time and four-way identity correlation; evidence quality/missingness; observer/recorder self-health and observer effect; first-abnormal versus terminal evidence; incident timeline/correlation; lifecycle evidence survivability; early-boot/crash-loop evidence; preservation/retention/accessibility/export; persistent evidence versus CFG state/configuration; and OBS traceability/re-evaluation.
+The new `SCAF-CFG` tranche establishes L1/L2 authority for configuration and persistent operational-state source semantics; semantic classification; authoritative source responsibility; item identity/provenance; defaults/provisioning; validation/unknown-state semantics; version/migration; atomic commit; activation/application; configuration-side rollback/corruption handling; calibration/parameter state; multi-source precedence; cross-participant synchronization/consistency; LIFE/RUN/OBS/INT/TIME/ROB relationships; and CFG traceability/re-evaluation.
 
-OBS explicitly observes/represents/preserves/correlates/exports source-defined facts without re-owning RUN operational state, ROB failure/health meaning, LIFE lifecycle result/Boot Incarnation, INT validity/order/session semantics, TIME timebase/epoch/uncertainty, CFG persistent configuration/state source authority, ASSUR evidence-sufficiency semantics or external safety/security/risk acceptance authority. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
+CFG explicitly preserves the rule that identical physical bytes/storage do not imply identical semantic authority: OBS incident/diagnostic evidence semantics remain separate from CFG configuration/persistent-state source semantics. CFG-side rollback/value/version/migration remains distinct from LIFE lifecycle update/activation rollback. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
 
-`SCAF-CFG`, `SCAF-SEC` and later normative tranches remain deferred pending independent review of this OBS tranche.
+`SCAF-SEC` and later normative tranches remain deferred pending independent review of this CFG tranche. After CFG review, a short integrated L1/L2 consolidation gate is expected before SEC authoring; this is not a taxonomy reopen and does not enable schema/validator/CI yet.
 
 Normative precedence for this RC is:
 
@@ -71,7 +72,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc09 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc10 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -275,13 +276,15 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md` | L1/L2 operational state / transition / readiness / Operational Incarnation obligations |
 | `docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md` | L1/L2 fault/error/failure / health / containment / degradation / recovery / resilience obligations |
 | `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md` | L1/L2 boot / power / reset / update / activation / rollback lifecycle obligations |
+| `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md` | L1/L2 observability / diagnostics / incident-evidence identity / provenance / correlation / preservation obligations |
+| `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md` | L1/L2 configuration / persistent operational-state source / version / migration / commit / rollback / calibration obligations |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc08.**
+**No CI is included in v0.0.2rc10.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -317,30 +320,33 @@ v0.0.2rc05   # targeted INT/TIME authority-boundary closure
 v0.0.2rc06   # RUN controlled L1/L2 normative tranche
 v0.0.2rc07   # ROB controlled L1/L2 normative tranche + RUN minor closure
 v0.0.2rc08   # LIFE controlled L1/L2 normative tranche + ROB minor closure
+v0.0.2rc09   # OBS controlled L1/L2 normative tranche + LIFE minor closure
+v0.0.2rc10   # CFG controlled L1/L2 normative tranche + OBS minor closure
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc08 is in **controlled L1/L2 normative rewrite — SCAF-LIFE tranche**.
+v0.0.2rc10 is in **controlled L1/L2 normative rewrite — SCAF-CFG tranche**.
 
 Open scope in this RC:
 
-- preserve the reviewed Authority Kernel / CTX / ARCH / INT / TIME / RUN baselines;
-- retain ROB as stable after localized review cleanup and preserve its fault/health/resilience authority;
-- establish `SCAF-LIFE` boot/power/reset/update/activation/rollback transaction/state/result obligations;
-- establish lifecycle request-versus-result, atomicity/commit/abort, activation/rollback/resume and Boot Incarnation semantics;
-- preserve LIFE boundaries against RUN readiness/current-state authority, ROB failure-response authority, INT contract/session semantics, TIME measurable lifecycle properties, ARCH structural boundaries, CFG persistent-state authority, OBS evidence semantics and external safety/security/risk source authority;
-- test LIFE Project-Applicable Obligations through Framework Scan before OBS authoring begins.
+- preserve the reviewed Authority Kernel / CTX / ARCH / INT / TIME / RUN / ROB / LIFE baselines;
+- retain OBS as stable after localized review cleanup and preserve source-authority/evidence boundaries;
+- establish `SCAF-CFG` configuration and persistent operational-state source/classification/identity/provenance obligations;
+- establish defaults/provisioning, validity, version/migration, atomic commit, configuration activation/application, CFG-side rollback/corruption handling and calibration/parameter semantics;
+- establish multi-source precedence and cross-participant CFG synchronization/consistency obligations;
+- preserve CFG boundaries against OBS evidence authority, LIFE lifecycle transaction/rollback authority, RUN current-state authority, INT exchange/session semantics, TIME measurable properties, ROB resilience response, ARCH structural boundaries, ASSUR evidence sufficiency and external safety/security/risk source authority;
+- test CFG Project-Applicable Obligations through Framework Scan before the integrated L1/L2 consolidation gate.
 
 Still closed/gated:
 
 - top-level taxonomy expansion without a concrete authority-home failure;
 - broad Draft/RC or mixed-maturity donor promotion;
 - executable-invariant promotion before schema/test/validator extraction and review;
-- `SCAF-OBS` and later concern normative tranches until the rc08 LIFE tranche is independently reviewed;
-- L3 bootloader/A-B-layout/update-protocol/reset/power-sequencing/retry/recovery mechanism guidance;
+- `SCAF-SEC` normative authoring until CFG is independently reviewed and a short integrated L1/L2 consolidation gate is completed;
+- L3 configuration-storage/migration/synchronization mechanism catalogs;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
 - final schema, validator, generated checklist or CI enforcement;
 - final migration proof or normative freeze.

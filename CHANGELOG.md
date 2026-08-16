@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.0.2rc10 — 2026-08-16
+
+SCAF-CFG controlled L1/L2 normative tranche after independent rc09 review cleared the OBS architecture gate and allowed CFG authoring to begin with localized OBS cleanup.
+
+### Added
+
+- `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md`;
+- L1 authority boundaries for configuration/persistent operational-state classification, authoritative source responsibility, item identity/provenance, defaults/provisioning, validation, version/migration, atomic commit, CFG-side rollback/corruption handling, calibration/parameter state and synchronization/consistency;
+- project obligations for unknown/uninitialized semantics, multiple-source precedence, LIFE update/activation coordination, RUN persistent/current-state mapping, OBS evidence views of CFG facts and external configuration constraints;
+- explicit CFG/OBS, CFG/LIFE, CFG/RUN, CFG/INT, CFG/TIME, CFG/ROB, CFG/ARCH, external-authority, CFG/ASSUR, artifact/source-authority, identity-partition and CFG/PROF realization boundaries.
+
+### Changed
+
+- removed the framework-self timebase prohibition from `SCAF-OBS-006` Project-Applicable target and retained it only as an informative note backed by `SCAF-OBS-033`;
+- normalized framework-boundary/non-prescription prose in Project-Applicable OBS obligations as informative notes;
+- narrowed `SCAF-OBS-009` to causal/derived-inference claims and separated first-observed abnormal evidence semantics in `SCAF-OBS-016`;
+- narrowed `SCAF-OBS-021` to retention/accessibility/expiration while retaining lifecycle survivability in `SCAF-OBS-018`;
+- corrected stale README rc08 release/gate/repository-content text and remaining ROB non-normative editorial residue;
+- updated all normative release labels and Authority Kernel gate-table label to rc10;
+- retained the frozen v0.0.1 architecture baseline and stable Authority Kernel / CTX / ARCH / INT / TIME / RUN / ROB / LIFE authority homes.
+
+### Deliberately Not Added
+
+- `SCAF-SEC` normative tranche;
+- new top-level taxonomy or core metamodel entities;
+- universal configuration file/schema/database/NVM layout/migration/rollback/synchronization mechanisms;
+- L3/L4 mechanism or implementation guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc09 — 2026-08-15
 
 SCAF-OBS controlled L1/L2 normative tranche after independent rc08 review cleared the LIFE architecture gate and allowed OBS authoring to begin with localized LIFE cleanup.
