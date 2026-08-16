@@ -1,3 +1,43 @@
+## v0.0.4rc01 — 2026-08-16
+
+First post-v0.0.3 executable-governance development RC. This release defines the semantic authority model that must be reviewed before any machine-readable authority registry, schema, validator or CI enforcement is introduced.
+
+### Added
+
+- added `docs/executable-governance/README.md` as the controlled development scope/order/gate entry point;
+- added `docs/executable-governance/00_SCAF_Machine_Readable_Authority_Model.md`;
+- defined canonical-source precedence: frozen normative Markdown remains semantic authority and a machine-readable representation cannot override it;
+- bounded the initial future registry population to the frozen v0.0.2 inventory of 294 requirement IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- defined stable record identity, initial authority classes, minimum semantic fields, representation lifecycle/staleness behavior, completeness criteria and fail-closed authority-resolution expectations;
+- explicitly separated project-owned applicability/PDA/realization/verification/evidence/closure state from the framework authority registry;
+- explicitly kept the twelve frozen v0.0.3 `SCAF-PAT-*` identities outside the initial normative authority-record population.
+
+### Preserved
+
+- frozen v0.0.2 L1/L2 normative semantics and 294 stable requirement identities;
+- frozen v0.0.3 L3 catalog semantics, twelve Pattern identities, `Available / M2` states, trace relations and L3/L4 boundary;
+- human semantic authority before executable representation;
+- project Design Authority / Verification Authority / closure boundaries.
+
+### Deliberately Not Added
+
+- no `authority-registry.yaml` or other registry serialization;
+- no JSON Schema or alternate schema language;
+- no validator implementation or test fixture;
+- no generated registry/reverse index;
+- no CI enforcement or code generation;
+- no automatic project applicability inference;
+- no third-tranche Pattern, SEC-primary realization, M3/M4 or L4 expansion.
+
+### Gate
+
+- independently verify the new authority model does not create a competing normative authority source;
+- verify the initial 294-record population boundary and 218/76 Target-class preservation are consistent with the frozen v0.0.2 baseline;
+- verify project application/PDA/realization/verification/evidence/closure state remains outside the framework registry;
+- verify L3 Pattern identities are not promoted into normative authority records;
+- verify identity, completeness, conflict/staleness and fail-closed semantics are precise enough for a later serialization RC;
+- return an explicit `V0.0.4 AUTHORITY-MODEL FOUNDATION GATE` decision without implementing the registry/schema/validator.
+
 ## v0.0.3 — 2026-08-16
 
 Frozen L3 Pattern / Mechanism Catalog Baseline.
