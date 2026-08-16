@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc14  
-**Status:** L3 Freeze-Candidate Final Navigation Cleanup RC  
+**Version:** v0.0.3  
+**Status:** Frozen L3 Baseline  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,19 +38,19 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.3rc14 L3 Freeze-Candidate Final Navigation Cleanup Position
+## v0.0.3 Frozen L3 Baseline Position
 
-The independent v0.0.3rc13 focused closure review returned:
+v0.0.3 is the **Frozen L3 Pattern / Mechanism Catalog Baseline** created by explicit governance freeze decision after the independent v0.0.3rc14 final-navigation closure review returned:
 
 ```text
-L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP
+L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES
 ```
 
-It confirmed that the frozen v0.0.2 normative baseline remains byte-stable, all twelve published Pattern identities remain `Available / M2`, rc12→rc13 Pattern-body non-regression is 12 / 12 PASS, the mandatory `FTL-001` trace closure remains intact, and no new or regression finding was opened. The only remaining residue of upstream finding `R12-01` is the stale active `## 5. Immediate Gate` paragraph in `docs/l3/03_L3_Pattern_Index.md`, which still refers to the rc12 review.
+The review confirmed `R12-01` **RESOLVED**, opened **0 Critical, 0 Major, 0 Minor and 0 Trivial findings**, preserved the frozen v0.0.2 normative baseline, confirmed exactly twelve published Pattern identities, reproduced 12 / 12 rc13→rc14 Pattern-body non-regression checks, preserved the `FTL-001` trace closure, and found no third-tranche, M3/M4, L4, SEC-primary or executable-governance scope expansion.
 
-v0.0.3rc14 is therefore a **final navigation cleanup RC only**. It updates that stale Pattern Index current-gate paragraph to the rc14 closure position and synchronizes current release/navigation wording. No Pattern architecture, trace relation, lifecycle state, identity, family or frozen normative content is changed.
+The formal v0.0.3 freeze carries forward the reviewed rc14 L3 architecture/trace/lifecycle baseline with **no intended Pattern semantic change**. Pattern current-release metadata advances from `v0.0.3rc14` to `v0.0.3`; the reviewed Pattern mechanism bodies, L2 trace relations, authority boundaries, lifecycle state, identities, families and introduction history remain unchanged.
 
-Current catalog state remains:
+Frozen L3 catalog state:
 
 ```text
 12 published Pattern identities
@@ -59,9 +59,11 @@ Initial tranche: 7 x Introduced In v0.0.3rc03
 Second tranche: 5 x Introduced In v0.0.3rc08
 ```
 
-The immediate gate is an independent **v0.0.3rc14 freeze-candidate final-navigation closure review**. It must verify that `R12-01` is fully resolved, no stale active rc12/rc13 current-gate wording remains, the frozen normative baseline remains unchanged, and all twelve Pattern bodies are non-regressed apart from current Development Release metadata.
+The frozen v0.0.3 scope includes the reviewed L3 catalog governance, metadata contract, trace/selection model and the twelve current `Available / M2` Pattern entries. `Available` remains bounded to acceptance for project consideration and does not imply project applicability, recommendation, automatic selection, compliance, verification, implementation correctness or L2 satisfaction.
 
-A successful rc14 closure review may make the rc14 tree eligible for a **later explicit freeze action** for formal `v0.0.3`. rc14 itself remains an RC and does not freeze the release.
+The following remain **outside** the frozen v0.0.3 baseline and require later separately controlled development/gates: third-tranche catalog expansion, the approved-but-deferred EVD export/transformation category, the rejected/reframe PST configuration-activation proposal, SEC-primary realization, M3/M4, L4 implementation/verification guidance, schema, validator, generated registry/reverse index, CI, code generation and executable governance.
+
+**v0.0.3 is frozen and shall not be modified in place.** Any later semantic evolution shall occur on a new RC development line and preserve explicit trace to the frozen v0.0.2 L1/L2 baseline and this frozen v0.0.3 L3 baseline where applicable.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -375,32 +377,20 @@ v0.0.3rc11   # second-tranche explicit availability acceptance
 v0.0.3rc12   # L3 milestone consolidation / freeze-candidate audit
 v0.0.3rc13   # focused freeze-candidate release-record cleanup / closure RC
 v0.0.3rc14   # final Pattern Index navigation cleanup / freeze-candidate closure RC
+v0.0.3       # frozen L3 Pattern / Mechanism Catalog baseline
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 
-## Current Gate
+## Current Governance State
 
-v0.0.3rc14 is the **freeze-candidate final navigation cleanup RC** after the independent rc13 focused review returned:
+The independent v0.0.3rc14 final-navigation closure review returned:
 
 ```text
-L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP
+L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES
 ```
 
-The rc13 review found that `R12-01` was substantially resolved and opened no new/regression finding, but one active navigation paragraph remained stale: `docs/l3/03_L3_Pattern_Index.md` still described the rc12 review as the immediate gate. rc14 corrects only that residual release-record navigation text and synchronizes current release labels.
+`R12-01` is resolved and no new/regression finding remains. By explicit governance decision on 2026-08-16, the reviewed rc14 tree is now released as **v0.0.3 — Frozen L3 Baseline**.
 
-The immediate gate is an **independent rc14 freeze-candidate final-navigation closure review**. It shall verify:
-
-- upstream finding `R12-01` is `RESOLVED`;
-- `docs/l3/03_L3_Pattern_Index.md` points to the rc14 closure review and explicitly states rc14 remains an RC;
-- root README and current L3 navigation surfaces tell one coherent rc14 freeze-candidate story;
-- exactly twelve Pattern IDs remain, all `Available / M2`, with immutable families and introduction history unchanged;
-- normalized rc13→rc14 Pattern bodies differ only by current Development Release metadata;
-- the rc09 `FTL-001` `SCAF-ROB-007` Constraint Input closure remains intact;
-- the frozen v0.0.2 normative baseline remains byte-stable at 294 / 218 / 76;
-- no third tranche, M3/M4, L4, SEC-primary authoring or executable-governance work is introduced.
-
-A successful closure review may make the rc14 tree eligible for a later explicit `v0.0.3` freeze action. **rc14 itself is not frozen.**
-
-Still separately gated: the approved-but-deferred EVD export/transformation category, rejected/reframe PST proposal, SEC-primary realization, third-tranche/bulk expansion, M3/M4, L4, schema/validator/CI/code generation and executable governance.
+There is no remaining v0.0.3 freeze gate. The frozen release shall not be modified in place. Any third tranche, deferred EVD work, PST reframe, SEC-primary realization, M3/M4, L4 or executable-governance work must start under a later separately controlled RC development line.

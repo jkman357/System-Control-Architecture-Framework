@@ -1,3 +1,47 @@
+## v0.0.3 — 2026-08-16
+
+Frozen L3 Pattern / Mechanism Catalog Baseline.
+
+This release is created by explicit governance freeze decision after the independent `v0.0.3rc14` final-navigation closure review returned **`L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES`**, recorded upstream finding `R12-01` as **RESOLVED**, opened no Critical, Major, Minor or Trivial finding, confirmed the frozen v0.0.2 baseline, verified exactly twelve published Pattern identities, reproduced 12 / 12 rc13→rc14 Pattern-body non-regression checks, preserved the `FTL-001` trace closure, and found no separately gated scope expansion.
+
+### Frozen
+
+- L3 catalog-governance semantics;
+- L3 Pattern metadata contract;
+- L3 trace and project-selection semantics;
+- twelve published Pattern identities;
+- twelve `Available / M2 — Architecture Reviewed` lifecycle states;
+- initial-seven `Introduced In v0.0.3rc03` history;
+- second-five `Introduced In v0.0.3rc08` history;
+- immutable primary-family identity and `Supersedes: None` state;
+- reviewed Pattern architecture/trace/authority/L3-L4 boundaries.
+
+### Semantic Change from v0.0.3rc14
+
+- **None intended.**
+- The freeze action changes release/freeze state and current release metadata only.
+- Pattern bodies and trace relations remain semantically unchanged from the independently reviewed rc14 tree.
+- The frozen v0.0.2 normative tree remains byte-stable at 294 / 218 / 76.
+
+### Added
+
+- `docs/l3/14_L3_v0.0.3_Freeze_Decision.md` as the formal freeze record.
+
+### Not Included / Still Separately Gated
+
+- third-tranche catalog expansion;
+- deferred EVD export/transformation authoring;
+- rejected/reframe PST configuration-activation authoring;
+- SEC-primary realization;
+- M3/M4;
+- L4 implementation/verification guidance;
+- schema, validator, generated registry/reverse index, CI, code generation or executable governance.
+
+### Governance
+
+- `v0.0.3` is frozen and shall not be modified in place.
+- Later semantic work must continue on a new controlled RC development line.
+
 ## v0.0.3rc14 — 2026-08-16
 
 Final freeze-candidate navigation cleanup after the independent v0.0.3rc13 focused closure review returned **`L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP`**. The review confirmed the architecture/trace/lifecycle baseline, frozen normative integrity, 12 / 12 Pattern-body non-regression, `FTL-001` trace closure, and scope control; it opened no new/regression finding. The sole remaining residue of upstream `R12-01` was one stale active `Immediate Gate` paragraph in `docs/l3/03_L3_Pattern_Index.md`.

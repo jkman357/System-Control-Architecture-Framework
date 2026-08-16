@@ -1,7 +1,7 @@
 # SCAF L3 Trace and Selection Model
 
-**Development Release:** v0.0.3rc14  
-**Status:** Development contract
+**Development Release:** v0.0.3  
+**Status:** Frozen L3 trace/selection baseline
 
 ## 1. Purpose
 

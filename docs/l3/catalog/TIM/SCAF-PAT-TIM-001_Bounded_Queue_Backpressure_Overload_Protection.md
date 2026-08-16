@@ -1,6 +1,6 @@
 # SCAF-PAT-TIM-001 — Bounded Queue / Backpressure / Overload Protection
 
-**Development Release:** v0.0.3rc14  
+**Development Release:** v0.0.3  
 **Pattern Family:** `TIM` — Timing & Capacity Realization  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Available  

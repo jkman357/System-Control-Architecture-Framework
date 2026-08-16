@@ -1,8 +1,8 @@
 # SCAF L3 Catalog Entries
 
-v0.0.3rc14 is a final freeze-candidate navigation cleanup release after the independent rc13 focused closure review returned `L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP`. The only remaining residue is stale active gate text in the Pattern Index; no Pattern architecture/trace/lifecycle correction is required.
+v0.0.3 is the **Frozen L3 Pattern / Mechanism Catalog Baseline**, created by explicit governance freeze after the independent v0.0.3rc14 final-navigation closure review returned `L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES`, resolved `R12-01`, and opened no Critical, Major, Minor or Trivial findings.
 
-Current published catalog state:
+Frozen published catalog state:
 
 - twelve total published Pattern identities;
 - all twelve are `Available / M2 — Architecture Reviewed`;
@@ -13,8 +13,8 @@ Current published catalog state:
 
 `Available` means accepted for project consideration. It does not imply project applicability, recommendation, automatic selection, compliance, verification, implementation correctness or L2 satisfaction.
 
-rc14 changes no Pattern lifecycle state and introduces no new ID. All Pattern architecture/trace bodies are preserved from rc13 apart from current Development Release metadata.
-
-The immediate gate is a focused rc14 final-navigation/non-regression closure review. A successful closure may make the rc14 tree eligible for a later explicit freeze action; rc14 itself is not frozen.
+The formal freeze changes current release/freeze metadata only. Pattern architecture/trace bodies are carried forward from the reviewed rc14 tree with no intended semantic change.
 
 The approved-but-deferred EVD export/transformation category remains unauthored; the rejected/reframe PST proposal remains unauthored; SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.
+
+**v0.0.3 is frozen and shall not be modified in place.** Later semantic catalog evolution must occur under a new controlled RC development line.

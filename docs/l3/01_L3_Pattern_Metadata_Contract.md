@@ -1,7 +1,7 @@
 # SCAF L3 Pattern Metadata Contract
 
-**Development Release:** v0.0.3rc14  
-**Status:** Development contract  
+**Development Release:** v0.0.3  
+**Status:** Frozen L3 metadata-contract baseline  
 **Applies To:** current and future `SCAF-PAT-*` catalog entries
 
 ## 1. Purpose

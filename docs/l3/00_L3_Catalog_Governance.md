@@ -1,9 +1,9 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc14  
+**Development Release:** v0.0.3  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** Development contract
+**Status:** Frozen L3 catalog-governance baseline
 
 ## 1. Purpose
 
@@ -541,3 +541,27 @@ v0.0.3rc14 therefore performs a final navigation cleanup only. The closure revie
 6. no third tranche, M3/M4, L4, SEC-primary or executable-governance scope is introduced.
 
 A successful rc14 closure review may make the rc14 tree eligible for a later explicit v0.0.3 freeze action. **rc14 itself remains an RC and is not a frozen release.**
+
+## 24. v0.0.3 Formal Freeze Decision
+
+The independent v0.0.3rc14 final-navigation closure review returned:
+
+```text
+L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES
+```
+
+The review confirmed `R12-01` resolved, zero new/regression findings, frozen v0.0.2 upstream integrity, exactly twelve stable `Available / M2` Pattern identities, 12 / 12 Pattern-body non-regression, preservation of the `FTL-001` trace closure, current-navigation consistency and exclusion of separately gated future work.
+
+By explicit governance decision, the reviewed rc14 L3 tree is frozen as **v0.0.3 — Frozen L3 Pattern / Mechanism Catalog Baseline**.
+
+The freeze:
+
+1. changes release/freeze state and current-release metadata only;
+2. introduces no intended Pattern mechanism, trace, authority, family, lifecycle or L3/L4 semantic change;
+3. freezes the current L3 catalog-governance, metadata-contract and trace/selection semantics;
+4. freezes the twelve published Pattern identities in their current `Available / M2` state;
+5. preserves Project Design Authority ownership of project selection, adaptation, rejection and configuration;
+6. preserves the frozen v0.0.2 normative baseline unchanged; and
+7. does not authorize third-tranche, deferred EVD, PST reframe, SEC-primary, M3/M4, L4 or executable-governance work.
+
+**v0.0.3 shall not be modified in place.** Any later semantic evolution requires a new controlled RC development line.
