@@ -1,10 +1,10 @@
 # SCAF-PAT-PST-001 — Atomic Dual-Copy Persistent State
 
-**Development Release:** v0.0.3rc04  
+**Development Release:** v0.0.3rc05  
 **Pattern Family:** `PST` — Persistent State Integrity  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  
-**Maturity:** M1 — Structured  
+**Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc03
 
 ## Metadata
@@ -16,7 +16,7 @@
 | Pattern Family | `PST` |
 | Pattern Kind | Mechanism |
 | Catalog Status | Candidate |
-| Maturity | M1 — Structured |
+| Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-CFG-010`, `SCAF-CFG-013` |
 | Supporting L2 Trace | `SCAF-CFG-003`, `SCAF-CFG-004`, `SCAF-CFG-006`, `SCAF-CFG-008`, `SCAF-CFG-012` |

@@ -1,5 +1,50 @@
 # Changelog
 
+## v0.0.3rc05 — 2026-08-16
+
+Initial L3 pattern-tranche maturity decision after the independent v0.0.3rc04 trace-closure review returned **PASS / `INITIAL L3 PATTERN-TRANCHE TRACE-CLOSURE GATE: YES`**, with `R3-01` through `R3-04` fully Resolved and no new Critical, Major, Minor or Trivial finding.
+
+### Changed
+
+- advanced all seven published initial-tranche patterns from `M1 — Structured` to `M2 — Architecture Reviewed`;
+- retained `Catalog Status: Candidate` for all seven entries so maturity and catalog availability remain independent lifecycle axes;
+- added a release-scoped initial-tranche lifecycle decision record documenting the M2 evidence basis and the separate `Available` acceptance gate;
+- clarified catalog governance so M2 promotion requires completed independent architecture review/closure of material authority, trace and L3/L4 findings;
+- clarified that Candidate→Available is a separate explicit catalog acceptance decision and does not follow automatically from M2;
+- advanced current L3 development labels and release/gate wording to v0.0.3rc05.
+
+### M2 Evidence Basis
+
+- v0.0.3rc03 independently reviewed all seven entries for authority boundary, L2 trace, primary-family placement, PDA/external-authority separation and L3/L4 conformance;
+- v0.0.3rc04 closed all four localized Minor trace findings from that review;
+- the rc04 focused closure review confirmed all four findings Resolved and found no new Critical/Major/Minor/Trivial regression;
+- the seven IDs, immutable primary families, index counts and frozen v0.0.2 baseline remain stable.
+
+### Preserved
+
+- the same seven published Pattern IDs and immutable primary families introduced in v0.0.3rc03;
+- `Catalog Status: Candidate` for every current pattern;
+- `Introduced In: v0.0.3rc03` for all seven identities;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace semantics and the prohibition on generic L2→L3 `satisfies` shortcuts;
+- Project Design Authority ownership of project mechanism selection/configuration and external source-authority ownership of external constraints;
+- L3/L4 boundary and gates on schema, validator, CI, code generation and executable governance.
+
+### Deliberately Not Added / Promoted
+
+- no Candidate→Available transition in this RC;
+- no eighth Pattern ID, second tranche, primary-family move, `Supersedes` event or Pattern-ID replacement;
+- no M3/M4 maturity claim;
+- no L4 implementation / verification guidance;
+- no schema, validator, CI or executable-governance machinery.
+
+### Gate
+
+- independently verify the M2 evidence basis for each of the seven entries;
+- assess Candidate→Available readiness entry by entry using the catalog lifecycle criteria, without auto-promoting any entry;
+- reconfirm Pattern identity/family, frozen-baseline integrity, L2 trace, PDA/external-authority and L3/L4 boundaries;
+- only after a successful rc05 review may a later RC explicitly promote reviewed entries to `Available` and separately decide whether a small second tranche should begin.
+
 ## v0.0.3rc04 — 2026-08-16
 
 Localized initial L3 pattern-tranche trace cleanup after the independent v0.0.3rc03 review returned **PASS WITH MINOR CLEANUP / `INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP`**, with no Critical or Major finding and four Minor trace-contract findings.

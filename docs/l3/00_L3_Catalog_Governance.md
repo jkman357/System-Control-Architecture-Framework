@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc04  
+**Development Release:** v0.0.3rc05  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -151,6 +151,16 @@ Pattern status describes catalog lifecycle, not engineering confidence:
 
 `Available` does not mean mandatory, compliant, verified for a project, or sufficient to satisfy an L2 obligation.
 
+A `Candidate`→`Available` transition is a deliberate **catalog acceptance** decision. Unless a later governance rule explicitly establishes a stricter gate, an entry considered for `Available` shall have:
+
+- maturity of at least `M2 — Architecture Reviewed`;
+- no unresolved Critical, Major or Minor finding that materially affects pattern identity, authority boundary, L2 trace, applicability, PDA decision ownership, source-authority ownership or L3/L4 separation;
+- sufficiently clear applicability, non-applicability/cautions, Required PDA Decisions, forces/tradeoffs, weakness modes and selection consequences for responsible project consideration;
+- provenance/reference basis stated at its actual maturity without uncontrolled donor promotion;
+- an explicit catalog lifecycle decision recording the acceptance.
+
+`Available` does not require M3 or M4 evidence. M3/M4 describe additional engineering confidence, not the minimum catalog-availability state.
+
 ## 8. Pattern Maturity
 
 Maturity is independent of status:
@@ -164,6 +174,8 @@ Maturity is independent of status:
 | `M4` | Reference / Field Backed | Supported by controlled reference implementation, project experience or retained field evidence |
 
 Maturity does not make a pattern universally applicable or mandatory.
+
+Promotion to `M2 — Architecture Reviewed` requires independent review evidence covering, at minimum, the pattern's authority boundary, L2 trace and L3/L4 boundary. Critical/Major findings and any Minor finding materially affecting those M2 dimensions shall be resolved or explicitly dispositioned through the controlled review process before M2 promotion is recorded.
 
 ## 9. Composition Relations
 
@@ -204,7 +216,7 @@ Those belong to later L4 implementation / verification guidance or project-speci
 
 ## 11. Initial Development Priority
 
-The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc04 across:
+The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc05 across:
 
 1. `SUP` — supervision / liveness / progress detection;
 2. `REC` — bounded retry / escalation;
@@ -213,7 +225,7 @@ The catalog-contract gate has passed and the first deliberately small representa
 5. `LCM` — update / activation / rollback lifecycle;
 6. `EVD` — retained incident evidence / pre-post event recording.
 
-`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. Broad second-tranche authoring is gated until the first seven Candidate/M1 entries demonstrate that metadata, trace, primary-family, composition and L3/L4 semantics remain stable under actual use.
+`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. The first seven entries have now demonstrated stable metadata, trace, primary-family, composition and L3/L4 semantics through independent review and closure. Broad second-tranche authoring remains separately gated while rc05 validates their M2 lifecycle decision and assesses `Available` readiness.
 
 
 ## 12. v0.0.3rc03 Initial Pattern-Tranche Gate
@@ -270,3 +282,25 @@ The rc04 focused closure review shall confirm:
 - no generic L2→L3 `satisfies` shortcut, authority inversion, L4 detail, schema/validator/CI/code-generation/executable-governance work or frozen normative edit is introduced.
 
 A successful rc04 closure review may permit the **next RC** to record successful architecture review and make explicit, entry-by-entry decisions about M2 advancement and/or `Available` status. This gate does not itself auto-promote any pattern and does not authorize uncontrolled bulk catalog expansion.
+
+
+## 14. v0.0.3rc05 Initial-Tranche Maturity / Availability Gate
+
+The focused independent v0.0.3rc04 closure review returned:
+
+```text
+INITIAL L3 PATTERN-TRANCHE TRACE-CLOSURE GATE: YES
+```
+
+It confirmed `R3-01` through `R3-04` fully Resolved, found no new Critical/Major/Minor/Trivial regression, preserved the same seven published identities/families and reconfirmed the frozen v0.0.2 baseline.
+
+v0.0.3rc05 therefore records an explicit **M1→M2 maturity advancement for all seven initial-tranche entries**. The basis is the completed rc03 independent architecture review plus rc04 focused closure review, which together cover authority boundary, L2 trace and L3/L4 conformance for every entry.
+
+All seven entries remain `Catalog Status: Candidate`. M2 maturity is an engineering-review state; it is not the catalog acceptance decision represented by `Available`.
+
+The rc05 independent review shall therefore answer two separate questions for every pattern:
+
+1. **M2 validation:** is the recorded `M2 — Architecture Reviewed` state justified by the available review/closure evidence and current pattern content?
+2. **Availability readiness:** is the entry sufficiently clear and controlled for a later explicit `Candidate`→`Available` lifecycle transition under Section 7, without implying recommendation, project applicability, compliance or L2 satisfaction?
+
+A successful rc05 review may permit a later RC to promote all, some or none of the seven entries to `Available`. Such status changes must be explicit and entry-specific. The same later RC may separately decide whether to open a small second pattern tranche. Neither action is automatic.

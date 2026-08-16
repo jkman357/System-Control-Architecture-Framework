@@ -1,10 +1,10 @@
 # SCAF-PAT-SUP-001 — Heartbeat / Liveness Supervision
 
-**Development Release:** v0.0.3rc04  
+**Development Release:** v0.0.3rc05  
 **Pattern Family:** `SUP` — Supervision & Detection  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  
-**Maturity:** M1 — Structured  
+**Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc03
 
 ## Metadata
@@ -16,7 +16,7 @@
 | Pattern Family | `SUP` |
 | Pattern Kind | Mechanism |
 | Catalog Status | Candidate |
-| Maturity | M1 — Structured |
+| Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-ROB-004`, `SCAF-ROB-005` |
 | Supporting L2 Trace | `SCAF-ROB-031`, `SCAF-OBS-014`, `SCAF-OBS-015` |

@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc04  
+**Development Release:** v0.0.3rc05  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** Initial representative L3 pattern tranche trace-cleanup RC; all entries remain Candidate / M1
+**Status:** Initial representative L3 pattern maturity-decision RC; all entries Candidate / M2
 
 ## 1. Purpose
 
@@ -29,20 +29,20 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc04 Scope
+## 2. v0.0.3rc05 Scope
 
-The independent v0.0.3rc03 initial-pattern-tranche review returned `INITIAL L3 PATTERN-TRANCHE GATE: YES, AFTER MINOR CLEANUP`, with no Critical or Major finding and four localized Minor trace-contract findings (`R3-01` through `R3-04`).
+The independent v0.0.3rc04 focused trace-closure review returned `INITIAL L3 PATTERN-TRANCHE TRACE-CLOSURE GATE: YES`, confirmed `R3-01` through `R3-04` Resolved and found no new Critical, Major, Minor or Trivial finding.
 
-v0.0.3rc04 is therefore a narrow trace-cleanup RC. It keeps the same seven published permanent identities and keeps every entry at `Catalog Status: Candidate` and `Maturity: M1 — Structured`. It does **not** add a second tranche or promote any pattern.
+v0.0.3rc05 therefore records the deliberate maturity decision that the same seven published entries now satisfy the catalog definition of `M2 — Architecture Reviewed`. All seven remain `Catalog Status: Candidate` while a separate availability-readiness review is performed.
 
-Localized cleanup is limited to:
+No pattern body is re-authored merely to claim maturity. The rc05 content changes are limited to:
 
-- `SCAF-PAT-SUP-002` — remove the overstated `SCAF-ROB-032` Primary trace and keep LIFE reset semantics as Constraint Inputs rather than Supporting Realization;
-- `SCAF-PAT-REC-001` — add the applicable INT-owned duplicate/order and conditional session-incarnation constraints for Interaction retries;
-- `SCAF-PAT-LCM-001` — add the explicit `SCAF-RUN-009` LIFE-to-RUN readiness handoff constraint;
-- `SCAF-PAT-EVD-001` — add the explicit `SCAF-OBS-009` causal-inference claim-basis constraint.
+- recording the M2 lifecycle decision and its independent-review evidence basis;
+- updating the seven pattern metadata maturity values from M1 to M2;
+- defining the separate Candidate→Available acceptance gate;
+- updating current release/index/navigation wording.
 
-The other three patterns remain semantically unchanged apart from current-development-release labeling. The next gate is a focused independent closure review of `R3-01` through `R3-04` plus regression checks across all seven published identities.
+The rc05 review must validate M2 promotion independently and assess, entry by entry, whether later `Available` promotion would be justified. It must not infer project suitability, recommendation, compliance or L2 satisfaction from either M2 or future `Available` status.
 
 ## 3. Files
 
@@ -52,6 +52,7 @@ The other three patterns remain semantically unchanged apart from current-develo
 | `01_L3_Pattern_Metadata_Contract.md` | Required pattern-entry metadata and field semantics |
 | `02_L3_Trace_and_Selection_Model.md` | L2→L3 trace relations, project selection states and satisfaction boundary |
 | `03_L3_Pattern_Index.md` | Human-readable catalog index; not a trace authority |
+| `04_L3_Initial_Tranche_Lifecycle_Decision.md` | Release-scoped M2 decision record and `Available` readiness gate |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -63,9 +64,9 @@ If L3 work exposes a genuine architecture-level contradiction in the frozen base
 
 ## 5. Closed Gates
 
-The following remain outside v0.0.3rc04:
+The following remain outside v0.0.3rc05:
 
-- promotion of Candidate patterns to `Available` before independent tranche review;
+- Candidate→`Available` promotion before the rc05 maturity / availability-readiness review is accepted;
 - bulk pattern expansion;
 - L4 implementation guidance;
 - L4 verification procedures or test cases;

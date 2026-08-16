@@ -1,10 +1,10 @@
 # SCAF-PAT-EVD-001 — Pre/Post-Trigger Retained Incident Evidence Ring
 
-**Development Release:** v0.0.3rc04  
+**Development Release:** v0.0.3rc05  
 **Pattern Family:** `EVD` — Evidence & Incident Recording  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Candidate  
-**Maturity:** M1 — Structured  
+**Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc03
 
 ## Metadata
@@ -16,7 +16,7 @@
 | Pattern Family | `EVD` |
 | Pattern Kind | Composite Pattern |
 | Catalog Status | Candidate |
-| Maturity | M1 — Structured |
+| Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-OBS-016`, `SCAF-OBS-017`, `SCAF-OBS-018` |
 | Supporting L2 Trace | `SCAF-OBS-010`, `SCAF-OBS-011`, `SCAF-OBS-012`, `SCAF-OBS-019`, `SCAF-OBS-020`, `SCAF-OBS-021` |
