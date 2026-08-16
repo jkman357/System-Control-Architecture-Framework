@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc01  
+**Version:** v0.0.3rc02  
 **Status:** L3 Pattern / Mechanism Catalog Architecture RC  
 **Date:** 2026-08-16
 
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.3rc01 L3 Pattern / Mechanism Catalog Position
+## v0.0.3rc02 L3 Pattern / Mechanism Catalog Position
 
-v0.0.3rc01 opens the controlled **L3 Pattern / Mechanism Catalog** development line downstream of the frozen v0.0.2 L1/L2 baseline. This RC establishes only the L3 catalog architecture, metadata contract, many-to-many L2 trace model, project selection semantics, pattern status/maturity model, mechanism-family taxonomy and authoring template.
+v0.0.3rc02 continues the controlled **L3 Pattern / Mechanism Catalog** development line downstream of the frozen v0.0.2 L1/L2 baseline. This RC is a localized contract-cleanup release following independent rc01 review: it resolves pattern-ID publication ambiguity, primary-family identity semantics, catalog-versus-project `Constraint Input` separation, PDA-versus-external-authority categorization, and distinct `Subsumes` / `Supersedes` relation representation. It still contains no instantiated L3 pattern IDs.
 
 No `SCAF-PAT-*` pattern instance is introduced in this RC. Bulk pattern authoring is intentionally gated until the L3 contract passes independent architecture review.
 
@@ -301,7 +301,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.3rc01.**
+**No CI is included in v0.0.3rc02.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -345,14 +345,14 @@ v0.0.2rc13   # final integrated L1/L2 consolidation + SEC minor closure
 v0.0.2rc14   # final editorial closure / L1/L2 freeze candidate
 v0.0.2rc15   # freeze-candidate release-hygiene closure
 v0.0.2       # frozen L1/L2 baseline
-v0.0.3rc01   # L3 catalog architecture / contract RC; no pattern instances yet
+v0.0.3rc02   # L3 catalog contract cleanup RC; no pattern instances yet
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.3rc01 is the **L3 Pattern / Mechanism Catalog architecture / contract RC** built downstream of the frozen v0.0.2 L1/L2 baseline.
+v0.0.3rc02 is the **L3 Pattern / Mechanism Catalog contract-cleanup RC** built downstream of the frozen v0.0.2 L1/L2 baseline after the rc01 independent review returned `YES, AFTER MINOR CLEANUP`.
 
 Frozen and unchanged upstream:
 

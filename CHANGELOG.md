@@ -1,5 +1,44 @@
 # Changelog
 
+## v0.0.3rc02 — 2026-08-16
+
+Focused L3 catalog-contract cleanup after the independent v0.0.3rc01 architecture review returned **PASS WITH MINOR CLEANUP / L3 CATALOG-CONTRACT GATE: YES, AFTER MINOR CLEANUP**, with no Critical or Major findings.
+
+### Changed
+
+- replaced concrete-looking `SCAF-PAT-*-001` examples with non-allocating `<NNN>` placeholders and defined that an ID is **published** only when assigned to an instantiated catalog entry in a repository release;
+- clarified that illustrative pattern identifiers/placeholders do not allocate or reserve identities;
+- defined primary pattern family by the pattern's principal reusable mechanism intent rather than by dominant frozen-concern trace;
+- made the primary-family component immutable after pattern-ID publication and required a new ID plus explicit `Supersedes` lifecycle relation for genuine post-publication primary-family change;
+- narrowed catalog `Constraint Input` targets to frozen L2 obligations and moved actual project Controlled Decision references to project-side selection/application records;
+- kept decision categories in `Required PDA Decisions` while separating externally owned safety/security/regulatory/risk inputs into `External Authority Considerations`;
+- represented `Subsumes` and `Supersedes` as distinct metadata/template relations;
+- corrected the review baseline CTX SHA-256 manifest value used by the focused review instruction.
+
+### Preserved
+
+- frozen v0.0.2 L1/L2 normative baseline;
+- 294 normative requirement IDs: 218 Project-Applicable Obligations and 76 Framework Normative Invariants;
+- L3 mechanism-family taxonomy;
+- many-to-many L2→L3 trace model and prohibition on generic L2→L3 `satisfies`;
+- Project Design Authority ownership of project mechanism selection/configuration;
+- independent catalog status, pattern maturity and project selection state;
+- L3/L4 boundary;
+- zero instantiated `SCAF-PAT-*` pattern entries.
+
+### Deliberately Not Added
+
+- actual L3 pattern instances or allocated Pattern IDs;
+- L4 implementation / verification guidance;
+- schema, validator, CI or executable-governance machinery.
+
+### Gate
+
+- run a focused independent rc02 closure review against rc01 findings L3-01 through L3-05 and T-01;
+- confirm each finding is Resolved or explicitly identify any regression/new issue;
+- reconfirm the frozen v0.0.2 normative baseline is byte-stable;
+- if the focused review passes without Critical/Major findings and no unresolved identity/trace-authority defect remains, allow the next RC to allocate the first small representative `SCAF-PAT-*` tranche.
+
 ## v0.0.3rc01 — 2026-08-16
 
 First controlled L3 Pattern / Mechanism Catalog architecture / contract RC downstream of the frozen v0.0.2 L1/L2 baseline.

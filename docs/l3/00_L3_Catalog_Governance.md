@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc01  
+**Development Release:** v0.0.3rc02  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -113,26 +113,29 @@ Pattern IDs use:
 SCAF-PAT-<FAMILY>-<NNN>
 ```
 
-Examples of valid future identities:
+Illustrative **format placeholders** (not allocated or reserved identities):
 
 ```text
-SCAF-PAT-SUP-001
-SCAF-PAT-REC-001
-SCAF-PAT-PST-001
-SCAF-PAT-EVD-001
+SCAF-PAT-SUP-<NNN>
+SCAF-PAT-REC-<NNN>
+SCAF-PAT-PST-<NNN>
+SCAF-PAT-EVD-<NNN>
 ```
 
 Rules:
 
 1. `<FAMILY>` must be a registered L3 mechanism-family code.
-2. `<NNN>` is a three-digit monotonically assigned number within the family.
-3. Once an ID has been published in a repository release, the ID is not reused for another pattern.
-4. Editorial clarification or compatible refinement retains the same ID.
-5. A change that materially changes intent, architectural mechanism, selection contract, failure behavior or incompatible semantics requires a new pattern ID and an explicit supersession relation.
-6. Version numbers are not embedded in pattern IDs; repository release history carries version state.
-7. Frozen L1/L2 concern IDs such as `SCAF-ROB-*` or `SCAF-CFG-*` are never reused as pattern IDs.
+2. `<NNN>` is a three-digit monotonically assigned number within the family when an actual catalog entry is instantiated.
+3. For pattern-identity lifecycle purposes, **published** means an ID has been assigned to an instantiated catalog entry and included in a repository release. Illustrative placeholders or examples do not allocate or reserve an ID.
+4. Once an instantiated pattern ID has been published, the ID is not reused for another pattern.
+5. Editorial clarification or compatible refinement retains the same ID.
+6. A change that materially changes intent, architectural mechanism, selection contract, failure behavior or incompatible semantics requires a new pattern ID and an explicit `Supersedes` relation where lifecycle replacement applies.
+7. The primary family is selected from the pattern's **principal reusable mechanism intent**, not from the frozen concern that contributes the greatest number of L2 traces.
+8. The primary-family component of a published pattern ID is immutable. If later review determines that an instantiated pattern's genuine primary family must change, the reclassified pattern receives a new ID and records an explicit `Supersedes` relation to the prior identity; the prior identity is retained under the appropriate catalog lifecycle status.
+9. Version numbers are not embedded in pattern IDs; repository release history carries version state.
+10. Frozen L1/L2 concern IDs such as `SCAF-ROB-*` or `SCAF-CFG-*` are never reused as pattern IDs.
 
-No `SCAF-PAT-*` ID is instantiated in v0.0.3rc01.
+No `SCAF-PAT-*` ID is instantiated in v0.0.3rc02.
 
 ## 7. Catalog Status
 
@@ -212,16 +215,17 @@ The recommended first pattern tranche, after this catalog contract passes review
 
 `FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` patterns should expand after the first representative set proves the metadata, trace and selection model.
 
-## 12. v0.0.3rc01 Gate
+## 12. v0.0.3rc02 Gate
 
-Before bulk pattern authoring begins, independent review should determine whether:
+Before the first instantiated `SCAF-PAT-*` identities are allocated, a focused independent closure review shall determine whether:
 
-- the L3 taxonomy is mechanism-oriented rather than a duplicate concern taxonomy;
-- the catalog remains subordinate to frozen L1/L2 authority;
-- pattern selection cannot be misread as requirement satisfaction;
-- valid alternate/project-specific mechanisms remain permitted;
-- L2→L3 trace supports many-to-many relations;
-- status and maturity are semantically separate;
-- the metadata contract captures unresolved PDA decisions;
-- the L3/L4 boundary prevents implementation-rule creep;
+- rc01 findings L3-01 through L3-05 are resolved without reopening the frozen L1/L2 baseline;
+- illustrative Pattern ID placeholders cannot be interpreted as allocated or reserved identities;
+- the primary family is selected by principal reusable mechanism intent and is immutable after ID publication;
+- catalog `Constraint Input` targets are frozen L2 obligations rather than future project Controlled Decision artifacts;
+- `Required PDA Decisions` remains distinct from externally owned safety/security/regulatory/risk authority inputs;
+- `Subsumes` and `Supersedes` remain distinct composition/lifecycle relations;
+- the L3 taxonomy remains mechanism-oriented and subordinate to frozen L1/L2 authority;
+- pattern selection cannot be misread as requirement satisfaction and valid alternate/project-specific mechanisms remain permitted;
+- L2→L3 trace remains many-to-many, status/maturity/selection semantics remain separated, and the L3/L4 boundary prevents implementation-rule creep;
 - no v0.0.2 normative file was modified.

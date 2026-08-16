@@ -1,11 +1,11 @@
 # SCAF L3 Pattern Index
 
-**Development Release:** v0.0.3rc01  
+**Development Release:** v0.0.3rc02  
 **Status:** Navigation / planning index; not trace authority
 
 ## 1. Current Catalog State
 
-v0.0.3rc01 intentionally contains **zero instantiated `SCAF-PAT-*` patterns**.
+v0.0.3rc02 intentionally contains **zero instantiated `SCAF-PAT-*` patterns**.
 
 The purpose of this RC is to stabilize the catalog architecture, metadata, trace and selection semantics before bulk content is authored.
 

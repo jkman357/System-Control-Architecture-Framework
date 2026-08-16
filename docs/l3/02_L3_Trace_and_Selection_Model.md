@@ -1,6 +1,6 @@
 # SCAF L3 Trace and Selection Model
 
-**Development Release:** v0.0.3rc01  
+**Development Release:** v0.0.3rc02  
 **Status:** Development contract
 
 ## 1. Purpose
@@ -33,7 +33,9 @@ The pattern can materially support realization of the traced obligation but the 
 
 ### 3.3 Constraint Input
 
-The traced obligation or its controlled project decision supplies semantics/constraints that the pattern must consume rather than redefine.
+The traced target is a **frozen L2 obligation** whose semantics, and the controlled project decisions resulting from that obligation, constrain the pattern. The pattern consumes those semantics/constraints rather than redefining them.
+
+At catalog level, `Constraint Input` does not point to a future project's concrete Controlled Decision artifact. The decision category is captured under `Required PDA Decisions`; actual project decision values and artifact references belong in project-side selection/application records.
 
 Examples include:
 

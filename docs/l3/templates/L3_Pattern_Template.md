@@ -1,6 +1,6 @@
 # SCAF L3 Pattern Template
 
-**Development Release:** v0.0.3rc01  
+**Development Release:** v0.0.3rc02  
 **Status:** Authoring template; no pattern identity allocated
 
 > **Template only — do not assign a `SCAF-PAT-*` ID until the catalog contract gate is cleared.**
@@ -18,7 +18,7 @@
 | Introduced In | `<release>` |
 | Primary L2 Trace | `<Primary Realization Candidate relation(s)>` |
 | Supporting L2 Trace | `<Supporting Realization relation(s) or None>` |
-| Constraint Inputs | `<Constraint Input relation(s) or None>` |
+| Constraint Inputs | `<frozen L2 Constraint Input relation(s) or None>` |
 | Profile Facets | `<relevant realization facets>` |
 | Provenance / Reference Basis | `<source and maturity>` |
 
@@ -50,9 +50,9 @@ State contexts, assumptions or failure conditions that make the pattern unsuitab
 
 ### 5.3 Constraint Inputs
 
-- `<SCAF-...-NNN>` — `<upstream semantic/decision consumed by this pattern>`
+- `<SCAF-...-NNN>` — `<frozen L2 semantic/constraint consumed by this pattern>`
 
-Do not use a generic `satisfies` relation.
+Do not use a generic `satisfies` relation. Actual project Controlled Decision references do not belong in this catalog trace field; record their decision categories under `Required PDA Decisions` and the concrete references in project-side application records.
 
 ## 6. Required PDA Decisions
 
@@ -61,7 +61,7 @@ List the project-specific architecture decisions that remain unresolved by this 
 - `<decision category>`
 - `<decision category>`
 
-Do not invent project-specific values.
+Do not invent project-specific values. Keep externally owned safety/security/regulatory/risk constraints under `External Authority Considerations`; list here only the PDA-owned architecture/integration decision categories made subject to those inputs.
 
 ## 7. Mechanism Summary
 
@@ -101,9 +101,13 @@ Describe architectural constraints, assumptions or follow-on decisions created b
 
 - `<pattern/mechanism or None>`
 
-### Subsumes / Supersedes
+### Subsumes
 
-- `<relation or None>`
+- `<pattern/mechanism or None>`
+
+### Supersedes
+
+- `<published pattern identity or None>`
 
 ## 13. External Authority Considerations
 

@@ -1,6 +1,6 @@
 # SCAF L3 Pattern Metadata Contract
 
-**Development Release:** v0.0.3rc01  
+**Development Release:** v0.0.3rc02  
 **Status:** Development contract  
 **Applies To:** future `SCAF-PAT-*` catalog entries
 
@@ -8,7 +8,7 @@
 
 This document defines the metadata structure required for future SCAF L3 Pattern / Mechanism entries.
 
-The contract is intentionally human-readable in v0.0.3rc01. It does not introduce YAML, JSON Schema, validation code or CI. Field stability may later become an input to executable governance after a separate gate.
+The contract is intentionally human-readable in v0.0.3rc02. It does not introduce YAML, JSON Schema, validation code or CI. Field stability may later become an input to executable governance after a separate gate.
 
 ## 2. Metadata Principles
 
@@ -39,14 +39,14 @@ Each future pattern entry must contain the following fields.
 | `Non-Applicability / Cautions` | Yes | Conditions that invalidate or weaken the mechanism |
 | `Primary L2 Trace` | Yes | Frozen L2 obligation(s) that primarily motivate the pattern |
 | `Supporting L2 Trace` | Yes | Other frozen obligations materially supported by the pattern; may be `None` |
-| `Constraint Inputs` | Yes | Frozen obligations/project decisions whose semantics constrain use of the pattern; may be `None` |
+| `Constraint Inputs` | Yes | Frozen L2 obligations whose semantics and resulting controlled project decisions constrain use of the pattern; may be `None` |
 | `Required PDA Decisions` | Yes | Project-specific decisions deliberately unresolved by the pattern |
 | `Mechanism Summary` | Yes | Technology-neutral architecture description |
 | `Variants` | Yes | Legitimate mechanism variants; may state `None identified` |
 | `Forces / Tradeoffs` | Yes | Resource, latency, complexity, coupling, availability or other decision forces |
 | `Failure / Weakness Modes` | Yes | Ways the pattern can fail, mislead or lose effectiveness |
 | `Selection Consequences` | Yes | New constraints/assumptions created when selected |
-| `Composition Relations` | Yes | Requires / commonly-composed / alternative / conflict / subsume relations; may be `None` |
+| `Composition Relations` | Yes | `Requires`, `Commonly Composed With`, `Alternative To`, `Conflicts With`, `Subsumes`, and `Supersedes` relations; may be `None` |
 | `Profile Facets` | Yes | Relevant realization-profile facets; may be broad/technology-neutral |
 | `External Authority Considerations` | Yes | Safety/security/regulatory/risk inputs that may constrain project selection; may be `None identified` |
 | `Re-evaluation Triggers` | Yes | Changes that should cause project re-evaluation of the selected pattern |
@@ -76,9 +76,11 @@ Identifies obligations for which the pattern can materially support a project re
 
 ### 5.3 Constraint Inputs
 
-Identifies frozen obligations or project decisions whose controlled semantics must be supplied to/configure the mechanism correctly.
+Identifies **frozen L2 obligations** whose semantics, and the controlled project decisions resulting from those obligations, constrain how the mechanism can be selected or configured.
 
-Typical examples include timing bounds, interface semantics, lifecycle eligibility criteria, authoritative configuration state, operational-state meaning or evidence requirements.
+The catalog-level `Constraint Inputs` field references the frozen L2 obligation, not a future project's concrete Controlled Decision artifact. The corresponding **decision category** belongs in `Required PDA Decisions`; actual project decision values and artifact references belong in project-side pattern selection/application records.
+
+Typical examples include L2 obligations governing timing bounds, interface semantics, lifecycle eligibility criteria, authoritative configuration state, operational-state meaning or evidence requirements.
 
 The three trace fields are deliberately distinct and shall not be collapsed into a generic `satisfies` relation.
 
@@ -98,9 +100,11 @@ It records project values/choices that the pattern intentionally does not decide
 - trust/key/credential authority choices;
 - reset/restart/reintegration consequence;
 - acceptable degraded behavior;
-- external safety/security/regulatory constraint inputs.
+- integration/architecture choices made subject to applicable external safety/security/regulatory constraint inputs.
 
-The field should describe **decision categories**, not invent project values.
+Externally owned safety/security/regulatory/risk objectives or constraints remain in `External Authority Considerations`; they are not themselves PDA decisions. `Required PDA Decisions` records only the project architecture/integration decision categories made subject to those inputs.
+
+The field should describe **decision categories**, not invent project values or external-authority requirements.
 
 ## 7. Profile Facets
 
@@ -133,7 +137,7 @@ Reference basis is evidence/provenance, not automatic normative promotion.
 
 ## 9. Metadata Not Yet Added
 
-v0.0.3rc01 intentionally does not define:
+v0.0.3rc02 intentionally does not define:
 
 - machine-readable field keys as normative schema identifiers;
 - JSON/YAML serialization;

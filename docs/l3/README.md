@@ -1,6 +1,6 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc01  
+**Development Release:** v0.0.3rc02  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** L3 architecture / catalog-contract RC; no pattern instances yet
@@ -29,7 +29,9 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc01 Scope
+## 2. v0.0.3rc02 Scope
+
+v0.0.3rc02 is a localized contract-cleanup release responding to the independent rc01 review. It does not allocate pattern identities or expand catalog content.
 
 This RC establishes only the L3 architecture and catalog contract:
 
@@ -65,7 +67,7 @@ If future L3 work exposes a genuine architecture-level contradiction in the froz
 
 ## 5. Closed Gates
 
-The following remain outside v0.0.3rc01:
+The following remain outside v0.0.3rc02:
 
 - L4 implementation guidance;
 - L4 verification procedures or test cases;
