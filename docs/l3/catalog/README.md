@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Entries
 
-v0.0.3rc13 is a focused freeze-candidate release-record cleanup release after the independent rc12 audit returned `L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP`. The sole rc12 finding is release-record consistency; no Pattern architecture/trace/lifecycle correction is required.
+v0.0.3rc14 is a final freeze-candidate navigation cleanup release after the independent rc13 focused closure review returned `L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP`. The only remaining residue is stale active gate text in the Pattern Index; no Pattern architecture/trace/lifecycle correction is required.
 
 Current published catalog state:
 
@@ -13,8 +13,8 @@ Current published catalog state:
 
 `Available` means accepted for project consideration. It does not imply project applicability, recommendation, automatic selection, compliance, verification, implementation correctness or L2 satisfaction.
 
-rc13 changes no Pattern lifecycle state and introduces no new ID. All Pattern architecture/trace bodies are preserved from rc12 apart from current Development Release metadata.
+rc14 changes no Pattern lifecycle state and introduces no new ID. All Pattern architecture/trace bodies are preserved from rc13 apart from current Development Release metadata.
 
-The immediate gate is a focused rc13 release-record/non-regression closure review. A successful closure may authorize a later explicit freeze action; rc13 itself is not frozen.
+The immediate gate is a focused rc14 final-navigation/non-regression closure review. A successful closure may make the rc14 tree eligible for a later explicit freeze action; rc14 itself is not frozen.
 
 The approved-but-deferred EVD export/transformation category remains unauthored; the rejected/reframe PST proposal remains unauthored; SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.

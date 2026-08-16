@@ -1,6 +1,6 @@
 # SCAF-PAT-PST-001 — Atomic Dual-Copy Persistent State
 
-**Development Release:** v0.0.3rc13  
+**Development Release:** v0.0.3rc14  
 **Pattern Family:** `PST` — Persistent State Integrity  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Available  

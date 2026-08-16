@@ -1,11 +1,11 @@
 # SCAF L3 Pattern Index
 
-**Development Release:** v0.0.3rc13  
+**Development Release:** v0.0.3rc14  
 **Status:** Navigation index; not trace authority
 
 ## 1. Current Catalog State
 
-v0.0.3rc13 contains **twelve published Pattern identities**. The rc12 freeze-candidate review judged all twelve valid for the proposed v0.0.3 freeze baseline and returned `L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP`; rc13 closes only the resulting release-record consistency finding `R12-01`.
+v0.0.3rc14 contains **twelve published Pattern identities**. The rc13 focused closure review confirmed the architecture/trace/lifecycle baseline and all mandatory non-regression checks, opened no new/regression finding, and returned `L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP`. rc14 closes only the final stale navigation residue of upstream finding `R12-01`.
 
 - **7 initial-tranche entries:** `Available / M2`, introduced in v0.0.3rc03.
 - **5 second-tranche entries:** `Available / M2`, introduced in v0.0.3rc08 after completed architecture review, trace closure, M2 validation and independent availability-readiness assessment.
@@ -49,10 +49,12 @@ The authoritative human-readable upstream trace remains inside each Pattern file
 
 The five second-tranche entries completed independent architecture review in rc08, focused trace closure in rc09, M2 advancement/readiness review in rc10, explicit availability acceptance in rc11, and successful rc11 acceptance/non-regression review. The initial seven previously completed the same controlled lifecycle through rc06.
 
-rc13 changes no catalog status or maturity. It performs only the `R12-01` release-record cleanup required by the rc12 freeze-candidate review and prepares a focused closure audit. The twelve-entry `Available / M2` catalog and its L3 contracts are otherwise unchanged.
+rc14 changes no catalog status or maturity. It performs only the final Pattern Index navigation cleanup required by the rc13 focused closure review. The twelve-entry `Available / M2` catalog and its L3 contracts are otherwise unchanged.
 
 The EVD export/transformation category remains approved but deferred. The PST configuration-activation/source-precedence proposal remains rejected/reframe. SEC-primary authoring remains separately gated. M3/M4, L4 and executable governance also remain outside the proposed v0.0.3 frozen scope.
 
 ## 5. Immediate Gate
 
-The rc12 review shall determine whether the current L3 contracts and twelve-entry catalog are suitable to become a frozen v0.0.3 L3 baseline in a **later explicit freeze action**. It must verify frozen-baseline integrity, twelve-ID lifecycle/identity stability, Pattern-body non-regression, contract consistency, finding closure, bounded freeze scope and clean deferral of future work. rc12 itself remains an RC and performs no freeze.
+The rc14 closure review shall determine whether upstream finding `R12-01` is fully resolved and whether the rc14 tree is eligible for a **later explicit v0.0.3 freeze action**. It must verify current navigation consistency, frozen-baseline integrity, twelve-ID lifecycle/identity stability, Pattern-body non-regression, preservation of the `FTL-001` trace closure, and continued exclusion of separately gated future work.
+
+**rc14 itself remains an RC and performs no freeze.**

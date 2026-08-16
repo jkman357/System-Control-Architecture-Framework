@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc13  
+**Development Release:** v0.0.3rc14  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -520,3 +520,24 @@ v0.0.3rc13 therefore performs a focused release-record cleanup only. The closure
 6. no third tranche, M3/M4, L4, SEC-primary or executable-governance scope is introduced.
 
 A successful rc13 closure review may authorize a later explicit v0.0.3 freeze action. **rc13 itself remains an RC and is not a frozen release.**
+
+## 23. v0.0.3rc14 Freeze-Candidate Final Navigation Cleanup Gate
+
+The independent v0.0.3rc13 focused closure review returned:
+
+```text
+L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP
+```
+
+It confirmed frozen-baseline integrity, twelve-Pattern identity/lifecycle stability, 12 / 12 rc12→rc13 Pattern-body non-regression, preservation of the `FTL-001` trace closure, and scope control. It opened no new/regression finding. The only remaining residue of upstream `R12-01` was the stale active `Immediate Gate` paragraph in `03_L3_Pattern_Index.md`.
+
+v0.0.3rc14 therefore performs a final navigation cleanup only. The closure review shall verify that:
+
+1. `03_L3_Pattern_Index.md` names the rc14 closure review as the immediate gate and explicitly states rc14 remains an RC;
+2. root README and all current L3 navigation surfaces tell one coherent rc14 freeze-candidate story;
+3. all twelve Pattern entries remain `Available / M2` with unchanged identity, family, introduction history and trace semantics;
+4. rc13→rc14 Pattern non-regression holds after normalizing only the Development Release field;
+5. the frozen v0.0.2 normative tree remains byte-stable; and
+6. no third tranche, M3/M4, L4, SEC-primary or executable-governance scope is introduced.
+
+A successful rc14 closure review may make the rc14 tree eligible for a later explicit v0.0.3 freeze action. **rc14 itself remains an RC and is not a frozen release.**

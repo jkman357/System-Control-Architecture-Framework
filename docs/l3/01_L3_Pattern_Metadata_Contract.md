@@ -1,6 +1,6 @@
 # SCAF L3 Pattern Metadata Contract
 
-**Development Release:** v0.0.3rc13  
+**Development Release:** v0.0.3rc14  
 **Status:** Development contract  
 **Applies To:** current and future `SCAF-PAT-*` catalog entries
 

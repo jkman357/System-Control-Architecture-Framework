@@ -1,3 +1,39 @@
+## v0.0.3rc14 — 2026-08-16
+
+Final freeze-candidate navigation cleanup after the independent v0.0.3rc13 focused closure review returned **`L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE: YES, AFTER MINOR CLEANUP`**. The review confirmed the architecture/trace/lifecycle baseline, frozen normative integrity, 12 / 12 Pattern-body non-regression, `FTL-001` trace closure, and scope control; it opened no new/regression finding. The sole remaining residue of upstream `R12-01` was one stale active `Immediate Gate` paragraph in `docs/l3/03_L3_Pattern_Index.md`.
+
+### Changed
+
+- updated `docs/l3/03_L3_Pattern_Index.md` `## 5. Immediate Gate` from the stale rc12 review position to the rc14 final-navigation closure position;
+- synchronized current release/navigation wording to v0.0.3rc14;
+- added this rc14 release record as the final cleanup RC before any explicit freeze decision.
+
+### Preserved
+
+- exactly twelve published numeric `SCAF-PAT-*` identities;
+- all twelve as `Available / M2 — Architecture Reviewed`;
+- initial-seven `Introduced In: v0.0.3rc03`;
+- second-five `Introduced In: v0.0.3rc08`;
+- all immutable primary families, `Supersedes: None`, Pattern bodies and trace relations apart from current Development Release metadata;
+- the rc09 `FTL-001` `SCAF-ROB-007` Constraint Input / `SCAF-ROB-015` Supporting closure;
+- frozen v0.0.2 normative content and all 294 IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace, bounded `Available` semantics, PDA/source-authority ownership and L3/L4 separation.
+
+### Deliberately Not Added / Promoted
+
+- v0.0.3 is **not frozen by rc14**;
+- no thirteenth Pattern ID or third tranche;
+- no deferred EVD Pattern, revived rejected/reframe PST Pattern or SEC-primary Pattern;
+- no M3/M4, L4, schema, validator, generated registry/reverse index, CI, code generation or executable governance.
+
+### Gate
+
+- independently verify upstream `R12-01` is fully resolved;
+- verify no stale active rc12/rc13 immediate-gate text remains in current navigation surfaces;
+- verify rc13→rc14 12 / 12 Pattern-body non-regression with only Development Release metadata changes;
+- verify the frozen v0.0.2 baseline remains byte-stable;
+- return an explicit `L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE` decision without performing the freeze.
+
 ## v0.0.3rc13 — 2026-08-16
 
 Focused freeze-candidate release-record cleanup after the independent v0.0.3rc12 review returned **`FREEZE CANDIDATE NEEDS MINOR CLEANUP` / `L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP`** with 0 Critical, 0 Major, 1 Minor (`R12-01`) and 0 Trivial findings.
