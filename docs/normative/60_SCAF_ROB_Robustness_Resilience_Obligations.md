@@ -1,6 +1,6 @@
 # SCAF-ROB — Robustness & Resilience Obligations
 
-**Release:** v0.0.2rc08  
+**Release:** v0.0.2rc09  
 **Concern:** `SCAF-ROB`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -325,4 +325,4 @@ The following table is informative and does not create additional normative requ
 
 ## 7. Non-Normative Example
 
-A multi-participant service may require a scoped participant failure not to cascade through a shared resource and may require an controlled required degraded Service outcome until reintegration criteria are met. `SCAF-ARCH` supplies the controlled structural/Domain boundaries, `SCAF-ROB` requires the project to define the containment/degradation/reintegration outcomes, `SCAF-RUN` represents the resulting project operational states/transitions, `SCAF-TIME` supplies any measurable detection/recovery/capacity limits, and `SCAF-OBS` supplies evidence semantics. Whether the realization uses a watchdog, redundant provider, reconnect algorithm, reset action or another mechanism is outside L1/L2 ROB normative scope.
+A multi-participant service may require a scoped participant failure not to cascade through a shared resource and may require a controlled required degraded Service outcome until reintegration criteria are met. `SCAF-ARCH` supplies the controlled structural/Domain boundaries, `SCAF-ROB` requires the project to define the containment/degradation/reintegration outcomes, `SCAF-RUN` represents the resulting project operational states/transitions, `SCAF-TIME` supplies any measurable detection/recovery/capacity limits, and `SCAF-OBS` supplies evidence semantics. Whether the realization uses a watchdog, redundant provider, reconnect algorithm, reset action or another mechanism is outside L1/L2 ROB normative scope.

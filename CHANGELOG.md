@@ -1,5 +1,36 @@
 # Changelog
 
+## v0.0.2rc09 — 2026-08-15
+
+SCAF-OBS controlled L1/L2 normative tranche after independent rc08 review cleared the LIFE architecture gate and allowed OBS authoring to begin with localized LIFE cleanup.
+
+### Added
+
+- `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md`;
+- L1 authority boundaries for operational observability, diagnostics, incident evidence, evidence identity/provenance, time/identity correlation, evidence quality/missingness, preservation/survivability/accessibility/export, observer self-health and observer effect;
+- project obligations for source-authority trace, first-abnormal versus later/terminal evidence, incident timeline/correlation, lifecycle survivability, early-boot/crash-loop evidence, four-way identity recording, evidence copies/transforms, persistent evidence/CFG distinction and external evidence constraints;
+- explicit OBS/RUN, OBS/ROB, OBS/LIFE, OBS/INT, OBS/TIME, OBS/CFG, OBS/ASSUR, external-authority, four-way-identity, OBS/ARCH, causal-inference and OBS/PROF realization boundaries.
+
+### Changed
+
+- moved the `SCAF-LIFE-014` framework self-rule out of the Project-Applicable target by converting it to an informative boundary note backed by existing framework invariants;
+- narrowed `SCAF-LIFE-007` Boot Incarnation triggers to LIFE-controlled boot/lifecycle instances and preserved RUN authority for runtime-only operational restart/replacement;
+- changed `SCAF-LIFE-010` from intrinsic retained-state validity wording to lifecycle-transition consumption eligibility using controlled source-authority validity/provenance/version semantics;
+- normalized `SCAF-LIFE-012` and `SCAF-LIFE-013` to PDA-assigned lifecycle authoritative-result responsibility and lifecycle responsibility handoff wording;
+- separated `SCAF-LIFE-016` lifecycle activation/eligibility from RUN Service readiness/availability;
+- replaced `SCAF-LIFE-018` bare `safely or correctly` wording with applicable controlled continuation/eligibility criteria and source-authority trace;
+- corrected minor LIFE/ROB editorial residue and updated README, Authority Kernel gate label and read-coverage position for rc09;
+- retained the frozen v0.0.1 architecture baseline and stable Authority Kernel / CTX / ARCH / INT / TIME / RUN / ROB authority homes.
+
+### Deliberately Not Added
+
+- `SCAF-CFG` or `SCAF-SEC` normative tranches;
+- new top-level taxonomy or core metamodel entities;
+- universal log schema, ring buffer, retained-RAM layout, crash-recorder API, storage technology, telemetry protocol or diagnostic mechanism;
+- L3/L4 mechanism or implementation guidance;
+- schema, validator, generated checklist or CI;
+- broad Draft/RC donor promotion, final migration proof or normative freeze.
+
 ## v0.0.2rc08 — 2026-08-15
 
 SCAF-LIFE controlled L1/L2 normative tranche after independent rc07 review cleared the ROB architecture gate and allowed LIFE authoring to begin with localized ROB cleanup.

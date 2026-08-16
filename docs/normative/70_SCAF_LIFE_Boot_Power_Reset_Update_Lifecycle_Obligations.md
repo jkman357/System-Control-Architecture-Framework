@@ -1,6 +1,6 @@
 # SCAF-LIFE — Boot, Power, Reset & Update Lifecycle Obligations
 
-**Release:** v0.0.2rc08  
+**Release:** v0.0.2rc09  
 **Concern:** `SCAF-LIFE`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC
@@ -85,7 +85,7 @@ Lifecycle completion **SHALL NOT** be treated as proof of RUN readiness unless t
 
 **Target:** Project-Applicable Obligation
 
-Where restart, reset, boot, replacement or re-creation can make lifecycle evidence, retained state, interaction state or operational state ambiguous across lifecycle instances, the project **SHALL** define a Boot Incarnation / Boot Generation identity semantics sufficient to distinguish the relevant lifecycle-created instances.
+Where boot, reset, re-establishment, replacement or re-creation of a **LIFE-controlled boot/lifecycle instance** can make lifecycle evidence, retained state, interaction state or operational state ambiguous across lifecycle instances, the project **SHALL** define Boot Incarnation / Boot Generation identity semantics sufficient to distinguish the relevant lifecycle-created instances. Runtime-only restart, replacement or re-creation of operational state remains governed by the applicable `SCAF-RUN` Operational Incarnation decision.
 
 The project **SHALL** keep Boot Incarnation distinguishable from `SCAF-RUN` Operational Incarnation, `SCAF-INT` Protocol/Connection Session Identity and `SCAF-TIME` Time Epoch / Time Domain.
 
@@ -107,9 +107,9 @@ Where reset affects only part of the System or coordinated participants have dif
 
 **Target:** Project-Applicable Obligation
 
-Where RAM, persistent operational state, configuration, calibration, queued work, session-related state, incident evidence or other retained information may survive a lifecycle transition, the project **SHALL** define the validity/eligibility condition for consuming that retained information after the transition and the controlled consequence when validity cannot be established.
+Where RAM, persistent operational state, configuration, calibration, queued work, session-related state, incident evidence or other retained information may survive a lifecycle transition, the project **SHALL** define the **lifecycle-transition consumption-eligibility condition** for using that retained information after the transition, using the controlled validity/provenance/version semantics of the applicable source authority, and define the controlled consequence when consumption eligibility cannot be established.
 
-**Boundary note (informative):** `SCAF-CFG` retains persistent configuration/state source/version/migration authority; `SCAF-OBS` retains evidence provenance/preservation semantics; LIFE defines the lifecycle-transition validity obligation and handoff context.
+**Boundary note (informative):** `SCAF-CFG` retains persistent configuration/state source/version/migration authority; `SCAF-OBS` retains evidence identity/provenance/preservation semantics; `SCAF-INT` retains session identity/contract semantics; `SCAF-RUN` retains operational-state semantics. LIFE defines only the lifecycle-transition consumption-eligibility decision and handoff context.
 
 ### `SCAF-LIFE-011` — Power lifecycle / brownout-relevant semantics
 
@@ -119,17 +119,17 @@ Where power-on, power-off, power-loss, brownout or partial-power lifecycle condi
 
 This obligation does not prescribe a power-sequencing circuit, supervisor IC, voltage threshold or hardware reset mechanism.
 
-### `SCAF-LIFE-012` — Update transaction applicability and authority
+### `SCAF-LIFE-012` — Update transaction applicability and authoritative-result responsibility
 
 **Target:** Project-Applicable Obligation
 
-Where software, firmware, programmable logic, configuration-bearing image or other updateable realization is material to system lifecycle, the project **SHALL** define the applicable update transaction authority/responsibility, transaction scope, authoritative update result and affected participants/resources.
+Where software, firmware, programmable logic, configuration-bearing image or other updateable realization is material to system lifecycle, the **Project Design Authority SHALL** define the applicable update transaction scope and assign the lifecycle transaction responsibility that determines/maintains the authoritative update result, including the affected participants/resources, consistent with `SCAF-LIFE-003`.
 
 ### `SCAF-LIFE-013` — Bootstrap / active-realization lifecycle responsibility boundary
 
 **Target:** Project-Applicable Obligation
 
-Where bootstrap, staging, recovery, update-management or equivalent lifecycle responsibilities are distinct from the realization that provides normal active Service, the project **SHALL** define the controlled lifecycle responsibility boundary, authority handoff and conditions under which the active realization becomes lifecycle-eligible for subsequent RUN readiness evaluation.
+Where bootstrap, staging, lifecycle-recovery, update-management or equivalent lifecycle responsibilities are distinct from the realization that provides normal active Service, the project **SHALL** define the controlled lifecycle responsibility boundary, the **lifecycle responsibility handoff**, and the conditions under which the active realization becomes lifecycle-eligible for subsequent RUN readiness evaluation, consistent with the PDA-assigned lifecycle authoritative-result responsibility in `SCAF-LIFE-003`.
 
 This obligation does not require a dedicated bootloader, recovery partition, updater component or separate executable image.
 
@@ -139,7 +139,7 @@ This obligation does not require a dedicated bootloader, recovery partition, upd
 
 For each material update transaction, the project **SHALL** define the controlled preconditions that must be satisfied before the transaction may proceed and trace those preconditions to applicable `SCAF-INT`, `SCAF-TIME`, `SCAF-CFG`, `SCAF-SEC`, `SCAF-RUN`, `SCAF-ROB` or external-authority decisions as applicable.
 
-LIFE **SHALL NOT** redefine the source semantics of compatibility, security authorization, configuration authority, timing constraint, operational-state condition or resilience condition merely because the condition gates an update.
+**Boundary note (informative):** LIFE does not redefine the source semantics of compatibility, security authorization, configuration authority, timing constraint, operational-state condition or resilience condition merely because the condition gates an update. The normative framework-side boundaries are defined by `SCAF-LIFE-024` through `SCAF-LIFE-032` as applicable.
 
 ### `SCAF-LIFE-015` — Update transaction atomicity / commit / abort
 
@@ -151,7 +151,7 @@ Where partial application of an update or lifecycle change can create a material
 
 **Target:** Project-Applicable Obligation
 
-Where an updated, replaced or newly prepared realization requires a distinct activation decision, the project **SHALL** define the controlled activation criteria, authoritative activation result and relationship between transaction completion and active/use-eligible lifecycle state.
+Where an updated, replaced or newly prepared realization requires a distinct activation decision, the project **SHALL** define the controlled activation criteria, authoritative activation result and relationship between transaction completion and the **lifecycle-activated / lifecycle-eligible realization or lifecycle result**. Service readiness/availability remains governed by the applicable `SCAF-RUN` decision.
 
 **Boundary note (informative):** A ROB-controlled health/failure determination may be a controlled activation input; `SCAF-ROB` does not thereby become lifecycle activation authority.
 
@@ -167,7 +167,7 @@ This obligation does not prescribe image slots, copy direction, rollback algorit
 
 **Target:** Project-Applicable Obligation
 
-Where a lifecycle transaction may be interrupted by reset, power loss, communication loss, participant loss or another controlled condition and later resumed or restarted, the project **SHALL** define whether resume/restart is permitted, the authoritative continuation basis, consistency/eligibility criteria and the required result when continuation cannot be safely or correctly established.
+Where a lifecycle transaction may be interrupted by reset, power loss, communication loss, participant loss or another controlled condition and later resumed or restarted, the project **SHALL** define whether resume/restart is permitted, the authoritative continuation basis, consistency/eligibility criteria and the required result when continuation cannot be established against the **applicable controlled continuation/eligibility criteria**, traced to safety, security, ROB, CFG or other source authority where such criteria originate.
 
 ### `SCAF-LIFE-019` — Multi-participant lifecycle coordination
 
@@ -261,7 +261,7 @@ Boot Incarnation / Boot Generation belongs to `SCAF-LIFE`; Operational Incarnati
 
 No identity **SHALL** be inferred to be semantically identical to another merely because a project event commonly changes more than one identity. `SCAF-OBS` may record/correlate all applicable identities without redefining them.
 
-### `SCAF-LIFE-031` — LIFE / ARCH structural-boundary boundary
+### `SCAF-LIFE-031` — LIFE / ARCH structural-boundary
 
 **Target:** Framework Normative Invariant
 
@@ -299,13 +299,13 @@ The following table is informative and does not create additional normative requ
 | Reset classification/cause and reset-domain consequence | Project Design Authority, constrained by platform/external requirements as applicable |
 | Retained-state validity after lifecycle transition | Project Design Authority, using controlled CFG/OBS/INT/RUN decisions as applicable |
 | Power lifecycle / brownout-relevant outcome | Project Design Authority |
-| Update transaction scope/authority/preconditions | Project Design Authority, using controlled INT/TIME/CFG/SEC/RUN/ROB inputs |
+| Update transaction scope / authoritative-result responsibility / preconditions | Project Design Authority, using controlled INT/TIME/CFG/SEC/RUN/ROB inputs |
 | Atomicity / commit / abort / activation / rollback / resume semantics | Project Design Authority |
 | Multi-participant lifecycle coordination | Project Design Authority, using controlled ARCH/INT/TIME inputs |
 | LIFE failure -> ROB handoff | Project Design Authority under LIFE/ROB obligations |
 | LIFE observability requirement | Project Design Authority, realized through applicable OBS decisions |
 
-`SCAF-APP` may Disposition / Trace these decisions but does not own them.
+`SCAF-APP` **Dispositions / Traces** these decisions but does not own them.
 
 ## 6. Concern Boundaries
 

@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc08  
+**Version:** v0.0.2rc09  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-15
 
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc08 LIFE L1/L2 Normative Tranche Position
+## v0.0.2rc09 OBS L1/L2 Normative Tranche Position
 
-v0.0.2rc08 begins the `SCAF-LIFE` L1/L2 normative tranche after independent rc07 review found **no Critical or Major issues**, accepted ROB as **Stable after minor cleanup**, confirmed all reviewed ROB cross-boundary gates as Pass, and explicitly allowed LIFE authoring to begin while localized ROB cleanup is completed. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
+v0.0.2rc09 begins the `SCAF-OBS` L1/L2 normative tranche after independent rc08 review found **no Critical or Major issues**, accepted LIFE as **Stable after minor cleanup**, confirmed all reviewed LIFE cross-boundary gates as Pass, and explicitly allowed OBS authoring to begin while localized LIFE cleanup is completed. The frozen v0.0.1 architecture baseline remains unchanged; architecture discovery, core-metamodel expansion and top-level taxonomy expansion remain closed.
 
 Current normative documents are:
 
@@ -51,14 +51,15 @@ Current normative documents are:
 - `docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md`
 - `docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md`
 - `docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md`
+- `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md`
 
-This RC first completes the localized ROB review cleanup: detectability/latent-condition semantics are separated from diagnostic-coverage objective, recovery/repair outcome is separated from retry/escalation termination, residual-risk acceptance provenance is made explicit, ROB/OBS and ROB/ASSUR invariants are separated, health-classification terminology is kept distinct from RUN operational-state semantics, and remaining non-canonical `approved`/authority prose is normalized.
+This RC first completes the localized LIFE review cleanup: the `SCAF-LIFE-014` framework self-rule is removed from the Project-Applicable target and retained only as informative boundary guidance backed by existing invariants; Boot Incarnation triggering is narrowed to LIFE-controlled lifecycle instances; retained information is expressed as lifecycle-transition consumption eligibility using source-authority validity/provenance/version semantics; lifecycle transaction responsibility/handoff wording is normalized; activation wording is separated from RUN readiness/availability; continuation criteria no longer use bare safety acceptance wording; and small editorial residue is corrected.
 
-The new `SCAF-LIFE` tranche establishes L1/L2 authority for boot/power/reset/update/activation/rollback lifecycle transaction/state/result semantics, authoritative lifecycle result responsibility, request-versus-result semantics, lifecycle completion/commit/abort, LIFE-to-RUN readiness handoff, Boot Incarnation / Boot Generation, reset classification/cause, retained-state validity, update preconditions/atomicity/activation/rollback/resume, multi-participant lifecycle coordination and lifecycle observability/traceability.
+The new `SCAF-OBS` tranche establishes L1/L2 authority for operational observability, diagnostics and incident evidence; observed-fact source trace; evidence identity/provenance; time and four-way identity correlation; evidence quality/missingness; observer/recorder self-health and observer effect; first-abnormal versus terminal evidence; incident timeline/correlation; lifecycle evidence survivability; early-boot/crash-loop evidence; preservation/retention/accessibility/export; persistent evidence versus CFG state/configuration; and OBS traceability/re-evaluation.
 
-LIFE explicitly does not re-own RUN operational-state/readiness semantics, ROB failure/resilience response, INT request/session/compatibility semantics, TIME measurable lifecycle constraints, ARCH structural/Domain topology, CFG persistent configuration/state source authority, OBS evidence semantics or external safety/security/risk source authority. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
+OBS explicitly observes/represents/preserves/correlates/exports source-defined facts without re-owning RUN operational state, ROB failure/health meaning, LIFE lifecycle result/Boot Incarnation, INT validity/order/session semantics, TIME timebase/epoch/uncertainty, CFG persistent configuration/state source authority, ASSUR evidence-sufficiency semantics or external safety/security/risk acceptance authority. L3 mechanism catalogs and L4 implementation/verification rulebooks remain deferred.
 
-`SCAF-OBS` and later concern tranches remain deferred pending independent review of this LIFE tranche.
+`SCAF-CFG`, `SCAF-SEC` and later normative tranches remain deferred pending independent review of this OBS tranche.
 
 Normative precedence for this RC is:
 
@@ -70,7 +71,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc08 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc09 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
