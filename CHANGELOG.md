@@ -1,3 +1,45 @@
+## v0.0.4rc02 — 2026-08-16
+
+Focused authority-model determinism cleanup after the independent v0.0.4rc01 review returned **PASS CONDITIONALLY / `V0.0.4 AUTHORITY-MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP`** with 0 Critical, 0 Major, 1 Minor (`R1-01`) and 0 Trivial findings.
+
+### Changed
+
+- closed `R1-01` by fixing the initial `layer` semantic value to exactly `l1_l2_normative_authority`;
+- prohibited serializer inference of per-record `L1`/`L2` classification where the frozen source does not provide such a record-level classification;
+- fixed initial `source_anchor` to exactly the authority `id` and defined canonical resolution as exactly one matching requirement heading/block inside `source_path`;
+- explicitly rejected renderer-generated Markdown slugs, line numbers and generated-index positions as canonical authority anchors;
+- fixed the only initial record `status` value to exactly `represented`, with representation-only meaning and no source/project lifecycle, applicability, compliance, verification, closure, maturity, availability or Pattern-selection semantics;
+- made the initial `relations` population rule explicitly empty/omitted unless a separately reviewed relation contract exists;
+- added `docs/executable-governance/01_SCAF_v0.0.4rc02_Authority_Model_Determinism_Cleanup.md`;
+- synchronized current README and executable-governance navigation/gate wording to rc02.
+
+### Preserved
+
+- frozen v0.0.2 L1/L2 normative semantics, identities and 294 / 218 / 76 inventory;
+- frozen v0.0.3 L3 Pattern bodies, twelve identities, `Available / M2` states, trace semantics and L3/L4 boundary;
+- frozen normative Markdown as canonical semantic authority;
+- exactly two initial authority classes;
+- project Applicability / PDA / realization / verification / evidence / closure boundaries;
+- exclusion of all `SCAF-PAT-*` identities from the initial normative authority-record population.
+
+### Deliberately Not Added
+
+- no 294-record `authority-registry.yaml` or equivalent serialization;
+- no schema or validator;
+- no generated registry/reverse index;
+- no CI enforcement or code generation;
+- no automatic applicability inference;
+- no new L3 Pattern, third tranche, SEC-primary realization, M3/M4 or L4 work.
+
+### Gate
+
+- independently verify `R1-01` is fully closed;
+- verify all three mandatory-field semantics are deterministic and non-authority-expanding;
+- verify initial `relations` remain empty/omitted;
+- verify rc01→rc02 frozen-upstream non-regression;
+- verify no registry/schema/validator/CI/codegen or catalog-expansion scope was pulled into rc02;
+- return an explicit `V0.0.4 AUTHORITY-MODEL DETERMINISM CLOSURE GATE` decision.
+
 ## v0.0.4rc01 — 2026-08-16
 
 First post-v0.0.3 executable-governance development RC. This release defines the semantic authority model that must be reviewed before any machine-readable authority registry, schema, validator or CI enforcement is introduced.

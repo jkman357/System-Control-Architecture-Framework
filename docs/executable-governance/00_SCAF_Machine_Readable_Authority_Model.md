@@ -1,7 +1,7 @@
 # SCAF Machine-Readable Authority Model
 
-**Development Release:** v0.0.4rc01  
-**Status:** Foundation RC; machine-readable serialization not yet authorized  
+**Development Release:** v0.0.4rc02  
+**Status:** Determinism-cleanup RC; machine-readable serialization not yet authorized  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3  
 **Initial Registry Population:** frozen v0.0.2 L1/L2 normative requirement identities only
 
@@ -94,7 +94,7 @@ It is not converted into a project architecture obligation by being present in a
 
 A future registry shall reproduce each requirement's frozen `Target` classification exactly. Any mismatch between registry classification and the source requirement is a validation error.
 
-No third authority class is introduced by v0.0.4rc01.
+No third authority class is introduced by the v0.0.4 authority-model line.
 
 ## 6. Required Semantic Fields for a Future Record
 
@@ -104,16 +104,60 @@ The following fields define the minimum semantic information that a later serial
 |---|---:|---|
 | `id` | exactly 1 | Existing stable frozen requirement ID |
 | `record_kind` | exactly 1 | Initial value is `normative_requirement`; prevents Pattern/catalog records from being confused with normative authority |
-| `layer` | exactly 1 | Source authority layer; initial population is L1/L2 normative authority |
+| `layer` | exactly 1 | Initial value is exactly `l1_l2_normative_authority`; this is a representation-domain label for the combined frozen L1/L2 normative authority population and shall not be split or inferred per record |
 | `authority_class` | exactly 1 | Frozen Target class: `Project-Applicable Obligation` or `Framework Normative Invariant` |
 | `source_path` | exactly 1 | Repository-relative path to the canonical normative Markdown source |
-| `source_anchor` | exactly 1 | Stable resolvable source locator based on the requirement identity/heading, not an invented semantic alias |
+| `source_anchor` | exactly 1 | Initial value is exactly the record `id`; resolution means locating exactly one canonical requirement heading/block with that ID inside `source_path` |
 | `source_release` | exactly 1 | Frozen baseline that owns the represented semantics; initial population is `v0.0.2` |
 | `representation_release` | exactly 1 | RC/release whose machine-readable representation contains the record; this does not change source authority |
-| `status` | exactly 1 | Representation lifecycle state defined by executable-governance rules; it shall not silently redefine source requirement status |
-| `relations` | 0..n | Typed references whose relation semantics are separately defined and validated; no generic `satisfies` shortcut |
+| `status` | exactly 1 | Initial value is exactly `represented`; it means only that the authority record is present in the machine-readable representation and carries no source/project lifecycle, applicability, compliance, verification or closure meaning |
+| `relations` | 0..n | Typed references whose relation semantics are separately defined and validated; initial 294-record serialization shall leave this empty/omitted unless a separate relation contract has been reviewed |
 
 Additional fields may be added only when their semantics are explicit and do not duplicate project-owned applicability, decision, realization, evidence or closure state.
+
+### 6.1 Initial `layer` Determinism
+
+For the first 294-record serialization, every record shall use exactly:
+
+```text
+layer: l1_l2_normative_authority
+```
+
+This value denotes the combined frozen L1/L2 normative authority population. The serializer shall **not** infer a per-record `L1`, `L2`, sublayer or equivalent classification from file location, heading depth, prose, concern, Target class, trace position or tool heuristics. A more granular layer model requires a separately reviewed semantic contract and cannot be introduced as serialization convenience.
+
+### 6.2 Initial `source_anchor` Determinism
+
+For the first 294-record serialization:
+
+```text
+source_anchor == id
+```
+
+The resolver contract is:
+
+1. load the canonical repository-relative `source_path`;
+2. locate a requirement heading/block carrying the exact requirement ID represented by `source_anchor`;
+3. require exactly one matching requirement block;
+4. require that the resolved requirement ID is exactly equal to record `id`;
+5. fail closed if zero or multiple matching blocks exist.
+
+A Markdown renderer-generated fragment/slug, line number, heading ordinal, display alias or generated index position is not a canonical `source_anchor`. Such values may later be emitted as non-authoritative navigation metadata only if separately defined.
+
+### 6.3 Initial `status` Determinism
+
+For the first 294-record serialization, the only authorized record `status` value is:
+
+```text
+status: represented
+```
+
+`represented` means only that the authority identity has a record in the current machine-readable representation. It does **not** mean that the underlying source requirement is active/inactive, Applicable/Not Applicable, satisfied, implemented, compliant, verified, closed, waived, accepted, available, mature or selected.
+
+Missing records, unresolved sources, duplicate identities, source mismatches, stale representation releases and similar defects are validation outcomes/representation defects; they shall not be encoded by inventing additional record `status` values in the initial registry. Any additional representation lifecycle status vocabulary requires a separately reviewed extension.
+
+### 6.4 Initial `relations` Population Rule
+
+The initial 294-record serialization shall omit `relations` or serialize it as an empty collection. It shall not infer L1/L2 cross-references, L2→L3 realization relations or stronger `satisfies` / `implements` / `complies_with` claims merely to populate the field. A non-empty relation vocabulary and population rule require separate review.
 
 ## 7. Fields the Initial Authority Registry Shall Not Own
 
@@ -166,7 +210,7 @@ When a later RC claims the **initial frozen L1/L2 authority registry is complete
 6. no `SCAF-PAT-*` identity is counted as one of the 294 authority records;
 7. no machine-readable record changes the frozen source semantics.
 
-Until a later RC both serializes and validates that population, v0.0.4rc01 makes no claim that such a registry exists.
+Until a later RC serializes that population and the corresponding controlled review accepts it, v0.0.4rc02 makes no claim that such a registry exists.
 
 ## 11. Failure Policy
 
@@ -181,11 +225,11 @@ Examples include:
 - unsupported record kind presented as normative authority;
 - incompatible registry/schema version where semantics cannot be safely interpreted.
 
-Warnings may later be defined for non-authority metadata quality issues, but v0.0.4rc01 does not define validator severities.
+Warnings may later be defined for non-authority metadata quality issues, but v0.0.4rc02 does not define validator severities.
 
 ## 12. Serialization Neutrality
 
-v0.0.4rc01 does not authorize a normative YAML or JSON representation and does not choose a schema language.
+v0.0.4rc02 does not authorize a normative YAML or JSON source and does not choose a schema language. A later serialization RC may select a machine-readable representation format, but that representation remains subordinate to the frozen normative Markdown source.
 
 The next serialization RC may choose a concrete format only if it can preserve this model without changing its authority semantics. Serializer convenience is subordinate to the model.
 
@@ -206,22 +250,31 @@ It shall not infer from registry presence alone that:
 
 The registry is intended to reduce context reconstruction ambiguity, not to erase authority boundaries.
 
-## 14. v0.0.4rc01 Review Gate
+## 14. v0.0.4rc02 Determinism-Closure Review Gate
 
-Independent review shall answer whether this model is safe and precise enough to authorize a later RC to serialize the initial 294-record frozen L1/L2 registry.
+The independent v0.0.4rc01 authority-model foundation review returned:
+
+```text
+V0.0.4 AUTHORITY-MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP
+```
+
+Its sole blocking finding, `R1-01` (Minor), required deterministic initial semantics for `status`, `layer` and `source_anchor` before bulk serialization. v0.0.4rc02 is intentionally limited to that cleanup and the associated current-release/navigation record.
+
+Independent review shall determine whether `R1-01` is fully closed and whether the authority model can now authorize a later controlled RC to serialize exactly 294 frozen L1/L2 authority records.
 
 The review shall specifically verify:
 
-1. frozen v0.0.2 and v0.0.3 semantics are not reopened;
-2. registry/representation authority is subordinate to canonical normative source semantics;
-3. the two frozen Target classes are preserved without creating a third hidden authority class;
-4. project applicability/PDA/realization/verification/evidence/closure state is not absorbed into the framework registry;
-5. L3 Pattern identities remain downstream catalog identities, not normative authority records;
-6. identity, completeness, stale/conflict and fail-closed rules are sufficient for later structural validation;
-7. no schema, validator, CI, codegen or bulk catalog expansion is silently claimed by rc01.
+1. `layer` is deterministically fixed to `l1_l2_normative_authority` for all initial records and no per-record L1/L2 inference is authorized;
+2. `source_anchor` is deterministically equal to `id`, resolves inside `source_path` to exactly one requirement block, and is independent of renderer-generated Markdown slugs;
+3. `status` is deterministically fixed to representation-only `represented` and cannot imply source/project lifecycle, applicability, compliance, verification, closure or Pattern state;
+4. initial `relations` are empty/omitted unless a separately reviewed relation contract exists;
+5. frozen v0.0.2 and v0.0.3 semantics remain unopened and unchanged;
+6. no registry serialization, schema, validator, CI, code generation, generated index, new L3, M3/M4 or L4 work is silently included in rc02.
 
 Expected decision:
 
 ```text
-V0.0.4 AUTHORITY-MODEL FOUNDATION GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 AUTHORITY-MODEL DETERMINISM CLOSURE GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
+
+A `YES` authorizes only a later controlled RC to serialize the initial 294-record frozen L1/L2 authority registry according to this model. It does not authorize schema/validator/CI/codegen or other deferred scope.

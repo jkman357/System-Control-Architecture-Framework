@@ -1,7 +1,7 @@
 # SCAF Executable Governance Development
 
-**Development Release:** v0.0.4rc01  
-**Status:** Authority-model foundation RC  
+**Development Release:** v0.0.4rc02  
+**Status:** Authority-model determinism cleanup / closure RC  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 ## 1. Purpose
@@ -10,19 +10,24 @@ This directory contains separately controlled development toward SCAF executable
 
 The frozen v0.0.2 and v0.0.3 baselines are not modified in place. Executable-governance artifacts are downstream representations, indexes, validators and enforcement mechanisms that must preserve the authority semantics of those frozen baselines.
 
-## 2. v0.0.4rc01 Scope
+## 2. Current rc02 Scope
 
-v0.0.4rc01 introduces the semantic foundation required before a machine-readable authority registry is serialized or validated:
+The independent v0.0.4rc01 authority-model foundation review returned:
 
-- the machine-readable authority model;
-- the initial registry population boundary;
-- source-of-truth and precedence rules;
-- record identity and authority-class semantics;
-- minimum future record fields and their meaning;
-- conflict, omission and stale-representation behavior;
-- explicit separation between L1/L2 normative authority and L3 Pattern catalog artifacts.
+```text
+V0.0.4 AUTHORITY-MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP
+```
 
-v0.0.4rc01 intentionally does **not** add:
+with one blocking Minor finding, `R1-01`. v0.0.4rc02 is a focused cleanup RC that closes only the initial serialization ambiguity for:
+
+- `layer`;
+- `source_anchor`;
+- `status`;
+- and the review-recommended initial empty/omitted `relations` population rule.
+
+The deterministic initial values/rules are defined in `00_SCAF_Machine_Readable_Authority_Model.md` and summarized in `01_SCAF_v0.0.4rc02_Authority_Model_Determinism_Cleanup.md`.
+
+rc02 intentionally does **not** add:
 
 - `authority-registry.yaml` or equivalent serialization;
 - JSON Schema or another schema language;
@@ -42,6 +47,8 @@ frozen human-readable semantic authority
         ↓
 authority model / record contract
         ↓
+determinism closure (current rc02)
+        ↓
 machine-readable registry serialization
         ↓
 schema + structural validator
@@ -55,10 +62,10 @@ Each transition requires a separately reviewed repository state. A later machine
 
 ## 4. Current Gate
 
-The independent v0.0.4rc01 review shall determine whether the authority model is sufficiently precise to authorize a later RC to serialize the initial frozen L1/L2 authority registry.
+The independent v0.0.4rc02 review shall determine whether upstream finding `R1-01` is fully closed and whether the accepted authority model is now deterministic enough to authorize a later RC to serialize the initial 294 frozen L1/L2 authority records.
 
 Expected gate label:
 
 ```text
-V0.0.4 AUTHORITY-MODEL FOUNDATION GATE
+V0.0.4 AUTHORITY-MODEL DETERMINISM CLOSURE GATE
 ```
