@@ -1,6 +1,6 @@
 # SCAF-PAT-FTL-001 — Failure-Domain Containment / Isolation
 
-**Development Release:** v0.0.3rc08  
+**Development Release:** v0.0.3rc09  
 **Pattern Family:** `FTL` — Fault Tolerance & Isolation  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  
@@ -19,8 +19,8 @@
 | Maturity | M1 — Structured |
 | Introduced In | v0.0.3rc08 |
 | Primary L2 Trace | `SCAF-ROB-008` |
-| Supporting L2 Trace | `SCAF-ROB-007`, `SCAF-ROB-015` |
-| Constraint Inputs | `SCAF-ARCH-007`, `SCAF-ARCH-008`, `SCAF-ARCH-015`, `SCAF-ROB-014` |
+| Supporting L2 Trace | `SCAF-ROB-015` |
+| Constraint Inputs | `SCAF-ARCH-007`, `SCAF-ARCH-008`, `SCAF-ARCH-015`, `SCAF-ROB-007`, `SCAF-ROB-014` |
 | Profile Facets | MCU/SoC/FPGA/PC/distributed realizations with material fault, resource, power, clock, trust or responsibility domains |
 | Provenance / Reference Basis | Frozen SCAF ARCH/ROB obligations plus rc07 second-tranche planning review approval; SCAF-new technology-neutral synthesis |
 
@@ -56,7 +56,6 @@ This pattern does not require redundancy and does not imply continued Service af
 
 ### 5.2 Supporting Realization
 
-- `SCAF-ROB-007` — uses the controlled failure propagation path to decide where isolation action or propagation blocking is needed.
 - `SCAF-ROB-015` — containment can bound cascading failure or recovery-storm propagation when peer/shared dependencies would otherwise amplify the initiating condition.
 
 ### 5.3 Constraint Inputs
@@ -64,6 +63,7 @@ This pattern does not require redundancy and does not imply continued Service af
 - `SCAF-ARCH-007` — the actual Domain boundary is a Project Design Authority decision and is consumed by this pattern rather than redefined by FTL.
 - `SCAF-ARCH-008` — identifies the controlled structural/Domain boundaries that are inputs to downstream containment reasoning.
 - `SCAF-ARCH-015` — shared resources/providers/common infrastructure constrain whether an isolation claim is credible.
+- `SCAF-ROB-007` — the project-identified material failure-propagation path is consumed as an upstream constraint that determines where containment placement, isolation action or propagation blocking must be evaluated; this Pattern does not author the propagation-path analysis.
 - `SCAF-ROB-014` — common-mode/correlated failure assumptions constrain any claim that separated domains or recovery paths are independent.
 
 ## 6. Required PDA Decisions

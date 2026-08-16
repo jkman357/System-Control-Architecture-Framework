@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc08  
+**Development Release:** v0.0.3rc09  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -393,3 +393,26 @@ The immediate independent review shall determine whether:
 - the frozen v0.0.2 normative baseline remains byte-stable.
 
 A successful rc08 review may permit a later focused cleanup or entry-by-entry M2/readiness decision for the five new patterns. It does not auto-promote them and does not authorize the deferred EVD category, rejected PST category, SEC-primary realization, M3/M4, L4 or executable governance.
+
+## 18. v0.0.3rc09 Second-Tranche Trace-Closure Gate
+
+The independent v0.0.3rc08 second-tranche Pattern review returned:
+
+```text
+L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP
+```
+
+The review opened no Critical or Major finding. It identified one localized Minor finding, `R8-01`, in `SCAF-PAT-FTL-001`: `SCAF-ROB-007` was represented as Supporting Realization even though the Pattern consumes the project-identified failure-propagation path as an upstream design input.
+
+v0.0.3rc09 therefore performs only this governed trace-relation cleanup:
+
+```text
+SCAF-ROB-007
+Supporting L2 Trace -> Constraint Input
+```
+
+`SCAF-ROB-015` remains Supporting Realization. The `FTL-001` ID, primary family, Candidate/M1 lifecycle state, `Introduced In: v0.0.3rc08`, Primary trace and mechanism/L3-L4 boundary remain unchanged.
+
+The focused rc09 review shall verify closure of `R8-01`, non-regression of the other eleven published Pattern architecture bodies and byte stability of the frozen v0.0.2 normative baseline.
+
+A successful rc09 closure may permit a later explicit M2/readiness review for the five second-tranche entries. It does not auto-promote them and does not authorize the deferred EVD category, rejected PST category, SEC-primary realization, M3/M4, L4 or executable governance.

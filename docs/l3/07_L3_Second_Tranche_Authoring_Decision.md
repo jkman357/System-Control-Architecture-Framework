@@ -1,6 +1,6 @@
 # SCAF L3 Second-Tranche Authoring Decision
 
-**Development Release:** v0.0.3rc08  
+**Development Release:** v0.0.3rc09  
 **Decision Scope:** controlled second representative L3 tranche  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Decision Type:** Pattern-ID allocation and Candidate/M1 authoring from rc07-approved categories

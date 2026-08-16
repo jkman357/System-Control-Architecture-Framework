@@ -1,6 +1,6 @@
 # SCAF-PAT-FTL-002 — Controlled Failover with Graceful Degradation
 
-**Development Release:** v0.0.3rc08  
+**Development Release:** v0.0.3rc09  
 **Pattern Family:** `FTL` — Fault Tolerance & Isolation  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Candidate  

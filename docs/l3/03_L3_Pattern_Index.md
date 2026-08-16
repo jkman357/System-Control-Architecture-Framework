@@ -1,14 +1,14 @@
 # SCAF L3 Pattern Index
 
-**Development Release:** v0.0.3rc08  
+**Development Release:** v0.0.3rc09  
 **Status:** Navigation index; not trace authority
 
 ## 1. Current Catalog State
 
-v0.0.3rc08 contains **twelve published Pattern identities** after the independent rc07 coverage / planning review authorized a small controlled second tranche.
+v0.0.3rc09 contains **twelve published Pattern identities**. The independent rc08 second-tranche review returned `YES, AFTER MINOR CLEANUP`; rc09 performs only the localized `FTL-001` trace-relation correction before focused closure.
 
 - **7 initial-tranche entries:** `Available / M2`, introduced in v0.0.3rc03 and unchanged in architecture/trace content except current Development Release metadata.
-- **5 second-tranche entries:** `Candidate / M1`, introduced in v0.0.3rc08 and awaiting independent Pattern review.
+- **5 second-tranche entries:** `Candidate / M1`, introduced in v0.0.3rc08; rc09 changes only the `FTL-001` `SCAF-ROB-007` relation classification and awaits focused closure.
 
 The authoritative human-readable upstream trace remains inside each Pattern file. This index is navigation only.
 

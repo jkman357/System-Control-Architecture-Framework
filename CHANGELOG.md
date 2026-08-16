@@ -1,3 +1,40 @@
+## v0.0.3rc09 — 2026-08-16
+
+Focused second-tranche trace cleanup after the independent v0.0.3rc08 Pattern review returned **PASS WITH MINOR CLEANUP / `L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP`**, with **0 Critical, 0 Major and 1 Minor** finding.
+
+### Changed
+
+- added `docs/l3/08_L3_Second_Tranche_Trace_Cleanup.md` as the release-scoped `R8-01` closure record;
+- corrected `SCAF-PAT-FTL-001` by moving `SCAF-ROB-007` from `Supporting L2 Trace` to `Constraint Inputs`;
+- revised `FTL-001` detailed trace rationale so the project-identified material failure-propagation path is explicitly consumed as an upstream constraint on containment placement/configuration rather than represented as FTL-owned realization;
+- retained `SCAF-ROB-015` as the Supporting Realization identified by the rc08 review;
+- updated current release/gate/navigation metadata for v0.0.3rc09.
+
+### Preserved
+
+- `SCAF-PAT-FTL-001` ID, immutable `FTL` primary family, Candidate/M1 lifecycle state and `Introduced In: v0.0.3rc08`;
+- the other four second-tranche Pattern architecture/trace bodies unchanged except current Development Release metadata;
+- the initial seven Pattern architecture/trace bodies and `Available / M2` lifecycle states unchanged except current Development Release metadata;
+- exactly twelve numeric `SCAF-PAT-*` identities; no thirteenth identity or `Supersedes` event;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace semantics, PDA/source-authority boundaries and the L3/L4 boundary.
+
+### Deliberately Not Added / Promoted
+
+- no M2 or `Available` promotion for the five second-tranche entries;
+- no authoring of the deferred EVD export/transformation category;
+- no Pattern ID for the rejected/reframe PST configuration-activation proposal;
+- no SEC-primary Pattern;
+- no third tranche, M3/M4, L4, schema, validator, generated registry/index, CI, code generation or executable governance.
+
+### Gate
+
+- independently verify `R8-01` is Resolved and `SCAF-ROB-007` is now a Constraint Input in `FTL-001`;
+- verify `SCAF-ROB-015` remains Supporting Realization and `FTL-001` identity/lifecycle/family remain stable;
+- verify the other eleven Pattern architecture bodies are non-regressed except Development Release metadata;
+- reconfirm frozen v0.0.2 byte stability and the 294 / 218 / 76 inventory;
+- do not auto-promote or open additional catalog scope from this cleanup RC alone.
+
 ## v0.0.3rc08 — 2026-08-16
 
 Controlled second representative L3 Pattern tranche after the independent v0.0.3rc07 coverage / second-tranche planning review returned **PASS / `L3 SECOND-TRANCHE PLANNING GATE: YES`**, approved six later-authoring categories, rejected/reframed the PST configuration-activation proposal, preserved the SEC-primary hold, and opened no Critical, Major, Minor or Trivial release finding.
