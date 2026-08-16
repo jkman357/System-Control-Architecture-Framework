@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2rc14  
+**Version:** v0.0.2rc15  
 **Status:** Controlled L1/L2 normative rewrite — Release Candidate  
 **Date:** 2026-08-16
 
@@ -37,9 +37,9 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.2rc14 Final Editorial Closure / L1/L2 Freeze Candidate Position
+## v0.0.2rc15 Freeze-Candidate Release Hygiene Closure Position
 
-v0.0.2rc14 performs **final editorial closure** after the independent rc13 final integrated L1/L2 review found **no Critical or Major issues**, judged the complete CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG/SEC backbone **Stable after minor editorial cleanup**, and returned the freeze-candidate gate **Yes, after minor editorial cleanup**. This RC changes no authority home, requirement semantics, requirement ID, Target class, core metamodel or top-level taxonomy.
+v0.0.2rc15 performs **freeze-candidate release-hygiene closure** after the independent rc14 freeze-candidate audit found **no Critical or Major issues**, confirmed all four rc13 editorial findings **Resolved**, found no cross-boundary, identity, source/evidence/closure, Framework Scan, L3/L4 or donor-promotion regression, and returned the gate **Yes, after trivial non-semantic cleanup**. This RC changes no authority home, requirement semantics, requirement ID, Target class, core metamodel or top-level taxonomy.
 
 Current normative documents are:
 
@@ -55,11 +55,11 @@ Current normative documents are:
 - `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md`
 - `docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md`
 
-This RC closes only the four editorial findings from the rc13 final integrated review: Authority Kernel normative-keyword scan hygiene, `SCAF-OBS-020` keyword typography, and two supporting-document section-numbering defects. The complete L1/L2 authority backbone is otherwise carried forward unchanged. This RC is the **L1/L2 freeze candidate** and still does not prescribe L3/L4 realization mechanisms.
+This RC closes only the remaining rc14 audit release-hygiene finding: one stale README sentence that incorrectly described the next gate as another final integrated L1/L2 review. The complete L1/L2 authority backbone and all rc14 editorial closures are carried forward unchanged. This RC remains the **L1/L2 freeze candidate** and still does not prescribe L3/L4 realization mechanisms.
 
-No new normative semantics are introduced in rc14. The expected independent review scope is deliberately narrow: confirm the four editorial findings are closed, confirm requirement IDs/Targets and authority semantics are unchanged, confirm no L3/L4 leakage, and decide whether to proceed with the explicit L1/L2 freeze decision.
+No new normative semantics are introduced in rc15. The expected independent review scope is deliberately narrow: confirm the stale README gate wording is closed, confirm all 294 requirement IDs / Target classes and authority semantics are unchanged, confirm no L3/L4 leakage or donor promotion, and decide whether rc15 is ready for the explicit L1/L2 freeze decision.
 
-L3 mechanism catalogs, L4 implementation/verification guidance, schema, validator and CI remain gated. The next gate is an independent **final integrated L1/L2 review** to determine whether this line is suitable as an explicit L1/L2 freeze candidate; L3 remains closed until that review passes and an explicit freeze decision is made.
+L3 mechanism catalogs, L4 implementation/verification guidance, schema, validator and CI remain gated. The next gate is the narrow independent **rc15 L1/L2 freeze-candidate audit**, followed by an explicit governance freeze decision if that audit passes. L3 remains closed until the audit passes and the L1/L2 freeze decision is explicitly made.
 
 Normative precedence for this RC is:
 
@@ -71,7 +71,7 @@ frozen v0.0.1 architecture/taxonomy baseline
 migration analysis / inventories / historical review material
 ```
 
-Where a normative v0.0.2rc14 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
+Where a normative v0.0.2rc15 statement intentionally specializes wording from the frozen architecture baseline, the normative document governs the current development line. The frozen v0.0.1 release itself remains unchanged.
 
 ## v0.0.1 Frozen Architecture Position
 
@@ -284,7 +284,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2rc14.**
+**No CI is included in v0.0.2rc15.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -326,27 +326,29 @@ v0.0.2rc11   # integrated L1/L2 consolidation before SEC
 v0.0.2rc12   # SEC controlled L1/L2 normative tranche + parallel minor cleanup
 v0.0.2rc13   # final integrated L1/L2 consolidation + SEC minor closure
 v0.0.2rc14   # final editorial closure / L1/L2 freeze candidate
+v0.0.2rc15   # freeze-candidate release-hygiene closure
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2rc14 is the **L1/L2 freeze candidate — final editorial closure**.
+v0.0.2rc15 is the **L1/L2 freeze candidate — release-hygiene closure**.
 
 Open scope in this RC:
 
-- close only the four editorial findings identified by the independent rc13 final integrated review;
-- preserve all 294 requirement IDs, Target classes, primary authority homes and cross-concern semantics;
-- confirm README / CHANGELOG / supporting-document release positioning is internally consistent;
-- perform a narrow independent freeze-candidate audit before any explicit freeze decision.
+- close only the stale README review-process wording identified by the independent rc14 freeze-candidate audit;
+- preserve all 294 requirement IDs, Target classes, primary authority homes, identity semantics and cross-concern boundaries;
+- confirm all rc14 normative/editorial closures remain intact;
+- perform a narrow independent rc15 freeze-candidate audit;
+- if that audit passes, make an explicit governance decision whether to freeze the L1/L2 baseline.
 
 Still closed/gated:
 
 - top-level taxonomy expansion without a concrete authority-home failure;
 - broad Draft/RC or mixed-maturity donor promotion;
 - executable-invariant promotion before schema/test/validator extraction and review;
-- L3 mechanism catalogs before the rc14 freeze-candidate audit passes and an explicit L1/L2 freeze decision is made;
+- L3 mechanism catalogs before the rc15 freeze-candidate audit passes and an explicit L1/L2 freeze decision is made;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
 - final schema, validator, generated checklist or CI enforcement;
 - final migration proof or normative freeze.

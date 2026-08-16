@@ -1,5 +1,37 @@
 # Changelog
 
+## v0.0.2rc15 — 2026-08-16
+
+Freeze-candidate release-hygiene closure after the independent rc14 audit found no Critical/Major issues, confirmed the four rc13 editorial findings Resolved, found no normative/cross-boundary/identity/Framework-Scan/L3-L4/donor-promotion regression, and returned the freeze gate Yes after one trivial non-semantic README cleanup.
+
+### Changed
+
+- corrected the stale README sentence that incorrectly described the next gate as another final integrated L1/L2 review;
+- aligned the README introduction with the actual rc15 narrow freeze-candidate audit followed by an explicit governance freeze decision;
+- synchronized current release / gate positioning to v0.0.2rc15;
+- updated normative document release labels to v0.0.2rc15 without intended normative-body semantic change.
+
+### Normative Semantic Change
+
+- **None intended.**
+- All 294 requirement IDs and all Target classes are preserved.
+- Primary authority homes, cross-boundary semantics, identity semantics, Framework Scan semantics, verification/evidence/closure semantics, Security Authority provenance and donor-promotion gates are carried forward unchanged from rc14.
+
+### Deliberately Not Added
+
+- new top-level concerns or core metamodel entities;
+- architecture rediscovery or taxonomy changes;
+- L3 pattern / mechanism catalogs;
+- L4 implementation / verification guidance;
+- schema, validator, CI or generated conformance tooling.
+
+### Gate
+
+- perform a narrow independent rc15 L1/L2 freeze-candidate audit;
+- confirm the rc14 audit T-01 README wording is Resolved;
+- confirm 294 IDs / Targets and normative semantics remain stable;
+- if the audit passes, make the explicit governance L1/L2 freeze decision.
+
 ## v0.0.2rc14 — 2026-08-16
 
 Final editorial closure / L1/L2 freeze candidate after the independent rc13 final integrated review found no Critical/Major issues, judged the complete L1/L2 backbone Stable after minor editorial cleanup, and returned the freeze-candidate gate Yes after those editorial items are closed.

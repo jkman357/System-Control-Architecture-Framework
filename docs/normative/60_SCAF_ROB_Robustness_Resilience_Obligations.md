@@ -1,6 +1,6 @@
 # SCAF-ROB — Robustness & Resilience Obligations
 
-**Release:** v0.0.2rc14  
+**Release:** v0.0.2rc15  
 **Concern:** `SCAF-ROB`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

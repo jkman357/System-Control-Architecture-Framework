@@ -1,6 +1,6 @@
 # SCAF-SEC — Security Architecture Interface & Robustness Obligations
 
-**Release:** v0.0.2rc14  
+**Release:** v0.0.2rc15  
 **Concern:** `SCAF-SEC`  
 **Layer:** L1 Concern Authority + L2 Required Project Decisions  
 **Status:** Normative RC

@@ -263,3 +263,10 @@ No donor class is newly promoted by these edits. Schema, validator, CI, L3 patte
 This release adds no concern tranche, changes no requirement ID or Target class, and introduces no intended normative semantic change. It closes only the four editorial findings identified by the independent rc13 final integrated L1/L2 review: Authority Kernel normative-keyword scan hygiene, `SCAF-OBS-020` normative-keyword typography, `docs/00_Input_Baseline.md` section numbering, and `docs/03_Gen1_to_Gen2_Concept_Mapping.md` duplicate section numbering.
 
 The complete CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG -> SEC L1/L2 backbone is carried forward unchanged for a narrow freeze-candidate audit. L3/L4, schema, validator, CI and generated conformance tooling remain closed pending an explicit L1/L2 freeze decision.
+
+## 20. v0.0.2rc15 Freeze-Candidate Release-Hygiene Closure Coverage
+
+This release adds no concern tranche, changes no requirement ID or Target class, and introduces no intended normative semantic change. It closes the sole trivial issue identified by the independent rc14 freeze-candidate audit: a stale README sentence that described the next gate as another final integrated L1/L2 review after that integrated review had already completed.
+
+The complete CTX -> ARCH -> INT -> TIME -> RUN -> ROB -> LIFE -> OBS -> CFG -> SEC L1/L2 backbone and all rc14 editorial closures are carried forward unchanged for a narrow rc15 freeze-candidate audit. L3/L4, schema, validator, CI and generated conformance tooling remain closed pending an explicit L1/L2 freeze decision.
+
