@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.2  
-**Status:** Frozen L1/L2 Baseline  
+**Version:** v0.0.3rc01  
+**Status:** L3 Pattern / Mechanism Catalog Architecture RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -36,6 +36,16 @@ Four input classes are kept distinct in this release:
 4. **SCAF-new architecture decisions** — concepts introduced because the donor set does not provide sufficient system-level authority.
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
+
+## v0.0.3rc01 L3 Pattern / Mechanism Catalog Position
+
+v0.0.3rc01 opens the controlled **L3 Pattern / Mechanism Catalog** development line downstream of the frozen v0.0.2 L1/L2 baseline. This RC establishes only the L3 catalog architecture, metadata contract, many-to-many L2 trace model, project selection semantics, pattern status/maturity model, mechanism-family taxonomy and authoring template.
+
+No `SCAF-PAT-*` pattern instance is introduced in this RC. Bulk pattern authoring is intentionally gated until the L3 contract passes independent architecture review.
+
+The frozen `docs/normative/` files remain v0.0.2 and are not modified in place. L3 belongs to framework-side `SCAF-PROF` realization/profile content and remains subordinate to the frozen concern authorities. Pattern selection does not by itself satisfy an L2 obligation, and Project Design Authority retains responsibility for the actual project-specific mechanism selection/configuration.
+
+New L3 development documents are under `docs/l3/`. L4 implementation/verification guidance, schema, validator, CI and executable-governance work remain closed behind later gates.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -278,13 +288,20 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md` | L1/L2 observability / diagnostics / incident-evidence identity / provenance / correlation / preservation obligations |
 | `docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md` | L1/L2 configuration / persistent operational-state source / version / migration / commit / rollback / calibration obligations |
 | `docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md` | L1/L2 security architecture interface / trust / identity / authentication / authorization / protection / security robustness obligations |
+| `docs/l3/README.md` | L3 development scope, frozen-upstream rule and catalog file map |
+| `docs/l3/00_L3_Catalog_Governance.md` | L3 authority boundary, mechanism-family taxonomy, pattern ID, status/maturity and L3/L4 boundary |
+| `docs/l3/01_L3_Pattern_Metadata_Contract.md` | Human-readable metadata contract for future `SCAF-PAT-*` entries |
+| `docs/l3/02_L3_Trace_and_Selection_Model.md` | Many-to-many L2→L3 trace and project pattern-selection semantics |
+| `docs/l3/03_L3_Pattern_Index.md` | Human-readable L3 family/index planning view; not trace authority |
+| `docs/l3/catalog/README.md` | Future catalog placement rules |
+| `docs/l3/templates/L3_Pattern_Template.md` | Controlled template for future pattern entries |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.2.**
+**No CI is included in v0.0.3rc01.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -328,32 +345,46 @@ v0.0.2rc13   # final integrated L1/L2 consolidation + SEC minor closure
 v0.0.2rc14   # final editorial closure / L1/L2 freeze candidate
 v0.0.2rc15   # freeze-candidate release-hygiene closure
 v0.0.2       # frozen L1/L2 baseline
+v0.0.3rc01   # L3 catalog architecture / contract RC; no pattern instances yet
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
 ## Current Gate
 
-v0.0.2 is the **Frozen L1/L2 Baseline**.
+v0.0.3rc01 is the **L3 Pattern / Mechanism Catalog architecture / contract RC** built downstream of the frozen v0.0.2 L1/L2 baseline.
 
-Frozen in this release:
+Frozen and unchanged upstream:
 
 - the v0.0.1 architecture / authority baseline as carried forward;
-- Authority Kernel and CTX / ARCH / INT / TIME / RUN / ROB / LIFE / OBS / CFG / SEC L1/L2 normative semantics;
-- all 294 requirement IDs and Target classes;
+- Authority Kernel and CTX / ARCH / INT / TIME / RUN / ROB / LIFE / OBS / CFG / SEC v0.0.2 L1/L2 normative semantics;
+- all 294 frozen requirement IDs and Target classes;
 - primary authority homes, identity partitions, source/evidence/sufficiency/closure separation and Framework Scan semantics;
 - donor-promotion gates and the L1/L2 mechanism-neutral boundary.
 
-Downstream work may build on this baseline, but **SHALL NOT** modify the frozen v0.0.2 L1/L2 baseline in place.
+Open for controlled development in this RC:
+
+- L3 `SCAF-PROF` catalog architecture;
+- mechanism-family taxonomy;
+- `SCAF-PAT-<FAMILY>-<NNN>` identity rule;
+- human-readable pattern metadata contract;
+- many-to-many L2→L3 trace semantics;
+- project pattern selection semantics;
+- pattern catalog status and maturity semantics;
+- L3 pattern authoring template.
+
+The immediate gate is an **independent L3 architecture / structure review**. No `SCAF-PAT-*` IDs should be allocated until that review confirms that the model preserves frozen L2 authority, multiple valid mechanisms, Project Design Authority selection semantics and the L3/L4 boundary.
 
 Still closed/gated:
 
-- top-level taxonomy expansion without a concrete authority-home failure;
-- broad Draft/RC or mixed-maturity donor promotion;
-- executable-invariant promotion before schema/test/validator extraction and review;
-- direct in-place modification of the frozen v0.0.2 L1/L2 baseline by later L3/L4 work;
-- broad L4 MCU/PC/SoC/FPGA/DSP implementation rulebooks;
-- final schema, validator, generated checklist or CI enforcement;
-- final migration proof or normative freeze.
+- modification of frozen v0.0.2 normative files in place;
+- top-level taxonomy or core-metamodel reopening without a genuine architecture-level contradiction;
+- bulk L3 pattern authoring before the catalog-contract review gate;
+- broad L4 MCU/PC/SoC/FPGA/DSP implementation or verification rulebooks;
+- machine-readable pattern schema / authority registry;
+- validator, generated reverse-trace index, generated checklist or CI enforcement;
+- code generation / executable governance;
+- broad Draft/RC or mixed-maturity donor promotion.
 
 **Controlled rewrite eligibility is not normative-promotion eligibility.** Donor-derived statements retain their source maturity/audit gate until individually reconciled.
+

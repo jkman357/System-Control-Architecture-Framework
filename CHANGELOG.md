@@ -1,5 +1,50 @@
 # Changelog
 
+## v0.0.3rc01 — 2026-08-16
+
+First controlled L3 Pattern / Mechanism Catalog architecture / contract RC downstream of the frozen v0.0.2 L1/L2 baseline.
+
+### Added
+
+- `docs/l3/README.md` establishing the L3 development scope and frozen-upstream rule;
+- `docs/l3/00_L3_Catalog_Governance.md` defining the L3 `SCAF-PROF` authority position, mechanism-family taxonomy, `SCAF-PAT-<FAMILY>-<NNN>` identity rule, catalog status/maturity, composition semantics and L3/L4 boundary;
+- `docs/l3/01_L3_Pattern_Metadata_Contract.md` defining the human-readable metadata contract, including mandatory `Required PDA Decisions`;
+- `docs/l3/02_L3_Trace_and_Selection_Model.md` defining many-to-many L2→L3 trace semantics and separating catalog status from project selection state;
+- `docs/l3/03_L3_Pattern_Index.md` as a non-authoritative planning/navigation index;
+- `docs/l3/catalog/README.md` defining future mechanism-family placement;
+- `docs/l3/templates/L3_Pattern_Template.md` for later pattern authoring.
+
+### Architecture Decisions
+
+- L3 is a downstream `SCAF-PROF` candidate realization catalog, not a third-level extension of the frozen concern requirement tree;
+- L3 uses mechanism families (`SUP`, `COM`, `REC`, `FTL`, `TIM`, `PST`, `LCM`, `EVD`, `SYN`, `SEC`) rather than duplicating CTX/ARCH/INT/TIME/RUN/ROB/LIFE/OBS/CFG/SEC authority homes;
+- pattern trace relations are `Primary Realization Candidate`, `Supporting Realization` and `Constraint Input`; a generic L2→L3 `satisfies` relation is intentionally prohibited;
+- pattern selection/configuration remains a Project Design Authority decision and catalog selection alone does not establish L2 satisfaction;
+- catalog lifecycle `Status` and engineering `Maturity` are independent dimensions;
+- profile facets are orthogonal to mechanism families;
+- project-specific mechanisms outside the catalog remain permitted when the applicable frozen obligations and external constraints are satisfied.
+
+### Frozen Baseline Integrity
+
+- **No `docs/normative/` v0.0.2 file is intentionally changed.**
+- No frozen L1/L2 requirement ID, Target class, primary authority home, core metamodel entity or top-level concern taxonomy is reopened by this RC.
+
+### Deliberately Not Added
+
+- actual `SCAF-PAT-*` pattern instances;
+- L4 implementation or verification guidance;
+- machine-readable schema / authority registry;
+- validator, generated reverse-trace index or CI;
+- code generation / executable governance.
+
+### Gate
+
+- perform an independent L3 architecture / structure review;
+- confirm frozen v0.0.2 normative hashes are unchanged;
+- confirm L3 does not redefine L2 semantics or Project Design Authority;
+- confirm the many-to-many trace model preserves multiple valid mechanism choices;
+- confirm status/maturity, selection semantics and L3/L4 separation are sufficiently stable before allocating the first `SCAF-PAT-*` IDs.
+
 ## v0.0.2 — 2026-08-16
 
 Frozen L1/L2 Baseline.
