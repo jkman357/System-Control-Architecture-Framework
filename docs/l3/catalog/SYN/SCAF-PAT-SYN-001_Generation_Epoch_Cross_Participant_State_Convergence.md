@@ -1,6 +1,6 @@
 # SCAF-PAT-SYN-001 — Generation/Epoch-Based Cross-Participant State Convergence
 
-**Development Release:** v0.0.3rc12  
+**Development Release:** v0.0.3rc13  
 **Pattern Family:** `SYN` — Distributed Consistency & Reconciliation  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Available  

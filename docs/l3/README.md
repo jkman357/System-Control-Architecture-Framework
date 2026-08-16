@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc12  
+**Development Release:** v0.0.3rc13  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** milestone consolidation / freeze-candidate audit; twelve published entries Available/M2
+**Status:** freeze-candidate release-record cleanup; twelve published entries Available/M2
 
 ## 1. Purpose
 
@@ -29,19 +29,19 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern publication, availability or project selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc12 Scope
+## 2. v0.0.3rc13 Scope
 
-The independent v0.0.3rc11 availability-acceptance review returned:
+The independent v0.0.3rc12 freeze-candidate review returned:
 
 ```text
-L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
+L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP
 ```
 
-It verified all twelve published entries as `Available / M2`, reproduced all twelve controlled non-regression hashes, preserved the frozen v0.0.2 baseline and opened no finding.
+It found no architecture, trace, lifecycle or deferred-scope blocker. All twelve Pattern entries were judged valid for the proposed v0.0.3 freeze baseline. The only finding, `R12-01`, is a Minor release-record consistency defect.
 
-v0.0.3rc12 does not add or promote any Pattern. It consolidates the evidence from the complete v0.0.3 L3 development line and prepares an explicit freeze-candidate audit. The audit is intended to answer whether the current L3 contracts and twelve-entry catalog may be frozen as a stable baseline in a later explicit governance action.
+v0.0.3rc13 performs the required release-record cleanup only. It synchronizes current release/navigation/gate wording, uses release-stable CI wording, and removes stale point-release wording from the living metadata contract. It adds no Pattern, changes no Pattern lifecycle state, changes no L2 trace relation, and does not modify frozen normative content.
 
-The proposed freeze scope is deliberately bounded to the L3 catalog governance/metadata/trace contracts and the twelve current `Available / M2` Pattern entries. It does not include M3/M4, L4 implementation/verification guidance, future Pattern categories or executable governance.
+A focused independent closure review shall determine whether `R12-01` is fully resolved and whether the current tree is eligible for a later explicit v0.0.3 freeze action. rc13 itself remains an RC.
 
 ## 3. Files
 
@@ -59,6 +59,7 @@ The proposed freeze scope is deliberately bounded to the L3 catalog governance/m
 | `09_L3_Second_Tranche_Lifecycle_Decision.md` | Historical rc10 M2 maturity decision and availability-readiness gate |
 | `10_L3_Second_Tranche_Availability_Acceptance.md` | rc11 explicit second-tranche Candidate→Available acceptance record |
 | `11_L3_v0.0.3_Milestone_Consolidation_and_Freeze_Candidate.md` | rc12 milestone evidence consolidation, proposed freeze scope and freeze-candidate criteria |
+| `12_L3_v0.0.3_Freeze_Candidate_Release_Record_Cleanup.md` | rc13 focused `R12-01` release-record cleanup and closure-gate record |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -70,23 +71,23 @@ If L3 work exposes a genuine architecture-level contradiction in the frozen base
 
 ## 5. Current Gate / Closed Work
 
-The immediate gate is an independent **v0.0.3 L3 milestone-consolidation / freeze-candidate audit**.
+The immediate gate is an independent **v0.0.3rc13 freeze-candidate release-record closure review**.
 
 The review must verify at minimum:
 
+- rc12 finding `R12-01` is fully resolved;
+- root README current release/gate/sequence/CI wording is mutually consistent and release-stable;
+- the living metadata contract no longer contains stale rc06 point-release wording for the intentionally deferred executable-governance items;
 - frozen v0.0.2 remains byte-stable at 294 / 218 / 76;
 - exactly twelve published Pattern identities exist and all remain `Available / M2`;
 - all IDs, immutable primary families, `Introduced In` history and `Supersedes` state remain stable;
-- rc11→rc12 Pattern bodies are non-regressed except current Development Release metadata;
-- the governance, metadata and trace/selection contracts are internally consistent and have been exercised successfully by both tranches;
-- all material findings from the v0.0.3 line are closed;
-- `Available` and M2 retain their bounded meanings and do not become project selection/compliance/satisfaction authority;
-- deferred EVD, PST reframe, SEC-primary, M3/M4, L4 and executable-governance work are cleanly outside the proposed frozen scope rather than unresolved baseline contradictions;
-- no release-record inconsistency or hidden scope expansion prevents a freeze candidate.
+- rc12→rc13 Pattern bodies are non-regressed except current Development Release metadata;
+- the rc09 `FTL-001` `SCAF-ROB-007` Constraint Input closure remains intact;
+- no new architecture/trace/lifecycle scope is introduced.
 
-A successful rc12 review may authorize a **later explicit freeze action** for v0.0.3. It does not itself freeze the release.
+A successful rc13 closure review may authorize a **later explicit freeze action** for v0.0.3. It does not itself freeze the release.
 
-The following remain outside v0.0.3rc12:
+The following remain outside v0.0.3rc13:
 
 - third-tranche/bulk catalog expansion;
 - the approved-but-deferred EVD export/transformation Pattern;

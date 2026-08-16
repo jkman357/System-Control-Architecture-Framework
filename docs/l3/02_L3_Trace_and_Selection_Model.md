@@ -1,6 +1,6 @@
 # SCAF L3 Trace and Selection Model
 
-**Development Release:** v0.0.3rc12  
+**Development Release:** v0.0.3rc13  
 **Status:** Development contract
 
 ## 1. Purpose

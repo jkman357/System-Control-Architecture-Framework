@@ -1,6 +1,6 @@
 # SCAF L3 Pattern Metadata Contract
 
-**Development Release:** v0.0.3rc12  
+**Development Release:** v0.0.3rc13  
 **Status:** Development contract  
 **Applies To:** current and future `SCAF-PAT-*` catalog entries
 
@@ -137,7 +137,7 @@ Reference basis is evidence/provenance, not automatic normative promotion.
 
 ## 9. Metadata Not Yet Added
 
-v0.0.3rc06 intentionally does not define:
+The v0.0.3 L3 baseline intentionally does not define:
 
 - machine-readable field keys as normative schema identifiers;
 - JSON/YAML serialization;

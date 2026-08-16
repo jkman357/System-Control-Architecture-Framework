@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc12  
-**Status:** L3 Milestone Consolidation / Freeze-Candidate Audit RC  
+**Version:** v0.0.3rc13  
+**Status:** L3 Freeze-Candidate Release-Record Cleanup RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,19 +38,19 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.3rc12 L3 Milestone Consolidation / Freeze-Candidate Position
+## v0.0.3rc13 L3 Freeze-Candidate Release-Record Cleanup Position
 
-The independent v0.0.3rc11 second-tranche availability-acceptance review returned:
+The independent v0.0.3rc12 freeze-candidate review returned:
 
 ```text
-L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
+L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP
 ```
 
-It confirmed the rc11 source identity, preserved the frozen v0.0.2 normative baseline, found exactly twelve published Pattern identities, verified all twelve as `Available / M2 — Architecture Reviewed`, reproduced all twelve controlled non-regression hashes, preserved the `FTL-001` `SCAF-ROB-007` Constraint Input closure, and opened no Critical/Major/Minor/Trivial finding.
+It confirmed that the frozen v0.0.2 normative baseline is byte-stable, all twelve published Pattern identities are valid for the proposed v0.0.3 freeze baseline, all twelve rc11→rc12 controlled Pattern hashes pass, deferred EVD/PST/SEC/M3/M4/L4/executable-governance work is cleanly separable, and no architecture/trace/lifecycle redesign is required. The sole finding was `R12-01`, a Minor release-record consistency defect.
 
-v0.0.3rc12 therefore performs **milestone consolidation and freeze-candidate audit preparation only**. It does not freeze v0.0.3 and it does not create a new catalog lifecycle state. All twelve published entries remain unchanged in identity, family, status, maturity, trace semantics and introduction history.
+v0.0.3rc13 is therefore a **focused release-record cleanup RC only**. It closes `R12-01` by synchronizing the root README current gate/sequence, using release-stable CI wording, and replacing stale point-release wording in the living L3 metadata contract. No Pattern architecture, trace relation, lifecycle state, identity, family or frozen normative content is changed.
 
-Current catalog state:
+Current catalog state remains:
 
 ```text
 12 published Pattern identities
@@ -60,11 +60,9 @@ Initial tranche: 7 x Introduced In v0.0.3rc03
 Second tranche: 5 x Introduced In v0.0.3rc08
 ```
 
-The v0.0.3 L3 line has now demonstrated the same controlled lifecycle across two independently reviewed tranches: contract definition, Candidate/M1 authoring, adversarial architecture/trace review, localized closure where needed, explicit M2 decision, independent availability-readiness review, explicit `Available` acceptance, and post-transition non-regression review.
+The immediate gate is an independent **v0.0.3 freeze-candidate release-record closure review**. It must verify that `R12-01` is fully resolved, the current release/navigation/contract surfaces tell one coherent rc13 freeze-candidate story, the frozen normative baseline remains unchanged, and all twelve Pattern bodies are non-regressed apart from current Development Release metadata.
 
-The immediate gate is an independent **v0.0.3 L3 freeze-candidate audit**. That audit must determine whether the current L3 governance/metadata/trace contracts plus the twelve `Available / M2` Pattern entries are sufficiently coherent and bounded to become a formal frozen L3 baseline **if and only if a later explicit freeze decision is made**. rc12 itself remains an RC.
-
-Deferred/future work is not automatically a freeze blocker. The audit must distinguish clearly isolated later work from unresolved v0.0.3 baseline defects. The approved-but-deferred EVD export/transformation category, rejected/reframe PST configuration-activation proposal, SEC-primary realization, M3/M4, L4 and executable governance remain outside the proposed v0.0.3 frozen scope unless the audit identifies a concrete contradiction that requires resolution first.
+A successful rc13 closure review may authorize a **later explicit freeze action** for formal `v0.0.3`. rc13 itself remains an RC and does not freeze the release.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -320,7 +318,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.3rc09.**
+**No CI is included in the v0.0.3 L3 baseline.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -375,6 +373,8 @@ v0.0.3rc08   # controlled second representative tranche; FTL/TIM/SYN Candidate/M
 v0.0.3rc09   # localized FTL-001 trace-relation cleanup / focused closure RC
 v0.0.3rc10   # second-tranche M2 maturity decision; Candidate status retained
 v0.0.3rc11   # second-tranche explicit availability acceptance
+v0.0.3rc12   # L3 milestone consolidation / freeze-candidate audit
+v0.0.3rc13   # focused freeze-candidate release-record cleanup / closure RC
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -382,22 +382,25 @@ The historical `rc1` tag/name is retained as released. From `rc02` onward this l
 
 ## Current Gate
 
-v0.0.3rc11 is the **second-tranche availability-acceptance RC** after the independent rc10 review returned:
+v0.0.3rc13 is the **freeze-candidate release-record cleanup RC** after the independent rc12 review returned:
 
 ```text
-L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES
+L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP
 ```
 
-The five second-tranche entries are now explicitly recorded as `Available / M2 — Architecture Reviewed`; the initial seven remain `Available / M2`.
+The sole rc12 finding was `R12-01` (Minor): stale and mutually inconsistent current-release/navigation wording in the root README plus stale point-release wording in the living metadata contract. rc13 closes only that release-record defect.
 
-The immediate gate is an **independent rc11 availability-acceptance review**. It shall verify:
+The immediate gate is an **independent rc13 freeze-candidate closure review**. It shall verify:
 
-- 5 / 5 rc10 `READY FOR AVAILABLE` evidence maps to the five rc11 status transitions;
-- exactly twelve Pattern IDs remain and all immutable primary families/history remain stable;
-- the five second-tranche entries preserve M2 and `Introduced In: v0.0.3rc08`;
-- normalized rc10→rc11 Pattern bodies differ only by allowed Development Release / Catalog Status lifecycle fields;
+- `R12-01` is `RESOLVED`;
+- root README current gate, current sequence and CI position are release-consistent and no stale rc09/rc11 immediate-gate wording remains;
+- `docs/l3/01_L3_Pattern_Metadata_Contract.md` uses release-stable v0.0.3-baseline wording rather than the stale rc06 phrase;
+- exactly twelve Pattern IDs remain, all `Available / M2`, with immutable families and introduction history unchanged;
+- normalized rc12→rc13 Pattern bodies differ only by current Development Release metadata;
 - the rc09 `FTL-001` `SCAF-ROB-007` Constraint Input closure remains intact;
-- the frozen v0.0.2 normative baseline remains byte-stable;
-- `Available` remains bounded to project consideration and does not imply project selection, compliance, verification or L2 satisfaction.
+- the frozen v0.0.2 normative baseline remains byte-stable at 294 / 218 / 76;
+- no third tranche, M3/M4, L4, SEC-primary authoring or executable-governance work is introduced.
 
-Still separately gated: the approved-but-deferred EVD export/transformation category, rejected/reframe PST proposal, SEC-primary realization, third tranche/bulk expansion, M3/M4, L4, schema/validator/CI/code generation and executable governance.
+A successful closure review may make the current tree eligible for a later explicit `v0.0.3` freeze action. **rc13 itself is not frozen.**
+
+Still separately gated: the approved-but-deferred EVD export/transformation category, rejected/reframe PST proposal, SEC-primary realization, third-tranche/bulk expansion, M3/M4, L4, schema/validator/CI/code generation and executable governance.

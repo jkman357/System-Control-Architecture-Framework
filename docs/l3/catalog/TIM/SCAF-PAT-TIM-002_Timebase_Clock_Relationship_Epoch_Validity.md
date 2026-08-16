@@ -1,6 +1,6 @@
 # SCAF-PAT-TIM-002 — Timebase / Clock-Relationship / Epoch Validity
 
-**Development Release:** v0.0.3rc12  
+**Development Release:** v0.0.3rc13  
 **Pattern Family:** `TIM` — Timing & Capacity Realization  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Available  

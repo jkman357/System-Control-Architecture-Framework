@@ -1,3 +1,43 @@
+## v0.0.3rc13 — 2026-08-16
+
+Focused freeze-candidate release-record cleanup after the independent v0.0.3rc12 review returned **`FREEZE CANDIDATE NEEDS MINOR CLEANUP` / `L3 V0.0.3 FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP`** with 0 Critical, 0 Major, 1 Minor (`R12-01`) and 0 Trivial findings.
+
+### Changed
+
+- updated root README current release/gate wording from the stale rc11 availability-acceptance position to the rc13 freeze-candidate closure position;
+- added rc12 and rc13 to the root README current sequence;
+- replaced stale `No CI is included in v0.0.3rc09` wording with release-stable `No CI is included in the v0.0.3 L3 baseline`;
+- replaced `v0.0.3rc06 intentionally does not define:` in the living L3 metadata contract with `The v0.0.3 L3 baseline intentionally does not define:`;
+- added `docs/l3/12_L3_v0.0.3_Freeze_Candidate_Release_Record_Cleanup.md`;
+- synchronized current L3 README, governance, index and catalog navigation wording to the rc13 focused closure gate;
+- corrected the rc12 CHANGELOG cleanup claim so the historical release record reflects the actual rc12 reviewed tree.
+
+### Preserved
+
+- exactly twelve published numeric `SCAF-PAT-*` identities;
+- all twelve as `Available / M2 — Architecture Reviewed`;
+- initial-seven `Introduced In: v0.0.3rc03`;
+- second-five `Introduced In: v0.0.3rc08`;
+- all immutable primary families, `Supersedes: None`, Pattern bodies and trace relations apart from current Development Release metadata;
+- the rc09 `FTL-001` `SCAF-ROB-007` Constraint Input / `SCAF-ROB-015` Supporting closure;
+- frozen v0.0.2 normative content and all 294 IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace, bounded `Available` semantics, PDA/source-authority ownership and L3/L4 separation.
+
+### Deliberately Not Added / Promoted
+
+- v0.0.3 is **not frozen by rc13**;
+- no thirteenth Pattern ID or third tranche;
+- no deferred EVD Pattern, revived rejected/reframe PST Pattern or SEC-primary Pattern;
+- no M3/M4, L4, schema, validator, generated registry/reverse index, CI, code generation or executable governance.
+
+### Gate
+
+- independently verify `R12-01` is fully resolved;
+- verify root README, L3 navigation/contract surfaces and CHANGELOG tell one coherent rc13 freeze-candidate closure story;
+- verify rc12→rc13 12 / 12 Pattern-body non-regression with only Development Release metadata changes;
+- verify the frozen v0.0.2 baseline remains byte-stable;
+- return an explicit `L3 V0.0.3 FREEZE-CANDIDATE CLOSURE GATE` decision without performing the freeze.
+
 ## v0.0.3rc12 — 2026-08-16
 
 L3 milestone consolidation / freeze-candidate audit preparation after the independent v0.0.3rc11 availability-acceptance review returned **PASS / `L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES`**, confirmed all twelve entries as `Available / M2`, reproduced 12 / 12 Pattern-body non-regression hashes, preserved the frozen v0.0.2 baseline and opened no Critical, Major, Minor or Trivial finding.
@@ -12,7 +52,7 @@ L3 milestone consolidation / freeze-candidate audit preparation after the indepe
 ### Changed
 
 - updated current release/navigation/gate metadata to v0.0.3rc12;
-- updated the living metadata-contract wording to describe the human-readable contract as a v0.0.3-line property rather than retaining a stale rc09 point-release reference.
+- updated release-facing freeze-candidate wording and identified the remaining stale point-release metadata-contract wording for cleanup before freeze.
 - normalized historical second-tranche decision-record `Development Release` labels so `07` / `08` / `09` / `10` identify their actual originating releases rc08 / rc09 / rc10 / rc11 instead of inheriting the current development release.
 
 ### Preserved
