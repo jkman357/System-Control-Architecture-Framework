@@ -1,6 +1,6 @@
 # SCAF-PAT-SUP-002 — Independent Watchdog with Escalation
 
-**Development Release:** v0.0.3rc11  
+**Development Release:** v0.0.3rc12  
 **Pattern Family:** `SUP` — Supervision & Detection  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Available  

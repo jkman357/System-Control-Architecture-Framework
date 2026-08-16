@@ -1,6 +1,6 @@
 # SCAF-PAT-FTL-001 — Failure-Domain Containment / Isolation
 
-**Development Release:** v0.0.3rc11  
+**Development Release:** v0.0.3rc12  
 **Pattern Family:** `FTL` — Fault Tolerance & Isolation  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Available  

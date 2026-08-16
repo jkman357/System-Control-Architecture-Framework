@@ -1,3 +1,49 @@
+## v0.0.3rc12 — 2026-08-16
+
+L3 milestone consolidation / freeze-candidate audit preparation after the independent v0.0.3rc11 availability-acceptance review returned **PASS / `L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES`**, confirmed all twelve entries as `Available / M2`, reproduced 12 / 12 Pattern-body non-regression hashes, preserved the frozen v0.0.2 baseline and opened no Critical, Major, Minor or Trivial finding.
+
+### Added
+
+- added `docs/l3/11_L3_v0.0.3_Milestone_Consolidation_and_Freeze_Candidate.md`;
+- consolidated the complete v0.0.3 L3 review/lifecycle evidence from rc01 through rc11;
+- defined explicit freeze-candidate criteria covering frozen-upstream integrity, twelve-ID stability, lifecycle semantics, Pattern-body non-regression, contract coherence, finding closure, authority preservation, bounded deferral and release-record consistency;
+- defined the proposed v0.0.3 L3 frozen scope if a later explicit freeze decision is made.
+
+### Changed
+
+- updated current release/navigation/gate metadata to v0.0.3rc12;
+- updated the living metadata-contract wording to describe the human-readable contract as a v0.0.3-line property rather than retaining a stale rc09 point-release reference.
+- normalized historical second-tranche decision-record `Development Release` labels so `07` / `08` / `09` / `10` identify their actual originating releases rc08 / rc09 / rc10 / rc11 instead of inheriting the current development release.
+
+### Preserved
+
+- exactly twelve published numeric `SCAF-PAT-*` identities;
+- all twelve as `Available / M2 — Architecture Reviewed`;
+- initial-seven `Introduced In: v0.0.3rc03` history;
+- second-five `Introduced In: v0.0.3rc08` history;
+- all immutable primary families and `Supersedes: None`;
+- all Pattern architecture/trace bodies apart from current Development Release metadata;
+- the rc09 `FTL-001` `SCAF-ROB-007` Constraint Input / `SCAF-ROB-015` Supporting closure;
+- frozen v0.0.2 normative content and all 294 IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many L2→L3 trace, PDA/source-authority, `Available` semantics and L3/L4 boundaries.
+
+### Deliberately Not Added / Promoted
+
+- v0.0.3 is **not frozen by rc12**;
+- no thirteenth Pattern ID or third tranche;
+- no deferred EVD Pattern;
+- no revived rejected/reframe PST Pattern;
+- no SEC-primary Pattern;
+- no M3/M4, L4, schema, validator, generated registry/reverse index, CI, code generation or executable governance.
+
+### Gate
+
+- independently verify the complete v0.0.3 L3 milestone as a bounded freeze candidate;
+- verify rc11→rc12 12 / 12 Pattern-body non-regression with only Development Release metadata changes;
+- verify all review findings are closed and all release records are mutually consistent;
+- determine whether deferred work is cleanly isolated future scope rather than an unresolved v0.0.3 baseline defect;
+- return an explicit `L3 V0.0.3 FREEZE-CANDIDATE GATE` decision without performing the freeze.
+
 ## v0.0.3rc11 — 2026-08-16
 
 Second-tranche catalog availability acceptance after the independent v0.0.3rc10 maturity / availability review returned **PASS / `L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES`**, validated **5 / 5 `M2 VALID`**, judged **5 / 5 `READY FOR AVAILABLE`**, confirmed **12 / 12 Pattern-body non-regression PASS**, and opened no new Critical, Major, Minor or Trivial finding.

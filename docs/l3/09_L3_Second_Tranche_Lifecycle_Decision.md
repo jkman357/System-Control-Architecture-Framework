@@ -1,6 +1,6 @@
 # SCAF L3 Second-Tranche Lifecycle Decision
 
-**Development Release:** v0.0.3rc11  
+**Development Release:** v0.0.3rc10  
 **Decision Scope:** five published second-tranche L3 Pattern identities  
 **Upstream Pattern Release:** v0.0.3rc09  
 **Decision Type:** M1→M2 maturity advancement; catalog availability intentionally deferred

@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc11  
-**Status:** Second-Tranche Availability Acceptance RC  
+**Version:** v0.0.3rc12  
+**Status:** L3 Milestone Consolidation / Freeze-Candidate Audit RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,37 +38,33 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.3rc11 L3 Pattern / Mechanism Catalog Position
+## v0.0.3rc12 L3 Milestone Consolidation / Freeze-Candidate Position
 
-The independent v0.0.3rc10 second-tranche maturity / availability review returned:
-
-```text
-L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES
-```
-
-The review validated **5 / 5 `M2 VALID`**, judged **5 / 5 `READY FOR AVAILABLE`**, confirmed **12 / 12 Pattern-body non-regression PASS**, preserved the frozen v0.0.2 normative baseline, and opened no new Critical/Major/Minor/Trivial finding.
-
-v0.0.3rc11 therefore records the explicit catalog-maintainer acceptance decision for the five second-tranche entries introduced in rc08:
-
-- `SCAF-PAT-FTL-001`;
-- `SCAF-PAT-FTL-002`;
-- `SCAF-PAT-TIM-001`;
-- `SCAF-PAT-TIM-002`;
-- `SCAF-PAT-SYN-001`.
-
-Their lifecycle state is now:
+The independent v0.0.3rc11 second-tranche availability-acceptance review returned:
 
 ```text
-Catalog Status: Available
-Maturity: M2 — Architecture Reviewed
-Introduced In: v0.0.3rc08
+L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
 ```
 
-The initial seven remain `Available / M2 / Introduced In: v0.0.3rc03`. The catalog remains exactly twelve published IDs.
+It confirmed the rc11 source identity, preserved the frozen v0.0.2 normative baseline, found exactly twelve published Pattern identities, verified all twelve as `Available / M2 — Architecture Reviewed`, reproduced all twelve controlled non-regression hashes, preserved the `FTL-001` `SCAF-ROB-007` Constraint Input closure, and opened no Critical/Major/Minor/Trivial finding.
 
-This release is intentionally a **pure availability lifecycle transition**. The five second-tranche Pattern architecture bodies and L2 traces are not rewritten to obtain availability; only current Development Release and Catalog Status metadata change from rc10. `Available` means accepted for project consideration, not universal applicability, recommendation, project selection, compliance, verification or L2 satisfaction.
+v0.0.3rc12 therefore performs **milestone consolidation and freeze-candidate audit preparation only**. It does not freeze v0.0.3 and it does not create a new catalog lifecycle state. All twelve published entries remain unchanged in identity, family, status, maturity, trace semantics and introduction history.
 
-The immediate gate is an independent **rc11 second-tranche availability-acceptance review**. The deferred EVD category, rejected/reframe PST proposal, SEC-primary realization, third tranche, M3/M4, L4 and executable governance remain separately gated.
+Current catalog state:
+
+```text
+12 published Pattern identities
+12 x Available / M2 — Architecture Reviewed
+
+Initial tranche: 7 x Introduced In v0.0.3rc03
+Second tranche: 5 x Introduced In v0.0.3rc08
+```
+
+The v0.0.3 L3 line has now demonstrated the same controlled lifecycle across two independently reviewed tranches: contract definition, Candidate/M1 authoring, adversarial architecture/trace review, localized closure where needed, explicit M2 decision, independent availability-readiness review, explicit `Available` acceptance, and post-transition non-regression review.
+
+The immediate gate is an independent **v0.0.3 L3 freeze-candidate audit**. That audit must determine whether the current L3 governance/metadata/trace contracts plus the twelve `Available / M2` Pattern entries are sufficiently coherent and bounded to become a formal frozen L3 baseline **if and only if a later explicit freeze decision is made**. rc12 itself remains an RC.
+
+Deferred/future work is not automatically a freeze blocker. The audit must distinguish clearly isolated later work from unresolved v0.0.3 baseline defects. The approved-but-deferred EVD export/transformation category, rejected/reframe PST configuration-activation proposal, SEC-primary realization, M3/M4, L4 and executable governance remain outside the proposed v0.0.3 frozen scope unless the audit identifies a concrete contradiction that requires resolution first.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 

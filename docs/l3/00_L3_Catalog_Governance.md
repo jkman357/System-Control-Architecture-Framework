@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc11  
+**Development Release:** v0.0.3rc12  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -470,3 +470,33 @@ The rc11 independent review shall confirm that:
 - no third tranche, deferred EVD authoring, rejected PST revival, SEC-primary authoring, L4 or executable-governance work is introduced.
 
 A successful rc11 review closes the second-tranche availability-acceptance milestone only. Any further catalog expansion, M3/M4 validation, L4 guidance or executable-governance work requires a separate explicit gate.
+
+## 21. v0.0.3rc12 Milestone Consolidation / Freeze-Candidate Gate
+
+The independent v0.0.3rc11 availability-acceptance review returned:
+
+```text
+L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES
+```
+
+It confirmed all twelve published Pattern identities as `Available / M2`, verified their controlled non-regression hashes, preserved the frozen v0.0.2 baseline and opened no finding.
+
+v0.0.3rc12 performs no Pattern lifecycle transition. Its purpose is to consolidate the v0.0.3 L3 evidence and determine whether the current L3 contracts plus the twelve-entry catalog are suitable to become a formal frozen baseline in a later explicit governance action.
+
+A freeze-candidate decision shall not be based on numeric catalog size alone. The audit shall consider whether:
+
+1. the L3 authority position, metadata contract and trace/selection model are internally consistent;
+2. those contracts have been exercised across more than one tranche without requiring authority-model redesign;
+3. all material review findings are closed;
+4. all twelve Pattern identities, primary families and lifecycle histories are stable;
+5. `Available`, Maturity and Project Selection State remain independent;
+6. the many-to-many L2→L3 relation and generic-`satisfies` prohibition remain intact;
+7. Project Design Authority and external/source authorities remain outside catalog lifecycle authority;
+8. L3/L4 separation remains clear;
+9. deferred future work is cleanly isolated rather than evidence of an unresolved v0.0.3 contradiction; and
+10. release records are mutually consistent enough to support a reproducible frozen baseline.
+
+The proposed v0.0.3 frozen scope, if later explicitly approved, is limited to the L3 catalog governance/metadata/trace contracts and the twelve current `Available / M2` entries as the reviewed L3 baseline. It does not freeze or authorize M3/M4 evidence, L4 implementation/verification guidance, future Pattern tranches, SEC-primary realization, schema/validator/CI/code generation or executable governance.
+
+A successful rc12 review authorizes only a later explicit freeze decision. **rc12 itself remains an RC and shall not be described as frozen.**
+

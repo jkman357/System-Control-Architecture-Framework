@@ -1,6 +1,6 @@
 # SCAF-PAT-EVD-001 — Pre/Post-Trigger Retained Incident Evidence Ring
 
-**Development Release:** v0.0.3rc11  
+**Development Release:** v0.0.3rc12  
 **Pattern Family:** `EVD` — Evidence & Incident Recording  
 **Pattern Kind:** Composite Pattern  
 **Catalog Status:** Available  

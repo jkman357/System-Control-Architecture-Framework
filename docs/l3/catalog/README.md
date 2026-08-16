@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Entries
 
-v0.0.3rc11 is a second-tranche availability-acceptance release after the independent rc10 lifecycle review returned `L3 SECOND-TRANCHE PATTERN-LIFECYCLE GATE: YES`.
+v0.0.3rc12 is an L3 milestone-consolidation / freeze-candidate-audit release after the independent rc11 availability-acceptance review returned `L3 SECOND-TRANCHE PATTERN-AVAILABILITY ACCEPTANCE GATE: YES` with no finding.
 
 Current published catalog state:
 
@@ -13,7 +13,8 @@ Current published catalog state:
 
 `Available` means accepted for project consideration. It does not imply project applicability, recommendation, automatic selection, compliance, verification, implementation correctness or L2 satisfaction.
 
-The second-tranche acceptance is lifecycle-only: the five Pattern mechanism/trace bodies are preserved from rc10 apart from current Development Release and Catalog Status metadata.
+rc12 changes no Pattern lifecycle state and introduces no new ID. All Pattern architecture/trace bodies are preserved from rc11 apart from current Development Release metadata.
 
-The approved-but-deferred EVD export/transformation category remains unauthored; the rejected/reframe PST proposal remains unauthored; SEC-primary realization remains separately gated.
+The immediate gate is a freeze-candidate audit of the v0.0.3 L3 milestone. A successful audit may authorize a later explicit freeze action; rc12 itself is not frozen.
 
+The approved-but-deferred EVD export/transformation category remains unauthored; the rejected/reframe PST proposal remains unauthored; SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.
