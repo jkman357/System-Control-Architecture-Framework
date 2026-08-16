@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc09  
-**Status:** Second-Tranche Trace Cleanup / Focused Closure RC  
+**Version:** v0.0.3rc10  
+**Status:** Second-Tranche Maturity / Availability Readiness Decision RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,26 +38,29 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.3rc09 L3 Pattern / Mechanism Catalog Position
+## v0.0.3rc10 L3 Pattern / Mechanism Catalog Position
 
-The independent v0.0.3rc08 second-tranche Pattern review returned:
+The independent v0.0.3rc09 focused trace-closure review returned:
 
 ```text
-L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP
+L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES
 ```
 
-The review found **0 Critical, 0 Major and 1 Minor** issue. `FTL-002`, `TIM-001`, `TIM-002` and `SYN-001` passed without finding. The only cleanup item, `R8-01`, concerns the trace-relation classification of `SCAF-ROB-007` inside `SCAF-PAT-FTL-001`.
+The review confirmed `R8-01` fully Resolved, opened no new Critical/Major/Minor/Trivial finding, reconfirmed all twelve published identities and the frozen v0.0.2 normative baseline, and explicitly permitted a later entry-by-entry maturity/readiness decision for the five second-tranche entries.
 
-v0.0.3rc09 is therefore a **focused trace-cleanup RC**, not a new tranche. It moves `SCAF-ROB-007` from `Supporting L2 Trace` to `Constraint Inputs` in `FTL-001` and aligns the detailed rationale so the project-identified failure-propagation path is consumed as an upstream constraint rather than represented as an FTL-owned realization.
+v0.0.3rc10 is therefore a **second-tranche lifecycle-decision RC**. The five entries introduced in rc08 are deliberately advanced from `M1 — Structured` to `M2 — Architecture Reviewed`, while all five remain `Catalog Status: Candidate`:
 
-The catalog remains exactly twelve published identities:
+- `SCAF-PAT-FTL-001`;
+- `SCAF-PAT-FTL-002`;
+- `SCAF-PAT-TIM-001`;
+- `SCAF-PAT-TIM-002`;
+- `SCAF-PAT-SYN-001`.
 
-- seven initial-tranche entries remain `Available / M2`;
-- five second-tranche entries remain `Candidate / M1`, all still `Introduced In: v0.0.3rc08`.
+The original seven entries remain `Available / M2`. The catalog remains exactly twelve published IDs. No Pattern architecture body or trace is changed merely to claim maturity; rc10 changes the five second-tranche entries only in current Development Release and Maturity metadata.
 
-No Pattern ID, immutable primary family, lifecycle status, maturity state or frozen L1/L2 obligation is changed by rc09. The focused cleanup record is `docs/l3/08_L3_Second_Tranche_Trace_Cleanup.md`.
+M2 and `Available` remain independent. The immediate gate is an independent **rc10 maturity / availability-readiness review** that must validate M2 and separately judge whether each of the five Candidate/M2 entries is ready for a later explicit `Available` transition. Passing review does not itself change Catalog Status.
 
-The immediate gate is an independent **rc09 focused trace-closure review**. Only after that closure may a later RC make explicit maturity/readiness decisions for the five second-tranche entries. The deferred EVD category, rejected/reframe PST proposal, SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.
+The deferred EVD category, rejected/reframe PST proposal, SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -366,6 +369,7 @@ v0.0.3rc06   # initial-tranche availability acceptance; seven entries Available 
 v0.0.3rc07   # L3 trace-reference coverage audit / second-tranche planning; no new Pattern ID
 v0.0.3rc08   # controlled second representative tranche; FTL/TIM/SYN Candidate/M1 patterns
 v0.0.3rc09   # localized FTL-001 trace-relation cleanup / focused closure RC
+v0.0.3rc10   # second-tranche M2 maturity decision; Candidate status retained
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -373,14 +377,19 @@ The historical `rc1` tag/name is retained as released. From `rc02` onward this l
 
 ## Current Gate
 
-v0.0.3rc09 is the **second-tranche trace-cleanup / focused closure RC** after the independent v0.0.3rc08 Pattern review returned:
+v0.0.3rc10 is the **second-tranche maturity / availability-readiness decision RC** after the independent rc09 review returned:
 
 ```text
-L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP
+L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES
 ```
 
-The only rc08 finding was `R8-01` in `SCAF-PAT-FTL-001`. rc09 reclassifies `SCAF-ROB-007` from `Supporting L2 Trace` to `Constraint Inputs` and makes the project-identified material failure-propagation path an explicit upstream constraint on containment placement/configuration. `SCAF-ROB-015` remains Supporting Realization.
+The five second-tranche entries are now deliberately recorded as `Candidate / M2 — Architecture Reviewed`; the original seven remain `Available / M2`.
 
-The immediate gate is an **independent rc09 focused trace-closure review**. It shall confirm `R8-01` Resolved, verify the other eleven Pattern architecture bodies are non-regressed except Development Release metadata, and reconfirm the frozen v0.0.2 baseline.
+The immediate gate is an **independent rc10 maturity / availability-readiness review**. For each of the five second-tranche entries it shall separately determine:
 
-No second-tranche Pattern is promoted in rc09. The deferred EVD export/transformation category, rejected/reframe PST proposal, SEC-primary realization, M3/M4, L4 and executable governance remain separately gated.
+- whether M2 is justified by the rc08 architecture review + rc09 focused closure evidence and current content; and
+- whether the entry is ready for a later explicit `Candidate`→`Available` lifecycle transition.
+
+No status transition occurs in rc10. The review must also reconfirm the frozen v0.0.2 baseline, exactly twelve published IDs, stable immutable families, `FTL-001` `ROB-007` Constraint Input closure, and non-regression of the initial seven.
+
+Still separately gated: the deferred EVD export/transformation category, rejected/reframe PST proposal, SEC-primary realization, third tranche/bulk expansion, M3/M4, L4, schema/validator/CI/code generation and executable governance.

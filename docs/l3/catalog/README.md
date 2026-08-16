@@ -1,13 +1,13 @@
 # L3 Catalog Placement
 
-v0.0.3rc09 is a focused second-tranche trace-cleanup release after the independent rc08 review returned `L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP`.
+v0.0.3rc10 is a second-tranche lifecycle-decision release after the independent rc09 focused review returned `L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES`.
 
-The catalog still contains **twelve** published identities:
+The catalog contains **twelve** published identities:
 
 - seven initial-tranche entries remain `Available / M2`;
-- five second-tranche entries remain `Candidate / M1`.
+- five second-tranche entries are now `Candidate / M2`.
 
-The only semantic Pattern edit in rc09 is the `FTL-001` reclassification of `SCAF-ROB-007` from Supporting L2 Trace to Constraint Inputs, preserving `SCAF-ROB-015` as Supporting Realization. No ID, family, status, maturity or `Introduced In` value changes.
+The second-tranche M2 change records completed architecture-review evidence and does not imply `Available`, project selection, recommendation, compliance, verification or L2 satisfaction. No Pattern mechanism/trace body is changed by the lifecycle decision beyond current Development Release and Maturity metadata.
 
 Family paths are:
 

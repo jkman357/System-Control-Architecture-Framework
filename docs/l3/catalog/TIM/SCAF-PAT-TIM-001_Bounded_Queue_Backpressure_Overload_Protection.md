@@ -1,10 +1,10 @@
 # SCAF-PAT-TIM-001 — Bounded Queue / Backpressure / Overload Protection
 
-**Development Release:** v0.0.3rc09  
+**Development Release:** v0.0.3rc10  
 **Pattern Family:** `TIM` — Timing & Capacity Realization  
 **Pattern Kind:** Mechanism  
 **Catalog Status:** Candidate  
-**Maturity:** M1 — Structured  
+**Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc08
 
 ## Metadata
@@ -16,7 +16,7 @@
 | Pattern Family | `TIM` |
 | Pattern Kind | Mechanism |
 | Catalog Status | Candidate |
-| Maturity | M1 — Structured |
+| Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc08 |
 | Primary L2 Trace | `SCAF-TIME-009`, `SCAF-TIME-012` |
 | Supporting L2 Trace | `SCAF-TIME-010`, `SCAF-TIME-011`, `SCAF-TIME-013` |

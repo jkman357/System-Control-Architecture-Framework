@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc09  
+**Development Release:** v0.0.3rc10  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** focused second-tranche trace cleanup; initial seven remain Available/M2; five second-tranche entries remain Candidate/M1
+**Status:** second-tranche lifecycle decision; initial seven Available/M2; five second-tranche entries Candidate/M2
 
 ## 1. Purpose
 
@@ -29,23 +29,19 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern publication, availability or project selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc09 Scope
+## 2. v0.0.3rc10 Scope
 
-The independent v0.0.3rc08 second-tranche Pattern review returned:
+The independent v0.0.3rc09 focused trace-closure review returned:
 
 ```text
-L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP
+L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES
 ```
 
-It found 0 Critical, 0 Major and one localized Minor finding, `R8-01`, in `SCAF-PAT-FTL-001`. The other four rc08 entries passed without finding.
+It confirmed `R8-01` Resolved, found no new regression finding and permitted a later maturity/readiness review for the five second-tranche entries.
 
-v0.0.3rc09 performs only the required relation-classification cleanup:
+v0.0.3rc10 therefore records their deliberate advancement to `M2 — Architecture Reviewed` while retaining `Catalog Status: Candidate`. The initial seven remain `Available / M2`.
 
-- `SCAF-ROB-007` moves from `Supporting L2 Trace` to `Constraint Inputs` in `SCAF-PAT-FTL-001`;
-- §5.2/§5.3 now make the project-identified failure-propagation path an upstream input that constrains containment placement/configuration;
-- `SCAF-ROB-015` remains Supporting Realization.
-
-All twelve published Pattern identities and immutable primary families remain unchanged. The initial seven remain `Available / M2`; all five second-tranche entries remain `Candidate / M1` and `Introduced In: v0.0.3rc08`.
+No Pattern mechanism/trace body is re-authored for this lifecycle move. The rc10 review must separately validate M2 and availability readiness entry by entry.
 
 ## 3. Files
 
@@ -59,7 +55,8 @@ All twelve published Pattern identities and immutable primary families remain un
 | `05_L3_Initial_Tranche_Availability_Acceptance.md` | Historical rc06 Candidate→Available acceptance record |
 | `06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md` | Historical rc07 trace-reference coverage audit / second-tranche planning artifact |
 | `07_L3_Second_Tranche_Authoring_Decision.md` | Historical rc08 authoring scope, rc07 category dispositions and five new Pattern allocations |
-| `08_L3_Second_Tranche_Trace_Cleanup.md` | rc09 localized `R8-01` trace-cleanup decision and focused closure boundary |
+| `08_L3_Second_Tranche_Trace_Cleanup.md` | Historical rc09 localized `R8-01` trace-cleanup decision and focused closure boundary |
+| `09_L3_Second_Tranche_Lifecycle_Decision.md` | rc10 M2 maturity decision and separate availability-readiness gate |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -71,22 +68,21 @@ If L3 work exposes a genuine architecture-level contradiction in the frozen base
 
 ## 5. Current Gate / Closed Work
 
-The immediate gate is an independent **rc09 focused trace-closure review**. The review must verify:
+The immediate gate is an independent **rc10 second-tranche maturity / availability-readiness review**. For each of `FTL-001`, `FTL-002`, `TIM-001`, `TIM-002` and `SYN-001`, review must separately determine M2 validity and later availability readiness.
 
-- `R8-01` is fully Resolved in `SCAF-PAT-FTL-001`;
-- `SCAF-ROB-007` is a Constraint Input and no longer a Supporting Realization;
-- `SCAF-ROB-015` remains the intended Supporting trace;
-- the `FTL-001` ID/family/Candidate/M1/Introduced-In state remains stable;
-- the other eleven Pattern architecture bodies are non-regressed except current Development Release metadata;
-- the frozen v0.0.2 normative baseline remains byte-stable.
+The review must also reconfirm:
 
-The following remain outside v0.0.3rc09:
+- the initial seven remain `Available / M2` and non-regressed;
+- exactly twelve published IDs remain;
+- `FTL-001` continues to treat `SCAF-ROB-007` as a Constraint Input;
+- the frozen v0.0.2 normative baseline remains byte-stable;
+- M2 does not imply `Available`, project selection, recommendation, compliance or L2 satisfaction.
 
-- M2 or `Available` promotion of the five second-tranche entries;
-- authoring of the rc07-approved but deferred EVD export/transformation category;
-- the rejected/reframe PST configuration-activation candidate;
-- SEC-primary Pattern authoring without the dedicated security-realization gate;
-- third-tranche or bulk catalog expansion;
-- M3/M4 maturity claims;
-- L4 implementation or verification guidance;
-- schema, authority registry, validator, generated reverse-trace index, CI, code generation or executable governance.
+The following remain outside v0.0.3rc10:
+
+- Candidate→Available transition for the five second-tranche entries;
+- deferred EVD export/transformation authoring;
+- rejected/reframe PST configuration-activation authoring;
+- SEC-primary Pattern authoring;
+- third-tranche/bulk expansion;
+- M3/M4, L4, schema, validator, generated registry/index, CI, code generation or executable governance.

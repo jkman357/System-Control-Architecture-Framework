@@ -1,3 +1,43 @@
+## v0.0.3rc10 — 2026-08-16
+
+Second-tranche lifecycle decision after the independent v0.0.3rc09 focused review returned **PASS / `L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES`**, confirmed `R8-01` Resolved and found no new Critical, Major, Minor or Trivial finding.
+
+### Changed
+
+- added `docs/l3/09_L3_Second_Tranche_Lifecycle_Decision.md` as the release-scoped second-tranche maturity decision record;
+- advanced `SCAF-PAT-FTL-001`, `SCAF-PAT-FTL-002`, `SCAF-PAT-TIM-001`, `SCAF-PAT-TIM-002`, and `SCAF-PAT-SYN-001` from `M1 — Structured` to `M2 — Architecture Reviewed`;
+- retained `Catalog Status: Candidate` for all five so maturity and availability remain independent lifecycle axes;
+- updated current release/navigation/gate wording for v0.0.3rc10.
+
+### Evidence Basis
+
+- rc08 independently reviewed all five second-tranche entries for family/mechanism fit, L2 trace, authority boundaries, non-duplication, PDA ownership and L3/L4 conformance;
+- rc09 corrected the sole Minor `R8-01` in `FTL-001` and its focused review confirmed the finding fully Resolved with no regression;
+- the frozen v0.0.2 baseline and twelve published Pattern identities remain stable.
+
+### Preserved
+
+- all five second-tranche IDs, immutable primary families, `Candidate` status and `Introduced In: v0.0.3rc08`;
+- all seven initial-tranche `Available / M2 / Introduced In v0.0.3rc03` states;
+- all Pattern architecture/trace bodies except current Development Release and the five intended Maturity metadata changes;
+- exactly twelve numeric `SCAF-PAT-*` identities and no `Supersedes` event;
+- frozen v0.0.2 `docs/normative/` content and all 294 normative IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants;
+- many-to-many trace, PDA/source-authority and L3/L4 boundaries.
+
+### Deliberately Not Added / Promoted
+
+- no `Candidate`→`Available` transition for the five second-tranche entries;
+- no deferred EVD export/transformation Pattern;
+- no revived PST configuration-activation Pattern;
+- no SEC-primary Pattern;
+- no third tranche, M3/M4, L4, schema, validator, generated registry/index, CI, code generation or executable governance.
+
+### Gate
+
+- independently validate M2 for each of the five second-tranche entries;
+- independently assess `READY FOR AVAILABLE` entry by entry without changing status;
+- reconfirm `FTL-001` `ROB-007` Constraint Input closure, twelve-ID inventory, initial-seven non-regression and frozen-baseline integrity.
+
 ## v0.0.3rc09 — 2026-08-16
 
 Focused second-tranche trace cleanup after the independent v0.0.3rc08 Pattern review returned **PASS WITH MINOR CLEANUP / `L3 SECOND-TRANCHE PATTERN GATE: YES, AFTER MINOR CLEANUP`**, with **0 Critical, 0 Major and 1 Minor** finding.

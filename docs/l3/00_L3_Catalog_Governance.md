@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc09  
+**Development Release:** v0.0.3rc10  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -416,3 +416,24 @@ Supporting L2 Trace -> Constraint Input
 The focused rc09 review shall verify closure of `R8-01`, non-regression of the other eleven published Pattern architecture bodies and byte stability of the frozen v0.0.2 normative baseline.
 
 A successful rc09 closure may permit a later explicit M2/readiness review for the five second-tranche entries. It does not auto-promote them and does not authorize the deferred EVD category, rejected PST category, SEC-primary realization, M3/M4, L4 or executable governance.
+
+## 19. v0.0.3rc10 Second-Tranche Maturity / Availability Gate
+
+The independent v0.0.3rc09 focused trace-closure review returned:
+
+```text
+L3 SECOND-TRANCHE TRACE-CLOSURE GATE: YES
+```
+
+It confirmed `R8-01` fully Resolved, found no new Critical/Major/Minor/Trivial finding, preserved all twelve identities/families and reconfirmed the frozen v0.0.2 baseline.
+
+v0.0.3rc10 therefore records an explicit **M1→M2 maturity advancement** for the five second-tranche entries introduced in rc08. All five remain `Catalog Status: Candidate`.
+
+The evidence basis is the rc08 independent architecture/trace review plus rc09 focused closure. Together they cover primary-family fit, authority boundaries, L2 trace, PDA/source-authority ownership, non-duplication and L3/L4 conformance.
+
+The rc10 independent review shall answer two separate questions for every second-tranche entry:
+
+1. **M2 validation:** is the recorded `M2 — Architecture Reviewed` state justified by the available review/closure evidence and current content?
+2. **Availability readiness:** is the entry sufficiently bounded and complete for a later explicit `Candidate`→`Available` transition without implying project recommendation, applicability, compliance or L2 satisfaction?
+
+A successful rc10 review may permit a later explicit availability-acceptance RC for all, some or none of the five entries. It does not itself change Catalog Status and does not authorize deferred EVD authoring, rejected PST authoring, SEC-primary realization, third-tranche expansion, M3/M4, L4 or executable governance.

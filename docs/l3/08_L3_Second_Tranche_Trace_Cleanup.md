@@ -1,6 +1,6 @@
 # SCAF L3 Second-Tranche Trace Cleanup Decision
 
-**Development Release:** v0.0.3rc09  
+**Development Release:** v0.0.3rc10  
 **Upstream Pattern Release:** v0.0.3rc08  
 **Scope:** localized closure of independent review finding `R8-01` only
 
