@@ -1,9 +1,9 @@
 # SCAF-PAT-COM-001 — Reconnect plus State Reconciliation
 
-**Development Release:** v0.0.3rc05  
+**Development Release:** v0.0.3rc06  
 **Pattern Family:** `COM` — Interaction Resilience  
 **Pattern Kind:** Composite Pattern  
-**Catalog Status:** Candidate  
+**Catalog Status:** Available  
 **Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc03
 
@@ -15,7 +15,7 @@
 | Pattern Name | Reconnect plus State Reconciliation |
 | Pattern Family | `COM` |
 | Pattern Kind | Composite Pattern |
-| Catalog Status | Candidate |
+| Catalog Status | Available |
 | Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-ROB-013`, `SCAF-INT-010` |

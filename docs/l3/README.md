@@ -1,9 +1,9 @@
 # SCAF L3 Pattern / Mechanism Catalog
 
-**Development Release:** v0.0.3rc05  
+**Development Release:** v0.0.3rc06  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
-**Status:** Initial representative L3 pattern maturity-decision RC; all entries Candidate / M2
+**Status:** Initial representative L3 pattern availability-acceptance RC; all seven entries Available / M2
 
 ## 1. Purpose
 
@@ -29,20 +29,27 @@ Project Verification / Assurance evaluates project evidence
 
 Pattern selection by itself does not satisfy an L2 obligation.
 
-## 2. v0.0.3rc05 Scope
 
-The independent v0.0.3rc04 focused trace-closure review returned `INITIAL L3 PATTERN-TRANCHE TRACE-CLOSURE GATE: YES`, confirmed `R3-01` through `R3-04` Resolved and found no new Critical, Major, Minor or Trivial finding.
+## 2. v0.0.3rc06 Scope
 
-v0.0.3rc05 therefore records the deliberate maturity decision that the same seven published entries now satisfy the catalog definition of `M2 — Architecture Reviewed`. All seven remain `Catalog Status: Candidate` while a separate availability-readiness review is performed.
+The independent v0.0.3rc05 maturity / availability review returned `INITIAL L3 PATTERN-LIFECYCLE GATE: YES`, validated **7 / 7 `M2 VALID`**, independently judged **7 / 7 `READY FOR AVAILABLE`**, and opened no new Critical, Major, Minor or Trivial finding.
 
-No pattern body is re-authored merely to claim maturity. The rc05 content changes are limited to:
+v0.0.3rc06 therefore records the explicit catalog-maintainer acceptance decision for the same seven published entries:
 
-- recording the M2 lifecycle decision and its independent-review evidence basis;
-- updating the seven pattern metadata maturity values from M1 to M2;
-- defining the separate Candidate→Available acceptance gate;
-- updating current release/index/navigation wording.
+```text
+Candidate -> Available
+M2 — Architecture Reviewed remains unchanged
+Introduced In: v0.0.3rc03 remains unchanged
+```
 
-The rc05 review must validate M2 promotion independently and assess, entry by entry, whether later `Available` promotion would be justified. It must not infer project suitability, recommendation, compliance or L2 satisfaction from either M2 or future `Available` status.
+The pattern mechanism bodies, authority boundaries and L2 trace semantics are not re-authored to obtain availability. This RC is intentionally limited to:
+
+- recording the entry-by-entry availability acceptance decision and its review evidence basis;
+- updating all seven pattern Catalog Status values from Candidate to Available;
+- preserving M2 maturity, stable identity/family and original introduction history;
+- updating current release/index/navigation/gate wording.
+
+`Available` means accepted for project consideration under the current catalog release. It does not imply project applicability, recommendation, selection, compliance, verification, implementation correctness or L2 satisfaction.
 
 ## 3. Files
 
@@ -52,7 +59,8 @@ The rc05 review must validate M2 promotion independently and assess, entry by en
 | `01_L3_Pattern_Metadata_Contract.md` | Required pattern-entry metadata and field semantics |
 | `02_L3_Trace_and_Selection_Model.md` | L2→L3 trace relations, project selection states and satisfaction boundary |
 | `03_L3_Pattern_Index.md` | Human-readable catalog index; not a trace authority |
-| `04_L3_Initial_Tranche_Lifecycle_Decision.md` | Release-scoped M2 decision record and `Available` readiness gate |
+| `04_L3_Initial_Tranche_Lifecycle_Decision.md` | Historical rc05 M2 decision record and availability-readiness gate |
+| `05_L3_Initial_Tranche_Availability_Acceptance.md` | rc06 explicit entry-by-entry Candidate→Available catalog acceptance record |
 | `catalog/<FAMILY>/` | Published L3 pattern entries by immutable primary family |
 | `templates/L3_Pattern_Template.md` | Controlled authoring template for later entries |
 
@@ -62,12 +70,14 @@ The complete `docs/normative/` tree remains the frozen v0.0.2 L1/L2 baseline in 
 
 If L3 work exposes a genuine architecture-level contradiction in the frozen baseline, that issue must be raised explicitly as a separate governance event. It must not be repaired indirectly through L3 wording.
 
+
 ## 5. Closed Gates
 
-The following remain outside v0.0.3rc05:
+The following remain outside v0.0.3rc06:
 
-- Candidate→`Available` promotion before the rc05 maturity / availability-readiness review is accepted;
-- bulk pattern expansion;
+- automatic project selection or L2 satisfaction inferred from `Available` status;
+- uncontrolled/bulk second-tranche pattern expansion;
+- M3 / M4 maturity claims without their separate evidence gates;
 - L4 implementation guidance;
 - L4 verification procedures or test cases;
 - machine-readable pattern schema;

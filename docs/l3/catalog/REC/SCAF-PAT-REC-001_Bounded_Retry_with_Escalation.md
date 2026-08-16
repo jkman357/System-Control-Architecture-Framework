@@ -1,9 +1,9 @@
 # SCAF-PAT-REC-001 — Bounded Retry with Escalation
 
-**Development Release:** v0.0.3rc05  
+**Development Release:** v0.0.3rc06  
 **Pattern Family:** `REC` — Recovery & Reintegration  
 **Pattern Kind:** Mechanism  
-**Catalog Status:** Candidate  
+**Catalog Status:** Available  
 **Maturity:** M2 — Architecture Reviewed  
 **Introduced In:** v0.0.3rc03
 
@@ -15,7 +15,7 @@
 | Pattern Name | Bounded Retry with Escalation |
 | Pattern Family | `REC` |
 | Pattern Kind | Mechanism |
-| Catalog Status | Candidate |
+| Catalog Status | Available |
 | Maturity | M2 — Architecture Reviewed |
 | Introduced In | v0.0.3rc03 |
 | Primary L2 Trace | `SCAF-ROB-032`, `SCAF-ROB-011` |

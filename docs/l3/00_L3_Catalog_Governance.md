@@ -1,6 +1,6 @@
 # SCAF L3 Catalog Governance
 
-**Development Release:** v0.0.3rc05  
+**Development Release:** v0.0.3rc06  
 **Upstream Baseline:** frozen v0.0.2 L1/L2  
 **Framework Plane:** `SCAF-PROF`  
 **Status:** Development contract
@@ -135,7 +135,7 @@ Rules:
 9. Version numbers are not embedded in pattern IDs; repository release history carries version state.
 10. Frozen L1/L2 concern IDs such as `SCAF-ROB-*` or `SCAF-CFG-*` are never reused as pattern IDs.
 
-v0.0.3rc03 instantiates the seven Candidate/M1 Pattern IDs listed in Section 12. These published identities are now governed by the stable-ID and primary-family rules above.
+v0.0.3rc03 instantiated the seven Pattern IDs listed in Section 12. In v0.0.3rc06 those same published identities are `Available / M2`; they remain governed by the stable-ID and primary-family rules above.
 
 ## 7. Catalog Status
 
@@ -216,7 +216,7 @@ Those belong to later L4 implementation / verification guidance or project-speci
 
 ## 11. Initial Development Priority
 
-The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc05 across:
+The catalog-contract gate has passed and the first deliberately small representative tranche published in v0.0.3rc03 remains the active seven-pattern tranche in v0.0.3rc06 across:
 
 1. `SUP` — supervision / liveness / progress detection;
 2. `REC` — bounded retry / escalation;
@@ -225,7 +225,7 @@ The catalog-contract gate has passed and the first deliberately small representa
 5. `LCM` — update / activation / rollback lifecycle;
 6. `EVD` — retained incident evidence / pre-post event recording.
 
-`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. The first seven entries have now demonstrated stable metadata, trace, primary-family, composition and L3/L4 semantics through independent review and closure. Broad second-tranche authoring remains separately gated while rc05 validates their M2 lifecycle decision and assesses `Available` readiness.
+`FTL`, `TIM`, `SYN` and especially technology-sensitive `SEC` remain later expansion areas. The first seven entries have now demonstrated stable metadata, trace, primary-family, composition and L3/L4 semantics through independent review and closure. The rc05 lifecycle review validated all seven as M2 and independently judged all seven `READY FOR AVAILABLE`; v0.0.3rc06 records the explicit catalog acceptance. Broad second-tranche authoring remains separately gated.
 
 
 ## 12. v0.0.3rc03 Initial Pattern-Tranche Gate
@@ -304,3 +304,35 @@ The rc05 independent review shall therefore answer two separate questions for ev
 2. **Availability readiness:** is the entry sufficiently clear and controlled for a later explicit `Candidate`→`Available` lifecycle transition under Section 7, without implying recommendation, project applicability, compliance or L2 satisfaction?
 
 A successful rc05 review may permit a later RC to promote all, some or none of the seven entries to `Available`. Such status changes must be explicit and entry-specific. The same later RC may separately decide whether to open a small second pattern tranche. Neither action is automatic.
+
+
+## 15. v0.0.3rc06 Initial-Tranche Availability Acceptance Gate
+
+The independent v0.0.3rc05 maturity / availability review returned:
+
+```text
+INITIAL L3 PATTERN-LIFECYCLE GATE: YES
+```
+
+The review validated **7 / 7 `M2 VALID`** and independently judged **7 / 7 `READY FOR AVAILABLE`**, with no new Critical, Major, Minor or Trivial finding. It performed no status transition itself.
+
+v0.0.3rc06 therefore records the explicit catalog-maintainer acceptance decision for the same seven published initial-tranche identities:
+
+```text
+Catalog Status: Candidate -> Available
+Maturity: M2 — Architecture Reviewed (unchanged)
+Introduced In: v0.0.3rc03 (unchanged)
+```
+
+This transition means only that each entry is accepted for **project consideration** under the current SCAF catalog release. It does not establish project applicability, recommendation, project selection, implementation correctness, verification, compliance or L2 satisfaction.
+
+The rc06 independent review shall verify that:
+
+- the availability transition is supported by the rc05 entry-by-entry readiness evidence;
+- all seven IDs, immutable primary families, M2 maturity states and `Introduced In` values remain stable;
+- Pattern architecture bodies and L2 trace semantics are unchanged except for current release/status lifecycle metadata;
+- the frozen v0.0.2 normative tree remains byte-stable;
+- no eighth Pattern ID, M3/M4 claim, second tranche, primary-family move or `Supersedes` event is introduced;
+- no L4 implementation/verification prescription, schema, validator, generated registry/index, CI, code generation or executable-governance work is opened by this lifecycle transition.
+
+A successful rc06 review closes the **initial seven-pattern availability-acceptance gate**. Opening a second tranche, M3 multi-context validation, L4 guidance, or executable governance remains a separate explicit decision.

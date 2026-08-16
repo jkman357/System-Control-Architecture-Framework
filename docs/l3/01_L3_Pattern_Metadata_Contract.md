@@ -1,6 +1,6 @@
 # SCAF L3 Pattern Metadata Contract
 
-**Development Release:** v0.0.3rc05  
+**Development Release:** v0.0.3rc06  
 **Status:** Development contract  
 **Applies To:** current and future `SCAF-PAT-*` catalog entries
 
@@ -8,7 +8,7 @@
 
 This document defines the metadata structure required for SCAF L3 Pattern / Mechanism entries.
 
-The contract is intentionally human-readable in v0.0.3rc05. It does not introduce YAML, JSON Schema, validation code or CI. Field stability may later become an input to executable governance after a separate gate.
+The contract is intentionally human-readable in v0.0.3rc06. It does not introduce YAML, JSON Schema, validation code or CI. Field stability may later become an input to executable governance after a separate gate.
 
 ## 2. Metadata Principles
 
@@ -137,7 +137,7 @@ Reference basis is evidence/provenance, not automatic normative promotion.
 
 ## 9. Metadata Not Yet Added
 
-v0.0.3rc05 intentionally does not define:
+v0.0.3rc06 intentionally does not define:
 
 - machine-readable field keys as normative schema identifiers;
 - JSON/YAML serialization;

@@ -1,6 +1,6 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.3rc05  
+**Version:** v0.0.3rc06  
 **Status:** L3 Pattern / Mechanism Catalog Architecture RC  
 **Date:** 2026-08-16
 
@@ -37,33 +37,30 @@ Four input classes are kept distinct in this release:
 
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
-## v0.0.3rc05 L3 Pattern / Mechanism Catalog Position
 
-The focused independent v0.0.3rc04 trace-closure review returned:
+## v0.0.3rc06 L3 Pattern / Mechanism Catalog Position
+
+The independent v0.0.3rc05 maturity / availability review returned:
 
 ```text
-INITIAL L3 PATTERN-TRANCHE TRACE-CLOSURE GATE: YES
+INITIAL L3 PATTERN-LIFECYCLE GATE: YES
 ```
 
-The review confirmed `R3-01` through `R3-04` fully Resolved, found **no new Critical, Major, Minor or Trivial finding**, reconfirmed the frozen v0.0.2 normative tree byte-stable at exactly 294 unique normative requirement IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants, and reconfirmed the same seven published immutable `SCAF-PAT-*` identities.
+The review validated **7 / 7 `M2 VALID`**, judged **7 / 7 `READY FOR AVAILABLE`**, found no new or regression Critical/Major/Minor/Trivial issue, reconfirmed the frozen v0.0.2 normative tree byte-stable at exactly 294 unique normative requirement IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants, and reconfirmed the same seven published immutable `SCAF-PAT-*` identities.
 
-v0.0.3rc05 is therefore a **controlled initial-tranche maturity-decision RC**. All seven existing entries are deliberately advanced from **M1 — Structured** to **M2 — Architecture Reviewed** because their authority boundaries, L2 traces and L3/L4 boundaries have now completed independent architecture review plus focused closure. Their Catalog Status remains **Candidate**.
-
-This release deliberately keeps maturity and catalog lifecycle status separate:
+v0.0.3rc06 is therefore a **controlled initial-tranche availability-acceptance RC**. The catalog maintainer explicitly transitions all seven existing entries from `Candidate` to `Available` while preserving `M2 — Architecture Reviewed`, immutable Pattern identity/family and `Introduced In: v0.0.3rc03`.
 
 ```text
-M2 — Architecture Reviewed
-        ≠
 Available
-        ≠
-project selection / recommendation
-        ≠
-L2 satisfaction
+        = accepted for project consideration
+        ≠ project applicability / recommendation / selection
+        ≠ compliance / verification
+        ≠ L2 satisfaction
 ```
 
-No eighth Pattern ID, family move, `Supersedes` event, second tranche, L4 guidance, schema, validator, CI, code generation or executable-governance mechanism is introduced. The frozen `docs/normative/` files remain v0.0.2 and are not modified in place.
+No eighth Pattern ID, family move, `Supersedes` event, second tranche, M3/M4 claim, L4 guidance, schema, validator, CI, code generation or executable-governance mechanism is introduced. The frozen `docs/normative/` files remain v0.0.2 and are not modified in place.
 
-The next immediate gate is an **independent rc05 maturity / availability-readiness review**. It shall verify that all seven M2 promotions are justified and independently decide, entry by entry, whether each Candidate is ready for a later explicit `Available` lifecycle transition. Passing this rc05 review does not itself change Catalog Status.
+The next immediate gate is an **independent rc06 availability-acceptance review**. It shall verify that the status transition is supported by the rc05 entry-by-entry readiness evidence, that architecture/trace content did not change to obtain availability, and that the accepted L3 authority/lifecycle boundaries remain intact.
 
 ## v0.0.2 Frozen L1/L2 Baseline Position
 
@@ -319,7 +316,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**No CI is included in v0.0.3rc05.**
+**No CI is included in v0.0.3rc06.**
 
 No validator, schema, test fixture or copied Gen1 workflow is introduced. Gen1 tooling remains evidence of useful machine-verifiable intent, but executable enforcement must follow stable SCAF authority boundaries and stable machine-readable contracts.
 
@@ -368,16 +365,18 @@ v0.0.3rc02   # L3 catalog contract cleanup / closure RC
 v0.0.3rc03   # first representative Candidate/M1 L3 pattern tranche
 v0.0.3rc04   # localized initial-tranche trace cleanup
 v0.0.3rc05   # initial-tranche M2 maturity decision; Candidate status retained
+v0.0.3rc06   # initial-tranche availability acceptance; seven entries Available / M2
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
 
+
 ## Current Gate
 
-v0.0.3rc05 is the **initial-tranche M2 maturity-decision RC** after the v0.0.3rc04 focused independent review returned:
+v0.0.3rc06 is the **initial-tranche availability-acceptance RC** after the v0.0.3rc05 independent lifecycle review returned:
 
 ```text
-INITIAL L3 PATTERN-TRANCHE TRACE-CLOSURE GATE: YES
+INITIAL L3 PATTERN-LIFECYCLE GATE: YES
 ```
 
 Frozen and unchanged upstream:
@@ -390,19 +389,18 @@ Frozen and unchanged upstream:
 
 Open for controlled development in this RC:
 
-- deliberate M1→M2 advancement for the same seven published Pattern IDs based on completed independent architecture review and trace closure;
-- independent confirmation that the M2 evidence basis is sufficient for each entry;
-- entry-by-entry assessment of `Candidate`→`Available` readiness without changing Catalog Status in this RC;
-- regression checking of stable Pattern identity/family, many-to-many L2 trace, PDA authority, external source authority, composition guidance and L3/L4 separation.
+- explicit `Candidate`→`Available` catalog acceptance for the same seven published Pattern IDs after 7 / 7 `READY FOR AVAILABLE` independent recommendations;
+- preservation of M2 maturity, immutable Pattern identity/family and `Introduced In: v0.0.3rc03`;
+- regression checking that pattern architecture bodies, many-to-many L2 trace, PDA authority, external source authority, composition guidance and L3/L4 separation remain unchanged by the lifecycle transition.
 
-The immediate gate is an **independent rc05 maturity / availability-readiness review**. Every entry remains `Candidate` during this review. `Available` is a separate catalog lifecycle decision and must not be inferred from M2 maturity or from project use.
+The immediate gate is an **independent rc06 availability-acceptance review**. `Available` shall be interpreted only as accepted for project consideration; it must not be inferred as universal applicability, recommendation, project selection, compliance, verification or L2 satisfaction.
 
 Still closed/gated:
 
 - modification of frozen v0.0.2 normative files in place;
 - top-level taxonomy or core-metamodel reopening without a genuine architecture-level contradiction;
-- automatic Candidate→Available promotion merely because M2 is reached;
-- broad second-tranche expansion before the rc05 lifecycle-readiness gate is reviewed;
+- uncontrolled/bulk second-tranche expansion;
+- M3/M4 maturity claims without their separate evidence gates;
 - broad L4 MCU/PC/SoC/FPGA/DSP implementation or verification rulebooks;
 - machine-readable pattern schema / authority registry;
 - validator, generated reverse-trace index, generated checklist or CI enforcement;
