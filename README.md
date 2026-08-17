@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc13  
-**Status:** Freeze-Candidate Control-Chain Documentation Closure RC  
+**Version:** v0.0.4  
+**Status:** Frozen Executable Governance Baseline  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,7 +38,37 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc13 Freeze-Candidate Documentation-Closure Position
+## v0.0.4 Frozen Executable Governance Baseline Position
+
+By explicit governance decision after the accepted rc13 closure review, SCAF v0.0.4 is formally frozen as **SCAF v0.0.4 — Frozen Executable Governance Baseline**.
+
+The independent rc13 review returned:
+
+```text
+R12-01: RESOLVED
+V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES
+Critical: 0
+Major: 0
+Minor: 0
+Trivial: 0
+Open upstream findings: 0
+```
+
+The reviewed rc13 source identity was:
+
+```text
+0cff9b950d5c92c661ff1f66664825f2337d88ab1a72fce84a0ef37875dbf979
+```
+
+The formal freeze changes release/navigation state only. Executable code, workflow behavior, registry/schema, frozen-baseline manifest, regression suites and the frozen v0.0.2/v0.0.3 source trees retain the reviewed rc13 state.
+
+Accepted executable-governance regression inventory remains 8 / 9 / 11 / 13 = **41 tests**. The production runtime order remains external CI trust input -> six control-plane topology/SHA-256 checks -> external-pin verification -> frozen-baseline release integrity -> authority-registry validation -> same-root stage attestation -> CI gate result.
+
+`v0.0.4` is immutable and shall not be modified in place. Future executable-governance capability or semantic work must proceed on a new controlled RC/version line.
+
+See `docs/executable-governance/13_SCAF_v0.0.4_Formal_Freeze_Decision.md`.
+
+## v0.0.4rc13 Historical Freeze-Candidate Documentation-Closure Position
 
 v0.0.4rc13 follows the independent rc12 freeze-candidate review result:
 
@@ -388,7 +418,8 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` | rc10 CI trust-input / executable-governance gate foundation contract; review basis for R10-01 |
 | `docs/executable-governance/10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` | Accepted R10-01 repository path-component / root-binding closure contract |
 | `docs/executable-governance/11_SCAF_v0.0.4rc12_Executable_Governance_Milestone_Consolidation_and_Freeze_Candidate.md` | v0.0.4 milestone consolidation / freeze-candidate record, clarified by rc13 for `R12-01` |
-| `docs/executable-governance/12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md` | Current `R12-01` control-chain documentation closure record |
+| `docs/executable-governance/12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md` | Accepted `R12-01` control-chain documentation closure record |
+| `docs/executable-governance/13_SCAF_v0.0.4_Formal_Freeze_Decision.md` | Formal v0.0.4 executable-governance freeze decision and post-freeze boundary |
 | `release-integrity/frozen-baseline-manifest.json` | Reviewed SHA-256 manifest for the frozen v0.0.2 normative and v0.0.3 L3 trees |
 | `tools/scaf_release_integrity/checker.py` | Standalone frozen-tree byte-integrity checker bound to the canonical repository manifest |
 | `tools/scaf_release_integrity/tests/test_checker.py` | Release-integrity regression tests for mutation/add/remove/manifest/path/CWD cases |
@@ -410,7 +441,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**v0.0.4rc13 is the documentation-only closure RC for the rc12 freeze candidate.**
+**v0.0.4 is the Frozen Executable Governance Baseline created from the accepted rc13 freeze candidate by explicit governance freeze decision.**
 
 The accepted executable controls remain deliberately separate:
 
@@ -465,7 +496,8 @@ Human semantic authority
    -> CI trust-input bootstrap + fixed executable-governance gate
    -> repository path-component + root-binding hardening
    -> milestone consolidation / freeze candidate (rc12)
-   -> control-chain documentation closure (current rc13)
+   -> control-chain documentation closure (rc13)
+   -> formal v0.0.4 executable-governance freeze
    -> later separately gated PR/merge enforcement, provenance/signing or generated views
 ```
 
@@ -526,7 +558,8 @@ v0.0.4rc09   # focused R8-01 local pinned-artifact symlink hardening; gate YES
 v0.0.4rc10   # CI trust-input model + executable-governance gate foundation; independent gate NO (R10-01 Major)
 v0.0.4rc11   # focused CI repository path-component / root-binding hardening for R10-01; gate YES
 v0.0.4rc12   # executable-governance milestone consolidation / freeze candidate; gate YES, AFTER MINOR CLEANUP
-v0.0.4rc13   # focused R12-01 control-chain documentation closure; no executable capability change
+v0.0.4rc13   # focused R12-01 control-chain documentation closure; gate YES
+v0.0.4       # frozen executable-governance baseline
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -569,7 +602,9 @@ v0.0.4rc11 — CI Repository Path-Component & Root-Binding Hardening
 v0.0.4rc12 — Executable Governance Milestone Consolidation / Freeze Candidate
               gate: YES, AFTER MINOR CLEANUP; R12-01 Minor documentation ambiguity
 v0.0.4rc13 — Freeze-Candidate Control-Chain Documentation Closure
-              current documentation-only R12-01 closure RC
+              gate: YES; R12-01 RESOLVED
+v0.0.4 — Frozen Executable Governance Baseline
+              explicit governance freeze decision
 ```
 
 Five different control/trust questions remain explicit:
@@ -595,13 +630,7 @@ The external CI trust bundle must live outside the repository. The accepted rc11
 
 rc13 preserves the same bounded trust/enforcement scope and intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled work.
 
-The immediate independent-review question is whether `R12-01` is resolved by documentation-only clarification while preserving all executable/frozen identities and the accepted production runtime order.
+The rc13 closure review returned `YES`, resolved `R12-01`, and left zero Critical/Major/Minor/Trivial or open upstream findings. The subsequent explicit governance decision has now frozen this milestone as `v0.0.4`.
 
-Expected review gate:
-
-```text
-V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES / YES, AFTER MINOR CLEANUP / NO
-```
-
-A `YES` closes the documentation finding and establishes freeze-candidate eligibility only. It does not by itself create or rename the formal `v0.0.4` frozen baseline; formal freeze still requires an explicit governance decision.
+The next development work, if any, must begin on a new controlled RC/version line and must not rewrite this frozen baseline in place.
 

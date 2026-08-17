@@ -1,3 +1,18 @@
+## v0.0.4 — 2026-08-17
+
+Formal **Frozen Executable Governance Baseline** created by explicit governance freeze decision after the independent v0.0.4rc13 review returned **`R12-01: RESOLVED`** and **`V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES`**, with 0 Critical, 0 Major, 0 Minor, 0 Trivial and 0 open accepted upstream findings.
+
+- freezes the reviewed rc13 executable-governance milestone as formal `v0.0.4`;
+- adds `docs/executable-governance/13_SCAF_v0.0.4_Formal_Freeze_Decision.md`;
+- synchronizes current release/navigation state from `v0.0.4rc13` to `v0.0.4`;
+- preserves the reviewed 294 / 218 / 76 authority inventory, zero `SCAF-PAT-*` registry records and 294 empty machine-readable relations;
+- preserves frozen v0.0.2 L1/L2 and v0.0.3 L3 protected-tree identities and the twelve `Available / M2 — Architecture Reviewed` L3 Patterns;
+- preserves all accepted executable artifacts, six control-plane trust identities and 8 / 9 / 11 / 13 = 41 regressions unchanged from the reviewed rc13 candidate;
+- preserves the runtime trust/control order: external trust input -> six topology/SHA-256 identity checks -> external-pin verification -> frozen-baseline integrity -> authority-registry validation -> same-root stage attestation -> gate result;
+- preserves the historical rc10 `NO`, rc11 `YES`, rc12 `YES, AFTER MINOR CLEANUP`, and rc13 closure `YES` review dispositions;
+- does not add fork-PR enforcement, branch-protection administration, signing/PKI/provenance, trust-bundle distribution, generated views, registry generation, code generation, project inference, non-empty L2-to-L3 relation semantics, new L3 work, M3/M4, or L4;
+- establishes that `v0.0.4` is immutable and future work must proceed on a new controlled RC/version line.
+
 ## v0.0.4rc13 — 2026-08-17
 
 Focused freeze-candidate documentation closure after the independent v0.0.4rc12 review returned **`V0.0.4 EXECUTABLE-GOVERNANCE MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP`** and opened one Minor finding, `R12-01`.

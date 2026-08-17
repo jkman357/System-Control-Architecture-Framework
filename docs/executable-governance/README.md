@@ -1,7 +1,7 @@
-# SCAF Executable Governance Development
+# SCAF Executable Governance Baseline
 
-**Development Release:** v0.0.4rc13  
-**Status:** Freeze-Candidate Control-Chain Documentation Closure RC  
+**Release:** v0.0.4  
+**Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 ## 1. Purpose
@@ -10,16 +10,21 @@ This directory contains separately controlled development toward SCAF executable
 
 The frozen v0.0.2 and v0.0.3 baselines are not modified in place. Executable-governance artifacts are downstream representations, schemas, validators, integrity controls and later enforcement mechanisms that must preserve the authority semantics of those frozen baselines.
 
-## 2. Current rc13 Scope
+## 2. Frozen v0.0.4 Position
 
-The independent v0.0.4rc12 freeze-candidate review returned:
+The independent v0.0.4rc13 closure review returned:
 
 ```text
-V0.0.4 EXECUTABLE-GOVERNANCE MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP
-R12-01: Minor — consolidation control-chain diagram ordering ambiguity
+R12-01: RESOLVED
+V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES
+Critical: 0
+Major: 0
+Minor: 0
+Trivial: 0
+Open upstream findings: 0
 ```
 
-The review confirmed the executable milestone and opened no Critical or Major finding. rc13 therefore performs **documentation-only closure of R12-01**; it adds no executable control, CI trigger, trust source, semantic authority, or downstream framework layer.
+By subsequent explicit governance decision, the reviewed rc13 milestone is now formally frozen as **SCAF v0.0.4 — Frozen Executable Governance Baseline**. The freeze adds no executable control, CI trigger, trust source, semantic authority, or downstream framework layer; it synchronizes release/freeze state only.
 
 Current executable-governance artifacts are:
 
@@ -35,14 +40,15 @@ Current executable-governance artifacts are:
 - `09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` — accepted trust model / CI-gate foundation record with historical `R10-01` review basis;
 - `10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` — accepted `R10-01` closure;
 - `11_SCAF_v0.0.4rc12_Executable_Governance_Milestone_Consolidation_and_Freeze_Candidate.md` — milestone consolidation / freeze-candidate record with rc13 R12-01 clarification;
-- `12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md` — current focused R12-01 documentation closure record;
+- `12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md` — accepted focused R12-01 documentation closure record;
+- `13_SCAF_v0.0.4_Formal_Freeze_Decision.md` — formal v0.0.4 freeze decision and post-freeze governance boundary;
 - repository-root `authority-registry.yaml` — accepted rc03 representation;
 - `schemas/authority-registry.schema.json` and `tools/scaf_validator/` — accepted semantic/representation conformance path;
 - `release-integrity/frozen-baseline-manifest.json` and `tools/scaf_release_integrity/` — accepted local frozen-byte integrity path;
 - `tools/scaf_external_pin/` — accepted external-pin verification path;
 - `tools/scaf_ci_gate/` and `.github/workflows/scaf-executable-governance.yml` — accepted trusted-main/manual gate with rc11 path/root hardening.
 
-Frozen Markdown remains semantic authority. rc13 does **not** perform formal freeze and does **not** add fork-PR execution, `pull_request_target`, signing/PKI/provenance, workflow self-authentication, canonical trust-bundle storage/distribution, registry generation, generated views/indexes, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
+Frozen Markdown remains semantic authority. The formal v0.0.4 freeze does **not** add fork-PR execution, `pull_request_target`, signing/PKI/provenance, workflow self-authentication, canonical trust-bundle storage/distribution, registry generation, generated views/indexes, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
 
 ## 3. Development Order
 
@@ -69,21 +75,23 @@ repository path-component + root-binding hardening
         ↓
 executable-governance milestone consolidation / freeze candidate (rc12)
         ↓
-control-chain documentation closure (current rc13)
+control-chain documentation closure (rc13)
+        ↓
+formal v0.0.4 executable-governance freeze
         ↓
 later separately gated PR/merge enforcement / signing / provenance / generated views
 ```
 
 Semantic validation, frozen-byte integrity, and external identity pinning remain deliberately separate controls.
 
-## 4. Current Gate
+## 4. Frozen Gate State
 
-The independent v0.0.4rc13 review shall determine whether `R12-01` is resolved by the documentation-only clarification without executable, workflow, registry/schema, manifest, regression, frozen L1/L2, or frozen L3 change.
-
-The review must confirm the capability/development layering is explicitly distinguished from production runtime execution order, the runtime sequence matches `tools/scaf_ci_gate.gate`, all 41 regressions and canonical outside-repository trust-bundle gate remain stable, and rc13 still does not itself perform formal freeze.
-
-Expected gate label:
+The independent v0.0.4rc13 review confirmed `R12-01: RESOLVED` and returned:
 
 ```text
-V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE
+V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES
 ```
+
+The accepted review preserved all 41 regressions, the canonical outside-repository trust-bundle production gate, the capability-layering/runtime-order distinction, frozen L1/L2 and L3 identities, and zero open findings. The later explicit governance decision therefore created the formal v0.0.4 frozen baseline recorded in `13_SCAF_v0.0.4_Formal_Freeze_Decision.md`.
+
+No in-place semantic or executable modification is permitted after this freeze.
