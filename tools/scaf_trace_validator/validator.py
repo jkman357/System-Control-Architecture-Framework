@@ -75,6 +75,9 @@ L2_ID_RE = re.compile(rf"^{L2_ID_PATTERN}$")
 CODE_ID_RE = re.compile(rf"`(?P<id>{L2_ID_PATTERN})`")
 PATTERN_ID_RE = re.compile(r"^SCAF-PAT-[A-Z]{3}-\d{3}$")
 TABLE_ROW_RE = re.compile(r"^\|\s*(?P<key>[^|]+?)\s*\|\s*(?P<value>.*?)\s*\|\s*$")
+METADATA_HEADING_RE = re.compile(r"^##\s+Metadata\s*$")
+METADATA_HEADER_RE = re.compile(r"^\|\s*Field\s*\|\s*Value\s*\|\s*$")
+METADATA_DELIMITER_RE = re.compile(r"^\|\s*:?-{3,}:?\s*\|\s*:?-{3,}:?\s*\|\s*$")
 SIMPLE_ID_LIST_RE = re.compile(
     rf"^\s*`{L2_ID_PATTERN}`(?:\s*,\s*`{L2_ID_PATTERN}`)*\s*$"
 )
@@ -195,11 +198,46 @@ def _extract_metadata_rows(source_path: Path, report: ValidationReport) -> dict[
         report.errors.append(f"{source_path}: cannot read frozen Pattern source: {exc}")
         return None
 
+    lines = text.splitlines()
+    metadata_headings = [index for index, line in enumerate(lines) if METADATA_HEADING_RE.fullmatch(line)]
+    if len(metadata_headings) != 1:
+        report.errors.append(
+            f"{source_path.as_posix()}: ## Metadata section occurs {len(metadata_headings)} times; expected exactly 1"
+        )
+        return None
+
+    section_start = metadata_headings[0] + 1
+    section_end = len(lines)
+    for index in range(section_start, len(lines)):
+        if lines[index].startswith("## "):
+            section_end = index
+            break
+    section = lines[section_start:section_end]
+
+    header_indexes = [index for index, line in enumerate(section) if METADATA_HEADER_RE.fullmatch(line)]
+    if len(header_indexes) != 1:
+        report.errors.append(
+            f"{source_path.as_posix()}: metadata table header '| Field | Value |' occurs {len(header_indexes)} times inside ## Metadata; expected exactly 1"
+        )
+        return None
+
+    header_index = header_indexes[0]
+    if header_index + 1 >= len(section) or not METADATA_DELIMITER_RE.fullmatch(section[header_index + 1]):
+        report.errors.append(
+            f"{source_path.as_posix()}: metadata table must place a two-column Markdown delimiter row immediately after '| Field | Value |'"
+        )
+        return None
+
+    table_lines: list[str] = []
+    for line in section[header_index + 2:]:
+        if not TABLE_ROW_RE.fullmatch(line):
+            break
+        table_lines.append(line)
+
     found: dict[str, list[str]] = {key: [] for key in REQUIRED_METADATA_ROWS}
-    for line in text.splitlines():
-        match = TABLE_ROW_RE.match(line)
-        if not match:
-            continue
+    for line in table_lines:
+        match = TABLE_ROW_RE.fullmatch(line)
+        assert match is not None
         key = match.group("key").strip()
         if key in found:
             found[key].append(match.group("value").strip())
@@ -207,7 +245,7 @@ def _extract_metadata_rows(source_path: Path, report: ValidationReport) -> dict[
     for key, values in found.items():
         if len(values) != 1:
             report.errors.append(
-                f"{source_path.as_posix()}: metadata row {key!r} occurs {len(values)} times; expected exactly 1"
+                f"{source_path.as_posix()}: authoritative ## Metadata table row {key!r} occurs {len(values)} times; expected exactly 1"
             )
 
     if any(len(values) != 1 for values in found.values()):
@@ -226,19 +264,29 @@ def _parse_simple_id_list(value: str, source_label: str) -> list[str]:
     return ids
 
 
-def _leading_marker(prefix: str, source_label: str) -> str | None:
-    """Interpret text immediately before an ID inside one semicolon clause."""
+def _leading_marker(
+    prefix: str,
+    source_label: str,
+    *,
+    require_comma: bool,
+) -> str | None:
+    """Interpret reviewed text before an ID at clause start or between items."""
     stripped = prefix.strip()
+
+    if require_comma:
+        if not stripped.startswith(","):
+            raise ValueError(
+                f"{source_label}: expected explicit comma separator before next L2 ID"
+            )
+        stripped = stripped[1:].strip()
+        if stripped.startswith(","):
+            raise ValueError(f"{source_label}: repeated or empty comma-separated item is unsupported")
+    else:
+        if stripped.startswith(","):
+            raise ValueError(f"{source_label}: leading comma before first L2 ID is unsupported")
+
     if not stripped:
         return None
-
-    # Between IDs, a leading comma is the item separator. The remaining text may
-    # be empty or one reviewed leading qualifier keyword.
-    if stripped.startswith(","):
-        stripped = stripped[1:].strip()
-        if not stripped:
-            return None
-
     if stripped == "applicable":
         return "applicable"
     if stripped == "conditional":
@@ -260,7 +308,7 @@ def _parse_constraint_clause(clause: str, source_label: str) -> list[tuple[str, 
     for index, match in enumerate(matches):
         previous_end = matches[index - 1].end() if index > 0 else 0
         prefix = clause[previous_end:match.start()]
-        marker = _leading_marker(prefix, source_label)
+        marker = _leading_marker(prefix, source_label, require_comma=index > 0)
         if marker is not None:
             active_leading = marker
 
@@ -277,7 +325,7 @@ def _parse_constraint_clause(clause: str, source_label: str) -> list[tuple[str, 
             # Before another ID, only comma/whitespace or comma + a reviewed
             # leading qualifier is legal. Any prose here would be trailing
             # context followed by another ID, which rc4 requires to fail closed.
-            _leading_marker(suffix, source_label)
+            _leading_marker(suffix, source_label, require_comma=True)
         else:
             tail = suffix.strip()
             if tail:

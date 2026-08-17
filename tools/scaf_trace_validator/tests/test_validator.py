@@ -178,7 +178,7 @@ class TraceValidatorTests(unittest.TestCase):
         )
         source.write_text(text, encoding="utf-8")
         report = validate_repository(root)
-        self.assertTrue(any("unsupported or ambiguous text before L2 ID" in e for e in report.errors))
+        self.assertTrue(any("expected explicit comma separator" in e for e in report.errors))
 
     def test_duplicate_authoritative_metadata_row_fails_closed(self):
         root = self.make_repo()
@@ -188,6 +188,95 @@ class TraceValidatorTests(unittest.TestCase):
         source.write_text(text.replace(row, row + "\n" + row, 1), encoding="utf-8")
         report = validate_repository(root)
         self.assertTrue(any("occurs 2 times; expected exactly 1" in e for e in report.errors))
+
+
+    def test_constraint_adjacent_ids_without_comma_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        text = text.replace("`SCAF-INT-007`, `SCAF-INT-008`", "`SCAF-INT-007` `SCAF-INT-008`", 1)
+        source.write_text(text, encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("expected explicit comma separator" in e for e in report.errors))
+
+    def test_constraint_missing_comma_before_applicable_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        text = text.replace("`SCAF-RUN-011`, applicable `SCAF-TIME-007`", "`SCAF-RUN-011` applicable `SCAF-TIME-007`", 1)
+        source.write_text(text, encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("expected explicit comma separator" in e for e in report.errors))
+
+    def test_constraint_leading_comma_before_first_id_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        text = text.replace("| Constraint Inputs | `SCAF-INT-007`", "| Constraint Inputs | , `SCAF-INT-007`", 1)
+        source.write_text(text, encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("leading comma before first L2 ID" in e for e in report.errors))
+
+    def test_metadata_row_moved_to_narrative_table_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        row = "| Primary L2 Trace | `SCAF-ROB-013`, `SCAF-INT-010` |"
+        self.assertIn(row, text)
+        text = text.replace(row + "\n", "", 1)
+        text += "\n## Review-only narrative table\n\n| Note | Value |\n|---|---|\n" + row + "\n"
+        source.write_text(text, encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("authoritative ## Metadata table row 'Primary L2 Trace' occurs 0 times" in e for e in report.errors))
+
+    def test_metadata_row_replaced_by_altered_narrative_table_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        row = "| Supporting L2 Trace | `SCAF-ROB-012`, `SCAF-CFG-019`, `SCAF-RUN-010` |"
+        self.assertIn(row, text)
+        text = text.replace(row + "\n", "", 1)
+        text += "\n## Review-only narrative table\n\n| Field | Value |\n|---|---|\n| Supporting L2 Trace | `SCAF-ROB-999` |\n"
+        source.write_text(text, encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("authoritative ## Metadata table row 'Supporting L2 Trace' occurs 0 times" in e for e in report.errors))
+
+    def test_missing_metadata_section_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        text = text.replace("## Metadata", "## Review Metadata", 1)
+        source.write_text(text, encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("## Metadata section occurs 0 times" in e for e in report.errors))
+
+    def test_metadata_table_missing_required_row_fails_closed(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        text = source.read_text(encoding="utf-8")
+        row = next(line for line in text.splitlines() if line.startswith("| Constraint Inputs |"))
+        source.write_text(text.replace(row + "\n", "", 1), encoding="utf-8")
+        report = validate_repository(root)
+        self.assertFalse(report.passed)
+        self.assertTrue(any("authoritative ## Metadata table row 'Constraint Inputs' occurs 0 times" in e for e in report.errors))
+
+    def test_same_key_narrative_table_does_not_become_authority(self):
+        root = self.make_repo()
+        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        with source.open("a", encoding="utf-8") as stream:
+            stream.write(
+                "\n## Review-only narrative table\n\n"
+                "| Field | Value |\n|---|---|\n"
+                "| Primary L2 Trace | `SCAF-ROB-999` |\n"
+            )
+        report = validate_repository(root)
+        self.assertTrue(report.passed, report.errors)
 
     def test_narrative_l2_trace_prose_does_not_create_edges(self):
         root = self.make_repo()

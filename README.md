@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc5  
-**Status:** L3 Source-Aware Trace Validator Foundation  
+**Current Development Release:** v0.0.5rc6  
+**Status:** L3 Trace Validator Fail-Closed Source-Boundary Hardening  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -40,7 +40,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc5` | Executable source-aware validation of the accepted L3 trace serialization |
+| `v0.0.5rc6` | Fail-closed hardening of the L3 source-aware trace validator after rc5 adversarial review |
 
 Frozen releases are not modified in place. New semantic or executable capability proceeds on a later controlled RC/version line.
 
@@ -61,9 +61,14 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. The current v0.0.5 development line does not reopen them.
 
-## Current v0.0.5rc5 Development Focus
+## Current v0.0.5rc6 Development Focus
 
-The accepted rc4 gate fixed both the structural trace schema and the deterministic fail-closed extraction contract. rc5 implements those reviewed rules as an independent executable development control:
+The independent rc5 review found two blocking fail-open defects in the first executable trace validator:
+
+- `R5-01` — Constraint Inputs parsing accepted missing or misplaced comma separators outside the reviewed rc4 language;
+- `R5-02` — required-row extraction scanned same-key Markdown table rows outside the authoritative `## Metadata` table.
+
+rc6 is a bounded hardening candidate that closes only those source-boundary defects. It does not add a new trace capability.
 
 [`tools/scaf_trace_validator/`](tools/scaf_trace_validator/README.md)
 
@@ -73,25 +78,23 @@ Canonical run:
 python -m tools.scaf_trace_validator.validator
 ```
 
-The validator independently performs:
+The hardened validator now requires:
 
 ```text
-trace JSON Schema validation
-        +
-frozen Pattern metadata reconstruction
-        +
-exact 119-record source/serialization comparison
-        +
-119 typed-relation tuple uniqueness
-        +
-canonical cross-record ordering proof
-        +
-82 L2 authority-identity resolutions
-        +
-15 qualifier-fidelity associations
+exactly one ## Metadata section
+        ↓
+exactly one | Field | Value | metadata table in that section
+        ↓
+required machine-authoritative rows only from that table
+        ↓
+strict clause-start vs inter-item delimiter handling
+        ↓
+explicit comma before every later Constraint Input item
+        ↓
+fail closed on leading comma / missing comma / unsupported syntax
 ```
 
-Current accepted trace population remains:
+The accepted trace population remains unchanged:
 
 ```text
 12 Pattern identities
@@ -107,17 +110,15 @@ The authority chain remains:
 
 ```text
 Frozen L3 Markdown         -> semantic trace authority
-Source-extraction contract -> deterministic interpretation
-Trace JSON Schema          -> structural representation constraints
+rc4 source-extraction contract -> deterministic interpretation
+rc4 trace JSON Schema      -> structural representation constraints
 l3-trace-registry.yaml     -> subordinate serialized data
-rc5 trace validator        -> executable source-aware conformance proof
+rc6 hardened trace validator -> executable source-aware conformance proof
 ```
 
-The validator is fail closed for unsupported extraction syntax and source/serialization disagreement. It does not generate or rewrite the registry and does not infer applicability, Pattern selection, satisfaction, compliance, verification or closure.
+rc6 expands the trace-validator development regression suite from 16 to **24 tests**, including the two independently reproduced rc5 fail-open classes and additional bounded variants. The frozen v0.0.4 executable-governance inventory remains unchanged at 41 tests, and the trace validator remains outside the frozen six-artifact CI trust bundle.
 
-rc5 adds sixteen trace-validator regressions. The frozen v0.0.4 executable-governance inventory remains separately unchanged at 41 tests; the rc5 development tool is not retroactively added to the frozen six-artifact CI trust bundle.
-
-See [`docs/executable-governance/18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md`](docs/executable-governance/18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md).
+See [`docs/executable-governance/19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md`](docs/executable-governance/19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md).
 
 ## Authority and Trace Boundaries
 

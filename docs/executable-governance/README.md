@@ -6,9 +6,9 @@
 
 ## Current Development Line
 
-`v0.0.5rc5 — L3 Source-Aware Trace Validator Foundation` follows the clean rc4 schema/source-extraction gate. It implements the accepted rc4 contracts as an independent executable development control that validates the rc3 trace serialization against frozen v0.0.3 Pattern metadata and frozen L2 authority identities.
+`v0.0.5rc6 — L3 Trace Validator Fail-Closed Source-Boundary Hardening` follows the rc5 independent review, which returned gate `NO` with two blocking Major findings (`R5-01`, `R5-02`). rc6 is a bounded hardening candidate that preserves the rc4 contracts while making the executable parser fail closed at the reviewed delimiter and Metadata-table authority boundaries.
 
-The new validator reconstructs all 119 relations, checks 15 qualifier associations, typed-tuple uniqueness, canonical ordering and 82 L2 identity resolutions. It does not generate/rewrite the registry and is not retroactively added to the frozen v0.0.4 CI trust bundle.
+The validator still reconstructs all 119 relations, checks 15 qualifier associations, typed-tuple uniqueness, canonical ordering and 82 L2 identity resolutions. rc6 expands its development regressions from 16 to 24 tests. It does not generate/rewrite the registry and is not retroactively added to the frozen v0.0.4 CI trust bundle.
 
 Current v0.0.5 records:
 
@@ -16,7 +16,8 @@ Current v0.0.5 records:
 - `15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md` — accepted `R1-01` / `R1-02` closure;
 - `16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md` — accepted concrete serialization contract;
 - `17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md` — accepted schema/extraction contract;
-- `18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md` — current executable source-aware trace validator review candidate.
+- `18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md` — historical rc5 validator foundation reviewed with gate `NO` / `R5-01` + `R5-02`;
+- `19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md` — current focused fail-closed source-boundary closure candidate.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 

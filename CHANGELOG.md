@@ -1,5 +1,35 @@
 # Changelog
 
+## v0.0.5rc6 — L3 Trace Validator Fail-Closed Source-Boundary Hardening
+
+- Continue the controlled v0.0.5 line after the independent rc5 review returned `V0.0.5 L3 SOURCE-AWARE TRACE VALIDATOR FOUNDATION GATE: NO` with two blocking Major findings.
+- Close `R5-01` by making Constraint Inputs separator parsing position-aware: clause start rejects leading comma, while every later ID/item transition requires an explicit comma.
+- Reject adjacency of code-span L2 IDs without comma and reject a later reviewed leading qualifier such as `applicable` when its preceding comma separator is missing.
+- Preserve the accepted rc4 semicolon reset, `applicable`, one-ID `conditional ... where ...`, direct `where ...`, and `outcomes when ...` semantics without broadening the grammar.
+- Close `R5-02` by structurally locating exactly one `## Metadata` section and exactly one reviewed `| Field | Value |` table inside that section.
+- Restrict machine-authoritative `Pattern ID`, `Primary L2 Trace`, `Supporting L2 Trace`, and `Constraint Inputs` extraction to that single metadata table.
+- Ensure same-key rows under narrative headings/tables cannot replace or supplement the authoritative Metadata table.
+- Require missing Metadata section/table/required rows to fail closed.
+- Expand `tools/scaf_trace_validator` regressions from 16 to 24 tests, including the independent rc5 reproductions and bounded source-boundary variants.
+- Keep the accepted rc3 `l3-trace-registry.yaml`, rc4 trace schema, frozen authority registry, frozen v0.0.2/v0.0.3 sources, and all frozen v0.0.4 executable controls unchanged.
+- Preserve the frozen 41-test regression inventory and six-artifact external-trust production gate; the rc6 trace validator remains a separately reviewed development control outside that frozen trust set.
+- Add `docs/executable-governance/19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md`.
+- Defer registry generation, generated views/indexes, resolver/context packaging, project applicability/selection inference, compliance/verification/closure inference, L4, and CI/trust-chain expansion.
+
+### rc5 review disposition
+
+```text
+Critical: 0
+Major:    2
+Minor:    0
+Trivial:  0
+
+R5-01 — Constraint parser accepted missing/misplaced comma separators
+R5-02 — Authoritative-row extraction was not confined to the ## Metadata table
+
+V0.0.5 L3 SOURCE-AWARE TRACE VALIDATOR FOUNDATION GATE: NO
+```
+
 ## v0.0.5rc5 — L3 Source-Aware Trace Validator Foundation
 
 - Continue the controlled v0.0.5 line after the independent rc4 review returned `V0.0.5 L3 TRACE SCHEMA / SOURCE-EXTRACTION CONTRACT FOUNDATION GATE: YES` with zero findings.
