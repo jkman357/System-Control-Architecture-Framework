@@ -129,7 +129,7 @@ If a future accepted source would require multiple semantically distinct records
 
 ### 6.2 Deterministic ordering
 
-A future canonical serialization should use stable ordering based on:
+A future canonical serialization shall use stable ordering based on:
 
 1. `pattern_id` ascending;
 2. relation-type order:
@@ -167,8 +167,12 @@ A later source-aware validator must prove that:
 3. the mapped authoritative metadata field exists;
 4. `l2_id` is actually present in that field under the declared relation class;
 5. `l2_id` resolves to the accepted frozen normative authority population;
-6. no representation relation is invented from narrative text outside the three authoritative metadata fields;
-7. no authoritative metadata relation is omitted from the representation.
+6. where frozen authoritative metadata associates material qualifier text/context with the relation, that qualifier association is preserved for the correct `l2_id` / relation record;
+7. material qualifier text/context is not omitted, semantically altered, scope-expanded, scope-truncated or associated with a different `l2_id` / relation record;
+8. no representation relation is invented from narrative text outside the three authoritative metadata fields;
+9. no authoritative metadata relation is omitted from the representation.
+
+Exact qualifier extraction, grouping and serialization syntax remain deferred to a later serialization/schema gate. The model-level fidelity obligation does not create a formal condition language or executable project-applicability predicate.
 
 ## 8. Qualifier Preservation Boundary
 
@@ -184,11 +188,12 @@ Examples already exist in frozen Patterns for timing, interaction/session, secur
 
 v0.0.5rc1 does **not** promote those phrases into a formal condition language.
 
-A future serialization may preserve the source qualifier as controlled text associated with the relation. The qualifier:
+Where frozen authoritative metadata associates material qualifier text/context with a relation, a future serialization shall preserve that qualifier association as controlled source text/context on the correct relation record. The qualifier:
 
 - preserves source meaning/context;
 - may be displayed in generated navigation;
-- must not be silently discarded where material;
+- shall not be silently discarded where material;
+- shall not be semantically altered, scope-expanded, scope-truncated or associated with a different `l2_id` / relation record;
 - must not be interpreted by rc1 as an executable project-applicability predicate;
 - must not be converted into project selection or satisfaction state.
 

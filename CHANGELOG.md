@@ -1,5 +1,32 @@
 # Changelog
 
+## v0.0.5rc2 — L3 Trace Model Determinism & Qualifier-Fidelity Cleanup
+
+- Continue the controlled v0.0.5 line after the independent rc1 review returned `V0.0.5 L3 MACHINE-READABLE TRACE REPRESENTATION MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP`.
+- Close `R1-01` by making material qualifier association mandatory in the future machine-readable representation and explicit in the future source-aware validator proof contract.
+- Require later validation to reject qualifier omission, semantic alteration, scope expansion/truncation, and association with the wrong `l2_id` / relation record.
+- Keep exact qualifier extraction/grouping/serialization syntax deferred and preserve the rule that qualifiers are controlled source context rather than executable project-applicability predicates.
+- Close `R1-02` by changing the defined canonical future serialization ordering from advisory `should` to mandatory `shall`.
+- Preserve ordering as representation determinism only, not semantic precedence.
+- Preserve the rc1 relation vocabulary, 12 / 23 / 41 / 55 / 119 / 82 trace inventory, relation identity, authority-registry separation, resolver/project boundary and L4 boundary.
+- Change only current navigation/history, the rc1 model contract, and the new focused rc2 closure record.
+- Preserve all executable/frozen v0.0.2/v0.0.3/v0.0.4 artifacts and all 41 accepted executable-governance regressions unchanged.
+- Continue to defer serialization, schema, validator implementation, generated views, resolver, project inference, new L3 work, M3/M4, L4, code generation and additional CI/trust capability.
+
+### rc1 review disposition
+
+```text
+Critical: 0
+Major:    0
+Minor:    2
+Trivial:  0
+
+R1-01 — Material qualifier fidelity missing from future validator proof contract
+R1-02 — Canonical deterministic ordering used advisory should
+
+V0.0.5 L3 MACHINE-READABLE TRACE REPRESENTATION MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP
+```
+
 ## v0.0.5rc1 — L3 Machine-Readable Trace Representation Model Foundation
 
 - Open the first controlled development line after the formal v0.0.4 executable-governance freeze.

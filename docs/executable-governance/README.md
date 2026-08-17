@@ -6,11 +6,12 @@
 
 ## Current Development Line
 
-`v0.0.5rc1 — L3 Machine-Readable Trace Representation Model Foundation` opens the first post-v0.0.4 development line. It defines the authority/boundary and conceptual record model for a future subordinate machine-readable representation of the frozen v0.0.3 L2-to-L3 trace metadata. It does not yet serialize relations, add a trace schema/validator, generate indexes, infer project applicability, or introduce L4 guidance.
+`v0.0.5rc2 — L3 Trace Model Determinism & Qualifier-Fidelity Cleanup` is the focused closure RC after the rc1 model review returned `YES, AFTER MINOR CLEANUP`. It closes only `R1-01` and `R1-02`: material qualifier fidelity becomes an explicit mandatory representation/validator-contract invariant, and canonical future serialization ordering becomes mandatory rather than advisory. It does not yet serialize relations, add a trace schema/validator implementation, generate indexes, infer project applicability, or introduce L4 guidance.
 
-Current record:
+Current records:
 
-- `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — model foundation and acceptance boundary for the future machine-readable L3 trace representation.
+- `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — model foundation, amended by rc2 to close the two reviewed wording/contract gaps;
+- `15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md` — focused `R1-01` / `R1-02` closure record.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 

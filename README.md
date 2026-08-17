@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc1  
-**Status:** L3 Machine-Readable Trace Representation Model Foundation  
+**Current Development Release:** v0.0.5rc2  
+**Status:** L3 Trace Model Determinism & Qualifier-Fidelity Cleanup  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -40,7 +40,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc1` | L3 machine-readable trace representation **model only** |
+| `v0.0.5rc2` | Focused determinism / qualifier-fidelity cleanup of the L3 trace representation model |
 
 Frozen releases are not modified in place. New semantic or executable capability proceeds on a later controlled RC/version line.
 
@@ -61,7 +61,7 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. The current v0.0.5 development line does not reopen them.
 
-## Current v0.0.5rc1 Development Focus
+## Current v0.0.5rc2 Development Focus
 
 The frozen v0.0.3 L3 catalog already contains authoritative human-readable L2-to-L3 trace metadata for twelve published Patterns.
 
@@ -76,7 +76,7 @@ Current frozen trace inventory:
 82 unique referenced frozen L2 IDs
 ```
 
-`v0.0.5rc1` defines how those existing trace semantics may later be represented machine-readably without creating a second semantic authority.
+`v0.0.5rc1` defined how those existing trace semantics may later be represented machine-readably without creating a second semantic authority. The independent rc1 review returned `YES, AFTER MINOR CLEANUP`; `v0.0.5rc2` is the bounded cleanup for material qualifier fidelity and canonical deterministic ordering.
 
 The intended boundary is:
 
@@ -90,9 +90,9 @@ Generated forward/reverse navigation views
 Future resolver/context consumption
 ```
 
-The current RC does **not** serialize the 119 relations, introduce a trace schema/validator, generate a reverse index, infer project applicability, select Patterns, claim satisfaction/compliance, add L4 guidance, or modify the existing `authority-registry.yaml` relation state.
+The current RC does **not** serialize the 119 relations, introduce a trace schema/validator implementation, generate a reverse index, infer project applicability, select Patterns, claim satisfaction/compliance, add L4 guidance, or modify the existing `authority-registry.yaml` relation state. It only makes qualifier preservation enforceable at the future model/validator-contract level and makes canonical ordering mandatory.
 
-See [`docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md`](docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md).
+See [`docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md`](docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md) and [`docs/executable-governance/15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md`](docs/executable-governance/15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md).
 
 ## Authority and Trace Boundaries
 
