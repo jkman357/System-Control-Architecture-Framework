@@ -1,5 +1,31 @@
 # Changelog
 
+## v0.0.5rc8 — L3 Trace Views Validated Programmatic API Boundary Hardening
+
+- Continue the controlled v0.0.5 line after the independent rc7 review returned `V0.0.5 L3 DETERMINISTIC TRACE VIEWS / QUERY FOUNDATION GATE: NO` with one blocking Major, `RC7-01`.
+- Close `RC7-01` by removing the caller-constructible public `TraceContext` and public `build_l2_view()` / `build_pattern_view()` view-builder surfaces.
+- Define `query_l2(repo_root, l2_id)` and `query_pattern(repo_root, pattern_id)` as the supported public Python query APIs; each owns the rc6 `validate_repository()` proof before returning any view.
+- Make the CLI call the same public query APIs so CLI and programmatic consumers share one validation-owning trust path.
+- Rename validated context and projection helpers as internal implementation details and require an internal validation seal before a `_ValidatedTraceContext` can be constructed.
+- Add explicit package/module `__all__` exports so the supported public API surface is limited to `TraceViewError`, `query_l2`, `query_pattern`, and module `main` where applicable.
+- Preserve all rc7 trace-view semantics: typed relation classes, seven-field relation fidelity, qualifiers, multi-type pairs, zero-relation behavior, Project-Applicable query domain, deterministic ordering, deterministic JSON, and stdout-only CLI behavior.
+- Expand the trace-view/query development suite from 17 to 23 tests with focused coverage for public L2 validation ownership, public Pattern validation ownership, invalid-repository failure through public APIs, caller-constructed internal-context rejection, legacy public-symbol removal, package export surface, and CLI reuse of the same public query entry point.
+- Preserve accepted rc3 registry, rc4 trace schema, rc6 source-aware validator, frozen authority/frozen trees, v0.0.4 executable controls, 41-test frozen regression inventory, and six-artifact production external-trust gate unchanged.
+- Defer persisted/generated indexes, registry generation, resolver/context selection, semantic ranking, project applicability, recommendation/selection, compliance/verification/closure inference, new L3 work, M3/M4, L4, code generation, and CI/trust-chain expansion.
+
+### rc7 review disposition
+
+```text
+Critical: 0
+Major:    1
+Minor:    0
+Trivial:  0
+
+RC7-01 — Public view-builder path can return trace views from an unvalidated caller-constructed TraceContext
+
+V0.0.5 L3 DETERMINISTIC TRACE VIEWS / QUERY FOUNDATION GATE: NO
+```
+
 ## v0.0.5rc7 — L3 Deterministic Trace Views / Query Foundation
 
 - Continue the controlled v0.0.5 line after the independent rc6 review resolved `R5-01` and `R5-02`, opened zero new findings, and returned `V0.0.5 L3 TRACE VALIDATOR FAIL-CLOSED SOURCE-BOUNDARY HARDENING GATE: YES`.

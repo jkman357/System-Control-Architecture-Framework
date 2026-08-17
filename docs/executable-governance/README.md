@@ -6,9 +6,9 @@
 
 ## Current Development Line
 
-`v0.0.5rc7 — L3 Deterministic Trace Views / Query Foundation` follows the rc6 independent review, which resolved `R5-01` and `R5-02`, opened zero new findings, and returned a clean fail-closed validator gate. rc7 is the first bounded consumption capability over the accepted source-validated trace.
+`v0.0.5rc8 — L3 Trace Views Validated Programmatic API Boundary Hardening` follows the rc7 independent review, which found one blocking Major (`RC7-01`) in the programmatic API surface: caller-constructed `TraceContext` data could reach public view builders without rc6 validation even though the canonical CLI path was correctly gated.
 
-The new `tools/scaf_trace_views/` path performs read-only deterministic L2↔L3 lookup only after the rc6 validator passes. It preserves all seven relation fields, typed relation semantics, qualifiers and multi-type pairs; it produces stdout text/JSON only and does not persist a second index authority.
+rc8 closes only that boundary. `tools/scaf_trace_views` now defines `query_l2(repo_root, l2_id)` and `query_pattern(repo_root, pattern_id)` as the supported public Python query APIs; both own the rc6 validation step. CLI execution calls the same public APIs. Validated context/projection helpers are internal and the legacy public builder/context symbols are removed.
 
 Current v0.0.5 records:
 
@@ -18,7 +18,8 @@ Current v0.0.5 records:
 - `17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md` — accepted schema/extraction contract;
 - `18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md` — historical rc5 validator foundation reviewed with gate `NO` / `R5-01` + `R5-02`;
 - `19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md` — accepted `R5-01` / `R5-02` fail-closed closure;
-- `20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md` — current deterministic trace-consumption foundation candidate.
+- `20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md` — trace-consumption foundation reviewed with gate `NO` / `RC7-01`;
+- `21_SCAF_v0.0.5rc8_L3_Trace_Views_Validated_Programmatic_API_Boundary_Hardening.md` — current focused `RC7-01` closure candidate.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 

@@ -1,8 +1,19 @@
 # SCAF L3 Deterministic Trace Views
 
-`tools/scaf_trace_views` is the v0.0.5rc7 read-only consumption foundation for the accepted L3 machine-readable trace.
+`tools/scaf_trace_views` is the v0.0.5rc8 validated programmatic-API hardening of the read-only consumption foundation for the accepted L3 machine-readable trace.
 
-It does **not** create another authority/index file. Every query first requires the repository to pass the accepted source-aware trace validator, then derives a view in memory from `l3-trace-registry.yaml` and writes the requested view to stdout only.
+It does **not** create another authority/index file. Every supported CLI or Python query first requires the requested repository to pass the accepted source-aware trace validator, then derives a view in memory from `l3-trace-registry.yaml`.
+
+Supported Python API:
+
+```python
+from tools.scaf_trace_views import query_l2, query_pattern
+
+view = query_l2(repo_root, "SCAF-ROB-004")
+view = query_pattern(repo_root, "SCAF-PAT-COM-001")
+```
+
+The supported public query functions own the validation step. Projection context/builders are internal implementation details and are not caller-supplied trust objects.
 
 ## Run
 

@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc7  
-**Status:** L3 Deterministic Trace Views / Query Foundation  
+**Current Development Release:** v0.0.5rc8  
+**Status:** L3 Trace Views Validated Programmatic API Boundary Hardening  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -40,7 +40,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc7` | Deterministic read-only L2↔L3 trace views over the source-validated trace registry |
+| `v0.0.5rc8` | Validated public Python/CLI boundary for deterministic read-only L2↔L3 trace views |
 
 Frozen releases are not modified in place. New semantic or executable capability proceeds on a later controlled RC/version line.
 
@@ -61,32 +61,29 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. The current v0.0.5 development line does not reopen them.
 
-## Current v0.0.5rc7 Development Focus
+## Current v0.0.5rc8 Development Focus
 
-The independent rc6 review resolved both rc5 blocking Major findings (`R5-01`, `R5-02`), opened no new finding, and returned a clean fail-closed validator gate. rc7 therefore moves from trace **verification** to the first bounded trace **consumption** capability.
+The independent rc7 review found one blocking Major (`RC7-01`): the canonical CLI path validated correctly, but directly callable public view builders could accept a caller-constructed `TraceContext` and return spec-shaped views without rc6 validation. rc8 is a bounded API-boundary hardening release that closes only that gap.
 
-[`tools/scaf_trace_views/`](tools/scaf_trace_views/README.md) provides read-only deterministic queries:
+[`tools/scaf_trace_views/`](tools/scaf_trace_views/README.md) now exposes only validation-owning supported query APIs:
+
+```python
+from tools.scaf_trace_views import query_l2, query_pattern
+
+view = query_l2(repo_root, "SCAF-ROB-004")
+view = query_pattern(repo_root, "SCAF-PAT-COM-001")
+```
+
+CLI execution uses those same public query functions:
 
 ```text
 python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004
 python -m tools.scaf_trace_views.query --pattern SCAF-PAT-COM-001
-python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004 --format json
 ```
 
-Every query first requires the rc6 source-aware trace validator to PASS. No query view is emitted from an invalid/drifted source or registry state.
+The old public `TraceContext`, `build_l2_view()` and `build_pattern_view()` surfaces are removed. Validated context and projection helpers are internal, and internal context construction requires a validation-only seal. Every supported public query therefore owns the rc6 `validate_repository()` step before returning a view.
 
-The two supported directions are:
-
-```text
-L2 authority -> typed L3 Pattern relations
-L3 Pattern   -> typed L2 authority relations
-```
-
-Views preserve all three accepted relation classes, the complete seven-field serialized relation record, material qualifiers, multi-type Pattern/L2 pairs, and deterministic ordering. A known Project-Applicable Obligation with no current L3 trace returns a valid zero-relation view; an unknown/non-project-applicable authority or unknown Pattern identity fails closed.
-
-The tool is stdout-only and does not create persisted index files, rewrite the registry, rank/recommend Patterns, infer applicability, or make project decisions.
-
-The authority/consumption chain is now:
+The authority/consumption chain remains:
 
 ```text
 Frozen L3 Markdown             -> semantic trace authority
@@ -94,10 +91,12 @@ rc4 source-extraction contract -> deterministic interpretation
 rc4 trace JSON Schema          -> structural representation constraints
 l3-trace-registry.yaml         -> subordinate serialized data
 rc6 trace validator            -> executable source-aware conformance proof
-rc7 trace views/query          -> deterministic read-only consumption
+rc8 public query API / CLI     -> validated deterministic read-only consumption
 ```
 
-See [`docs/executable-governance/20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md`](docs/executable-governance/20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md).
+The view semantics remain unchanged: all seven relation fields, typed relation classes, qualifiers, multi-type pairs, zero-relation semantics and deterministic ordering are preserved. rc8 adds no registry generation, persisted index, resolver, recommendation, project applicability, L4, or CI/trust-chain capability.
+
+See [`docs/executable-governance/21_SCAF_v0.0.5rc8_L3_Trace_Views_Validated_Programmatic_API_Boundary_Hardening.md`](docs/executable-governance/21_SCAF_v0.0.5rc8_L3_Trace_Views_Validated_Programmatic_API_Boundary_Hardening.md).
 
 ## Authority and Trace Boundaries
 

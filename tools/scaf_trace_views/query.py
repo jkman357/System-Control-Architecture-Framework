@@ -1,10 +1,14 @@
 #!/usr/bin/env python3
 """Produce deterministic read-only L2<->L3 trace views.
 
-The tool consumes only a repository state that first passes the reviewed
-source-aware L3 trace validator. It does not generate or rewrite authority or
-trace registries and does not infer project applicability, recommendation,
-selection, satisfaction, compliance, verification, evidence, or closure.
+Supported public programmatic entry points are query_l2() and query_pattern().
+Both own the required source-aware repository validation step. Internal context
+and projection helpers are deliberately non-public and cannot be supplied by a
+supported caller as a substitute for validation.
+
+The tool does not generate or rewrite authority or trace registries and does
+not infer project applicability, recommendation, selection, satisfaction,
+compliance, verification, evidence, or closure.
 """
 
 from __future__ import annotations
@@ -12,7 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -25,6 +29,8 @@ from tools.scaf_trace_validator.validator import (
     UniqueKeyLoader,
     validate_repository,
 )
+
+__all__ = ("TraceViewError", "query_l2", "query_pattern", "main")
 
 TRACE_VIEW_VERSION = 1
 RELATION_FIELDS = (
@@ -42,11 +48,23 @@ class TraceViewError(RuntimeError):
     """Raised when a deterministic trace view cannot be produced safely."""
 
 
+_VALIDATED_CONTEXT_SEAL = object()
+
+
 @dataclass(frozen=True)
-class TraceContext:
+class _ValidatedTraceContext:
+    """Internal projection context created only after repository validation."""
+
     relations: tuple[dict[str, Any], ...]
     authority_ids: frozenset[str]
     pattern_ids: frozenset[str]
+    _seal: object = field(repr=False, compare=False)
+
+    def __post_init__(self) -> None:
+        if self._seal is not _VALIDATED_CONTEXT_SEAL:
+            raise TraceViewError(
+                "validated trace context is internal and may only be created after repository validation"
+            )
 
 
 def _load_yaml(path: Path) -> Any:
@@ -54,7 +72,7 @@ def _load_yaml(path: Path) -> Any:
         return yaml.load(stream, Loader=UniqueKeyLoader)
 
 
-def _load_validated_context(repo_root: Path) -> TraceContext:
+def _load_validated_context(repo_root: Path) -> _ValidatedTraceContext:
     repo_root = repo_root.absolute()
     report = validate_repository(repo_root)
     if not report.passed:
@@ -73,8 +91,6 @@ def _load_validated_context(repo_root: Path) -> TraceContext:
     for index, relation in enumerate(registry["relations"]):
         if not isinstance(relation, dict):
             raise TraceViewError(f"trace registry relation {index} is not a mapping")
-        # The source-aware validator/schema have already proved the exact shape;
-        # this copy keeps the accepted seven-field presentation contract explicit.
         relations.append({field: relation[field] for field in RELATION_FIELDS})
 
     authority_ids = frozenset(
@@ -85,7 +101,9 @@ def _load_validated_context(repo_root: Path) -> TraceContext:
         and record.get("authority_class") == "Project-Applicable Obligation"
     )
     pattern_ids = frozenset(relation["pattern_id"] for relation in relations)
-    return TraceContext(tuple(relations), authority_ids, pattern_ids)
+    return _ValidatedTraceContext(
+        tuple(relations), authority_ids, pattern_ids, _VALIDATED_CONTEXT_SEAL
+    )
 
 
 def _l2_view_key(relation: dict[str, Any]) -> tuple[int, str]:
@@ -96,8 +114,7 @@ def _pattern_view_key(relation: dict[str, Any]) -> tuple[int, str]:
     return (RELATION_ORDER[relation["relation_type"]], relation["l2_id"])
 
 
-def build_l2_view(context: TraceContext, l2_id: str) -> dict[str, Any]:
-    """Return the deterministic derived view for one known authority identity."""
+def _build_l2_view(context: _ValidatedTraceContext, l2_id: str) -> dict[str, Any]:
     if l2_id not in context.authority_ids:
         raise TraceViewError(f"unknown or non-project-applicable L2 authority identity: {l2_id}")
 
@@ -114,8 +131,7 @@ def build_l2_view(context: TraceContext, l2_id: str) -> dict[str, Any]:
     }
 
 
-def build_pattern_view(context: TraceContext, pattern_id: str) -> dict[str, Any]:
-    """Return the deterministic derived view for one frozen L3 Pattern identity."""
+def _build_pattern_view(context: _ValidatedTraceContext, pattern_id: str) -> dict[str, Any]:
     if pattern_id not in context.pattern_ids:
         raise TraceViewError(f"unknown frozen Pattern identity: {pattern_id}")
 
@@ -130,6 +146,18 @@ def build_pattern_view(context: TraceContext, pattern_id: str) -> dict[str, Any]
         "relation_count": len(relations),
         "relations": relations,
     }
+
+
+def query_l2(repo_root: str | Path, l2_id: str) -> dict[str, Any]:
+    """Return an L2->L3 view after validating the requested repository root."""
+    context = _load_validated_context(Path(repo_root))
+    return _build_l2_view(context, l2_id)
+
+
+def query_pattern(repo_root: str | Path, pattern_id: str) -> dict[str, Any]:
+    """Return an L3->L2 view after validating the requested repository root."""
+    context = _load_validated_context(Path(repo_root))
+    return _build_pattern_view(context, pattern_id)
 
 
 def _render_text(view: dict[str, Any]) -> str:
@@ -191,8 +219,11 @@ def main(argv: list[str] | None = None) -> int:
     args = parser.parse_args(argv)
 
     try:
-        context = _load_validated_context(args.repository)
-        view = build_l2_view(context, args.l2) if args.l2 else build_pattern_view(context, args.pattern)
+        view = (
+            query_l2(args.repository, args.l2)
+            if args.l2
+            else query_pattern(args.repository, args.pattern)
+        )
     except (OSError, UnicodeError, yaml.YAMLError, KeyError, TraceViewError) as exc:
         print(f"ERROR: {exc}", file=sys.stderr)
         print("RESULT: FAIL", file=sys.stderr)
