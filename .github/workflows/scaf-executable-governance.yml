@@ -1,0 +1,98 @@
+name: SCAF Executable Governance Gate
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  executable-governance:
+    name: executable-governance
+    runs-on: ubuntu-latest
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - name: Checkout reviewed repository state
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.13"
+
+      - name: Materialize external CI trust bundle and bootstrap gate identity
+        shell: bash
+        env:
+          SCAF_CI_TRUST_BUNDLE_B64: ${{ secrets.SCAF_CI_TRUST_BUNDLE_B64 }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SCAF_CI_TRUST_BUNDLE_B64:-}" ]; then
+            echo "ERROR: required external trust input SCAF_CI_TRUST_BUNDLE_B64 is unavailable"
+            exit 1
+          fi
+
+          TRUST_BUNDLE="$RUNNER_TEMP/scaf-ci-trust-bundle.json"
+          EXPECTED_GATE_HASH="$RUNNER_TEMP/scaf-ci-gate.expected.sha256"
+          printf '%s' "$SCAF_CI_TRUST_BUNDLE_B64" | base64 --decode > "$TRUST_BUNDLE"
+          chmod 600 "$TRUST_BUNDLE"
+
+          python -I - "$TRUST_BUNDLE" "$EXPECTED_GATE_HASH" <<'PY'
+          import json
+          import pathlib
+          import sys
+
+          bundle_path = pathlib.Path(sys.argv[1])
+          out_path = pathlib.Path(sys.argv[2])
+          with bundle_path.open("r", encoding="utf-8") as handle:
+              bundle = json.load(handle)
+
+          if bundle.get("trust_version") != 1:
+              raise SystemExit("ERROR: trust_version must be 1")
+          if bundle.get("trust_scope") != "scaf_executable_governance_ci":
+              raise SystemExit("ERROR: invalid trust_scope")
+          if bundle.get("hash_algorithm") != "sha256":
+              raise SystemExit("ERROR: hash_algorithm must be sha256")
+
+          matches = [
+              item.get("sha256")
+              for item in bundle.get("artifacts", [])
+              if isinstance(item, dict) and item.get("path") == "tools/scaf_ci_gate/gate.py"
+          ]
+          if len(matches) != 1:
+              raise SystemExit("ERROR: trust bundle must pin tools/scaf_ci_gate/gate.py exactly once")
+          digest = matches[0]
+          if not isinstance(digest, str) or len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest):
+              raise SystemExit("ERROR: invalid gate.py SHA-256 pin")
+          out_path.write_text(digest + "\n", encoding="ascii")
+          PY
+
+          OBSERVED_GATE_HASH="$(sha256sum tools/scaf_ci_gate/gate.py | awk '{print $1}')"
+          REQUIRED_GATE_HASH="$(cat "$EXPECTED_GATE_HASH")"
+          if [ "$OBSERVED_GATE_HASH" != "$REQUIRED_GATE_HASH" ]; then
+            echo "ERROR: CI gate bootstrap SHA-256 mismatch"
+            echo "expected: $REQUIRED_GATE_HASH"
+            echo "observed: $OBSERVED_GATE_HASH"
+            exit 1
+          fi
+
+          echo "SCAF_CI_TRUST_BUNDLE_PATH=$TRUST_BUNDLE" >> "$GITHUB_ENV"
+
+      - name: Install bounded semantic-validator dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install --disable-pip-version-check --no-input \
+            'PyYAML==6.0.3' \
+            'jsonschema==4.26.0'
+
+      - name: Run executable-governance gate
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -I tools/scaf_ci_gate/gate.py --trust-bundle "$SCAF_CI_TRUST_BUNDLE_PATH"

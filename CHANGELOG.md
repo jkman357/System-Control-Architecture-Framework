@@ -1,3 +1,35 @@
+## v0.0.4rc10 — 2026-08-17
+
+CI trust-input model and executable-governance gate foundation after the independent v0.0.4rc09 review returned **`V0.0.4 EXTERNAL-PIN LOCAL-ARTIFACT SYMLINK-HARDENING GATE: YES`**, closed `R8-01`, and identified no new finding.
+
+### Added
+
+- added `tools/scaf_ci_gate/gate.py` as a bounded fail-closed orchestration surface above the accepted external-pin, frozen-byte-integrity and semantic/source-aware validation controls;
+- defined an external `scaf_executable_governance_ci` trust-bundle contract that pins exactly six control-plane artifacts, including the CI gate itself;
+- required the nested accepted external pin to use the same manifest/release-integrity-checker SHA-256 values as the top-level CI trust pins;
+- added eight CI-gate regressions covering accepted three-stage execution/order, outside-repository trust input, control hash mismatch, nested-pin inconsistency, mutated validator identity, CLI override rejection, workflow trigger/trust-input boundary and full-SHA GitHub action pinning;
+- added `.github/workflows/scaf-executable-governance.yml` as the first minimal trusted-main/manual CI executor;
+- added `docs/executable-governance/09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md`.
+
+### CI Trust / Enforcement Position
+
+- workflow trust input is supplied through external Actions secret `SCAF_CI_TRUST_BUNDLE_B64` and decoded only under `RUNNER_TEMP`;
+- missing external trust input fails closed;
+- workflow bootstraps `tools/scaf_ci_gate/gate.py` SHA-256 before executing repository gate code;
+- gate verifies all six pinned control-plane artifacts before running any accepted control stage;
+- stage order is fixed as external pin -> frozen baseline integrity -> authority-registry validation;
+- stage failure stops progression and produces non-zero gate result;
+- checkout credentials are not persisted and GitHub-maintained actions are pinned to reviewed full commit SHAs;
+- rc10 workflow is deliberately limited to `push` on `main` and `workflow_dispatch`.
+
+### Preserved / Deferred
+
+- preserve accepted rc09 external-pin behavior and eleven regressions;
+- preserve accepted rc07/rc08 release-integrity manifest/checker semantics and nine regressions;
+- preserve accepted authority registry/schema/semantic validator and eight regressions;
+- preserve frozen v0.0.2/v0.0.3 trees and 294 / 218 / 76 / twelve-Pattern inventories;
+- do not claim fork-PR/`pull_request_target` enforcement, branch-protection configuration, workflow self-authentication, signing/PKI/provenance, canonical external trust-bundle distribution, generated views/indexes, registry generation, code generation, project inference, machine-readable L2→L3 relations, new L3, M3/M4 or L4.
+
 ## v0.0.4rc09 — 2026-08-17
 
 Focused external-pin local pinned-artifact symlink hardening after the independent v0.0.4rc08 review returned **`V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE: YES, AFTER MINOR CLEANUP`** and opened one Minor finding, `R8-01`.
