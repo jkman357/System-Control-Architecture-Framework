@@ -4,6 +4,16 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+## Current Development Line
+
+`v0.0.5rc1 — L3 Machine-Readable Trace Representation Model Foundation` opens the first post-v0.0.4 development line. It defines the authority/boundary and conceptual record model for a future subordinate machine-readable representation of the frozen v0.0.3 L2-to-L3 trace metadata. It does not yet serialize relations, add a trace schema/validator, generate indexes, infer project applicability, or introduce L4 guidance.
+
+Current record:
+
+- `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — model foundation and acceptance boundary for the future machine-readable L3 trace representation.
+
+Detailed version/review history remains in repository-root `CHANGELOG.md`.
+
 ## 1. Purpose
 
 This directory contains separately controlled development toward SCAF executable governance.

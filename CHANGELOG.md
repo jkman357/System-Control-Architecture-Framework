@@ -1,3 +1,23 @@
+# Changelog
+
+## v0.0.5rc1 — L3 Machine-Readable Trace Representation Model Foundation
+
+- Open the first controlled development line after the formal v0.0.4 executable-governance freeze.
+- Select the rc1 scope from post-baseline gap/dependency analysis rather than assuming the next release must advance to L4.
+- Define a subordinate machine-readable representation model for the already-frozen v0.0.3 L2-to-L3 Pattern trace semantics.
+- Preserve frozen Pattern Markdown metadata as semantic trace authority and define future machine representation/generated views as subordinate/derived.
+- Define controlled machine relation identifiers: `primary_realization_candidate`, `supporting_realization`, and `constraint_input`; retain the generic-`satisfies` prohibition.
+- Record the current frozen trace inventory as 12 Patterns / 119 relations / 82 unique referenced L2 IDs, split 23 Primary / 41 Supporting / 55 Constraint relations.
+- Define deterministic future relation identity as `(pattern_id, relation_type, l2_id)` and explicitly permit the same Pattern/L2 pair to carry more than one relation type where the frozen source does so.
+- Define source-locator semantics from Pattern source path + Pattern identity + authoritative metadata field.
+- Preserve existing natural-language trace qualifiers as controlled source context without interpreting them as executable project-applicability predicates.
+- Keep the frozen 294-record `authority-registry.yaml` separate, with zero `SCAF-PAT-*` records and 294 empty `relations` fields.
+- Define generated forward/reverse views as reproducible navigation only; reverse views must preserve relation type and material qualifiers.
+- Reaffirm that traced/resolved does not imply Applicable, Selected, Satisfied, Compliant, Verified, or Closed.
+- Do not introduce a concrete trace serialization, schema, validator, generated index, resolver, project inference, L4 guidance, new L3 Pattern, M3/M4, or new CI/trust capability in rc1.
+- Refactor `README.md` to current-state/navigation content and keep detailed release/review history in this CHANGELOG and controlled governance records.
+- Preserve frozen v0.0.2/v0.0.3/v0.0.4 semantics and executable identities unchanged.
+
 ## v0.0.4 — 2026-08-17
 
 Formal **Frozen Executable Governance Baseline** created by explicit governance freeze decision after the independent v0.0.4rc13 review returned **`R12-01: RESOLVED`** and **`V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES`**, with 0 Critical, 0 Major, 0 Minor, 0 Trivial and 0 open accepted upstream findings.
