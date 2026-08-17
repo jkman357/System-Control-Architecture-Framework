@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc6  
-**Status:** L3 Trace Validator Fail-Closed Source-Boundary Hardening  
+**Current Development Release:** v0.0.5rc7  
+**Status:** L3 Deterministic Trace Views / Query Foundation  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -40,7 +40,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc6` | Fail-closed hardening of the L3 source-aware trace validator after rc5 adversarial review |
+| `v0.0.5rc7` | Deterministic read-only L2↔L3 trace views over the source-validated trace registry |
 
 Frozen releases are not modified in place. New semantic or executable capability proceeds on a later controlled RC/version line.
 
@@ -61,64 +61,43 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. The current v0.0.5 development line does not reopen them.
 
-## Current v0.0.5rc6 Development Focus
+## Current v0.0.5rc7 Development Focus
 
-The independent rc5 review found two blocking fail-open defects in the first executable trace validator:
+The independent rc6 review resolved both rc5 blocking Major findings (`R5-01`, `R5-02`), opened no new finding, and returned a clean fail-closed validator gate. rc7 therefore moves from trace **verification** to the first bounded trace **consumption** capability.
 
-- `R5-01` — Constraint Inputs parsing accepted missing or misplaced comma separators outside the reviewed rc4 language;
-- `R5-02` — required-row extraction scanned same-key Markdown table rows outside the authoritative `## Metadata` table.
-
-rc6 is a bounded hardening candidate that closes only those source-boundary defects. It does not add a new trace capability.
-
-[`tools/scaf_trace_validator/`](tools/scaf_trace_validator/README.md)
-
-Canonical run:
+[`tools/scaf_trace_views/`](tools/scaf_trace_views/README.md) provides read-only deterministic queries:
 
 ```text
-python -m tools.scaf_trace_validator.validator
+python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004
+python -m tools.scaf_trace_views.query --pattern SCAF-PAT-COM-001
+python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004 --format json
 ```
 
-The hardened validator now requires:
+Every query first requires the rc6 source-aware trace validator to PASS. No query view is emitted from an invalid/drifted source or registry state.
+
+The two supported directions are:
 
 ```text
-exactly one ## Metadata section
-        ↓
-exactly one | Field | Value | metadata table in that section
-        ↓
-required machine-authoritative rows only from that table
-        ↓
-strict clause-start vs inter-item delimiter handling
-        ↓
-explicit comma before every later Constraint Input item
-        ↓
-fail closed on leading comma / missing comma / unsupported syntax
+L2 authority -> typed L3 Pattern relations
+L3 Pattern   -> typed L2 authority relations
 ```
 
-The accepted trace population remains unchanged:
+Views preserve all three accepted relation classes, the complete seven-field serialized relation record, material qualifiers, multi-type Pattern/L2 pairs, and deterministic ordering. A known Project-Applicable Obligation with no current L3 trace returns a valid zero-relation view; an unknown/non-project-applicable authority or unknown Pattern identity fails closed.
+
+The tool is stdout-only and does not create persisted index files, rewrite the registry, rank/recommend Patterns, infer applicability, or make project decisions.
+
+The authority/consumption chain is now:
 
 ```text
-12 Pattern identities
-23 primary_realization_candidate
-41 supporting_realization
-55 constraint_input
-119 total relation records
-82 unique referenced frozen L2 IDs
-15 records with material source qualifiers
-```
-
-The authority chain remains:
-
-```text
-Frozen L3 Markdown         -> semantic trace authority
+Frozen L3 Markdown             -> semantic trace authority
 rc4 source-extraction contract -> deterministic interpretation
-rc4 trace JSON Schema      -> structural representation constraints
-l3-trace-registry.yaml     -> subordinate serialized data
-rc6 hardened trace validator -> executable source-aware conformance proof
+rc4 trace JSON Schema          -> structural representation constraints
+l3-trace-registry.yaml         -> subordinate serialized data
+rc6 trace validator            -> executable source-aware conformance proof
+rc7 trace views/query          -> deterministic read-only consumption
 ```
 
-rc6 expands the trace-validator development regression suite from 16 to **24 tests**, including the two independently reproduced rc5 fail-open classes and additional bounded variants. The frozen v0.0.4 executable-governance inventory remains unchanged at 41 tests, and the trace validator remains outside the frozen six-artifact CI trust bundle.
-
-See [`docs/executable-governance/19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md`](docs/executable-governance/19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md).
+See [`docs/executable-governance/20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md`](docs/executable-governance/20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md).
 
 ## Authority and Trace Boundaries
 
@@ -191,14 +170,16 @@ Accepted regression inventory remains:
 41 total
 ```
 
-Current v0.0.5 development control:
+Current v0.0.5 development controls:
 
 ```text
 python -m tools.scaf_trace_validator.validator
 python -m unittest discover -s tools/scaf_trace_validator/tests -v
+python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004
+python -m unittest discover -s tools/scaf_trace_views/tests -v
 ```
 
-The trace-validator suite adds 16 development regressions while the frozen v0.0.4 inventory remains 41.
+The trace-validator suite contains 24 development regressions while the frozen v0.0.4 inventory remains 41. rc7 adds a separate 17-test deterministic trace-view/query development suite without changing either accepted inventory.
 
 The production CI gate additionally requires the reviewed repository-external trust input defined by the frozen v0.0.4 executable-governance baseline.
 
@@ -212,7 +193,8 @@ The production CI gate additionally requires the reviewed repository-external tr
 | `authority-registry.yaml` | Frozen v0.0.4 294-record authority representation |
 | `l3-trace-registry.yaml` | Accepted v0.0.5rc3 subordinate serialization of frozen L3 typed trace relations |
 | `schemas/l3-trace-registry.schema.json` | Accepted rc4 structural contract for the L3 trace registry |
-| `tools/scaf_trace_validator/` | rc5 source-aware trace validation development control and regressions |
+| `tools/scaf_trace_validator/` | rc6 source-aware trace validation development control and 24 regressions |
+| `tools/scaf_trace_views/` | rc7 deterministic read-only L2↔L3 trace views/query and regressions |
 | `schemas/` | Frozen v0.0.4 authority-registry schema plus v0.0.5rc4 L3 trace structural schema |
 | `release-integrity/` | Frozen-baseline integrity manifest |
 | `tools/scaf_validator/` | Frozen v0.0.4 authority-registry semantic / structural / source-aware validator; not the rc4 trace validator |

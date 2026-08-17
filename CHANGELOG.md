@@ -1,5 +1,38 @@
 # Changelog
 
+## v0.0.5rc7 — L3 Deterministic Trace Views / Query Foundation
+
+- Continue the controlled v0.0.5 line after the independent rc6 review resolved `R5-01` and `R5-02`, opened zero new findings, and returned `V0.0.5 L3 TRACE VALIDATOR FAIL-CLOSED SOURCE-BOUNDARY HARDENING GATE: YES`.
+- Add `tools/scaf_trace_views/` as the first controlled read-only consumer of the accepted source-validated L3 trace.
+- Require every view/query invocation to pass the rc6 source-aware trace validator before emitting any view payload.
+- Add deterministic L2 -> L3 lookup by known authority identity while preserving typed relation class, qualifier context, source locator and source release.
+- Add deterministic L3 Pattern -> L2 lookup by known frozen Pattern identity with the same seven-field relation fidelity.
+- Preserve relation classes as `primary_realization_candidate`, `supporting_realization`, and `constraint_input`; do not flatten them into a generic candidate/related list.
+- Preserve the accepted multi-type Pattern/L2 pairs as distinct typed records.
+- Define L2-view ordering by relation type then `pattern_id`, and Pattern-view ordering by relation type then `l2_id`.
+- Treat a known Project-Applicable Obligation with no current L3 trace as a valid zero-relation result rather than an error or negative applicability decision.
+- Keep Framework Normative Invariants outside the current L2-to-L3 query domain and fail closed on unknown/non-project-applicable identities, unknown frozen Pattern identities, or any repository state that fails source-aware trace validation.
+- Provide deterministic stdout text and JSON output; do not create or persist generated index files.
+- Add a separate 17-test trace-view/query development regression suite covering bidirectional lookup, full 119-relation coverage, qualifier/multi-type preservation, ordering, zero-result semantics, Project-Applicable-domain enforcement, invalid-ID behavior, validated-source gating and deterministic JSON.
+- Add `docs/executable-governance/20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md`.
+- Preserve `l3-trace-registry.yaml`, the rc4 trace schema, rc6 trace validator, authority registry, frozen baselines, frozen 41-test inventory, rc6 24-test validator inventory, and six-artifact production trust chain unchanged.
+- Preserve the boundary that Queried / Traced / Serialized / Source-validated does not imply Applicable, Recommended, Selected, Satisfied, Compliant, Verified, or Closed.
+- Defer persisted/generated index files, registry generation/rewrite, authority/context resolver logic, semantic ranking/relevance, project applicability, Pattern recommendation/auto-selection, L4, code generation and CI/trust-chain expansion.
+
+### rc6 review disposition
+
+```text
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+
+R5-01: RESOLVED
+R5-02: RESOLVED
+
+V0.0.5 L3 TRACE VALIDATOR FAIL-CLOSED SOURCE-BOUNDARY HARDENING GATE: YES
+```
+
 ## v0.0.5rc6 — L3 Trace Validator Fail-Closed Source-Boundary Hardening
 
 - Continue the controlled v0.0.5 line after the independent rc5 review returned `V0.0.5 L3 SOURCE-AWARE TRACE VALIDATOR FOUNDATION GATE: NO` with two blocking Major findings.
