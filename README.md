@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc12  
-**Status:** Executable Governance Milestone Consolidation / Freeze Candidate RC  
+**Version:** v0.0.4rc13  
+**Status:** Freeze-Candidate Control-Chain Documentation Closure RC  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,20 +38,18 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc12 Executable-Governance Freeze-Candidate Position
+## v0.0.4rc13 Freeze-Candidate Documentation-Closure Position
 
-v0.0.4rc12 follows the independent rc11 result:
+v0.0.4rc13 follows the independent rc12 freeze-candidate review result:
 
 ```text
-R10-01: RESOLVED
-V0.0.4 CI REPOSITORY PATH-COMPONENT / ROOT-BINDING HARDENING GATE: YES
+V0.0.4 EXECUTABLE-GOVERNANCE MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP
+R12-01: Minor — consolidation control-chain diagram ordering ambiguity
 ```
 
-The rc11 review opened **0 Critical, 0 Major, 0 Minor and 0 Trivial findings** and independently confirmed closure of the rc10 parent-directory symlink / shadow-repository false-PASS condition.
+The rc12 review confirmed all executable controls, frozen identities, authority/L3 inventories, 41 regressions and the canonical external-trust production gate, and opened only documentation finding `R12-01`. rc13 is a **documentation-only closure RC**. It adds no executable-governance capability.
 
-rc12 is a **consolidation-only freeze candidate**. It introduces no new executable-governance capability. It consolidates the accepted rc01→rc11 milestone history, current executable control chain, frozen/non-frozen boundaries, regression inventory, external trust model, accepted finding closures and deferred scope into one auditable current-state record.
-
-Current candidate control sequence:
+The following is **capability / development layering**, not production execution order:
 
 ```text
 Frozen normative Markdown semantic authority
@@ -62,13 +60,29 @@ canonical registry schema + source-aware validator
         ↓
 frozen-baseline manifest + release-integrity checker
         ↓
-external pin verification
+external pin verification capability
         ↓
-external CI trust bundle + six-artifact identity bootstrap
-        ↓
-fixed three-stage CI gate
+external CI trust model + executable-governance orchestration
         ↓
 path-component / repository-root / stage-root hardening
+```
+
+The **production runtime execution order** is:
+
+```text
+external CI trust input
+        ↓
+six fixed control-plane path/topology + SHA-256 identity checks
+        ↓
+external-pin verification
+        ↓
+frozen-baseline release integrity
+        ↓
+authority-registry semantic / structural / source validation
+        ↓
+each successful stage attests the same verified Repository root
+        ↓
+CI gate RESULT: PASS / FAIL
 ```
 
 Current regression inventory:
@@ -81,9 +95,9 @@ scaf_ci_gate:           13 tests
 Total:                  41 tests
 ```
 
-rc12 does **not** freeze v0.0.4 by itself. Formal `v0.0.4` freeze requires an independent freeze-candidate gate followed by an explicit governance freeze decision.
+rc13 does **not** freeze v0.0.4 by itself. Formal `v0.0.4` freeze requires closure of `R12-01`, an acceptable rc13 closure gate, and then an explicit governance freeze decision.
 
-The current review question is whether the v0.0.4 executable-governance milestone is internally consistent, reproducible, executable, bounded, and ready to become a frozen baseline without further capability work.
+The current review question is whether `R12-01` is fully closed without executable or frozen-baseline change, leaving the v0.0.4 freeze candidate eligible for a separate explicit formal freeze decision.
 
 ## v0.0.3 Frozen L3 Baseline Position
 
@@ -373,7 +387,8 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md` | Accepted `R8-01` local pinned-artifact symlink hardening contract |
 | `docs/executable-governance/09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` | rc10 CI trust-input / executable-governance gate foundation contract; review basis for R10-01 |
 | `docs/executable-governance/10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` | Accepted R10-01 repository path-component / root-binding closure contract |
-| `docs/executable-governance/11_SCAF_v0.0.4rc12_Executable_Governance_Milestone_Consolidation_and_Freeze_Candidate.md` | Current v0.0.4 milestone consolidation / freeze-candidate record |
+| `docs/executable-governance/11_SCAF_v0.0.4rc12_Executable_Governance_Milestone_Consolidation_and_Freeze_Candidate.md` | v0.0.4 milestone consolidation / freeze-candidate record, clarified by rc13 for `R12-01` |
+| `docs/executable-governance/12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md` | Current `R12-01` control-chain documentation closure record |
 | `release-integrity/frozen-baseline-manifest.json` | Reviewed SHA-256 manifest for the frozen v0.0.2 normative and v0.0.3 L3 trees |
 | `tools/scaf_release_integrity/checker.py` | Standalone frozen-tree byte-integrity checker bound to the canonical repository manifest |
 | `tools/scaf_release_integrity/tests/test_checker.py` | Release-integrity regression tests for mutation/add/remove/manifest/path/CWD cases |
@@ -395,7 +410,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**v0.0.4rc12 is the consolidation-only freeze candidate for the accepted rc01→rc11 executable-governance milestone.**
+**v0.0.4rc13 is the documentation-only closure RC for the rc12 freeze candidate.**
 
 The accepted executable controls remain deliberately separate:
 
@@ -449,7 +464,8 @@ Human semantic authority
    -> external pin verification foundation + symlink hardening
    -> CI trust-input bootstrap + fixed executable-governance gate
    -> repository path-component + root-binding hardening
-   -> milestone consolidation / freeze candidate (current rc12)
+   -> milestone consolidation / freeze candidate (rc12)
+   -> control-chain documentation closure (current rc13)
    -> later separately gated PR/merge enforcement, provenance/signing or generated views
 ```
 
@@ -509,7 +525,8 @@ v0.0.4rc08   # R7 diagnostic cleanup + external pin verification foundation; gat
 v0.0.4rc09   # focused R8-01 local pinned-artifact symlink hardening; gate YES
 v0.0.4rc10   # CI trust-input model + executable-governance gate foundation; independent gate NO (R10-01 Major)
 v0.0.4rc11   # focused CI repository path-component / root-binding hardening for R10-01; gate YES
-v0.0.4rc12   # executable-governance milestone consolidation / freeze candidate; no new capability
+v0.0.4rc12   # executable-governance milestone consolidation / freeze candidate; gate YES, AFTER MINOR CLEANUP
+v0.0.4rc13   # focused R12-01 control-chain documentation closure; no executable capability change
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -550,7 +567,9 @@ v0.0.4rc10 — CI Trust-Input Model & Executable-Governance Gate Foundation
 v0.0.4rc11 — CI Repository Path-Component & Root-Binding Hardening
               gate: YES; R10-01 RESOLVED
 v0.0.4rc12 — Executable Governance Milestone Consolidation / Freeze Candidate
-              current consolidation-only freeze-candidate RC
+              gate: YES, AFTER MINOR CLEANUP; R12-01 Minor documentation ambiguity
+v0.0.4rc13 — Freeze-Candidate Control-Chain Documentation Closure
+              current documentation-only R12-01 closure RC
 ```
 
 Five different control/trust questions remain explicit:
@@ -574,15 +593,15 @@ Can CI authenticate its reviewed control plane and execute the accepted checks i
 
 The external CI trust bundle must live outside the repository. The accepted rc11 control path requires the gate bootstrap and all six fixed control-plane paths to remain non-symlinked component-by-component under one verified checkout root.
 
-rc12 preserves the same bounded trust/enforcement scope and intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled work.
+rc13 preserves the same bounded trust/enforcement scope and intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled work.
 
-The immediate independent-review question is whether rc12 accurately consolidates the accepted rc01→rc11 state without changing executable or semantic behavior, and whether that state is internally consistent, reproducible, executable, bounded, and eligible for a formal v0.0.4 freeze decision.
+The immediate independent-review question is whether `R12-01` is resolved by documentation-only clarification while preserving all executable/frozen identities and the accepted production runtime order.
 
 Expected review gate:
 
 ```text
-V0.0.4 EXECUTABLE-GOVERNANCE MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
 
-A `YES` establishes freeze-candidate eligibility only. It does not by itself create or rename the formal `v0.0.4` frozen baseline; formal freeze still requires an explicit governance decision.
+A `YES` closes the documentation finding and establishes freeze-candidate eligibility only. It does not by itself create or rename the formal `v0.0.4` frozen baseline; formal freeze still requires an explicit governance decision.
 

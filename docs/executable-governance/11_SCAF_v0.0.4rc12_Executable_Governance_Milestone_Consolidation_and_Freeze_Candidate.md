@@ -44,9 +44,11 @@ The v0.0.4 milestone therefore enters rc12 with no open accepted review finding 
 
 The rc10 `NO` result is retained explicitly as part of the release history. rc12 does not rewrite or hide failed intermediate review state; it records the rc11 closure that made the current candidate eligible for final consolidation review.
 
-## 4. Current Executable-Governance Control Chain
+## 4. Current Executable-Governance Capability / Development Layering
 
-The current v0.0.4 candidate control chain is:
+> **rc13 clarification for R12-01:** The diagram in this section describes capability/development layering. It is **not** the production runtime execution order. The normative runtime gate order is stated in Section 8 and remains unchanged.
+
+The v0.0.4 candidate capability/development layering is:
 
 ```text
 Frozen v0.0.2 normative Markdown semantic authority
@@ -55,21 +57,35 @@ authority-registry.yaml
         ↓
 canonical authority-registry JSON Schema
         ↓
-semantic / structural / source-aware validator
+semantic / structural / source-aware validator capability
         ↓
 frozen v0.0.2 + v0.0.3 byte-integrity manifest
         ↓
-standalone release-integrity checker
+standalone release-integrity checker capability
         ↓
-external identity pin verification
+external identity pin verification capability
         ↓
-external CI trust bundle
+external CI trust model + executable-governance orchestration
         ↓
-CI gate bootstrap / six-artifact identity validation
+path-component + repository-root binding / stage-root attestation hardening
+```
+
+For avoidance of ambiguity, the production runtime execution sequence is:
+
+```text
+external CI trust input
         ↓
-fixed three-stage executable-governance gate
+six fixed control-plane path/topology + SHA-256 identity checks
         ↓
-path-component + repository-root binding / stage-root attestation
+external-pin verification
+        ↓
+frozen-baseline release integrity
+        ↓
+authority-registry semantic / structural / source validation
+        ↓
+each successful stage reports the same verified Repository root
+        ↓
+CI gate RESULT: PASS / FAIL
 ```
 
 The three executable control domains remain separate:

@@ -1,3 +1,18 @@
+## v0.0.4rc13 — 2026-08-17
+
+Focused freeze-candidate documentation closure after the independent v0.0.4rc12 review returned **`V0.0.4 EXECUTABLE-GOVERNANCE MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES, AFTER MINOR CLEANUP`** and opened one Minor finding, `R12-01`.
+
+- closes `R12-01` by explicitly separating capability/development layering from production runtime execution order;
+- relabels the rc12 consolidation control-chain diagram as non-runtime capability/development layering;
+- adds the verified runtime sequence: external CI trust input -> six fixed control-plane path/topology and SHA-256 identity checks -> external-pin verification -> frozen-baseline release integrity -> authority-registry semantic/structural/source validation -> same-root stage attestation -> CI gate PASS/FAIL;
+- updates root README and executable-governance navigation to use the same distinction;
+- adds `docs/executable-governance/12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md`;
+- changes no executable code, workflow, registry/schema, manifest, regression code, frozen normative content, or frozen L3 content;
+- preserves the 8 / 9 / 11 / 13 regression inventory, six control-plane trust identities, 294 / 218 / 76 authority inventory, empty machine-readable relations, and twelve Available / M2 L3 Patterns;
+- preserves the historical rc10 `NO`, rc11 `YES`, and rc12 `YES, AFTER MINOR CLEANUP` review dispositions;
+- remains an RC and does not perform the formal `v0.0.4` freeze;
+- continues to defer fork-PR enforcement, branch protection, signing/PKI/provenance, trust-bundle distribution, generated views, registry generation, code generation, project inference, non-empty L2→L3 relation semantics, new L3 work, M3/M4, and L4.
+
 ## v0.0.4rc12 — 2026-08-17
 
 Executable-governance milestone consolidation / freeze-candidate RC after the independent v0.0.4rc11 review returned **`V0.0.4 CI REPOSITORY PATH-COMPONENT / ROOT-BINDING HARDENING GATE: YES`**, resolved `R10-01`, and opened no Critical, Major, Minor, or Trivial finding.
