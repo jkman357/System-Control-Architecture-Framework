@@ -120,6 +120,7 @@ def validate_release_integrity_data(
     seen_manifest_paths: set[str] = set()
 
     for tree in trees:
+        tree_error_start = len(errors)
         if not isinstance(tree, dict):
             errors.append("protected tree entry must be an object")
             continue
@@ -222,7 +223,7 @@ def validate_release_integrity_data(
         protected_file_count += len(actual_paths)
         tree_summaries.append(
             f"{expected_root}: {len(actual_paths)} files / "
-            + ("MATCH" if not missing and not added and all(manifest_hashes.get(rel) == actual_hashes[rel] for rel in expected_paths & actual_paths) and actual_aggregate == expected_aggregate else "MISMATCH")
+            + ("MATCH" if len(errors) == tree_error_start else "MISMATCH")
         )
 
     missing_tree_names = sorted(set(EXPECTED_TREES) - seen_tree_names)

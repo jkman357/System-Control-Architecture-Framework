@@ -1,3 +1,28 @@
+## v0.0.4rc08 — 2026-08-17
+
+Release-integrity diagnostic cleanup and external-pinning foundation after the independent v0.0.4rc07 review returned **`V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE: YES`**, with no Critical/Major/Minor findings and two non-blocking Trivial findings (`R7-01`, `R7-02`).
+
+### Changed
+
+- closed `R7-01` by making each protected-tree summary report `MISMATCH` whenever that tree has any integrity/structural error, including symlink-only failure, while preserving the existing overall fail-closed result;
+- closed `R7-02` by completing the rc07 CHANGELOG enumeration of the eighth release-integrity regression category;
+- extended the release-integrity regression suite from eight to nine tests with a symlink-summary diagnostic regression.
+
+### Added
+
+- added `tools/scaf_external_pin/checker.py` as a separate external-pin verification surface;
+- defined an external JSON pin contract that pins exactly the canonical frozen-baseline manifest and release-integrity checker by SHA-256;
+- required the trusted pin file to be outside the repository and to be a regular non-symlink file;
+- added nine external-pin regressions covering accepted pin PASS, manifest-hash mismatch, checker-hash mismatch, duplicate/extra artifacts, in-repository pin rejection, external-pin symlink rejection, CWD/module-location binding, bad-pin CLI failure, and repository/artifact/hash-algorithm override rejection;
+- added `docs/executable-governance/07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md`.
+
+### Preserved / Deferred
+
+- preserved the rc07 canonical manifest and frozen v0.0.2/v0.0.3 tree fingerprints;
+- preserved the accepted authority registry/schema/semantic validator and all eight validator regressions;
+- preserved semantic authority/project/L3 boundaries;
+- did not add CI/merge enforcement, signing/PKI/provenance services, canonical external pin storage, generated views/indexes, registry generation, code generation, applicability inference, machine-readable L2→L3 relations, new L3 work, M3/M4 or L4.
+
 ## v0.0.4rc07 — 2026-08-17
 
 Frozen-baseline release-integrity foundation after the independent v0.0.4rc06 review returned **`V0.0.4 CANONICAL-SCHEMA BINDING / VALIDATOR-CLI HARDENING GATE: YES`**, resolved `R5-01`, and opened no new finding.
@@ -7,7 +32,7 @@ Frozen-baseline release-integrity foundation after the independent v0.0.4rc06 re
 - added `release-integrity/frozen-baseline-manifest.json` containing per-file SHA-256 values for exactly 11 frozen v0.0.2 normative files and 30 frozen v0.0.3 L3 files plus the accepted aggregate tree fingerprints;
 - added `tools/scaf_release_integrity/checker.py` as a standalone fail-closed byte-integrity checker bound to the reviewed repository/module location and canonical manifest;
 - added release-integrity usage/trust-boundary documentation;
-- added eight regression tests for accepted state, byte mutation, file addition, file removal, manifest-hash corruption, manifest path escape and CWD/module-location binding;
+- added eight regression tests for accepted state, byte mutation, file addition, file removal, manifest-hash corruption, manifest path escape, CWD/module-location binding, and production CLI override rejection;
 - added `docs/executable-governance/06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md`.
 
 ### Validated

@@ -1,6 +1,6 @@
 # SCAF Frozen Baseline Release-Integrity Checker
 
-This package verifies byte-level integrity of the SCAF frozen upstream trees protected by the reviewed rc07 manifest.
+This package verifies byte-level integrity of the SCAF frozen upstream trees protected by the reviewed rc07 manifest; the checker diagnostic surface is hardened by rc08.
 
 ## Production command
 
@@ -31,13 +31,13 @@ For every protected file, the manifest records SHA-256. It also records the acce
 sorted repository-relative path + NUL + sha256(file) + LF
 ```
 
-The checker fails on changed bytes, added files, removed files, symlinks in protected trees, path/manifest inconsistency, or aggregate mismatch.
+The checker fails on changed bytes, added files, removed files, symlinks in protected trees, path/manifest inconsistency, or aggregate mismatch. Beginning with rc08, a per-tree summary reports `MISMATCH` whenever that tree has any structural/integrity error, including symlink-only failures.
 
 ## Authority boundary
 
 This checker does **not** decide what SCAF requirements or Patterns mean. Frozen Markdown remains semantic authority. The manifest is a reviewed release-integrity representation of accepted bytes; the checker is a subordinate byte-integrity checker.
 
-The manifest does not self-authenticate. If both a protected source and the manifest are maliciously changed together, a local checker alone cannot establish provenance. Authenticity of the reviewed manifest is supplied by release/repository review and may later be pinned by separately gated CI/release controls.
+The manifest does not self-authenticate. If both a protected source and the manifest are maliciously changed together, a local checker alone cannot establish provenance. Authenticity of the reviewed manifest is supplied by release/repository review. rc08 adds a separate external-pin verification surface in `tools/scaf_external_pin/`; the external pin document itself must be supplied from outside the repository. CI storage/enforcement, signing, and provenance services remain separately gated.
 
 Release-integrity checking remains separate from `tools.scaf_validator`, which validates the machine-readable authority registry against its canonical schema and canonical Markdown semantics.
 
@@ -47,4 +47,4 @@ Release-integrity checking remains separate from `tools.scaf_validator`, which v
 python -m unittest discover -s tools/scaf_release_integrity/tests -v
 ```
 
-The tests cover the accepted tree plus content modification, file addition, file removal, manifest-hash corruption, manifest path escape, production module/CWD binding, and rejection of manifest/repository CLI override attempts.
+The tests cover the accepted tree plus content modification, file addition, file removal, manifest-hash corruption, manifest path escape, symlink summary failure, production module/CWD binding, and rejection of manifest/repository CLI override attempts.

@@ -80,6 +80,17 @@ class FrozenBaselineReleaseIntegrityTests(unittest.TestCase):
         self.assertFalse(report.passed)
         self.assertTrue(any("outside protected tree" in e for e in report.errors))
 
+    def test_symlink_failure_marks_tree_summary_mismatch(self):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            root = Path(temp_dir)
+            self._copy_protected_trees(root)
+            link = root / "docs/l3/SYMLINK.md"
+            link.symlink_to(root / "docs/l3/README.md")
+            report = validate_release_integrity_data(copy.deepcopy(self.manifest), root)
+            self.assertFalse(report.passed)
+            self.assertTrue(any("symlink is not allowed" in e for e in report.errors))
+            self.assertIn("docs/l3: 30 files / MISMATCH", report.tree_summaries)
+
     def test_production_checker_uses_module_repository_not_cwd(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             fake_cwd = Path(temp_dir)

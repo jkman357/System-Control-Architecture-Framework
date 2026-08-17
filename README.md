@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc06  
-**Status:** Canonical Schema Binding & Validator CLI Hardening RC  
+**Version:** v0.0.4rc08  
+**Status:** Release-Integrity Diagnostic Cleanup & External Pinning Foundation RC  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,40 +38,39 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc07 Executable-Governance Development Position
+## v0.0.4rc08 Executable-Governance Development Position
 
-v0.0.4rc07 opens the next bounded executable-governance concern after the independent v0.0.4rc06 review returned:
-
-```text
-V0.0.4 CANONICAL-SCHEMA BINDING / VALIDATOR-CLI HARDENING GATE: YES
-```
-
-The rc06 review confirmed `R5-01` **RESOLVED**, opened no new finding, preserved the accepted authority registry/schema/frozen trees, and accepted the canonical-schema-bound semantic/source-aware validator foundation.
-
-rc07 deliberately keeps **release integrity separate from semantic validation**. It adds a reviewed frozen-baseline manifest and a standalone checker for the byte-level identity of the two frozen upstream trees only:
+v0.0.4rc08 follows the independent rc07 result:
 
 ```text
-docs/normative/  — frozen v0.0.2 L1/L2 normative tree — 11 files
-docs/l3/         — frozen v0.0.3 L3 catalog tree      — 30 files
+V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE: YES
 ```
 
-`release-integrity/frozen-baseline-manifest.json` records one SHA-256 per protected file plus the accepted aggregate tree fingerprints using the review construction:
+The rc07 review accepted the local frozen-baseline manifest/checker foundation with no Critical/Major/Minor findings and two non-blocking Trivial findings. rc08 closes both:
+
+- `R7-01` — per-tree integrity summaries now report `MISMATCH` for symlink-only/other tree structural failures;
+- `R7-02` — the rc07 CHANGELOG now explicitly lists production CLI override rejection as the eighth regression category.
+
+rc08 then adds one bounded trust layer **without adding CI**: `tools/scaf_external_pin/checker.py` verifies that two local release-integrity artifacts match a trusted JSON pin document supplied from outside the repository:
 
 ```text
-sorted repository-relative path + NUL + sha256(file) + LF
+release-integrity/frozen-baseline-manifest.json
+tools/scaf_release_integrity/checker.py
 ```
 
-`tools/scaf_release_integrity/checker.py` is bound to the repository containing the reviewed checker module and its canonical manifest. It fails closed on changed bytes, added files, removed files, symlinks in protected trees, malformed/unsupported manifest structure, path inconsistencies, per-file hash mismatch, or aggregate mismatch.
+The production command is:
 
-This does **not** change semantic authority. Frozen Markdown remains semantic authority; the release-integrity manifest is a reviewed cryptographic representation of accepted bytes; the checker is a subordinate byte-integrity check. It does not validate registry semantics, requirement meaning, project applicability, L3 selection, or compliance.
+```text
+python -m tools.scaf_external_pin.checker --pin-file <outside-repository-pin.json>
+```
 
-The manifest does not self-authenticate: changing both protected source and manifest together cannot be proven malicious by a local checker alone. Manifest provenance continues to come from controlled repository/release review. External pinning, CI enforcement and merge blocking remain separately gated future work.
+The pin file must be outside the SCAF repository, regular, non-symlink, and must contain exactly the two fixed SHA-256 pins. The caller cannot replace repository root, local artifact paths or hash algorithm.
 
-The accepted `authority-registry.yaml`, canonical schema, semantic/source-aware validator, accepted rc01–rc06 governance contracts, frozen `docs/normative/`, and frozen `docs/l3/` are not semantically reopened by rc07.
+This closes the specific rc07 local-trust gap in a bounded way: a separately protected external pin can detect coordinated changes to the local manifest/checker. The pin document itself is a trust input supplied outside the repository. rc08 does not define how it is signed, distributed, protected, or enforced in CI, and the external-pin checker itself remains trusted as part of the reviewed rc08 source/package.
 
-rc07 intentionally does **not** add CI enforcement, manifest signing, external trust roots, registry generation, generated reverse indexes/views, code generation, automatic project applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
+The accepted authority registry/schema/validator, rc07 manifest protected scope, frozen `docs/normative/` and `docs/l3/`, authority/project/L3 boundaries and empty machine-readable relations are not semantically reopened by rc08.
 
-The current gate is whether this release-integrity foundation accurately protects the reviewed frozen bytes without being confused with semantic authority or CI enforcement.
+The current gate is whether the two rc07 Trivial findings are closed and this external-pin verification foundation is correctly bounded without introducing CI/signing/generated-view/L3/M3/M4/L4 scope.
 
 ## v0.0.3 Frozen L3 Baseline Position
 
@@ -356,11 +355,15 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/03_SCAF_v0.0.4rc04_Authority_Registry_Release_State_Documentation_Cleanup.md` | Focused `R3-01` repository-state documentation cleanup and non-regression record |
 | `docs/executable-governance/04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` | Accepted schema/validator foundation scope and regression contract; upstream review opened only `R5-01` CLI binding cleanup |
 | `docs/executable-governance/05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md` | Accepted canonical-schema binding / production CLI hardening contract; `R5-01` resolved |
-| `docs/executable-governance/06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` | Current frozen-baseline release-integrity scope, authority boundary and review gate |
+| `docs/executable-governance/06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` | Accepted frozen-baseline release-integrity foundation |
+| `docs/executable-governance/07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` | Current R7 cleanup / external-pinning foundation and trust-boundary contract |
 | `release-integrity/frozen-baseline-manifest.json` | Reviewed SHA-256 manifest for the frozen v0.0.2 normative and v0.0.3 L3 trees |
 | `tools/scaf_release_integrity/checker.py` | Standalone frozen-tree byte-integrity checker bound to the canonical repository manifest |
 | `tools/scaf_release_integrity/tests/test_checker.py` | Release-integrity regression tests for mutation/add/remove/manifest/path/CWD cases |
 | `tools/scaf_release_integrity/README.md` | Release-integrity execution, scope and trust-boundary guidance |
+| `tools/scaf_external_pin/checker.py` | External-pin verifier for the canonical manifest and release-integrity checker identities |
+| `tools/scaf_external_pin/tests/test_checker.py` | External-pin regression tests |
+| `tools/scaf_external_pin/README.md` | External pin-document contract, execution and trust-boundary guidance |
 | `schemas/authority-registry.schema.json` | JSON Schema Draft 2020-12 structural contract for the accepted rc03 ten-field / 294-record representation |
 | `tools/scaf_validator/validator.py` | Executable structural + canonical-source fidelity validator with production CLI bound to the canonical repository schema/source |
 | `tools/scaf_validator/tests/test_validator.py` | Regression tests for accepted registry and controlled invalid mutations |
@@ -371,19 +374,29 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**v0.0.4rc07 adds local frozen-baseline release-integrity checking, but still introduces no CI enforcement or merge blocking.**
+**v0.0.4rc08 adds external pin verification but still introduces no CI enforcement or merge blocking.**
 
-The executable checks are intentionally separate:
+The executable controls remain deliberately separate:
 
 ```text
 Semantic / representation conformance
   python -m tools.scaf_validator.validator
 
-Frozen upstream byte integrity
+Local frozen upstream byte integrity
   python -m tools.scaf_release_integrity.checker
+
+External identity pin verification
+  python -m tools.scaf_external_pin.checker --pin-file <outside-repository-pin.json>
 ```
 
-The semantic validator checks the accepted authority-registry representation against the canonical schema and canonical Markdown source semantics. The release-integrity checker checks whether the reviewed frozen `docs/normative/` and `docs/l3/` bytes still match the accepted rc07 manifest.
+The intended trust sequence is:
+
+```text
+external trust input (pin document outside repository)
+   -> verify local canonical manifest + release-integrity checker identities
+   -> verify frozen docs/normative + docs/l3 bytes against canonical manifest
+   -> independently validate authority-registry representation/semantic fidelity
+```
 
 Local commands from repository root:
 
@@ -393,20 +406,10 @@ python -m tools.scaf_validator.validator
 python -m unittest discover -s tools/scaf_validator/tests -v
 python -m tools.scaf_release_integrity.checker
 python -m unittest discover -s tools/scaf_release_integrity/tests -v
+python -m unittest discover -s tools/scaf_external_pin/tests -v
 ```
 
-Expected frozen-baseline integrity summary:
-
-```text
-Protected trees: 2
-Protected files: 41
-docs/normative: 11 files / MATCH
-docs/l3: 30 files / MATCH
-Errors: 0
-RESULT: PASS
-```
-
-The release-integrity manifest is reviewed state, not a self-authenticating trust root. CI pinning, merge blocking, signing/external trust, generated reverse indexes/views, registry generation, code generation, automatic project applicability inference and machine-readable L2→L3 relations remain later separately gated work.
+The external pin checker requires a trusted pin document outside the repository; the repository intentionally does not contain a canonical file pretending to be external trust. Signing, external pin storage/distribution, provenance services, GitHub Actions/merge blocking, generated reverse indexes/views, registry generation, code generation, automatic project applicability inference and machine-readable L2→L3 relations remain later separately gated work.
 
 Preferred order now is:
 
@@ -414,10 +417,11 @@ Preferred order now is:
 Human semantic authority
    -> controlled normative content
    -> machine-readable authority model + registry
-   -> schema + structural/source-aware validator + regression tests
+   -> schema + structural/source-aware validator
    -> canonical schema binding + validator CLI hardening
-   -> frozen-baseline release-integrity manifest + checker
-   -> later separately gated CI / generated views / executable governance
+   -> frozen-baseline local release-integrity manifest + checker
+   -> external pin verification foundation
+   -> later separately gated CI/signing/enforcement or generated views
 ```
 
 
@@ -471,7 +475,8 @@ v0.0.4rc03   # initial 294-record authority-registry serialization; independent 
 v0.0.4rc04   # focused authority-registry release-state documentation cleanup for R3-01
 v0.0.4rc05   # authority-registry schema + structural/source-aware validator foundation; gate YES, AFTER MINOR CLEANUP
 v0.0.4rc06   # canonical schema binding + validator CLI hardening for R5-01; gate YES
-v0.0.4rc07   # frozen v0.0.2/v0.0.3 baseline SHA-256 manifest + standalone release-integrity checker
+v0.0.4rc07   # frozen v0.0.2/v0.0.3 baseline SHA-256 manifest + standalone release-integrity checker; gate YES
+v0.0.4rc08   # R7 diagnostic cleanup + external pin verification foundation
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -502,21 +507,37 @@ v0.0.4rc05 — Authority Registry Schema & Structural Validator Foundation
 v0.0.4rc06 — Canonical Schema Binding & Validator CLI Hardening
               gate: YES; R5-01 RESOLVED
 v0.0.4rc07 — Frozen Baseline Release-Integrity Foundation
-              current bounded release-integrity RC
+              gate: YES; R7-01/R7-02 were non-blocking Trivial findings
+v0.0.4rc08 — Release-Integrity Diagnostic Cleanup & External Pinning Foundation
+              current bounded trust-control RC
 ```
 
-The rc06 independent review confirmed that the production validator CLI is bound to the canonical repository schema/source, the former alternate-schema false-PASS path is closed, all eight validator regressions pass, and no upstream authority/project/L3 boundary is reopened.
+rc08 closes the two rc07 Trivial findings without changing the accepted frozen source bytes or rc07 manifest. It changes only release-integrity diagnostics/tests plus current release/navigation state, and adds a separate external-pin checker.
 
-rc07 adds a separate cryptographic integrity layer for only the frozen upstream bytes. The canonical manifest protects exactly 41 files: 11 under `docs/normative/` and 30 under `docs/l3/`. It records file SHA-256 values and the accepted aggregate fingerprints. The checker verifies exact set membership and byte identity and fails on modification, addition, removal, symlink, malformed manifest structure, unsafe/inconsistent paths or aggregate mismatch.
+Three different control questions remain explicit:
 
-Semantic/source-aware validation and frozen-byte authentication remain distinct controls. Neither schema nor checker becomes semantic authority. The manifest itself is reviewed repository state and does not self-authenticate against coordinated source+manifest tampering.
+```text
+What does SCAF mean?
+  -> frozen Markdown semantic authority
 
-The immediate independent-review question is whether rc07 correctly establishes this bounded release-integrity foundation while preserving all accepted rc06 registry/schema/validator contracts and without introducing CI/signing/generated-view/L3/M3/M4/L4 scope.
+Does the machine-readable authority representation conform?
+  -> scaf_validator
+
+Are the frozen source bytes unchanged locally?
+  -> scaf_release_integrity
+
+Do the local manifest/checker identities match an external trust input?
+  -> scaf_external_pin
+```
+
+The external pin document must live outside the repository. It can establish a trust relationship only to the degree that the caller/environment protects that external file. rc08 does not claim signing, provenance, CI enforcement, merge blocking, or self-authentication of the pin checker/package.
+
+The immediate independent-review question is whether `R7-01` and `R7-02` are fully closed, external pinning is fail-closed and correctly bounded, all accepted upstream controls/frozen trees remain non-regressed, and no deferred CI/signing/generated-view/L3/M3/M4/L4 scope is introduced.
 
 Expected review gate:
 
 ```text
-V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
 
-A `YES` accepts only the local frozen-baseline manifest/checker foundation. It does not automatically authorize CI enforcement, signing/external trust roots, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
+A `YES` accepts only the rc08 diagnostic cleanup and external-pin verification foundation. It does not automatically authorize CI enforcement, signing/provenance, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
