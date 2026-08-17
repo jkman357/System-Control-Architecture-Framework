@@ -1,3 +1,46 @@
+## v0.0.4rc06 — 2026-08-17
+
+Focused canonical-schema binding and validator production-CLI hardening after the independent v0.0.4rc05 review returned **`V0.0.4 AUTHORITY-REGISTRY SCHEMA-VALIDATOR FOUNDATION GATE: YES, AFTER MINOR CLEANUP`** and opened one Minor finding, `R5-01`, against caller-selectable schema substitution.
+
+### Changed
+
+- removed production CLI `--schema` override so the normal PASS-producing path always uses repository canonical `schemas/authority-registry.schema.json`;
+- removed production CLI `--repo-root` override so schema/source authority context is derived from the reviewed validator module's repository rather than a caller-selected repository root;
+- retained optional `--registry <path>` only for choosing the representation under test while keeping canonical schema/source fixed;
+- documented that alternate schema/repository injection remains function-level test API behavior rather than production CLI behavior;
+- updated current repository/executable-governance navigation to rc06 and the focused `R5-01` closure gate.
+
+### Added
+
+- added an end-to-end CLI regression that mutates schema-owned `record_kind` and `relations`, verifies canonical-schema `RESULT: FAIL`, then verifies the former `--schema <lax-schema>` bypass is rejected as an unsupported production argument;
+- added `docs/executable-governance/05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md`.
+
+### Preserved
+
+- accepted `authority-registry.yaml` and all 294 rc03 records unchanged;
+- accepted rc05 canonical JSON Schema unchanged;
+- accepted authority-model / determinism / serialization / release-state / schema-validator contracts unchanged;
+- frozen v0.0.2 normative content and 294 / 218 / 76 inventory;
+- frozen v0.0.3 L3 content and twelve Available / M2 Pattern identities;
+- canonical Markdown semantic precedence, project-state exclusion and empty initial relations.
+
+### Deliberately Not Added
+
+- no CI enforcement or merge blocking;
+- no release-integrity/frozen-source byte authentication folded into the semantic validator;
+- no registry generation, generated indexes/views or code generation;
+- no automatic project applicability inference;
+- no machine-readable L2→L3 relation vocabulary;
+- no new L3 Pattern, SEC-primary realization, M3/M4 or L4 work.
+
+### Gate
+
+- verify `R5-01` is fully closed on the normal CLI surface;
+- verify attempted alternate-schema CLI substitution cannot produce normal PASS;
+- execute accepted-registry validation and the full regression suite;
+- verify accepted registry/schema/contracts/frozen trees remain unchanged;
+- return an explicit `V0.0.4 CANONICAL-SCHEMA BINDING / VALIDATOR-CLI HARDENING GATE` decision.
+
 ## v0.0.4rc05 — 2026-08-16
 
 Authority-registry schema and structural/source-aware validator foundation after the independent v0.0.4rc04 review returned **`V0.0.4 AUTHORITY-REGISTRY RELEASE-STATE CLEANUP GATE: YES`**, resolved `R3-01`, and found no remaining blocker to the separately gated validation stage.

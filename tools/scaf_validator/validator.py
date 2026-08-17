@@ -308,14 +308,21 @@ def _default_repo_root() -> Path:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Validate SCAF authority-registry structural and canonical-source fidelity.")
-    parser.add_argument("--repo-root", type=Path, default=_default_repo_root())
-    parser.add_argument("--registry", type=Path, default=None)
-    parser.add_argument("--schema", type=Path, default=None)
+    parser.add_argument(
+        "--registry",
+        type=Path,
+        default=None,
+        help="registry file to validate against this repository's canonical schema and normative source",
+    )
     args = parser.parse_args(argv)
 
-    repo_root = args.repo_root.resolve()
+    # Production CLI authority binding: the repository root and schema are derived
+    # from this reviewed validator module and are not caller-selectable. Alternate
+    # schema/repository injection remains available only through function-level
+    # test APIs such as validate_registry_data()/validate_registry().
+    repo_root = _default_repo_root().resolve()
     registry_path = (args.registry or (repo_root / "authority-registry.yaml")).resolve()
-    schema_path = (args.schema or (repo_root / "schemas" / "authority-registry.schema.json")).resolve()
+    schema_path = (repo_root / "schemas" / "authority-registry.schema.json").resolve()
 
     report = validate_registry(repo_root, registry_path, schema_path)
 
