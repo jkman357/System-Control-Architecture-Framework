@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.0.5rc5 — L3 Source-Aware Trace Validator Foundation
+
+- Continue the controlled v0.0.5 line after the independent rc4 review returned `V0.0.5 L3 TRACE SCHEMA / SOURCE-EXTRACTION CONTRACT FOUNDATION GATE: YES` with zero findings.
+- Add `tools/scaf_trace_validator/validator.py` as an independent executable implementation of the accepted rc4 trace schema and frozen-source extraction contract.
+- Validate `l3-trace-registry.yaml` with duplicate-key-rejecting YAML loading and the accepted Draft 2020-12 `schemas/l3-trace-registry.schema.json`.
+- Reconstruct relations only from the frozen Pattern metadata rows `Primary L2 Trace`, `Supporting L2 Trace`, and `Constraint Inputs`; narrative prose remains non-authoritative for machine edge creation.
+- Implement the accepted rc4 fail-closed parsing rules for comma/semicolon scope, `applicable`, one-ID `conditional ... where ...`, direct `where ...`, `outcomes when ...`, and bounded qualifier whitespace normalization.
+- Require exact equality between the canonically sorted frozen-source reconstruction and all seven serialized fields of the 119-record registry population.
+- Prove `(pattern_id, relation_type, l2_id)` tuple uniqueness independently of JSON Schema `uniqueItems` and prove canonical cross-record ordering independently of schema validation.
+- Resolve every serialized L2 identity against frozen `authority-registry.yaml`; current accepted population resolves all 82 unique referenced L2 IDs.
+- Add sixteen focused trace-validator regressions covering accepted PASS, omission/invention, tuple duplicates, ordering, qualifier omission/reassociation, unresolved L2 identities, source locator mismatch, unsupported syntax, metadata-row duplication, and narrative non-authority.
+- Keep accepted rc3 `l3-trace-registry.yaml` and accepted rc4 trace schema byte-unchanged.
+- Preserve frozen v0.0.2/v0.0.3 source, frozen v0.0.4 executable controls, the 41-test frozen regression inventory, six-artifact external trust bundle, workflow and production CI-gate behavior unchanged.
+- Keep the rc5 trace validator outside the frozen v0.0.4 trust bundle and do not claim CI/merge enforcement for the new development control.
+- Defer automatic trace-registry generation, generated forward/reverse views, authority/context resolver, project applicability inference, Pattern auto-selection, satisfaction/compliance/verification/closure inference, new L3 work, M3/M4, L4 guidance, code generation and CI/trust expansion.
+
+
 ## v0.0.5rc4 — L3 Trace Schema & Source-Extraction Contract Foundation
 
 - Continue the controlled v0.0.5 line after the independent rc3 review returned `V0.0.5 L3 MACHINE-READABLE TRACE SERIALIZATION FOUNDATION GATE: YES` with zero findings.

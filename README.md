@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc4  
-**Status:** L3 Trace Schema & Source-Extraction Contract Foundation  
+**Current Development Release:** v0.0.5rc5  
+**Status:** L3 Source-Aware Trace Validator Foundation  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -40,7 +40,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc4` | Structural trace schema and deterministic frozen-source extraction contract |
+| `v0.0.5rc5` | Executable source-aware validation of the accepted L3 trace serialization |
 
 Frozen releases are not modified in place. New semantic or executable capability proceeds on a later controlled RC/version line.
 
@@ -61,14 +61,37 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. The current v0.0.5 development line does not reopen them.
 
-## Current v0.0.5rc4 Development Focus
+## Current v0.0.5rc5 Development Focus
 
-The accepted rc3 [`l3-trace-registry.yaml`](l3-trace-registry.yaml) contains the exact frozen population of 119 typed L2-to-L3 relations. rc4 adds the next two contracts required before executable trace validation:
+The accepted rc4 gate fixed both the structural trace schema and the deterministic fail-closed extraction contract. rc5 implements those reviewed rules as an independent executable development control:
 
-1. [`schemas/l3-trace-registry.schema.json`](schemas/l3-trace-registry.schema.json) — Draft 2020-12 structural schema bound to the accepted rc3 representation;
-2. [`docs/executable-governance/17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md`](docs/executable-governance/17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md) — deterministic fail-closed extraction rules for the frozen Pattern metadata.
+[`tools/scaf_trace_validator/`](tools/scaf_trace_validator/README.md)
 
-Current trace inventory remains unchanged:
+Canonical run:
+
+```text
+python -m tools.scaf_trace_validator.validator
+```
+
+The validator independently performs:
+
+```text
+trace JSON Schema validation
+        +
+frozen Pattern metadata reconstruction
+        +
+exact 119-record source/serialization comparison
+        +
+119 typed-relation tuple uniqueness
+        +
+canonical cross-record ordering proof
+        +
+82 L2 authority-identity resolutions
+        +
+15 qualifier-fidelity associations
+```
+
+Current accepted trace population remains:
 
 ```text
 12 Pattern identities
@@ -80,21 +103,21 @@ Current trace inventory remains unchanged:
 15 records with material source qualifiers
 ```
 
-rc4 deliberately separates responsibilities:
+The authority chain remains:
 
 ```text
-Frozen L3 Markdown       -> semantic trace authority
+Frozen L3 Markdown         -> semantic trace authority
 Source-extraction contract -> deterministic interpretation
-Trace JSON Schema        -> structural representation constraints
-l3-trace-registry.yaml   -> subordinate serialized data
-Future trace validator   -> executable source-aware proof (not implemented in rc4)
+Trace JSON Schema          -> structural representation constraints
+l3-trace-registry.yaml     -> subordinate serialized data
+rc5 trace validator        -> executable source-aware conformance proof
 ```
 
-`l3-trace-registry.yaml` itself is unchanged from accepted rc3, so its `representation_release` remains `v0.0.5rc3`. `authority-registry.yaml` also remains separate and unchanged.
+The validator is fail closed for unsupported extraction syntax and source/serialization disagreement. It does not generate or rewrite the registry and does not infer applicability, Pattern selection, satisfaction, compliance, verification or closure.
 
-This RC does **not** add a trace validator/parser implementation, generated indexes, a resolver, project applicability inference, Pattern auto-selection, new L3 content or L4 guidance.
+rc5 adds sixteen trace-validator regressions. The frozen v0.0.4 executable-governance inventory remains separately unchanged at 41 tests; the rc5 development tool is not retroactively added to the frozen six-artifact CI trust bundle.
 
-See the accepted rc1/rc2/rc3 records and the current rc4 contract under [`docs/executable-governance/`](docs/executable-governance/README.md).
+See [`docs/executable-governance/18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md`](docs/executable-governance/18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md).
 
 ## Authority and Trace Boundaries
 
@@ -167,6 +190,15 @@ Accepted regression inventory remains:
 41 total
 ```
 
+Current v0.0.5 development control:
+
+```text
+python -m tools.scaf_trace_validator.validator
+python -m unittest discover -s tools/scaf_trace_validator/tests -v
+```
+
+The trace-validator suite adds 16 development regressions while the frozen v0.0.4 inventory remains 41.
+
 The production CI gate additionally requires the reviewed repository-external trust input defined by the frozen v0.0.4 executable-governance baseline.
 
 ## Repository Navigation
@@ -178,6 +210,8 @@ The production CI gate additionally requires the reviewed repository-external tr
 | `docs/executable-governance/` | Machine-readable/executable-governance contracts, decisions and freeze records |
 | `authority-registry.yaml` | Frozen v0.0.4 294-record authority representation |
 | `l3-trace-registry.yaml` | Accepted v0.0.5rc3 subordinate serialization of frozen L3 typed trace relations |
+| `schemas/l3-trace-registry.schema.json` | Accepted rc4 structural contract for the L3 trace registry |
+| `tools/scaf_trace_validator/` | rc5 source-aware trace validation development control and regressions |
 | `schemas/` | Frozen v0.0.4 authority-registry schema plus v0.0.5rc4 L3 trace structural schema |
 | `release-integrity/` | Frozen-baseline integrity manifest |
 | `tools/scaf_validator/` | Frozen v0.0.4 authority-registry semantic / structural / source-aware validator; not the rc4 trace validator |

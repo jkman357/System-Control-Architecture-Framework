@@ -6,16 +6,17 @@
 
 ## Current Development Line
 
-`v0.0.5rc4 — L3 Trace Schema & Source-Extraction Contract Foundation` follows the clean rc3 serialization gate. It adds a Draft 2020-12 structural schema for the accepted `l3-trace-registry.yaml` and a deterministic fail-closed contract for reconstructing the 119 relations and 15 material qualifier associations from frozen v0.0.3 Pattern metadata.
+`v0.0.5rc5 — L3 Source-Aware Trace Validator Foundation` follows the clean rc4 schema/source-extraction gate. It implements the accepted rc4 contracts as an independent executable development control that validates the rc3 trace serialization against frozen v0.0.3 Pattern metadata and frozen L2 authority identities.
 
-No trace parser/validator executable is introduced in rc4. The accepted rc3 registry remains byte-unchanged and retains `representation_release: v0.0.5rc3`.
+The new validator reconstructs all 119 relations, checks 15 qualifier associations, typed-tuple uniqueness, canonical ordering and 82 L2 identity resolutions. It does not generate/rewrite the registry and is not retroactively added to the frozen v0.0.4 CI trust bundle.
 
 Current v0.0.5 records:
 
 - `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — accepted model foundation as amended by rc2;
 - `15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md` — accepted `R1-01` / `R1-02` closure;
 - `16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md` — accepted concrete serialization contract;
-- `17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md` — current schema/extraction contract review candidate.
+- `17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md` — accepted schema/extraction contract;
+- `18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md` — current executable source-aware trace validator review candidate.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 
