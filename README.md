@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc04  
-**Status:** Authority-Registry Release-State Documentation Cleanup RC  
+**Version:** v0.0.4rc05  
+**Status:** Authority-Registry Schema & Structural Validator Foundation RC  
 **Date:** 2026-08-16
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,34 +38,32 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc04 Executable-Governance Development Position
+## v0.0.4rc05 Executable-Governance Development Position
 
-v0.0.4rc04 is a focused repository-state documentation cleanup RC after the independent v0.0.4rc03 review returned:
-
-```text
-V0.0.4 INITIAL AUTHORITY-REGISTRY SERIALIZATION GATE: YES, AFTER MINOR CLEANUP
-```
-
-The rc03 review accepted the initial 294-record authority registry as technically complete and source-faithful and opened one localized Minor finding, `R3-01`, against stale current-state/navigation text in the root `README.md`. rc04 closes only that documentation finding before the separately gated schema/structural-validator stage is opened.
-
-The accepted rc02 authority model remains the governing semantic contract. Frozen normative Markdown under `docs/normative/` remains the canonical semantic authority. The repository-root `authority-registry.yaml` remains the accepted rc03 controlled curated representation and is intentionally unchanged in rc04.
-
-Accepted registry state preserved by rc04:
+v0.0.4rc05 opens the separately gated schema + structural-validator stage after the independent v0.0.4rc04 review returned:
 
 ```text
-294 unique authority records
-218 Project-Applicable Obligations
-76 Framework Normative Invariants
-0 SCAF-PAT-* records
-representation_release = v0.0.4rc03
-relations = [] for all 294 records
+V0.0.4 AUTHORITY-REGISTRY RELEASE-STATE CLEANUP GATE: YES
 ```
 
-The frozen v0.0.3 twelve `SCAF-PAT-*` identities remain downstream L3 Pattern catalog artifacts and are not normative authority records. Project applicability, Project Design Authority, project design/realization, verification/evidence, deviation/risk acceptance, closure, and Pattern selection remain outside the framework authority registry.
+The rc04 review resolved `R3-01`, confirmed the accepted rc03 registry and upstream contracts were unchanged, and found no remaining blocker to schema/structural-validator work. rc05 therefore makes the accepted registry contract executable without changing the accepted registry serialization.
 
-v0.0.4rc04 intentionally does **not** change registry records, authority-model semantics, frozen L1/L2 content, frozen L3 content, or add schema, validator, generated reverse indexes, CI enforcement, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
+Frozen normative Markdown under `docs/normative/` remains canonical semantic authority. Repository-root `authority-registry.yaml` remains the accepted rc03 controlled curated representation and stays byte-identical in rc05, including `representation_release = v0.0.4rc03` for all 294 records.
 
-The current gate is whether `R3-01` is fully closed and the repository now describes one internally consistent rc04/accepted-rc03 state without changing the accepted authority-registry serialization.
+rc05 adds:
+
+```text
+schemas/authority-registry.schema.json
+tools/scaf_validator/
+```
+
+The schema enforces the accepted ten-field representation shape, exact 294-record population boundary, authorized constants/enumerations, eleven canonical normative source paths, and empty initial `relations`. The executable validator adds source-aware checks for ID uniqueness, bidirectional 294-record source coverage, canonical `source_path`, `source_anchor == id`, exactly-one canonical requirement-heading resolution, and exact source `Target` ↔ `authority_class` fidelity.
+
+The validator is a subordinate conformance check. It cannot override, repair, reinterpret, or complete frozen Markdown semantics and does not infer project applicability, compliance, verification, closure, Pattern selection, or L2→L3 relations.
+
+rc05 also adds focused regression tests for the accepted registry and controlled invalid mutations. It intentionally does **not** add CI enforcement, registry generation, generated reverse indexes/views, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
+
+The current gate is whether the schema/validator foundation faithfully executes the accepted rc03 registry contract, fails closed on structural/source-fidelity defects, preserves canonical Markdown precedence, and stays within the bounded rc05 scope.
 
 
 ## v0.0.3 Frozen L3 Baseline Position
@@ -349,28 +347,52 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/01_SCAF_v0.0.4rc02_Authority_Model_Determinism_Cleanup.md` | rc01 `R1-01` closure record for `layer`, `source_anchor`, `status` and initial `relations` behavior |
 | `docs/executable-governance/02_SCAF_v0.0.4rc03_Initial_Authority_Registry_Serialization.md` | Accepted initial 294-record registry serialization format, ownership, reproducibility and gate contract |
 | `docs/executable-governance/03_SCAF_v0.0.4rc04_Authority_Registry_Release_State_Documentation_Cleanup.md` | Focused `R3-01` repository-state documentation cleanup and non-regression record |
+| `docs/executable-governance/04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` | Current schema/validator foundation scope, authority boundary, commands, regression contract and review gate |
+| `schemas/authority-registry.schema.json` | JSON Schema Draft 2020-12 structural contract for the accepted rc03 ten-field / 294-record representation |
+| `tools/scaf_validator/validator.py` | Executable structural + canonical-source fidelity validator |
+| `tools/scaf_validator/tests/test_validator.py` | Regression tests for accepted registry and controlled invalid mutations |
+| `tools/scaf_validator/README.md` | Validator installation, execution and validation-boundary guidance |
 | `CHANGELOG.md` | RC history and frozen release record |
 
 The filenames retain `Gen2` where they describe migration lineage. The framework name in normative-facing prose is SCAF.
 
 ## CI / Automation Position
 
-**v0.0.4rc04 introduces no schema, executable validator, generator or CI enforcement.**
+**v0.0.4rc05 adds local schema validation, source-aware structural validation and regression tests, but still introduces no CI enforcement.**
 
-The authority registry has already been serialized and independently accepted at rc03, conditional only on the root-README cleanup now addressed by rc04. The accepted registry remains a subordinate controlled curated representation; frozen normative Markdown remains semantic authority.
+The accepted rc03 `authority-registry.yaml` remains unchanged and subordinate to frozen normative Markdown. The rc05 schema/validator executes the accepted representation contract and fails closed on representation/source inconsistencies; it does not become a competing authority source.
 
-The next separately gated executable-governance stage may define the schema + structural validator contract for the existing ten-field registry representation. rc04 itself does not choose a schema language, implement validation, add fixtures/tests, generate indexes/views, add CI, or copy Gen1 workflows.
+Local commands from repository root:
 
-Preferred order remains:
+```text
+python -m pip install -r tools/scaf_validator/requirements.txt
+python -m tools.scaf_validator.validator
+python -m unittest discover -s tools/scaf_validator/tests -v
+```
+
+Expected accepted-registry validation summary:
+
+```text
+Records:    294
+Unique IDs: 294
+Source IDs: 294
+Project-Applicable Obligations: 218
+Framework Normative Invariants: 76
+Errors:      0
+RESULT: PASS
+```
+
+CI merge blocking, generated reverse indexes/views, registry generation, code generation, automatic project applicability inference and machine-readable L2→L3 relations remain later separately gated work.
+
+Preferred order now is:
 
 ```text
 Human semantic authority
    -> controlled normative content
    -> stable machine-readable authority model
    -> accepted 294-record registry serialization
-   -> schema + structural validator
-   -> regression tests
-   -> CI / generated views / later executable governance
+   -> schema + structural/source-aware validator + regression tests
+   -> later CI / generated views / executable governance
 ```
 
 
@@ -422,6 +444,7 @@ v0.0.4rc01   # machine-readable authority-model foundation; independent gate YES
 v0.0.4rc02   # focused authority-model determinism cleanup; independent gate YES
 v0.0.4rc03   # initial 294-record authority-registry serialization; independent gate YES, AFTER MINOR CLEANUP
 v0.0.4rc04   # focused authority-registry release-state documentation cleanup for R3-01
+v0.0.4rc05   # authority-registry schema + structural/source-aware validator foundation
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -446,19 +469,21 @@ v0.0.4rc02 — Authority Model Determinism Cleanup
 v0.0.4rc03 — Initial 294-Record Authority Registry Serialization
               gate: YES, AFTER MINOR CLEANUP
 v0.0.4rc04 — Authority-Registry Release-State Documentation Cleanup
-              current focused closure RC for R3-01
+              gate: YES; R3-01 RESOLVED
+v0.0.4rc05 — Authority Registry Schema & Structural Validator Foundation
+              current validation-foundation RC
 ```
 
-The rc03 independent review accepted the registry population itself and found no registry-record correction necessary. The sole blocking issue before opening the schema/structural-validator stage was `R3-01`: stale root-README sections still described rc02 as current and incorrectly stated that serialization had not yet occurred.
+The rc04 independent review found no open Critical, Major, Minor or Trivial findings and authorized opening the schema/structural-validator stage. rc05 therefore adds only a local structural schema, an executable structural/source-aware validator, dependency/install guidance and focused regression tests against the already accepted rc03 registry contract.
 
-rc04 corrects that release-state/navigation inconsistency only. `authority-registry.yaml` remains unchanged from rc03, including `representation_release = v0.0.4rc03`; the accepted authority model remains unchanged; the frozen `docs/normative/` and `docs/l3/` trees remain unchanged.
+`authority-registry.yaml` remains unchanged from rc03/rc04, including all 294 `representation_release = v0.0.4rc03` values. The accepted authority model, rc02 determinism closure, rc03 serialization record, rc04 release-state cleanup record, frozen `docs/normative/`, and frozen `docs/l3/` remain unchanged.
 
-The immediate independent-review question is whether `R3-01` is fully closed without any change to the accepted registry serialization or frozen upstream baselines.
+The immediate independent-review question is whether rc05 faithfully executes those accepted contracts without becoming a competing authority source, without changing the registry population, and without introducing deferred CI/generation/project-inference/L3/M3/M4/L4 scope.
 
 Expected review gate:
 
 ```text
-V0.0.4 AUTHORITY-REGISTRY RELEASE-STATE CLEANUP GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 AUTHORITY-REGISTRY SCHEMA-VALIDATOR FOUNDATION GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
 
-A `YES` authorizes only opening a later separately controlled schema + structural-validator RC against the accepted ten-field registry contract. It does not automatically authorize CI, code generation, generated indexes/views, automatic project applicability inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
+A `YES` accepts only the schema + structural/source-aware validator foundation and authorizes planning a later separately controlled executable-governance step. It does not automatically authorize CI enforcement, code generation, registry generation, generated indexes/views, automatic project applicability inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.

@@ -1,3 +1,49 @@
+## v0.0.4rc05 — 2026-08-16
+
+Authority-registry schema and structural/source-aware validator foundation after the independent v0.0.4rc04 review returned **`V0.0.4 AUTHORITY-REGISTRY RELEASE-STATE CLEANUP GATE: YES`**, resolved `R3-01`, and found no remaining blocker to the separately gated validation stage.
+
+### Added
+
+- added `schemas/authority-registry.schema.json` using JSON Schema Draft 2020-12 for the accepted rc03 ten-field / 294-record representation;
+- added `tools/scaf_validator/validator.py` for YAML duplicate-key rejection, local schema validation, source-aware identity/coverage/path/anchor/Target fidelity checks, and fail-closed PASS/FAIL output;
+- added `tools/scaf_validator/requirements.txt` with bounded PyYAML/jsonschema dependency ranges;
+- added validator usage/boundary documentation;
+- added seven regression tests covering the accepted registry plus duplicate ID, anchor mismatch, source-path mismatch, Target/class mismatch, non-empty relations and Pattern-identity contamination;
+- added `docs/executable-governance/04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md`.
+
+### Validated
+
+- accepted registry passes with 294 records / 294 unique IDs / 294 canonical source IDs / 218 Project-Applicable Obligations / 76 Framework Normative Invariants / 0 errors;
+- seven validator regression tests pass;
+- source-aware validation uses canonical requirement headings rather than arbitrary textual ID occurrences;
+- schema/validator remain subordinate to frozen normative Markdown semantic authority.
+
+### Preserved
+
+- `authority-registry.yaml` byte-for-byte from rc04/accepted rc03 serialization, including all 294 `representation_release = v0.0.4rc03` values;
+- accepted authority-model, determinism-cleanup, serialization and release-state-cleanup contracts;
+- frozen v0.0.2 L1/L2 normative content and 294 / 218 / 76 inventory;
+- frozen v0.0.3 L3 content, twelve Pattern identities, lifecycle/maturity and trace semantics;
+- empty initial `relations`, project-state exclusion and canonical Markdown precedence.
+
+### Deliberately Not Added
+
+- no CI enforcement or merge blocking;
+- no registry generator or hybrid ownership;
+- no generated reverse indexes/views;
+- no code generation;
+- no automatic project applicability inference;
+- no machine-readable L2→L3 relation vocabulary;
+- no new L3 Pattern, SEC-primary realization, M3/M4 or L4 work.
+
+### Gate
+
+- independently verify rc04→rc05 non-regression for registry/contracts/frozen trees;
+- verify the schema is valid and expresses only the accepted ten-field representation contract;
+- execute the validator and regression tests;
+- verify fail-closed source-aware behavior and canonical Markdown precedence;
+- return an explicit `V0.0.4 AUTHORITY-REGISTRY SCHEMA-VALIDATOR FOUNDATION GATE` decision.
+
 ## v0.0.4rc04 — 2026-08-16
 
 Focused repository-state documentation cleanup after the independent v0.0.4rc03 serialization review returned **`V0.0.4 INITIAL AUTHORITY-REGISTRY SERIALIZATION GATE: YES, AFTER MINOR CLEANUP`**, accepted the 294-record registry population, and opened one Minor finding, `R3-01`, against stale current-state/navigation text in the root README.

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:scaf:schema:authority-registry:v0.0.4rc05",
+  "title": "SCAF Authority Registry v0.0.4rc03 Representation Contract",
+  "description": "Structural schema for the accepted ten-field, 294-record SCAF authority-registry representation. Frozen normative Markdown remains semantic authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["records"],
+  "properties": {
+    "records": {
+      "type": "array",
+      "minItems": 294,
+      "maxItems": 294,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/authorityRecord" }
+    }
+  },
+  "$defs": {
+    "authorityRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_kind",
+        "layer",
+        "authority_class",
+        "source_path",
+        "source_anchor",
+        "source_release",
+        "representation_release",
+        "status",
+        "relations"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^SCAF-(AK|CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
+        },
+        "record_kind": {
+          "const": "normative_requirement"
+        },
+        "layer": {
+          "const": "l1_l2_normative_authority"
+        },
+        "authority_class": {
+          "enum": [
+            "Project-Applicable Obligation",
+            "Framework Normative Invariant"
+          ]
+        },
+        "source_path": {
+          "enum": [
+            "docs/normative/00_SCAF_Authority_Kernel.md",
+            "docs/normative/10_SCAF_CTX_System_Context_Obligations.md",
+            "docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md",
+            "docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md",
+            "docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md",
+            "docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md",
+            "docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md",
+            "docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md",
+            "docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md",
+            "docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md",
+            "docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md"
+          ]
+        },
+        "source_anchor": {
+          "type": "string",
+          "pattern": "^SCAF-(AK|CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
+        },
+        "source_release": {
+          "const": "v0.0.2"
+        },
+        "representation_release": {
+          "const": "v0.0.4rc03"
+        },
+        "status": {
+          "const": "represented"
+        },
+        "relations": {
+          "type": "array",
+          "maxItems": 0
+        }
+      }
+    }
+  }
+}
