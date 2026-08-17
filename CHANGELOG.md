@@ -1,3 +1,16 @@
+## v0.0.4rc12 — 2026-08-17
+
+Executable-governance milestone consolidation / freeze-candidate RC after the independent v0.0.4rc11 review returned **`V0.0.4 CI REPOSITORY PATH-COMPONENT / ROOT-BINDING HARDENING GATE: YES`**, resolved `R10-01`, and opened no Critical, Major, Minor, or Trivial finding.
+
+- adds one consolidation record covering the complete rc01→rc11 development/review sequence, including the rc10 `NO` result and rc11 closure;
+- consolidates the current executable-governance control chain, six-artifact CI trust identity set, fixed three-stage gate, root/path hardening, and 41-test regression inventory;
+- records the frozen v0.0.2 L1/L2 and v0.0.3 L3 fingerprints and the accepted 294 / 218 / 76 / twelve-Pattern populations;
+- records the current authority/trust non-equivalence and the frozen / candidate / deferred boundary;
+- defines explicit v0.0.4 freeze-candidate acceptance criteria and an explicit rule that a review `YES` creates freeze eligibility only, not a formal freeze;
+- changes only README / CHANGELOG / executable-governance navigation plus the new rc12 consolidation record;
+- preserves all executable code, workflow behavior, registry/schema, manifest, control/checker identities, regression code, frozen normative/L3 content, and accepted governance records `00_*` through `10_*`;
+- does not add fork-PR enforcement, branch-protection administration, signing/PKI/provenance, generated views, registry generation, code generation, project inference, non-empty L2→L3 relation semantics, new L3 work, M3/M4, or L4.
+
 ## v0.0.4rc11 — 2026-08-17
 
 Focused closure/hardening RC after the independent v0.0.4rc10 review returned `V0.0.4 CI TRUST-INPUT / EXECUTABLE-GOVERNANCE GATE FOUNDATION GATE: NO` with one Major blocking finding, `R10-01`.

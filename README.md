@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc10  
-**Status:** CI Trust-Input / Executable-Governance Gate Foundation RC  
+**Version:** v0.0.4rc12  
+**Status:** Executable Governance Milestone Consolidation / Freeze Candidate RC  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,27 +38,52 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc11 Executable-Governance Development Position
+## v0.0.4rc12 Executable-Governance Freeze-Candidate Position
 
-v0.0.4rc11 follows the independent rc10 result:
+v0.0.4rc12 follows the independent rc11 result:
 
 ```text
-V0.0.4 CI TRUST-INPUT / EXECUTABLE-GOVERNANCE GATE FOUNDATION GATE: NO
+R10-01: RESOLVED
+V0.0.4 CI REPOSITORY PATH-COMPONENT / ROOT-BINDING HARDENING GATE: YES
 ```
 
-The rc10 trust model, fixed stage order, external trust-bundle contract, and authority/trust separation were accepted conceptually, but the review opened one **Major** blocking finding, `R10-01`: a symlinked parent directory could redirect `gate.py` or a downstream control into a pristine nested shadow repository and produce normal `RESULT: PASS` while the actual checkout-root state was modified and left unvalidated.
+The rc11 review opened **0 Critical, 0 Major, 0 Minor and 0 Trivial findings** and independently confirmed closure of the rc10 parent-directory symlink / shadow-repository false-PASS condition.
 
-rc11 is a focused closure RC for `R10-01`. It does not expand CI policy. It hardens repository/control-path binding by requiring every repository-relative component of each fixed control-plane artifact path to be inspected without following symlinks before resolution or execution. Parent components must be real directories and terminal control artifacts must be real regular files.
+rc12 is a **consolidation-only freeze candidate**. It introduces no new executable-governance capability. It consolidates the accepted rc01→rc11 milestone history, current executable control chain, frozen/non-frozen boundaries, regression inventory, external trust model, accepted finding closures and deferred scope into one auditable current-state record.
 
-The production CI gate now binds its candidate repository root to the lexical current checkout root instead of deriving the root directly from `Path(__file__).resolve()`. The canonical gate path must resolve to the currently running gate only after its complete path topology passes the no-symlink checks.
+Current candidate control sequence:
 
-The three downstream controls retain their existing implementations, but rc11 adds a second root-binding defense: after each successful stage, the gate requires the stage's reported `Repository:` value to equal the same verified repository root. A PASS from another nested/shadow repository is therefore not acceptable as overall gate PASS.
+```text
+Frozen normative Markdown semantic authority
+        ↓
+294-record authority registry
+        ↓
+canonical registry schema + source-aware validator
+        ↓
+frozen-baseline manifest + release-integrity checker
+        ↓
+external pin verification
+        ↓
+external CI trust bundle + six-artifact identity bootstrap
+        ↓
+fixed three-stage CI gate
+        ↓
+path-component / repository-root / stage-root hardening
+```
 
-The GitHub Actions bootstrap likewise checks every component of `tools/scaf_ci_gate/gate.py` with no-follow `lstat` semantics before computing the externally pinned gate SHA-256.
+Current regression inventory:
 
-rc11 adds focused regressions for all six pinned control-plane paths, the reproduced gate-root shadow pivot, the reproduced validator-stage shadow pivot, downstream repository-root attestation, and workflow bootstrap ordering.
+```text
+scaf_validator:          8 tests
+scaf_release_integrity:  9 tests
+scaf_external_pin:      11 tests
+scaf_ci_gate:           13 tests
+Total:                  41 tests
+```
 
-The current gate is whether rc11 fully closes `R10-01` without reopening the accepted trust-input model, frozen baselines, authority semantics, or deferred PR/signing/L3/M3/M4/L4 scope.
+rc12 does **not** freeze v0.0.4 by itself. Formal `v0.0.4` freeze requires an independent freeze-candidate gate followed by an explicit governance freeze decision.
+
+The current review question is whether the v0.0.4 executable-governance milestone is internally consistent, reproducible, executable, bounded, and ready to become a frozen baseline without further capability work.
 
 ## v0.0.3 Frozen L3 Baseline Position
 
@@ -347,7 +372,8 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` | Accepted-after-cleanup R7 diagnostic cleanup / external-pinning foundation and trust-boundary contract |
 | `docs/executable-governance/08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md` | Accepted `R8-01` local pinned-artifact symlink hardening contract |
 | `docs/executable-governance/09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` | rc10 CI trust-input / executable-governance gate foundation contract; review basis for R10-01 |
-| `docs/executable-governance/10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` | Current focused R10-01 repository path-component / root-binding closure contract |
+| `docs/executable-governance/10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` | Accepted R10-01 repository path-component / root-binding closure contract |
+| `docs/executable-governance/11_SCAF_v0.0.4rc12_Executable_Governance_Milestone_Consolidation_and_Freeze_Candidate.md` | Current v0.0.4 milestone consolidation / freeze-candidate record |
 | `release-integrity/frozen-baseline-manifest.json` | Reviewed SHA-256 manifest for the frozen v0.0.2 normative and v0.0.3 L3 trees |
 | `tools/scaf_release_integrity/checker.py` | Standalone frozen-tree byte-integrity checker bound to the canonical repository manifest |
 | `tools/scaf_release_integrity/tests/test_checker.py` | Release-integrity regression tests for mutation/add/remove/manifest/path/CWD cases |
@@ -369,7 +395,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**v0.0.4rc11 is a focused hardening RC for the rc10 CI foundation after `R10-01` demonstrated a parent-directory symlink / shadow-repository false-PASS path.**
+**v0.0.4rc12 is the consolidation-only freeze candidate for the accepted rc01→rc11 executable-governance milestone.**
 
 The accepted executable controls remain deliberately separate:
 
@@ -390,7 +416,7 @@ The CI orchestration surface remains:
 python -I tools/scaf_ci_gate/gate.py --trust-bundle <outside-repository-ci-trust-bundle.json>
 ```
 
-rc11 preserves the rc10 trust sequence but strengthens repository binding:
+The current accepted trust sequence, including rc11 repository binding hardening, is:
 
 ```text
 verified lexical checkout root
@@ -422,7 +448,8 @@ Human semantic authority
    -> frozen-baseline local release-integrity manifest + checker
    -> external pin verification foundation + symlink hardening
    -> CI trust-input bootstrap + fixed executable-governance gate
-   -> repository path-component + root-binding hardening (current rc11)
+   -> repository path-component + root-binding hardening
+   -> milestone consolidation / freeze candidate (current rc12)
    -> later separately gated PR/merge enforcement, provenance/signing or generated views
 ```
 
@@ -481,7 +508,8 @@ v0.0.4rc07   # frozen v0.0.2/v0.0.3 baseline SHA-256 manifest + standalone relea
 v0.0.4rc08   # R7 diagnostic cleanup + external pin verification foundation; gate YES, AFTER MINOR CLEANUP
 v0.0.4rc09   # focused R8-01 local pinned-artifact symlink hardening; gate YES
 v0.0.4rc10   # CI trust-input model + executable-governance gate foundation; independent gate NO (R10-01 Major)
-v0.0.4rc11   # focused CI repository path-component / root-binding hardening for R10-01
+v0.0.4rc11   # focused CI repository path-component / root-binding hardening for R10-01; gate YES
+v0.0.4rc12   # executable-governance milestone consolidation / freeze candidate; no new capability
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -520,7 +548,9 @@ v0.0.4rc09 — External-Pin Local Artifact Symlink Hardening
 v0.0.4rc10 — CI Trust-Input Model & Executable-Governance Gate Foundation
               gate: NO; R10-01 Major parent-directory symlink / shadow-root false PASS
 v0.0.4rc11 — CI Repository Path-Component & Root-Binding Hardening
-              current focused R10-01 closure RC
+              gate: YES; R10-01 RESOLVED
+v0.0.4rc12 — Executable Governance Milestone Consolidation / Freeze Candidate
+              current consolidation-only freeze-candidate RC
 ```
 
 Five different control/trust questions remain explicit:
@@ -542,17 +572,17 @@ Can CI authenticate its reviewed control plane and execute the accepted checks i
   -> scaf_ci_gate + trusted-main/manual GitHub Actions foundation
 ```
 
-The external CI trust bundle must live outside the repository. rc11 preserves the rc10 external trust contract while requiring the gate bootstrap and all six fixed control-plane paths to remain non-symlinked component-by-component under one verified checkout root.
+The external CI trust bundle must live outside the repository. The accepted rc11 control path requires the gate bootstrap and all six fixed control-plane paths to remain non-symlinked component-by-component under one verified checkout root.
 
-rc11 intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled trust/enforcement work.
+rc12 preserves the same bounded trust/enforcement scope and intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled work.
 
-The immediate independent-review question is whether rc11 fully closes `R10-01`: the gate-root and downstream-control shadow-repository pivots must fail, all six pinned control-plane paths must reject parent-component symlinks, stage-reported repository roots must remain bound to the verified checkout root, and the accepted rc10 trust/stage/failure policy must remain otherwise unchanged.
+The immediate independent-review question is whether rc12 accurately consolidates the accepted rc01→rc11 state without changing executable or semantic behavior, and whether that state is internally consistent, reproducible, executable, bounded, and eligible for a formal v0.0.4 freeze decision.
 
 Expected review gate:
 
 ```text
-V0.0.4 CI REPOSITORY PATH-COMPONENT / ROOT-BINDING HARDENING GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 EXECUTABLE-GOVERNANCE MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
 
-A `YES` closes the focused R10-01 path/root-binding defect only. It does not automatically authorize fork-PR/merge blocking, signing/provenance, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
+A `YES` establishes freeze-candidate eligibility only. It does not by itself create or rename the formal `v0.0.4` frozen baseline; formal freeze still requires an explicit governance decision.
 
