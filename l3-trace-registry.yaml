@@ -1,0 +1,841 @@
+# SCAF machine-readable L3 trace registry
+# Representation release: v0.0.5rc3
+# Frozen semantic source: v0.0.3 L3 Pattern metadata
+# This file is a subordinate controlled representation, not semantic authority.
+# Canonical order: pattern_id, controlled relation-type order, l2_id.
+trace_registry_version: 1
+representation_release: v0.0.5rc3
+relations:
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-INT-010
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-013
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-019
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-012
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-RUN-010
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-CFG-018
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-CFG-019
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-007
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-008
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-010
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-RUN-011
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-COM-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-007
+  pattern_source_path: docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-OBS-016
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-OBS-017
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-OBS-018
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-010
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-011
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-012
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-019
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-020
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-021
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: constraint_input
+  l2_id: SCAF-LIFE-010
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: constraint_input
+  l2_id: SCAF-OBS-009
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: constraint_input
+  l2_id: SCAF-OBS-013
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-002
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-EVD-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-011
+  pattern_source_path: docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-008
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-015
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: constraint_input
+  l2_id: SCAF-ARCH-007
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: constraint_input
+  l2_id: SCAF-ARCH-008
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: constraint_input
+  l2_id: SCAF-ARCH-015
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: constraint_input
+  l2_id: SCAF-ROB-007
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-001
+  relation_type: constraint_input
+  l2_id: SCAF-ROB-014
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-009
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-010
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-011
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-015
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-ARCH-006
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-ARCH-015
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-CTX-007
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-CTX-015
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-ROB-014
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-RUN-006
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-FTL-002
+  relation_type: constraint_input
+  l2_id: SCAF-RUN-020
+  pattern_source_path: docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-LIFE-015
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-LIFE-017
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-021
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-LIFE-012
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-LIFE-014
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-LIFE-016
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-LIFE-018
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-LIFE-020
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-LIFE-021
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: constraint_input
+  l2_id: SCAF-CFG-008
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: constraint_input
+  l2_id: SCAF-CFG-009
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: constraint_input
+  l2_id: SCAF-CFG-010
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: constraint_input
+  l2_id: SCAF-RUN-009
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: constraint_input
+  l2_id: SCAF-SEC-010
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-LCM-001
+  relation_type: constraint_input
+  l2_id: SCAF-SEC-022
+  pattern_source_path: docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-CFG-010
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-CFG-013
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-003
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-004
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-006
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-008
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-012
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: constraint_input
+  l2_id: SCAF-LIFE-010
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-PST-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-011
+  pattern_source_path: docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: where storage/resource budget is material
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-011
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-032
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-015
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-016
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-019
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-007
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: conditional where retry repeats/interleaves Interaction exchanges
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-010
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: conditional where retry continuity crosses/reuses connection sessions
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-013
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable outcomes when retry follows an Interaction failure
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-006
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-011
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-REC-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-012
+  pattern_source_path: docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-004
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-005
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-014
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: supporting_realization
+  l2_id: SCAF-OBS-015
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-031
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-010
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: where session identity is material
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-002
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-006
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-002
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-ROB-006
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-002
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-005
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-002
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-011
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-002
+  relation_type: constraint_input
+  l2_id: SCAF-LIFE-008
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-002
+  relation_type: constraint_input
+  l2_id: SCAF-LIFE-009
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SUP-002
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-006
+  pattern_source_path: docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-CFG-018
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-RUN-010
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: supporting_realization
+  l2_id: SCAF-CFG-019
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: supporting_realization
+  l2_id: SCAF-ROB-012
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: supporting_realization
+  l2_id: SCAF-RUN-011
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-007
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-010
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: constraint_input
+  l2_id: SCAF-RUN-021
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: constraint_input
+  l2_id: SCAF-SEC-025
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-SYN-001
+  relation_type: constraint_input
+  l2_id: SCAF-TIME-007
+  pattern_source_path: docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-TIME-009
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-TIME-012
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-TIME-010
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-TIME-011
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: supporting_realization
+  l2_id: SCAF-TIME-013
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-007
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: constraint_input
+  l2_id: SCAF-INT-008
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-TIM-001
+  relation_type: constraint_input
+  l2_id: SCAF-ROB-016
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-TIME-004
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: primary_realization_candidate
+  l2_id: SCAF-TIME-020
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Primary L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: supporting_realization
+  l2_id: SCAF-TIME-002
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: supporting_realization
+  l2_id: SCAF-TIME-003
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: supporting_realization
+  l2_id: SCAF-TIME-005
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Supporting L2 Trace
+  source_release: v0.0.3
+  qualifier: null
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: constraint_input
+  l2_id: SCAF-INT-008
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: constraint_input
+  l2_id: SCAF-ROB-004
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable
+- pattern_id: SCAF-PAT-TIM-002
+  relation_type: constraint_input
+  l2_id: SCAF-RUN-021
+  pattern_source_path: docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md
+  pattern_source_field: Constraint Inputs
+  source_release: v0.0.3
+  qualifier: applicable

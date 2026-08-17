@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc2  
-**Status:** L3 Trace Model Determinism & Qualifier-Fidelity Cleanup  
+**Current Development Release:** v0.0.5rc3  
+**Status:** L3 Machine-Readable Trace Serialization Foundation  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -40,7 +40,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc2` | Focused determinism / qualifier-fidelity cleanup of the L3 trace representation model |
+| `v0.0.5rc3` | Initial concrete serialization of the frozen L3 trace model |
 
 Frozen releases are not modified in place. New semantic or executable capability proceeds on a later controlled RC/version line.
 
@@ -61,38 +61,29 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. The current v0.0.5 development line does not reopen them.
 
-## Current v0.0.5rc2 Development Focus
+## Current v0.0.5rc3 Development Focus
 
-The frozen v0.0.3 L3 catalog already contains authoritative human-readable L2-to-L3 trace metadata for twelve published Patterns.
+The frozen v0.0.3 L3 catalog contains 119 accepted typed relations across twelve Patterns. v0.0.5rc1/rc2 established the reviewed representation model, qualifier-fidelity rule and canonical ordering.
 
-Current frozen trace inventory:
+`v0.0.5rc3` now serializes that accepted population into repository-root [`l3-trace-registry.yaml`](l3-trace-registry.yaml).
+
+Current serialized inventory:
 
 ```text
 12 Pattern identities
-23 Primary Realization Candidate references
-41 Supporting Realization references
-55 Constraint Input references
-119 total trace relations
+23 primary_realization_candidate
+41 supporting_realization
+55 constraint_input
+119 total relation records
 82 unique referenced frozen L2 IDs
+15 records with material source qualifiers
 ```
 
-`v0.0.5rc1` defined how those existing trace semantics may later be represented machine-readably without creating a second semantic authority. The independent rc1 review returned `YES, AFTER MINOR CLEANUP`; `v0.0.5rc2` is the bounded cleanup for material qualifier fidelity and canonical deterministic ordering.
+The representation remains subordinate to frozen L3 Pattern metadata. `authority-registry.yaml` remains separate and unchanged.
 
-The intended boundary is:
+This RC does **not** add a trace schema or validator implementation, generated indexes, a resolver, project applicability inference, Pattern auto-selection, new L3 content or L4 guidance.
 
-```text
-Frozen L3 Pattern Markdown metadata
-        ↓ semantic trace authority
-Machine-readable L3 trace representation
-        ↓ subordinate representation
-Generated forward/reverse navigation views
-        ↓ derived only
-Future resolver/context consumption
-```
-
-The current RC does **not** serialize the 119 relations, introduce a trace schema/validator implementation, generate a reverse index, infer project applicability, select Patterns, claim satisfaction/compliance, add L4 guidance, or modify the existing `authority-registry.yaml` relation state. It only makes qualifier preservation enforceable at the future model/validator-contract level and makes canonical ordering mandatory.
-
-See [`docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md`](docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md) and [`docs/executable-governance/15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md`](docs/executable-governance/15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md).
+See [`docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md`](docs/executable-governance/14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md), [`docs/executable-governance/15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md`](docs/executable-governance/15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md), and [`docs/executable-governance/16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md`](docs/executable-governance/16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md).
 
 ## Authority and Trace Boundaries
 
@@ -175,6 +166,7 @@ The production CI gate additionally requires the reviewed repository-external tr
 | `docs/l3/` | Frozen v0.0.3 L3 Pattern / Mechanism Catalog |
 | `docs/executable-governance/` | Machine-readable/executable-governance contracts, decisions and freeze records |
 | `authority-registry.yaml` | Frozen v0.0.4 294-record authority representation |
+| `l3-trace-registry.yaml` | v0.0.5rc3 subordinate serialization of frozen L3 typed trace relations |
 | `schemas/` | Frozen v0.0.4 authority-registry schema |
 | `release-integrity/` | Frozen-baseline integrity manifest |
 | `tools/scaf_validator/` | Semantic / structural / source-aware validator |

@@ -6,12 +6,13 @@
 
 ## Current Development Line
 
-`v0.0.5rc2 — L3 Trace Model Determinism & Qualifier-Fidelity Cleanup` is the focused closure RC after the rc1 model review returned `YES, AFTER MINOR CLEANUP`. It closes only `R1-01` and `R1-02`: material qualifier fidelity becomes an explicit mandatory representation/validator-contract invariant, and canonical future serialization ordering becomes mandatory rather than advisory. It does not yet serialize relations, add a trace schema/validator implementation, generate indexes, infer project applicability, or introduce L4 guidance.
+`v0.0.5rc3 — L3 Machine-Readable Trace Serialization Foundation` follows the clean rc2 model-closure gate. It adds the first concrete subordinate serialization, repository-root `l3-trace-registry.yaml`, containing the accepted frozen population of 119 typed L2-to-L3 relations.
 
-Current records:
+Current v0.0.5 records:
 
-- `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — model foundation, amended by rc2 to close the two reviewed wording/contract gaps;
-- `15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md` — focused `R1-01` / `R1-02` closure record.
+- `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — accepted model foundation as amended by rc2;
+- `15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md` — accepted `R1-01` / `R1-02` closure;
+- `16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md` — current concrete serialization contract and review candidate.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 

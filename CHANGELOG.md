@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.5rc3 — L3 Machine-Readable Trace Serialization Foundation
+
+- Continue the controlled v0.0.5 line after rc2 closed `R1-01` and `R1-02` and returned `V0.0.5 L3 TRACE MODEL DETERMINISM / QUALIFIER-FIDELITY CLEANUP GATE: YES`.
+- Add repository-root `l3-trace-registry.yaml` as the first concrete subordinate serialization of the frozen v0.0.3 L3 trace metadata.
+- Serialize exactly 119 unique typed relation records across 12 Patterns: 23 `primary_realization_candidate`, 41 `supporting_realization`, and 55 `constraint_input`, referencing 82 unique frozen L2 IDs.
+- Realize the accepted canonical ordering by `pattern_id`, fixed relation-type order, then `l2_id`.
+- Serialize each record with `pattern_id`, `relation_type`, `l2_id`, `pattern_source_path`, `pattern_source_field`, `source_release`, and always-present nullable `qualifier`.
+- Preserve 15 material source-qualifier associations as canonical source-fidelity text without introducing executable applicability/condition semantics.
+- Keep frozen v0.0.3 Pattern Markdown metadata as semantic trace authority and keep `authority-registry.yaml` separate and unchanged.
+- Add `docs/executable-governance/16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md`.
+- Preserve frozen v0.0.2/v0.0.3/v0.0.4 identities and all 41 accepted executable-governance regressions.
+- Defer trace schema, executable trace validator/generator, generated reverse index, resolver/context packaging, project inference, new L3 work, M3/M4, L4 guidance, code generation, and additional CI/trust capability.
+
 ## v0.0.5rc2 — L3 Trace Model Determinism & Qualifier-Fidelity Cleanup
 
 - Continue the controlled v0.0.5 line after the independent rc1 review returned `V0.0.5 L3 MACHINE-READABLE TRACE REPRESENTATION MODEL FOUNDATION GATE: YES, AFTER MINOR CLEANUP`.
