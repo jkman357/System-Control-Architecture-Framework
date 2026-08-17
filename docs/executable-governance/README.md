@@ -1,7 +1,7 @@
 # SCAF Executable Governance Development
 
-**Development Release:** v0.0.4rc08  
-**Status:** Release-Integrity Diagnostic Cleanup / External Pinning Foundation RC  
+**Development Release:** v0.0.4rc09  
+**Status:** External-Pin Local Artifact Symlink Hardening RC  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 ## 1. Purpose
@@ -10,15 +10,15 @@ This directory contains separately controlled development toward SCAF executable
 
 The frozen v0.0.2 and v0.0.3 baselines are not modified in place. Executable-governance artifacts are downstream representations, schemas, validators, integrity controls and later enforcement mechanisms that must preserve the authority semantics of those frozen baselines.
 
-## 2. Current rc08 Scope
+## 2. Current rc09 Scope
 
-The independent v0.0.4rc07 review returned:
+The independent v0.0.4rc08 review returned:
 
 ```text
-V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE: YES
+V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE: YES, AFTER MINOR CLEANUP
 ```
 
-The review accepted the rc07 local frozen-baseline integrity foundation with no Critical/Major/Minor finding and only two non-blocking Trivial findings (`R7-01`, `R7-02`).
+The review confirmed `R7-01` and `R7-02` resolved and opened one Minor finding, `R8-01`, against local pinned-artifact symlink detection after path resolution.
 
 Current executable-governance artifacts are:
 
@@ -29,17 +29,16 @@ Current executable-governance artifacts are:
 - `04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` — accepted schema/validator foundation;
 - `05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md` — accepted canonical-schema/CLI hardening; `R5-01` resolved;
 - `06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` — accepted local frozen-baseline release-integrity foundation;
-- `07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` — current diagnostic cleanup / external-pinning foundation;
+- `07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` — accepted-after-cleanup external-pinning foundation; `R7-01` / `R7-02` resolved;
+- `08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md` — current focused `R8-01` closure;
 - repository-root `authority-registry.yaml` — accepted rc03 294-record controlled representation;
 - `schemas/authority-registry.schema.json` and `tools/scaf_validator/` — accepted semantic/representation conformance path;
-- `release-integrity/frozen-baseline-manifest.json` and `tools/scaf_release_integrity/` — accepted local frozen-byte integrity path, with rc08 diagnostic cleanup;
-- `tools/scaf_external_pin/` — current external-pin verification path for manifest/checker identities.
+- `release-integrity/frozen-baseline-manifest.json` and `tools/scaf_release_integrity/` — accepted local frozen-byte integrity path;
+- `tools/scaf_external_pin/` — external-pin verification path with current local-artifact symlink hardening.
 
-rc08 preserves the accepted rc07 manifest/protected scope and closes `R7-01` / `R7-02`. It adds an external-pin checker that requires a trusted JSON pin file from outside the repository and compares exactly the local canonical manifest and local release-integrity checker identities against that external trust input.
+rc09 changes only the external-pin local pinned-artifact path handling, its regression suite, and current release/navigation/governance records. The external pin contract itself remains unchanged.
 
-Frozen Markdown remains semantic authority. The external pin document is not semantic authority and does not decide project state or L3 selection. The external-pin checker itself is trusted as part of the reviewed rc08 source/package; CI/signing/provenance mechanisms that externally pin that checker/package remain future separately gated work.
-
-rc08 does **not** add CI enforcement, signing/PKI, canonical external-pin distribution/storage, registry generation, generated reverse indexes/views, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
+Frozen Markdown remains semantic authority. rc09 does **not** add CI enforcement, signing/PKI, canonical external-pin distribution/storage, registry generation, generated reverse indexes/views, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
 
 ## 3. Development Order
 
@@ -54,21 +53,23 @@ schema + structural/source-aware validator + regression tests
         ↓
 canonical schema binding + validator CLI hardening
         ↓
-frozen-baseline manifest + standalone release-integrity checker (accepted rc07)
+frozen-baseline manifest + standalone release-integrity checker
         ↓
-release-integrity diagnostic cleanup + external-pin verification (current rc08)
+external-pin verification foundation
         ↓
-later separately gated CI / generated views / executable governance
+local pinned-artifact symlink hardening (current rc09)
+        ↓
+later separately gated CI / signing / generated views / executable governance
 ```
 
-Semantic validation and release integrity are deliberately separate controls. Each transition requires a separately reviewed repository state.
+Semantic validation, frozen-byte integrity, and external identity pinning remain deliberately separate controls.
 
 ## 4. Current Gate
 
-The independent v0.0.4rc08 review shall determine whether `R7-01` / `R7-02` are closed, the external-pin checker correctly binds the local canonical manifest/checker identities to a trusted outside-repository pin document, all accepted upstream controls remain non-regressed, and no CI/signing/L3/M3/M4/L4 scope is introduced.
+The independent v0.0.4rc09 review shall determine whether `R8-01` is fully closed on the real production CLI path for both fixed pinned artifacts, all accepted upstream controls remain non-regressed, and no deferred CI/signing/L3/M3/M4/L4 scope is introduced.
 
 Expected gate label:
 
 ```text
-V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE
+V0.0.4 EXTERNAL-PIN LOCAL-ARTIFACT SYMLINK-HARDENING GATE
 ```

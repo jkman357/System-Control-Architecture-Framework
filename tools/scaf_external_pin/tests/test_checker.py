@@ -147,6 +147,54 @@ class ExternalPinTests(unittest.TestCase):
                 self.assertIn("unrecognized arguments", run.stderr)
                 self.assertNotIn("RESULT: PASS", run.stdout)
 
+    def _run_cli_against_repo_copy_with_artifact_symlink(self, artifact_rel: str):
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp = Path(temp_dir)
+            repo_copy = temp / "System-Control-Architecture-Framework"
+            import shutil
+            shutil.copytree(REPO_ROOT, repo_copy, symlinks=True)
+
+            artifact = repo_copy / artifact_rel
+            real_artifact = artifact.with_name(artifact.name + ".real")
+            artifact.rename(real_artifact)
+            try:
+                artifact.symlink_to(real_artifact.name)
+            except (OSError, NotImplementedError):
+                self.skipTest("symlink creation unavailable")
+
+            pin = {
+                "pin_version": 1,
+                "pin_scope": EXPECTED_PIN_SCOPE,
+                "hash_algorithm": "sha256",
+                "artifacts": [
+                    {"path": MANIFEST_REL, "sha256": sha256_file(repo_copy / MANIFEST_REL)},
+                    {"path": CHECKER_REL, "sha256": sha256_file(repo_copy / CHECKER_REL)},
+                ],
+            }
+            pin_path = temp / "trusted-pin.json"
+            pin_path.write_text(json.dumps(pin), encoding="utf-8")
+
+            env = os.environ.copy()
+            env["PYTHONPATH"] = str(repo_copy)
+            run = subprocess.run(
+                [sys.executable, "-m", "tools.scaf_external_pin.checker", "--pin-file", str(pin_path)],
+                cwd=repo_copy,
+                env=env,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            self.assertEqual(run.returncode, 1, run.stdout + run.stderr)
+            self.assertIn("RESULT: FAIL", run.stdout)
+            self.assertIn(f"pinned repository artifact must not be a symlink: {artifact_rel}", run.stdout)
+            self.assertNotIn(f"{artifact_rel}: MATCH", run.stdout)
+
+    def test_production_cli_rejects_manifest_artifact_same_byte_symlink(self):
+        self._run_cli_against_repo_copy_with_artifact_symlink(MANIFEST_REL)
+
+    def test_production_cli_rejects_checker_artifact_same_byte_symlink(self):
+        self._run_cli_against_repo_copy_with_artifact_symlink(CHECKER_REL)
+
 
 if __name__ == "__main__":
     unittest.main()

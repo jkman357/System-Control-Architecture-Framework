@@ -61,12 +61,17 @@ def _safe_repo_path(repo_root: Path, relative: str) -> Path:
     rel = Path(relative)
     if rel.is_absolute():
         raise ValueError(f"absolute repository artifact path is not allowed: {relative}")
-    candidate = (repo_root / rel).resolve()
+
+    lexical_candidate = repo_root / rel
+    if lexical_candidate.is_symlink():
+        raise ValueError(f"pinned repository artifact must not be a symlink: {relative}")
+
+    resolved_candidate = lexical_candidate.resolve()
     try:
-        candidate.relative_to(repo_root.resolve())
+        resolved_candidate.relative_to(repo_root.resolve())
     except ValueError as exc:
         raise ValueError(f"repository artifact path escapes root: {relative}") from exc
-    return candidate
+    return resolved_candidate
 
 
 def validate_external_pin_data(pin: dict[str, Any], repo_root: Path) -> ExternalPinReport:

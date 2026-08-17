@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Version:** v0.0.4rc08  
-**Status:** Release-Integrity Diagnostic Cleanup & External Pinning Foundation RC  
+**Version:** v0.0.4rc09  
+**Status:** External-Pin Local Artifact Symlink Hardening RC  
 **Date:** 2026-08-17
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and decision framework intended to reduce design omission, unclear responsibility, fault propagation, poor diagnosability, unrecoverable behavior, and unverifiable design decisions.
@@ -38,39 +38,30 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc08 Executable-Governance Development Position
+## v0.0.4rc09 Executable-Governance Development Position
 
-v0.0.4rc08 follows the independent rc07 result:
+v0.0.4rc09 follows the independent rc08 result:
 
 ```text
-V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE: YES
+V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE: YES, AFTER MINOR CLEANUP
 ```
 
-The rc07 review accepted the local frozen-baseline manifest/checker foundation with no Critical/Major/Minor findings and two non-blocking Trivial findings. rc08 closes both:
+The rc08 review confirmed `R7-01` / `R7-02` resolved and opened one Minor finding, `R8-01`: the external-pin checker resolved a fixed local pinned-artifact path before checking `is_symlink()`, allowing an in-repository same-byte symlink to preserve SHA-256 identity and return normal PASS despite the documented no-symlink policy.
 
-- `R7-01` — per-tree integrity summaries now report `MISMATCH` for symlink-only/other tree structural failures;
-- `R7-02` — the rc07 CHANGELOG now explicitly lists production CLI override rejection as the eighth regression category.
+rc09 closes only `R8-01`. For each fixed local pinned artifact the production path now checks the lexical artifact path for symlink status **before** resolution, then performs repository confinement, regular-file and SHA-256 checks.
 
-rc08 then adds one bounded trust layer **without adding CI**: `tools/scaf_external_pin/checker.py` verifies that two local release-integrity artifacts match a trusted JSON pin document supplied from outside the repository:
+The two fixed artifact identities remain:
 
 ```text
 release-integrity/frozen-baseline-manifest.json
 tools/scaf_release_integrity/checker.py
 ```
 
-The production command is:
+Two new end-to-end regressions independently replace each fixed artifact with an in-repository same-byte symlink and require production CLI `RESULT: FAIL`. The external-pin suite therefore advances from 9 to 11 tests.
 
-```text
-python -m tools.scaf_external_pin.checker --pin-file <outside-repository-pin.json>
-```
+The accepted authority registry/schema/validator, rc07 manifest and release-integrity checker/tests, frozen `docs/normative/` and `docs/l3/`, authority/project/L3 boundaries and empty machine-readable relations are not semantically reopened by rc09.
 
-The pin file must be outside the SCAF repository, regular, non-symlink, and must contain exactly the two fixed SHA-256 pins. The caller cannot replace repository root, local artifact paths or hash algorithm.
-
-This closes the specific rc07 local-trust gap in a bounded way: a separately protected external pin can detect coordinated changes to the local manifest/checker. The pin document itself is a trust input supplied outside the repository. rc08 does not define how it is signed, distributed, protected, or enforced in CI, and the external-pin checker itself remains trusted as part of the reviewed rc08 source/package.
-
-The accepted authority registry/schema/validator, rc07 manifest protected scope, frozen `docs/normative/` and `docs/l3/`, authority/project/L3 boundaries and empty machine-readable relations are not semantically reopened by rc08.
-
-The current gate is whether the two rc07 Trivial findings are closed and this external-pin verification foundation is correctly bounded without introducing CI/signing/generated-view/L3/M3/M4/L4 scope.
+The current gate is whether `R8-01` is fully closed without introducing CI/signing/provenance/generated-view/L3/M3/M4/L4 scope.
 
 ## v0.0.3 Frozen L3 Baseline Position
 
@@ -356,7 +347,8 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` | Accepted schema/validator foundation scope and regression contract; upstream review opened only `R5-01` CLI binding cleanup |
 | `docs/executable-governance/05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md` | Accepted canonical-schema binding / production CLI hardening contract; `R5-01` resolved |
 | `docs/executable-governance/06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` | Accepted frozen-baseline release-integrity foundation |
-| `docs/executable-governance/07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` | Current R7 cleanup / external-pinning foundation and trust-boundary contract |
+| `docs/executable-governance/07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` | Accepted-after-cleanup R7 diagnostic cleanup / external-pinning foundation and trust-boundary contract |
+| `docs/executable-governance/08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md` | Current focused `R8-01` local pinned-artifact symlink hardening contract |
 | `release-integrity/frozen-baseline-manifest.json` | Reviewed SHA-256 manifest for the frozen v0.0.2 normative and v0.0.3 L3 trees |
 | `tools/scaf_release_integrity/checker.py` | Standalone frozen-tree byte-integrity checker bound to the canonical repository manifest |
 | `tools/scaf_release_integrity/tests/test_checker.py` | Release-integrity regression tests for mutation/add/remove/manifest/path/CWD cases |
@@ -374,7 +366,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**v0.0.4rc08 adds external pin verification but still introduces no CI enforcement or merge blocking.**
+**v0.0.4rc09 hardens the accepted external-pin verification path but still introduces no CI enforcement or merge blocking.**
 
 The executable controls remain deliberately separate:
 
@@ -421,6 +413,7 @@ Human semantic authority
    -> canonical schema binding + validator CLI hardening
    -> frozen-baseline local release-integrity manifest + checker
    -> external pin verification foundation
+   -> local pinned-artifact symlink hardening
    -> later separately gated CI/signing/enforcement or generated views
 ```
 
@@ -476,7 +469,8 @@ v0.0.4rc04   # focused authority-registry release-state documentation cleanup fo
 v0.0.4rc05   # authority-registry schema + structural/source-aware validator foundation; gate YES, AFTER MINOR CLEANUP
 v0.0.4rc06   # canonical schema binding + validator CLI hardening for R5-01; gate YES
 v0.0.4rc07   # frozen v0.0.2/v0.0.3 baseline SHA-256 manifest + standalone release-integrity checker; gate YES
-v0.0.4rc08   # R7 diagnostic cleanup + external pin verification foundation
+v0.0.4rc08   # R7 diagnostic cleanup + external pin verification foundation; gate YES, AFTER MINOR CLEANUP
+v0.0.4rc09   # focused R8-01 local pinned-artifact symlink hardening
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -509,10 +503,12 @@ v0.0.4rc06 — Canonical Schema Binding & Validator CLI Hardening
 v0.0.4rc07 — Frozen Baseline Release-Integrity Foundation
               gate: YES; R7-01/R7-02 were non-blocking Trivial findings
 v0.0.4rc08 — Release-Integrity Diagnostic Cleanup & External Pinning Foundation
-              current bounded trust-control RC
+              gate: YES, AFTER MINOR CLEANUP; R7-01/R7-02 RESOLVED; R8-01 opened
+v0.0.4rc09 — External-Pin Local Artifact Symlink Hardening
+              current focused R8-01 closure RC
 ```
 
-rc08 closes the two rc07 Trivial findings without changing the accepted frozen source bytes or rc07 manifest. It changes only release-integrity diagnostics/tests plus current release/navigation state, and adds a separate external-pin checker.
+rc09 changes only the external-pin local pinned-artifact symlink handling/tests plus current release/navigation state. It preserves the accepted external-pin contract and all earlier frozen/accepted control artifacts.
 
 Three different control questions remain explicit:
 
@@ -530,14 +526,14 @@ Do the local manifest/checker identities match an external trust input?
   -> scaf_external_pin
 ```
 
-The external pin document must live outside the repository. It can establish a trust relationship only to the degree that the caller/environment protects that external file. rc08 does not claim signing, provenance, CI enforcement, merge blocking, or self-authentication of the pin checker/package.
+The external pin document must live outside the repository. It can establish a trust relationship only to the degree that the caller/environment protects that external file. rc09 does not claim signing, provenance, CI enforcement, merge blocking, or self-authentication of the pin checker/package.
 
-The immediate independent-review question is whether `R7-01` and `R7-02` are fully closed, external pinning is fail-closed and correctly bounded, all accepted upstream controls/frozen trees remain non-regressed, and no deferred CI/signing/generated-view/L3/M3/M4/L4 scope is introduced.
+The immediate independent-review question is whether `R8-01` is fully closed for both fixed local pinned artifact paths on the real production CLI path, all accepted upstream controls/frozen trees remain non-regressed, and no deferred CI/signing/generated-view/L3/M3/M4/L4 scope is introduced.
 
 Expected review gate:
 
 ```text
-V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 EXTERNAL-PIN LOCAL-ARTIFACT SYMLINK-HARDENING GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
 
-A `YES` accepts only the rc08 diagnostic cleanup and external-pin verification foundation. It does not automatically authorize CI enforcement, signing/provenance, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
+A `YES` resolves only `R8-01` and accepts the rc08 external-pin foundation with the focused rc09 production-path hardening. It does not automatically authorize CI enforcement, signing/provenance, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.

@@ -1,10 +1,10 @@
 # SCAF External Release-Integrity Pin Checker
 
-This rc08 package verifies that the local canonical frozen-baseline manifest and local release-integrity checker match a trusted pin document supplied from **outside** the SCAF repository.
+This rc09 package verifies that the local canonical frozen-baseline manifest and local release-integrity checker match a trusted pin document supplied from **outside** the SCAF repository.
 
 ## Trust model
 
-The rc07 local checker proves only source-vs-manifest consistency. A coordinated modification of source + local manifest can therefore pass local comparison. rc08 adds a separate external comparison step:
+The rc07 local checker proves only source-vs-manifest consistency. A coordinated modification of source + local manifest can therefore pass local comparison. rc08 introduced a separate external comparison step; rc09 hardens local pinned-artifact symlink rejection:
 
 ```text
 trusted external pin document
@@ -16,9 +16,9 @@ local release-integrity checker
 frozen docs/normative + docs/l3 bytes
 ```
 
-The external pin document is the caller/environment trust input. SCAF rc08 does not decide how that document is distributed, signed, protected, or stored. CI enforcement, signing, protected release metadata and provenance services remain separately gated.
+The external pin document is the caller/environment trust input. SCAF rc09 does not decide how that document is distributed, signed, protected, or stored. CI enforcement, signing, protected release metadata and provenance services remain separately gated.
 
-The pin checker itself is not self-authenticated by the pin document. Its trust comes from executing the reviewed rc08 source/package; a future CI/signing stage may independently pin the rc08 checker/package identity.
+The pin checker itself is not self-authenticated by the pin document. Its trust comes from executing the reviewed rc09 source/package; a future CI/signing stage may independently pin the rc09 checker/package identity.
 
 ## External pin document contract
 
@@ -71,4 +71,17 @@ The two steps are intentionally separate so external provenance/pinning is not c
 
 ```text
 python -m unittest discover -s tools/scaf_external_pin/tests -v
+```
+
+
+## rc09 local pinned-artifact symlink hardening
+
+Production verification rejects either fixed repository artifact if the **artifact path itself** is a symlink, even when that symlink resolves to an in-repository regular file with identical bytes. The checker evaluates the lexical artifact path for symlink status before resolving it for repository confinement and hashing.
+
+This closes upstream `R8-01` without changing the external pin document contract, fixed artifact identities, SHA-256 algorithm, or trust model. Symlinked parent-component policy is not expanded by rc09; the required closure is specifically the fixed artifact path itself.
+
+Regression suite expectation for rc09:
+
+```text
+11 tests / OK
 ```

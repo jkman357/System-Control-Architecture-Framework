@@ -1,3 +1,26 @@
+## v0.0.4rc09 — 2026-08-17
+
+Focused external-pin local pinned-artifact symlink hardening after the independent v0.0.4rc08 review returned **`V0.0.4 RELEASE-INTEGRITY DIAGNOSTIC-CLEANUP / EXTERNAL-PINNING FOUNDATION GATE: YES, AFTER MINOR CLEANUP`** and opened one Minor finding, `R8-01`.
+
+### Fixed
+
+- close `R8-01` by checking each fixed local pinned artifact's lexical repository path for symlink status before path resolution;
+- preserve repository-root confinement after resolution and regular-file / SHA-256 verification after the lexical symlink check;
+- ensure an in-repository same-byte symlink cannot satisfy the documented local pinned-artifact regular-file policy.
+
+### Added
+
+- add two end-to-end production CLI regressions, one for the canonical frozen-baseline manifest path and one for the release-integrity checker path, each requiring same-byte in-repository symlink replacement to return non-zero / `RESULT: FAIL`;
+- extend the external-pin regression suite from 9 to 11 tests;
+- add `docs/executable-governance/08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md`.
+
+### Preserved / Deferred
+
+- preserve the rc08 external pin document contract, fixed artifact identities, SHA-256 algorithm and outside-repository pin-file rule;
+- preserve the rc07 frozen-baseline manifest and release-integrity checker/test semantics unchanged;
+- preserve the accepted authority registry/schema/semantic validator and frozen v0.0.2/v0.0.3 trees;
+- do not add CI/merge enforcement, signing/PKI/provenance, canonical external-pin storage, generated views/indexes, registry generation, code generation, project inference, machine-readable L2→L3 relations, new L3 work, M3/M4 or L4.
+
 ## v0.0.4rc08 — 2026-08-17
 
 Release-integrity diagnostic cleanup and external-pinning foundation after the independent v0.0.4rc07 review returned **`V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE: YES`**, with no Critical/Major/Minor findings and two non-blocking Trivial findings (`R7-01`, `R7-02`).
