@@ -1,82 +1,70 @@
 # SCAF Executable Governance Development
 
-**Development Release:** v0.0.4rc06  
-**Status:** Canonical Schema Binding & Validator CLI Hardening RC  
+**Development Release:** v0.0.4rc07  
+**Status:** Frozen Baseline Release-Integrity Foundation RC  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 ## 1. Purpose
 
 This directory contains separately controlled development toward SCAF executable governance.
 
-The frozen v0.0.2 and v0.0.3 baselines are not modified in place. Executable-governance artifacts are downstream representations, schemas, validators and later enforcement mechanisms that must preserve the authority semantics of those frozen baselines.
+The frozen v0.0.2 and v0.0.3 baselines are not modified in place. Executable-governance artifacts are downstream representations, schemas, validators, integrity controls and later enforcement mechanisms that must preserve the authority semantics of those frozen baselines.
 
-## 2. Current rc06 Scope
+## 2. Current rc07 Scope
 
-The independent v0.0.4rc05 review returned:
+The independent v0.0.4rc06 review returned:
 
 ```text
-V0.0.4 AUTHORITY-REGISTRY SCHEMA-VALIDATOR FOUNDATION GATE: YES, AFTER MINOR CLEANUP
+V0.0.4 CANONICAL-SCHEMA BINDING / VALIDATOR-CLI HARDENING GATE: YES
 ```
 
-The review accepted the default canonical schema/validator path and all seven rc05 regression tests, but opened one Minor finding, `R5-01`: the public `--schema` CLI override could substitute an arbitrary valid JSON Schema and still emit normal `RESULT: PASS`.
+The review resolved `R5-01` with no new finding and accepted the canonical-schema-bound authority-registry validation foundation.
 
 Current executable-governance artifacts are:
 
-- `00_SCAF_Machine_Readable_Authority_Model.md` — accepted authority model and deterministic record contract from rc02;
-- `01_SCAF_v0.0.4rc02_Authority_Model_Determinism_Cleanup.md` — closure record for `R1-01`;
-- `02_SCAF_v0.0.4rc03_Initial_Authority_Registry_Serialization.md` — accepted rc03 serialization format, ownership, reproducibility and population contract;
-- `03_SCAF_v0.0.4rc04_Authority_Registry_Release_State_Documentation_Cleanup.md` — resolved `R3-01` cleanup and non-regression record;
-- `04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` — accepted schema/validator foundation subject only to `R5-01` cleanup;
-- `05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md` — current focused `R5-01` closure contract;
-- repository-root `authority-registry.yaml` — accepted rc03 294-record controlled representation, unchanged;
-- `schemas/authority-registry.schema.json` — accepted rc05 structural schema, unchanged;
-- `tools/scaf_validator/` — validator with canonical production CLI binding plus regression tests.
+- `00_SCAF_Machine_Readable_Authority_Model.md` — accepted authority model and deterministic record contract;
+- `01_SCAF_v0.0.4rc02_Authority_Model_Determinism_Cleanup.md` — `R1-01` closure record;
+- `02_SCAF_v0.0.4rc03_Initial_Authority_Registry_Serialization.md` — accepted 294-record registry serialization contract;
+- `03_SCAF_v0.0.4rc04_Authority_Registry_Release_State_Documentation_Cleanup.md` — resolved `R3-01` cleanup record;
+- `04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` — accepted schema/validator foundation;
+- `05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md` — accepted canonical-schema/CLI hardening; `R5-01` resolved;
+- `06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` — current bounded release-integrity contract;
+- repository-root `authority-registry.yaml` — accepted rc03 294-record controlled representation;
+- `schemas/authority-registry.schema.json` and `tools/scaf_validator/` — accepted semantic/representation conformance path;
+- `release-integrity/frozen-baseline-manifest.json` and `tools/scaf_release_integrity/` — current frozen-byte integrity path.
 
-The production CLI no longer accepts caller-selected `--schema` or `--repo-root` arguments. It derives the repository root from the reviewed module location and always uses that repository's canonical schema/source. `--registry <path>` remains available only to choose the representation being checked.
+rc07 protects exactly the frozen v0.0.2 normative tree and frozen v0.0.3 L3 tree. It does not hash-own the authority registry/schema/validator and does not change their accepted semantics.
 
-Accepted registry state remains:
+Frozen Markdown remains semantic authority. The integrity manifest is reviewed cryptographic metadata; the checker is a subordinate byte-integrity check. The manifest is not a self-authenticating external trust root.
 
-```text
-294 unique normative authority records
-218 Project-Applicable Obligations
-76 Framework Normative Invariants
-0 SCAF-PAT-* records
-representation_release = v0.0.4rc03
-relations = [] for all 294 records
-```
-
-Frozen normative Markdown remains semantic authority. rc06 does **not** add CI enforcement, registry generation, generated reverse indexes/views, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
+rc07 does **not** add CI enforcement, manifest signing, registry generation, generated reverse indexes/views, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
 
 ## 3. Development Order
-
-The controlled order is:
 
 ```text
 frozen human-readable semantic authority
         ↓
-authority model / record contract
+authority model / deterministic record contract
         ↓
-determinism closure
+machine-readable registry serialization
         ↓
-machine-readable registry serialization (accepted rc03)
+schema + structural/source-aware validator + regression tests
         ↓
-release-state documentation cleanup (accepted rc04)
+canonical schema binding + validator CLI hardening
         ↓
-schema + structural/source-aware validator + regression tests (accepted rc05, conditional cleanup)
-        ↓
-canonical schema binding + validator CLI hardening (current rc06)
+frozen-baseline manifest + standalone release-integrity checker (current rc07)
         ↓
 later separately gated CI / generated views / executable governance
 ```
 
-Each transition requires a separately reviewed repository state. A schema or validator does not become normative merely because it can reject a representation.
+Semantic validation and release integrity are deliberately separate controls. Each transition requires a separately reviewed repository state.
 
 ## 4. Current Gate
 
-The independent v0.0.4rc06 review shall determine whether `R5-01` is fully closed: the production CLI must be bound to the canonical repository schema/source, the prior alternate-schema false-PASS path must be unavailable, the new CLI regression must pass, and accepted upstream registry/schema/frozen content must remain unchanged.
+The independent v0.0.4rc07 review shall determine whether the canonical manifest/checker accurately protects all and only the frozen v0.0.2/v0.0.3 files, fails closed on drift, preserves accepted rc06 semantic-validation boundaries, and makes no unsupported claim of manifest self-authentication or CI enforcement.
 
 Expected gate label:
 
 ```text
-V0.0.4 CANONICAL-SCHEMA BINDING / VALIDATOR-CLI HARDENING GATE
+V0.0.4 FROZEN-BASELINE RELEASE-INTEGRITY FOUNDATION GATE
 ```

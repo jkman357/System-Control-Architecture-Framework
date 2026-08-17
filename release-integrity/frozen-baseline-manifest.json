@@ -1,0 +1,190 @@
+{
+  "manifest_version": 1,
+  "manifest_release": "v0.0.4rc07",
+  "algorithm": "sha256",
+  "aggregate_construction": "sorted repository-relative path + NUL + sha256(file) + LF",
+  "protected_trees": [
+    {
+      "name": "frozen_l1_l2_normative",
+      "baseline_release": "v0.0.2",
+      "root": "docs/normative",
+      "expected_file_count": 11,
+      "aggregate_sha256": "86ca06dbb586b8e0f47c8efbe731635633484bf58de2ddd3e90639a42090775f",
+      "files": [
+        {
+          "path": "docs/normative/00_SCAF_Authority_Kernel.md",
+          "sha256": "8049bbc9297bf517deb391070f504b4eefba023fb64164f854c34371bee99c4f"
+        },
+        {
+          "path": "docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md",
+          "sha256": "cd52c279705ecf026a53e30b49a63fd0e5fe25dfb82b5052974bd3c68370b65b"
+        },
+        {
+          "path": "docs/normative/10_SCAF_CTX_System_Context_Obligations.md",
+          "sha256": "39eeef8384cb0a407505a4042866dc56d5c69e3076b673e390dbc6662e599575"
+        },
+        {
+          "path": "docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md",
+          "sha256": "fe96c953ea17d9de15e13861b39a81bc22074d8b9d55d959d0aa10c74a5bd98a"
+        },
+        {
+          "path": "docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md",
+          "sha256": "eb0d4e0bd40040a1c59589a50ec7af555de2dd0092153f12c456660dcfdd59dd"
+        },
+        {
+          "path": "docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md",
+          "sha256": "6ba3f6903c047b5fe2860f0328eb3e945d5e66801590ee67ec066741af48ee88"
+        },
+        {
+          "path": "docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md",
+          "sha256": "b8a81e1ff2f0d2b500bf3ee9b4dde867fc91a2d0a16fcb4aea392807da110b34"
+        },
+        {
+          "path": "docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md",
+          "sha256": "4640b4dc06d046827487991200736e08671233a9aea699bd33f06e55a8ebfed6"
+        },
+        {
+          "path": "docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md",
+          "sha256": "8125466c1e636e17b6f17b1310bd286aac344230f2ae60a0b1912f9a2946e5e0"
+        },
+        {
+          "path": "docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md",
+          "sha256": "96b42779f5033c7fe181490a8c8a4e5563fa3334190034d2380fb5419b7dc4bf"
+        },
+        {
+          "path": "docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md",
+          "sha256": "5d50fabcb0f9515cbf0818376877fef3aca818354a9663f2d1fe8bd8af20acfa"
+        }
+      ]
+    },
+    {
+      "name": "frozen_l3_catalog",
+      "baseline_release": "v0.0.3",
+      "root": "docs/l3",
+      "expected_file_count": 30,
+      "aggregate_sha256": "eddb26826ce83d7a9aae028cf3c4f7f630b304c41e3bcbbfe8f00e51d3248eeb",
+      "files": [
+        {
+          "path": "docs/l3/00_L3_Catalog_Governance.md",
+          "sha256": "736f44085c40568c4964b38924b542db0f10631abba34b879dd8859a2aaa02a6"
+        },
+        {
+          "path": "docs/l3/01_L3_Pattern_Metadata_Contract.md",
+          "sha256": "64a4c57249b230632cf6131262009dd48ed0e85c2fb894e529687b33f18cca61"
+        },
+        {
+          "path": "docs/l3/02_L3_Trace_and_Selection_Model.md",
+          "sha256": "e2239d131b0072baef900e603f5fb275750b14c01ebbb7fb5b5d98e2c499c6a9"
+        },
+        {
+          "path": "docs/l3/03_L3_Pattern_Index.md",
+          "sha256": "8d35a1a7d6f98bfd275c674ecab156f7aababe58fa9777c3d8c326d1b0fe3af6"
+        },
+        {
+          "path": "docs/l3/04_L3_Initial_Tranche_Lifecycle_Decision.md",
+          "sha256": "c52137e236a77796b5fb4a48d34a43ac8cfe5888072833a9c038c526c3518988"
+        },
+        {
+          "path": "docs/l3/05_L3_Initial_Tranche_Availability_Acceptance.md",
+          "sha256": "10ab79530c2d6a1ac4772bc38ff16334a33e65452dd66f2cb4e54c5ec5c205ce"
+        },
+        {
+          "path": "docs/l3/06_L3_Catalog_Coverage_and_Second_Tranche_Planning.md",
+          "sha256": "031c0caf9813abdb5c8623f78a8bbb10297fc38968e46146e4e25a3ac35103c0"
+        },
+        {
+          "path": "docs/l3/07_L3_Second_Tranche_Authoring_Decision.md",
+          "sha256": "eabab1f2866f86160e41fba8f82b989b18fd5c7f26138d75333b32383c7b7da3"
+        },
+        {
+          "path": "docs/l3/08_L3_Second_Tranche_Trace_Cleanup.md",
+          "sha256": "eb82602c232b41521ac17cc60a7cdc004044597a8873b014f199ce969db28cea"
+        },
+        {
+          "path": "docs/l3/09_L3_Second_Tranche_Lifecycle_Decision.md",
+          "sha256": "7a46a06a7a6afa6e65e85c98cc9bbc52fb66af4cc10f3962ad54cdbdaa1ae8ad"
+        },
+        {
+          "path": "docs/l3/10_L3_Second_Tranche_Availability_Acceptance.md",
+          "sha256": "2ca604df727397dcd07364166c3267ef043b8c8cc2c05668cbb143a55a8bead3"
+        },
+        {
+          "path": "docs/l3/11_L3_v0.0.3_Milestone_Consolidation_and_Freeze_Candidate.md",
+          "sha256": "a1004e484c0a4978341c049418b097c1fe8f5c0570cf85f86cfc2838e0775072"
+        },
+        {
+          "path": "docs/l3/12_L3_v0.0.3_Freeze_Candidate_Release_Record_Cleanup.md",
+          "sha256": "364b2bbcb86ec8bd182df75fd7fac58a56e23cd82ff568231f5f83e40ee99bdc"
+        },
+        {
+          "path": "docs/l3/13_L3_v0.0.3_Freeze_Candidate_Final_Navigation_Cleanup.md",
+          "sha256": "0fde6a2c88cc163995ac0886152b55acb5dfec3fb1cc95c147a24a297de45f8c"
+        },
+        {
+          "path": "docs/l3/14_L3_v0.0.3_Freeze_Decision.md",
+          "sha256": "18019bf990368f0d5a283024b591bbb2d56ae118b7e3a178710c6d0d814494d2"
+        },
+        {
+          "path": "docs/l3/README.md",
+          "sha256": "096a63548ac0f4685dcbc49be48fb203a4049e81f182fcdc5f17d79202ce92b2"
+        },
+        {
+          "path": "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md",
+          "sha256": "3e7a7be6c42e14322aabacde429cad5e9090d5d009d33a8eb3ca70b6c16ef1c9"
+        },
+        {
+          "path": "docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md",
+          "sha256": "784f91f4bd2db62727ff0b619b1d46ebbfd46ce38614bb91a552dcb3391deb8c"
+        },
+        {
+          "path": "docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md",
+          "sha256": "155307578dbdf58b0c8cec78a92cb5cb7a45d1aa13947b0d179dd31136e9c8d8"
+        },
+        {
+          "path": "docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md",
+          "sha256": "593ebc75b27c70ca080756fc82e70b1b0563db4fe37e0727f2b6cf25a52b5534"
+        },
+        {
+          "path": "docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md",
+          "sha256": "1db1b385d98b6a9ea6a46b3238a6446a749f2e01377fa7cfaa2e813bf3606a9b"
+        },
+        {
+          "path": "docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md",
+          "sha256": "59f383f8b15af097b4e5d61472bf223249040ac6e01692eb582f080b754e15dc"
+        },
+        {
+          "path": "docs/l3/catalog/README.md",
+          "sha256": "d1fbac5bdd5aa237f399338dbcc234ba616be97cab347073692eb7bde5cfd2e3"
+        },
+        {
+          "path": "docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md",
+          "sha256": "bb1a37d5359a618c58549450baa212bc25d44bb282d8799a53927e0b1c1d6880"
+        },
+        {
+          "path": "docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md",
+          "sha256": "ad3a3f59a4e89b9b3881e8a52e152c6af3b3403bf2529e5972815461876fc205"
+        },
+        {
+          "path": "docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md",
+          "sha256": "46090485777b473391763bbbfa9f3b91dbb95a6865ad3464cfc379fd8f5534cc"
+        },
+        {
+          "path": "docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md",
+          "sha256": "8b8b5a261c056ff65749638170b13ef9afd5368237836a21e54abaf7931e5b1e"
+        },
+        {
+          "path": "docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md",
+          "sha256": "f00c0d88370ceaf4d48df297c6097566853b781279dc3088b3ff01e455a8d034"
+        },
+        {
+          "path": "docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md",
+          "sha256": "7c89172565a9f7976a4debd2e7ca8847ec38e2dbd3ed18d7dcfdbf36eabace6b"
+        },
+        {
+          "path": "docs/l3/templates/L3_Pattern_Template.md",
+          "sha256": "1c7ca5fe45e862dbf1a1a039c2549058c90f72d7f21d18735fdc54b9d562928f"
+        }
+      ]
+    }
+  ]
+}

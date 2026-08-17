@@ -1,3 +1,38 @@
+## v0.0.4rc07 — 2026-08-17
+
+Frozen-baseline release-integrity foundation after the independent v0.0.4rc06 review returned **`V0.0.4 CANONICAL-SCHEMA BINDING / VALIDATOR-CLI HARDENING GATE: YES`**, resolved `R5-01`, and opened no new finding.
+
+### Added
+
+- added `release-integrity/frozen-baseline-manifest.json` containing per-file SHA-256 values for exactly 11 frozen v0.0.2 normative files and 30 frozen v0.0.3 L3 files plus the accepted aggregate tree fingerprints;
+- added `tools/scaf_release_integrity/checker.py` as a standalone fail-closed byte-integrity checker bound to the reviewed repository/module location and canonical manifest;
+- added release-integrity usage/trust-boundary documentation;
+- added eight regression tests for accepted state, byte mutation, file addition, file removal, manifest-hash corruption, manifest path escape and CWD/module-location binding;
+- added `docs/executable-governance/06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md`.
+
+### Validated
+
+- canonical integrity checker passes with 2 protected trees / 41 protected files / 0 errors;
+- `docs/normative/` aggregate remains `86ca06dbb586b8e0f47c8efbe731635633484bf58de2ddd3e90639a42090775f`;
+- `docs/l3/` aggregate remains `eddb26826ce83d7a9aae028cf3c4f7f630b304c41e3bcbbfe8f00e51d3248eeb`;
+- all eight release-integrity regressions pass.
+
+### Preserved
+
+- accepted 294-record `authority-registry.yaml`, canonical schema and semantic/source-aware validator foundation;
+- accepted rc01–rc06 governance contracts except current navigation/release-state wording;
+- frozen v0.0.2 and v0.0.3 source bytes and inventories;
+- canonical Markdown semantic authority and project/L3 boundary semantics.
+
+### Deliberately Not Added
+
+- no CI enforcement or merge blocking;
+- no manifest signing or external trust root;
+- no registry/schema/validator freeze expansion;
+- no registry generation, generated views/indexes or code generation;
+- no project applicability inference or machine-readable L2→L3 relation vocabulary;
+- no new L3 Pattern, M3/M4 or L4 work.
+
 ## v0.0.4rc06 — 2026-08-17
 
 Focused canonical-schema binding and validator production-CLI hardening after the independent v0.0.4rc05 review returned **`V0.0.4 AUTHORITY-REGISTRY SCHEMA-VALIDATOR FOUNDATION GATE: YES, AFTER MINOR CLEANUP`** and opened one Minor finding, `R5-01`, against caller-selectable schema substitution.
@@ -51,7 +86,7 @@ Authority-registry schema and structural/source-aware validator foundation after
 - added `tools/scaf_validator/validator.py` for YAML duplicate-key rejection, local schema validation, source-aware identity/coverage/path/anchor/Target fidelity checks, and fail-closed PASS/FAIL output;
 - added `tools/scaf_validator/requirements.txt` with bounded PyYAML/jsonschema dependency ranges;
 - added validator usage/boundary documentation;
-- added seven regression tests covering the accepted registry plus duplicate ID, anchor mismatch, source-path mismatch, Target/class mismatch, non-empty relations and Pattern-identity contamination;
+- added eight regression tests covering the accepted registry plus duplicate ID, anchor mismatch, source-path mismatch, Target/class mismatch, non-empty relations and Pattern-identity contamination;
 - added `docs/executable-governance/04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md`.
 
 ### Validated
