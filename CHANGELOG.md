@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.5rc4 — L3 Trace Schema & Source-Extraction Contract Foundation
+
+- Continue the controlled v0.0.5 line after the independent rc3 review returned `V0.0.5 L3 MACHINE-READABLE TRACE SERIALIZATION FOUNDATION GATE: YES` with zero findings.
+- Add `schemas/l3-trace-registry.schema.json` using JSON Schema Draft 2020-12 as the structural contract for the accepted rc3 `l3-trace-registry.yaml`.
+- Bind the current schema to `trace_registry_version: 1`, `representation_release: v0.0.5rc3`, the accepted twelve Pattern identities/source paths, the three controlled relation classes/source fields, exactly 119 records, the 23 / 41 / 55 relation split, and 15 non-null qualifiers.
+- Reject unknown top-level and relation-record fields; require the accepted seven-field record shape and nullable/non-empty-string qualifier representation.
+- Explicitly keep composite triple uniqueness, canonical cross-record ordering, L2 authority resolution, exact source membership and qualifier fidelity outside JSON Schema and in the future source-aware validator proof contract.
+- Add `docs/executable-governance/17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md`.
+- Define deterministic extraction only from frozen metadata rows `Primary L2 Trace`, `Supporting L2 Trace`, and `Constraint Inputs`; narrative `## 5. L2 Trace` prose remains non-authoritative for machine edges.
+- Define fail-closed parsing for the current frozen `applicable`, `conditional ... where ...`, direct `where ...`, and `applicable ... outcomes when ...` qualifier forms, including semicolon scope reset, comma-group behavior and canonical whitespace preservation.
+- Require unsupported/new source syntax to fail rather than being inferred by future parser code.
+- Keep accepted rc3 `l3-trace-registry.yaml` byte-unchanged with `representation_release: v0.0.5rc3`; keep frozen `authority-registry.yaml`, frozen baselines and v0.0.4 executable controls unchanged.
+- Preserve all 41 accepted executable-governance regressions and production external-trust CI-gate behavior.
+- Defer executable trace parser/validator, automatic registry generation, generated reverse/forward views, resolver/context packaging, project inference, Pattern auto-selection, new L3 work, M3/M4, L4 guidance, code generation and additional CI/trust capability.
+
+
 ## v0.0.5rc3 — L3 Machine-Readable Trace Serialization Foundation
 
 - Continue the controlled v0.0.5 line after rc2 closed `R1-01` and `R1-02` and returned `V0.0.5 L3 TRACE MODEL DETERMINISM / QUALIFIER-FIDELITY CLEANUP GATE: YES`.
@@ -12,6 +28,17 @@
 - Add `docs/executable-governance/16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md`.
 - Preserve frozen v0.0.2/v0.0.3/v0.0.4 identities and all 41 accepted executable-governance regressions.
 - Defer trace schema, executable trace validator/generator, generated reverse index, resolver/context packaging, project inference, new L3 work, M3/M4, L4 guidance, code generation, and additional CI/trust capability.
+
+### rc3 review disposition
+
+```text
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+
+V0.0.5 L3 MACHINE-READABLE TRACE SERIALIZATION FOUNDATION GATE: YES
+```
 
 ## v0.0.5rc2 — L3 Trace Model Determinism & Qualifier-Fidelity Cleanup
 

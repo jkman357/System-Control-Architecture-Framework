@@ -6,13 +6,16 @@
 
 ## Current Development Line
 
-`v0.0.5rc3 — L3 Machine-Readable Trace Serialization Foundation` follows the clean rc2 model-closure gate. It adds the first concrete subordinate serialization, repository-root `l3-trace-registry.yaml`, containing the accepted frozen population of 119 typed L2-to-L3 relations.
+`v0.0.5rc4 — L3 Trace Schema & Source-Extraction Contract Foundation` follows the clean rc3 serialization gate. It adds a Draft 2020-12 structural schema for the accepted `l3-trace-registry.yaml` and a deterministic fail-closed contract for reconstructing the 119 relations and 15 material qualifier associations from frozen v0.0.3 Pattern metadata.
+
+No trace parser/validator executable is introduced in rc4. The accepted rc3 registry remains byte-unchanged and retains `representation_release: v0.0.5rc3`.
 
 Current v0.0.5 records:
 
 - `14_SCAF_v0.0.5rc1_L3_Machine_Readable_Trace_Representation_Model_Foundation.md` — accepted model foundation as amended by rc2;
 - `15_SCAF_v0.0.5rc2_L3_Trace_Model_Determinism_and_Qualifier_Fidelity_Cleanup.md` — accepted `R1-01` / `R1-02` closure;
-- `16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md` — current concrete serialization contract and review candidate.
+- `16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md` — accepted concrete serialization contract;
+- `17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md` — current schema/extraction contract review candidate.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 

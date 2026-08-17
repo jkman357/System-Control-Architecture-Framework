@@ -1,0 +1,456 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:scaf:schema:l3-trace-registry:v0.0.5rc4",
+  "title": "SCAF L3 Trace Registry v0.0.5rc3 Representation Contract",
+  "description": "Structural schema for the accepted v0.0.5rc3 119-record subordinate serialization of frozen v0.0.3 L3 Pattern trace metadata. Frozen Pattern Markdown remains semantic trace authority; source-fidelity and canonical-order proof require a later source-aware validator.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_registry_version",
+    "representation_release",
+    "relations"
+  ],
+  "properties": {
+    "trace_registry_version": {
+      "const": 1
+    },
+    "representation_release": {
+      "const": "v0.0.5rc3"
+    },
+    "relations": {
+      "type": "array",
+      "minItems": 119,
+      "maxItems": 119,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/traceRelation"
+      },
+      "allOf": [
+        {
+          "contains": {
+            "properties": {
+              "relation_type": {
+                "const": "primary_realization_candidate"
+              }
+            },
+            "required": [
+              "relation_type"
+            ]
+          },
+          "minContains": 23,
+          "maxContains": 23
+        },
+        {
+          "contains": {
+            "properties": {
+              "relation_type": {
+                "const": "supporting_realization"
+              }
+            },
+            "required": [
+              "relation_type"
+            ]
+          },
+          "minContains": 41,
+          "maxContains": 41
+        },
+        {
+          "contains": {
+            "properties": {
+              "relation_type": {
+                "const": "constraint_input"
+              }
+            },
+            "required": [
+              "relation_type"
+            ]
+          },
+          "minContains": 55,
+          "maxContains": 55
+        },
+        {
+          "contains": {
+            "properties": {
+              "qualifier": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "qualifier"
+            ]
+          },
+          "minContains": 15,
+          "maxContains": 15
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "traceRelation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "pattern_id",
+        "relation_type",
+        "l2_id",
+        "pattern_source_path",
+        "pattern_source_field",
+        "source_release",
+        "qualifier"
+      ],
+      "properties": {
+        "pattern_id": {
+          "enum": [
+            "SCAF-PAT-COM-001",
+            "SCAF-PAT-EVD-001",
+            "SCAF-PAT-FTL-001",
+            "SCAF-PAT-FTL-002",
+            "SCAF-PAT-LCM-001",
+            "SCAF-PAT-PST-001",
+            "SCAF-PAT-REC-001",
+            "SCAF-PAT-SUP-001",
+            "SCAF-PAT-SUP-002",
+            "SCAF-PAT-SYN-001",
+            "SCAF-PAT-TIM-001",
+            "SCAF-PAT-TIM-002"
+          ]
+        },
+        "relation_type": {
+          "enum": [
+            "primary_realization_candidate",
+            "supporting_realization",
+            "constraint_input"
+          ]
+        },
+        "l2_id": {
+          "type": "string",
+          "pattern": "^SCAF-(CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
+        },
+        "pattern_source_path": {
+          "enum": [
+            "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md",
+            "docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md",
+            "docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md",
+            "docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md",
+            "docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md",
+            "docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md",
+            "docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md",
+            "docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md",
+            "docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md",
+            "docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md",
+            "docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md",
+            "docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md"
+          ]
+        },
+        "pattern_source_field": {
+          "enum": [
+            "Primary L2 Trace",
+            "Supporting L2 Trace",
+            "Constraint Inputs"
+          ]
+        },
+        "source_release": {
+          "const": "v0.0.3"
+        },
+        "qualifier": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string",
+              "minLength": 1
+            }
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-COM-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-EVD-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/EVD/SCAF-PAT-EVD-001_Pre_Post_Trigger_Retained_Incident_Evidence_Ring.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-FTL-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/FTL/SCAF-PAT-FTL-001_Failure_Domain_Containment_Isolation.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-FTL-002"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/FTL/SCAF-PAT-FTL-002_Controlled_Failover_with_Graceful_Degradation.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-LCM-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/LCM/SCAF-PAT-LCM-001_Transactional_Update_with_Rollback.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-PST-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/PST/SCAF-PAT-PST-001_Atomic_Dual_Copy_Persistent_State.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-REC-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/REC/SCAF-PAT-REC-001_Bounded_Retry_with_Escalation.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-SUP-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/SUP/SCAF-PAT-SUP-001_Heartbeat_Liveness_Supervision.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-SUP-002"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/SUP/SCAF-PAT-SUP-002_Independent_Watchdog_with_Escalation.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-SYN-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/SYN/SCAF-PAT-SYN-001_Generation_Epoch_Cross_Participant_State_Convergence.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-TIM-001"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/TIM/SCAF-PAT-TIM-001_Bounded_Queue_Backpressure_Overload_Protection.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "pattern_id": {
+                "const": "SCAF-PAT-TIM-002"
+              }
+            },
+            "required": [
+              "pattern_id"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_path": {
+                "const": "docs/l3/catalog/TIM/SCAF-PAT-TIM-002_Timebase_Clock_Relationship_Epoch_Validity.md"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relation_type": {
+                "const": "primary_realization_candidate"
+              }
+            },
+            "required": [
+              "relation_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_field": {
+                "const": "Primary L2 Trace"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relation_type": {
+                "const": "supporting_realization"
+              }
+            },
+            "required": [
+              "relation_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_field": {
+                "const": "Supporting L2 Trace"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "relation_type": {
+                "const": "constraint_input"
+              }
+            },
+            "required": [
+              "relation_type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "pattern_source_field": {
+                "const": "Constraint Inputs"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
