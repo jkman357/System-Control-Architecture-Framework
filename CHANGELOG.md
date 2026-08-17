@@ -1,3 +1,18 @@
+## v0.0.4rc11 — 2026-08-17
+
+Focused closure/hardening RC after the independent v0.0.4rc10 review returned `V0.0.4 CI TRUST-INPUT / EXECUTABLE-GOVERNANCE GATE FOUNDATION GATE: NO` with one Major blocking finding, `R10-01`.
+
+- changed CI gate production repository-root derivation so it is bound to the lexical current checkout root rather than silently deriving root from `Path(__file__).resolve()`;
+- added component-by-component no-follow path inspection for every fixed control-plane artifact path;
+- requires parent components to be real directories and terminal control artifacts to be real regular files before resolution/hash/execution;
+- re-checks downstream executable paths immediately before stage execution;
+- requires each successful downstream control to report exactly the same verified `Repository:` root before the overall gate can continue;
+- hardened the GitHub Actions bootstrap so every component of `tools/scaf_ci_gate/gate.py` is checked with `lstat` before the externally pinned SHA-256 is computed;
+- added regression coverage for parent-component symlinks across all six pinned artifacts, the reproduced gate-root shadow-repository pivot, the reproduced validator-stage shadow pivot, runtime stage-root attestation, and bootstrap check-before-hash ordering;
+- extended `tools/scaf_ci_gate` regressions from 8 to 13 tests while preserving the accepted validator (8), release-integrity (9), and external-pin (11) suites;
+- added `docs/executable-governance/10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md`;
+- preserved the rc10 trust-bundle semantics, six-artifact pin set, fixed stage order, trusted-main/manual workflow scope, frozen baselines, authority/project/L3 boundaries, and deferred PR/signing/provenance/generated-view/L4 scope.
+
 ## v0.0.4rc10 — 2026-08-17
 
 CI trust-input model and executable-governance gate foundation after the independent v0.0.4rc09 review returned **`V0.0.4 EXTERNAL-PIN LOCAL-ARTIFACT SYMLINK-HARDENING GATE: YES`**, closed `R8-01`, and identified no new finding.

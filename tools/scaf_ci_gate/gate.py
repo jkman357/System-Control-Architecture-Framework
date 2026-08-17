@@ -11,8 +11,9 @@ order:
 2. frozen-baseline byte integrity;
 3. authority-registry/schema/source-aware validation.
 
-The production CLI binds repository context to the reviewed module location and
-accepts no caller-selected repository root, artifact set, stage order, schema,
+The production CLI binds repository context to the lexical current checkout root,
+requires the canonical gate path under that root to have no symlink components,
+and accepts no caller-selected repository root, artifact set, stage order, schema,
 manifest, or hash algorithm.
 """
 
@@ -25,6 +26,7 @@ import os
 import subprocess
 import sys
 import tempfile
+import stat
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -73,8 +75,24 @@ class GateReport:
     stages: tuple[GateStageResult, ...]
 
 
-def _default_repo_root() -> Path:
-    return Path(__file__).resolve().parents[2]
+def _production_repo_root() -> Path:
+    """Bind the production CLI to the lexical current checkout root.
+
+    The workflow and documented local invocation run the gate from repository root.
+    We intentionally do not derive the root from ``__file__.resolve()`` because a
+    symlinked parent directory could otherwise pivot root discovery into a shadow
+    repository before the gate has a chance to validate path topology.
+    """
+
+    repo_root = Path.cwd().absolute()
+    expected_gate = _safe_repo_artifact(repo_root, "tools/scaf_ci_gate/gate.py")
+    running_gate = Path(__file__).resolve()
+    if expected_gate != running_gate:
+        raise ValueError(
+            "production gate must execute from the repository root using the canonical "
+            "non-symlinked tools/scaf_ci_gate/gate.py path"
+        )
+    return repo_root
 
 
 def _sha256_file(path: Path) -> str:
@@ -121,20 +139,79 @@ def _validate_external_file(path: Path, repo_root: Path) -> Path:
 
 
 def _safe_repo_artifact(repo_root: Path, relative: str) -> Path:
+    """Resolve a fixed repository artifact without following repository-internal symlinks.
+
+    Every repository-relative component is inspected with lstat before resolution.
+    Parent components must be real directories and the terminal component must be a
+    real regular file. This prevents a trusted control path from pivoting through a
+    symlinked parent into a pristine nested shadow repository.
+    """
+
     rel = Path(relative)
     if rel.is_absolute():
         raise ValueError(f"absolute repository artifact path is not allowed: {relative}")
-    lexical = repo_root / rel
-    if lexical.is_symlink():
-        raise ValueError(f"CI control artifact must not be a symlink: {relative}")
-    resolved = lexical.resolve()
+    if not rel.parts or any(part in {"", ".", ".."} for part in rel.parts):
+        raise ValueError(f"unsafe repository artifact path is not allowed: {relative}")
+
+    root = repo_root.absolute()
+    if root.is_symlink():
+        raise ValueError("repository root must not be a symlink")
+    if not root.is_dir():
+        raise ValueError("repository root is missing or not a directory")
+
+    current = root
+    last_index = len(rel.parts) - 1
+    for index, part in enumerate(rel.parts):
+        current = current / part
+        try:
+            mode = os.lstat(current).st_mode
+        except FileNotFoundError as exc:
+            raise ValueError(f"CI control artifact is missing: {relative}") from exc
+        except OSError as exc:
+            raise ValueError(f"cannot inspect CI control artifact path: {relative}: {exc}") from exc
+
+        component_rel = current.relative_to(root).as_posix()
+        if stat.S_ISLNK(mode):
+            raise ValueError(
+                f"CI control artifact path component must not be a symlink: {component_rel} "
+                f"(artifact {relative})"
+            )
+        if index < last_index:
+            if not stat.S_ISDIR(mode):
+                raise ValueError(
+                    f"CI control artifact parent component is not a directory: {component_rel} "
+                    f"(artifact {relative})"
+                )
+        elif not stat.S_ISREG(mode):
+            raise ValueError(f"CI control artifact is missing/not regular: {relative}")
+
+    resolved = current.resolve(strict=True)
+    root_resolved = root.resolve(strict=True)
     try:
-        resolved.relative_to(repo_root.resolve())
+        resolved.relative_to(root_resolved)
     except ValueError as exc:
         raise ValueError(f"CI control artifact path escapes repository root: {relative}") from exc
-    if not resolved.is_file():
-        raise ValueError(f"CI control artifact is missing/not regular: {relative}")
     return resolved
+
+
+def _reported_repository(stdout: str) -> Path:
+    reported = [
+        line.split(":", 1)[1].strip()
+        for line in stdout.splitlines()
+        if line.startswith("Repository:")
+    ]
+    if len(reported) != 1 or not reported[0]:
+        raise ValueError("stage must report exactly one Repository: line")
+    return Path(reported[0]).resolve()
+
+
+def _assert_stage_repository(stage: GateStageResult, repo_root: Path) -> None:
+    observed = _reported_repository(stage.stdout)
+    expected = repo_root.resolve(strict=True)
+    if observed != expected:
+        raise ValueError(
+            f"stage repository-root mismatch for {stage.name}: expected {expected}, observed {observed}"
+        )
 
 
 def _valid_sha256(value: Any) -> bool:
@@ -300,32 +377,53 @@ def execute_gate(bundle_path: Path, repo_root: Path) -> GateReport:
             encoding="utf-8",
         )
 
+        try:
+            external_pin_checker = _safe_repo_artifact(repo_root, "tools/scaf_external_pin/checker.py")
+            release_integrity_checker = _safe_repo_artifact(repo_root, "tools/scaf_release_integrity/checker.py")
+            semantic_validator = _safe_repo_artifact(repo_root, "tools/scaf_validator/validator.py")
+        except ValueError as exc:
+            errors.append(str(exc))
+            return GateReport(False, tuple(errors), tuple(summaries), ())
+
         commands = [
             (
                 "external-pin verification",
                 [
                     sys.executable,
                     "-I",
-                    str(repo_root / "tools/scaf_external_pin/checker.py"),
+                    str(external_pin_checker),
                     "--pin-file",
                     str(external_pin_path),
                 ],
             ),
             (
                 "frozen-baseline release integrity",
-                [sys.executable, "-I", str(repo_root / "tools/scaf_release_integrity/checker.py")],
+                [sys.executable, "-I", str(release_integrity_checker)],
             ),
             (
                 "authority-registry semantic/structural validation",
-                [sys.executable, "-I", str(repo_root / "tools/scaf_validator/validator.py")],
+                [sys.executable, "-I", str(semantic_validator)],
             ),
         ]
 
         for stage_name, command in commands:
+            # Re-check the executable path immediately before stage execution so a
+            # path-topology change cannot silently reuse the earlier trust pass.
+            try:
+                _safe_repo_artifact(repo_root, Path(command[2]).relative_to(repo_root).as_posix())
+            except (ValueError, OSError) as exc:
+                errors.append(str(exc))
+                break
+
             result = _run_stage(stage_name, command, repo_root)
             stages.append(result)
             if result.returncode != 0:
                 errors.append(f"stage failed: {stage_name} (exit {result.returncode})")
+                break
+            try:
+                _assert_stage_repository(result, repo_root)
+            except ValueError as exc:
+                errors.append(str(exc))
                 break
 
     return GateReport(
@@ -349,11 +447,19 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    repo_root = _default_repo_root().resolve()
+    try:
+        repo_root = _production_repo_root()
+    except (OSError, ValueError) as exc:
+        print("SCAF Executable Governance CI Gate")
+        print(f"Repository: {Path.cwd().absolute()}")
+        print(f"ERROR: {exc}")
+        print("RESULT: FAIL")
+        return 1
+
     report = execute_gate(Path(args.trust_bundle), repo_root)
 
     print("SCAF Executable Governance CI Gate")
-    print(f"Repository: {repo_root}")
+    print(f"Repository: {repo_root.resolve()}")
     print(f"Trust bundle: {Path(args.trust_bundle).expanduser().resolve()}")
     print(f"Pinned control artifacts: {len(report.artifact_summaries)}")
     for summary in report.artifact_summaries:

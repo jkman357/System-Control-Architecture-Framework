@@ -38,31 +38,27 @@ Four input classes are kept distinct in this release:
 The supplemental source is not retroactively treated as Gen1 content. SCAF mapping preserves source provenance and source maturity.
 
 
-## v0.0.4rc10 Executable-Governance Development Position
+## v0.0.4rc11 Executable-Governance Development Position
 
-v0.0.4rc10 follows the independent rc09 result:
-
-```text
-V0.0.4 EXTERNAL-PIN LOCAL-ARTIFACT SYMLINK-HARDENING GATE: YES
-```
-
-rc09 closed `R8-01` with no new findings. The three accepted executable controls are therefore available as separate fail-closed paths: authority/representation validation, frozen-baseline byte integrity, and external identity pin verification.
-
-rc10 establishes the first bounded CI trust-input and executable-governance gate foundation. It adds an externally supplied CI trust bundle, a bootstrapped `scaf_ci_gate`, and one minimal GitHub Actions workflow for trusted `main` pushes and manual execution.
-
-The CI trust bundle pins the gate itself plus the accepted external-pin checker, frozen-baseline manifest, release-integrity checker, semantic validator, and authority-registry schema. The nested accepted external pin must agree with the same manifest/checker identities.
-
-The workflow must obtain the trust bundle from outside the repository, fail when it is absent, verify `gate.py` before executing repository gate code, then run the accepted controls in fixed order:
+v0.0.4rc11 follows the independent rc10 result:
 
 ```text
-external identity pin
-        -> frozen baseline integrity
-        -> authority registry/schema/source validation
+V0.0.4 CI TRUST-INPUT / EXECUTABLE-GOVERNANCE GATE FOUNDATION GATE: NO
 ```
 
-rc10 deliberately does not claim fork-PR / `pull_request_target` enforcement, workflow self-authentication, signing/PKI/provenance, generated views, new L3, M3/M4 or L4 scope.
+The rc10 trust model, fixed stage order, external trust-bundle contract, and authority/trust separation were accepted conceptually, but the review opened one **Major** blocking finding, `R10-01`: a symlinked parent directory could redirect `gate.py` or a downstream control into a pristine nested shadow repository and produce normal `RESULT: PASS` while the actual checkout-root state was modified and left unvalidated.
 
-The current gate is whether this trusted-branch CI foundation is fail-closed, externally rooted at its trust-input boundary, non-regressive to all accepted upstream controls, and honest about its remaining trust limitations.
+rc11 is a focused closure RC for `R10-01`. It does not expand CI policy. It hardens repository/control-path binding by requiring every repository-relative component of each fixed control-plane artifact path to be inspected without following symlinks before resolution or execution. Parent components must be real directories and terminal control artifacts must be real regular files.
+
+The production CI gate now binds its candidate repository root to the lexical current checkout root instead of deriving the root directly from `Path(__file__).resolve()`. The canonical gate path must resolve to the currently running gate only after its complete path topology passes the no-symlink checks.
+
+The three downstream controls retain their existing implementations, but rc11 adds a second root-binding defense: after each successful stage, the gate requires the stage's reported `Repository:` value to equal the same verified repository root. A PASS from another nested/shadow repository is therefore not acceptable as overall gate PASS.
+
+The GitHub Actions bootstrap likewise checks every component of `tools/scaf_ci_gate/gate.py` with no-follow `lstat` semantics before computing the externally pinned gate SHA-256.
+
+rc11 adds focused regressions for all six pinned control-plane paths, the reproduced gate-root shadow pivot, the reproduced validator-stage shadow pivot, downstream repository-root attestation, and workflow bootstrap ordering.
+
+The current gate is whether rc11 fully closes `R10-01` without reopening the accepted trust-input model, frozen baselines, authority semantics, or deferred PR/signing/L3/M3/M4/L4 scope.
 
 ## v0.0.3 Frozen L3 Baseline Position
 
@@ -350,7 +346,8 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `docs/executable-governance/06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` | Accepted frozen-baseline release-integrity foundation |
 | `docs/executable-governance/07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` | Accepted-after-cleanup R7 diagnostic cleanup / external-pinning foundation and trust-boundary contract |
 | `docs/executable-governance/08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md` | Accepted `R8-01` local pinned-artifact symlink hardening contract |
-| `docs/executable-governance/09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` | Current CI trust-input / executable-governance gate foundation contract |
+| `docs/executable-governance/09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` | rc10 CI trust-input / executable-governance gate foundation contract; review basis for R10-01 |
+| `docs/executable-governance/10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` | Current focused R10-01 repository path-component / root-binding closure contract |
 | `release-integrity/frozen-baseline-manifest.json` | Reviewed SHA-256 manifest for the frozen v0.0.2 normative and v0.0.3 L3 trees |
 | `tools/scaf_release_integrity/checker.py` | Standalone frozen-tree byte-integrity checker bound to the canonical repository manifest |
 | `tools/scaf_release_integrity/tests/test_checker.py` | Release-integrity regression tests for mutation/add/remove/manifest/path/CWD cases |
@@ -361,7 +358,7 @@ The worked scan in `docs/05_SCAF_Taxonomy_Proposal.md` carries complete state/au
 | `tools/scaf_ci_gate/gate.py` | Bounded CI gate orchestrator with external trust-bundle validation, control-plane hash pins and fixed stage order |
 | `tools/scaf_ci_gate/tests/test_gate.py` | CI trust-input / gate orchestration regression tests |
 | `tools/scaf_ci_gate/README.md` | CI trust-bundle, execution-order and workflow-boundary guidance |
-| `.github/workflows/scaf-executable-governance.yml` | Minimal trusted-main/manual GitHub Actions executor for the rc10 gate |
+| `.github/workflows/scaf-executable-governance.yml` | Trusted-main/manual GitHub Actions executor with rc11 bootstrap path-component hardening |
 | `schemas/authority-registry.schema.json` | JSON Schema Draft 2020-12 structural contract for the accepted rc03 ten-field / 294-record representation |
 | `tools/scaf_validator/validator.py` | Executable structural + canonical-source fidelity validator with production CLI bound to the canonical repository schema/source |
 | `tools/scaf_validator/tests/test_validator.py` | Regression tests for accepted registry and controlled invalid mutations |
@@ -372,7 +369,7 @@ The filenames retain `Gen2` where they describe migration lineage. The framework
 
 ## CI / Automation Position
 
-**v0.0.4rc10 introduces the first bounded executable CI gate foundation, but not fork-PR enforcement, signing/provenance, or workflow self-authentication.**
+**v0.0.4rc11 is a focused hardening RC for the rc10 CI foundation after `R10-01` demonstrated a parent-directory symlink / shadow-repository false-PASS path.**
 
 The accepted executable controls remain deliberately separate:
 
@@ -387,27 +384,30 @@ External identity pin verification
   python -m tools.scaf_external_pin.checker --pin-file <outside-repository-pin.json>
 ```
 
-rc10 adds a fourth orchestration surface:
+The CI orchestration surface remains:
 
 ```text
 python -I tools/scaf_ci_gate/gate.py --trust-bundle <outside-repository-ci-trust-bundle.json>
 ```
 
-The CI trust sequence is:
+rc11 preserves the rc10 trust sequence but strengthens repository binding:
 
 ```text
-external CI trust bundle
-   -> bootstrap gate.py identity
-   -> verify all six pinned control-plane artifacts
-   -> verify local manifest + release-integrity checker via accepted external pin
-   -> verify frozen docs/normative + docs/l3 bytes
-   -> validate authority-registry/schema/canonical-source fidelity
+verified lexical checkout root
+   -> no-symlink component check for gate bootstrap path
+   -> bootstrap gate.py identity from external trust input
+   -> no-symlink component check for all six pinned control-plane paths
+   -> verify all six SHA-256 identities
+   -> external-pin stage
+   -> frozen-baseline integrity stage
+   -> semantic/source-aware validator stage
+   -> require every successful stage to report the same verified Repository root
    -> gate PASS
 ```
 
-The repository GitHub Actions workflow is intentionally limited to trusted `main` pushes and `workflow_dispatch`. It expects `SCAF_CI_TRUST_BUNDLE_B64` from Actions secret configuration, materializes it only in `RUNNER_TEMP`, and fails if the trust input is missing.
+The repository GitHub Actions workflow remains intentionally limited to trusted `main` pushes and `workflow_dispatch`. It expects `SCAF_CI_TRUST_BUNDLE_B64` from Actions secret configuration, materializes it only in `RUNNER_TEMP`, and fails if the trust input is missing. Before `sha256sum` or repository gate execution, the workflow performs component-by-component `lstat` checks on the canonical gate path.
 
-The workflow uses read-only repository contents permission, disables persisted checkout credentials, and pins the GitHub-maintained checkout and setup-python actions to full commit SHAs. It does not use `pull_request` or `pull_request_target` in rc10.
+The workflow still uses read-only repository contents permission, disables persisted checkout credentials, and pins the GitHub-maintained checkout and setup-python actions to full commit SHAs. It does not use `pull_request` or `pull_request_target`.
 
 The trust bundle, Actions-secret administration, workflow definition itself, runner/platform provenance, dependency-distribution provenance, fork/PR enforcement, branch-protection configuration, signing/PKI, generated views, registry generation, code generation, automatic project applicability inference and machine-readable L2→L3 relations remain separate or later-gated concerns.
 
@@ -421,7 +421,8 @@ Human semantic authority
    -> canonical schema binding + validator CLI hardening
    -> frozen-baseline local release-integrity manifest + checker
    -> external pin verification foundation + symlink hardening
-   -> CI trust-input bootstrap + fixed executable-governance gate (current rc10)
+   -> CI trust-input bootstrap + fixed executable-governance gate
+   -> repository path-component + root-binding hardening (current rc11)
    -> later separately gated PR/merge enforcement, provenance/signing or generated views
 ```
 
@@ -479,7 +480,8 @@ v0.0.4rc06   # canonical schema binding + validator CLI hardening for R5-01; gat
 v0.0.4rc07   # frozen v0.0.2/v0.0.3 baseline SHA-256 manifest + standalone release-integrity checker; gate YES
 v0.0.4rc08   # R7 diagnostic cleanup + external pin verification foundation; gate YES, AFTER MINOR CLEANUP
 v0.0.4rc09   # focused R8-01 local pinned-artifact symlink hardening; gate YES
-v0.0.4rc10   # CI trust-input model + executable-governance gate foundation
+v0.0.4rc10   # CI trust-input model + executable-governance gate foundation; independent gate NO (R10-01 Major)
+v0.0.4rc11   # focused CI repository path-component / root-binding hardening for R10-01
 ```
 
 The historical `rc1` tag/name is retained as released. From `rc02` onward this line uses two-digit RC numbering for consistency.
@@ -516,7 +518,9 @@ v0.0.4rc08 — Release-Integrity Diagnostic Cleanup & External Pinning Foundatio
 v0.0.4rc09 — External-Pin Local Artifact Symlink Hardening
               gate: YES; R8-01 CLOSED
 v0.0.4rc10 — CI Trust-Input Model & Executable-Governance Gate Foundation
-              current bounded CI foundation RC
+              gate: NO; R10-01 Major parent-directory symlink / shadow-root false PASS
+v0.0.4rc11 — CI Repository Path-Component & Root-Binding Hardening
+              current focused R10-01 closure RC
 ```
 
 Five different control/trust questions remain explicit:
@@ -538,17 +542,17 @@ Can CI authenticate its reviewed control plane and execute the accepted checks i
   -> scaf_ci_gate + trusted-main/manual GitHub Actions foundation
 ```
 
-The external CI trust bundle must live outside the repository. rc10 bootstraps `gate.py` before executing repository gate code and then pins the remaining control-plane identities before any accepted control stage runs.
+The external CI trust bundle must live outside the repository. rc11 preserves the rc10 external trust contract while requiring the gate bootstrap and all six fixed control-plane paths to remain non-symlinked component-by-component under one verified checkout root.
 
-rc10 intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled trust/enforcement work.
+rc11 intentionally does not claim fork-PR enforcement, `pull_request_target` safety, workflow self-authentication, branch-protection configuration, signing/provenance, runner provenance, or external trust-bundle administration. Those require later separately controlled trust/enforcement work.
 
-The immediate independent-review question is whether the rc10 trust bundle, bootstrap, fixed six-artifact control-plane pins, nested external-pin consistency, stage order, failure policy and trusted-main/manual workflow are sound and non-regressive without expanding into deferred PR/signing/generated-view/L3/M3/M4/L4 scope.
+The immediate independent-review question is whether rc11 fully closes `R10-01`: the gate-root and downstream-control shadow-repository pivots must fail, all six pinned control-plane paths must reject parent-component symlinks, stage-reported repository roots must remain bound to the verified checkout root, and the accepted rc10 trust/stage/failure policy must remain otherwise unchanged.
 
 Expected review gate:
 
 ```text
-V0.0.4 CI TRUST-INPUT / EXECUTABLE-GOVERNANCE GATE FOUNDATION GATE: YES / YES, AFTER MINOR CLEANUP / NO
+V0.0.4 CI REPOSITORY PATH-COMPONENT / ROOT-BINDING HARDENING GATE: YES / YES, AFTER MINOR CLEANUP / NO
 ```
 
-A `YES` accepts only this bounded trusted-branch/manual CI foundation. It does not automatically authorize fork-PR/merge blocking, signing/provenance, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
+A `YES` closes the focused R10-01 path/root-binding defect only. It does not automatically authorize fork-PR/merge blocking, signing/provenance, registry generation, generated indexes/views, code generation, project inference, machine-readable L2→L3 relations, Pattern expansion, M3/M4 or L4 work.
 

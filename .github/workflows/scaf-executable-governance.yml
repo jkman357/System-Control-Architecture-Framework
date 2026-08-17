@@ -44,7 +44,9 @@ jobs:
 
           python -I - "$TRUST_BUNDLE" "$EXPECTED_GATE_HASH" <<'PY'
           import json
+          import os
           import pathlib
+          import stat
           import sys
 
           bundle_path = pathlib.Path(sys.argv[1])
@@ -69,6 +71,27 @@ jobs:
           digest = matches[0]
           if not isinstance(digest, str) or len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest):
               raise SystemExit("ERROR: invalid gate.py SHA-256 pin")
+
+          repo_root = pathlib.Path.cwd().absolute()
+          workspace = pathlib.Path(os.environ["GITHUB_WORKSPACE"]).resolve()
+          if repo_root.resolve() != workspace:
+              raise SystemExit("ERROR: bootstrap working directory is not GITHUB_WORKSPACE")
+
+          gate_rel = pathlib.Path("tools/scaf_ci_gate/gate.py")
+          current = repo_root
+          for index, part in enumerate(gate_rel.parts):
+              current = current / part
+              try:
+                  mode = os.lstat(current).st_mode
+              except OSError as exc:
+                  raise SystemExit(f"ERROR: cannot inspect bootstrap gate path component {current}: {exc}")
+              if stat.S_ISLNK(mode):
+                  raise SystemExit(f"ERROR: bootstrap gate path component must not be a symlink: {current}")
+              if index < len(gate_rel.parts) - 1 and not stat.S_ISDIR(mode):
+                  raise SystemExit(f"ERROR: bootstrap gate parent component is not a directory: {current}")
+              if index == len(gate_rel.parts) - 1 and not stat.S_ISREG(mode):
+                  raise SystemExit(f"ERROR: bootstrap gate is not a regular file: {current}")
+
           out_path.write_text(digest + "\n", encoding="ascii")
           PY
 

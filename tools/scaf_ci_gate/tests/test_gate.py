@@ -10,6 +10,7 @@ import sys
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from tools.scaf_ci_gate import gate
 
@@ -135,6 +136,132 @@ class GateTests(unittest.TestCase):
         self.assertIn("SCAF_CI_TRUST_BUNDLE_B64", workflow)
         self.assertIn("$RUNNER_TEMP/scaf-ci-trust-bundle.json", workflow)
         self.assertIn("python -I tools/scaf_ci_gate/gate.py", workflow)
+
+
+    def test_all_pinned_artifact_parent_symlinks_fail_before_stages(self) -> None:
+        parent_components = {
+            "tools/scaf_ci_gate/gate.py": "tools/scaf_ci_gate",
+            "tools/scaf_external_pin/checker.py": "tools/scaf_external_pin",
+            "release-integrity/frozen-baseline-manifest.json": "release-integrity",
+            "tools/scaf_release_integrity/checker.py": "tools/scaf_release_integrity",
+            "tools/scaf_validator/validator.py": "tools/scaf_validator",
+            "schemas/authority-registry.schema.json": "schemas",
+        }
+        bundle = make_bundle(REPO_ROOT)
+        for artifact, parent_rel in parent_components.items():
+            with self.subTest(artifact=artifact), tempfile.TemporaryDirectory() as td:
+                base = Path(td)
+                repo_copy = base / "repo"
+                shadow = repo_copy / "shadow"
+                shutil.copytree(REPO_ROOT, repo_copy, symlinks=True)
+                shutil.copytree(REPO_ROOT, shadow, symlinks=True)
+
+                parent = repo_copy / parent_rel
+                if parent.is_dir() and not parent.is_symlink():
+                    shutil.rmtree(parent)
+                else:
+                    parent.unlink(missing_ok=True)
+                target = Path(os.path.relpath(shadow / parent_rel, parent.parent))
+                parent.symlink_to(target, target_is_directory=True)
+
+                trust = base / "trust.json"
+                trust.write_text(json.dumps(bundle), encoding="utf-8")
+                report = gate.execute_gate(trust, repo_copy)
+                self.assertFalse(report.passed)
+                self.assertEqual(report.stages, ())
+                self.assertTrue(
+                    any("path component must not be a symlink" in error for error in report.errors),
+                    report.errors,
+                )
+
+    def test_production_gate_parent_symlink_shadow_repo_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            repo_copy = base / "repo"
+            shadow = repo_copy / "shadow"
+            shutil.copytree(REPO_ROOT, repo_copy, symlinks=True)
+            shutil.copytree(REPO_ROOT, shadow, symlinks=True)
+
+            gate_dir = repo_copy / "tools/scaf_ci_gate"
+            shutil.rmtree(gate_dir)
+            gate_dir.symlink_to(Path("../shadow/tools/scaf_ci_gate"), target_is_directory=True)
+            normative = repo_copy / "docs/normative/10_SCAF_CTX_System_Context_Obligations.md"
+            normative.write_text(normative.read_text(encoding="utf-8") + "\nshadow-pivot-mutation\n", encoding="utf-8")
+
+            trust = base / "trust.json"
+            trust.write_text(json.dumps(make_bundle(REPO_ROOT)), encoding="utf-8")
+            result = subprocess.run(
+                [
+                    sys.executable,
+                    "-I",
+                    str(repo_copy / "tools/scaf_ci_gate/gate.py"),
+                    "--trust-bundle",
+                    str(trust),
+                ],
+                cwd=repo_copy,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("RESULT: FAIL", result.stdout)
+            self.assertIn("path component must not be a symlink", result.stdout + result.stderr)
+            self.assertNotIn(f"Repository: {shadow.resolve()}", result.stdout)
+
+    def test_production_validator_parent_symlink_shadow_repo_fails(self) -> None:
+        with tempfile.TemporaryDirectory() as td:
+            base = Path(td)
+            repo_copy = base / "repo"
+            shadow = repo_copy / "shadow"
+            shutil.copytree(REPO_ROOT, repo_copy, symlinks=True)
+            shutil.copytree(REPO_ROOT, shadow, symlinks=True)
+
+            validator_dir = repo_copy / "tools/scaf_validator"
+            shutil.rmtree(validator_dir)
+            validator_dir.symlink_to(Path("../shadow/tools/scaf_validator"), target_is_directory=True)
+            registry = repo_copy / "authority-registry.yaml"
+            registry.write_text(registry.read_text(encoding="utf-8").replace("SCAF-AK-001", "SCAF-AK-999", 1), encoding="utf-8")
+
+            trust = base / "trust.json"
+            trust.write_text(json.dumps(make_bundle(REPO_ROOT)), encoding="utf-8")
+            script = repo_copy / "tools/scaf_ci_gate/gate.py"
+            result = subprocess.run(
+                [sys.executable, "-I", str(script), "--trust-bundle", str(trust)],
+                cwd=repo_copy,
+                text=True,
+                capture_output=True,
+                check=False,
+            )
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn("RESULT: FAIL", result.stdout)
+            self.assertIn("tools/scaf_validator", result.stdout + result.stderr)
+            self.assertIn("path component must not be a symlink", result.stdout + result.stderr)
+            self.assertNotIn("--- external-pin verification ---", result.stdout)
+
+    def test_stage_reported_repository_must_match_verified_root(self) -> None:
+        bundle = make_bundle(REPO_ROOT)
+        wrong_root = REPO_ROOT / "shadow"
+        fake_stage = gate.GateStageResult(
+            name="external-pin verification",
+            returncode=0,
+            stdout=f"SCAF External Release-Integrity Pin Verification\nRepository: {wrong_root}\nRESULT: PASS\n",
+            stderr="",
+        )
+        with tempfile.TemporaryDirectory() as td:
+            trust = Path(td) / "trust.json"
+            trust.write_text(json.dumps(bundle), encoding="utf-8")
+            with mock.patch.object(gate, "_run_stage", return_value=fake_stage):
+                report = gate.execute_gate(trust, REPO_ROOT)
+        self.assertFalse(report.passed)
+        self.assertEqual(len(report.stages), 1)
+        self.assertTrue(any("repository-root mismatch" in error for error in report.errors))
+
+    def test_workflow_bootstrap_checks_path_components_before_hash(self) -> None:
+        workflow = (REPO_ROOT / ".github/workflows/scaf-executable-governance.yml").read_text(encoding="utf-8")
+        self.assertIn("os.lstat", workflow)
+        self.assertIn("stat.S_ISLNK", workflow)
+        self.assertIn("tools/scaf_ci_gate/gate.py", workflow)
+        self.assertLess(workflow.index("os.lstat"), workflow.index("sha256sum tools/scaf_ci_gate/gate.py"))
 
     def test_workflow_actions_are_full_sha_pinned_and_read_only(self) -> None:
         workflow = (REPO_ROOT / ".github/workflows/scaf-executable-governance.yml").read_text(encoding="utf-8")
