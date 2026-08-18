@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.6rc14 — Project Application / Effective Project Profile Milestone Consolidation and Freeze Candidate
+
+- Continue after the independent rc13 review returned clean `PASS / GATE YES` with zero findings.
+- Add a consolidation-only controlled record covering the accepted rc01→rc13 Project Application and Effective Project Profile dependency chain.
+- Consolidate historical finding closure: rc02 Major/Minor findings closed by rc03; rc04 Minor fixture-coverage finding closed by rc05; no accepted finding remains open.
+- Consolidate the accepted Project Application record/representation/schema/validator/query boundary and the Effective Project Profile semantics/representation/schema/validator/generator boundary.
+- Record the current accepted regression inventory: 98 v0.0.6 executable-development tests plus 93 frozen v0.0.4/v0.0.5 regression tests, for 191 review-covered repository tests.
+- Preserve the exact-scope, invalid-vs-unresolved, `undetermined` versus `no_current_disposition`, validated-input, and engineering-authority boundaries.
+- Explicitly defer context packaging, scope/reference resolution, applicability inference, Pattern selection, CI applicability-completion enforcement, compliance/verification/closure determination, L4 guidance, and Development Context Recovery.
+- Change documentation/navigation only; no accepted representation, schema, validator, query, generator, frozen source, workflow, trust boundary, or test implementation is modified.
+- Mark rc14 as a milestone / freeze candidate only. Formal `v0.0.6` freeze still requires a separate explicit governance decision.
+
 ## v0.0.6rc13 — Effective Project Profile Deterministic Generator Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc12 review returned clean `PASS / GATE YES` with zero findings.
