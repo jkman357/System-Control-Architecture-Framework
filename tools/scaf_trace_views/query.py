@@ -2,9 +2,9 @@
 """Produce deterministic read-only L2<->L3 trace views.
 
 Supported public programmatic entry points are query_l2() and query_pattern().
-Both own the required source-aware repository validation step. Internal context
-and projection helpers are deliberately non-public and cannot be supplied by a
-supported caller as a substitute for validation.
+Both own the required trace and authority source-aware repository validation
+steps. Internal context and projection helpers are deliberately non-public and
+cannot be supplied by a supported caller as a substitute for validation.
 
 The tool does not generate or rewrite authority or trace registries and does
 not infer project applicability, recommendation, selection, satisfaction,
@@ -29,10 +29,12 @@ from tools.scaf_trace_validator.validator import (
     UniqueKeyLoader,
     validate_repository,
 )
+from tools.scaf_validator.validator import validate_registry as validate_authority_registry
 
 __all__ = ("TraceViewError", "query_l2", "query_pattern", "main")
 
 TRACE_VIEW_VERSION = 1
+AUTHORITY_SCHEMA_PATH = Path("schemas/authority-registry.schema.json")
 RELATION_FIELDS = (
     "pattern_id",
     "relation_type",
@@ -73,11 +75,29 @@ def _load_yaml(path: Path) -> Any:
 
 
 def _load_validated_context(repo_root: Path) -> _ValidatedTraceContext:
-    repo_root = repo_root.absolute()
-    report = validate_repository(repo_root)
-    if not report.passed:
-        detail = report.errors[0] if report.errors else "source-aware trace validation failed"
+    repo_root = repo_root.resolve()
+
+    trace_report = validate_repository(repo_root)
+    if not trace_report.passed:
+        detail = (
+            trace_report.errors[0]
+            if trace_report.errors
+            else "source-aware trace validation failed"
+        )
         raise TraceViewError(f"repository trace validation failed: {detail}")
+
+    authority_report = validate_authority_registry(
+        repo_root,
+        repo_root / AUTHORITY_REGISTRY_PATH,
+        repo_root / AUTHORITY_SCHEMA_PATH,
+    )
+    if not authority_report.passed:
+        detail = (
+            authority_report.errors[0]
+            if authority_report.errors
+            else "source-aware authority-registry validation failed"
+        )
+        raise TraceViewError(f"repository authority validation failed: {detail}")
 
     registry = _load_yaml(repo_root / REGISTRY_PATH)
     authority = _load_yaml(repo_root / AUTHORITY_REGISTRY_PATH)
@@ -119,7 +139,11 @@ def _build_l2_view(context: _ValidatedTraceContext, l2_id: str) -> dict[str, Any
         raise TraceViewError(f"unknown or non-project-applicable L2 authority identity: {l2_id}")
 
     relations = sorted(
-        (dict(relation) for relation in context.relations if relation["l2_id"] == l2_id),
+        (
+            dict(relation)
+            for relation in context.relations
+            if relation["l2_id"] == l2_id
+        ),
         key=_l2_view_key,
     )
     return {
@@ -131,12 +155,18 @@ def _build_l2_view(context: _ValidatedTraceContext, l2_id: str) -> dict[str, Any
     }
 
 
-def _build_pattern_view(context: _ValidatedTraceContext, pattern_id: str) -> dict[str, Any]:
+def _build_pattern_view(
+    context: _ValidatedTraceContext, pattern_id: str
+) -> dict[str, Any]:
     if pattern_id not in context.pattern_ids:
         raise TraceViewError(f"unknown frozen Pattern identity: {pattern_id}")
 
     relations = sorted(
-        (dict(relation) for relation in context.relations if relation["pattern_id"] == pattern_id),
+        (
+            dict(relation)
+            for relation in context.relations
+            if relation["pattern_id"] == pattern_id
+        ),
         key=_pattern_view_key,
     )
     return {
@@ -149,13 +179,13 @@ def _build_pattern_view(context: _ValidatedTraceContext, pattern_id: str) -> dic
 
 
 def query_l2(repo_root: str | Path, l2_id: str) -> dict[str, Any]:
-    """Return an L2->L3 view after validating the requested repository root."""
+    """Return an L2->L3 view after validating all consumed repository inputs."""
     context = _load_validated_context(Path(repo_root))
     return _build_l2_view(context, l2_id)
 
 
 def query_pattern(repo_root: str | Path, pattern_id: str) -> dict[str, Any]:
-    """Return an L3->L2 view after validating the requested repository root."""
+    """Return an L3->L2 view after validating all consumed repository inputs."""
     context = _load_validated_context(Path(repo_root))
     return _build_pattern_view(context, pattern_id)
 
@@ -169,7 +199,9 @@ def _render_text(view: dict[str, Any]) -> str:
         f"Relations: {view['relation_count']}",
     ]
     if not view["relations"]:
-        lines.append("No catalog trace relations are currently recorded for this authority identity.")
+        lines.append(
+            "No catalog trace relations are currently recorded for this authority identity."
+        )
         return "\n".join(lines)
 
     current_type: str | None = None
@@ -184,8 +216,12 @@ def _render_text(view: dict[str, Any]) -> str:
             else relation["l2_id"]
         )
         lines.append(f"- {counterpart}")
-        lines.append(f"  qualifier: {relation['qualifier'] if relation['qualifier'] is not None else 'null'}")
-        lines.append(f"  source: {relation['pattern_source_path']} / {relation['pattern_source_field']}")
+        lines.append(
+            f"  qualifier: {relation['qualifier'] if relation['qualifier'] is not None else 'null'}"
+        )
+        lines.append(
+            f"  source: {relation['pattern_source_path']} / {relation['pattern_source_field']}"
+        )
         lines.append(f"  source_release: {relation['source_release']}")
     return "\n".join(lines)
 
@@ -198,7 +234,7 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         description=(
             "Produce deterministic read-only L2<->L3 views only after the repository "
-            "passes the SCAF source-aware trace validator."
+            "passes the SCAF source-aware trace and authority-registry validators."
         )
     )
     parser.add_argument(
@@ -208,8 +244,13 @@ def main(argv: list[str] | None = None) -> int:
         help="Repository root to query (default: current working directory).",
     )
     target = parser.add_mutually_exclusive_group(required=True)
-    target.add_argument("--l2", help="Known frozen Project-Applicable Obligation ID to view from L2 toward L3.")
-    target.add_argument("--pattern", help="Known frozen L3 Pattern ID to view toward L2.")
+    target.add_argument(
+        "--l2",
+        help="Known frozen Project-Applicable Obligation ID to view from L2 toward L3.",
+    )
+    target.add_argument(
+        "--pattern", help="Known frozen L3 Pattern ID to view toward L2."
+    )
     parser.add_argument(
         "--format",
         choices=("text", "json"),

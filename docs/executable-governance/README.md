@@ -6,9 +6,14 @@
 
 ## Current Development Line
 
-`v0.0.5rc8 — L3 Trace Views Validated Programmatic API Boundary Hardening` follows the rc7 independent review, which found one blocking Major (`RC7-01`) in the programmatic API surface: caller-constructed `TraceContext` data could reach public view builders without rc6 validation even though the canonical CLI path was correctly gated.
+`v0.0.5rc9 — L3 Trace Views Authority Validation and CLI Execution Boundary Closure` follows the rc8 independent review. That review confirmed `RC7-01: RESOLVED` and identified one new Major (`RC8-01`) plus one Minor (`RC8-02`).
 
-rc8 closes only that boundary. `tools/scaf_trace_views` now defines `query_l2(repo_root, l2_id)` and `query_pattern(repo_root, pattern_id)` as the supported public Python query APIs; both own the rc6 validation step. CLI execution calls the same public APIs. Validated context/projection helpers are internal and the legacy public builder/context symbols are removed.
+rc9 is narrowly scoped to those findings:
+
+- supported `query_l2(repo_root, l2_id)` and `query_pattern(repo_root, pattern_id)` now require both rc6 trace validation and the existing frozen authority-registry validator against the same repository root before context loading/projection;
+- `tools.scaf_trace_views` uses lazy package re-exports so documented `python -m tools.scaf_trace_views.query` execution does not preload the target module;
+- real subprocess regressions cover successful and invalid-repository documented CLI execution;
+- frozen validators, frozen L1/L2/L3 sources, registries/schemas, release-integrity controls, CI controls and the production six-artifact trust set are not modified.
 
 Current v0.0.5 records:
 
@@ -17,100 +22,45 @@ Current v0.0.5 records:
 - `16_SCAF_v0.0.5rc3_L3_Machine_Readable_Trace_Serialization_Foundation.md` — accepted concrete serialization contract;
 - `17_SCAF_v0.0.5rc4_L3_Trace_Schema_and_Source_Extraction_Contract_Foundation.md` — accepted schema/extraction contract;
 - `18_SCAF_v0.0.5rc5_L3_Source_Aware_Trace_Validator_Foundation.md` — historical rc5 validator foundation reviewed with gate `NO` / `R5-01` + `R5-02`;
-- `19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md` — accepted `R5-01` / `R5-02` fail-closed closure;
+- `19_SCAF_v0.0.5rc6_L3_Trace_Validator_Fail_Closed_Source_Boundary_Hardening.md` — accepted `R5-01` / `R5-02` closure;
 - `20_SCAF_v0.0.5rc7_L3_Deterministic_Trace_Views_and_Query_Foundation.md` — trace-consumption foundation reviewed with gate `NO` / `RC7-01`;
-- `21_SCAF_v0.0.5rc8_L3_Trace_Views_Validated_Programmatic_API_Boundary_Hardening.md` — current focused `RC7-01` closure candidate.
+- `21_SCAF_v0.0.5rc8_L3_Trace_Views_Validated_Programmatic_API_Boundary_Hardening.md` — `RC7-01` closure candidate; review confirmed closure but opened `RC8-01` / `RC8-02`;
+- `22_SCAF_v0.0.5rc9_L3_Trace_Views_Authority_Validation_and_CLI_Execution_Boundary_Closure.md` — current focused rc8 finding-closure candidate.
 
 Detailed version/review history remains in repository-root `CHANGELOG.md`.
 
-## 1. Purpose
+## Frozen v0.0.4 Position
 
-This directory contains separately controlled development toward SCAF executable governance.
+The v0.0.4 baseline remains frozen. Its semantic validator, release-integrity checker, external-pin checker, CI gate, manifest, schema and workflow trust model are not changed by rc9.
 
-The frozen v0.0.2 and v0.0.3 baselines are not modified in place. Executable-governance artifacts are downstream representations, schemas, validators, integrity controls and later enforcement mechanisms that must preserve the authority semantics of those frozen baselines.
-
-## 2. Frozen v0.0.4 Position
-
-The independent v0.0.4rc13 closure review returned:
+The accepted frozen regression inventory remains 41 tests:
 
 ```text
-R12-01: RESOLVED
-V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES
-Critical: 0
-Major: 0
-Minor: 0
-Trivial: 0
-Open upstream findings: 0
+scaf_validator           8
+scaf_release_integrity   9
+scaf_external_pin       11
+scaf_ci_gate            13
+Total                   41
 ```
 
-By subsequent explicit governance decision, the reviewed rc13 milestone is now formally frozen as **SCAF v0.0.4 — Frozen Executable Governance Baseline**. The freeze adds no executable control, CI trigger, trust source, semantic authority, or downstream framework layer; it synchronizes release/freeze state only.
+Semantic validation, frozen-byte integrity and repository-external identity pinning remain separate controls.
 
-Current executable-governance artifacts are:
-
-- `00_SCAF_Machine_Readable_Authority_Model.md` — accepted authority model and deterministic record contract;
-- `01_SCAF_v0.0.4rc02_Authority_Model_Determinism_Cleanup.md` — `R1-01` closure record;
-- `02_SCAF_v0.0.4rc03_Initial_Authority_Registry_Serialization.md` — accepted 294-record registry serialization contract;
-- `03_SCAF_v0.0.4rc04_Authority_Registry_Release_State_Documentation_Cleanup.md` — resolved `R3-01` cleanup record;
-- `04_SCAF_v0.0.4rc05_Authority_Registry_Schema_and_Structural_Validator_Foundation.md` — accepted schema/validator foundation;
-- `05_SCAF_v0.0.4rc06_Canonical_Schema_Binding_and_Validator_CLI_Hardening.md` — accepted canonical-schema/CLI hardening;
-- `06_SCAF_v0.0.4rc07_Frozen_Baseline_Release_Integrity_Foundation.md` — accepted local frozen-baseline release-integrity foundation;
-- `07_SCAF_v0.0.4rc08_Release_Integrity_Diagnostic_Cleanup_and_External_Pinning_Foundation.md` — accepted external-pinning foundation;
-- `08_SCAF_v0.0.4rc09_External_Pin_Local_Artifact_Symlink_Hardening.md` — accepted `R8-01` closure;
-- `09_SCAF_v0.0.4rc10_CI_Trust_Input_Model_and_Executable_Governance_Gate_Foundation.md` — accepted trust model / CI-gate foundation record with historical `R10-01` review basis;
-- `10_SCAF_v0.0.4rc11_CI_Repository_Path_Component_and_Root_Binding_Hardening.md` — accepted `R10-01` closure;
-- `11_SCAF_v0.0.4rc12_Executable_Governance_Milestone_Consolidation_and_Freeze_Candidate.md` — milestone consolidation / freeze-candidate record with rc13 R12-01 clarification;
-- `12_SCAF_v0.0.4rc13_Freeze_Candidate_Control_Chain_Documentation_Closure.md` — accepted focused R12-01 documentation closure record;
-- `13_SCAF_v0.0.4_Formal_Freeze_Decision.md` — formal v0.0.4 freeze decision and post-freeze governance boundary;
-- repository-root `authority-registry.yaml` — accepted rc03 representation;
-- `schemas/authority-registry.schema.json` and `tools/scaf_validator/` — accepted semantic/representation conformance path;
-- `release-integrity/frozen-baseline-manifest.json` and `tools/scaf_release_integrity/` — accepted local frozen-byte integrity path;
-- `tools/scaf_external_pin/` — accepted external-pin verification path;
-- `tools/scaf_ci_gate/` and `.github/workflows/scaf-executable-governance.yml` — accepted trusted-main/manual gate with rc11 path/root hardening.
-
-Frozen Markdown remains semantic authority. The formal v0.0.4 freeze does **not** add fork-PR execution, `pull_request_target`, signing/PKI/provenance, workflow self-authentication, canonical trust-bundle storage/distribution, registry generation, generated views/indexes, code generation, automatic applicability inference, machine-readable L2→L3 relations, new L3 Patterns, M3/M4 or L4 guidance.
-
-## 3. Development Order
+## Development Order
 
 ```text
-frozen human-readable semantic authority
+frozen semantic authority
         ↓
-authority model / deterministic record contract
+accepted machine-readable authority representation + frozen validator
         ↓
-machine-readable registry serialization
+accepted L3 machine-readable trace representation
         ↓
-schema + structural/source-aware validator + regression tests
+accepted trace schema + source extraction contract
         ↓
-canonical schema binding + validator CLI hardening
+accepted source-aware trace validator
         ↓
-frozen-baseline manifest + standalone release-integrity checker
+validated deterministic read-only trace consumption
         ↓
-external-pin verification foundation
-        ↓
-local pinned-artifact symlink hardening
-        ↓
-CI trust-input bootstrap + executable-governance gate foundation
-        ↓
-repository path-component + root-binding hardening
-        ↓
-executable-governance milestone consolidation / freeze candidate (rc12)
-        ↓
-control-chain documentation closure (rc13)
-        ↓
-formal v0.0.4 executable-governance freeze
-        ↓
-later separately gated PR/merge enforcement / signing / provenance / generated views
+current rc9 same-root authority/trace proof closure + clean CLI execution
 ```
 
-Semantic validation, frozen-byte integrity, and external identity pinning remain deliberately separate controls.
-
-## 4. Frozen Gate State
-
-The independent v0.0.4rc13 review confirmed `R12-01: RESOLVED` and returned:
-
-```text
-V0.0.4 FREEZE-CANDIDATE CONTROL-CHAIN DOCUMENTATION CLOSURE GATE: YES
-```
-
-The accepted review preserved all 41 regressions, the canonical outside-repository trust-bundle production gate, the capability-layering/runtime-order distinction, frozen L1/L2 and L3 identities, and zero open findings. The later explicit governance decision therefore created the formal v0.0.4 frozen baseline recorded in `13_SCAF_v0.0.4_Formal_Freeze_Decision.md`.
-
-No in-place semantic or executable modification is permitted after this freeze.
+No later enforcement, applicability inference, recommendation, selection, generated index, code generation, signing/provenance, or L4 scope is implied by rc9.

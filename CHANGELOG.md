@@ -1,5 +1,33 @@
 # Changelog
 
+## v0.0.5rc9 — L3 Trace Views Authority Validation and CLI Execution Boundary Closure
+
+- Continue the controlled v0.0.5 line after the independent rc8 review confirmed `RC7-01: RESOLVED` but returned `V0.0.5 L3 TRACE VIEWS VALIDATED PROGRAMMATIC API BOUNDARY HARDENING GATE: NO` with `RC8-01` Major and `RC8-02` Minor.
+- Close `RC8-01` by requiring every supported public trace query to pass both the accepted rc6 source-aware trace validator and the frozen authority-registry schema/source-aware validator against the same resolved repository root before any view is returned.
+- Reuse the accepted frozen `tools.scaf_validator.validator.validate_registry()` implementation unchanged; do not duplicate authority-schema/source validation inside trace views.
+- Keep `query_l2(repo_root, l2_id)` and `query_pattern(repo_root, pattern_id)` as the supported validation-owning public Python API and preserve internal/private projection helpers.
+- Close `RC8-02` by replacing eager package re-export with lazy package attribute resolution so importing `tools.scaf_trace_views` does not preload the `python -m tools.scaf_trace_views.query` target.
+- Add real subprocess regressions for the documented `python -m` command requiring successful stdout with empty stderr and fail-closed validation errors with empty stdout/non-zero exit.
+- Add bounded negative-condition regressions for authority-class drift, fabricated Project-Applicable authority records, and invalid authority-registry state via both public query directions.
+- Expand the trace-view/query development suite from 23 to 28 tests.
+- Preserve accepted trace-view projection semantics, all 119 relations, seven-field fidelity, qualifiers, zero-relation behavior, deterministic ordering/JSON, and the no-applicability/no-compliance/no-closure boundary.
+- Preserve the accepted rc6 trace validator, frozen authority validator, authority/trace registries and schemas, frozen v0.0.2/v0.0.3 trees, frozen v0.0.4 controls, 41-test regression inventory, workflow and six-artifact production trust set unchanged.
+
+### rc8 review disposition
+
+```text
+Critical: 0
+Major:    1
+Minor:    1
+Trivial:  0
+
+RC7-01: RESOLVED
+RC8-01 — Supported public queries consume authority-registry classification state outside the owned rc6 validation proof
+RC8-02 — Eager package re-export preloads/re-executes the documented python -m CLI target
+
+V0.0.5 L3 TRACE VIEWS VALIDATED PROGRAMMATIC API BOUNDARY HARDENING GATE: NO
+```
+
 ## v0.0.5rc8 — L3 Trace Views Validated Programmatic API Boundary Hardening
 
 - Continue the controlled v0.0.5 line after the independent rc7 review returned `V0.0.5 L3 DETERMINISTIC TRACE VIEWS / QUERY FOUNDATION GATE: NO` with one blocking Major, `RC7-01`.

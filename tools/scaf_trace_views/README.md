@@ -1,10 +1,10 @@
 # SCAF L3 Deterministic Trace Views
 
-`tools/scaf_trace_views` is the v0.0.5rc8 validated programmatic-API hardening of the read-only consumption foundation for the accepted L3 machine-readable trace.
+`tools/scaf_trace_views` is the v0.0.5rc9 authority-validation and CLI-execution boundary closure for deterministic read-only consumption of the accepted L3 machine-readable trace.
 
-It does **not** create another authority/index file. Every supported CLI or Python query first requires the requested repository to pass the accepted source-aware trace validator, then derives a view in memory from `l3-trace-registry.yaml`.
+It creates no authority/index file. Every supported Python or CLI query requires **both** the accepted rc6 source-aware trace validator and the frozen source-aware authority-registry validator to pass against the same resolved repository root before any trace view is projected.
 
-Supported Python API:
+## Supported Python API
 
 ```python
 from tools.scaf_trace_views import query_l2, query_pattern
@@ -13,7 +13,35 @@ view = query_l2(repo_root, "SCAF-ROB-004")
 view = query_pattern(repo_root, "SCAF-PAT-COM-001")
 ```
 
-The supported public query functions own the validation step. Projection context/builders are internal implementation details and are not caller-supplied trust objects.
+The public query functions own the validation sequence. A caller cannot supply prebuilt relation state, an authority classification set, or a caller-created context as a substitute for repository validation.
+
+The package uses lazy re-exports so importing `tools.scaf_trace_views` does not preload the `tools.scaf_trace_views.query` CLI target.
+
+## Validated-input boundary
+
+```text
+query_l2() / query_pattern()
+        ↓
+rc6 source-aware trace validation
+        ↓ PASS only
+frozen source-aware authority-registry validation
+        ↓ PASS only
+load validated repository state
+        ↓
+internal projection
+        ↓
+view
+```
+
+The authority validator is the existing frozen `tools.scaf_validator.validator.validate_registry()` implementation. rc9 reuses it unchanged against:
+
+```text
+<repo_root>/authority-registry.yaml
+<repo_root>/schemas/authority-registry.schema.json
+<repo_root>/docs/normative/
+```
+
+This ensures the Project-Applicable L2 query domain is not derived from unproved `authority_class` state.
 
 ## Run
 
@@ -24,45 +52,45 @@ python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004
 python -m tools.scaf_trace_views.query --pattern SCAF-PAT-COM-001
 ```
 
-Deterministic JSON is available for AI/tool consumption:
+Deterministic JSON:
 
 ```text
 python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004 --format json
 python -m tools.scaf_trace_views.query --pattern SCAF-PAT-COM-001 --format json
 ```
 
+Successful documented `python -m` execution produces the requested payload on stdout and no runtime-warning stderr. Validation failure produces no view payload, emits `ERROR:` and `RESULT: FAIL` to stderr, and exits non-zero.
+
 ## View semantics
 
-The tool preserves the accepted typed trace relations and all seven serialized relation fields. It does not flatten relation classes and does not discard material qualifier context.
-
-L2 -> L3 view order:
+All seven accepted serialized relation fields are preserved:
 
 ```text
-relation type order
-    primary_realization_candidate
-    supporting_realization
-    constraint_input
-then pattern_id ascending
+pattern_id
+relation_type
+l2_id
+pattern_source_path
+pattern_source_field
+source_release
+qualifier
 ```
 
-L3 -> L2 view order:
+Relation classes remain:
 
 ```text
-relation type order
-    primary_realization_candidate
-    supporting_realization
-    constraint_input
-then l2_id ascending
+primary_realization_candidate
+supporting_realization
+constraint_input
 ```
 
-A known frozen `Project-Applicable Obligation` with no current L3 trace is a valid zero-relation result. An unknown/non-project-applicable authority ID or unknown frozen Pattern ID fails closed.
+L2 -> L3 ordering is relation type then `pattern_id`. L3 -> L2 ordering is relation type then `l2_id`.
+
+A known, source-validated `Project-Applicable Obligation` with no accepted L3 trace is a valid zero-relation result. A Framework Normative Invariant, unknown authority, unknown Pattern, invalid trace state, or invalid authority-registry state returns no supported view.
 
 ## Boundary
 
-A query result means only that the accepted catalog trace contains the displayed typed relation(s).
-
 ```text
-Queried / Traced / Serialized / Source-validated
+Queried / Traced / Serialized / Trace-source-validated / Authority-source-validated
 != Applicable
 != Recommended
 != Selected

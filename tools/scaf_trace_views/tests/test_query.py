@@ -3,6 +3,8 @@ from __future__ import annotations
 import copy
 import io
 import json
+import subprocess
+import sys
 import tempfile
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
@@ -15,6 +17,7 @@ import tools.scaf_trace_views as trace_views_package
 import tools.scaf_trace_views.query as query_module
 from tools.scaf_trace_validator.validator import UniqueKeyLoader
 from tools.scaf_trace_views.query import (
+    AUTHORITY_SCHEMA_PATH,
     RELATION_FIELDS,
     TraceViewError,
     _ValidatedTraceContext,
@@ -45,6 +48,7 @@ class TraceViewTests(unittest.TestCase):
             "l3-trace-registry.yaml",
             "authority-registry.yaml",
             "schemas/l3-trace-registry.schema.json",
+            "schemas/authority-registry.schema.json",
         ]:
             source = REPO_ROOT / relative
             target = root / relative
@@ -55,21 +59,57 @@ class TraceViewTests(unittest.TestCase):
             target = root / relative
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(source.read_bytes())
+        for source in (REPO_ROOT / "docs/normative").glob("*.md"):
+            relative = source.relative_to(REPO_ROOT)
+            target = root / relative
+            target.parent.mkdir(parents=True, exist_ok=True)
+            target.write_bytes(source.read_bytes())
         return root
+
+    @staticmethod
+    def load_yaml(path: Path):
+        with path.open("r", encoding="utf-8") as stream:
+            return yaml.load(stream, Loader=UniqueKeyLoader)
+
+    @staticmethod
+    def write_yaml(path: Path, data) -> None:
+        path.write_text(
+            yaml.safe_dump(data, sort_keys=False, allow_unicode=True),
+            encoding="utf-8",
+        )
+
+    def change_authority_class(self, root: Path, authority_id: str, new_class: str) -> None:
+        path = root / "authority-registry.yaml"
+        data = self.load_yaml(path)
+        record = next(record for record in data["records"] if record["id"] == authority_id)
+        record["authority_class"] = new_class
+        self.write_yaml(path, data)
 
     def test_l2_view_returns_typed_relation_and_qualifier(self):
         view = _build_l2_view(self.context, "SCAF-ROB-004")
         self.assertEqual("l2_to_l3", view["direction"])
         self.assertGreaterEqual(view["relation_count"], 1)
-        match = next(r for r in view["relations"] if r["pattern_id"] == "SCAF-PAT-TIM-002")
+        match = next(
+            r for r in view["relations"] if r["pattern_id"] == "SCAF-PAT-TIM-002"
+        )
         self.assertEqual("constraint_input", match["relation_type"])
         self.assertEqual("applicable", match["qualifier"])
 
     def test_pattern_view_preserves_multi_type_pairs(self):
         view = _build_pattern_view(self.context, "SCAF-PAT-COM-001")
-        int010 = [r["relation_type"] for r in view["relations"] if r["l2_id"] == "SCAF-INT-010"]
-        self.assertEqual(["primary_realization_candidate", "constraint_input"], int010)
-        cfg019 = [r["relation_type"] for r in view["relations"] if r["l2_id"] == "SCAF-CFG-019"]
+        int010 = [
+            r["relation_type"]
+            for r in view["relations"]
+            if r["l2_id"] == "SCAF-INT-010"
+        ]
+        self.assertEqual(
+            ["primary_realization_candidate", "constraint_input"], int010
+        )
+        cfg019 = [
+            r["relation_type"]
+            for r in view["relations"]
+            if r["l2_id"] == "SCAF-CFG-019"
+        ]
         self.assertEqual(["supporting_realization", "constraint_input"], cfg019)
 
     def test_known_untraced_authority_returns_zero_relation_view(self):
@@ -96,13 +136,23 @@ class TraceViewTests(unittest.TestCase):
             if sum(1 for r in self.context.relations if r["l2_id"] == l2_id) >= 2
         )
         view = _build_l2_view(self.context, target)
-        order = {"primary_realization_candidate": 0, "supporting_realization": 1, "constraint_input": 2}
-        keys = [(order[r["relation_type"]], r["pattern_id"]) for r in view["relations"]]
+        order = {
+            "primary_realization_candidate": 0,
+            "supporting_realization": 1,
+            "constraint_input": 2,
+        }
+        keys = [
+            (order[r["relation_type"]], r["pattern_id"]) for r in view["relations"]
+        ]
         self.assertEqual(sorted(keys), keys)
 
     def test_pattern_view_order_is_relation_type_then_l2(self):
         view = _build_pattern_view(self.context, "SCAF-PAT-COM-001")
-        order = {"primary_realization_candidate": 0, "supporting_realization": 1, "constraint_input": 2}
+        order = {
+            "primary_realization_candidate": 0,
+            "supporting_realization": 1,
+            "constraint_input": 2,
+        }
         keys = [(order[r["relation_type"]], r["l2_id"]) for r in view["relations"]]
         self.assertEqual(sorted(keys), keys)
 
@@ -117,8 +167,14 @@ class TraceViewTests(unittest.TestCase):
             projected.extend(_build_pattern_view(self.context, pattern_id)["relations"])
         self.assertEqual(len(self.context.relations), len(projected))
         self.assertEqual(
-            sorted(self.context.relations, key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"])),
-            sorted(projected, key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"])),
+            sorted(
+                self.context.relations,
+                key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"]),
+            ),
+            sorted(
+                projected,
+                key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"]),
+            ),
         )
 
     def test_all_l2_views_cover_registry_exactly_once(self):
@@ -127,17 +183,36 @@ class TraceViewTests(unittest.TestCase):
             projected.extend(_build_l2_view(self.context, l2_id)["relations"])
         self.assertEqual(len(self.context.relations), len(projected))
         self.assertEqual(
-            sorted(self.context.relations, key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"])),
-            sorted(projected, key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"])),
+            sorted(
+                self.context.relations,
+                key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"]),
+            ),
+            sorted(
+                projected,
+                key=lambda r: (r["pattern_id"], r["relation_type"], r["l2_id"]),
+            ),
         )
 
     def test_view_payload_has_no_project_decision_state(self):
         view = _build_l2_view(self.context, "SCAF-ROB-004")
         self.assertEqual(
-            {"trace_view_version", "direction", "query_id", "relation_count", "relations"},
+            {
+                "trace_view_version",
+                "direction",
+                "query_id",
+                "relation_count",
+                "relations",
+            },
             set(view),
         )
-        forbidden = {"recommended", "selected", "satisfied", "compliant", "verified", "closed"}
+        forbidden = {
+            "recommended",
+            "selected",
+            "satisfied",
+            "compliant",
+            "verified",
+            "closed",
+        }
         self.assertTrue(forbidden.isdisjoint(view.keys()))
         for relation in view["relations"]:
             self.assertTrue(forbidden.isdisjoint(relation.keys()))
@@ -148,18 +223,19 @@ class TraceViewTests(unittest.TestCase):
 
     def test_invalid_repository_blocks_public_l2_query_before_consumption(self):
         root = self.make_repo()
-        with (root / "l3-trace-registry.yaml").open("r", encoding="utf-8") as stream:
-            data = yaml.load(stream, Loader=UniqueKeyLoader)
+        path = root / "l3-trace-registry.yaml"
+        data = self.load_yaml(path)
         data["relations"].pop()
-        (root / "l3-trace-registry.yaml").write_text(
-            yaml.safe_dump(data, sort_keys=False, allow_unicode=True), encoding="utf-8"
-        )
+        self.write_yaml(path, data)
         with self.assertRaises(TraceViewError):
             query_l2(root, "SCAF-ROB-004")
 
     def test_invalid_frozen_source_blocks_public_pattern_query_before_consumption(self):
         root = self.make_repo()
-        source = root / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        source = (
+            root
+            / "docs/l3/catalog/COM/SCAF-PAT-COM-001_Reconnect_plus_State_Reconciliation.md"
+        )
         text = source.read_text(encoding="utf-8").replace(
             "`SCAF-INT-007`, `SCAF-INT-008`",
             "`SCAF-INT-007` `SCAF-INT-008`",
@@ -169,12 +245,51 @@ class TraceViewTests(unittest.TestCase):
         with self.assertRaises(TraceViewError):
             query_pattern(root, "SCAF-PAT-COM-001")
 
+    def test_authority_class_drift_blocks_public_l2_query(self):
+        root = self.make_repo()
+        self.change_authority_class(
+            root, "SCAF-AK-009", "Project-Applicable Obligation"
+        )
+        with self.assertRaisesRegex(TraceViewError, "authority validation failed"):
+            query_l2(root, "SCAF-AK-009")
+
+    def test_fabricated_project_applicable_authority_blocks_public_l2_query(self):
+        root = self.make_repo()
+        path = root / "authority-registry.yaml"
+        data = self.load_yaml(path)
+        fabricated = copy.deepcopy(data["records"][0])
+        fabricated["id"] = "SCAF-ROB-999"
+        fabricated["source_anchor"] = "SCAF-ROB-999"
+        fabricated["authority_class"] = "Project-Applicable Obligation"
+        data["records"].append(fabricated)
+        self.write_yaml(path, data)
+        with self.assertRaisesRegex(TraceViewError, "authority validation failed"):
+            query_l2(root, "SCAF-ROB-999")
+
+    def test_invalid_authority_registry_blocks_public_pattern_query(self):
+        root = self.make_repo()
+        self.change_authority_class(
+            root, "SCAF-AK-009", "Project-Applicable Obligation"
+        )
+        with self.assertRaisesRegex(TraceViewError, "authority validation failed"):
+            query_pattern(root, "SCAF-PAT-COM-001")
+
     def test_cli_json_is_machine_parseable(self):
         stdout = io.StringIO()
         stderr = io.StringIO()
         with redirect_stdout(stdout), redirect_stderr(stderr):
-            code = main(["--repository", str(REPO_ROOT), "--l2", "SCAF-ROB-004", "--format", "json"])
+            code = main(
+                [
+                    "--repository",
+                    str(REPO_ROOT),
+                    "--l2",
+                    "SCAF-ROB-004",
+                    "--format",
+                    "json",
+                ]
+            )
         self.assertEqual(0, code, stderr.getvalue())
+        self.assertEqual("", stderr.getvalue())
         payload = json.loads(stdout.getvalue())
         self.assertEqual("l2_to_l3", payload["direction"])
         self.assertEqual("SCAF-ROB-004", payload["query_id"])
@@ -183,26 +298,113 @@ class TraceViewTests(unittest.TestCase):
         stdout = io.StringIO()
         stderr = io.StringIO()
         with redirect_stdout(stdout), redirect_stderr(stderr):
-            code = main(["--repository", str(REPO_ROOT), "--l2", "SCAF-INT-999", "--format", "json"])
+            code = main(
+                [
+                    "--repository",
+                    str(REPO_ROOT),
+                    "--l2",
+                    "SCAF-INT-999",
+                    "--format",
+                    "json",
+                ]
+            )
         self.assertEqual(1, code)
         self.assertEqual("", stdout.getvalue())
         self.assertIn("RESULT: FAIL", stderr.getvalue())
 
+    def test_documented_module_cli_success_has_empty_stderr(self):
+        result = subprocess.run(
+            [
+                sys.executable,
+                "-Werror::RuntimeWarning",
+                "-m",
+                "tools.scaf_trace_views.query",
+                "--repository",
+                str(REPO_ROOT),
+                "--l2",
+                "SCAF-ROB-004",
+                "--format",
+                "json",
+            ],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertEqual(0, result.returncode, result.stderr)
+        self.assertEqual("", result.stderr)
+        payload = json.loads(result.stdout)
+        self.assertEqual("l2_to_l3", payload["direction"])
+        self.assertEqual("SCAF-ROB-004", payload["query_id"])
+
+    def test_documented_module_cli_validation_failure_has_no_stdout(self):
+        root = self.make_repo()
+        self.change_authority_class(
+            root, "SCAF-AK-009", "Project-Applicable Obligation"
+        )
+        result = subprocess.run(
+            [
+                sys.executable,
+                "-Werror::RuntimeWarning",
+                "-m",
+                "tools.scaf_trace_views.query",
+                "--repository",
+                str(root),
+                "--l2",
+                "SCAF-AK-009",
+                "--format",
+                "json",
+            ],
+            cwd=REPO_ROOT,
+            text=True,
+            capture_output=True,
+            check=False,
+        )
+        self.assertNotEqual(0, result.returncode)
+        self.assertEqual("", result.stdout)
+        self.assertIn("ERROR:", result.stderr)
+        self.assertIn("RESULT: FAIL", result.stderr)
+        self.assertNotIn("RuntimeWarning", result.stderr)
+
     def test_public_l2_query_owns_validation(self):
-        original = query_module.validate_repository
-        with patch.object(query_module, "validate_repository", wraps=original) as validator:
+        trace_original = query_module.validate_repository
+        authority_original = query_module.validate_authority_registry
+        with patch.object(
+            query_module, "validate_repository", wraps=trace_original
+        ) as trace_validator, patch.object(
+            query_module,
+            "validate_authority_registry",
+            wraps=authority_original,
+        ) as authority_validator:
             view = query_l2(REPO_ROOT, "SCAF-ROB-004")
         self.assertEqual("l2_to_l3", view["direction"])
-        validator.assert_called_once()
-        self.assertEqual(REPO_ROOT.absolute(), validator.call_args.args[0])
+        root = REPO_ROOT.resolve()
+        trace_validator.assert_called_once_with(root)
+        authority_validator.assert_called_once_with(
+            root,
+            root / query_module.AUTHORITY_REGISTRY_PATH,
+            root / AUTHORITY_SCHEMA_PATH,
+        )
 
     def test_public_pattern_query_owns_validation(self):
-        original = query_module.validate_repository
-        with patch.object(query_module, "validate_repository", wraps=original) as validator:
+        trace_original = query_module.validate_repository
+        authority_original = query_module.validate_authority_registry
+        with patch.object(
+            query_module, "validate_repository", wraps=trace_original
+        ) as trace_validator, patch.object(
+            query_module,
+            "validate_authority_registry",
+            wraps=authority_original,
+        ) as authority_validator:
             view = query_pattern(REPO_ROOT, "SCAF-PAT-COM-001")
         self.assertEqual("l3_to_l2", view["direction"])
-        validator.assert_called_once()
-        self.assertEqual(REPO_ROOT.absolute(), validator.call_args.args[0])
+        root = REPO_ROOT.resolve()
+        trace_validator.assert_called_once_with(root)
+        authority_validator.assert_called_once_with(
+            root,
+            root / query_module.AUTHORITY_REGISTRY_PATH,
+            root / AUTHORITY_SCHEMA_PATH,
+        )
 
     def test_internal_validated_context_rejects_caller_constructed_seal(self):
         with self.assertRaises(TraceViewError):
@@ -227,7 +429,16 @@ class TraceViewTests(unittest.TestCase):
         original = query_module.query_l2
         with patch.object(query_module, "query_l2", wraps=original) as public_query:
             with redirect_stdout(stdout), redirect_stderr(stderr):
-                code = main(["--repository", str(REPO_ROOT), "--l2", "SCAF-ROB-004", "--format", "json"])
+                code = main(
+                    [
+                        "--repository",
+                        str(REPO_ROOT),
+                        "--l2",
+                        "SCAF-ROB-004",
+                        "--format",
+                        "json",
+                    ]
+                )
         self.assertEqual(0, code, stderr.getvalue())
         public_query.assert_called_once_with(REPO_ROOT, "SCAF-ROB-004")
 
