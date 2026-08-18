@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.6rc03 — SCAF-APP Project Application Record Basis-Role and State-Compatibility Hardening
+
+- Continue the controlled v0.0.6 line after the independent rc02 review returned `GATE: NO` with `SCAF-RC02-001` (Major) and `SCAF-RC02-002` (Minor), with no frozen-baseline regression.
+- Add `docs/executable-governance/27_SCAF_v0.0.6rc03_SCAF_APP_Project_Application_Record_Basis_Role_and_State_Compatibility_Hardening.md`.
+- Close `SCAF-RC02-001` by defining `disposition_basis.summary` and `disposition_basis.basis_refs` as the only surfaces that may satisfy direct applicability-basis sufficiency.
+- Define `basis_refs` as controlled references that directly establish, justify, or substantively support the current applicability disposition for the declared scope.
+- Keep `decision_refs`, `authority_refs`, and `supporting_refs` as role-distinct decision trace, authority provenance, and related-context surfaces; their mere presence cannot satisfy applicability-basis requirements.
+- Permit the same controlled target to appear on multiple role-specific reference surfaces only when it genuinely fulfills each named role; no cross-role inference is authorized.
+- Close `SCAF-RC02-002` with an explicit state-compatibility matrix for all `disposition_basis` members.
+- Require `unresolved_reason` exactly once for `undetermined`; prohibit `unresolved_reason` and `awaiting_refs` for `applicable` and `not_applicable` current-state records.
+- Keep `summary` / `basis_refs` available for all applicability states while requiring `unresolved_reason` to remain the explicit unresolved-state basis for `undetermined`.
+- Define current-state versus historical-state separation: resolved records shall not retain unresolved-only members as ad hoc history storage; history/supersession/re-evaluation remains deferred.
+- Preserve representation-invalid versus engineering-unresolved separation and preserve all Project Design Authority / project-governance ownership boundaries.
+- Introduce no concrete project-application serialization, schema, validator, scope resolver, automatic applicability classifier, Effective Project Profile, CI completion gate, code generation, new L3 Pattern, or L4 guidance.
+- Change no frozen normative/L3 source, registry, schema, executable validator/query implementation, workflow, release-integrity manifest, external trust input, or accepted regression behavior.
+
 ## v0.0.6rc02 — SCAF-APP Canonical Project Application Record Model
 
 - Continue the controlled v0.0.6 line after the independent rc01 review returned `PASS / GATE YES` with zero Critical, Major, Minor, or Trivial findings.

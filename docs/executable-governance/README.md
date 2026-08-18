@@ -6,18 +6,21 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc02 — SCAF-APP Canonical Project Application Record Model` continues the controlled line after the independent rc01 review returned a clean gate `YES` with zero findings.
+`v0.0.6rc03 — SCAF-APP Project Application Record Basis-Role and State-Compatibility Hardening` continues the controlled line after the independent rc02 review returned `GATE: NO` with one Major (`SCAF-RC02-001`) and one Minor (`SCAF-RC02-002`) finding and no frozen-baseline regression.
 
-rc01 defined the semantic/authority boundary for future machine-readable Project Application records. rc02 freezes the canonical logical record concepts needed before concrete serialization: project-local record identity, target SCAF authority identity/source release, explicit project-scope reference, controlled applicability tokens (`applicable` / `not_applicable` / `undetermined`), structured disposition-basis semantics, and bounded project decision/authority/supporting references.
+rc03 is finding-closure only. It makes `disposition_basis.summary` and `disposition_basis.basis_refs` the only direct applicability-basis surfaces. `decision_refs`, `authority_refs`, and `supporting_refs` retain separate decision-trace, authority-provenance, and supporting-context roles and cannot satisfy applicability basis merely by presence.
 
-The record remains a project-side disposition/trace surface. It does not become Project Design Authority, verification/risk/deviation/evidence/closure authority, and it does not absorb those independent lifecycle state dimensions. `undetermined` remains a legitimate engineering-unresolved state distinct from representation invalidity.
+rc03 also freezes the state-compatibility contract: `unresolved_reason` is required exactly once for `undetermined`, `awaiting_refs` is optional only for `undetermined`, and both members are prohibited for `applicable` / `not_applicable` current-state records. Historical unresolved context remains deferred to a separately reviewed history/supersession/re-evaluation model.
 
-rc02 intentionally adds no concrete project-application registry/dataset, schema, validator, project-scope registry, automatic applicability decision, Pattern selector, Effective Project Profile, CI completion gate or L4 content.
+The Project Application Record remains a project-side disposition/trace surface. It does not become Project Design Authority, verification/risk/deviation/evidence/closure authority, and `undetermined` remains legitimate engineering-unresolved state distinct from representation invalidity.
+
+rc03 intentionally adds no concrete project-application registry/dataset, schema, validator, project-scope registry, automatic applicability decision, Pattern selector, Effective Project Profile, CI completion gate or L4 content.
 
 Controlled records:
 
 - `25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md` — accepted machine-readable SCAF-APP Project Application semantic-model foundation;
-- `26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md` — canonical logical Project Application Record model and determinism contract.
+- `26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md` — canonical logical record model whose independent review opened `SCAF-RC02-001` / `SCAF-RC02-002`;
+- `27_SCAF_v0.0.6rc03_SCAF_APP_Project_Application_Record_Basis_Role_and_State_Compatibility_Hardening.md` — bounded closure of the rc02 basis-role and state-compatibility findings.
 
 ## Frozen v0.0.5 Milestone
 
@@ -86,6 +89,8 @@ frozen v0.0.5 machine-readable traceability baseline
 v0.0.6rc01 SCAF-APP machine-readable Project Application semantic foundation
         ↓
 v0.0.6rc02 canonical Project Application logical record model
+        ↓
+v0.0.6rc03 applicability-basis role + state-compatibility finding closure
 ```
 
 No automatic applicability inference, recommendation, selection, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc02. Concrete serialization/schema/validator work remains separately gated and review-driven.
