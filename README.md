@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.5  
-**Active Development RC:** v0.0.6rc12
-**Status:** Effective Project Profile Source-Aware Validator Foundation / Review Candidate
+**Active Development RC:** v0.0.6rc13
+**Status:** Effective Project Profile Deterministic Generator Foundation / Review Candidate
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -25,7 +25,7 @@ Formal frozen baselines:
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 
-The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc12` continues the controlled SCAF-APP Project Application line by adding the first source-aware Effective Project Profile validator above the accepted rc10 representation and rc11 schema without modifying or respinning v0.0.5.
+The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc13` continues the controlled SCAF-APP Project Application line by adding deterministic validated Effective Project Profile generation above the accepted rc12 source-aware validator without modifying or respinning v0.0.5.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -163,7 +163,8 @@ The production CI gate still requires the repository-external trust input define
 | `tools/scaf_trace_views/` | Frozen v0.0.5 deterministic validated read-only L2↔L3 trace views/query |
 | `tools/scaf_project_application_validator/` | Accepted v0.0.6rc07 Project Application representation/source-aware validator foundation |
 | `tools/scaf_project_application_views/` | Accepted v0.0.6rc08 validated deterministic read-only Project Application record/authority/scope queries |
-| `tools/scaf_effective_project_profile_validator/` | v0.0.6rc12 Effective Project Profile representation/source-aware validator foundation |
+| `tools/scaf_effective_project_profile_validator/` | Accepted v0.0.6rc12 Effective Project Profile representation/source-aware validator foundation |
+| `tools/scaf_effective_project_profile_generator/` | v0.0.6rc13 deterministic validated Effective Project Profile generator foundation |
 | `release-integrity/` | Frozen-baseline integrity manifest |
 | `tools/scaf_release_integrity/` | Frozen-source byte-integrity checker |
 | `tools/scaf_external_pin/` | External-pin verification |
@@ -175,7 +176,7 @@ The production CI gate still requires the repository-external trust input define
 
 SCAF does not automatically decide project applicability or project architecture. A project remains responsible for controlled applicability, architecture/mechanism selection, adaptation, realization, verification/evidence, and closure decisions. Catalog availability and machine-readable trace are navigation/decision-support inputs, not automatic project authority.
 
-`v0.0.6rc01` through `v0.0.6rc08` established the Project Application semantics, canonical representation, schema, representation/source-aware validator, and validated deterministic read/query views. `v0.0.6rc09` accepted the Effective Project Profile semantic foundation, `v0.0.6rc10` accepted its canonical YAML representation, and `v0.0.6rc11` accepted the parsed-instance JSON Schema foundation. `v0.0.6rc12` now adds [`tools/scaf_effective_project_profile_validator/`](tools/scaf_effective_project_profile_validator/) to execute the remaining machine-determinable profile/source boundary: raw-YAML policy, actual Project Application source SHA-256 comparison, accepted rc07 Project Application proof, frozen authority-registry proof, complete source-release-bound PAO domain, cross-entry authority identity, canonical ordering, recorded-state exact trace correspondence, and exact-pair absence proof for `no_current_disposition`. The validator reports profile representation/source conformance only and does not decide engineering applicability correctness, compliance, verification, completion, release or closure. See [`docs/executable-governance/36_SCAF_v0.0.6rc12_Effective_Project_Profile_Source_Aware_Validator_Foundation.md`](docs/executable-governance/36_SCAF_v0.0.6rc12_Effective_Project_Profile_Source_Aware_Validator_Foundation.md).
+`v0.0.6rc01` through `v0.0.6rc08` established the Project Application semantics, canonical representation, schema, representation/source-aware validator, and validated deterministic read/query views. `v0.0.6rc09` through `v0.0.6rc12` established Effective Project Profile semantics, canonical YAML, schema, and source-aware validation. `v0.0.6rc13` now adds [`tools/scaf_effective_project_profile_generator/`](tools/scaf_effective_project_profile_generator/) to deterministically generate the accepted complete-domain profile for one exact opaque scope from validated Project Application and validated authority snapshots. Recorded states are copied only from exact-scope current Project Application records; all other PAOs become profile-only `no_current_disposition`. Generated bytes are bound to the exact Project Application source SHA-256 and must pass the accepted rc12 validator before emission. Generation is projection only and does not decide applicability correctness, scope validity, Pattern selection, compliance, verification, completion, release or closure. See [`docs/executable-governance/37_SCAF_v0.0.6rc13_Effective_Project_Profile_Deterministic_Generator_Foundation.md`](docs/executable-governance/37_SCAF_v0.0.6rc13_Effective_Project_Profile_Deterministic_Generator_Foundation.md).
 
 ## Documentation Policy
 

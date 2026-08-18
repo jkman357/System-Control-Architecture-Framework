@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.0.6rc13 — Effective Project Profile Deterministic Generator Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc12 review returned clean `PASS / GATE YES` with zero findings.
+- Add `tools/scaf_effective_project_profile_generator/` as a deterministic validated generator for the accepted Effective Project Profile representation.
+- Accept one exact opaque `project_scope_ref` plus one selected Project Application source; keep repository/schema/authority/normative inputs repository-owned.
+- Capture Project Application and authority/normative inputs into a private boundary, require frozen authority proof and accepted rc07 Project Application proof, then derive the source-release-bound complete PAO domain.
+- Copy `applicable`, `not_applicable`, and `undetermined` only from validated exact-scope current Project Application records; derive `no_current_disposition` only from exact-pair absence.
+- Derive the source release from validated records, with a repository-owned Project Application schema fallback for a valid zero-record dataset; do not hard-code the current v0.0.2 / 218 inventory.
+- Bind output to SHA-256 of the exact captured Project Application bytes and serialize the accepted rc10 representation deterministically.
+- Self-validate every generated result through the accepted rc12 source-aware validator before returning/emitting it.
+- Emit successful CLI output as canonical YAML only on stdout; introduce no persistent profile registry/cache or source write-back.
+- Preserve exact-scope resolution neutrality, valid `undetermined`, Project Design Authority ownership, and all engineering/compliance/verification/closure boundaries.
+- Add 25 bounded generator regressions while preserving accepted/frozen validation behavior.
+- Introduce no applicability inference, Pattern selection, AI approval, context package, CI completion gate, code generation, L4 guidance, or Development Context Recovery workflow state.
+
 ## v0.0.6rc12 — Effective Project Profile Source-Aware Validator Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc11 review returned clean `PASS / GATE YES` with zero findings.
