@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.6rc10 — Effective Project Profile Canonical Representation Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc09 review returned clean `PASS / GATE YES` with zero findings.
+- Add `docs/executable-governance/34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md`.
+- Add `examples/effective-project-profile.yaml` as the first canonical machine-readable Effective Project Profile YAML fixture.
+- Preserve the rc09 four-state semantics: `applicable`, `not_applicable`, `undetermined`, and profile-only `no_current_disposition`.
+- Bind each profile to one exact opaque `project_scope_ref`, one SCAF source release, and the SHA-256 of the exact Project Application source bytes used for derivation.
+- Represent the complete validated Project-Applicable Obligation domain exactly once, ordered by exact `scaf_authority_id`; exclude FNI.
+- Require `project_application_record_id` only for states backed by a current Project Application record and prohibit it for `no_current_disposition`.
+- Keep Project Application rationale/provenance in the Project Application source rather than duplicating it into the profile.
+- Do not serialize redundant state counts, timestamps, environment-specific paths, Pattern recommendations, implementation/compliance/verification/closure state, or copied authority text.
+- Introduce no profile schema, generator, validator, API, CLI, scope/reference resolver, applicability inference, AI approval, context package, CI completion gate, code generation, new L3 Pattern, L4 guidance, or Development Context Recovery workflow state.
+- Change no frozen/accepted source, Project Application fixture/schema/validator/views, workflow, trust boundary, or regression implementation.
+
 ## v0.0.6rc09 — Effective Project Profile Semantic Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc08 review returned clean `PASS / GATE YES` with zero findings.

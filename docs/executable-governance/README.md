@@ -6,7 +6,7 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc09 — Effective Project Profile Semantic Foundation` continues the controlled line after the independent rc08 review returned clean `PASS / GATE YES` with zero findings.
+`v0.0.6rc10 — Effective Project Profile Canonical Representation Foundation` continues the controlled line after the independent rc09 review returned clean `PASS / GATE YES` with zero findings.
 
 rc09 defines the semantic boundary for a future Effective Project Profile without adding a concrete profile representation or generator. One profile is defined over one exact opaque `project_scope_ref` and the complete validated Project-Applicable Obligation domain for its bound SCAF source release.
 
@@ -24,7 +24,8 @@ Controlled records:
 - `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — accepted formal Project Application schema foundation;
 - `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — accepted Project Application representation/source-aware validator foundation;
 - `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — accepted Project Application validated read/query view foundation;
-- `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — Effective Project Profile semantic foundation review candidate.
+- `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — accepted Effective Project Profile semantic foundation;
+- `34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md` — canonical Effective Project Profile representation foundation review candidate.
 
 ## Frozen v0.0.5 Milestone
 
@@ -107,6 +108,8 @@ v0.0.6rc07 Project Application representation/source-aware validator foundation
 v0.0.6rc08 validated Project Application read/query views
         ↓
 v0.0.6rc09 Effective Project Profile semantic foundation
+        ↓
+v0.0.6rc10 Effective Project Profile canonical representation foundation
 ```
 
-No automatic applicability inference, recommendation, selection, project-reference/scope resolver, generated mutable index, profile serialization/generator, code generation, signing/provenance, CI completion enforcement, context packaging, or L4 scope is implied by rc09. Higher-level executable profile work remains separately gated and review-driven.
+rc10 introduces only the canonical profile YAML representation and exact-source SHA-256 snapshot provenance. No automatic applicability inference, recommendation, selection, project-reference/scope resolver, profile schema/generator/validator/API/CLI, generated mutable index, signing authority, CI completion enforcement, context packaging, code generation, or L4 scope is implied. Higher-level executable profile work remains separately gated and review-driven.

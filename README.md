@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.5  
-**Active Development RC:** v0.0.6rc09
-**Status:** Effective Project Profile Semantic Foundation / Review Candidate
+**Active Development RC:** v0.0.6rc10
+**Status:** Effective Project Profile Canonical Representation Foundation / Review Candidate
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -25,7 +25,7 @@ Formal frozen baselines:
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 
-The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc09` continues the controlled SCAF-APP Project Application line by defining the semantic boundary for a future Effective Project Profile above the accepted rc08 validated query foundation without modifying or respinning v0.0.5.
+The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc10` continues the controlled SCAF-APP Project Application line by defining the first canonical machine-readable Effective Project Profile representation above the accepted rc09 semantics without modifying or respinning v0.0.5.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -156,6 +156,7 @@ The production CI gate still requires the repository-external trust input define
 | `authority-registry.yaml` | Frozen v0.0.4 authority representation |
 | `l3-trace-registry.yaml` | Frozen v0.0.5 subordinate serialization of frozen L3 typed trace relations |
 | `examples/project-application.yaml` | rc04-conformant illustrative SCAF-APP YAML fixture; rc05 adds multi-item ordering/duplicate-free coverage only; not a real project disposition dataset |
+| `examples/effective-project-profile.yaml` | v0.0.6rc10 canonical illustrative Effective Project Profile derived from the accepted example Project Application dataset for one exact scope |
 | `schemas/` | Frozen authority/L3 trace schemas plus the v0.0.6rc06 Project Application schema foundation |
 | `tools/scaf_validator/` | Frozen authority-registry semantic / structural / source-aware validator |
 | `tools/scaf_trace_validator/` | Frozen v0.0.5 source-aware trace validator and regressions |
@@ -173,7 +174,7 @@ The production CI gate still requires the repository-external trust input define
 
 SCAF does not automatically decide project applicability or project architecture. A project remains responsible for controlled applicability, architecture/mechanism selection, adaptation, realization, verification/evidence, and closure decisions. Catalog availability and machine-readable trace are navigation/decision-support inputs, not automatic project authority.
 
-`v0.0.6rc01` through `v0.0.6rc08` established the Project Application semantics, canonical representation, schema, representation/source-aware validator, and validated deterministic read/query views. `v0.0.6rc09` now defines the semantic foundation for a future Effective Project Profile: one exact opaque project scope projected across the complete validated Project-Applicable Obligation domain, with mutually exclusive states `applicable`, `not_applicable`, `undetermined`, and profile-only derived `no_current_disposition`. `no_current_disposition` means only that no current Project Application record exists for the exact PAO/scope pair in the selected validated dataset; it is not a fourth Project Application applicability token and does not imply failure, non-compliance, scope nonexistence, or an unresolved engineering decision. rc09 adds no profile serialization, schema, generator, API, context package, CI gate, Pattern selection or L4 capability. See [`docs/executable-governance/33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md`](docs/executable-governance/33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md).
+`v0.0.6rc01` through `v0.0.6rc08` established the Project Application semantics, canonical representation, schema, representation/source-aware validator, and validated deterministic read/query views. `v0.0.6rc09` accepted the Effective Project Profile semantic foundation. `v0.0.6rc10` now adds the first canonical profile representation in [`examples/effective-project-profile.yaml`](examples/effective-project-profile.yaml): one exact opaque scope over the complete validated PAO domain, preserving `applicable`, `not_applicable`, `undetermined`, and profile-only `no_current_disposition`, with trace-back to current Project Application record IDs only where such records exist. The profile binds to the exact Project Application source snapshot by SHA-256 and deliberately does not duplicate rationale/provenance or introduce a profile schema, generator, validator, API, context package, CI gate, Pattern selection or L4 capability. See [`docs/executable-governance/34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md`](docs/executable-governance/34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md).
 
 ## Documentation Policy
 
