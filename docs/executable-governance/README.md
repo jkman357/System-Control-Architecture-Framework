@@ -6,15 +6,13 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc06 — Project Application Schema Foundation` continues the controlled line after the independent rc05 review returned a clean `GATE: YES`, closed `SCAF-RC04-001`, and reported zero new findings.
+`v0.0.6rc07 — Project Application Validator Foundation` continues the controlled line after the independent rc06 review returned a clean `GATE: YES` with zero findings and confirmed the accepted schema foundation is ready for a separately reviewed validator boundary.
 
-rc06 adds `schemas/project-application.schema.json` as the first formal JSON Schema Draft 2020-12 encoding of the accepted rc04 Project Application representation contract. The concrete representation remains identified by `representation_release: v0.0.6rc04`; rc06 is a schema release, not a new serialization-contract revision.
+rc07 adds `tools/scaf_project_application_validator/`. The validator chains accepted raw-YAML policy checks, strict safe loading, the rc06 Project Application schema, cross-record identity checks, deterministic record/reference ordering, the existing frozen authority-registry proof, and source-aware `scaf_authority_id` target resolution.
 
-The schema encodes machine-determinable parsed-instance facts such as required fields/types, exact applicability tokens, state-dependent `disposition_basis` presence/prohibition, direct-basis structural sufficiency for resolved states, null/type constraints, and exact-duplicate rejection within role-specific reference lists.
+The validator is intentionally a representation/source-conformance tool. `REPRESENTATION RESULT: PASS` does not mean the applicability judgment is correct, rationale is adequate, Project Design Authority has approved the record, project-controlled references exist, a Pattern is selected, or implementation/verification/compliance/closure is complete.
 
-Schema-only validation intentionally does not claim proof of raw-YAML duplicate-key/anchor restrictions, lexical list/record ordering, cross-record `record_id` or authority/scope uniqueness, authority/reference existence, engineering rationale correctness, Project Design Authority sufficiency, verification, compliance, or closure. Those remain separate loader/validator/source-aware/engineering boundaries.
-
-No Project Application validator, resolver, automatic applicability decision, Pattern selector, Effective Project Profile, CI completion gate or L4 content is introduced.
+Project-controlled reference resolution, automatic applicability inference, Pattern selection, Effective Project Profile generation, CI completion gating and L4 remain outside rc07.
 
 Controlled records:
 
@@ -23,7 +21,8 @@ Controlled records:
 - `27_SCAF_v0.0.6rc03_SCAF_APP_Project_Application_Record_Basis_Role_and_State_Compatibility_Hardening.md` — accepted closure of the rc02 basis-role and state-compatibility findings;
 - `28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md` — accepted concrete YAML serialization foundation; independent review opened `SCAF-RC04-001` (Minor fixture coverage);
 - `29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md` — accepted closure of `SCAF-RC04-001`;
-- `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — formal Project Application schema foundation review candidate.
+- `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — accepted formal Project Application schema foundation;
+- `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — Project Application representation/source-aware validator foundation review candidate.
 
 ## Frozen v0.0.5 Milestone
 
@@ -100,6 +99,8 @@ v0.0.6rc04 concrete Project Application YAML serialization foundation
 v0.0.6rc05 serialization fixture multi-item coverage hardening
         ↓
 v0.0.6rc06 Project Application JSON Schema foundation
+        ↓
+v0.0.6rc07 Project Application representation/source-aware validator foundation
 ```
 
-No automatic applicability inference, recommendation, selection, Project Application validator, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc06. Validator/source-resolution work remains separately gated and review-driven.
+No automatic applicability inference, recommendation, selection, project-reference resolver, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc07. Project-reference resolution and later consumption/profile work remain separately gated and review-driven.

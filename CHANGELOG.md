@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.6rc07 — Project Application Validator Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc06 review returned clean `GATE: YES` with zero findings and confirmed the schema boundary is ready for a separately reviewed Project Application validator.
+- Add `tools/scaf_project_application_validator/` as the first executable Project Application representation/source-aware validator foundation.
+- Chain raw-YAML policy checks, strict safe loading, the accepted rc06 Draft 2020-12 schema, cross-record identity checks, deterministic record/reference-list ordering, frozen authority-registry validation, and `scaf_authority_id` source-aware target resolution.
+- Reject duplicate YAML keys, anchors, aliases, merge keys, custom tags, multi-document streams, and non-string mapping keys before parsed-instance validation.
+- Enforce unique `record_id` values and unique active `(scaf_authority_id, project_scope_ref)` pairs across the current-state dataset.
+- Enforce accepted exact-ascending ordering for records and the five canonical repeating reference roles.
+- Resolve each `scaf_authority_id` only after the frozen authority registry passes its existing source-aware validator; require target class `Project-Applicable Obligation` and source-release consistency.
+- Keep project-controlled scope/reference values opaque; do not introduce a project reference locator/resolver.
+- Report `REPRESENTATION RESULT: PASS/FAIL` only; do not convert representation conformance into applicability correctness, Project Design Authority approval, compliance, verification, Pattern selection or closure.
+- Add bounded validator regressions while keeping all frozen v0.0.4/v0.0.5 suites and accepted rc04 fixture / rc06 schema unchanged.
+- Introduce no automatic applicability inference, AI approval, Pattern recommendation/selection, Effective Project Profile, context packager, CI applicability-completion gate, code generation, new L3 Pattern or L4 guidance.
+
 ## v0.0.6rc06 — Project Application Schema Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc05 review returned clean `GATE: YES`, closed `SCAF-RC04-001`, and reported zero new findings.
