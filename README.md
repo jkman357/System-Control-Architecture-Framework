@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.5  
-**Active Development RC:** v0.0.6rc01
-**Status:** SCAF-APP Machine-Readable Project Application Semantic Model Foundation / Review Candidate
+**Active Development RC:** v0.0.6rc02
+**Status:** SCAF-APP Canonical Project Application Record Model / Review Candidate
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -25,7 +25,7 @@ Formal frozen baselines:
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 
-The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc01` opens a separate controlled development line for the SCAF-APP machine-readable Project Application semantic model; it does not modify or respin v0.0.5.
+The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc02` continues the separate controlled SCAF-APP Project Application development line; it does not modify or respin v0.0.5.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -170,7 +170,7 @@ The production CI gate still requires the repository-external trust input define
 
 SCAF does not automatically decide project applicability or project architecture. A project remains responsible for controlled applicability, architecture/mechanism selection, adaptation, realization, verification/evidence, and closure decisions. Catalog availability and machine-readable trace are navigation/decision-support inputs, not automatic project authority.
 
-`v0.0.6rc01` begins the machine-readable `SCAF-APP` semantic foundation only. It defines how a future Project Application representation must distinguish framework authority, explicit project scope, `Applicable` / `Not Applicable` / `Undetermined` semantics, project judgment/rationale provenance, and representation-invalid versus engineering-unresolved conditions. It does **not** yet add a project-application registry, schema, validator, automatic applicability classifier, Pattern selector, CI completion gate or L4 content. See [`docs/executable-governance/25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md`](docs/executable-governance/25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md).
+`v0.0.6rc01` established the machine-readable `SCAF-APP` semantic/authority foundation. `v0.0.6rc02` now defines the canonical logical Project Application Record contract: stable project-local record identity, explicit SCAF authority and project-scope binding, controlled applicability tokens (`applicable` / `not_applicable` / `undetermined`), state-dependent disposition-basis requirements, and project decision/authority/supporting-reference surfaces. It still adds no concrete project-application dataset, schema, validator, automatic applicability classifier, Pattern selector, CI completion gate or L4 content. See [`docs/executable-governance/26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md`](docs/executable-governance/26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md).
 
 ## Documentation Policy
 

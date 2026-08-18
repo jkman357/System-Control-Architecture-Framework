@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.0.6rc02 — SCAF-APP Canonical Project Application Record Model
+
+- Continue the controlled v0.0.6 line after the independent rc01 review returned `PASS / GATE YES` with zero Critical, Major, Minor, or Trivial findings.
+- Add `docs/executable-governance/26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md`.
+- Convert the accepted rc01 semantic foundation into a deterministic canonical logical record contract without yet introducing a concrete project-application dataset/schema/validator.
+- Define canonical logical fields: `record_id`, `record_kind`, `representation_release`, `scaf_authority_id`, `scaf_source_release`, `project_scope_ref`, `applicability`, `disposition_basis`, `decision_refs`, `authority_refs`, and `supporting_refs`.
+- Freeze the initial applicability token vocabulary as `applicable`, `not_applicable`, and `undetermined`.
+- Keep Project Application Record identity project-local and distinct from frozen SCAF authority identity; prevent ambiguous duplicate applicability assertions for the same `(scaf_authority_id, project_scope_ref)` pair.
+- Keep `project_scope_ref` explicit and project-controlled while deferring scope-kind hierarchy, inheritance and registry syntax.
+- Define structured `disposition_basis` semantics with `summary`, `basis_refs`, `unresolved_reason`, and `awaiting_refs`.
+- Require controlled basis/provenance for `not_applicable`; prohibit a bare N/A token with no attributable basis.
+- Require `unresolved_reason` for `undetermined` while preserving `undetermined` as valid engineering-unresolved state rather than representation failure.
+- Preserve Project Design Authority and other project-governance authority ownership through bounded `decision_refs`, `authority_refs`, and `supporting_refs`; references do not transfer authority to the Project Application Record or tooling.
+- Preserve the separation between representation-invalid conditions and engineering-unresolved work.
+- Explicitly defer decision/deviation/risk/verification/evidence/closure/re-evaluation state fields, tailoring taxonomy, Pattern selection and implementation state rather than collapsing them into a single status.
+- Preserve frozen framework truth in `authority-registry.yaml`, frozen L2↔L3 trace in `l3-trace-registry.yaml`, and the no-applicability/no-selection/no-satisfaction inference boundary.
+- Change no frozen normative/L3 source, machine-readable registry, schema, validator/query implementation, workflow, release-integrity manifest, external trust input, or accepted regression behavior.
+
 ## v0.0.6rc01 — SCAF-APP Machine-Readable Project Application Semantic Model Foundation
 
 - Open the first controlled development line after the formal v0.0.5 freeze without modifying or respinning the frozen v0.0.5 baseline.

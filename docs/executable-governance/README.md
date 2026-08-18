@@ -6,15 +6,18 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc01 — SCAF-APP Machine-Readable Project Application Semantic Model Foundation` is the first controlled development RC after the frozen v0.0.5 milestone.
+`v0.0.6rc02 — SCAF-APP Canonical Project Application Record Model` continues the controlled line after the independent rc01 review returned a clean gate `YES` with zero findings.
 
-It defines only the semantic/authority boundary for future machine-readable Project Application records, including explicit project scope, applicability semantics (`Applicable` / `Not Applicable` / `Undetermined` as semantic classes), rationale/provenance, authority separation, and the distinction between representation invalidity and unresolved engineering judgment.
+rc01 defined the semantic/authority boundary for future machine-readable Project Application records. rc02 freezes the canonical logical record concepts needed before concrete serialization: project-local record identity, target SCAF authority identity/source release, explicit project-scope reference, controlled applicability tokens (`applicable` / `not_applicable` / `undetermined`), structured disposition-basis semantics, and bounded project decision/authority/supporting references.
 
-It intentionally adds no concrete project-application registry, schema, validator, automatic applicability decision, Pattern selector, CI completion gate or L4 content.
+The record remains a project-side disposition/trace surface. It does not become Project Design Authority, verification/risk/deviation/evidence/closure authority, and it does not absorb those independent lifecycle state dimensions. `undetermined` remains a legitimate engineering-unresolved state distinct from representation invalidity.
 
-Controlled record:
+rc02 intentionally adds no concrete project-application registry/dataset, schema, validator, project-scope registry, automatic applicability decision, Pattern selector, Effective Project Profile, CI completion gate or L4 content.
 
-- `25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md` — machine-readable SCAF-APP Project Application semantic-model foundation.
+Controlled records:
+
+- `25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md` — accepted machine-readable SCAF-APP Project Application semantic-model foundation;
+- `26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md` — canonical logical Project Application Record model and determinism contract.
 
 ## Frozen v0.0.5 Milestone
 
@@ -81,6 +84,8 @@ accepted rc9 same-root authority/trace proof closure + clean CLI execution
 frozen v0.0.5 machine-readable traceability baseline
         ↓
 v0.0.6rc01 SCAF-APP machine-readable Project Application semantic foundation
+        ↓
+v0.0.6rc02 canonical Project Application logical record model
 ```
 
-No automatic applicability inference, recommendation, selection, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc01. Later capability work remains review-driven.
+No automatic applicability inference, recommendation, selection, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc02. Concrete serialization/schema/validator work remains separately gated and review-driven.
