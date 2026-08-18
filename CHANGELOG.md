@@ -1,5 +1,30 @@
 # Changelog
 
+## v0.0.5 — Frozen L3 Machine-Readable Traceability Baseline
+
+- Formally freeze the reviewed `v0.0.5rc10` source state as `v0.0.5 — Frozen L3 Machine-Readable Traceability Baseline` after the independent freeze-candidate review returned `GATE: YES` with zero Critical, Major, Minor, or Trivial findings.
+- Preserve the accepted authority inventory at 294 records / 218 Project-Applicable Obligations / 76 Framework Normative Invariants.
+- Freeze the accepted L3 machine-readable trace inventory at 12 Patterns / 119 relations / 23 Primary / 41 Supporting / 55 Constraint / 82 unique referenced L2 IDs / 15 qualifier-bearing relations.
+- Freeze the controlled relation vocabulary (`primary_realization_candidate`, `supporting_realization`, `constraint_input`) and seven-field relation representation.
+- Freeze the accepted source-aware trace-validation boundary and same-root trace + authority validation ownership before supported L2↔L3 projection.
+- Freeze the supported read-only public query API (`TraceViewError`, `query_l2`, `query_pattern`), deterministic projection/order/JSON behavior, zero-relation semantics, and Framework Normative Invariant query-domain boundary.
+- Preserve the frozen v0.0.2 L1/L2 source identity, frozen v0.0.3 L3 source identity, and frozen v0.0.4 executable-governance controls unchanged.
+- Preserve regression baselines at rc6 trace-validator 24/24, trace-view/query 28/28, and frozen executable-governance 41/41.
+- Preserve the six-artifact production trust set and external-trust-input model unchanged. The freeze-candidate review did not independently execute the production external-trust gate because the required repository-external trust bundle was unavailable; no production PASS is claimed.
+- Add `docs/executable-governance/24_SCAF_v0.0.5_Formal_Freeze_Decision.md` and update release/navigation documentation only.
+- `v0.0.5` is immutable after this explicit governance freeze decision. Future capability work must begin on a new controlled RC/version line and must not modify this frozen baseline in place.
+
+### rc10 freeze-candidate review disposition
+
+```text
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+
+V0.0.5 L3 MACHINE-READABLE TRACEABILITY MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES
+```
+
 ## v0.0.5rc10 — L3 Machine-Readable Traceability Milestone Consolidation and Freeze Candidate
 
 - Continue the controlled v0.0.5 line after the independent **full-source rc9 re-review** returned a clean gate `YES` with zero Critical, Major, Minor, or Trivial findings.

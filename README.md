@@ -1,7 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc10  
-**Status:** L3 Machine-Readable Traceability Milestone Consolidation and Freeze Candidate  
+**Current Formal Release:** v0.0.5  
+**Status:** Frozen L3 Machine-Readable Traceability Baseline  
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -22,12 +22,9 @@ Formal frozen baselines:
 | `v0.0.2` | L1/L2 normative authority baseline |
 | `v0.0.3` | L3 Pattern / Mechanism Catalog baseline |
 | `v0.0.4` | Executable Governance baseline |
+| `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 
-Current development line:
-
-| Release | Development Scope |
-|---|---|
-| `v0.0.5rc10` | Consolidation-only freeze candidate for the accepted v0.0.5 L3 machine-readable traceability chain; no new semantic or executable capability |
+There is no active post-v0.0.5 development RC in this frozen source package.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -46,23 +43,20 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.5 does not reopen them.
 
-## Current v0.0.5rc10 Development Focus
+## Frozen v0.0.5 Milestone
 
-The independent full-source rc9 re-review returned a clean gate `YES` with:
+The v0.0.5rc10 freeze-candidate review returned a clean gate `YES` with no findings:
 
 ```text
-RC7-01: REMAINS RESOLVED
-RC8-01: REMAINS RESOLVED
-RC8-02: REMAINS RESOLVED
-RC9-01: NOT APPLICABLE UNDER CORRECTED CONTRACT
-
 Critical: 0
 Major:    0
 Minor:    0
 Trivial:  0
+
+V0.0.5 L3 MACHINE-READABLE TRACEABILITY MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES
 ```
 
-rc10 therefore introduces **no new semantic or executable capability**. It consolidates the accepted v0.0.5 machine-readable traceability milestone and establishes a freeze candidate for independent review.
+The explicit governance freeze decision therefore promotes the reviewed rc10 source state to formal **v0.0.5 — Frozen L3 Machine-Readable Traceability Baseline**. The frozen baseline introduces no new semantic or executable capability beyond the reviewed rc10 candidate.
 
 The consolidated dependency chain is:
 
@@ -81,7 +75,7 @@ rc6 source-aware trace validator
         ↓
 rc7/rc8/rc9 validated deterministic read-only L2↔L3 query boundary
         ↓
-rc10 milestone consolidation / freeze candidate
+v0.0.5 formal freeze decision
 ```
 
 The supported Python API remains unchanged:
@@ -90,9 +84,9 @@ The supported Python API remains unchanged:
 from tools.scaf_trace_views import query_l2, query_pattern
 ```
 
-Every supported query continues to require the accepted same-root trace-validation plus authority-validation proofs before projection. rc10 changes no validator, query implementation, registry, schema, workflow, frozen baseline, trust artifact, or regression code.
+Every supported query continues to require the accepted same-root trace-validation plus authority-validation proofs before projection. The formal freeze changes no validator, query implementation, registry, schema, workflow, trust artifact, or regression code.
 
-See [`docs/executable-governance/23_SCAF_v0.0.5rc10_L3_Machine_Readable_Traceability_Milestone_Consolidation_and_Freeze_Candidate.md`](docs/executable-governance/23_SCAF_v0.0.5rc10_L3_Machine_Readable_Traceability_Milestone_Consolidation_and_Freeze_Candidate.md).
+See [`docs/executable-governance/24_SCAF_v0.0.5_Formal_Freeze_Decision.md`](docs/executable-governance/24_SCAF_v0.0.5_Formal_Freeze_Decision.md).
 
 ## Authority and Trace Boundaries
 
@@ -106,7 +100,7 @@ rc4 trace JSON Schema          -> trace structural representation constraints
 l3-trace-registry.yaml         -> subordinate serialized trace data
 rc6 trace validator            -> source-aware trace conformance proof
 rc9 public query API / CLI     -> validated deterministic read-only consumption
-rc10 consolidation record       -> freeze-candidate milestone boundary
+v0.0.5 freeze record            -> frozen milestone boundary
 ```
 
 The accepted L2↔L3 trace relation classes remain:
@@ -138,7 +132,7 @@ Canonical frozen regression inventory remains:
 41 total
 ```
 
-Current v0.0.5 development checks:
+Frozen v0.0.5 validation / regression checks:
 
 ```text
 python -m tools.scaf_validator.validator
@@ -147,9 +141,9 @@ python -m unittest discover -s tools/scaf_trace_validator/tests -v
 python -m unittest discover -s tools/scaf_trace_views/tests -v
 ```
 
-The accepted trace-validator suite remains 24 tests. The accepted deterministic trace-view/query suite remains **28 tests**. rc10 changes neither test inventory nor executable behavior.
+The frozen trace-validator suite remains 24 tests. The frozen deterministic trace-view/query suite remains **28 tests**. Formal v0.0.5 freeze changes neither test inventory nor executable behavior.
 
-The production CI gate still requires the repository-external trust input defined by frozen v0.0.4. rc10 does not expand the six-artifact production trust set.
+The production CI gate still requires the repository-external trust input defined by frozen v0.0.4. Formal v0.0.5 does not expand the six-artifact production trust set. The rc10 freeze-candidate review did not independently execute the production external-trust gate because the required external trust bundle was unavailable; no production PASS is implied by this freeze.
 
 ## Repository Navigation
 
@@ -159,11 +153,11 @@ The production CI gate still requires the repository-external trust input define
 | `docs/l3/` | Frozen v0.0.3 L3 Pattern / Mechanism Catalog |
 | `docs/executable-governance/` | Machine-readable/executable-governance contracts and controlled development records |
 | `authority-registry.yaml` | Frozen v0.0.4 authority representation |
-| `l3-trace-registry.yaml` | Accepted v0.0.5 subordinate serialization of frozen L3 typed trace relations |
-| `schemas/` | Frozen authority-registry schema plus accepted L3 trace schema |
+| `l3-trace-registry.yaml` | Frozen v0.0.5 subordinate serialization of frozen L3 typed trace relations |
+| `schemas/` | Frozen authority-registry schema plus frozen v0.0.5 L3 trace schema |
 | `tools/scaf_validator/` | Frozen authority-registry semantic / structural / source-aware validator |
-| `tools/scaf_trace_validator/` | Accepted source-aware trace validator and regressions |
-| `tools/scaf_trace_views/` | Deterministic validated read-only L2↔L3 trace views/query |
+| `tools/scaf_trace_validator/` | Frozen v0.0.5 source-aware trace validator and regressions |
+| `tools/scaf_trace_views/` | Frozen v0.0.5 deterministic validated read-only L2↔L3 trace views/query |
 | `release-integrity/` | Frozen-baseline integrity manifest |
 | `tools/scaf_release_integrity/` | Frozen-source byte-integrity checker |
 | `tools/scaf_external_pin/` | External-pin verification |
