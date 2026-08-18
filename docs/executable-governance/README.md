@@ -6,22 +6,23 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc04 — SCAF-APP Concrete Project Application Serialization Foundation` continues the controlled line after the independent rc03 review returned a clean `GATE: YES`, closed both rc02 findings, and reported zero new findings.
+`v0.0.6rc05 — Project Application Serialization Fixture Coverage Hardening` continues the controlled line after the independent rc04 review returned `GATE: YES` with one Minor finding, `SCAF-RC04-001`.
 
-rc04 maps the accepted rc01/rc03 Project Application logical contract into the first concrete YAML representation. It adds `examples/project-application.yaml` as an illustrative three-state serialization fixture and defines the top-level `records` container, exact record field serialization, applicability token spelling, current-state `disposition_basis` omission/empty/null rules, opaque string reference lists, and deterministic collection ordering.
+rc05 closes only that fixture-coverage finding. The accepted rc04 Project Application YAML serialization contract remains unchanged. `examples/project-application.yaml` still contains exactly three illustrative records covering `applicable`, `not_applicable`, and `undetermined`, but now demonstrates multi-item exact-string ascending ordering and duplicate-free behavior across the canonical repeating reference roles.
 
-The direct applicability-basis boundary remains unchanged: only `disposition_basis.summary` and `disposition_basis.basis_refs` may satisfy direct basis. `decision_refs`, `authority_refs`, and `supporting_refs` remain role-distinct and cannot satisfy basis merely by presence. `unresolved_reason` / `awaiting_refs` remain unresolved-only current-state members for `undetermined`.
+The fixture intentionally retains `representation_release: v0.0.6rc04`; rc05 is a coverage-hardening RC rather than a new representation-contract revision.
 
-The fixture is illustrative only and does not assert applicability for the SCAF repository. Reference strings remain opaque; rc04 does not create a scope/reference resolver grammar or infer authority from path-like syntax.
+The direct applicability-basis boundary remains unchanged: only `disposition_basis.summary` and `disposition_basis.basis_refs` may satisfy direct basis. `decision_refs`, `authority_refs`, and `supporting_refs` remain role-distinct. `unresolved_reason` / `awaiting_refs` remain unresolved-only current-state members for `undetermined`.
 
-rc04 intentionally adds no JSON Schema, Project Application validator, scope/reference resolver, history model, automatic applicability decision, Pattern selector, Effective Project Profile, CI completion gate or L4 content.
+The fixture is illustrative only and does not assert applicability for the SCAF repository. Reference strings remain opaque. rc05 adds no JSON Schema, Project Application validator, scope/reference resolver, history model, automatic applicability decision, Pattern selector, Effective Project Profile, CI completion gate or L4 content.
 
 Controlled records:
 
 - `25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md` — accepted machine-readable SCAF-APP Project Application semantic-model foundation;
 - `26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md` — canonical logical record model whose independent review opened `SCAF-RC02-001` / `SCAF-RC02-002`;
 - `27_SCAF_v0.0.6rc03_SCAF_APP_Project_Application_Record_Basis_Role_and_State_Compatibility_Hardening.md` — accepted closure of the rc02 basis-role and state-compatibility findings;
-- `28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md` — concrete YAML serialization foundation and boundary for later schema work.
+- `28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md` — accepted concrete YAML serialization foundation; independent review opened `SCAF-RC04-001` (Minor fixture coverage);
+- `29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md` — bounded closure candidate for `SCAF-RC04-001`.
 
 ## Frozen v0.0.5 Milestone
 
@@ -94,6 +95,8 @@ v0.0.6rc02 canonical Project Application logical record model
 v0.0.6rc03 applicability-basis role + state-compatibility finding closure
         ↓
 v0.0.6rc04 concrete Project Application YAML serialization foundation
+        ↓
+v0.0.6rc05 serialization fixture multi-item coverage hardening
 ```
 
-No automatic applicability inference, recommendation, selection, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc04. Schema and validator work remains separately gated and review-driven.
+No automatic applicability inference, recommendation, selection, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc05. Schema and validator work remains separately gated and review-driven.

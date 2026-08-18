@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.6rc05 — Project Application Serialization Fixture Coverage Hardening
+
+- Continue the controlled v0.0.6 line after the independent rc04 review returned `GATE: YES` with one Minor finding, `SCAF-RC04-001`, and no frozen-baseline regression.
+- Add `docs/executable-governance/29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md`.
+- Close only the rc04 fixture-coverage gap; do not change the accepted rc04 serialization contract.
+- Expand `examples/project-application.yaml` so each canonical repeating reference role (`basis_refs`, `awaiting_refs`, `decision_refs`, `authority_refs`, `supporting_refs`) has at least one multi-item illustrative example across the existing three-record fixture.
+- Keep every expanded list ordered by exact serialized string ascending and duplicate-free, making the accepted deterministic collection rule directly observable rather than vacuously satisfied by single-item lists.
+- Retain exactly the same three record identities and applicability states (`applicable`, `not_applicable`, `undetermined`).
+- Retain `representation_release: v0.0.6rc04` because rc05 is fixture coverage hardening, not a new serialization-contract revision.
+- Preserve direct-basis role separation, current-state compatibility, opaque-reference semantics, invalid-vs-unresolved separation, and all Project Design Authority / project-governance boundaries.
+- Introduce no JSON Schema, Project Application validator, scope/reference resolver, automatic applicability inference, Pattern selection, Effective Project Profile, CI completion gate, code generation, new L3 Pattern, or L4 guidance.
+- Change no frozen normative/L3 source, registry, schema, executable validator/query implementation, workflow, release-integrity manifest, external trust input, or accepted regression behavior.
+
 ## v0.0.6rc04 — SCAF-APP Concrete Project Application Serialization Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc03 review returned `GATE: YES`, closed `SCAF-RC02-001` / `SCAF-RC02-002`, and reported zero new findings.

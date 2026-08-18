@@ -1,4 +1,5 @@
 # SCAF v0.0.6rc04 Project Application serialization fixture.
+# v0.0.6rc05 expands only illustrative multi-item reference-list coverage; the serialization contract remains v0.0.6rc04.
 # Illustrative only: these records do not assert real project applicability decisions.
 records:
   - record_id: "EXAMPLE-PA-001"
@@ -12,12 +13,16 @@ records:
       summary: "The illustrative system scope includes the governed project-application responsibility."
       basis_refs:
         - "example:artifact:ARCH-001"
+        - "example:artifact:ARCH-002"
     decision_refs:
       - "example:decision:D-001"
+      - "example:decision:D-002"
     authority_refs:
+      - "example:authority:architecture-board"
       - "example:authority:system-architect"
     supporting_refs:
       - "example:artifact:CTX-001"
+      - "example:artifact:INT-001"
 
   - record_id: "EXAMPLE-PA-002"
     record_kind: "project_application"
@@ -47,6 +52,7 @@ records:
       unresolved_reason: "The illustrative interface ownership decision has not yet been established."
       awaiting_refs:
         - "example:decision:interface-owner"
+        - "example:decision:scope-boundary"
     decision_refs: []
     authority_refs: []
     supporting_refs:
