@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.6rc04 — SCAF-APP Concrete Project Application Serialization Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc03 review returned `GATE: YES`, closed `SCAF-RC02-001` / `SCAF-RC02-002`, and reported zero new findings.
+- Add `docs/executable-governance/28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md`.
+- Add `examples/project-application.yaml` as the first concrete illustrative YAML serialization fixture for the accepted Project Application Record contract; the fixture does not assert real project applicability decisions.
+- Freeze the initial top-level YAML shape as one mapping containing `records`, with each record serialized using the accepted eleven canonical logical fields.
+- Preserve exact applicability tokens `applicable`, `not_applicable`, and `undetermined`.
+- Preserve rc03 direct-basis semantics: only `disposition_basis.summary` / `basis_refs` may satisfy direct applicability basis; top-level decision/authority/supporting references remain role-distinct.
+- Define explicit current-state serialization rules for `summary`, `basis_refs`, `unresolved_reason`, and `awaiting_refs`, including omission, required empty-list representation, and prohibition of YAML null placeholders.
+- Keep `unresolved_reason` / `awaiting_refs` absent from resolved current states and require `unresolved_reason` for `undetermined`.
+- Serialize reference surfaces as opaque non-empty string lists without defining a scope/reference locator grammar or resolver.
+- Define deterministic record/reference-list ordering and prohibit duplicate list items, duplicate mapping keys, YAML anchors/aliases, merge keys, custom tags, and multi-document streams.
+- Keep the concrete fixture subordinate to SCAF-APP semantics and separate from frozen `authority-registry.yaml` / `l3-trace-registry.yaml`.
+- Introduce no JSON Schema, Project Application validator, project-scope/reference resolver, history model, automatic applicability classifier, Pattern selection, Effective Project Profile, CI applicability-completion gate, code generation, new L3 Pattern, or L4 guidance.
+- Change no frozen normative/L3 source, frozen registry/schema/tool/workflow/release-integrity/trust surface, or accepted regression behavior.
+
 ## v0.0.6rc03 — SCAF-APP Project Application Record Basis-Role and State-Compatibility Hardening
 
 - Continue the controlled v0.0.6 line after the independent rc02 review returned `GATE: NO` with `SCAF-RC02-001` (Major) and `SCAF-RC02-002` (Minor), with no frozen-baseline regression.
