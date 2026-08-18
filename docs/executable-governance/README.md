@@ -6,13 +6,13 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc07 — Project Application Validator Foundation` continues the controlled line after the independent rc06 review returned a clean `GATE: YES` with zero findings and confirmed the accepted schema foundation is ready for a separately reviewed validator boundary.
+`v0.0.6rc08 — Project Application Validated Read/Query View Foundation` continues the controlled line after the independent rc07 review returned clean `PASS / GATE YES` with zero findings.
 
-rc07 adds `tools/scaf_project_application_validator/`. The validator chains accepted raw-YAML policy checks, strict safe loading, the rc06 Project Application schema, cross-record identity checks, deterministic record/reference ordering, the existing frozen authority-registry proof, and source-aware `scaf_authority_id` target resolution.
+rc08 adds `tools/scaf_project_application_views/` with validation-owning `query_record()`, `query_authority()`, and `query_scope()` APIs plus a shared CLI path. Every supported query validates the selected Project Application data through rc07 before projection; caller-built parsed/context state cannot substitute for validation.
 
-The validator is intentionally a representation/source-conformance tool. `REPRESENTATION RESULT: PASS` does not mean the applicability judgment is correct, rationale is adequate, Project Design Authority has approved the record, project-controlled references exist, a Pattern is selected, or implementation/verification/compliance/closure is complete.
+Authority queries use a source-validated frozen Project-Applicable Obligation query domain. Scope queries remain exact opaque-string filters and explicitly report `scope_resolution: not_performed`; rc08 introduces no project-scope resolver.
 
-Project-controlled reference resolution, automatic applicability inference, Pattern selection, Effective Project Profile generation, CI completion gating and L4 remain outside rc07.
+Validated/queryable remains distinct from applicable-correct, approved, recommended, selected, implemented, verified, compliant, or closed. Project-controlled reference resolution, Effective Project Profile, context packaging, CI completion gating and L4 remain outside rc08.
 
 Controlled records:
 
@@ -22,7 +22,8 @@ Controlled records:
 - `28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md` — accepted concrete YAML serialization foundation; independent review opened `SCAF-RC04-001` (Minor fixture coverage);
 - `29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md` — accepted closure of `SCAF-RC04-001`;
 - `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — accepted formal Project Application schema foundation;
-- `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — Project Application representation/source-aware validator foundation review candidate.
+- `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — accepted Project Application representation/source-aware validator foundation;
+- `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — Project Application validated read/query view foundation review candidate.
 
 ## Frozen v0.0.5 Milestone
 
@@ -101,6 +102,8 @@ v0.0.6rc05 serialization fixture multi-item coverage hardening
 v0.0.6rc06 Project Application JSON Schema foundation
         ↓
 v0.0.6rc07 Project Application representation/source-aware validator foundation
+        ↓
+v0.0.6rc08 validated Project Application read/query views
 ```
 
-No automatic applicability inference, recommendation, selection, project-reference resolver, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc07. Project-reference resolution and later consumption/profile work remain separately gated and review-driven.
+No automatic applicability inference, recommendation, selection, project-reference/scope resolver, generated mutable index, code generation, signing/provenance, CI completion enforcement, Effective Project Profile, context packaging, or L4 scope is implied by rc08. Higher-level project consumption/profile work remains separately gated and review-driven.

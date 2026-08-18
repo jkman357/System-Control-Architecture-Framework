@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.6rc08 — Project Application Validated Read/Query View Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc07 review returned clean `PASS / GATE YES` with zero findings.
+- Add `tools/scaf_project_application_views/` as a deterministic validated read-only Project Application query foundation.
+- Add supported validation-owning Python APIs `query_record()`, `query_authority()`, and `query_scope()`; callers cannot substitute pre-parsed records or caller-created validation contexts.
+- Validate and consume the selected Project Application bytes from the same private snapshot before projection.
+- Make authority queries use a source-validated frozen Project-Applicable Obligation query domain, including valid zero-record results for known PAOs with no current Project Application record.
+- Keep scope queries as exact opaque-string filters and explicitly report `scope_resolution: not_performed`; no scope existence/resolution claim is introduced.
+- Preserve deterministic record projections, stable applicability counts, detached read-only result copies, and deterministic text/JSON output.
+- Keep the production CLI repository/schema/authority-registry boundary fixed while allowing caller selection of the Project Application dataset.
+- Preserve representation-valid `undetermined` as legitimate engineering-unresolved state.
+- Introduce no project-scope/reference resolver, applicability inference, AI approval, Pattern recommendation/selection, Effective Project Profile, context packaging, CI completion gate, code generation, new L3 Pattern, L4 guidance, or Development Context Recovery workflow state.
+- Change no frozen v0.0.2/v0.0.3/v0.0.4/v0.0.5 source, accepted rc04 fixture, rc06 schema, rc07 validator, or frozen regression behavior.
+
 ## v0.0.6rc07 — Project Application Validator Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc06 review returned clean `GATE: YES` with zero findings and confirmed the schema boundary is ready for a separately reviewed Project Application validator.
