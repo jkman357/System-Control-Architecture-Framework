@@ -8,11 +8,12 @@
 
 The v0.0.7 line starts from formal frozen `v0.0.6` and does not modify the frozen Project Application / Effective Project Profile baseline.
 
-Current controlled record:
+Current controlled records:
 
-- `40_SCAF_v0.0.7rc01_Effective_Project_Profile_Consumption_Semantic_Foundation.md` — semantic boundary for downstream consumption, filtering, reporting, and future context-selection use of validated Effective Project Profile state without transferring engineering authority.
+- `40_SCAF_v0.0.7rc01_Effective_Project_Profile_Consumption_Semantic_Foundation.md` — accepted semantic boundary for downstream consumption, filtering, reporting, and future context-selection use of validated Effective Project Profile state without transferring engineering authority.
+- `41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md` — canonical representation-neutral logical model for source-bound consumption selection, deterministic eligibility, included entries, predicate exclusion, bounded omission, and complete/filtered classification.
 
-rc01 is semantic-only. It adds no context-package representation, schema, validator, generator, query API, CLI, scope resolver, CI completion gate, AI orchestration, L4 guidance, or Development Context Recovery mechanism.
+rc02 remains logical-model-only. It adds no YAML/JSON representation, schema, validator, builder/generator, query API, CLI, scope/context-source resolver, AI context package, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
 
 ## Frozen v0.0.6 Milestone
 
@@ -149,6 +150,8 @@ v0.0.6rc13 Effective Project Profile deterministic generator foundation
 frozen v0.0.6 machine-readable Project Application / Effective Project Profile baseline
         ↓
 v0.0.7rc01 Effective Project Profile consumption semantic foundation
+        ↓
+v0.0.7rc02 canonical consumption / context-selection logical model
 ```
 
-The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` now defines only the semantic rules for downstream consumption of validated profile state. Persistent profile state, concrete AI context packaging, scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
+The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` defines accepted semantic rules for downstream consumption, and `v0.0.7rc02` adds only the canonical logical accounting for a subordinate selection over validated profile state. Persistent profile state, concrete serialization/schema/validator/builder, AI context packaging, context-source or scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.

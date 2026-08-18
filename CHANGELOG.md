@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.7rc02 — Canonical Consumption / Context-Selection Model Foundation
+
+- Continue the controlled v0.0.7 line after the independent rc01 review returned clean `PASS / GATE YES` with zero findings.
+- Add a representation-neutral canonical logical model for one subordinate Consumption Selection over one validated Effective Project Profile snapshot.
+- Bind consumption to the exact validated profile bytes plus `scaf_source_release`, exact `project_scope_ref`, and Project Application source SHA-256 provenance.
+- Define the canonical eligibility predicate as a bounded intersection of an explicit frozen-state selector and exact authority selector.
+- Distinguish predicate eligibility/exclusion from explicit bounded omission, with `D = I + O + X` and `E = I + O`.
+- Define complete versus filtered selection as a derived fact rather than a new engineering or applicability state.
+- Preserve selected-entry `scaf_authority_id`, frozen `profile_state`, and Project Application record trace exactly.
+- Preserve `included in context != applicable`, `excluded from context != not_applicable`, exact-scope semantics, and `undetermined != no_current_disposition`.
+- Keep Project Application rationale/provenance upstream and define no context-content resolver.
+- Introduce no serialization, schema, validator, builder/generator, API, CLI, AI context package, resolver, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+
 ## v0.0.7rc01 — Effective Project Profile Consumption Semantic Foundation
 
 - Start a new controlled development line from formal frozen `v0.0.6` without modifying or respinning the frozen baseline.
