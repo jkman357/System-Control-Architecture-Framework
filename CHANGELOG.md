@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.7rc01 — Effective Project Profile Consumption Semantic Foundation
+
+- Start a new controlled development line from formal frozen `v0.0.6` without modifying or respinning the frozen baseline.
+- Define the downstream consumption semantics for a validated Effective Project Profile before introducing any context-package representation or executable consumer.
+- Preserve the four frozen profile states exactly: `applicable`, `not_applicable`, `undetermined`, and `no_current_disposition`.
+- Preserve `undetermined != no_current_disposition`, exact-scope semantics, source provenance, and Project Application traceability.
+- Permit deterministic state partitioning and explicitly declared filtering as subordinate consumption operations only.
+- Define that `included in context != applicable` and `excluded from context != not_applicable`.
+- Prohibit consumption from inferring implementation, Pattern selection, verification, compliance, approval, release readiness, or closure.
+- Distinguish complete-profile consumption from filtered consumption; filtered results may not claim complete profile coverage.
+- Require later executable consumers to own or chain the accepted profile validation boundary rather than trust caller assertions or parsed substitutes.
+- Introduce no context-package model, serialization, schema, validator, generator, API, CLI, resolver, persistent context state, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+
 ## v0.0.6 — Frozen Machine-Readable Project Application and Effective Project Profile Baseline
 
 - Formally freeze the independently reviewed `v0.0.6rc14` source state after a clean freeze-candidate review with zero findings and gate `YES`.

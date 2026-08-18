@@ -4,6 +4,16 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+## v0.0.7 Development
+
+The v0.0.7 line starts from formal frozen `v0.0.6` and does not modify the frozen Project Application / Effective Project Profile baseline.
+
+Current controlled record:
+
+- `40_SCAF_v0.0.7rc01_Effective_Project_Profile_Consumption_Semantic_Foundation.md` — semantic boundary for downstream consumption, filtering, reporting, and future context-selection use of validated Effective Project Profile state without transferring engineering authority.
+
+rc01 is semantic-only. It adds no context-package representation, schema, validator, generator, query API, CLI, scope resolver, CI completion gate, AI orchestration, L4 guidance, or Development Context Recovery mechanism.
+
 ## Frozen v0.0.6 Milestone
 
 `v0.0.6 — Frozen Machine-Readable Project Application and Effective Project Profile Baseline` is the formal baseline promoted from the cleanly reviewed `v0.0.6rc14` freeze candidate by explicit governance decision on 2026-08-18.
@@ -137,6 +147,8 @@ v0.0.6rc12 Effective Project Profile source-aware validator foundation
 v0.0.6rc13 Effective Project Profile deterministic generator foundation
         ↓
 frozen v0.0.6 machine-readable Project Application / Effective Project Profile baseline
+        ↓
+v0.0.7rc01 Effective Project Profile consumption semantic foundation
 ```
 
-The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. Persistent profile state, scope/reference resolution, applicability inference, Pattern selection, AI context packaging, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated and require new controlled development.
+The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` now defines only the semantic rules for downstream consumption of validated profile state. Persistent profile state, concrete AI context packaging, scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
