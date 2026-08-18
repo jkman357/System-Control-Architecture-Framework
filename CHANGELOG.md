@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.0.6rc01 — SCAF-APP Machine-Readable Project Application Semantic Model Foundation
+
+- Open the first controlled development line after the formal v0.0.5 freeze without modifying or respinning the frozen v0.0.5 baseline.
+- Select project-application semantics as the next gap-driven milestone rather than automatically advancing to L4.
+- Add `docs/executable-governance/25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md`.
+- Define the semantic role and authority boundary of a future machine-readable `SCAF-APP` Project Application Record.
+- Require explicit project-scope binding so applicability is not silently generalized across Project/System/Node/domain/interface/service scopes.
+- Define `Applicable`, `Not Applicable`, and `Undetermined` as distinct applicability semantic classes while deliberately deferring exact serialization tokens/schema fields.
+- Preserve `Undetermined` as legitimate unresolved engineering state distinct from malformed representation, project failure, verification failure, non-compliance, or `Not Applicable`.
+- Preserve frozen `SCAF-AK-003` separation among applicability, decision, deviation, risk, verification, evidence, closure, and re-evaluation rather than introducing a single PASS/FAIL project status.
+- Establish rationale/provenance semantics for project engineering judgment while preserving Project Design Authority and other underlying authority ownership.
+- Preserve the boundary that tool-determinable representation facts are not equivalent to project engineering judgment or project authority decisions.
+- Preserve framework truth and project truth as separate representation surfaces; do not add project applicability/PDA/rationale/verification/closure state to frozen `authority-registry.yaml`.
+- Preserve the frozen v0.0.5 boundary that L2↔L3 trace presence/absence does not imply project applicability, Pattern selection, satisfaction, verification, closure, or project failure.
+- Defer concrete project-application serialization, schema, validator, project-scope registry, full lifecycle state serialization, tailoring taxonomy, automatic applicability inference, generated Effective Project Profile, resolver/context packaging, CI enforcement, code generation, new L3 content, and L4 guidance.
+- Change no frozen normative/L3 source, machine-readable registry, schema, executable validator/query implementation, workflow, release-integrity manifest, external trust input, or accepted regression behavior.
+
 ## v0.0.5 — Frozen L3 Machine-Readable Traceability Baseline
 
 - Formally freeze the reviewed `v0.0.5rc10` source state as `v0.0.5 — Frozen L3 Machine-Readable Traceability Baseline` after the independent freeze-candidate review returned `GATE: YES` with zero Critical, Major, Minor, or Trivial findings.

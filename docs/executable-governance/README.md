@@ -4,6 +4,18 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+## Active v0.0.6 Development
+
+`v0.0.6rc01 — SCAF-APP Machine-Readable Project Application Semantic Model Foundation` is the first controlled development RC after the frozen v0.0.5 milestone.
+
+It defines only the semantic/authority boundary for future machine-readable Project Application records, including explicit project scope, applicability semantics (`Applicable` / `Not Applicable` / `Undetermined` as semantic classes), rationale/provenance, authority separation, and the distinction between representation invalidity and unresolved engineering judgment.
+
+It intentionally adds no concrete project-application registry, schema, validator, automatic applicability decision, Pattern selector, CI completion gate or L4 content.
+
+Controlled record:
+
+- `25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md` — machine-readable SCAF-APP Project Application semantic-model foundation.
+
 ## Frozen v0.0.5 Milestone
 
 `v0.0.5 — Frozen L3 Machine-Readable Traceability Baseline` is the formal baseline promoted from the cleanly reviewed `v0.0.5rc10` freeze candidate by explicit governance decision on 2026-08-18.
@@ -67,6 +79,8 @@ validated deterministic read-only trace consumption
 accepted rc9 same-root authority/trace proof closure + clean CLI execution
         ↓
 frozen v0.0.5 machine-readable traceability baseline
+        ↓
+v0.0.6rc01 SCAF-APP machine-readable Project Application semantic foundation
 ```
 
-No later enforcement, applicability inference, recommendation, selection, generated index, code generation, signing/provenance, or L4 scope is implied by the v0.0.5 freeze. Future work must proceed on a new controlled RC/version line.
+No automatic applicability inference, recommendation, selection, generated index, code generation, signing/provenance, CI completion enforcement, or L4 scope is implied by rc01. Later capability work remains review-driven.
