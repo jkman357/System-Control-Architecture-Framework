@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.5  
-**Active Development RC:** v0.0.6rc08
-**Status:** Project Application Validated Read/Query View Foundation / Review Candidate
+**Active Development RC:** v0.0.6rc09
+**Status:** Effective Project Profile Semantic Foundation / Review Candidate
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -25,7 +25,7 @@ Formal frozen baselines:
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 
-The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc08` continues the controlled SCAF-APP Project Application line by adding deterministic validated read-only record/authority/scope query views above the accepted rc07 validator without modifying or respinning v0.0.5.
+The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc09` continues the controlled SCAF-APP Project Application line by defining the semantic boundary for a future Effective Project Profile above the accepted rc08 validated query foundation without modifying or respinning v0.0.5.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -173,7 +173,7 @@ The production CI gate still requires the repository-external trust input define
 
 SCAF does not automatically decide project applicability or project architecture. A project remains responsible for controlled applicability, architecture/mechanism selection, adaptation, realization, verification/evidence, and closure decisions. Catalog availability and machine-readable trace are navigation/decision-support inputs, not automatic project authority.
 
-`v0.0.6rc01` through `v0.0.6rc06` established the Project Application semantics, canonical record, YAML representation, fixture coverage, and formal schema. `v0.0.6rc07` added the accepted representation/source-aware validator. `v0.0.6rc08` now adds [`tools/scaf_project_application_views/`](tools/scaf_project_application_views/) with validation-owning `query_record()`, `query_authority()`, and `query_scope()` read-only APIs. Authority queries use a source-validated frozen PAO domain; scope queries remain exact opaque-string filters and explicitly report `scope_resolution: not_performed`. Project-controlled reference resolution, applicability inference, Pattern selection, Effective Project Profile, context packaging, CI completion enforcement, and engineering judgment remain outside rc08. See [`docs/executable-governance/32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md`](docs/executable-governance/32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md).
+`v0.0.6rc01` through `v0.0.6rc08` established the Project Application semantics, canonical representation, schema, representation/source-aware validator, and validated deterministic read/query views. `v0.0.6rc09` now defines the semantic foundation for a future Effective Project Profile: one exact opaque project scope projected across the complete validated Project-Applicable Obligation domain, with mutually exclusive states `applicable`, `not_applicable`, `undetermined`, and profile-only derived `no_current_disposition`. `no_current_disposition` means only that no current Project Application record exists for the exact PAO/scope pair in the selected validated dataset; it is not a fourth Project Application applicability token and does not imply failure, non-compliance, scope nonexistence, or an unresolved engineering decision. rc09 adds no profile serialization, schema, generator, API, context package, CI gate, Pattern selection or L4 capability. See [`docs/executable-governance/33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md`](docs/executable-governance/33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md).
 
 ## Documentation Policy
 

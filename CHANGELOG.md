@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.0.6rc09 — Effective Project Profile Semantic Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc08 review returned clean `PASS / GATE YES` with zero findings.
+- Add `docs/executable-governance/33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md`.
+- Define Effective Project Profile as a subordinate derived current-state projection over one exact selected project scope and the complete validated Project-Applicable Obligation domain for the bound SCAF source release.
+- Define the mutually exclusive/exhaustive profile states `applicable`, `not_applicable`, `undetermined`, and `no_current_disposition`.
+- Define `no_current_disposition` as profile-only derived absence of a current Project Application record for the exact PAO/scope pair in the selected validated dataset; do not add it to the Project Application applicability vocabulary.
+- Preserve `undetermined` as explicit engineering-unresolved state and keep it distinct from record absence.
+- Define total-domain partition semantics without hard-coding the current 218-PAO inventory as a permanent cross-release constant.
+- Keep project-scope matching exact-string and resolution-neutral; define no scope hierarchy, inheritance or resolver.
+- Prohibit applicability inference from L3 traces, other scopes, Pattern availability, implementation/evidence presence, or record absence.
+- Preserve Project Design Authority, applicability correctness, Pattern selection, compliance, verification/evidence, risk and closure outside profile authority.
+- Introduce no profile serialization/schema/generator/API/CLI, context package, CI completion gate, code generation, new L3 Pattern, L4 guidance, or Development Context Recovery workflow state.
+- Change no frozen/accepted source, schema, validator, query implementation, workflow, trust boundary or regression behavior.
+
 ## v0.0.6rc08 — Project Application Validated Read/Query View Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc07 review returned clean `PASS / GATE YES` with zero findings.

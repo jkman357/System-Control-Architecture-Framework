@@ -6,13 +6,13 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc08 — Project Application Validated Read/Query View Foundation` continues the controlled line after the independent rc07 review returned clean `PASS / GATE YES` with zero findings.
+`v0.0.6rc09 — Effective Project Profile Semantic Foundation` continues the controlled line after the independent rc08 review returned clean `PASS / GATE YES` with zero findings.
 
-rc08 adds `tools/scaf_project_application_views/` with validation-owning `query_record()`, `query_authority()`, and `query_scope()` APIs plus a shared CLI path. Every supported query validates the selected Project Application data through rc07 before projection; caller-built parsed/context state cannot substitute for validation.
+rc09 defines the semantic boundary for a future Effective Project Profile without adding a concrete profile representation or generator. One profile is defined over one exact opaque `project_scope_ref` and the complete validated Project-Applicable Obligation domain for its bound SCAF source release.
 
-Authority queries use a source-validated frozen Project-Applicable Obligation query domain. Scope queries remain exact opaque-string filters and explicitly report `scope_resolution: not_performed`; rc08 introduces no project-scope resolver.
+For each PAO/scope pair, the profile semantics define exactly one of `applicable`, `not_applicable`, `undetermined`, or profile-only derived `no_current_disposition`. `no_current_disposition` means only that the selected validated Project Application dataset contains no current record for the exact pair; it is not a fourth Project Application applicability token and is not equivalent to `undetermined`, failure, non-compliance, intentional omission, or scope nonexistence.
 
-Validated/queryable remains distinct from applicable-correct, approved, recommended, selected, implemented, verified, compliant, or closed. Project-controlled reference resolution, Effective Project Profile, context packaging, CI completion gating and L4 remain outside rc08.
+Effective/queryable/profiled remains distinct from applicable-correct, approved, recommended, selected, implemented, verified, compliant, complete, or closed. Profile serialization/schema/generator, project scope/reference resolution, Pattern selection, context packaging, CI completion gating and L4 remain outside rc09.
 
 Controlled records:
 
@@ -23,7 +23,8 @@ Controlled records:
 - `29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md` — accepted closure of `SCAF-RC04-001`;
 - `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — accepted formal Project Application schema foundation;
 - `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — accepted Project Application representation/source-aware validator foundation;
-- `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — Project Application validated read/query view foundation review candidate.
+- `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — accepted Project Application validated read/query view foundation;
+- `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — Effective Project Profile semantic foundation review candidate.
 
 ## Frozen v0.0.5 Milestone
 
@@ -104,6 +105,8 @@ v0.0.6rc06 Project Application JSON Schema foundation
 v0.0.6rc07 Project Application representation/source-aware validator foundation
         ↓
 v0.0.6rc08 validated Project Application read/query views
+        ↓
+v0.0.6rc09 Effective Project Profile semantic foundation
 ```
 
-No automatic applicability inference, recommendation, selection, project-reference/scope resolver, generated mutable index, code generation, signing/provenance, CI completion enforcement, Effective Project Profile, context packaging, or L4 scope is implied by rc08. Higher-level project consumption/profile work remains separately gated and review-driven.
+No automatic applicability inference, recommendation, selection, project-reference/scope resolver, generated mutable index, profile serialization/generator, code generation, signing/provenance, CI completion enforcement, context packaging, or L4 scope is implied by rc09. Higher-level executable profile work remains separately gated and review-driven.
