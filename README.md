@@ -1,8 +1,7 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Formal Release:** v0.0.5  
-**Active Development RC:** v0.0.6rc14
-**Status:** Project Application / Effective Project Profile Milestone Consolidation / Freeze Candidate
+**Current Formal Release:** v0.0.6
+**Status:** Frozen Machine-Readable Project Application and Effective Project Profile Baseline
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -24,8 +23,9 @@ Formal frozen baselines:
 | `v0.0.3` | L3 Pattern / Mechanism Catalog baseline |
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
+| `v0.0.6` | Frozen Machine-Readable Project Application and Effective Project Profile baseline |
 
-The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc14` consolidates the accepted v0.0.6 SCAF-APP Project Application and Effective Project Profile chain as a documentation-only milestone / freeze candidate. A clean rc14 review establishes freeze eligibility only; formal v0.0.6 freeze still requires a separate explicit governance decision.
+There is no active post-v0.0.6 development RC in this frozen source package. The reviewed rc14 source state is formally frozen as **v0.0.6 — Frozen Machine-Readable Project Application and Effective Project Profile Baseline**.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -42,7 +42,27 @@ L4 — Implementation / Verification Guidance
   Future demand-driven guidance; not automatically implied by the current RC.
 ```
 
-The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.5 does not reopen them.
+The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6 does not reopen them.
+
+## Frozen v0.0.6 Milestone
+
+The v0.0.6rc14 freeze-candidate review returned a clean gate `YES` with no findings:
+
+```text
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+
+V0.0.6 PROJECT APPLICATION / EFFECTIVE PROJECT PROFILE
+MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES
+```
+
+The explicit governance freeze decision therefore promotes the reviewed rc14 source state to formal **v0.0.6 — Frozen Machine-Readable Project Application and Effective Project Profile Baseline**.
+
+The frozen milestone preserves the accepted chain from Project Application semantics/representation/schema/source-aware validation/query through Effective Project Profile semantics/representation/schema/source-aware validation and deterministic generation. It preserves exact-scope semantics, `undetermined != no_current_disposition`, validated-input ownership, source-snapshot provenance, no applicability inference, and Project Design Authority separation.
+
+The accepted review-covered regression inventory is `191 / 191 PASS` (`98 / 98` v0.0.6 development tests plus `93 / 93` inherited frozen tests). The formal freeze adds no new semantic or executable capability beyond rc14. See [`docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md`](docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md).
 
 ## Frozen v0.0.5 Milestone
 
@@ -176,7 +196,7 @@ The production CI gate still requires the repository-external trust input define
 
 SCAF does not automatically decide project applicability or project architecture. A project remains responsible for controlled applicability, architecture/mechanism selection, adaptation, realization, verification/evidence, and closure decisions. Catalog availability and machine-readable trace are navigation/decision-support inputs, not automatic project authority.
 
-`v0.0.6rc01` through `v0.0.6rc08` established the machine-readable Project Application semantics, canonical representation, schema, source-aware validator, and validated deterministic read/query views. `v0.0.6rc09` through `v0.0.6rc13` established Effective Project Profile semantics, canonical YAML, schema, source-aware validation, and deterministic validated generation. `v0.0.6rc14` now consolidates that complete chain without adding executable capability. It records the accepted milestone boundary, closed findings, regression inventory, authority separation, and explicitly deferred work as a freeze candidate. See [`docs/executable-governance/38_SCAF_v0.0.6rc14_Project_Application_Effective_Project_Profile_Milestone_Consolidation_and_Freeze_Candidate.md`](docs/executable-governance/38_SCAF_v0.0.6rc14_Project_Application_Effective_Project_Profile_Milestone_Consolidation_and_Freeze_Candidate.md).
+`v0.0.6` formally freezes the accepted machine-readable Project Application and Effective Project Profile chain established through rc01→rc13 and consolidated/reviewed at rc14. The baseline includes Project Application semantics, canonical representation, schema, source-aware validation and validated queries, plus Effective Project Profile semantics, canonical representation, schema, source-aware validation and deterministic validated generation. It does not add scope resolution, applicability inference, Pattern selection, compliance/verification/closure authority, AI context packaging, CI completion enforcement, L4 guidance, or Development Context Recovery. See [`docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md`](docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md).
 
 ## Documentation Policy
 

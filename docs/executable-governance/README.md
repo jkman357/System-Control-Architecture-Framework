@@ -4,30 +4,47 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
-## Active v0.0.6 Development
+## Frozen v0.0.6 Milestone
 
-`v0.0.6rc14 — Project Application / Effective Project Profile Milestone Consolidation and Freeze Candidate` continues the controlled line after the independent rc13 review returned clean `PASS / GATE YES` with zero findings.
+`v0.0.6 — Frozen Machine-Readable Project Application and Effective Project Profile Baseline` is the formal baseline promoted from the cleanly reviewed `v0.0.6rc14` freeze candidate by explicit governance decision on 2026-08-18.
 
-rc01→rc08 established machine-readable Project Application semantics, representation, schema, source-aware validation, and validated deterministic read/query views. rc09→rc13 established Effective Project Profile semantics, canonical representation, schema, source-aware validation, and deterministic validated generation. rc14 adds no new executable or semantic capability; it consolidates the accepted chain, review/finding history, regression baseline, authority boundary, and deferred scope into a freeze candidate.
+Accepted freeze-candidate review state:
 
-A clean rc14 review establishes freeze eligibility only. Formal v0.0.6 freeze requires a separate explicit governance decision.
+```text
+Critical / Major / Minor / Trivial: 0 / 0 / 0 / 0
+V0.0.6 PROJECT APPLICATION / EFFECTIVE PROJECT PROFILE
+MILESTONE CONSOLIDATION / FREEZE-CANDIDATE GATE: YES
+```
 
-Controlled records:
+The formal freeze is release-state/documentation-only relative to committed rc14. It adds no semantic or executable capability and changes no accepted representation, schema, validator, query, generator, frozen source, workflow, trust boundary, or regression implementation.
+
+v0.0.6 controlled records:
 
 - `25_SCAF_v0.0.6rc01_SCAF_APP_Machine_Readable_Project_Application_Semantic_Model_Foundation.md` — accepted machine-readable SCAF-APP Project Application semantic-model foundation;
 - `26_SCAF_v0.0.6rc02_SCAF_APP_Canonical_Project_Application_Record_Model.md` — canonical logical record model whose independent review opened `SCAF-RC02-001` / `SCAF-RC02-002`;
-- `27_SCAF_v0.0.6rc03_SCAF_APP_Project_Application_Record_Basis_Role_and_State_Compatibility_Hardening.md` — accepted closure of the rc02 basis-role and state-compatibility findings;
-- `28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md` — accepted concrete YAML serialization foundation; independent review opened `SCAF-RC04-001` (Minor fixture coverage);
+- `27_SCAF_v0.0.6rc03_SCAF_APP_Project_Application_Record_Basis_Role_and_State_Compatibility_Hardening.md` — accepted closure of the rc02 findings;
+- `28_SCAF_v0.0.6rc04_SCAF_APP_Concrete_Project_Application_Serialization_Foundation.md` — accepted YAML serialization; review opened `SCAF-RC04-001`;
 - `29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md` — accepted closure of `SCAF-RC04-001`;
-- `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — accepted formal Project Application schema foundation;
-- `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — accepted Project Application representation/source-aware validator foundation;
-- `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — accepted Project Application validated read/query view foundation;
-- `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — accepted Effective Project Profile semantic foundation;
-- `34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md` — accepted canonical Effective Project Profile representation foundation;
-- `35_SCAF_v0.0.6rc11_Effective_Project_Profile_Schema_Foundation.md` — accepted Effective Project Profile JSON Schema foundation;
-- `36_SCAF_v0.0.6rc12_Effective_Project_Profile_Source_Aware_Validator_Foundation.md` — accepted Effective Project Profile source-aware validator foundation;
-- `37_SCAF_v0.0.6rc13_Effective_Project_Profile_Deterministic_Generator_Foundation.md` — accepted deterministic validated Effective Project Profile generator foundation;
-- `38_SCAF_v0.0.6rc14_Project_Application_Effective_Project_Profile_Milestone_Consolidation_and_Freeze_Candidate.md` — milestone consolidation / freeze candidate.
+- `30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` — accepted Project Application schema;
+- `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — accepted Project Application representation/source-aware validator;
+- `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — accepted validation-owning Project Application query views;
+- `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — accepted Effective Project Profile semantics;
+- `34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md` — accepted canonical Effective Project Profile representation;
+- `35_SCAF_v0.0.6rc11_Effective_Project_Profile_Schema_Foundation.md` — accepted Effective Project Profile schema;
+- `36_SCAF_v0.0.6rc12_Effective_Project_Profile_Source_Aware_Validator_Foundation.md` — accepted Effective Project Profile source-aware validator;
+- `37_SCAF_v0.0.6rc13_Effective_Project_Profile_Deterministic_Generator_Foundation.md` — accepted deterministic validated Effective Project Profile generator;
+- `38_SCAF_v0.0.6rc14_Project_Application_Effective_Project_Profile_Milestone_Consolidation_and_Freeze_Candidate.md` — reviewed consolidation-only freeze candidate;
+- `39_SCAF_v0.0.6_Formal_Freeze_Decision.md` — formal explicit freeze decision and immutable baseline boundary.
+
+The accepted review-covered regression inventory is:
+
+```text
+v0.0.6 development suites: 98 / 98 PASS
+inherited frozen suites:    93 / 93 PASS
+combined:                  191 / 191 PASS
+```
+
+Detailed version/review history remains in repository-root `CHANGELOG.md`.
 
 ## Frozen v0.0.5 Milestone
 
@@ -119,7 +136,7 @@ v0.0.6rc12 Effective Project Profile source-aware validator foundation
         ↓
 v0.0.6rc13 Effective Project Profile deterministic generator foundation
         ↓
-v0.0.6rc14 Project Application / Effective Project Profile milestone consolidation / freeze candidate
+frozen v0.0.6 machine-readable Project Application / Effective Project Profile baseline
 ```
 
-rc14 adds no executable capability. It consolidates the accepted v0.0.6 chain and establishes freeze-candidate review scope only. Persistent profile state, scope/reference resolution, applicability inference, Pattern selection, AI context packaging, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
+The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. Persistent profile state, scope/reference resolution, applicability inference, Pattern selection, AI context packaging, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated and require new controlled development.

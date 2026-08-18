@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.6 — Frozen Machine-Readable Project Application and Effective Project Profile Baseline
+
+- Formally freeze the independently reviewed `v0.0.6rc14` source state after a clean freeze-candidate review with zero findings and gate `YES`.
+- Freeze the accepted Project Application semantics, canonical representation, schema, source-aware validator, and validated deterministic query boundary.
+- Freeze the accepted Effective Project Profile semantics, canonical representation, schema, source-aware validator, and deterministic validated generator boundary.
+- Preserve exact-scope semantics, `undetermined != no_current_disposition`, source-snapshot provenance, validated-input ownership, and no applicability inference.
+- Preserve Project Design Authority / engineering / compliance / verification / closure separation.
+- Freeze the review-covered regression baseline at `98 / 98` v0.0.6 development tests plus `93 / 93` inherited frozen tests (`191 / 191` combined).
+- Preserve the existing upstream frozen v0.0.2, v0.0.3, v0.0.4, and v0.0.5 baselines unchanged.
+- Add `docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md`.
+- Mark v0.0.6 immutable; future capability work must begin on a new controlled RC/version line.
+
 ## v0.0.6rc14 — Project Application / Effective Project Profile Milestone Consolidation and Freeze Candidate
 
 - Continue after the independent rc13 review returned clean `PASS / GATE YES` with zero findings.
