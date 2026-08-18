@@ -1,5 +1,34 @@
 # Changelog
 
+## v0.0.5rc10 — L3 Machine-Readable Traceability Milestone Consolidation and Freeze Candidate
+
+- Continue the controlled v0.0.5 line after the independent **full-source rc9 re-review** returned a clean gate `YES` with zero Critical, Major, Minor, or Trivial findings.
+- Record `RC7-01: REMAINS RESOLVED`, `RC8-01: REMAINS RESOLVED`, `RC8-02: REMAINS RESOLVED`, and `RC9-01: NOT APPLICABLE UNDER CORRECTED CONTRACT` as the accepted pre-consolidation finding state.
+- Consolidate the v0.0.5 dependency chain from the machine-readable trace model through exact serialization, schema/source-extraction contract, source-aware validation, and validated deterministic read-only L2↔L3 consumption.
+- Preserve the frozen v0.0.2 L1/L2 and v0.0.3 L3 semantic baselines, frozen v0.0.4 executable-governance baseline, authority registry/schema, trace registry/schema, accepted validators, trace-view/query implementation, workflow, six-artifact production trust set, and all regression code unchanged.
+- Preserve the accepted trace inventory at 12 Patterns / 119 relations / 23 Primary / 41 Supporting / 55 Constraint / 82 unique L2 IDs / 15 qualifiers.
+- Preserve the authority inventory at 294 records / 218 Project-Applicable Obligations / 76 Framework Normative Invariants.
+- Preserve the accepted regression inventories at rc6 trace validator 24/24, rc9 trace views/query 28/28, and frozen executable-governance 41/41.
+- Define rc10 as **consolidation-only**: no new relation semantics, authority semantics, project-applicability inference, recommendation/selection, generated persisted indexes, registry generation, code generation, CI/trust-chain expansion, new L3 Pattern work, M3/M4, or L4 guidance.
+- Add `docs/executable-governance/23_SCAF_v0.0.5rc10_L3_Machine_Readable_Traceability_Milestone_Consolidation_and_Freeze_Candidate.md` and update only current release/navigation/consolidation documentation.
+- Establish freeze-candidate eligibility for independent review only. rc10 is **not** a formal frozen `v0.0.5`; formal freeze requires a separate explicit governance decision after a clean freeze-candidate review.
+
+### rc9 full-source re-review disposition
+
+```text
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+
+RC7-01: REMAINS RESOLVED
+RC8-01: REMAINS RESOLVED
+RC8-02: REMAINS RESOLVED
+RC9-01: NOT APPLICABLE UNDER CORRECTED CONTRACT
+
+V0.0.5 L3 TRACE VIEWS AUTHORITY VALIDATION AND CLI EXECUTION BOUNDARY CLOSURE RE-REVIEW GATE: YES
+```
+
 ## v0.0.5rc9 — L3 Trace Views Authority Validation and CLI Execution Boundary Closure
 
 - Continue the controlled v0.0.5 line after the independent rc8 review confirmed `RC7-01: RESOLVED` but returned `V0.0.5 L3 TRACE VIEWS VALIDATED PROGRAMMATIC API BOUNDARY HARDENING GATE: NO` with `RC8-01` Major and `RC8-02` Minor.

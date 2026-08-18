@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Development Release:** v0.0.5rc9  
-**Status:** L3 Trace Views Authority Validation and CLI Execution Boundary Closure  
-**Date:** 2026-08-17
+**Current Development Release:** v0.0.5rc10  
+**Status:** L3 Machine-Readable Traceability Milestone Consolidation and Freeze Candidate  
+**Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
 
@@ -27,7 +27,7 @@ Current development line:
 
 | Release | Development Scope |
 |---|---|
-| `v0.0.5rc9` | Same-root trace + authority validation for deterministic read-only L2↔L3 query APIs, plus clean documented `python -m` CLI execution |
+| `v0.0.5rc10` | Consolidation-only freeze candidate for the accepted v0.0.5 L3 machine-readable traceability chain; no new semantic or executable capability |
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -46,53 +46,53 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.5 does not reopen them.
 
-## Current v0.0.5rc9 Development Focus
+## Current v0.0.5rc10 Development Focus
 
-The independent rc8 review confirmed `RC7-01: RESOLVED` but found two bounded issues in the validated trace-query boundary:
+The independent full-source rc9 re-review returned a clean gate `YES` with:
 
-- `RC8-01` (Major): the public query path consumed `authority-registry.yaml` classification state without owning the frozen authority-registry validation proof for that same repository root;
-- `RC8-02` (Minor): eager package re-export preloaded the documented `python -m tools.scaf_trace_views.query` target module, allowing CPython `runpy` to emit a duplicate-module `RuntimeWarning` and execute a second module instance.
+```text
+RC7-01: REMAINS RESOLVED
+RC8-01: REMAINS RESOLVED
+RC8-02: REMAINS RESOLVED
+RC9-01: NOT APPLICABLE UNDER CORRECTED CONTRACT
 
-rc9 closes only those findings. The supported Python API remains:
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+```
+
+rc10 therefore introduces **no new semantic or executable capability**. It consolidates the accepted v0.0.5 machine-readable traceability milestone and establishes a freeze candidate for independent review.
+
+The consolidated dependency chain is:
+
+```text
+frozen v0.0.2 L1/L2 semantic authority
+        ↓
+frozen v0.0.3 L3 Pattern semantic trace authority
+        ↓
+rc1/rc2 machine-readable trace representation model
+        ↓
+rc3 l3-trace-registry.yaml serialization
+        ↓
+rc4 trace schema + deterministic source-extraction contract
+        ↓
+rc6 source-aware trace validator
+        ↓
+rc7/rc8/rc9 validated deterministic read-only L2↔L3 query boundary
+        ↓
+rc10 milestone consolidation / freeze candidate
+```
+
+The supported Python API remains unchanged:
 
 ```python
 from tools.scaf_trace_views import query_l2, query_pattern
-
-view = query_l2(repo_root, "SCAF-ROB-004")
-view = query_pattern(repo_root, "SCAF-PAT-COM-001")
 ```
 
-Every supported query now requires both validation proofs on the same resolved repository root before repository data can be projected:
+Every supported query continues to require the accepted same-root trace-validation plus authority-validation proofs before projection. rc10 changes no validator, query implementation, registry, schema, workflow, frozen baseline, trust artifact, or regression code.
 
-```text
-query_l2() / query_pattern()
-        ↓
-rc6 trace validate_repository(repo_root)
-        ↓ PASS only
-frozen authority validate_registry(
-    repo_root,
-    repo_root / authority-registry.yaml,
-    repo_root / schemas/authority-registry.schema.json)
-        ↓ PASS only
-load validated trace + authority state
-        ↓
-internal deterministic projection
-        ↓
-view return
-```
-
-The frozen authority validator itself is reused unchanged. rc9 does not create a second authority validator and does not modify the accepted rc6 trace validator.
-
-The package now lazily re-exports `TraceViewError`, `query_l2`, and `query_pattern`; importing `tools.scaf_trace_views` no longer eagerly imports the `query` CLI target. The documented CLI therefore exercises one normal module execution path:
-
-```text
-python -m tools.scaf_trace_views.query --l2 SCAF-ROB-004
-python -m tools.scaf_trace_views.query --pattern SCAF-PAT-COM-001
-```
-
-The rc9 suite includes actual subprocess coverage of these documented commands, including clean successful stderr and fail-closed invalid-authority behavior.
-
-See [`docs/executable-governance/22_SCAF_v0.0.5rc9_L3_Trace_Views_Authority_Validation_and_CLI_Execution_Boundary_Closure.md`](docs/executable-governance/22_SCAF_v0.0.5rc9_L3_Trace_Views_Authority_Validation_and_CLI_Execution_Boundary_Closure.md).
+See [`docs/executable-governance/23_SCAF_v0.0.5rc10_L3_Machine_Readable_Traceability_Milestone_Consolidation_and_Freeze_Candidate.md`](docs/executable-governance/23_SCAF_v0.0.5rc10_L3_Machine_Readable_Traceability_Milestone_Consolidation_and_Freeze_Candidate.md).
 
 ## Authority and Trace Boundaries
 
@@ -106,6 +106,7 @@ rc4 trace JSON Schema          -> trace structural representation constraints
 l3-trace-registry.yaml         -> subordinate serialized trace data
 rc6 trace validator            -> source-aware trace conformance proof
 rc9 public query API / CLI     -> validated deterministic read-only consumption
+rc10 consolidation record       -> freeze-candidate milestone boundary
 ```
 
 The accepted L2↔L3 trace relation classes remain:
@@ -146,9 +147,9 @@ python -m unittest discover -s tools/scaf_trace_validator/tests -v
 python -m unittest discover -s tools/scaf_trace_views/tests -v
 ```
 
-The accepted trace-validator suite remains 24 tests. rc9 expands the deterministic trace-view/query development suite from 23 to **28 tests**, adding three authority-registry negative-condition regressions and two documented `python -m` subprocess regressions.
+The accepted trace-validator suite remains 24 tests. The accepted deterministic trace-view/query suite remains **28 tests**. rc10 changes neither test inventory nor executable behavior.
 
-The production CI gate still requires the repository-external trust input defined by frozen v0.0.4. rc9 does not expand the six-artifact production trust set.
+The production CI gate still requires the repository-external trust input defined by frozen v0.0.4. rc10 does not expand the six-artifact production trust set.
 
 ## Repository Navigation
 
