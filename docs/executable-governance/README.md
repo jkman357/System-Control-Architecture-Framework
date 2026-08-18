@@ -6,13 +6,13 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc11 — Effective Project Profile Schema Foundation` continues the controlled line after the independent rc10 review returned clean `PASS / GATE YES` with zero findings.
+`v0.0.6rc12 — Effective Project Profile Source-Aware Validator Foundation` continues the controlled line after the independent rc11 review returned clean `PASS / GATE YES` with zero findings.
 
-rc09 accepted the Effective Project Profile semantic boundary and rc10 accepted the first canonical YAML representation. rc11 formalizes only the machine-determinable parsed-instance portion of that representation as JSON Schema Draft 2020-12.
+rc09 accepted Effective Project Profile semantics, rc10 accepted the canonical YAML representation, and rc11 accepted the parsed-instance Draft 2020-12 schema. rc12 adds the first source-aware profile validator for the machine-determinable facts that rc11 deliberately left outside schema-only proof.
 
-The schema owns root/member shape, representation constants, non-empty string/type constraints, lowercase SHA-256 lexical form, the four-state profile vocabulary, and state-specific `project_application_record_id` presence/absence. It does not prove complete PAO-domain coverage, authority existence/class, Project Application trace correctness, actual source-SHA correspondence, canonical entry ordering, raw-YAML policy, scope existence, or engineering correctness.
+The validator snapshots the selected profile and Project Application bytes plus the repository authority registry, chains the accepted rc11 and rc07 validation boundaries, proves the source-release-bound PAO domain, compares the exact Project Application source SHA-256, checks complete domain/identity/order, verifies recorded-state trace correspondence, and proves exact-pair absence for `no_current_disposition`.
 
-`undetermined` remains a legitimate unresolved engineering state. `no_current_disposition` remains profile-only dataset-relative absence and is not added to the Project Application applicability vocabulary. No profile generator, source-aware profile validator, resolver, context package, CI completion gate, Pattern selection, or L4 capability is introduced.
+`undetermined` remains a legitimate unresolved engineering state. `no_current_disposition` remains dataset-relative exact-pair absence, not a Project Application applicability token. A successful validator run reports only `PROFILE REPRESENTATION/SOURCE RESULT: PASS`; it does not establish engineering correctness, compliance, verification, completion, release readiness or closure.
 
 Controlled records:
 
@@ -26,7 +26,8 @@ Controlled records:
 - `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — accepted Project Application validated read/query view foundation;
 - `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — accepted Effective Project Profile semantic foundation;
 - `34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md` — accepted canonical Effective Project Profile representation foundation;
-- `35_SCAF_v0.0.6rc11_Effective_Project_Profile_Schema_Foundation.md` — Effective Project Profile JSON Schema foundation review candidate.
+- `35_SCAF_v0.0.6rc11_Effective_Project_Profile_Schema_Foundation.md` — accepted Effective Project Profile JSON Schema foundation;
+- `36_SCAF_v0.0.6rc12_Effective_Project_Profile_Source_Aware_Validator_Foundation.md` — Effective Project Profile source-aware validator review candidate.
 
 ## Frozen v0.0.5 Milestone
 
@@ -113,6 +114,8 @@ v0.0.6rc09 Effective Project Profile semantic foundation
 v0.0.6rc10 Effective Project Profile canonical representation foundation
         ↓
 v0.0.6rc11 Effective Project Profile JSON Schema foundation
+        ↓
+v0.0.6rc12 Effective Project Profile source-aware validator foundation
 ```
 
-rc11 formalizes only parsed-instance structural/state-shape facts of the accepted rc10 profile representation. Complete PAO-domain/source-aware proof, actual source-SHA correspondence, canonical entry ordering, raw-YAML restrictions, profile generation, and engineering judgment remain outside schema authority and separately gated.
+rc12 executes the machine-determinable representation/source checks deliberately left outside rc11 schema authority. Profile generation, scope/reference resolution, applicability inference, Pattern selection, engineering judgment, compliance, verification, completion and closure remain separately gated.

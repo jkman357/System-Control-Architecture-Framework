@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.0.6rc12 — Effective Project Profile Source-Aware Validator Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc11 review returned clean `PASS / GATE YES` with zero findings.
+- Add `tools/scaf_effective_project_profile_validator/` as the first executable Effective Project Profile representation/source-aware validator.
+- Execute the accepted rc10 raw-YAML policy before chaining the accepted rc11 Draft 2020-12 profile schema.
+- Compare `project_application_source_sha256` to SHA-256 computed over the exact selected Project Application bytes.
+- Validate the frozen authority-registry snapshot before deriving the source-release-bound Project-Applicable Obligation domain.
+- Validate the same selected Project Application snapshot through the accepted rc07 validator before profile/source correspondence checks.
+- Enforce complete PAO-domain coverage, cross-entry authority-ID uniqueness, PAO-only/source-release membership, and canonical root/entry/sequence ordering.
+- Require recorded profile states to resolve to the exact current Project Application record with matching authority, exact scope, state, and source release.
+- Require every `no_current_disposition` entry to be supported by actual absence of the exact authority/scope pair in the same validated Project Application snapshot.
+- Keep project scope exact-string and resolution-neutral; preserve valid `undetermined` as engineering-unresolved state.
+- Report only `PROFILE REPRESENTATION/SOURCE RESULT: PASS/FAIL`; do not infer engineering correctness, Project Design Authority approval, Pattern selection, compliance, verification, completion, release or closure.
+- Introduce no profile generator, query API, resolver, applicability inference, AI approval, context package, CI completion gate, code generation, new L3 Pattern, L4 guidance, or Development Context Recovery workflow state.
+- Change no accepted rc10 profile fixture, rc11 profile schema, Project Application fixture/schema/validator/views, frozen source, workflow, trust boundary, or frozen regression implementation.
+
 ## v0.0.6rc11 — Effective Project Profile Schema Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc10 review returned clean `PASS / GATE YES` with zero findings.
