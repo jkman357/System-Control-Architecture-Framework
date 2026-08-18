@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.5  
-**Active Development RC:** v0.0.6rc05
-**Status:** Project Application Serialization Fixture Coverage Hardening / Review Candidate
+**Active Development RC:** v0.0.6rc06
+**Status:** Project Application Schema Foundation / Review Candidate
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -25,7 +25,7 @@ Formal frozen baselines:
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 
-The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc05` continues the controlled SCAF-APP Project Application line by closing the rc04 serialization-fixture coverage finding without changing the accepted rc04 representation contract or respinning v0.0.5.
+The formal v0.0.5 baseline remains frozen and immutable. `v0.0.6rc06` continues the controlled SCAF-APP Project Application line by encoding the accepted rc04 representation contract as a formal schema foundation without modifying or respinning v0.0.5.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -156,7 +156,7 @@ The production CI gate still requires the repository-external trust input define
 | `authority-registry.yaml` | Frozen v0.0.4 authority representation |
 | `l3-trace-registry.yaml` | Frozen v0.0.5 subordinate serialization of frozen L3 typed trace relations |
 | `examples/project-application.yaml` | rc04-conformant illustrative SCAF-APP YAML fixture; rc05 adds multi-item ordering/duplicate-free coverage only; not a real project disposition dataset |
-| `schemas/` | Frozen authority-registry schema plus frozen v0.0.5 L3 trace schema |
+| `schemas/` | Frozen authority/L3 trace schemas plus the v0.0.6rc06 Project Application schema foundation |
 | `tools/scaf_validator/` | Frozen authority-registry semantic / structural / source-aware validator |
 | `tools/scaf_trace_validator/` | Frozen v0.0.5 source-aware trace validator and regressions |
 | `tools/scaf_trace_views/` | Frozen v0.0.5 deterministic validated read-only L2↔L3 trace views/query |
@@ -171,7 +171,7 @@ The production CI gate still requires the repository-external trust input define
 
 SCAF does not automatically decide project applicability or project architecture. A project remains responsible for controlled applicability, architecture/mechanism selection, adaptation, realization, verification/evidence, and closure decisions. Catalog availability and machine-readable trace are navigation/decision-support inputs, not automatic project authority.
 
-`v0.0.6rc01` established the machine-readable `SCAF-APP` semantic/authority foundation, `v0.0.6rc02` defined the canonical logical Project Application Record model, `v0.0.6rc03` closed basis-role/state-compatibility findings, and `v0.0.6rc04` established the concrete YAML serialization foundation. The independent rc04 review returned `GATE: YES` with one Minor fixture-coverage finding. `v0.0.6rc05` closes only that finding by expanding the illustrative [`examples/project-application.yaml`](examples/project-application.yaml) reference lists so the accepted exact-string ascending order and duplicate-free multi-item rules are concretely demonstrated. The serialization contract remains `v0.0.6rc04`; rc05 still adds no JSON Schema, Project Application validator, resolver, automatic applicability classifier, Pattern selector, Effective Project Profile, CI completion gate or L4 content. See [`docs/executable-governance/29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md`](docs/executable-governance/29_SCAF_v0.0.6rc05_Project_Application_Serialization_Fixture_Coverage_Hardening.md).
+`v0.0.6rc01` established the machine-readable `SCAF-APP` semantic/authority foundation, `v0.0.6rc02` defined the canonical logical Project Application Record model, `v0.0.6rc03` closed basis-role/state-compatibility findings, `v0.0.6rc04` established the concrete YAML serialization foundation, and `v0.0.6rc05` closed the fixture multi-item coverage finding with a clean independent review. `v0.0.6rc06` now adds [`schemas/project-application.schema.json`](schemas/project-application.schema.json), a JSON Schema Draft 2020-12 foundation that encodes machine-determinable structure, tokens, state compatibility, direct-basis structural sufficiency, null/type constraints, and within-list exact-duplicate rejection for the accepted `v0.0.6rc04` representation. Ordering, cross-record identity uniqueness, raw-YAML loader restrictions, authority/reference resolution, and engineering correctness remain explicitly outside schema-only proof and reserved for later reviewed validator boundaries. See [`docs/executable-governance/30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md`](docs/executable-governance/30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md).
 
 ## Documentation Policy
 

@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.6rc06 — Project Application Schema Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc05 review returned clean `GATE: YES`, closed `SCAF-RC04-001`, and reported zero new findings.
+- Add `schemas/project-application.schema.json` using JSON Schema Draft 2020-12 to encode the machine-determinable parsed-instance portion of the accepted rc04 Project Application representation contract.
+- Add `docs/executable-governance/30_SCAF_v0.0.6rc06_Project_Application_Schema_Foundation.md` defining schema scope, authority boundary, coverage and explicit limitations.
+- Preserve `representation_release: v0.0.6rc04`; rc06 is a schema release and does not revise the accepted serialization contract.
+- Encode exact record field set, constants, applicability vocabulary, reference-list types, state-dependent `disposition_basis` presence/prohibition, resolved-state direct-basis structural sufficiency, null/type constraints and exact duplicate rejection within individual reference lists.
+- Keep `undetermined` representation-valid when `unresolved_reason` / `awaiting_refs` satisfy the accepted current-state contract.
+- Explicitly do not claim schema-only enforcement of lexical ordering, cross-record `record_id` or authority/scope uniqueness, raw-YAML duplicate-key/anchor restrictions, framework authority resolution, opaque reference resolution or engineering correctness.
+- Do not duplicate the frozen 218 Project-Applicable Obligation population into the schema; source-aware authority-class/existence checks remain for a later validator.
+- Introduce no Project Application validator, resolver, applicability inference, AI approval, Pattern selection, Effective Project Profile, CI completion gate, code generation, new L3 Pattern or L4 guidance.
+- Change no frozen normative/L3 source, frozen registry/schema/tool/workflow/release-integrity/trust surface, accepted rc04 fixture, or frozen regression behavior.
+
 ## v0.0.6rc05 — Project Application Serialization Fixture Coverage Hardening
 
 - Continue the controlled v0.0.6 line after the independent rc04 review returned `GATE: YES` with one Minor finding, `SCAF-RC04-001`, and no frozen-baseline regression.

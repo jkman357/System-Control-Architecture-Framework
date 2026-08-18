@@ -1,0 +1,208 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:scaf:schema:project-application:v0.0.6rc06",
+  "title": "SCAF Project Application v0.0.6rc04 Representation Contract Schema Foundation",
+  "description": "Structural/state-compatibility schema foundation for the accepted v0.0.6rc04 Project Application YAML representation, with rc05 fixture coverage preserved. This schema validates parsed representation facts only and does not decide engineering applicability, authority sufficiency, reference existence, verification, compliance, or closure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "records"
+  ],
+  "properties": {
+    "records": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/projectApplicationRecord"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "referenceList": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/nonEmptyString"
+      }
+    },
+    "dispositionBasis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "basis_refs"
+      ],
+      "properties": {
+        "summary": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "basis_refs": {
+          "$ref": "#/$defs/referenceList"
+        },
+        "unresolved_reason": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "awaiting_refs": {
+          "$ref": "#/$defs/referenceList"
+        }
+      }
+    },
+    "resolvedDispositionBasis": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispositionBasis"
+        },
+        {
+          "not": {
+            "anyOf": [
+              {
+                "required": [
+                  "unresolved_reason"
+                ]
+              },
+              {
+                "required": [
+                  "awaiting_refs"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "anyOf": [
+            {
+              "required": [
+                "summary"
+              ]
+            },
+            {
+              "properties": {
+                "basis_refs": {
+                  "minItems": 1
+                }
+              },
+              "required": [
+                "basis_refs"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "undeterminedDispositionBasis": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/dispositionBasis"
+        },
+        {
+          "required": [
+            "unresolved_reason",
+            "awaiting_refs"
+          ]
+        }
+      ]
+    },
+    "projectApplicationRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "record_id",
+        "record_kind",
+        "representation_release",
+        "scaf_authority_id",
+        "scaf_source_release",
+        "project_scope_ref",
+        "applicability",
+        "disposition_basis",
+        "decision_refs",
+        "authority_refs",
+        "supporting_refs"
+      ],
+      "properties": {
+        "record_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "record_kind": {
+          "const": "project_application"
+        },
+        "representation_release": {
+          "const": "v0.0.6rc04"
+        },
+        "scaf_authority_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "scaf_source_release": {
+          "const": "v0.0.2"
+        },
+        "project_scope_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "applicability": {
+          "enum": [
+            "applicable",
+            "not_applicable",
+            "undetermined"
+          ]
+        },
+        "disposition_basis": {
+          "$ref": "#/$defs/dispositionBasis"
+        },
+        "decision_refs": {
+          "$ref": "#/$defs/referenceList"
+        },
+        "authority_refs": {
+          "$ref": "#/$defs/referenceList"
+        },
+        "supporting_refs": {
+          "$ref": "#/$defs/referenceList"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "enum": [
+                  "applicable",
+                  "not_applicable"
+                ]
+              }
+            },
+            "required": [
+              "applicability"
+            ]
+          },
+          "then": {
+            "properties": {
+              "disposition_basis": {
+                "$ref": "#/$defs/resolvedDispositionBasis"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "applicability": {
+                "const": "undetermined"
+              }
+            },
+            "required": [
+              "applicability"
+            ]
+          },
+          "then": {
+            "properties": {
+              "disposition_basis": {
+                "$ref": "#/$defs/undeterminedDispositionBasis"
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
