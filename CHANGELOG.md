@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.6rc11 — Effective Project Profile Schema Foundation
+
+- Continue the controlled v0.0.6 line after the independent rc10 review returned clean `PASS / GATE YES` with zero findings.
+- Add `schemas/effective-project-profile.schema.json` as the formal JSON Schema Draft 2020-12 foundation for the accepted rc10 profile representation.
+- Preserve `representation_release: v0.0.6rc10`; rc11 formalizes that accepted representation rather than creating a new serialization revision.
+- Encode the exact six-member parsed root shape, profile kind/release constants, non-empty source-release/scope strings, lowercase 64-hex source-digest syntax, and the accepted four-state entry vocabulary.
+- Require `project_application_record_id` for `applicable`, `not_applicable`, and `undetermined`; prohibit it for profile-only `no_current_disposition`.
+- Reject unknown root/entry members, parsed null/type mismatches, unsupported state tokens, malformed digest strings, and exact duplicate complete entry objects.
+- Explicitly keep complete PAO-domain coverage, cross-entry authority-ID uniqueness, authority existence/class, Project Application trace correctness, actual source-SHA correspondence, entry ordering, and raw-YAML restrictions outside schema-only proof.
+- Preserve `undetermined` as valid engineering-unresolved state and `no_current_disposition` as profile-only dataset-relative absence.
+- Introduce no profile generator, source-aware validator, API/CLI, resolver, applicability inference, AI approval, context package, CI completion gate, code generation, new L3 Pattern, L4 guidance, or Development Context Recovery workflow state.
+- Change no accepted rc10 fixture, Project Application representation/schema/validator/views, frozen source, workflow, trust boundary, or regression implementation.
+
 ## v0.0.6rc10 — Effective Project Profile Canonical Representation Foundation
 
 - Continue the controlled v0.0.6 line after the independent rc09 review returned clean `PASS / GATE YES` with zero findings.

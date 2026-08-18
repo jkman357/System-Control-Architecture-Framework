@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:scaf:schema:effective-project-profile:v0.0.6rc11",
+  "title": "SCAF Effective Project Profile v0.0.6rc10 Representation Contract Schema Foundation",
+  "description": "Structural/state-shape schema foundation for the accepted v0.0.6rc10 Effective Project Profile YAML representation. This schema validates parsed representation facts only. It does not prove complete PAO-domain coverage, authority existence/class, entry ordering, Project Application record trace correctness, source SHA-256 correspondence to actual bytes, project-scope existence, engineering applicability correctness, compliance, verification, completion, or closure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_kind",
+    "representation_release",
+    "scaf_source_release",
+    "project_scope_ref",
+    "project_application_source_sha256",
+    "entries"
+  ],
+  "properties": {
+    "profile_kind": {
+      "const": "effective_project_profile"
+    },
+    "representation_release": {
+      "const": "v0.0.6rc10"
+    },
+    "scaf_source_release": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "project_scope_ref": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "project_application_source_sha256": {
+      "$ref": "#/$defs/lowercaseSha256"
+    },
+    "entries": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/profileEntry"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lowercaseSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "recordedProfileEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scaf_authority_id",
+        "profile_state",
+        "project_application_record_id"
+      ],
+      "properties": {
+        "scaf_authority_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "profile_state": {
+          "enum": [
+            "applicable",
+            "not_applicable",
+            "undetermined"
+          ]
+        },
+        "project_application_record_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "absenceProfileEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scaf_authority_id",
+        "profile_state"
+      ],
+      "properties": {
+        "scaf_authority_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "profile_state": {
+          "const": "no_current_disposition"
+        }
+      }
+    },
+    "profileEntry": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/recordedProfileEntry"
+        },
+        {
+          "$ref": "#/$defs/absenceProfileEntry"
+        }
+      ]
+    }
+  }
+}

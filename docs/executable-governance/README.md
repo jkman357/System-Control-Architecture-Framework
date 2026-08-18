@@ -6,13 +6,13 @@
 
 ## Active v0.0.6 Development
 
-`v0.0.6rc10 — Effective Project Profile Canonical Representation Foundation` continues the controlled line after the independent rc09 review returned clean `PASS / GATE YES` with zero findings.
+`v0.0.6rc11 — Effective Project Profile Schema Foundation` continues the controlled line after the independent rc10 review returned clean `PASS / GATE YES` with zero findings.
 
-rc09 defines the semantic boundary for a future Effective Project Profile without adding a concrete profile representation or generator. One profile is defined over one exact opaque `project_scope_ref` and the complete validated Project-Applicable Obligation domain for its bound SCAF source release.
+rc09 accepted the Effective Project Profile semantic boundary and rc10 accepted the first canonical YAML representation. rc11 formalizes only the machine-determinable parsed-instance portion of that representation as JSON Schema Draft 2020-12.
 
-For each PAO/scope pair, the profile semantics define exactly one of `applicable`, `not_applicable`, `undetermined`, or profile-only derived `no_current_disposition`. `no_current_disposition` means only that the selected validated Project Application dataset contains no current record for the exact pair; it is not a fourth Project Application applicability token and is not equivalent to `undetermined`, failure, non-compliance, intentional omission, or scope nonexistence.
+The schema owns root/member shape, representation constants, non-empty string/type constraints, lowercase SHA-256 lexical form, the four-state profile vocabulary, and state-specific `project_application_record_id` presence/absence. It does not prove complete PAO-domain coverage, authority existence/class, Project Application trace correctness, actual source-SHA correspondence, canonical entry ordering, raw-YAML policy, scope existence, or engineering correctness.
 
-Effective/queryable/profiled remains distinct from applicable-correct, approved, recommended, selected, implemented, verified, compliant, complete, or closed. Profile serialization/schema/generator, project scope/reference resolution, Pattern selection, context packaging, CI completion gating and L4 remain outside rc09.
+`undetermined` remains a legitimate unresolved engineering state. `no_current_disposition` remains profile-only dataset-relative absence and is not added to the Project Application applicability vocabulary. No profile generator, source-aware profile validator, resolver, context package, CI completion gate, Pattern selection, or L4 capability is introduced.
 
 Controlled records:
 
@@ -25,7 +25,8 @@ Controlled records:
 - `31_SCAF_v0.0.6rc07_Project_Application_Validator_Foundation.md` — accepted Project Application representation/source-aware validator foundation;
 - `32_SCAF_v0.0.6rc08_Project_Application_Validated_Read_Query_View_Foundation.md` — accepted Project Application validated read/query view foundation;
 - `33_SCAF_v0.0.6rc09_Effective_Project_Profile_Semantic_Foundation.md` — accepted Effective Project Profile semantic foundation;
-- `34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md` — canonical Effective Project Profile representation foundation review candidate.
+- `34_SCAF_v0.0.6rc10_Effective_Project_Profile_Canonical_Representation_Foundation.md` — accepted canonical Effective Project Profile representation foundation;
+- `35_SCAF_v0.0.6rc11_Effective_Project_Profile_Schema_Foundation.md` — Effective Project Profile JSON Schema foundation review candidate.
 
 ## Frozen v0.0.5 Milestone
 
@@ -110,6 +111,8 @@ v0.0.6rc08 validated Project Application read/query views
 v0.0.6rc09 Effective Project Profile semantic foundation
         ↓
 v0.0.6rc10 Effective Project Profile canonical representation foundation
+        ↓
+v0.0.6rc11 Effective Project Profile JSON Schema foundation
 ```
 
-rc10 introduces only the canonical profile YAML representation and exact-source SHA-256 snapshot provenance. No automatic applicability inference, recommendation, selection, project-reference/scope resolver, profile schema/generator/validator/API/CLI, generated mutable index, signing authority, CI completion enforcement, context packaging, code generation, or L4 scope is implied. Higher-level executable profile work remains separately gated and review-driven.
+rc11 formalizes only parsed-instance structural/state-shape facts of the accepted rc10 profile representation. Complete PAO-domain/source-aware proof, actual source-SHA correspondence, canonical entry ordering, raw-YAML restrictions, profile generation, and engineering judgment remain outside schema authority and separately gated.
