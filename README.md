@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.6
-**Active Development RC:** v0.0.7rc02
-**Status:** Canonical Consumption / Context-Selection Model Foundation / Review Candidate
+**Active Development RC:** v0.0.7rc03
+**Status:** Canonical Consumption / Context-Selection Machine-Readable Representation Foundation / Review Candidate
 **Date:** 2026-08-18
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -26,7 +26,7 @@ Formal frozen baselines:
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 | `v0.0.6` | Frozen Machine-Readable Project Application and Effective Project Profile baseline |
 
-The formal v0.0.6 baseline remains frozen and immutable. `v0.0.7rc02` continues the controlled post-freeze line by defining the canonical logical model for downstream consumption/context selection over validated Effective Project Profiles without modifying or respinning v0.0.6.
+The formal v0.0.6 baseline remains frozen and immutable. `v0.0.7rc03` continues the controlled post-freeze line by serializing the accepted Consumption Selection logical model as a canonical machine-readable YAML representation without modifying or respinning v0.0.6.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -67,27 +67,20 @@ The accepted review-covered regression inventory is `191 / 191 PASS` (`98 / 98` 
 
 ## Active v0.0.7 Development
 
-`v0.0.7rc01` accepted the downstream **Effective Project Profile consumption semantic boundary**: consumption/filtering remains subordinate to validated profile/source truth and cannot become applicability or engineering authority.
+`v0.0.7rc01` accepted the downstream **Effective Project Profile consumption semantic boundary**. `v0.0.7rc02` accepted the representation-neutral **canonical Consumption Selection logical model** with `D = I + O + X`, `E = I + O`, and a strict distinction between predicate exclusion and bounded omission.
 
-`v0.0.7rc02` now defines the first representation-neutral **canonical Consumption Selection logical model**. A selection binds one exact validated profile snapshot, carries a declared non-authoritative purpose, applies a bounded frozen-state selector plus exact authority selector, records included entries, and distinguishes predicate exclusion from explicit bounded omission. The central accounting is:
+`v0.0.7rc03` now serializes that accepted logical model as a canonical YAML representation in [`examples/consumption-selection.yaml`](examples/consumption-selection.yaml). The record binds one exact validated Effective Project Profile source snapshot, carries bounded state/authority selectors, explicit bounded-omission metadata, exact selected-entry projections, and the derived `complete` / `filtered` classification. It deliberately does not serialize redundant authoritative E/O/X truth lists.
 
-```text
-D = I + O + X
-E = I + O
-
-I = included
-O = eligible but bounded-omitted
-X = predicate-excluded
-```
-
-The key rc01 rule remains:
+The central authority boundaries remain:
 
 ```text
 included in context != applicable
 excluded from context != not_applicable
+predicate excluded != bounded omitted
+undetermined != no_current_disposition
 ```
 
-The four frozen profile states remain unchanged, `undetermined != no_current_disposition` remains mandatory, exact-scope semantics remain resolution-neutral, and selection does not establish implementation, Pattern choice, compliance, verification, approval, release or closure. rc02 introduces no YAML/JSON representation, schema, validator, builder, context-source resolver, AI package, CI gate, L4 guidance or work-checkpoint mechanism. See [`docs/executable-governance/41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md`](docs/executable-governance/41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md).
+The four frozen profile states remain unchanged, exact-scope semantics remain resolution-neutral, and selection does not establish implementation, Pattern choice, compliance, verification, approval, release or closure. rc03 introduces no schema, validator, builder/generator, API, CLI, context-source resolver, AI package, CI gate, L4 guidance or work-checkpoint mechanism. See [`docs/executable-governance/42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md`](docs/executable-governance/42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md).
 
 ## Frozen v0.0.5 Milestone
 
@@ -223,7 +216,7 @@ SCAF does not automatically decide project applicability or project architecture
 
 `v0.0.6` formally freezes the accepted machine-readable Project Application and Effective Project Profile chain established through rc01→rc13 and consolidated/reviewed at rc14. The baseline includes Project Application semantics, canonical representation, schema, source-aware validation and validated queries, plus Effective Project Profile semantics, canonical representation, schema, source-aware validation and deterministic validated generation. It does not add scope resolution, applicability inference, Pattern selection, compliance/verification/closure authority, AI context packaging, CI completion enforcement, L4 guidance, or Development Context Recovery. See [`docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md`](docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md).
 
-`v0.0.7rc01` established the accepted post-freeze consumption semantics. `v0.0.7rc02` builds on that accepted boundary with a representation-neutral canonical Consumption Selection logical model that distinguishes eligibility, inclusion, predicate exclusion and bounded omission while preserving source state and authority separation. See [`docs/executable-governance/41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md`](docs/executable-governance/41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md).
+`v0.0.7rc01` established accepted post-freeze consumption semantics; `v0.0.7rc02` established the canonical logical model; and `v0.0.7rc03` adds the first canonical machine-readable Consumption Selection YAML representation while preserving source-profile fidelity and authority separation. See [`docs/executable-governance/42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md`](docs/executable-governance/42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md).
 
 ## Documentation Policy
 

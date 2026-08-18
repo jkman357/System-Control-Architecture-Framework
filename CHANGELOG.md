@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.7rc03 — Canonical Consumption / Context-Selection Machine-Readable Representation Foundation
+
+- Continue the controlled v0.0.7 line after the independent rc02 review returned clean `PASS / GATE YES` with zero findings.
+- Add `examples/consumption-selection.yaml` as the first canonical YAML representation of the accepted Consumption Selection logical model.
+- Define an exact nine-member top-level representation and deterministic nested mapping/list order.
+- Bind the record to exact Effective Project Profile source bytes plus frozen release/scope/Project Application provenance.
+- Serialize only bounded state/authority selectors, explicit bounded-omission metadata, included source-profile projections, and derived complete/filtered class.
+- Do not serialize redundant authoritative E/O/X lists; reconstruct them from the validated source profile and canonical selection inputs.
+- Preserve selected-entry authority/state/record-trace fidelity and Project Application truth upstream.
+- Preserve `included != applicable`, `excluded != not_applicable`, `predicate excluded != bounded omitted`, and `undetermined != no_current_disposition`.
+- Add one illustrative filtered fixture with `|D|=218`, `|E|=3`, `|I|=2`, `|O|=1`, and `|X|=215`.
+- Introduce no schema, validator, builder/generator, API, CLI, context-source resolver, AI package, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+
 ## v0.0.7rc02 — Canonical Consumption / Context-Selection Model Foundation
 
 - Continue the controlled v0.0.7 line after the independent rc01 review returned clean `PASS / GATE YES` with zero findings.

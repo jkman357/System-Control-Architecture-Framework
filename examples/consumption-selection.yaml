@@ -1,0 +1,30 @@
+# SCAF v0.0.7rc03 Consumption Selection canonical representation fixture.
+# Illustrative only: selection membership is subordinate context-selection metadata, not applicability or engineering authority.
+# This fixture binds the exact bytes of examples/effective-project-profile.yaml as present in this candidate.
+selection_kind: "consumption_selection"
+representation_release: "v0.0.7rc03"
+source_profile_binding:
+  effective_project_profile_source_sha256: "6d53b4525356c3cb843f29c0f1788093b0b0f3eae623f15d4ece5de6bd574aff"
+  scaf_source_release: "v0.0.2"
+  project_scope_ref: "example:scope:system"
+  project_application_source_sha256: "ff9a57b7561d51922796fca8e31a1157ef63a5db03d5cce77500ebb669e8145a"
+selection_purpose: "Illustrative bounded context-selection example over three exact PAO identities."
+state_selector:
+  - "applicable"
+  - "no_current_disposition"
+authority_selector:
+  mode: "explicit_set"
+  scaf_authority_ids:
+    - "SCAF-AK-001"
+    - "SCAF-AK-002"
+    - "SCAF-AK-003"
+bounded_omission:
+  applied: true
+  basis: "Illustrative entry-count bound includes two of three predicate-eligible entries."
+selected_entries:
+  - scaf_authority_id: "SCAF-AK-001"
+    profile_state: "applicable"
+    project_application_record_id: "EXAMPLE-PA-001"
+  - scaf_authority_id: "SCAF-AK-002"
+    profile_state: "no_current_disposition"
+selection_class: "filtered"
