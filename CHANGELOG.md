@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.7rc07 — Consumption Selection Milestone Consolidation and Freeze Candidate
+
+- Continue after the independent rc06 review returned clean `PASS / GATE YES` with zero findings.
+- Add a documentation/navigation-only milestone consolidation record for the accepted rc01→rc06 Consumption Selection chain.
+- Consolidate consumption semantics, canonical logical model, rc03 YAML representation, rc04 schema, rc05 source-aware validator, and rc06 deterministic validated builder into one freeze-candidate boundary.
+- Record that all accepted rc01→rc06 reviews are clean with zero open findings entering rc07.
+- Record the current review-covered execution inventory as `34 / 34` rc06 builder + `37 / 37` rc05 validator + inherited `191 / 191` baseline = `262` completed tests; the historical frozen baseline remains 191.
+- Preserve exact-scope, source-provenance, `D/E/I/O/X`, bounded-omission, source-entry fidelity, `included != applicable`, `excluded/omitted != not_applicable`, `predicate excluded != bounded omitted`, and `undetermined != no_current_disposition` boundaries unchanged.
+- Preserve context-source resolution, AI context assembly/orchestration, ranking/token-budget policy, CI applicability-completion enforcement, L4 guidance, Development Context Recovery, and other deferred capabilities as separately gated.
+- Add no executable capability. A clean rc07 review establishes freeze eligibility only; formal v0.0.7 still requires a separate explicit governance decision.
+
 ## v0.0.7rc06 — Deterministic Consumption Selection Builder Foundation
 
 - Continue the controlled v0.0.7 line after the independent rc05 review returned clean `PASS / GATE YES` with zero findings.

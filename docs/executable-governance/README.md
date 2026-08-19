@@ -15,9 +15,10 @@ Current controlled records:
 - `42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md` — accepted canonical YAML representation of the logical model, with exact source-profile binding, bounded selectors/omission, selected-entry fidelity, deterministic ordering, and no redundant E/O/X truth lists.
 - `43_SCAF_v0.0.7rc04_Consumption_Selection_Schema_Foundation.md` — accepted JSON Schema Draft 2020-12 foundation for the rc03 parsed representation shape.
 - `44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md` — accepted source-aware executable validator for raw-YAML/canonical order, rc04 schema, frozen bound-profile proof, exact provenance, selector/domain membership, selected-entry fidelity, D/E/I/O/X, omission consistency, and complete/filtered derivation.
-- `45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md` — deterministic builder over one validated profile plus explicit bounded selection/omission inputs, with mandatory rc05 self-validation.
+- `45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md` — accepted deterministic builder over one validated profile plus explicit bounded selection/omission inputs, with mandatory rc05 self-validation.
+- `46_SCAF_v0.0.7rc07_Consumption_Selection_Milestone_Consolidation_and_Freeze_Candidate.md` — consolidation-only freeze candidate for the accepted rc01→rc06 Consumption Selection chain, clean review history, regression inventory, authority boundary, and deferred scope.
 
-rc06 adds deterministic Consumption Selection construction only. It adds no ranking/token-budget policy, context-source resolver, AI context package/orchestration, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+rc07 adds no executable capability. It consolidates the accepted Consumption Selection milestone and keeps ranking/token-budget policy, context-source resolution, AI context package/orchestration, CI completion enforcement, L4 guidance, and Development Context Recovery separately gated. A clean rc07 review establishes freeze eligibility only.
 
 ## Frozen v0.0.6 Milestone
 
@@ -162,6 +163,10 @@ v0.0.7rc03 canonical consumption / context-selection YAML representation
 v0.0.7rc04 Consumption Selection JSON Schema foundation
         ↓
 v0.0.7rc05 Consumption Selection source-aware validator
+        ↓
+v0.0.7rc06 deterministic validated Consumption Selection builder
+        ↓
+v0.0.7rc07 milestone consolidation / freeze candidate
 ```
 
-The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` defines accepted consumption semantics, `v0.0.7rc02` adds canonical logical accounting, `v0.0.7rc03` adds the canonical YAML representation, `v0.0.7rc04` adds parsed-instance schema validation, and `v0.0.7rc05` adds source-aware Consumption Selection validation. Persistent selection/context state, Consumption Selection building, AI context packaging, context-source or scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
+The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` defines accepted consumption semantics, rc02 canonical logical accounting, rc03 canonical YAML representation, rc04 parsed-instance schema validation, rc05 source-aware validation, rc06 deterministic validated construction, and rc07 consolidation-only freeze candidacy. Persistent selection/context state, AI context packaging, context-source or scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
