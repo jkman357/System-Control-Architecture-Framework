@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:scaf:schema:context-source-associations:v0.0.9rc04",
+  "title": "SCAF Context Source Associations v0.0.9rc03 Representation Contract Schema Foundation",
+  "description": "Structural parsed-instance schema foundation for the accepted v0.0.9rc03 Context Source Association YAML representation. This schema validates representation shape, required/optional members, primitive types, bounded token vocabularies, and SHA-256 syntax only. It does not prove the bound Consumption Selection bytes, source-aware validation success, validated-I coverage, Source Unit reference integrity, semantic association uniqueness, canonical physical ordering, association-basis authority, instance-constraint byte correspondence, source resolvability/currentness, applicability, obligation satisfaction, verification, compliance, release, closure, resolver behavior, or Context Assembly.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "association_set_kind",
+    "representation_release",
+    "source_selection_binding",
+    "source_units",
+    "authority_source_entries"
+  ],
+  "properties": {
+    "association_set_kind": {
+      "const": "context_source_association_set"
+    },
+    "representation_release": {
+      "const": "v0.0.9rc03"
+    },
+    "source_selection_binding": {
+      "$ref": "#/$defs/sourceSelectionBinding"
+    },
+    "source_units": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/sourceUnit"
+      }
+    },
+    "authority_source_entries": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/authoritySourceEntry"
+      }
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lowercaseSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "sourceSelectionBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "consumption_selection_source_sha256",
+        "selection_kind",
+        "selection_representation_release",
+        "project_scope_ref"
+      ],
+      "properties": {
+        "consumption_selection_source_sha256": {
+          "$ref": "#/$defs/lowercaseSha256"
+        },
+        "selection_kind": {
+          "const": "consumption_selection"
+        },
+        "selection_representation_release": {
+          "const": "v0.0.7rc03"
+        },
+        "project_scope_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "controlDomain": {
+      "enum": [
+        "framework",
+        "project",
+        "external"
+      ]
+    },
+    "sourceUnit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_unit_id",
+        "source_identity_ref",
+        "control_domain"
+      ],
+      "properties": {
+        "source_unit_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "source_identity_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "control_domain": {
+          "$ref": "#/$defs/controlDomain"
+        }
+      }
+    },
+    "relationshipSemantic": {
+      "enum": [
+        "framework_obligation_source",
+        "project_decision_source",
+        "realization_source",
+        "verification_definition_source",
+        "verification_evidence_source",
+        "external_constraint_source",
+        "supporting_context_source"
+      ]
+    },
+    "associationAssertionKind": {
+      "enum": [
+        "framework_declared",
+        "project_declared",
+        "controlled_rule_derived"
+      ]
+    },
+    "associationProvenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "assertion_kind",
+        "basis_refs"
+      ],
+      "properties": {
+        "assertion_kind": {
+          "$ref": "#/$defs/associationAssertionKind"
+        },
+        "basis_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "authorityQualification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "qualification_kind",
+        "authority_scope_ref",
+        "authority_basis_refs"
+      ],
+      "properties": {
+        "qualification_kind": {
+          "const": "authoritative_for_relationship_scope"
+        },
+        "authority_scope_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "authority_basis_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "instanceConstraint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "constraint_kind",
+        "value"
+      ],
+      "properties": {
+        "constraint_kind": {
+          "const": "sha256"
+        },
+        "value": {
+          "$ref": "#/$defs/lowercaseSha256"
+        }
+      }
+    },
+    "controlledSourceAssociation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_unit_ref",
+        "relationship_semantic",
+        "relationship_scope_ref",
+        "association_provenance"
+      ],
+      "properties": {
+        "source_unit_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "relationship_semantic": {
+          "$ref": "#/$defs/relationshipSemantic"
+        },
+        "relationship_scope_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "association_provenance": {
+          "$ref": "#/$defs/associationProvenance"
+        },
+        "authority_qualification": {
+          "$ref": "#/$defs/authorityQualification"
+        },
+        "instance_constraint": {
+          "$ref": "#/$defs/instanceConstraint"
+        }
+      }
+    },
+    "authoritySourceEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scaf_authority_id",
+        "associations"
+      ],
+      "properties": {
+        "scaf_authority_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "associations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/controlledSourceAssociation"
+          }
+        }
+      }
+    }
+  }
+}

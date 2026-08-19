@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.9rc04 — Context Source Association Schema Foundation
+
+- Continue only after the independent rc03 review returned clean `PASS / GATE YES` with zero findings and zero blocking review-evidence limitations and a separate dependency/value assessment found a parsed-instance structural schema materially necessary before source-aware validator work.
+- Add `schemas/context-source-associations.schema.json` as the JSON Schema Draft 2020-12 structural contract for the accepted `v0.0.9rc03` canonical YAML representation.
+- Encode exact representation identity, required/optional members, closed object shapes, bounded token vocabularies, non-empty basis lists and lowercase SHA-256 syntax.
+- Preserve explicit zero-association representation and the accepted atomic association / bounded Authority Qualification / Instance Constraint shapes.
+- Preserve `controlled association truth != runtime resolution observation`; no resolver/currentness state model is introduced.
+- Explicitly separate parsed-instance structural validity from source-aware consistency and engineering correctness.
+- Keep exact selection-byte proof, validated-I coverage, Source Unit reference integrity, semantic uniqueness/order, source-byte instance proof, resolver/currentness behavior, applicability/satisfaction/verification/closure and Context Assembly outside schema authority.
+- Add no production validator, resolver, content processing, CI gate, authority-registry change, new PAO/FNI, scope resolver or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc04 review leads only to a new dependency/value assessment, not automatic rc05.
+
 ## v0.0.9rc03 — Canonical Context Source Association Machine-Readable Representation Foundation
 
 - Continue only after the independent rc02 review returned clean `PASS / GATE YES` with zero findings and zero open blocking review-evidence limitations and a separate dependency/value assessment found a canonical machine-readable representation materially necessary before schema/validator work.
