@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.9rc01 — Context Source Resolution Semantic Foundation
+
+- Start the controlled v0.0.9 line from formal frozen v0.0.8 without reopening frozen authority, Project Application, Effective Project Profile, Consumption Selection, or lifecycle-proportional governance baselines.
+- Define Context Source Resolution as a downstream relationship-resolution stage over the validated Consumption Selection included domain `I`, not a content-loading or AI-context stage.
+- Define Source Unit, source identity versus exact source instance, and Source Association as a trace/relationship construct that creates no new engineering authority.
+- Separate relationship role, source authority, source ownership, association provenance, resolvability/currentness, and obligation satisfaction.
+- Establish `discovery != controlled association`, `locator resolves != current/authoritative`, `source exists != obligation satisfied`, and `source resolution != context inclusion`.
+- Preserve zero/many source cardinality and distinguish no association, unresolved locator, stale/superseded source, and missing source without changing applicability/waiver/closure semantics.
+- Preserve exact opaque project scope and the frozen authority chain; introduce no scope resolver, authority inference, or external trust expansion.
+- Add no source-association representation/schema/resolver, filesystem scanning, content extraction, ranking/token-budget policy, AI context assembly, CI source-mapping gate, or authority-registry change.
+- Apply frozen v0.0.8 proportional governance: a clean rc01 review leads only to a dependency/value decision, not automatic rc02.
+
 ## v0.0.8 — Frozen Lifecycle-Proportional Governance Semantic Baseline
 
 - Formally freeze the cleanly reviewed `v0.0.8rc01` semantic source state after explicit governance approval and dependency/value STOP assessment.

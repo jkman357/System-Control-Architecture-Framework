@@ -4,6 +4,42 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+## Active v0.0.9 Development
+
+`v0.0.9rc01 — Context Source Resolution Semantic Foundation` defines the representation-neutral boundary between one validated Consumption Selection included authority domain `I` and controlled repository/project Source Associations.
+
+The accepted-development target is semantic only:
+
+```text
+validated Consumption Selection
+        ↓
+included authority domain I
+        ↓
+controlled Source Associations
+        ↓
+future deterministic source resolution
+```
+
+Core separations include:
+
+```text
+source relationship != source authority
+source identity != exact source instance
+discovery != controlled association
+relationship role != authority status
+locator resolves != source is current / authoritative
+source exists != obligation satisfied
+source resolution != content loading / context inclusion
+```
+
+The RC keeps the validated Consumption Selection as the upstream truth boundary, preserves exact opaque project scope, permits zero/many source associations and many-authorities-per-source, and treats association provenance separately from source authority. It creates no machine-readable source-association representation, schema, resolver, scope resolver, filesystem scan, content parser, ranking/token-budget policy, AI context package or authority-registry change.
+
+v0.0.9 controlled records:
+
+- `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — Context Source Resolution semantics, Source Unit/Source Association concepts, authority/provenance/currentness boundaries, absence/cardinality semantics, and explicit Context Assembly deferral.
+
+A clean rc01 review authorizes only a dependency/value assessment under frozen v0.0.8 proportional governance.
+
 ## Frozen v0.0.8 Milestone
 
 `v0.0.8 — Frozen Lifecycle-Proportional Governance Semantic Baseline` is the formal semantic baseline promoted from the cleanly reviewed `v0.0.8rc01` source state after explicit governance approval and the required dependency/value STOP assessment.

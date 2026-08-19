@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.8
-**Active Development RC:** None
-**Status:** Frozen Lifecycle-Proportional Governance Semantic Baseline
+**Active Development RC:** v0.0.9rc01
+**Status:** Context Source Resolution Semantic Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -106,6 +106,25 @@ and evidence reasonably available now.
 The frozen baseline adds no global lifecycle state machine, machine-readable disposition representation, schema, validator, CI gate, authority-registry promotion, Context Source Resolution or AI context mechanism. Frozen L3 `M0`→`M4` Pattern maturity and the `294 / 218 / 76` authority inventory remain unchanged.
 
 The formal freeze adds no semantic or executable capability beyond the reviewed rc01 source state. See [`docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md`](docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md).
+
+## Active v0.0.9 Development
+
+`v0.0.9rc01` opens a deliberately bounded **Context Source Resolution Semantic Foundation** from frozen v0.0.8. Its Current Decision Horizon is limited to defining what a controlled source relationship means between the validated Consumption Selection included set `I` and repository/project engineering sources before any machine-readable source-association model or resolver is designed.
+
+The central distinctions are:
+
+```text
+source relationship != source authority
+source identity != exact source instance
+discovery != controlled association
+locator resolves != source is current / authoritative
+source exists != obligation satisfied
+source resolution != content loading / context inclusion
+```
+
+The RC defines Source Unit, Source Association, relationship/authority separation, association provenance, ownership, resolvability/currentness separation, absence/unresolved mapping semantics, cardinality, exact-scope preservation and the downstream boundary to future Context Assembly. It adds no YAML/JSON representation, schema, resolver, filesystem scan, content extraction, ranking, token-budget policy, AI context package, scope resolver or authority-registry change.
+
+A clean rc01 review authorizes only a later dependency/value assessment; it does not automatically authorize rc02. See [`docs/executable-governance/50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md`](docs/executable-governance/50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md).
 
 ## Frozen v0.0.5 Milestone
 
