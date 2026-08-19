@@ -6,38 +6,39 @@
 
 ## Active v0.0.9 Development
 
-`v0.0.9rc01 — Context Source Resolution Semantic Foundation` established the accepted representation-neutral boundary between one validated Consumption Selection included authority domain `I` and controlled repository/project Source Associations. Its independent review returned clean `PASS / GATE YES` with zero findings and no open blocking review-evidence limitation.
+`v0.0.9rc01` established the accepted Context Source Resolution semantic boundary. `v0.0.9rc02` established the accepted representation-neutral Canonical Context Source Association Logical Model. Both independent reviews returned clean `PASS / GATE YES` with zero findings and no open blocking review-evidence limitations.
 
-The post-rc01 dependency/value assessment concluded that a canonical logical model is required before serialization because otherwise future tools can disagree about association coverage, zero-association meaning, relationship atomicity, provenance, authority qualification, exact-source binding, and resolver-state ownership.
+The post-rc02 dependency/value assessment concluded that a canonical serialization is now materially required before any schema or validator can be responsibly defined.
 
-`v0.0.9rc02 — Canonical Context Source Association Logical Model Foundation` therefore defines:
+`v0.0.9rc03 — Canonical Context Source Association Machine-Readable Representation Foundation` adds:
 
 ```text
-one exact validated Consumption Selection
+one exact validated Consumption Selection binding
         ↓
-validated included authority domain I
-        ↓
-Context Source Association Set
-        ├─ Source Unit Catalog
-        └─ one Authority Source Entry per authority in I
-             └─ 0..n atomic Controlled Source Associations
+context_source_association_set / v0.0.9rc03
+        ├─ source_units
+        └─ authority_source_entries == validated I exactly
+             └─ 0..n atomic associations
 ```
 
-The central two-plane separation is:
+The canonical artifact is `examples/context-source-associations.yaml`. It defines deterministic YAML shape/order and initial controlled tokens for source control domain, relationship semantics, association provenance, bounded authority qualification and SHA-256 instance constraints.
+
+The central two-plane separation remains:
 
 ```text
 controlled association truth
 != runtime resolution observation
 ```
 
-A current resolver may observe resolved exact source instances, missing targets, unresolvable identities, stale/superseded sources, unknown currentness, or instance-constraint mismatch without silently rewriting the controlled association itself. Relationship semantic, relationship scope, controlled association basis/provenance, optional bounded Authority Qualification, and optional Instance Constraint remain logically separate.
+No missing/unresolvable/stale/currentness/resolved-instance result is stored in the controlled-association representation. Such observations remain a separately gated future resolver-result concern.
 
 v0.0.9 controlled records:
 
-- `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — accepted Context Source Resolution semantics, Source Unit/Source Association concepts, authority/provenance/currentness boundaries, absence/cardinality semantics, and explicit Context Assembly deferral.
-- `51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md` — canonical representation-neutral association aggregate, complete `I` coverage, Source Unit catalog, atomic relationship model, controlled-truth/resolution-observation separation, and future validation ownership direction.
+- `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — accepted Context Source Resolution semantics.
+- `51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md` — accepted canonical representation-neutral logical model.
+- `52_SCAF_v0.0.9rc03_Canonical_Context_Source_Association_Machine_Readable_Representation_Foundation.md` — canonical YAML representation, field/token semantics, deterministic ordering, future validation ownership and explicit resolver/Context Assembly non-scope.
 
-The RC adds no source-association serialization, schema, validator, resolver, source scanning, content processing, ranking/token-budget policy, AI Context Assembly or authority-registry change. A clean rc02 review authorizes only a new dependency/value assessment.
+rc03 adds no schema, production validator, resolver, content processing, ranking/token-budget policy, AI Context Assembly, CI gate or authority-registry change. A clean rc03 review authorizes only a new dependency/value assessment.
 
 ## Frozen v0.0.8 Milestone
 

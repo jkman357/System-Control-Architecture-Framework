@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.9rc03 — Canonical Context Source Association Machine-Readable Representation Foundation
+
+- Continue only after the independent rc02 review returned clean `PASS / GATE YES` with zero findings and zero open blocking review-evidence limitations and a separate dependency/value assessment found a canonical machine-readable representation materially necessary before schema/validator work.
+- Add `examples/context-source-associations.yaml` as the canonical `v0.0.9rc03` YAML representation of the accepted rc02 Context Source Association logical model.
+- Bind one association set to the exact current Consumption Selection bytes and preserve complete validated `I` coverage with explicit zero-association entries.
+- Serialize a shared Source Unit Catalog, atomic Controlled Source Associations, relationship semantic/scope, association provenance, optional bounded Authority Qualification, and optional SHA-256 Instance Constraint.
+- Freeze initial representation vocabularies for source control domain, relationship semantic, association assertion kind, authority qualification kind, and SHA-256 instance constraint.
+- Define deterministic ordering and semantic uniqueness needed for future byte-stable tooling.
+- Preserve `controlled association truth != runtime resolution observation`; the canonical artifact contains no runtime resolver status/currentness fields.
+- Keep source resolution separate from obligation satisfaction and downstream Context Assembly.
+- Add no schema, production validator, resolver, source scanning, content processing, ranking/token-budget policy, AI context package, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc03 review leads only to a new dependency/value assessment, not automatic rc04.
+
 ## v0.0.9rc02 — Canonical Context Source Association Logical Model Foundation
 
 - Continue the controlled v0.0.9 line after the independent rc01 review returned clean `PASS / GATE YES` with zero findings and zero open blocking review-evidence limitations.
