@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.7rc06 — Deterministic Consumption Selection Builder Foundation
+
+- Continue the controlled v0.0.7 line after the independent rc05 review returned clean `PASS / GATE YES` with zero findings.
+- Add `tools/scaf_consumption_selection_builder/` as the first deterministic builder for the accepted rc03 Consumption Selection representation.
+- Validate the exact selected Effective Project Profile before consuming profile state and construct only from explicit bounded purpose/state/authority/omission inputs.
+- Derive representation identity from the repository-owned accepted rc04 schema and preserve `representation_release: v0.0.7rc03`.
+- Deterministically derive `D/E/I/O/X`, exact selected-entry projections, bounded omission, and complete/filtered class without ranking, token-budget, semantic matching, or scope inference.
+- Preserve caller-declared omission as exact eligible authority IDs only; `applied:true` with empty omission remains valid.
+- Require every generated result to pass the accepted rc05 source-aware Consumption Selection validator against the same captured source snapshots before return/emission.
+- Reproduce the accepted rc03 fixture bytes exactly after removing only its leading non-authoritative comments.
+- Add 34 bounded builder regressions while preserving the accepted 37-test rc05 suite and inherited 191-test baseline.
+- Introduce no context-source resolver, AI context package/orchestration, Pattern selection, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+
 ## v0.0.7rc05 — Consumption Selection Source-Aware Validator Foundation
 
 - Continue the controlled v0.0.7 line after the independent rc04 review returned clean `PASS / GATE YES` with zero findings.

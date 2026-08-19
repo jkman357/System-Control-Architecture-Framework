@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.6
-**Active Development RC:** v0.0.7rc05
-**Status:** Consumption Selection Source-Aware Validator Foundation / Review Candidate
+**Active Development RC:** v0.0.7rc06
+**Status:** Deterministic Consumption Selection Builder Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -26,7 +26,7 @@ Formal frozen baselines:
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 | `v0.0.6` | Frozen Machine-Readable Project Application and Effective Project Profile baseline |
 
-The formal v0.0.6 baseline remains frozen and immutable. `v0.0.7rc05` continues the controlled post-freeze line by adding source-aware executable validation for the accepted Consumption Selection representation/schema without modifying or respinning v0.0.6.
+The formal v0.0.6 baseline remains frozen and immutable. `v0.0.7rc06` continues the controlled post-freeze line by adding deterministic validated construction of the accepted Consumption Selection representation without modifying or respinning v0.0.6.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -69,7 +69,7 @@ The accepted review-covered regression inventory is `191 / 191 PASS` (`98 / 98` 
 
 `v0.0.7rc01` accepted the downstream **Effective Project Profile consumption semantic boundary**. `v0.0.7rc02` accepted the representation-neutral **canonical Consumption Selection logical model** with `D = I + O + X`, `E = I + O`, and a strict distinction between predicate exclusion and bounded omission.
 
-`v0.0.7rc03` accepted the canonical YAML representation and `v0.0.7rc04` accepted its parsed-instance schema. `v0.0.7rc05` now adds [`tools/scaf_consumption_selection_validator/`](tools/scaf_consumption_selection_validator/) to own the source-aware proof boundary: exact input snapshots, rc03 raw-YAML/canonical-order policy, rc04 schema, frozen v0.0.6 validation of the bound Effective Project Profile, exact source binding, selector/domain proof, selected-entry fidelity, D/E/I/O/X reconstruction, bounded-omission consistency, and complete/filtered derivation.
+`v0.0.7rc03` accepted the canonical YAML representation, `v0.0.7rc04` accepted its parsed-instance schema, and `v0.0.7rc05` accepted source-aware validation. `v0.0.7rc06` now adds [`tools/scaf_consumption_selection_builder/`](tools/scaf_consumption_selection_builder/) to deterministically construct the accepted representation from one exact validated Effective Project Profile plus explicit bounded purpose/state/authority/omission inputs, then require rc05 self-validation before return/emission. The builder performs no ranking, token-budget calculation, semantic matching, scope resolution, or context-source resolution.
 
 The central authority boundaries remain:
 
@@ -80,7 +80,7 @@ predicate excluded != bounded omitted
 undetermined != no_current_disposition
 ```
 
-The four frozen profile states remain unchanged, exact-scope semantics remain resolution-neutral, and validation does not establish implementation, Pattern choice, compliance, verification, approval, release or closure. rc05 adds no Consumption Selection builder/generator, context-source resolver, AI package/orchestration, CI completion gate, L4 guidance or work-checkpoint mechanism. See [`docs/executable-governance/44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md`](docs/executable-governance/44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md).
+The four frozen profile states remain unchanged, exact-scope semantics remain resolution-neutral, and building/validation does not establish implementation, Pattern choice, compliance, verification, approval, release or closure. rc06 adds no context-source resolver, AI package/orchestration, ranking/token-budget policy, CI completion gate, L4 guidance or work-checkpoint mechanism. See [`docs/executable-governance/45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md`](docs/executable-governance/45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md).
 
 ## Frozen v0.0.5 Milestone
 
@@ -203,7 +203,8 @@ The production CI gate still requires the repository-external trust input define
 | `tools/scaf_project_application_views/` | Accepted v0.0.6rc08 validated deterministic read-only Project Application record/authority/scope queries |
 | `tools/scaf_effective_project_profile_validator/` | Accepted v0.0.6rc12 Effective Project Profile representation/source-aware validator foundation |
 | `tools/scaf_effective_project_profile_generator/` | Accepted v0.0.6rc13 deterministic validated Effective Project Profile generator foundation |
-| `tools/scaf_consumption_selection_validator/` | v0.0.7rc05 source-aware Consumption Selection validator and bounded regressions |
+| `tools/scaf_consumption_selection_validator/` | Accepted v0.0.7rc05 source-aware Consumption Selection validator and bounded regressions |
+| `tools/scaf_consumption_selection_builder/` | v0.0.7rc06 deterministic validated Consumption Selection builder and bounded regressions |
 | `release-integrity/` | Frozen-baseline integrity manifest |
 | `tools/scaf_release_integrity/` | Frozen-source byte-integrity checker |
 | `tools/scaf_external_pin/` | External-pin verification |
@@ -217,7 +218,7 @@ SCAF does not automatically decide project applicability or project architecture
 
 `v0.0.6` formally freezes the accepted machine-readable Project Application and Effective Project Profile chain established through rc01→rc13 and consolidated/reviewed at rc14. The baseline includes Project Application semantics, canonical representation, schema, source-aware validation and validated queries, plus Effective Project Profile semantics, canonical representation, schema, source-aware validation and deterministic validated generation. It does not add scope resolution, applicability inference, Pattern selection, compliance/verification/closure authority, AI context packaging, CI completion enforcement, L4 guidance, or Development Context Recovery. See [`docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md`](docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md).
 
-`v0.0.7rc01` established accepted post-freeze consumption semantics; `v0.0.7rc02` established the canonical logical model; `v0.0.7rc03` added the canonical YAML representation; `v0.0.7rc04` added the parsed-instance schema; and `v0.0.7rc05` adds source-aware Consumption Selection validation while keeping building and context-source resolution separately gated. See [`docs/executable-governance/44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md`](docs/executable-governance/44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md).
+`v0.0.7rc01` established accepted consumption semantics; rc02 established the logical model; rc03 the canonical YAML representation; rc04 the parsed-instance schema; rc05 source-aware validation; and rc06 adds deterministic validated construction while keeping context-source resolution and AI context assembly separately gated. See [`docs/executable-governance/45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md`](docs/executable-governance/45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md).
 
 ## Documentation Policy
 

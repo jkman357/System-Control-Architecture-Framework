@@ -14,9 +14,10 @@ Current controlled records:
 - `41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md` — accepted canonical representation-neutral logical model for source-bound consumption selection, deterministic eligibility, included entries, predicate exclusion, bounded omission, and complete/filtered classification.
 - `42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md` — accepted canonical YAML representation of the logical model, with exact source-profile binding, bounded selectors/omission, selected-entry fidelity, deterministic ordering, and no redundant E/O/X truth lists.
 - `43_SCAF_v0.0.7rc04_Consumption_Selection_Schema_Foundation.md` — accepted JSON Schema Draft 2020-12 foundation for the rc03 parsed representation shape.
-- `44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md` — source-aware executable validator for raw-YAML/canonical order, rc04 schema, frozen bound-profile proof, exact provenance, selector/domain membership, selected-entry fidelity, D/E/I/O/X, omission consistency, and complete/filtered derivation.
+- `44_SCAF_v0.0.7rc05_Consumption_Selection_Source_Aware_Validator_Foundation.md` — accepted source-aware executable validator for raw-YAML/canonical order, rc04 schema, frozen bound-profile proof, exact provenance, selector/domain membership, selected-entry fidelity, D/E/I/O/X, omission consistency, and complete/filtered derivation.
+- `45_SCAF_v0.0.7rc06_Deterministic_Consumption_Selection_Builder_Foundation.md` — deterministic builder over one validated profile plus explicit bounded selection/omission inputs, with mandatory rc05 self-validation.
 
-rc05 adds source-aware Consumption Selection validation only. It adds no builder/generator, context-source resolver, AI context package/orchestration, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+rc06 adds deterministic Consumption Selection construction only. It adds no ranking/token-budget policy, context-source resolver, AI context package/orchestration, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
 
 ## Frozen v0.0.6 Milestone
 
