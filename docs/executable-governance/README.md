@@ -4,53 +4,46 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
-## Active v0.0.9 Development
+## Frozen v0.0.9 Milestone
 
-The accepted v0.0.9 chain now contains Context Source Resolution semantics (`rc01`), a representation-neutral canonical logical model (`rc02`), canonical deterministic YAML (`rc03`) and a Draft 2020-12 structural schema (`rc04`). Their independent reviews returned clean `PASS / GATE YES` with zero findings and no blocking review-evidence limitations.
+`v0.0.9 — Frozen Context Source Association and Source-Aware Validation Baseline` is promoted from the cleanly reviewed `v0.0.9rc05` source state after explicit governance approval and a dependency/value `STOP` decision.
 
-The post-rc04 dependency/value assessment identified the next machine-determinable gap: schema validity cannot prove exact upstream-source binding, validated-`I` coverage, Source Unit reference completeness, semantic association uniqueness/order or explicitly pinned repository-source bytes.
-
-`v0.0.9rc05 — Context Source Association Source-Aware Validator Foundation` adds:
+Accepted chain:
 
 ```text
-accepted rc03 association YAML
-        ↓
-rc04 schema
-        ↓
-exact validated Consumption Selection binding
-        ↓
-validated I reconstruction
-        ↓
-catalog/reference/semantic consistency
-        ↓
-bounded explicit repository-local instance proof
+rc01 source-resolution semantics
+  ↓
+rc02 canonical logical model
+  ↓
+rc03 canonical deterministic YAML
+  ↓
+rc04 parsed-instance JSON Schema
+  ↓
+rc05 production source-aware validator
+  ↓
+formal v0.0.9 freeze
 ```
 
-Production tool:
+The frozen boundaries remain:
 
 ```text
-tools/scaf_context_source_association_validator/
-```
-
-The central boundaries remain:
-
-```text
-parsed-instance structural validity != source-aware consistency != engineering correctness
 controlled association truth != runtime resolution observation
+parsed-instance structural validity != source-aware consistency != engineering correctness
 validator != general Source Resolver
 ```
 
-For associations carrying an explicit SHA-256 Instance Constraint, rc05 supports only direct byte proof for an already-declared bounded `repo:<repository-relative POSIX path>` identity. It does not scan the repository, search Git history, discover candidates, determine currentness/supersession, fetch remote sources or assemble content.
+The clean corrected rc05 review returned `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations. Executed evidence included rc05 `25 / 25 PASS`, direct upstream Consumption Selection `37 / 37 PASS`, all required production checks PASS and `git diff --check` PASS.
 
 v0.0.9 controlled records:
 
 - `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — accepted Context Source Resolution semantics.
 - `51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md` — accepted canonical representation-neutral logical model.
-- `52_SCAF_v0.0.9rc03_Canonical_Context_Source_Association_Machine_Readable_Representation_Foundation.md` — accepted canonical YAML representation, field/token semantics and deterministic ordering.
-- `53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md` — accepted parsed-instance JSON Schema foundation and explicit source-aware/non-engineering ownership boundary.
-- `54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md` — production source-aware validation boundary, exact upstream binding, validated-I/catalog/reference/semantic proof, bounded repository-local instance proof and explicit resolver non-goals.
+- `52_SCAF_v0.0.9rc03_Canonical_Context_Source_Association_Machine_Readable_Representation_Foundation.md` — accepted deterministic YAML representation.
+- `53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md` — accepted parsed-instance JSON Schema foundation.
+- `54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md` — accepted production source-aware validation boundary.
+- `55_SCAF_v0.0.9_Formal_Freeze_Decision.md` — formal explicit freeze decision and immutable baseline boundary.
 
-A clean rc05 review authorizes only a new dependency/value assessment, not automatic resolver or rc06 work.
+The post-rc05 dependency/value assessment found no current material dependency requiring a general Source Resolver or downstream Context Assembly. Resolver/discovery/currentness/runtime-observation/content/AI-context/CI/L4 work remains separately gated and is not authorized by the freeze.
 
 ## Frozen v0.0.8 Milestone
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.9 — Frozen Context Source Association and Source-Aware Validation Baseline
+
+- Formally freeze the cleanly reviewed `v0.0.9rc05` source state after explicit governance approval and the required post-review dependency/value STOP assessment.
+- Preserve the accepted rc01→rc05 chain: Context Source Resolution semantics, canonical logical model, deterministic YAML representation, Draft 2020-12 schema and production source-aware validator.
+- Record the corrected rc05 independent review as `PASS / GATE YES` with 0 Critical / 0 Major / 0 Minor / 0 Trivial candidate-source findings and zero blocking review-evidence limitations.
+- Record that the reviewed rc05 source ZIP remained unchanged during the review-instruction count correction and matched SHA-256 `1ecd58ebc50b5a30fcfd52994da687594fbafb0fd411fda0db6f58e9ecdd0dca`.
+- Preserve `controlled association truth != runtime resolution observation` and `parsed-instance structural validity != source-aware consistency != engineering correctness`.
+- Preserve the bounded `repo:<repository-relative POSIX path>` exact-byte proof as validator behavior only; do not promote it into general source discovery/resolution semantics.
+- Record the post-rc05 dependency/value decision `STOP`: no material current dependency justifies a general Source Resolver, runtime resolution/currentness model, Context Assembly or rc06.
+- Add no new authority-registry entry, PAO/FNI, resolver, source discovery, Git traversal, content processing, CI gate or L4 capability.
+- Freeze v0.0.9 as immutable; future work requires a new controlled version/RC line and explicit Current Decision Horizon.
+
 ## v0.0.9rc05 — Context Source Association Source-Aware Validator Foundation
 
 - Continue only after the independent rc04 review returned clean `PASS / GATE YES` with zero findings and zero blocking review-evidence limitations and a separate dependency/value assessment found source-aware consistency validation materially necessary.

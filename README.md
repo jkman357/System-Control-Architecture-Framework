@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Formal Release:** v0.0.8
-**Active Development RC:** v0.0.9rc05
-**Status:** Context Source Association Source-Aware Validator Foundation / Review Candidate
+**Current Formal Release:** v0.0.9
+**Active Development RC:** None
+**Status:** Frozen Context Source Association and Source-Aware Validation Baseline
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -27,8 +27,9 @@ Formal frozen baselines:
 | `v0.0.6` | Frozen Machine-Readable Project Application and Effective Project Profile baseline |
 | `v0.0.7` | Frozen Consumption Selection baseline |
 | `v0.0.8` | Frozen Lifecycle-Proportional Governance Semantic baseline |
+| `v0.0.9` | Frozen Context Source Association and Source-Aware Validation baseline |
 
-The formal v0.0.8 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.8rc01` lifecycle-proportional governance semantic source state by explicit governance decision after the required dependency/value STOP assessment, without modifying any earlier frozen authority, representation, schema, validator, builder, workflow, or trust baseline.
+The formal v0.0.9 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.9rc05` Context Source Association source-aware validation state after the required post-review dependency/value STOP assessment, without reopening earlier frozen authority, applicability, profile, selection, traceability, or lifecycle-proportional governance baselines.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -107,33 +108,50 @@ The frozen baseline adds no global lifecycle state machine, machine-readable dis
 
 The formal freeze adds no semantic or executable capability beyond the reviewed rc01 source state. See [`docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md`](docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md).
 
-## Active v0.0.9 Development
+## Frozen v0.0.9 Milestone
 
-`v0.0.9rc01` established Context Source Resolution semantics, `v0.0.9rc02` the canonical logical model, `v0.0.9rc03` the canonical deterministic YAML representation, and `v0.0.9rc04` its JSON Schema structural contract. All independent reviews through rc04 returned clean `PASS / GATE YES` with zero findings and no blocking review-evidence limitations.
+`v0.0.9 — Frozen Context Source Association and Source-Aware Validation Baseline` is the formal baseline promoted from the cleanly reviewed `v0.0.9rc05` source state after the required post-review dependency/value STOP assessment.
 
-The post-rc04 dependency/value assessment identified one material executable gap: schema validity cannot prove that a structurally valid association set agrees with the exact bound Consumption Selection, validated included domain `I`, Source Unit catalog references, semantic uniqueness/order, or explicitly constrained repository-local source bytes.
-
-`v0.0.9rc05` therefore adds `tools/scaf_context_source_association_validator/` as the production source-aware validator for the accepted rc03 representation and rc04 schema.
-
-The governing chain is:
+The accepted development chain is:
 
 ```text
-structural schema validity
-        ↓
-exact upstream Consumption Selection validation/binding
-        ↓
-validated-I coverage + catalog/reference/uniqueness proof
-        ↓
-bounded explicit repository-local SHA-256 instance proof
-        ↓
-source-aware consistency PASS / INVALID
+rc01 Context Source Resolution semantics
+  ↓
+rc02 canonical logical model
+  ↓
+rc03 canonical deterministic YAML representation
+  ↓
+rc04 JSON Schema Draft 2020-12 structural contract
+  ↓
+rc05 production source-aware validator
+  ↓
+v0.0.9 formal freeze
 ```
 
-The validator preserves `controlled association truth != runtime resolution observation` and `source-aware consistency != engineering correctness`. It performs no candidate discovery, repository scan, Git-history traversal, currentness/supersession decision, content loading, Context Assembly, CI enforcement, authority-registry promotion or L4 guidance.
+The clean corrected rc05 independent review reported `PASS / GATE YES`, zero candidate-source findings and zero blocking review-evidence limitations. The reviewed source ZIP remained unchanged through the review-instruction count correction and had SHA-256 `1ecd58ebc50b5a30fcfd52994da687594fbafb0fd411fda0db6f58e9ecdd0dca`.
 
-For an explicit `instance_constraint`, rc05 supports only a bounded `repo:<repository-relative POSIX path>` byte-proof convention; this is direct validation of an already-declared identity, not a general Source Resolver.
+The frozen executable boundary preserves:
 
-A clean rc05 review authorizes only a new dependency/value assessment. It does not automatically authorize rc06 or a resolver. See [`docs/executable-governance/54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md`](docs/executable-governance/54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md).
+```text
+parsed-instance structural validity != source-aware consistency != engineering correctness
+controlled association truth != runtime resolution observation
+validator != general Source Resolver
+```
+
+The accepted rc05 evidence includes `25 / 25 PASS` Context Source Association validator regressions, `37 / 37 PASS` directly composed Consumption Selection regressions, and all required repository-owned production checks PASS.
+
+The post-rc05 dependency/value assessment found no current material consumer dependency requiring a general Source Resolver, source discovery/currentness model, runtime Resolution Observation representation, Context Assembly, CI source-association gate or L4 work. The explicit decision is therefore `STOP → FREEZE`, not automatic rc06 progression.
+
+v0.0.9 controlled records:
+
+- `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — accepted Context Source Resolution semantics.
+- `51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md` — accepted representation-neutral logical model.
+- `52_SCAF_v0.0.9rc03_Canonical_Context_Source_Association_Machine_Readable_Representation_Foundation.md` — accepted deterministic YAML representation.
+- `53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md` — accepted JSON Schema structural contract.
+- `54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md` — accepted production source-aware validator boundary.
+- `55_SCAF_v0.0.9_Formal_Freeze_Decision.md` — formal freeze decision, dependency/value STOP disposition and immutable v0.0.9 boundary.
+
+General source resolution/discovery, Git-history traversal, currentness/supersession semantics, runtime resolution observations, content loading, AI Context Assembly, ranking/token budgeting, CI integration, authority expansion and L4 guidance remain separately gated.
 
 ## Frozen v0.0.5 Milestone
 
