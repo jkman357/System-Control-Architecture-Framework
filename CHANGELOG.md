@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.7rc05 — Consumption Selection Source-Aware Validator Foundation
+
+- Continue the controlled v0.0.7 line after the independent rc04 review returned clean `PASS / GATE YES` with zero findings.
+- Add `tools/scaf_consumption_selection_validator/` as the first source-aware executable validator for the accepted rc03 Consumption Selection representation and rc04 schema.
+- Capture selected Consumption Selection / Effective Project Profile / Project Application bytes plus repository-owned validation sources into private validation snapshots.
+- Enforce rc03 raw-YAML/canonical ordering, rc04 schema conformance, and frozen v0.0.6 source-aware validation of the exact bound Effective Project Profile before selection proof.
+- Prove exact source-profile SHA-256/provenance binding, exact authority-selector domain membership, selected-entry source fidelity, and canonical selector/entry ordering.
+- Reconstruct `D/E/I/O/X`, enforce no-omission `I == E`, preserve accepted applied-omission subset semantics, and prove serialized complete/filtered classification.
+- Preserve `included != applicable`, `excluded/omitted != not_applicable`, `predicate excluded != bounded omitted`, `undetermined != no_current_disposition`, and Project Design Authority separation.
+- Add 37 bounded source-aware validator regressions; introduce no builder/generator, context-source resolver, AI package/orchestration, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+
 ## v0.0.7rc04 — Consumption Selection Schema Foundation
 
 - Continue the controlled v0.0.7 line after the independent rc03 review returned clean `PASS / GATE YES` with zero findings.
