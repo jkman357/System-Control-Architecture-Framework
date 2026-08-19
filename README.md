@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Formal Release:** v0.0.7
-**Active Development RC:** v0.0.8rc01
-**Status:** Lifecycle-Proportional Governance Semantic Foundation / Review Candidate
+**Current Formal Release:** v0.0.8
+**Active Development RC:** None
+**Status:** Frozen Lifecycle-Proportional Governance Semantic Baseline
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -26,8 +26,9 @@ Formal frozen baselines:
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 | `v0.0.6` | Frozen Machine-Readable Project Application and Effective Project Profile baseline |
 | `v0.0.7` | Frozen Consumption Selection baseline |
+| `v0.0.8` | Frozen Lifecycle-Proportional Governance Semantic baseline |
 
-The formal v0.0.7 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.7rc07` freeze candidate by explicit governance decision without modifying the accepted Consumption Selection semantics, representation, schema, validator, builder, or any earlier frozen baseline.
+The formal v0.0.8 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.8rc01` lifecycle-proportional governance semantic source state by explicit governance decision after the required dependency/value STOP assessment, without modifying any earlier frozen authority, representation, schema, validator, builder, workflow, or trust baseline.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -88,11 +89,13 @@ The current v0.0.7 milestone review execution inventory is `262 tests PASS` (`34
 
 Context-source resolution, context-content records, AI context packaging/orchestration, ranking/token-budget policy, CI applicability-completion enforcement, L4 guidance, Development Context Recovery, and other separately gated capabilities are not part of the frozen v0.0.7 baseline.
 
-## Active v0.0.8 Development
+## Frozen v0.0.8 Milestone
 
-`v0.0.8rc01` begins a deliberately small **Lifecycle-Proportional Governance** development line from the immutable v0.0.7 baseline. It defines a subject-scoped **Current Decision Horizon**, proportional governance depth, evidence-availability semantics, Progression Sufficiency, a five-question Materiality Stop Rule, separation of engineering impact from current blocking disposition, and controlled deferral with explicit revisit triggers.
+`v0.0.8rc01` established the representation-neutral **Lifecycle-Proportional Governance Semantic Foundation** and its independent review returned a clean `PASS / GATE YES` with zero findings and zero open review-evidence limitations. The subsequent dependency/value assessment applied the accepted Materiality Stop Rule to SCAF itself and concluded that no rc02 was required for this milestone.
 
-The central rule is:
+The formal v0.0.8 baseline therefore freezes the subject-scoped **Current Decision Horizon**, governance proportionality, Evidence Availability Rule, Progression Sufficiency, the five-question Materiality Stop Rule, engineering-impact/current-progression-disposition separation, controlled deferral with explicit revisit triggers, reversibility/expensive-commitment reasoning, external-authority preservation, and SCAF self-application.
+
+The central rule remains:
 
 ```text
 Governance depth follows the current engineering decision,
@@ -100,9 +103,9 @@ the consequence of unresolved ambiguity,
 and evidence reasonably available now.
 ```
 
-The RC does not add a global lifecycle state machine, does not reinterpret L3 `M0`→`M4` Pattern maturity, and does not modify `authority-registry.yaml` or any frozen authority/representation/executable source. Not-yet-producible empirical evidence is not an automatic current blocker, but later evidence obligations must retain explicit property/measurement/owner/revisit semantics. Applicable external-authority requirements remain fully effective.
+The frozen baseline adds no global lifecycle state machine, machine-readable disposition representation, schema, validator, CI gate, authority-registry promotion, Context Source Resolution or AI context mechanism. Frozen L3 `M0`→`M4` Pattern maturity and the `294 / 218 / 76` authority inventory remain unchanged.
 
-`v0.0.8rc01` also requires SCAF to apply the same rule to itself: a clean review authorizes a dependency/value check, not automatic continuation to rc02. See [`docs/executable-governance/48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md`](docs/executable-governance/48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md).
+The formal freeze adds no semantic or executable capability beyond the reviewed rc01 source state. See [`docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md`](docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md).
 
 ## Frozen v0.0.5 Milestone
 

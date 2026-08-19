@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.8 — Frozen Lifecycle-Proportional Governance Semantic Baseline
+
+- Formally freeze the cleanly reviewed `v0.0.8rc01` semantic source state after explicit governance approval and dependency/value STOP assessment.
+- Preserve the subject-scoped Current Decision Horizon, governance proportionality, Evidence Availability Rule, Progression Sufficiency, five-question Materiality Stop Rule, engineering-impact/current-disposition separation, controlled deferral/revisit semantics, reversibility boundary, external-authority preservation, and SCAF self-application.
+- Record the rc01 independent review as `PASS / GATE YES` with 0 Critical / 0 Major / 0 Minor / 0 Trivial findings and zero open review-evidence limitations.
+- Record that the expected rc01 source ZIP SHA-256 `f0164be6a201691229f9181bb45cd1553803fa6051567975e5734b2e4e6aefaa` matched the independently computed review digest exactly.
+- Preserve the frozen authority inventory at `294 / 218 / 76`, L3 inventory at `12 / 119`, and all frozen representation/executable sources unchanged.
+- Apply the Materiality Stop Rule to SCAF itself: no rc02 is required for this milestone because no current material progression ambiguity justifies further formalization.
+- Add no lifecycle state machine, machine-readable disposition record, schema, validator, CI gate, authority-registry promotion, Context Source Resolution, or AI context mechanism.
+- Freeze v0.0.8 as immutable; all deferred capabilities require a separately justified future version/RC line.
+
 ## v0.0.8rc01 — Lifecycle-Proportional Governance Semantic Foundation
 
 - Start the controlled v0.0.8 line from formal frozen v0.0.7 without reopening frozen Consumption Selection or earlier authority/executable baselines.

@@ -4,29 +4,39 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
-## Active v0.0.8 Development
+## Frozen v0.0.8 Milestone
 
-`v0.0.8rc01 — Lifecycle-Proportional Governance Semantic Foundation` is a representation-neutral framework-governance development record above the immutable v0.0.7 baseline.
+`v0.0.8 — Frozen Lifecycle-Proportional Governance Semantic Baseline` is the formal semantic baseline promoted from the cleanly reviewed `v0.0.8rc01` source state after explicit governance approval and the required dependency/value STOP assessment.
 
-It introduces the subject-scoped **Current Decision Horizon** and establishes:
+Accepted rc01 review state:
 
 ```text
+Critical / Major / Minor / Trivial: 0 / 0 / 0 / 0
+Open review-evidence limitations: 0
+V0.0.8RC01 LIFECYCLE-PROPORTIONAL GOVERNANCE
+SEMANTIC FOUNDATION GATE: YES
+```
+
+The frozen semantic boundary establishes:
+
+```text
+Current Decision Horizon = subject-scoped + next-action-scoped
 governance depth proportional to current decision / consequence / available evidence
 not-yet-producible empirical evidence != automatic current blocker
 progression sufficient != complete / verified / compliant / released / closed
 engineering impact != current progression disposition
 deferred != resolved / waived / closed
+all Materiality Stop Rule answers NO -> theoretical completeness alone is non-blocking
 ```
 
-A five-question Materiality Stop Rule tests whether a proposed blocking issue materially affects current behavior determinism, authority consistency, engineering correctness/risk, next-stage implementability/verifiability, or an imminent expensive/irreversible commitment. If none applies, theoretical completeness alone is not a blocking basis; valid later obligations require an explicit revisit trigger.
+The post-review dependency/value assessment applied that same stop rule to SCAF itself and concluded that no rc02 was required for this milestone. The formal freeze therefore demonstrates SCAF self-application rather than automatically extending the RC line for theoretical completeness.
 
-The RC adds no lifecycle state machine, schema, validator, CI gate, authority-registry change, Context Source Resolution or AI context mechanism. It does not reinterpret frozen L3 Pattern `M0`→`M4` maturity. Applicable external-authority requirements and existing PDA/Realization/Verification/closure ownership remain unchanged.
+v0.0.8 controlled records:
 
-Controlled record:
+- `48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md` — accepted Current Decision Horizon, governance proportionality, evidence availability, Progression Sufficiency, Materiality Stop Rule, impact/disposition separation, controlled deferral/revisit and SCAF self-application semantics.
+- `49_SCAF_v0.0.8_Formal_Freeze_Decision.md` — formal explicit freeze decision, dependency/value STOP disposition and immutable v0.0.8 boundary.
 
-- `48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md` — Current Decision Horizon, governance proportionality, evidence availability, Progression Sufficiency, Materiality Stop Rule, impact/disposition separation, controlled deferral/revisit and SCAF self-application semantics.
-
-A clean rc01 review authorizes only dependency/value assessment; it does not automatically authorize rc02.
+The baseline adds no lifecycle state machine, machine-readable disposition record, schema, validator, CI gate, authority-registry promotion, Context Source Resolution or AI context mechanism. Frozen L3 Pattern `M0`→`M4` maturity, existing authority ownership and the `294 / 218 / 76` authority inventory remain unchanged.
 
 ## Frozen v0.0.7 Milestone
 
@@ -211,6 +221,14 @@ v0.0.7rc05 Consumption Selection source-aware validator
 v0.0.7rc06 deterministic validated Consumption Selection builder
         ↓
 v0.0.7rc07 milestone consolidation / freeze candidate
+        ↓
+frozen v0.0.7 Consumption Selection baseline
+        ↓
+v0.0.8rc01 Lifecycle-Proportional Governance semantic foundation
+        ↓
+dependency/value STOP assessment — no rc02 required
+        ↓
+frozen v0.0.8 Lifecycle-Proportional Governance Semantic baseline
 ```
 
-The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` defines accepted consumption semantics, rc02 canonical logical accounting, rc03 canonical YAML representation, rc04 parsed-instance schema validation, rc05 source-aware validation, rc06 deterministic validated construction, and rc07 consolidation-only freeze candidacy. Persistent selection/context state, AI context packaging, context-source or scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
+The formal v0.0.8 freeze adds no executable capability beyond the reviewed rc01 source state. The milestone intentionally stops after one clean semantic RC plus dependency/value assessment: no machine-readable governance representation, schema, validator, CI progression gate, authority-registry promotion, Context Source Resolution or AI context mechanism is authorized by this freeze. Such capabilities remain separately gated and require a future Current Decision Horizon and value justification.
