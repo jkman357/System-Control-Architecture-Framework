@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.0.7 — Frozen Consumption Selection Baseline
+
+- Formally freeze the cleanly reviewed `v0.0.7rc07` source state after explicit governance approval.
+- Preserve the accepted rc01→rc06 Consumption Selection chain: semantics, canonical logical model, rc03 YAML representation, rc04 JSON Schema, rc05 source-aware validator, and rc06 deterministic validated builder.
+- Record the rc07 freeze-candidate review as `PASS / GATE YES` with 0 Critical / 0 Major / 0 Minor / 0 Trivial findings.
+- Preserve the current milestone review execution inventory as `34 / 34` builder + `37 / 37` validator + inherited `191 / 191` = `262` completed tests, while retaining 191 as the historical inherited/frozen baseline.
+- Preserve exact source-profile provenance, exact opaque scope, `D/E/I/O/X`, bounded omission, source-entry fidelity, and engineering-authority separation unchanged.
+- Keep context-source resolution, AI context assembly/orchestration, ranking/token-budget policy, CI applicability-completion enforcement, L4 guidance, Development Context Recovery, and other deferred capabilities outside the frozen baseline.
+- Add no semantic or executable capability relative to committed rc07; the freeze changes release-state/navigation documentation only.
+
 ## v0.0.7rc07 — Consumption Selection Milestone Consolidation and Freeze Candidate
 
 - Continue after the independent rc06 review returned clean `PASS / GATE YES` with zero findings.

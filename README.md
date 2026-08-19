@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Formal Release:** v0.0.6
-**Active Development RC:** v0.0.7rc07
-**Status:** Consumption Selection Milestone Consolidation / Freeze Candidate
+**Current Formal Release:** v0.0.7
+**Active Development RC:** None
+**Status:** Frozen Consumption Selection Baseline
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -25,8 +25,9 @@ Formal frozen baselines:
 | `v0.0.4` | Executable Governance baseline |
 | `v0.0.5` | Frozen L3 Machine-Readable Traceability baseline |
 | `v0.0.6` | Frozen Machine-Readable Project Application and Effective Project Profile baseline |
+| `v0.0.7` | Frozen Consumption Selection baseline |
 
-The formal v0.0.6 baseline remains frozen and immutable. `v0.0.7rc07` consolidates the independently accepted rc01→rc06 Consumption Selection chain as a documentation-only milestone / freeze candidate without modifying or respinning v0.0.6.
+The formal v0.0.7 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.7rc07` freeze candidate by explicit governance decision without modifying the accepted Consumption Selection semantics, representation, schema, validator, builder, or any earlier frozen baseline.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -65,24 +66,27 @@ The frozen milestone preserves the accepted chain from Project Application seman
 
 The accepted review-covered regression inventory is `191 / 191 PASS` (`98 / 98` v0.0.6 development tests plus `93 / 93` inherited frozen tests). The formal freeze adds no new semantic or executable capability beyond rc14. See [`docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md`](docs/executable-governance/39_SCAF_v0.0.6_Formal_Freeze_Decision.md).
 
-## Active v0.0.7 Development
+## Frozen v0.0.7 Milestone
 
-`v0.0.7rc01` accepted the downstream **Effective Project Profile consumption semantic boundary**. `v0.0.7rc02` accepted the representation-neutral **canonical Consumption Selection logical model** with `D = I + O + X`, `E = I + O`, and a strict distinction between predicate exclusion and bounded omission.
-
-`v0.0.7rc03` accepted the canonical YAML representation, rc04 its parsed-instance schema, rc05 source-aware validation, and rc06 deterministic validated construction. `v0.0.7rc07` adds no executable capability; it consolidates that accepted chain, clean review history, regression inventory, authority separation, and deferred scope into a freeze-candidate boundary.
-
-The rc01→rc06 independent reviews are all clean `PASS / GATE YES` with zero findings. The review-covered executable inventory entering rc07 is `34 / 34` rc06 builder tests + `37 / 37` rc05 validator tests + the inherited `191 / 191` accepted/frozen baseline = `262` completed tests, with zero unexpected skips. The historical frozen baseline remains 191.
-
-The central authority boundaries remain:
+The v0.0.7rc07 freeze-candidate review returned a clean gate `YES` with no findings:
 
 ```text
-included in context != applicable
-excluded from context != not_applicable
-predicate excluded != bounded omitted
-undetermined != no_current_disposition
+Critical: 0
+Major:    0
+Minor:    0
+Trivial:  0
+
+V0.0.7 CONSUMPTION SELECTION MILESTONE
+CONSOLIDATION / FREEZE-CANDIDATE GATE: YES
 ```
 
-The four frozen profile states remain unchanged, exact-scope semantics remain resolution-neutral, and selection building/validation does not establish implementation, Pattern choice, compliance, verification, approval, release or closure. rc07 keeps context-source resolution, AI package/orchestration, ranking/token-budget policy, CI completion enforcement, L4 guidance and Development Context Recovery explicitly deferred. A clean rc07 review establishes freeze eligibility only; formal v0.0.7 still requires a separate explicit freeze decision. See [`docs/executable-governance/46_SCAF_v0.0.7rc07_Consumption_Selection_Milestone_Consolidation_and_Freeze_Candidate.md`](docs/executable-governance/46_SCAF_v0.0.7rc07_Consumption_Selection_Milestone_Consolidation_and_Freeze_Candidate.md).
+The explicit governance freeze decision therefore promotes the reviewed rc07 source state to formal **v0.0.7 — Frozen Consumption Selection Baseline**.
+
+The frozen milestone preserves the accepted rc01→rc06 chain from downstream Effective Project Profile consumption semantics through the canonical logical model, canonical YAML representation, parsed-instance JSON Schema, source-aware validation, and deterministic validated construction. It preserves exact source-profile provenance, exact opaque scope, `D/E/I/O/X`, bounded omission, selected-entry source fidelity, and the authority boundaries `included != applicable`, `excluded/omitted != not_applicable`, `predicate excluded != bounded omitted`, and `undetermined != no_current_disposition`.
+
+The current v0.0.7 milestone review execution inventory is `262 tests PASS` (`34 / 34` rc06 builder + `37 / 37` rc05 validator + inherited `191 / 191`). The historical inherited/frozen baseline remains 191. The formal freeze adds no semantic or executable capability beyond the reviewed rc07 candidate. See [`docs/executable-governance/47_SCAF_v0.0.7_Formal_Freeze_Decision.md`](docs/executable-governance/47_SCAF_v0.0.7_Formal_Freeze_Decision.md).
+
+Context-source resolution, context-content records, AI context packaging/orchestration, ranking/token-budget policy, CI applicability-completion enforcement, L4 guidance, Development Context Recovery, and other separately gated capabilities are not part of the frozen v0.0.7 baseline.
 
 ## Frozen v0.0.5 Milestone
 
