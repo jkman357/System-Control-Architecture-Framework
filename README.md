@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.8
-**Active Development RC:** v0.0.9rc04
-**Status:** Context Source Association Schema Foundation / Review Candidate
+**Active Development RC:** v0.0.9rc05
+**Status:** Context Source Association Source-Aware Validator Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -109,23 +109,31 @@ The formal freeze adds no semantic or executable capability beyond the reviewed 
 
 ## Active v0.0.9 Development
 
-`v0.0.9rc01` established Context Source Resolution semantics, `v0.0.9rc02` established the representation-neutral canonical logical model, and `v0.0.9rc03` established the canonical deterministic YAML representation. Their independent reviews returned clean `PASS / GATE YES` with zero findings and no blocking review-evidence limitations.
+`v0.0.9rc01` established Context Source Resolution semantics, `v0.0.9rc02` the canonical logical model, `v0.0.9rc03` the canonical deterministic YAML representation, and `v0.0.9rc04` its JSON Schema structural contract. All independent reviews through rc04 returned clean `PASS / GATE YES` with zero findings and no blocking review-evidence limitations.
 
-The post-rc03 dependency/value assessment found that one repository-owned parsed-instance structural contract is now materially required before a source-aware validator can be responsibly implemented. Otherwise validator implementations could independently hard-code different field shapes, token vocabularies, optional-member rules and nested-object contracts.
+The post-rc04 dependency/value assessment identified one material executable gap: schema validity cannot prove that a structurally valid association set agrees with the exact bound Consumption Selection, validated included domain `I`, Source Unit catalog references, semantic uniqueness/order, or explicitly constrained repository-local source bytes.
 
-`v0.0.9rc04` therefore adds `schemas/context-source-associations.schema.json` as the JSON Schema Draft 2020-12 structural contract for the accepted rc03 representation.
+`v0.0.9rc05` therefore adds `tools/scaf_context_source_association_validator/` as the production source-aware validator for the accepted rc03 representation and rc04 schema.
 
-The governing separation is:
+The governing chain is:
 
 ```text
-parsed-instance structural validity
-!= source-aware consistency
-!= engineering correctness
+structural schema validity
+        ↓
+exact upstream Consumption Selection validation/binding
+        ↓
+validated-I coverage + catalog/reference/uniqueness proof
+        ↓
+bounded explicit repository-local SHA-256 instance proof
+        ↓
+source-aware consistency PASS / INVALID
 ```
 
-The schema owns field/object/array shape, required/optional members, `additionalProperties` closure, accepted token vocabularies, non-empty string/list constraints and lowercase SHA-256 syntax. It deliberately does not prove exact Consumption Selection bytes, validated `I` coverage, Source Unit reference integrity, semantic association uniqueness/order, source-byte instance correspondence, source resolvability/currentness, applicability, obligation satisfaction, verification, compliance, release, closure or Context Assembly.
+The validator preserves `controlled association truth != runtime resolution observation` and `source-aware consistency != engineering correctness`. It performs no candidate discovery, repository scan, Git-history traversal, currentness/supersession decision, content loading, Context Assembly, CI enforcement, authority-registry promotion or L4 guidance.
 
-The accepted invariant remains `controlled association truth != runtime resolution observation`; rc04 adds no production validator, resolver, runtime-observation representation, content extraction, ranking/token-budget policy, AI context package, CI gate, scope resolver, authority-registry change, new PAO/FNI or L4 guidance. A clean rc04 review authorizes only a new dependency/value assessment, not automatic rc05. See [`docs/executable-governance/53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md`](docs/executable-governance/53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md).
+For an explicit `instance_constraint`, rc05 supports only a bounded `repo:<repository-relative POSIX path>` byte-proof convention; this is direct validation of an already-declared identity, not a general Source Resolver.
+
+A clean rc05 review authorizes only a new dependency/value assessment. It does not automatically authorize rc06 or a resolver. See [`docs/executable-governance/54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md`](docs/executable-governance/54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md).
 
 ## Frozen v0.0.5 Milestone
 

@@ -6,40 +6,51 @@
 
 ## Active v0.0.9 Development
 
-`v0.0.9rc01` established accepted Context Source Resolution semantics, `v0.0.9rc02` established the accepted representation-neutral logical model, and `v0.0.9rc03` established the accepted canonical YAML representation. Their independent reviews returned clean `PASS / GATE YES` with zero findings and no blocking review-evidence limitations.
+The accepted v0.0.9 chain now contains Context Source Resolution semantics (`rc01`), a representation-neutral canonical logical model (`rc02`), canonical deterministic YAML (`rc03`) and a Draft 2020-12 structural schema (`rc04`). Their independent reviews returned clean `PASS / GATE YES` with zero findings and no blocking review-evidence limitations.
 
-The post-rc03 dependency/value assessment concluded that a repository-owned parsed-instance structural contract is now materially required before source-aware validator work.
+The post-rc04 dependency/value assessment identified the next machine-determinable gap: schema validity cannot prove exact upstream-source binding, validated-`I` coverage, Source Unit reference completeness, semantic association uniqueness/order or explicitly pinned repository-source bytes.
 
-`v0.0.9rc04 — Context Source Association Schema Foundation` adds:
-
-```text
-accepted v0.0.9rc03 YAML representation
-        ↓
-JSON Schema Draft 2020-12
-        ↓
-structural parsed-instance validity
-```
-
-The schema artifact is `schemas/context-source-associations.schema.json`. It closes accepted object shapes with `additionalProperties: false`, encodes required/optional members, accepted token vocabularies, non-empty list/string constraints and lowercase SHA-256 syntax.
-
-The central ownership boundary is:
+`v0.0.9rc05 — Context Source Association Source-Aware Validator Foundation` adds:
 
 ```text
-schema-valid structure
-!= source-aware consistency
-!= engineering correctness
+accepted rc03 association YAML
+        ↓
+rc04 schema
+        ↓
+exact validated Consumption Selection binding
+        ↓
+validated I reconstruction
+        ↓
+catalog/reference/semantic consistency
+        ↓
+bounded explicit repository-local instance proof
 ```
 
-Selection-byte proof, validated-I coverage, Source Unit reference integrity, semantic uniqueness/canonical order, source-byte constraint proof, resolver/currentness observation, applicability/satisfaction/verification/closure and Context Assembly remain outside schema authority.
+Production tool:
+
+```text
+tools/scaf_context_source_association_validator/
+```
+
+The central boundaries remain:
+
+```text
+parsed-instance structural validity != source-aware consistency != engineering correctness
+controlled association truth != runtime resolution observation
+validator != general Source Resolver
+```
+
+For associations carrying an explicit SHA-256 Instance Constraint, rc05 supports only direct byte proof for an already-declared bounded `repo:<repository-relative POSIX path>` identity. It does not scan the repository, search Git history, discover candidates, determine currentness/supersession, fetch remote sources or assemble content.
 
 v0.0.9 controlled records:
 
 - `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — accepted Context Source Resolution semantics.
 - `51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md` — accepted canonical representation-neutral logical model.
 - `52_SCAF_v0.0.9rc03_Canonical_Context_Source_Association_Machine_Readable_Representation_Foundation.md` — accepted canonical YAML representation, field/token semantics and deterministic ordering.
-- `53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md` — parsed-instance JSON Schema foundation and explicit source-aware/non-engineering ownership boundary.
+- `53_SCAF_v0.0.9rc04_Context_Source_Association_Schema_Foundation.md` — accepted parsed-instance JSON Schema foundation and explicit source-aware/non-engineering ownership boundary.
+- `54_SCAF_v0.0.9rc05_Context_Source_Association_Source_Aware_Validator_Foundation.md` — production source-aware validation boundary, exact upstream binding, validated-I/catalog/reference/semantic proof, bounded repository-local instance proof and explicit resolver non-goals.
 
-rc04 adds no production validator, resolver, runtime-observation representation, content processing, ranking/token-budget policy, AI Context Assembly, CI gate or authority-registry change. A clean rc04 review authorizes only a new dependency/value assessment.
+A clean rc05 review authorizes only a new dependency/value assessment, not automatic resolver or rc06 work.
 
 ## Frozen v0.0.8 Milestone
 

@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.9rc05 — Context Source Association Source-Aware Validator Foundation
+
+- Continue only after the independent rc04 review returned clean `PASS / GATE YES` with zero findings and zero blocking review-evidence limitations and a separate dependency/value assessment found source-aware consistency validation materially necessary.
+- Add `tools/scaf_context_source_association_validator/` as the production validator for the accepted rc03 association representation and rc04 schema.
+- Validate the exact bound Consumption Selection through the accepted source-aware Consumption Selection validator before reconstructing included domain `I`.
+- Prove exact selection SHA/kind/release/scope binding and exact Authority Source Entry coverage of validated `I`, preserving explicit zero associations as distinct from omitted entries.
+- Prove Source Unit ID/identity uniqueness, association reference integrity, unused-catalog absence, semantic association uniqueness and canonical raw/list ordering.
+- Add bounded exact-byte verification for explicit SHA-256 Instance Constraints over already-declared `repo:<repository-relative POSIX path>` identities without creating repository discovery or a general resolver.
+- Preserve `controlled association truth != runtime resolution observation` and `source-aware consistency != engineering correctness`.
+- Add no candidate discovery, Git-history traversal, currentness/supersession model, runtime Resolution Observation representation, content processing, Context Assembly, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc05 review leads only to a new dependency/value assessment, not automatic rc06/resolver work.
+
 ## v0.0.9rc04 — Context Source Association Schema Foundation
 
 - Continue only after the independent rc03 review returned clean `PASS / GATE YES` with zero findings and zero blocking review-evidence limitations and a separate dependency/value assessment found a parsed-instance structural schema materially necessary before source-aware validator work.
