@@ -4,6 +4,30 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+## Active v0.0.8 Development
+
+`v0.0.8rc01 — Lifecycle-Proportional Governance Semantic Foundation` is a representation-neutral framework-governance development record above the immutable v0.0.7 baseline.
+
+It introduces the subject-scoped **Current Decision Horizon** and establishes:
+
+```text
+governance depth proportional to current decision / consequence / available evidence
+not-yet-producible empirical evidence != automatic current blocker
+progression sufficient != complete / verified / compliant / released / closed
+engineering impact != current progression disposition
+deferred != resolved / waived / closed
+```
+
+A five-question Materiality Stop Rule tests whether a proposed blocking issue materially affects current behavior determinism, authority consistency, engineering correctness/risk, next-stage implementability/verifiability, or an imminent expensive/irreversible commitment. If none applies, theoretical completeness alone is not a blocking basis; valid later obligations require an explicit revisit trigger.
+
+The RC adds no lifecycle state machine, schema, validator, CI gate, authority-registry change, Context Source Resolution or AI context mechanism. It does not reinterpret frozen L3 Pattern `M0`→`M4` maturity. Applicable external-authority requirements and existing PDA/Realization/Verification/closure ownership remain unchanged.
+
+Controlled record:
+
+- `48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md` — Current Decision Horizon, governance proportionality, evidence availability, Progression Sufficiency, Materiality Stop Rule, impact/disposition separation, controlled deferral/revisit and SCAF self-application semantics.
+
+A clean rc01 review authorizes only dependency/value assessment; it does not automatically authorize rc02.
+
 ## Frozen v0.0.7 Milestone
 
 `v0.0.7 — Frozen Consumption Selection Baseline` is the formal baseline promoted from the cleanly reviewed `v0.0.7rc07` freeze candidate by explicit governance decision on 2026-08-19.

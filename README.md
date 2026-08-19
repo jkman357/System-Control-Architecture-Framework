@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.7
-**Active Development RC:** None
-**Status:** Frozen Consumption Selection Baseline
+**Active Development RC:** v0.0.8rc01
+**Status:** Lifecycle-Proportional Governance Semantic Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -87,6 +87,22 @@ The frozen milestone preserves the accepted rc01→rc06 chain from downstream Ef
 The current v0.0.7 milestone review execution inventory is `262 tests PASS` (`34 / 34` rc06 builder + `37 / 37` rc05 validator + inherited `191 / 191`). The historical inherited/frozen baseline remains 191. The formal freeze adds no semantic or executable capability beyond the reviewed rc07 candidate. See [`docs/executable-governance/47_SCAF_v0.0.7_Formal_Freeze_Decision.md`](docs/executable-governance/47_SCAF_v0.0.7_Formal_Freeze_Decision.md).
 
 Context-source resolution, context-content records, AI context packaging/orchestration, ranking/token-budget policy, CI applicability-completion enforcement, L4 guidance, Development Context Recovery, and other separately gated capabilities are not part of the frozen v0.0.7 baseline.
+
+## Active v0.0.8 Development
+
+`v0.0.8rc01` begins a deliberately small **Lifecycle-Proportional Governance** development line from the immutable v0.0.7 baseline. It defines a subject-scoped **Current Decision Horizon**, proportional governance depth, evidence-availability semantics, Progression Sufficiency, a five-question Materiality Stop Rule, separation of engineering impact from current blocking disposition, and controlled deferral with explicit revisit triggers.
+
+The central rule is:
+
+```text
+Governance depth follows the current engineering decision,
+the consequence of unresolved ambiguity,
+and evidence reasonably available now.
+```
+
+The RC does not add a global lifecycle state machine, does not reinterpret L3 `M0`→`M4` Pattern maturity, and does not modify `authority-registry.yaml` or any frozen authority/representation/executable source. Not-yet-producible empirical evidence is not an automatic current blocker, but later evidence obligations must retain explicit property/measurement/owner/revisit semantics. Applicable external-authority requirements remain fully effective.
+
+`v0.0.8rc01` also requires SCAF to apply the same rule to itself: a clean review authorizes a dependency/value check, not automatic continuation to rc02. See [`docs/executable-governance/48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md`](docs/executable-governance/48_SCAF_v0.0.8rc01_Lifecycle_Proportional_Governance_Semantic_Foundation.md).
 
 ## Frozen v0.0.5 Milestone
 

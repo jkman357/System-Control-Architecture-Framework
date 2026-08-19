@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.8rc01 — Lifecycle-Proportional Governance Semantic Foundation
+
+- Start the controlled v0.0.8 line from formal frozen v0.0.7 without reopening frozen Consumption Selection or earlier authority/executable baselines.
+- Define the subject-scoped **Current Decision Horizon** as the decisions and currently producible evidence required to support the next intended engineering action.
+- Establish governance proportionality: review depth follows current decision consequence and reasonably available evidence rather than theoretical maximum completeness.
+- Establish the Evidence Availability Rule: not-yet-producible empirical evidence is not an automatic current blocker; future property/measurement/owner/revisit obligations remain explicit.
+- Define **Progression Sufficiency** separately from completion, verification, compliance, release and closure.
+- Define a five-question Materiality Stop Rule covering behavioral divergence, authority contradiction, material correctness/risk, next-stage implementability/verifiability, and expensive/irreversible commitment.
+- Keep engineering impact separate from current progression disposition and require controlled revisit triggers for deferred engineering obligations.
+- Preserve applicable external-authority requirements and existing PDA/Realization/Verification/closure ownership.
+- Add no lifecycle state machine, schema, validator, CI gate, authority-registry change, Context Source Resolution or AI context mechanism.
+- Require SCAF to apply the same proportionality/stop discipline to its own RC progression.
+
 ## v0.0.7 — Frozen Consumption Selection Baseline
 
 - Formally freeze the cleanly reviewed `v0.0.7rc07` source state after explicit governance approval.
