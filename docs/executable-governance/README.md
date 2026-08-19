@@ -6,39 +6,38 @@
 
 ## Active v0.0.9 Development
 
-`v0.0.9rc01 — Context Source Resolution Semantic Foundation` defines the representation-neutral boundary between one validated Consumption Selection included authority domain `I` and controlled repository/project Source Associations.
+`v0.0.9rc01 — Context Source Resolution Semantic Foundation` established the accepted representation-neutral boundary between one validated Consumption Selection included authority domain `I` and controlled repository/project Source Associations. Its independent review returned clean `PASS / GATE YES` with zero findings and no open blocking review-evidence limitation.
 
-The accepted-development target is semantic only:
+The post-rc01 dependency/value assessment concluded that a canonical logical model is required before serialization because otherwise future tools can disagree about association coverage, zero-association meaning, relationship atomicity, provenance, authority qualification, exact-source binding, and resolver-state ownership.
 
-```text
-validated Consumption Selection
-        ↓
-included authority domain I
-        ↓
-controlled Source Associations
-        ↓
-future deterministic source resolution
-```
-
-Core separations include:
+`v0.0.9rc02 — Canonical Context Source Association Logical Model Foundation` therefore defines:
 
 ```text
-source relationship != source authority
-source identity != exact source instance
-discovery != controlled association
-relationship role != authority status
-locator resolves != source is current / authoritative
-source exists != obligation satisfied
-source resolution != content loading / context inclusion
+one exact validated Consumption Selection
+        ↓
+validated included authority domain I
+        ↓
+Context Source Association Set
+        ├─ Source Unit Catalog
+        └─ one Authority Source Entry per authority in I
+             └─ 0..n atomic Controlled Source Associations
 ```
 
-The RC keeps the validated Consumption Selection as the upstream truth boundary, preserves exact opaque project scope, permits zero/many source associations and many-authorities-per-source, and treats association provenance separately from source authority. It creates no machine-readable source-association representation, schema, resolver, scope resolver, filesystem scan, content parser, ranking/token-budget policy, AI context package or authority-registry change.
+The central two-plane separation is:
+
+```text
+controlled association truth
+!= runtime resolution observation
+```
+
+A current resolver may observe resolved exact source instances, missing targets, unresolvable identities, stale/superseded sources, unknown currentness, or instance-constraint mismatch without silently rewriting the controlled association itself. Relationship semantic, relationship scope, controlled association basis/provenance, optional bounded Authority Qualification, and optional Instance Constraint remain logically separate.
 
 v0.0.9 controlled records:
 
-- `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — Context Source Resolution semantics, Source Unit/Source Association concepts, authority/provenance/currentness boundaries, absence/cardinality semantics, and explicit Context Assembly deferral.
+- `50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md` — accepted Context Source Resolution semantics, Source Unit/Source Association concepts, authority/provenance/currentness boundaries, absence/cardinality semantics, and explicit Context Assembly deferral.
+- `51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md` — canonical representation-neutral association aggregate, complete `I` coverage, Source Unit catalog, atomic relationship model, controlled-truth/resolution-observation separation, and future validation ownership direction.
 
-A clean rc01 review authorizes only a dependency/value assessment under frozen v0.0.8 proportional governance.
+The RC adds no source-association serialization, schema, validator, resolver, source scanning, content processing, ranking/token-budget policy, AI Context Assembly or authority-registry change. A clean rc02 review authorizes only a new dependency/value assessment.
 
 ## Frozen v0.0.8 Milestone
 

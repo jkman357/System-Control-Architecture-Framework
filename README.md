@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.8
-**Active Development RC:** v0.0.9rc01
-**Status:** Context Source Resolution Semantic Foundation / Review Candidate
+**Active Development RC:** v0.0.9rc02
+**Status:** Canonical Context Source Association Logical Model Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -109,22 +109,20 @@ The formal freeze adds no semantic or executable capability beyond the reviewed 
 
 ## Active v0.0.9 Development
 
-`v0.0.9rc01` opens a deliberately bounded **Context Source Resolution Semantic Foundation** from frozen v0.0.8. Its Current Decision Horizon is limited to defining what a controlled source relationship means between the validated Consumption Selection included set `I` and repository/project engineering sources before any machine-readable source-association model or resolver is designed.
+`v0.0.9rc01` established the **Context Source Resolution Semantic Foundation** and its independent review returned clean `PASS / GATE YES` with zero findings and no open blocking review-evidence limitation. The required dependency/value assessment then found one material next-step ambiguity: machine-readable implementations could encode materially different association truth and resolver semantics unless a canonical logical model is fixed first.
 
-The central distinctions are:
+`v0.0.9rc02` therefore defines the representation-neutral **Canonical Context Source Association Logical Model**. One association set binds to one exact validated Consumption Selection and exactly its included authority domain `I`; every authority in `I` has one Authority Source Entry with `0..n` atomic Controlled Source Associations referencing a shared Source Unit Catalog.
+
+The central new invariant is:
 
 ```text
-source relationship != source authority
-source identity != exact source instance
-discovery != controlled association
-locator resolves != source is current / authoritative
-source exists != obligation satisfied
-source resolution != content loading / context inclusion
+controlled association truth
+!= runtime resolution observation
 ```
 
-The RC defines Source Unit, Source Association, relationship/authority separation, association provenance, ownership, resolvability/currentness separation, absence/unresolved mapping semantics, cardinality, exact-scope preservation and the downstream boundary to future Context Assembly. It adds no YAML/JSON representation, schema, resolver, filesystem scan, content extraction, ranking, token-budget policy, AI context package, scope resolver or authority-registry change.
+Missing, unresolvable and stale/superseded are resolution/currentness observations and do not silently delete or rewrite a controlled source relationship. Source identity remains separate from exact source instance; discovery remains separate from controlled association; relationship semantic remains separate from authority qualification; and source resolution remains separate from obligation satisfaction and downstream Context Assembly.
 
-A clean rc01 review authorizes only a later dependency/value assessment; it does not automatically authorize rc02. See [`docs/executable-governance/50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md`](docs/executable-governance/50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md).
+The RC adds no YAML/JSON representation, schema, validator, resolver, filesystem/Git scan, content extraction, ranking/token-budget policy, AI context package, scope resolver or authority-registry change. A clean rc02 review authorizes only a new dependency/value assessment, not automatic rc03. See [`docs/executable-governance/50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md`](docs/executable-governance/50_SCAF_v0.0.9rc01_Context_Source_Resolution_Semantic_Foundation.md) and [`docs/executable-governance/51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md`](docs/executable-governance/51_SCAF_v0.0.9rc02_Canonical_Context_Source_Association_Logical_Model_Foundation.md).
 
 ## Frozen v0.0.5 Milestone
 

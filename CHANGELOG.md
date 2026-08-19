@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.0.9rc02 — Canonical Context Source Association Logical Model Foundation
+
+- Continue the controlled v0.0.9 line after the independent rc01 review returned clean `PASS / GATE YES` with zero findings and zero open blocking review-evidence limitations.
+- Record the post-rc01 dependency/value decision that a canonical logical model is required before machine-readable serialization because otherwise association truth, cardinality, provenance, source-instance binding, and resolver behavior can diverge.
+- Define one Context Source Association Set bound to one exact validated Consumption Selection and exactly its included authority domain `I`.
+- Require exactly one Authority Source Entry for every authority in `I`, making zero associations explicit rather than equivalent to omitted/incomplete data.
+- Define a shared Source Unit Catalog and atomic Controlled Source Association model with one relationship semantic per association plus bounded relationship scope, controlled basis/provenance, optional authority qualification, and optional source-instance constraint.
+- Establish the two-plane invariant `controlled association truth != runtime resolution observation`; missing, unresolvable and stale/superseded are resolver/currentness observations and do not silently rewrite controlled relationship truth.
+- Preserve source identity vs exact source instance, discovery vs controlled association, relationship vs authority, source existence vs satisfaction, exact opaque scope, and existing authority/applicability/closure ownership.
+- Add no YAML/JSON representation, schema, validator, resolver, filesystem/Git scan, content processing, ranking/token-budget policy, AI Context Assembly, CI gate, or authority-registry change.
+- Apply frozen v0.0.8 proportional governance: a clean rc02 review leads only to a new dependency/value assessment, not automatic rc03.
+
 ## v0.0.9rc01 — Context Source Resolution Semantic Foundation
 
 - Start the controlled v0.0.9 line from formal frozen v0.0.8 without reopening frozen authority, Project Application, Effective Project Profile, Consumption Selection, or lifecycle-proportional governance baselines.
