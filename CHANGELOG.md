@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.7rc04 — Consumption Selection Schema Foundation
+
+- Continue the controlled v0.0.7 line after the independent rc03 review returned clean `PASS / GATE YES` with zero findings.
+- Add `schemas/consumption-selection.schema.json` as the JSON Schema Draft 2020-12 foundation for the accepted rc03 Consumption Selection representation.
+- Preserve `representation_release: v0.0.7rc03`; rc04 formalizes the accepted serialization rather than creating a new representation release.
+- Enforce the exact nine-member parsed root, source-binding shape, four-state selector vocabulary, authority-selector variants, bounded-omission variants, selected-entry state/trace shapes, and complete/filtered token vocabulary.
+- Reject unknown schema-owned members, malformed lowercase SHA-256 strings, parsed null/type mismatches, duplicate state/explicit-ID strings, and exact duplicate complete selected-entry objects.
+- Keep source-profile validity, actual digest correspondence, provenance equality, authority/domain membership, D/E/I/O/X set algebra, selected-entry source fidelity, complete/filtered derivation, canonical physical YAML order, and engineering authority outside schema-only proof.
+- Preserve the accepted `included != applicable`, `excluded/omitted != not_applicable`, `predicate excluded != bounded omitted`, and `undetermined != no_current_disposition` boundaries.
+- Introduce no source-aware Consumption Selection validator, builder/generator, API, CLI, context-source resolver, AI package, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+
 ## v0.0.7rc03 — Canonical Consumption / Context-Selection Machine-Readable Representation Foundation
 
 - Continue the controlled v0.0.7 line after the independent rc02 review returned clean `PASS / GATE YES` with zero findings.

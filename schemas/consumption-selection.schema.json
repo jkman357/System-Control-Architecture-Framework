@@ -1,0 +1,232 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:scaf:schema:consumption-selection:v0.0.7rc04",
+  "title": "SCAF Consumption Selection v0.0.7rc03 Representation Contract Schema Foundation",
+  "description": "Structural/state-shape schema foundation for the accepted v0.0.7rc03 Consumption Selection YAML representation. This schema validates parsed representation facts only. It does not prove the bound Effective Project Profile bytes, source-profile provenance correspondence, authority existence/domain membership, selector/source set algebra, selected-entry source fidelity, canonical physical ordering, raw-YAML restrictions, complete/filtered derivation, engineering applicability, Pattern selection, implementation, verification, compliance, release, or closure.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "selection_kind",
+    "representation_release",
+    "source_profile_binding",
+    "selection_purpose",
+    "state_selector",
+    "authority_selector",
+    "bounded_omission",
+    "selected_entries",
+    "selection_class"
+  ],
+  "properties": {
+    "selection_kind": {
+      "const": "consumption_selection"
+    },
+    "representation_release": {
+      "const": "v0.0.7rc03"
+    },
+    "source_profile_binding": {
+      "$ref": "#/$defs/sourceProfileBinding"
+    },
+    "selection_purpose": {
+      "$ref": "#/$defs/nonEmptyString"
+    },
+    "state_selector": {
+      "type": "array",
+      "maxItems": 4,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/profileState"
+      }
+    },
+    "authority_selector": {
+      "$ref": "#/$defs/authoritySelector"
+    },
+    "bounded_omission": {
+      "$ref": "#/$defs/boundedOmission"
+    },
+    "selected_entries": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/selectedEntry"
+      }
+    },
+    "selection_class": {
+      "enum": [
+        "complete",
+        "filtered"
+      ]
+    }
+  },
+  "$defs": {
+    "nonEmptyString": {
+      "type": "string",
+      "minLength": 1
+    },
+    "lowercaseSha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "profileState": {
+      "enum": [
+        "applicable",
+        "not_applicable",
+        "undetermined",
+        "no_current_disposition"
+      ]
+    },
+    "sourceProfileBinding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "effective_project_profile_source_sha256",
+        "scaf_source_release",
+        "project_scope_ref",
+        "project_application_source_sha256"
+      ],
+      "properties": {
+        "effective_project_profile_source_sha256": {
+          "$ref": "#/$defs/lowercaseSha256"
+        },
+        "scaf_source_release": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "project_scope_ref": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "project_application_source_sha256": {
+          "$ref": "#/$defs/lowercaseSha256"
+        }
+      }
+    },
+    "allDomainAuthoritySelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "const": "all_domain"
+        }
+      }
+    },
+    "explicitSetAuthoritySelector": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "mode",
+        "scaf_authority_ids"
+      ],
+      "properties": {
+        "mode": {
+          "const": "explicit_set"
+        },
+        "scaf_authority_ids": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/nonEmptyString"
+          }
+        }
+      }
+    },
+    "authoritySelector": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/allDomainAuthoritySelector"
+        },
+        {
+          "$ref": "#/$defs/explicitSetAuthoritySelector"
+        }
+      ]
+    },
+    "noBoundedOmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applied"
+      ],
+      "properties": {
+        "applied": {
+          "const": false
+        }
+      }
+    },
+    "appliedBoundedOmission": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "applied",
+        "basis"
+      ],
+      "properties": {
+        "applied": {
+          "const": true
+        },
+        "basis": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "boundedOmission": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/noBoundedOmission"
+        },
+        {
+          "$ref": "#/$defs/appliedBoundedOmission"
+        }
+      ]
+    },
+    "recordedSelectedEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scaf_authority_id",
+        "profile_state",
+        "project_application_record_id"
+      ],
+      "properties": {
+        "scaf_authority_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "profile_state": {
+          "enum": [
+            "applicable",
+            "not_applicable",
+            "undetermined"
+          ]
+        },
+        "project_application_record_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        }
+      }
+    },
+    "absenceSelectedEntry": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "scaf_authority_id",
+        "profile_state"
+      ],
+      "properties": {
+        "scaf_authority_id": {
+          "$ref": "#/$defs/nonEmptyString"
+        },
+        "profile_state": {
+          "const": "no_current_disposition"
+        }
+      }
+    },
+    "selectedEntry": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/recordedSelectedEntry"
+        },
+        {
+          "$ref": "#/$defs/absenceSelectedEntry"
+        }
+      ]
+    }
+  }
+}

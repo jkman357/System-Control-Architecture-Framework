@@ -12,9 +12,10 @@ Current controlled records:
 
 - `40_SCAF_v0.0.7rc01_Effective_Project_Profile_Consumption_Semantic_Foundation.md` — accepted semantic boundary for downstream consumption, filtering, reporting, and future context-selection use of validated Effective Project Profile state without transferring engineering authority.
 - `41_SCAF_v0.0.7rc02_Canonical_Consumption_Context_Selection_Model_Foundation.md` — accepted canonical representation-neutral logical model for source-bound consumption selection, deterministic eligibility, included entries, predicate exclusion, bounded omission, and complete/filtered classification.
-- `42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md` — canonical YAML representation of the accepted logical model, with exact source-profile binding, bounded selectors/omission, selected-entry fidelity, deterministic ordering, and no redundant E/O/X truth lists.
+- `42_SCAF_v0.0.7rc03_Canonical_Consumption_Context_Selection_Machine_Readable_Representation_Foundation.md` — accepted canonical YAML representation of the logical model, with exact source-profile binding, bounded selectors/omission, selected-entry fidelity, deterministic ordering, and no redundant E/O/X truth lists.
+- `43_SCAF_v0.0.7rc04_Consumption_Selection_Schema_Foundation.md` — JSON Schema Draft 2020-12 foundation for the accepted rc03 parsed representation shape; source-aware provenance/set/fidelity proof remains deferred.
 
-rc03 is representation-only. It adds no schema, validator, builder/generator, query API, CLI, scope/context-source resolver, AI context package, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
+rc04 is schema-only. It adds no source-aware Consumption Selection validator, builder/generator, query API, CLI, scope/context-source resolver, AI context package, CI completion gate, L4 guidance, or Development Context Recovery mechanism.
 
 ## Frozen v0.0.6 Milestone
 
@@ -155,6 +156,8 @@ v0.0.7rc01 Effective Project Profile consumption semantic foundation
 v0.0.7rc02 canonical consumption / context-selection logical model
         ↓
 v0.0.7rc03 canonical consumption / context-selection YAML representation
+        ↓
+v0.0.7rc04 Consumption Selection JSON Schema foundation
 ```
 
-The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` defines accepted semantic rules for downstream consumption, `v0.0.7rc02` adds the canonical logical accounting, and `v0.0.7rc03` adds only the canonical YAML representation for that subordinate selection. Persistent profile state, schema/validator/builder, AI context packaging, context-source or scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
+The formal v0.0.6 freeze adds no executable capability beyond the reviewed rc14 state. `v0.0.7rc01` defines accepted semantic rules for downstream consumption, `v0.0.7rc02` adds canonical logical accounting, `v0.0.7rc03` adds the canonical YAML representation, and `v0.0.7rc04` adds only parsed-instance schema validation. Persistent profile state, source-aware Consumption Selection validation/building, AI context packaging, context-source or scope/reference resolution, applicability inference, Pattern selection, CI completion enforcement, engineering judgment, compliance, verification, completion and closure remain separately gated.
