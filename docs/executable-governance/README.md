@@ -4,6 +4,40 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+## Active v0.0.10 Development
+
+`v0.0.10rc01 — Controlled Context Assembly Semantic Foundation` defines the representation-neutral downstream boundary between validated authority/source-association truth and the bounded engineering context presented to an engineer or AI consumer.
+
+The rc01 semantic chain is:
+
+```text
+validated Consumption Selection
+        ↓
+validated Context Source Associations
+        ↓
+controlled authority / association envelope
+        ↓
+bounded context materialization
+        ↓
+future Controlled Context Package
+```
+
+Key invariants include:
+
+```text
+source association != context materialization
+context materialized != applicable
+context omitted != not_applicable / waived / closed
+Controlled Context Package != engineering authority
+derived context representation != authoritative source truth
+context-package completeness != project / verification / release completeness
+context presented to AI != authority granted to AI
+controlled association truth != runtime materialization observation
+machine-readable != machine-decided
+```
+
+The RC adds no machine-readable package, schema, validator, builder, content loader, chunking, ranking/token budget, prompt/model adapter, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance. See `56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`.
+
 ## Frozen v0.0.9 Milestone
 
 `v0.0.9 — Frozen Context Source Association and Source-Aware Validation Baseline` is promoted from the cleanly reviewed `v0.0.9rc05` source state after explicit governance approval and a dependency/value `STOP` decision.

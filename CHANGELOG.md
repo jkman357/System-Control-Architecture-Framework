@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.0.10rc01 — Controlled Context Assembly Semantic Foundation
+
+- Open v0.0.10 only after the frozen v0.0.9 STOP/freeze and a separate global dependency/value assessment identified the remaining AI-consumption last-mile ambiguity between validated source relationships and the bounded context actually presented to a consumer.
+- Define representation-neutral Controlled Context Assembly downstream of the exact validated Consumption Selection and Context Source Association chain.
+- Preserve the validated included authority domain `I` as the controlled context authority envelope; an authority does not disappear merely because it has zero associations or zero materialized source content.
+- Establish `source association != context materialization` and separate the controlled authority/association envelope from materialized consumer content.
+- Establish `context inclusion != applicability` and `context omission != not_applicable / source invalid / waiver / accepted risk / closure`.
+- Define a future Controlled Context Package as a bounded consumer artifact with traceable upstream provenance, not a new engineering authority or replacement source of truth.
+- Preserve `derived context representation != authoritative source truth`, `context completeness != engineering completion`, and `context presented to AI != authority granted to AI`.
+- Preserve `controlled association truth != runtime resolution/materialization observation` and the frozen invalid-vs-unresolved distinction.
+- State that external source association does not itself grant content-use/redistribution authorization.
+- Keep future assembly deterministic for machine-determinable facts while preserving explicit engineering judgment: `machine-readable != machine-decided`.
+- Add no Context Package representation/schema/validator/builder, loader, fragment/chunk policy, summarization, ranking/token-budget policy, prompt/model adapter, Source Resolver, currentness model, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc01 review leads only to a new dependency/value assessment, not automatic rc02.
+
 ## v0.0.9 — Frozen Context Source Association and Source-Aware Validation Baseline
 
 - Formally freeze the cleanly reviewed `v0.0.9rc05` source state after explicit governance approval and the required post-review dependency/value STOP assessment.

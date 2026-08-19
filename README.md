@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.9
-**Active Development RC:** None
-**Status:** Frozen Context Source Association and Source-Aware Validation Baseline
+**Active Development RC:** v0.0.10rc01
+**Status:** Controlled Context Assembly Semantic Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -47,6 +47,43 @@ L4 — Implementation / Verification Guidance
 ```
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6 does not reopen them.
+
+## Active v0.0.10 Development
+
+`v0.0.10rc01` opens a new, separately gated **Controlled Context Assembly Semantic Foundation** on top of the frozen v0.0.9 Context Source Association / Source-Aware Validation baseline.
+
+The current decision horizon is limited to the downstream semantic boundary between validated engineering truth and the bounded context actually presented to an engineer or AI consumer.
+
+The governing chain is:
+
+```text
+validated Consumption Selection
+        ↓
+validated Context Source Associations
+        ↓
+controlled authority / association envelope
+        ↓
+bounded context materialization
+        ↓
+future Controlled Context Package
+        ↓
+engineer / AI consumer
+```
+
+The central distinctions are:
+
+```text
+source association != context materialization
+context inclusion != applicability
+context omission != not_applicable / waiver / closure
+context package != engineering authority
+context completeness != engineering completion
+context presented to AI != authority granted to AI
+controlled association truth != runtime materialization observation
+machine-readable != machine-decided
+```
+
+The RC remains representation-neutral. It adds no context-package YAML/JSON, schema, validator, builder, loader, chunking, ranking/token-budget policy, prompt/model integration, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance. A clean review authorizes only a new dependency/value assessment. See [`docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md).
 
 ## Frozen v0.0.6 Milestone
 
