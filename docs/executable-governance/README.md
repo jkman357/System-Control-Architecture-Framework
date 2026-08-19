@@ -6,37 +6,51 @@
 
 ## Active v0.0.10 Development
 
-`v0.0.10rc01 — Controlled Context Assembly Semantic Foundation` defines the representation-neutral downstream boundary between validated authority/source-association truth and the bounded engineering context presented to an engineer or AI consumer.
+`v0.0.10rc01 — Controlled Context Assembly Semantic Foundation` defined the downstream semantic boundary between validated authority/source-association truth and bounded consumer context. Its independent review returned clean `PASS / GATE YES` with zero findings and no blocking evidence limitations.
 
-The rc01 semantic chain is:
+`v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation` fixes the representation-neutral package aggregate before any serialization or executable builder.
+
+Canonical logical chain:
 
 ```text
-validated Consumption Selection
+exact validated Consumption Selection
         ↓
-validated Context Source Associations
+exact validated Context Source Association Set
         ↓
-controlled authority / association envelope
-        ↓
-bounded context materialization
-        ↓
-future Controlled Context Package
+Controlled Context Package
+        ├─ exact upstream binding
+        ├─ Assembly Objective
+        ├─ Authority Context Entries [exactly one per validated I]
+        │    ├─ exact Association Envelope
+        │    └─ one Materialization Decision per association
+        └─ Materialized Context Item Catalog [0..n]
+             └─ each item has 1..n exact controlled provenance bases
 ```
 
-Key invariants include:
+Key rc02 invariants include:
 
 ```text
-source association != context materialization
-context materialized != applicable
-context omitted != not_applicable / waived / closed
-Controlled Context Package != engineering authority
-derived context representation != authoritative source truth
-context-package completeness != project / verification / release completeness
+Authority Context Entry domain = validated I exactly
+missing authority entry != zero associations != zero materialized content
+Association Envelope = exact accepted association truth
+one accepted association -> exactly one Materialization Decision
+zero materialized items != association removal / not_applicable / v0.0.7 O
+Materialized Context Item != Source Unit / Source Association
+traceable derived item != authoritative source truth
+logical package conformance != engineering-context sufficiency
 context presented to AI != authority granted to AI
-controlled association truth != runtime materialization observation
+controlled association truth != runtime resolution/materialization observation
 machine-readable != machine-decided
 ```
 
-The RC adds no machine-readable package, schema, validator, builder, content loader, chunking, ranking/token budget, prompt/model adapter, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance. See `56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`.
+The RC introduces no package YAML/JSON, schema, validator, builder, content loader, chunking, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+
+See:
+
+- [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md)
+- [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md)
+
+A clean rc02 review authorizes only a new dependency/value assessment; it does not pre-authorize rc03 or a machine-readable package representation.
 
 ## Frozen v0.0.9 Milestone
 

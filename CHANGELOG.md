@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation
+
+- Continue only after the independent rc01 review returned clean `PASS / GATE YES` with zero candidate-source findings and no blocking review-evidence limitations, and a separate dependency/value assessment found the representation-neutral package model materially necessary before serialization/builder work.
+- Define one canonical Controlled Context Package bound to the exact validated Consumption Selection, exact validated Context Source Association Set and one explicit Assembly Objective.
+- Require exactly one Authority Context Entry per authority in validated `I`, preserving authority presence even with zero associations or zero materialized content.
+- Preserve an exact controlled Association Envelope for every authority and require exactly one Materialization Decision for every accepted controlled association.
+- Make package-level context omission explicit through zero-materialization accounting instead of silent association/content disappearance.
+- Define a shared Materialized Context Item Catalog with package-local identity and `1..n` exact controlled provenance bases per item.
+- Permit traceable multi-association/cross-authority derived items without merging authority ownership or promoting derived context into source authority.
+- Preserve package logical totality/conformance separately from engineering-context sufficiency, verification, compliance, release and closure.
+- Preserve `controlled association truth != runtime resolution/materialization observation`, `context inclusion != applicability`, `derived context != authoritative source truth`, and `machine-readable != machine-decided`.
+- Add no Context Package YAML/JSON, schema, validator, builder, content loader, fragment/chunk policy, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc02 review leads only to a new dependency/value assessment, not automatic rc03.
+
 ## v0.0.10rc01 — Controlled Context Assembly Semantic Foundation
 
 - Open v0.0.10 only after the frozen v0.0.9 STOP/freeze and a separate global dependency/value assessment identified the remaining AI-consumption last-mile ambiguity between validated source relationships and the bounded context actually presented to a consumer.

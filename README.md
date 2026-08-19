@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.9
-**Active Development RC:** v0.0.10rc01
-**Status:** Controlled Context Assembly Semantic Foundation / Review Candidate
+**Active Development RC:** v0.0.10rc02
+**Status:** Canonical Controlled Context Package Logical Model Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -50,40 +50,31 @@ The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6
 
 ## Active v0.0.10 Development
 
-`v0.0.10rc01` opens a new, separately gated **Controlled Context Assembly Semantic Foundation** on top of the frozen v0.0.9 Context Source Association / Source-Aware Validation baseline.
+`v0.0.10rc01` established the representation-neutral **Controlled Context Assembly Semantic Foundation** and its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and no blocking review-evidence limitations.
 
-The current decision horizon is limited to the downstream semantic boundary between validated engineering truth and the bounded context actually presented to an engineer or AI consumer.
+The post-rc01 dependency/value assessment identified one material pre-serialization ambiguity: different package implementations could preserve materially different authority, association-accounting and provenance models even while agreeing with the rc01 high-level semantics.
 
-The governing chain is:
+`v0.0.10rc02` therefore defines the **Canonical Controlled Context Package Logical Model** before any machine-readable representation or builder is introduced.
 
-```text
-validated Consumption Selection
-        ↓
-validated Context Source Associations
-        ↓
-controlled authority / association envelope
-        ↓
-bounded context materialization
-        ↓
-future Controlled Context Package
-        ↓
-engineer / AI consumer
-```
-
-The central distinctions are:
+The governing logical shape is:
 
 ```text
-source association != context materialization
-context inclusion != applicability
-context omission != not_applicable / waiver / closure
-context package != engineering authority
-context completeness != engineering completion
-context presented to AI != authority granted to AI
-controlled association truth != runtime materialization observation
-machine-readable != machine-decided
+exact validated Consumption Selection
+        ↓
+exact validated Context Source Association Set
+        ↓
+Controlled Context Package
+        ├─ exact upstream binding
+        ├─ one Assembly Objective
+        ├─ one Authority Context Entry per validated I authority
+        │    ├─ exact accepted Association Envelope
+        │    └─ one Materialization Decision per association
+        └─ 0..n traceable Materialized Context Items
 ```
 
-The RC remains representation-neutral. It adds no context-package YAML/JSON, schema, validator, builder, loader, chunking, ranking/token-budget policy, prompt/model integration, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance. A clean review authorizes only a new dependency/value assessment. See [`docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md).
+The central package rule is that consumer-facing materialization may vary while validated authority and controlled association truth remain preserved. Package omission is explicit downstream accounting, not applicability or association removal; package conformance is not engineering sufficiency; derived context is not source authority; and context presented to AI does not grant engineering authority.
+
+The RC remains representation-neutral. It adds no Context Package YAML/JSON, schema, validator, builder, loader, fragment/chunk policy, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance. A clean review authorizes only a new dependency/value assessment. See [`docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md) and [`docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md).
 
 ## Frozen v0.0.6 Milestone
 
