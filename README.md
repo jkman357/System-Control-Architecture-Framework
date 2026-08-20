@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.10
-**Active Development RC:** v0.1.0rc01
-**Status:** L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation / Review Candidate
+**Active Development RC:** v0.1.0rc02
+**Status:** First Representative L4 Construction Guidance / Review Candidate
 **Date:** 2026-08-20
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -51,33 +51,37 @@ The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.1.0
 
 ## Active v0.1.0 Development
 
-`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` opens the first controlled L4 development line downstream of frozen v0.0.10.
+`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the construction-facing L4 semantic/layer contract downstream of frozen v0.0.10. Its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
 
-The purpose is deliberately bounded: define how SCAF may provide concrete construction / verification guidance that is useful enough to begin implementation without creating new framework authority, silently changing L3, selecting Project Design Decisions, turning examples into hidden defaults, or conflating guidance with verification/closure.
+The post-rc01 dependency/value assessment identified one material next step before broad L4 catalog or tooling work: prove the contract against one real construction problem.
 
-The intended long-term layer evolution is:
-
-```text
-L1 / L2   stable normative core
-L3        reusable Pattern / Mechanism catalog; moderate evolution
-L4        construction / verification guidance; expected frequent evolution
-```
-
-The rc01 governing separation is:
+`v0.1.0rc02 — First Representative L4 Construction Guidance` therefore introduces exactly one candidate guidance:
 
 ```text
-L4 guidance != new framework authority
-L4 recommendation != Project Design Decision
-L4 example != canonical implementation
-L4 Verification Intent != verification result
-Construction Ready != buildable / complete / correct / verified / compliant / closed
+SCAF-PAT-TIM-001
+Bounded Queue / Backpressure / Overload Protection
+        ↓
+SCAF-L4-001
+Bounded Queue / Backpressure / Overload Construction Guidance
 ```
 
-rc01 defines representation-neutral many-to-many L3↔L4 trace semantics, stable future L4 identity form, guidance-strength/content classes, Construction Invariants and Assumptions, Required Project Decisions, no-hidden-default behavior, construction dimensions, bounded-capacity/lifecycle/observability/verification coupling, material deviation, anti-over-specification, platform-neutral-first, composition/conflict, non-retroactivity, revision/supersession and Construction Readiness.
+The representative entry requires a finite admission/accumulation boundary, a project-owned capacity/demand/service basis, explicit bounded exhaustion behavior, preserved ordering/freshness semantics, construction-visible concurrency/lifecycle/failure boundaries, sufficient observability and project-derivable Verification Intent.
 
-It adds no published L4 entry, L4 registry/schema/validator, executable L3↔L4 trace, project-side adoption record, platform-specific API guidance, reference implementation, code generator or CI gate. A clean review permits only a new dependency/value assessment for the smallest useful representative L4 tranche.
+It deliberately does **not** choose queue depth, watermark, RTOS/API, scheduler primitive, thread priority, timeout, overload policy or verification threshold. The governing construction rule remains:
 
-See [`docs/l4/README.md`](docs/l4/README.md), [`docs/l4/00_L4_Minimum_Construction_Guidance_Contract.md`](docs/l4/00_L4_Minimum_Construction_Guidance_Contract.md), and [`docs/executable-governance/62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](docs/executable-governance/62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md).
+```text
+capacity value != SCAF default
+example value != project parameter
+larger queue != proof of overload correctness
+L4 guidance != Project Design Authority
+Construction Ready != buildable / verified / compliant / closed
+```
+
+The candidate adds no second L4 entry, registry/schema/validator, executable L3↔L4 trace, project adoption record, platform-specific implementation, reference code, code generator, project Test Procedure or CI gate. The frozen v0.0.10 Controlled Context Package builder STOP decision remains unchanged.
+
+See [`docs/l4/README.md`](docs/l4/README.md), [`docs/l4/catalog/SCAF-L4-001_Bounded_Queue_Backpressure_Overload_Construction_Guidance.md`](docs/l4/catalog/SCAF-L4-001_Bounded_Queue_Backpressure_Overload_Construction_Guidance.md), and [`docs/executable-governance/63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md`](docs/executable-governance/63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md).
+
+A clean rc02 review authorizes only a new dependency/value assessment: repair the L4 contract if the representative exposes a real defect, consider a second materially different representative guidance if Construction Readiness is demonstrated, or STOP if no material dependency is established.
 
 ## Frozen v0.0.10 Milestone
 

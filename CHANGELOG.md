@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.1.0rc02 — First Representative L4 Construction Guidance
+
+- Continue only after the independent rc01 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one real representative L4 entry necessary to validate Construction Readiness.
+- Introduce exactly one candidate L4 identity: `SCAF-L4-001 — Bounded Queue / Backpressure / Overload Construction Guidance`.
+- Trace the representative guidance primarily to frozen `SCAF-PAT-TIM-001` without modifying frozen L3 files or machine-readable L3 trace.
+- Preserve the frozen L2 basis `SCAF-TIME-009`, `SCAF-TIME-012`, supporting `SCAF-TIME-010/011/013`, and constraint inputs `SCAF-ROB-016`, applicable `SCAF-INT-007/008`.
+- Provide a platform-neutral implementation shape covering producer/admission/finite-accumulation/consumer responsibilities without selecting a queue API or data structure.
+- Require explicit finite capacity, project-owned demand/service/capacity basis, defined bounded exhaustion consequence and observable boundedness.
+- Preserve `larger queue != proof of overload correctness` and prohibit hidden secondary accumulation from defeating the claimed bound.
+- Define construction invariants/assumptions and required Project Design Decisions for demand, service, capacity/margin, admission/exhaustion, ordering/fairness/freshness, ownership, recovery/escalation and verification evidence.
+- Cover interface/state, timing, concurrency/reentrancy, resource accounting, lifecycle, failure/recovery and diagnostics/observability.
+- Add nine bounded Verification Intent cases without writing project-specific Test Procedures or claiming executed verification.
+- Include one explicitly non-canonical symbolic example with no concrete queue depth, watermark, timeout, API, scheduler primitive or project threshold.
+- Preserve `example value != project parameter`, `L4 guidance != Project Design Authority`, `L4 Verification Intent != verification result`, and `Construction Ready != buildable / verified / compliant / closed`.
+- Add no second L4 entry, registry, schema, validator, executable L3↔L4 trace, project adoption/pinning record, platform-specific API guidance, reference implementation, generator, CI gate or frozen L1/L2/L3 change.
+- Preserve the frozen v0.0.10 Controlled Context Package builder STOP decision.
+- Apply frozen v0.0.8 proportional governance: a clean rc02 review authorizes only a new dependency/value assessment, not automatic rc03/catalog/tooling expansion.
+
 ## v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation
 
 - Open the first controlled L4 development line from exact frozen v0.0.10 predecessor `a4fa740d32b97108b0eb2a55e48296a94435ef95`.

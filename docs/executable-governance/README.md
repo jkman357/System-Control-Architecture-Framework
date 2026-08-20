@@ -1,22 +1,25 @@
 # SCAF Executable Governance Baseline
 
-**Release:** v0.0.4  
-**Status:** Frozen Executable Governance Baseline  
+**Release:** v0.0.4
+**Status:** Frozen Executable Governance Baseline
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 ## Active v0.1.0 Development
 
-`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` begins the construction-facing L4 line from frozen v0.0.10.
+`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the accepted L4 construction/verification semantic contract and layer boundary. Its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
 
-The rc01 record is:
+The post-rc01 dependency/value assessment justified exactly one representative L4 entry before broader catalog or executable-tooling decisions.
 
-- [`62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md) — current L4 purpose, authority boundary, construction semantics, evolution strategy, non-goals and post-review gate.
+Current controlled records:
 
-Canonical L4 content is under [`../l4/`](../l4/). rc01 adds no L4 executable-governance mechanism: no registry, schema, validator, trace engine, project adoption record, code generator or CI gate.
+- [`62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md) — accepted L4 purpose, authority boundary, construction semantics, evolution strategy and non-goals.
+- [`63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md`](63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md) — current decision record for exactly one representative `SCAF-L4-001` construction-guidance candidate and its Construction Readiness review horizon.
 
-The frozen v0.0.10 Controlled Context Package builder STOP decision remains intact; opening L4 does not reopen builder/materialization policy.
+Canonical L4 content is under [`../l4/`](../l4/). rc02 still adds no L4 executable-governance mechanism: no registry, schema, validator, machine-readable trace engine, project adoption record, code generator or CI gate.
 
-A clean rc01 review authorizes only a new dependency/value assessment for a smallest useful representative L4 guidance tranche.
+The frozen v0.0.10 Controlled Context Package builder STOP decision remains intact; opening representative L4 guidance does not reopen builder/materialization policy.
+
+A clean rc02 review authorizes only a new dependency/value assessment.
 
 ## Frozen v0.0.10 Milestone
 
