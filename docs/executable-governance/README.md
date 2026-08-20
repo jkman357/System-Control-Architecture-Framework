@@ -4,48 +4,36 @@
 **Status:** Frozen Executable Governance Baseline  
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
-## Active v0.0.10 Development
+## Frozen v0.0.10 Milestone
 
-`v0.0.10rc01` through `v0.0.10rc04` are accepted bases with clean independent `PASS / GATE YES` reviews and zero candidate-source findings. They established, in order, Controlled Context Assembly semantics, the canonical package logical model, the canonical deterministic YAML representation, and its Draft 2020-12 parsed-instance structural schema.
+`v0.0.10 — Frozen Controlled Context Assembly and Source-Aware Package Validation Baseline` is promoted from the cleanly reviewed `v0.0.10rc05` source state after explicit governance approval and the required dependency/value `STOP` decision.
 
-`v0.0.10rc05 — Controlled Context Package Source-Aware Validator Foundation` adds:
-
-```text
-tools/scaf_controlled_context_package_validator/
-```
-
-The governing chain is:
+Accepted rc05 review state:
 
 ```text
-rc01 semantics
-  ↓
-rc02 canonical logical model
-  ↓
-rc03 canonical YAML representation
-  ↓
-rc04 parsed-instance JSON Schema
-  ↓
-rc05 production source-aware package validator
+Critical / Major / Minor / Trivial: 0 / 0 / 0 / 0
+Blocking review-evidence limitations: none
+V0.0.10RC05 CONTROLLED CONTEXT PACKAGE
+SOURCE-AWARE VALIDATOR FOUNDATION GATE: YES
 ```
 
-The rc05 validator proves machine-determinable package/source consistency that the schema deliberately does not own:
+The frozen development chain is:
 
 ```text
-strict raw YAML / canonical ordering
-exact upstream Consumption Selection bytes/kind/release/scope
-exact upstream Context Source Association bytes/kind/release/scope
-accepted upstream source-aware validation before package reasoning
-Authority Context Entry domain == validated I exactly
-Association Envelope fidelity
-package-wide association_handle uniqueness
-exactly one same-authority Materialization Decision per accepted association
-Materialized Context Item ID/reference integrity
-no orphan Materialized Context Item
-Controlled Provenance Basis resolution
-bidirectional decision/provenance correspondence
+rc01  Controlled Context Assembly semantics
+  ↓
+rc02  canonical representation-neutral package logical model
+  ↓
+rc03  canonical deterministic YAML representation
+  ↓
+rc04  Draft 2020-12 parsed-instance structural schema
+  ↓
+rc05  production source-aware package validator
+  ↓
+v0.0.10 formal freeze
 ```
 
-The accepted separation remains:
+The frozen executable ownership separation is:
 
 ```text
 package representation
@@ -54,17 +42,20 @@ package representation
 != engineering-context sufficiency
 ```
 
-The validator is not a builder/generator, content loader, Source Resolver, currentness engine, ranking/token-budget engine, prompt/model adapter, engineering approval function or closure authority.
+The rc05 validator owns deterministic package/source consistency only after accepted upstream source-aware validation. It proves exact upstream bindings, validated-`I` coverage, Association Envelope fidelity, association-handle uniqueness, one-decision-per-association accounting, package-item reference/orphan integrity, provenance resolution, bidirectional decision/provenance correspondence, and canonical ordering.
 
-See:
+The post-rc05 dependency/value assessment concluded that a builder is not presently required. No current semantic ambiguity, validator divergence, blocked executable dependency, difficult-to-reverse architecture commitment, or concrete consumer evidence justifies formalizing construction/materialization policy now. The v0.0.10 line therefore stops at rc05 and freezes without an rc06.
 
-- [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md)
-- [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md)
-- [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md)
-- [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md)
-- [`60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md`](60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md)
+v0.0.10 controlled records:
 
-A clean rc05 review authorizes only a dependency/value assessment with an explicit STOP/freeze check; it does not pre-authorize a builder or rc06.
+- [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md) — accepted assembly semantic boundary.
+- [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md) — accepted representation-neutral canonical logical model.
+- [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md) — accepted deterministic YAML representation.
+- [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md) — accepted Draft 2020-12 structural schema.
+- [`60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md`](60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md) — accepted production source-aware validator boundary.
+- [`61_SCAF_v0.0.10_Formal_Freeze_Decision.md`](61_SCAF_v0.0.10_Formal_Freeze_Decision.md) — formal freeze decision, builder STOP disposition, and immutable v0.0.10 boundary.
+
+The formal freeze adds no builder/generator, content loader, inline content, fragment/chunk processing, summarization, ranking/token-budget policy, prompt/model integration, repository-wide discovery, general Source Resolver, currentness/supersession model, CI package gate, authority expansion, new PAO/FNI, or L4 guidance.
 
 ## Frozen v0.0.9 Milestone
 

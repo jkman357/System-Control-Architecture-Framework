@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Formal Release:** v0.0.9
-**Active Development RC:** v0.0.10rc05
-**Status:** Controlled Context Package Source-Aware Validator Foundation / Review Candidate
+**Current Formal Release:** v0.0.10
+**Active Development RC:** None
+**Status:** Frozen Controlled Context Assembly and Source-Aware Package Validation Baseline
 **Date:** 2026-08-20
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -28,8 +28,9 @@ Formal frozen baselines:
 | `v0.0.7` | Frozen Consumption Selection baseline |
 | `v0.0.8` | Frozen Lifecycle-Proportional Governance Semantic baseline |
 | `v0.0.9` | Frozen Context Source Association and Source-Aware Validation baseline |
+| `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 
-The formal v0.0.9 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.9rc05` Context Source Association source-aware validation state after the required post-review dependency/value STOP assessment, without reopening earlier frozen authority, applicability, profile, selection, traceability, or lifecycle-proportional governance baselines.
+The formal v0.0.10 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.10rc05` Controlled Context Package source-aware validation state after the required post-review dependency/value STOP assessment. The freeze adds no builder, content loader, ranking/token-budget policy, prompt/model integration, Source Resolver/currentness behavior, CI package gate, authority expansion, or L4 guidance, and does not reopen earlier frozen baselines.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -48,39 +49,29 @@ L4 — Implementation / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6 does not reopen them.
 
-## Active v0.0.10 Development
+## Frozen v0.0.10 Milestone
 
-`v0.0.10rc01` established the **Controlled Context Assembly Semantic Foundation**, `v0.0.10rc02` the **Canonical Controlled Context Package Logical Model**, `v0.0.10rc03` the deterministic canonical YAML representation, and `v0.0.10rc04` its JSON Schema Draft 2020-12 parsed-instance structural contract. All independent reviews through rc04 returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
+`v0.0.10 — Frozen Controlled Context Assembly and Source-Aware Package Validation Baseline` is the formal baseline promoted from the cleanly reviewed `v0.0.10rc05` source state after the required post-review dependency/value STOP assessment.
 
-The post-rc04 dependency/value assessment identified one remaining machine-determinable gap before builder decisions can be made responsibly: a schema-valid package can still disagree with the exact validated Consumption Selection / Context Source Association truth, validated `I`, Association Envelope, package reference/accounting model, or controlled provenance.
-
-`v0.0.10rc05` therefore adds:
+The accepted development chain is:
 
 ```text
-tools/scaf_controlled_context_package_validator/
+v0.0.10rc01  Controlled Context Assembly Semantic Foundation
+        ↓
+v0.0.10rc02  Canonical Controlled Context Package Logical Model
+        ↓
+v0.0.10rc03  Canonical Machine-Readable Package Representation
+        ↓
+v0.0.10rc04  Controlled Context Package Schema Foundation
+        ↓
+v0.0.10rc05  Controlled Context Package Source-Aware Validator Foundation
+        ↓
+v0.0.10      formal frozen baseline
 ```
 
-as the production source-aware validator for the accepted rc03 package representation and rc04 structural schema.
+The frozen chain establishes a deterministic downstream contract from validated Consumption Selection and Context Source Association truth to a controlled consumer-facing package while preserving the upstream engineering authority boundary.
 
-The governing validation chain is:
-
-```text
-Controlled Context Package bytes
-        ↓
-strict YAML + accepted rc04 schema
-        ↓
-exact bound Context Source Association Set
-        ↓
-accepted source-aware upstream validation
-        ↓
-validated I + accepted association truth
-        ↓
-package binding / envelope / decision / item / provenance proof
-        ↓
-source-aware package consistency PASS / INVALID
-```
-
-The accepted separation remains:
+The governing validation separation remains:
 
 ```text
 package representation
@@ -89,13 +80,13 @@ package representation
 != engineering-context sufficiency
 ```
 
-The validator proves exact upstream byte/kind/release/scope binding, exact validated-`I` package coverage, Association Envelope fidelity, package-wide handle uniqueness, one same-authority Materialization Decision per accepted association, package-item reference/orphan integrity, Controlled Provenance Basis resolution, bidirectional decision/provenance correspondence, and canonical raw/list ordering.
+The source-aware validator proves exact upstream byte/kind/release/scope binding, exact validated-`I` coverage, Association Envelope fidelity, package-wide handle uniqueness, complete Materialization Decision accounting, Materialized Context Item reference/orphan integrity, Controlled Provenance Basis resolution, bidirectional decision/provenance correspondence, and canonical ordering.
 
-A PASS does not prove context sufficiency, implementation correctness, verification/compliance, risk acceptance, release readiness, closure, source currentness, content-use authorization, or consumer/AI engineering authority.
+A validator PASS does **not** prove engineering-context sufficiency, implementation correctness, verification/compliance, risk acceptance, release readiness, closure, source currentness, content-use authorization, or consumer/AI engineering authority.
 
-The initial payload boundary remains reference-only. rc05 adds no builder/generator, content loader, inline content, fragment/chunk syntax, summarization, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
+The explicit post-rc05 dependency/value assessment concluded **STOP** for a package builder: no current semantic ambiguity, validator divergence, blocked executable dependency, difficult-to-reverse commitment, or concrete consumer evidence justifies builder/materialization-policy work now. Therefore no `v0.0.10rc06` is required.
 
-A clean rc05 review authorizes only a new dependency/value assessment, including an explicit STOP/freeze check before any builder decision. See [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md), [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md), [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](docs/executable-governance/58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md), [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](docs/executable-governance/59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md), and [`60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md`](docs/executable-governance/60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md).
+The formal freeze adds no new semantic or executable capability beyond reviewed rc05. See [`docs/executable-governance/61_SCAF_v0.0.10_Formal_Freeze_Decision.md`](docs/executable-governance/61_SCAF_v0.0.10_Formal_Freeze_Decision.md).
 
 ## Frozen v0.0.6 Milestone
 

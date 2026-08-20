@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.0.10 — Frozen Controlled Context Assembly and Source-Aware Package Validation Baseline
+
+- Formally freeze the cleanly reviewed `v0.0.10rc05` source state after explicit governance approval and the required post-review dependency/value STOP assessment.
+- Promote the accepted rc01→rc05 Controlled Context Assembly / Package chain to an immutable formal baseline without introducing any new semantic or executable capability in the freeze itself.
+- Freeze the representation-neutral assembly semantics, canonical package logical model, deterministic YAML representation, Draft 2020-12 structural schema, and production source-aware package validator as one coherent baseline.
+- Preserve exact validated upstream ownership, validated-`I` authority-envelope totality, Association Envelope fidelity, explicit materialization accounting, package-local item/provenance integrity, and deterministic canonical ordering.
+- Preserve `package representation != parsed-instance structural validity != source-aware package consistency != engineering-context sufficiency`.
+- Record the post-rc05 decision that a package builder is **STOP / deferred** because current evidence does not establish a material dependency for construction/materialization-policy automation.
+- Add no `v0.0.10rc06`, builder/generator, content loader, fragment/chunk policy, summarization, ranking/token-budget policy, prompt/model integration, Source Resolver/currentness behavior, CI package gate, authority-registry change, new PAO/FNI, or L4 guidance.
+- Preserve the frozen authority inventory (`294 / 218 / 76`) and all earlier frozen baselines unchanged.
+
 ## v0.0.10rc05 — Controlled Context Package Source-Aware Validator Foundation
 
 - Continue only after the independent rc04 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found package source-aware consistency validation materially necessary before any builder decision.
