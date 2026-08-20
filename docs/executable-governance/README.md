@@ -6,20 +6,23 @@
 
 ## Active v0.1.0 Development
 
-`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the accepted L4 construction/verification semantic contract and layer boundary. Its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
+`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the accepted L4 construction/verification semantic contract and layer boundary.
 
-The post-rc01 dependency/value assessment justified exactly one representative L4 entry before broader catalog or executable-tooling decisions.
+`v0.1.0rc02 — First Representative L4 Construction Guidance` introduced `SCAF-L4-001` for bounded queue/backpressure/overload construction. Its independent review returned clean `PASS / GATE YES`, zero candidate-source findings, zero blocking review-evidence limitations, and confirmed local Construction Readiness.
+
+The post-rc02 dependency/value assessment justified exactly one second, materially different representative before deciding whether the v0.1.0 milestone is already sufficient.
 
 Current controlled records:
 
 - [`62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md) — accepted L4 purpose, authority boundary, construction semantics, evolution strategy and non-goals.
-- [`63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md`](63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md) — current decision record for exactly one representative `SCAF-L4-001` construction-guidance candidate and its Construction Readiness review horizon.
+- [`63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md`](63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md) — accepted first representative `SCAF-L4-001` decision record.
+- [`64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md`](64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md) — current decision record for candidate `SCAF-L4-002`, composing Heartbeat/Liveness Supervision and Independent Watchdog with Escalation to test cross-problem L4 generalization.
 
-Canonical L4 content is under [`../l4/`](../l4/). rc02 still adds no L4 executable-governance mechanism: no registry, schema, validator, machine-readable trace engine, project adoption record, code generator or CI gate.
+Canonical L4 content is under [`../l4/`](../l4/). rc03 still adds no L4 executable-governance mechanism: no registry, schema, validator, machine-readable trace engine, project adoption record, code generator or CI gate.
 
-The frozen v0.0.10 Controlled Context Package builder STOP decision remains intact; opening representative L4 guidance does not reopen builder/materialization policy.
+The frozen v0.0.10 Controlled Context Package builder STOP decision remains intact; representative L4 work does not reopen builder/materialization policy.
 
-A clean rc02 review authorizes only a new dependency/value assessment.
+A clean rc03 review authorizes only a new dependency/value assessment, with milestone consolidation/freeze preferred over automatic catalog growth if the two representative entries are progression-sufficient.
 
 ## Frozen v0.0.10 Milestone
 

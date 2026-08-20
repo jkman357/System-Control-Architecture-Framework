@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.10
-**Active Development RC:** v0.1.0rc02
-**Status:** First Representative L4 Construction Guidance / Review Candidate
+**Active Development RC:** v0.1.0rc03
+**Status:** Second Representative L4 Construction Guidance / Review Candidate
 **Date:** 2026-08-20
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -51,37 +51,41 @@ The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.1.0
 
 ## Active v0.1.0 Development
 
-`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the construction-facing L4 semantic/layer contract downstream of frozen v0.0.10. Its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
+`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the accepted construction-facing L4 semantic/layer contract downstream of frozen v0.0.10.
 
-The post-rc01 dependency/value assessment identified one material next step before broad L4 catalog or tooling work: prove the contract against one real construction problem.
+`v0.1.0rc02 — First Representative L4 Construction Guidance` then exercised that contract with `SCAF-L4-001 — Bounded Queue / Backpressure / Overload Construction Guidance`. Its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and found the entry locally Construction Ready for its declared scope.
 
-`v0.1.0rc02 — First Representative L4 Construction Guidance` therefore introduces exactly one candidate guidance:
+The post-rc02 dependency/value assessment identified one bounded remaining question before considering the first L4 milestone sufficient: whether the same contract generalizes to a materially different runtime supervision / lifecycle / escalation problem.
+
+`v0.1.0rc03 — Second Representative L4 Construction Guidance` therefore introduces exactly one additional candidate guidance:
 
 ```text
-SCAF-PAT-TIM-001
-Bounded Queue / Backpressure / Overload Protection
-        ↓
-SCAF-L4-001
-Bounded Queue / Backpressure / Overload Construction Guidance
+SCAF-PAT-SUP-001 — Heartbeat / Liveness Supervision ─┐
+                                                     ├─> SCAF-L4-002
+SCAF-PAT-SUP-002 — Independent Watchdog with Escalation ┘
+
+SCAF-L4-002 — Runtime Health Supervision and Watchdog Construction Guidance
 ```
 
-The representative entry requires a finite admission/accumulation boundary, a project-owned capacity/demand/service basis, explicit bounded exhaustion behavior, preserved ordering/freshness semantics, construction-visible concurrency/lifecycle/failure boundaries, sufficient observability and project-derivable Verification Intent.
+The representative entry makes progress/liveness evidence, supervisor ownership, watchdog service eligibility, supervisor/watchdog independence, timing/deadline/expiry relationships, startup/maintenance/degraded supervision, incarnation/session freshness, escalation/reset consequence, retained evidence and Verification Intent construction-visible without selecting project values or platform APIs.
 
-It deliberately does **not** choose queue depth, watermark, RTOS/API, scheduler primitive, thread priority, timeout, overload policy or verification threshold. The governing construction rule remains:
+The governing distinctions include:
 
 ```text
-capacity value != SCAF default
-example value != project parameter
-larger queue != proof of overload correctness
+liveness evidence != complete system health proof
+execution activity != useful progress proof
+watchdog expiry != root-cause proof
+hardware watchdog != automatic independence proof
+example timing value != project timing value
 L4 guidance != Project Design Authority
 Construction Ready != buildable / verified / compliant / closed
 ```
 
-The candidate adds no second L4 entry, registry/schema/validator, executable L3↔L4 trace, project adoption record, platform-specific implementation, reference code, code generator, project Test Procedure or CI gate. The frozen v0.0.10 Controlled Context Package builder STOP decision remains unchanged.
+rc03 adds no third L4 entry, L4 registry/schema/validator, executable L3↔L4 trace, project adoption record, platform-specific watchdog/RTOS/MCU implementation, reference code, code generator, project Test Procedure or CI gate. The frozen v0.0.10 Controlled Context Package builder STOP decision remains unchanged.
 
-See [`docs/l4/README.md`](docs/l4/README.md), [`docs/l4/catalog/SCAF-L4-001_Bounded_Queue_Backpressure_Overload_Construction_Guidance.md`](docs/l4/catalog/SCAF-L4-001_Bounded_Queue_Backpressure_Overload_Construction_Guidance.md), and [`docs/executable-governance/63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md`](docs/executable-governance/63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md).
+See [`docs/l4/README.md`](docs/l4/README.md), [`docs/l4/catalog/SCAF-L4-002_Runtime_Health_Supervision_and_Watchdog_Construction_Guidance.md`](docs/l4/catalog/SCAF-L4-002_Runtime_Health_Supervision_and_Watchdog_Construction_Guidance.md), and [`docs/executable-governance/64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md`](docs/executable-governance/64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md).
 
-A clean rc02 review authorizes only a new dependency/value assessment: repair the L4 contract if the representative exposes a real defect, consider a second materially different representative guidance if Construction Readiness is demonstrated, or STOP if no material dependency is established.
+A clean rc03 review authorizes only a new dependency/value assessment. The preferred next question is whether two materially different representative L4 entries are sufficient for v0.1.0 milestone consolidation/freeze rather than automatic rc04/catalog/tooling expansion.
 
 ## Frozen v0.0.10 Milestone
 

@@ -1,5 +1,22 @@
 # Changelog
 
+## v0.1.0rc03 — Second Representative L4 Construction Guidance
+
+- Continue only after the independent rc02 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one materially different representative necessary to test L4 generalization beyond capacity/queue construction.
+- Introduce exactly one new candidate identity: `SCAF-L4-002 — Runtime Health Supervision and Watchdog Construction Guidance`.
+- Exercise the accepted many-to-many trace model by composing frozen `SCAF-PAT-SUP-001 — Heartbeat / Liveness Supervision` and `SCAF-PAT-SUP-002 — Independent Watchdog with Escalation` without modifying frozen L3 trace.
+- Preserve the inherited ROB/OBS/TIME/INT/LIFE authority basis and Project Design Authority ownership of health semantics, timing values, service eligibility, independence, escalation/reset scope and verification acceptance.
+- Provide a platform-neutral construction shape from progress/liveness evidence through supervision evaluation and watchdog service eligibility to independent expiry/escalation.
+- Preserve `liveness evidence != complete system health proof`, `execution activity != useful progress proof`, `watchdog expiry != root-cause proof`, and `hardware watchdog != automatic independence proof`.
+- Require controlled supervisor-failure semantics, explicit startup/maintenance/degraded supervision, incarnation/session freshness, bounded grace/bypass behavior, reset-domain consequence and repeated recovery termination where applicable.
+- Expose project-owned timing relationships without supplying heartbeat period, missed count, watchdog timeout, task priority, API/register sequence, reset target or verification threshold.
+- Add Construction Invariants/Assumptions and Required Project Decisions for monitored progress, evidence representation, ownership/independence, timing, service eligibility, lifecycle, escalation/recovery, evidence and verification.
+- Add eleven bounded Verification Intent cases spanning healthy operation, participant stall, false liveness/activity, stale incarnation, supervisor failure, startup, intentional suspension, jitter, expiry/escalation, repeated recovery and independence evidence.
+- Include one explicitly non-canonical symbolic example with no concrete platform/project defaults.
+- Add no third L4 entry, change to `SCAF-L4-001` construction semantics, change to the rc01 contract/template, registry/schema/validator, executable L3↔L4 trace, project adoption/pinning record, platform-specific implementation, code generator or CI gate.
+- Preserve the frozen v0.0.10 Controlled Context Package builder STOP decision.
+- Apply frozen v0.0.8 proportional governance: a clean rc03 review authorizes only a new dependency/value assessment, with milestone consolidation/freeze considered before any automatic rc04/catalog/tooling expansion.
+
 ## v0.1.0rc02 — First Representative L4 Construction Guidance
 
 - Continue only after the independent rc01 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one real representative L4 entry necessary to validate Construction Readiness.
