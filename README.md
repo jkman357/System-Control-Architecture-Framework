@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.10
-**Active Development RC:** None
-**Status:** Frozen Controlled Context Assembly and Source-Aware Package Validation Baseline
+**Active Development RC:** v0.1.0rc01
+**Status:** L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation / Review Candidate
 **Date:** 2026-08-20
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -43,11 +43,41 @@ L1/L2 — Normative Authority
 L3 — Pattern / Mechanism Catalog
   What reusable architecture mechanisms may be considered?
         ↓
-L4 — Implementation / Verification Guidance
-  Future demand-driven guidance; not automatically implied by the current RC.
+L4 — Construction / Verification Guidance
+  How can an accepted architecture mechanism be made construction-ready without replacing Project Design Authority?
 ```
 
-The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6 does not reopen them.
+The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.1.0rc01 introduces no modification to either frozen layer.
+
+## Active v0.1.0 Development
+
+`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` opens the first controlled L4 development line downstream of frozen v0.0.10.
+
+The purpose is deliberately bounded: define how SCAF may provide concrete construction / verification guidance that is useful enough to begin implementation without creating new framework authority, silently changing L3, selecting Project Design Decisions, turning examples into hidden defaults, or conflating guidance with verification/closure.
+
+The intended long-term layer evolution is:
+
+```text
+L1 / L2   stable normative core
+L3        reusable Pattern / Mechanism catalog; moderate evolution
+L4        construction / verification guidance; expected frequent evolution
+```
+
+The rc01 governing separation is:
+
+```text
+L4 guidance != new framework authority
+L4 recommendation != Project Design Decision
+L4 example != canonical implementation
+L4 Verification Intent != verification result
+Construction Ready != buildable / complete / correct / verified / compliant / closed
+```
+
+rc01 defines representation-neutral many-to-many L3↔L4 trace semantics, stable future L4 identity form, guidance-strength/content classes, Construction Invariants and Assumptions, Required Project Decisions, no-hidden-default behavior, construction dimensions, bounded-capacity/lifecycle/observability/verification coupling, material deviation, anti-over-specification, platform-neutral-first, composition/conflict, non-retroactivity, revision/supersession and Construction Readiness.
+
+It adds no published L4 entry, L4 registry/schema/validator, executable L3↔L4 trace, project-side adoption record, platform-specific API guidance, reference implementation, code generator or CI gate. A clean review permits only a new dependency/value assessment for the smallest useful representative L4 tranche.
+
+See [`docs/l4/README.md`](docs/l4/README.md), [`docs/l4/00_L4_Minimum_Construction_Guidance_Contract.md`](docs/l4/00_L4_Minimum_Construction_Guidance_Contract.md), and [`docs/executable-governance/62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](docs/executable-governance/62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md).
 
 ## Frozen v0.0.10 Milestone
 

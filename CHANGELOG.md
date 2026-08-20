@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation
+
+- Open the first controlled L4 development line from exact frozen v0.0.10 predecessor `a4fa740d32b97108b0eb2a55e48296a94435ef95`.
+- Establish L4 as construction / verification guidance downstream of L1/L2 authority and L3 Patterns while preserving Project Design Authority, Project Realization and Project Verification / Assurance ownership.
+- Define `L4 guidance != new framework authority`, `L4 recommendation != Project Design Decision`, `L4 example != canonical implementation`, and `L4 Verification Intent != verification result`.
+- Define Construction Readiness as sufficient implementation structure / open decisions / invariants / assumptions / failure / observability / verification intent to begin responsible construction, not immediate buildability or proof of correctness.
+- Establish representation-neutral many-to-many L3↔L4 trace semantics and future stable L4 identity form `SCAF-L4-<NNN>` without allocating an entry.
+- Distinguish Construction Constraint, Recommended Practice, Example Realization and Required Project Decision semantics.
+- Add explicit no-hidden-default, Construction Invariant and Construction Assumption boundaries.
+- Define the minimum construction questions for ownership, interface/state, timing, concurrency/reentrancy, capacity/resources, lifecycle, failure/recovery, observability and verification intent.
+- Require bounded-capacity guidance to address exhaustion behavior rather than arbitrary limit increases.
+- Establish material-deviation, anti-over-specification and platform-neutral-first rules.
+- Establish L4 composition/conflict handling, L4→L3 escalation, non-retroactivity and revision/supersession boundaries.
+- Permit a deliberately partial L4 catalog while requiring each later accepted guidance to be locally Construction Ready for its declared scope.
+- Add `docs/l4/` navigation, canonical semantic contract and a non-instantiating authoring template.
+- Add no published L4 entry, registry, schema, validator, executable trace, project adoption record, platform-specific API guidance, reference code, generator, CI gate, or frozen L1/L2/L3 change.
+- Apply frozen v0.0.8 proportional governance: a clean rc01 review authorizes only a new dependency/value assessment for the smallest representative L4 tranche, not automatic rc02/tooling/catalog expansion.
+
 ## v0.0.10 — Frozen Controlled Context Assembly and Source-Aware Package Validation Baseline
 
 - Formally freeze the cleanly reviewed `v0.0.10rc05` source state after explicit governance approval and the required post-review dependency/value STOP assessment.
