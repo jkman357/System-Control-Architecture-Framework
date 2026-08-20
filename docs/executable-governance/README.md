@@ -6,12 +6,12 @@
 
 ## Active v0.0.10 Development
 
-`v0.0.10rc01 — Controlled Context Assembly Semantic Foundation`, `v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation`, and `v0.0.10rc03 — Canonical Controlled Context Package Machine-Readable Representation Foundation` are accepted bases with clean independent `PASS / GATE YES` reviews and zero candidate-source findings.
+`v0.0.10rc01` through `v0.0.10rc04` are accepted bases with clean independent `PASS / GATE YES` reviews and zero candidate-source findings. They established, in order, Controlled Context Assembly semantics, the canonical package logical model, the canonical deterministic YAML representation, and its Draft 2020-12 parsed-instance structural schema.
 
-`v0.0.10rc04 — Controlled Context Package Schema Foundation` adds the repository-owned JSON Schema Draft 2020-12 structural contract for the accepted rc03 package representation:
+`v0.0.10rc05 — Controlled Context Package Source-Aware Validator Foundation` adds:
 
 ```text
-schemas/controlled-context-package.schema.json
+tools/scaf_controlled_context_package_validator/
 ```
 
 The governing chain is:
@@ -25,40 +25,24 @@ rc03 canonical YAML representation
   ↓
 rc04 parsed-instance JSON Schema
   ↓
-future source-aware package validator only if separately justified
+rc05 production source-aware package validator
 ```
 
-The rc04 schema owns:
+The rc05 validator proves machine-determinable package/source consistency that the schema deliberately does not own:
 
 ```text
-exact parsed object/list shapes
-required / optional members
-additionalProperties closure
-representation identity constants
-bounded enum/const vocabularies
-non-empty strings and provenance lists
-lowercase SHA-256 syntax
-materialized vs not_materialized branch shape
-source_preserving / derived context semantic tokens
-source_reference-only payload shape
-```
-
-It does not own or prove:
-
-```text
-exact upstream source bytes
-accepted upstream validator PASS
-validated I exact coverage
+strict raw YAML / canonical ordering
+exact upstream Consumption Selection bytes/kind/release/scope
+exact upstream Context Source Association bytes/kind/release/scope
+accepted upstream source-aware validation before package reasoning
+Authority Context Entry domain == validated I exactly
 Association Envelope fidelity
-association-handle or item-ID semantic uniqueness/reference resolution
-one decision per accepted upstream association
-no orphan item
+package-wide association_handle uniqueness
+exactly one same-authority Materialization Decision per accepted association
+Materialized Context Item ID/reference integrity
+no orphan Materialized Context Item
 Controlled Provenance Basis resolution
-decision/provenance bidirectional correspondence
-canonical physical/raw YAML ordering
-source loading/currentness
-engineering-context sufficiency
-verification/compliance/risk/release/closure
+bidirectional decision/provenance correspondence
 ```
 
 The accepted separation remains:
@@ -70,7 +54,7 @@ package representation
 != engineering-context sufficiency
 ```
 
-The initial payload boundary remains reference-only. rc04 introduces no production package validator, builder/generator, content loader, inline content, fragment/chunk policy, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
+The validator is not a builder/generator, content loader, Source Resolver, currentness engine, ranking/token-budget engine, prompt/model adapter, engineering approval function or closure authority.
 
 See:
 
@@ -78,8 +62,9 @@ See:
 - [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md)
 - [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md)
 - [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md)
+- [`60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md`](60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md)
 
-A clean rc04 review authorizes only a new dependency/value assessment; it does not pre-authorize rc05 or a package validator.
+A clean rc05 review authorizes only a dependency/value assessment with an explicit STOP/freeze check; it does not pre-authorize a builder or rc06.
 
 ## Frozen v0.0.9 Milestone
 

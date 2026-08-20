@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.0.10rc05 — Controlled Context Package Source-Aware Validator Foundation
+
+- Continue only after the independent rc04 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found package source-aware consistency validation materially necessary before any builder decision.
+- Add `tools/scaf_controlled_context_package_validator/` as the production validator for the accepted rc03 package representation and rc04 structural schema.
+- Validate strict package YAML and canonical raw/list ordering before package source-aware proof.
+- Validate the exact bound Context Source Association Set through the accepted source-aware validator, which retains validated-input ownership for the exact bound Consumption Selection.
+- Prove exact upstream SHA/kind/release/scope bindings and exact Authority Context Entry coverage of validated `I`.
+- Prove Association Envelope fidelity, package-wide `association_handle` uniqueness, and exactly one same-authority Materialization Decision per accepted association.
+- Prove package-local Materialized Context Item identity/reference integrity, orphan absence, Controlled Provenance Basis resolution, and bidirectional decision/provenance correspondence.
+- Preserve `package representation != parsed-instance structural validity != source-aware package consistency != engineering-context sufficiency`.
+- Preserve `controlled association truth != package materialization truth != runtime observation`, `context presented to AI != authority granted to AI`, and `machine-readable != machine-decided`.
+- Add no builder/generator, content loader, inline content, fragment/chunk syntax, summarization, ranking/token-budget policy, prompt/model integration, Source Resolver/currentness behavior, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc05 review leads to an explicit STOP/freeze dependency/value assessment, not automatic rc06/builder work.
+
 ## v0.0.10rc04 — Controlled Context Package Schema Foundation
 
 - Continue only after the independent rc03 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one repository-owned structural contract materially necessary before source-aware package validation or builder work.

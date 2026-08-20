@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.9
-**Active Development RC:** v0.0.10rc04
-**Status:** Controlled Context Package Schema Foundation / Review Candidate
+**Active Development RC:** v0.0.10rc05
+**Status:** Controlled Context Package Source-Aware Validator Foundation / Review Candidate
 **Date:** 2026-08-20
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -50,19 +50,37 @@ The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6
 
 ## Active v0.0.10 Development
 
-`v0.0.10rc01` established the **Controlled Context Assembly Semantic Foundation**, `v0.0.10rc02` the **Canonical Controlled Context Package Logical Model**, and `v0.0.10rc03` the deterministic canonical YAML representation. All independent reviews through rc03 returned clean `PASS / GATE YES` with zero candidate-source findings and no blocking review-evidence limitations.
+`v0.0.10rc01` established the **Controlled Context Assembly Semantic Foundation**, `v0.0.10rc02` the **Canonical Controlled Context Package Logical Model**, `v0.0.10rc03` the deterministic canonical YAML representation, and `v0.0.10rc04` its JSON Schema Draft 2020-12 parsed-instance structural contract. All independent reviews through rc04 returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
 
-The post-rc03 dependency/value assessment identified one material structural-contract gap: a parsed package can follow YAML syntax while still using incompatible required/optional members, object shapes, token vocabularies, materialization branches or SHA forms. A repository-owned schema is therefore required before any source-aware package validator or builder can be responsibly considered.
+The post-rc04 dependency/value assessment identified one remaining machine-determinable gap before builder decisions can be made responsibly: a schema-valid package can still disagree with the exact validated Consumption Selection / Context Source Association truth, validated `I`, Association Envelope, package reference/accounting model, or controlled provenance.
 
-`v0.0.10rc04` adds:
+`v0.0.10rc05` therefore adds:
 
 ```text
-schemas/controlled-context-package.schema.json
+tools/scaf_controlled_context_package_validator/
 ```
 
-as the JSON Schema Draft 2020-12 structural contract for the accepted `v0.0.10rc03` representation.
+as the production source-aware validator for the accepted rc03 package representation and rc04 structural schema.
 
-The governing separation is:
+The governing validation chain is:
+
+```text
+Controlled Context Package bytes
+        ↓
+strict YAML + accepted rc04 schema
+        ↓
+exact bound Context Source Association Set
+        ↓
+accepted source-aware upstream validation
+        ↓
+validated I + accepted association truth
+        ↓
+package binding / envelope / decision / item / provenance proof
+        ↓
+source-aware package consistency PASS / INVALID
+```
+
+The accepted separation remains:
 
 ```text
 package representation
@@ -71,11 +89,13 @@ package representation
 != engineering-context sufficiency
 ```
 
-The schema owns closed parsed-object shapes, required/optional members, representation constants, bounded token vocabularies, non-empty structural constraints, lowercase SHA-256 syntax, and the non-overlapping `materialized` / `not_materialized` decision branches. It deliberately does not prove exact upstream bytes, validated `I` coverage, Association Envelope fidelity, package-local reference resolution, one-decision-per-accepted-association accounting, decision/provenance correspondence, canonical raw YAML ordering, engineering sufficiency, source loading/currentness, or consumer/model authority.
+The validator proves exact upstream byte/kind/release/scope binding, exact validated-`I` package coverage, Association Envelope fidelity, package-wide handle uniqueness, one same-authority Materialization Decision per accepted association, package-item reference/orphan integrity, Controlled Provenance Basis resolution, bidirectional decision/provenance correspondence, and canonical raw/list ordering.
 
-The initial payload boundary remains reference-only (`source_reference`). rc04 adds no production package validator, builder/generator, content loader, inline source payload, fragment/chunk syntax, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
+A PASS does not prove context sufficiency, implementation correctness, verification/compliance, risk acceptance, release readiness, closure, source currentness, content-use authorization, or consumer/AI engineering authority.
 
-A clean rc04 review authorizes only a new dependency/value assessment. See [`docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md), [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md), [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](docs/executable-governance/58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md), and [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](docs/executable-governance/59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md).
+The initial payload boundary remains reference-only. rc05 adds no builder/generator, content loader, inline content, fragment/chunk syntax, summarization, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
+
+A clean rc05 review authorizes only a new dependency/value assessment, including an explicit STOP/freeze check before any builder decision. See [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md), [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md), [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](docs/executable-governance/58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md), [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](docs/executable-governance/59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md), and [`60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md`](docs/executable-governance/60_SCAF_v0.0.10rc05_Controlled_Context_Package_Source_Aware_Validator_Foundation.md).
 
 ## Frozen v0.0.6 Milestone
 
