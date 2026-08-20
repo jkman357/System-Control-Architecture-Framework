@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.0.9
-**Active Development RC:** v0.0.10rc02
-**Status:** Canonical Controlled Context Package Logical Model Foundation / Review Candidate
+**Active Development RC:** v0.0.10rc03
+**Status:** Canonical Controlled Context Package Machine-Readable Representation Foundation / Review Candidate
 **Date:** 2026-08-19
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -50,31 +50,48 @@ The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.0.6
 
 ## Active v0.0.10 Development
 
-`v0.0.10rc01` established the representation-neutral **Controlled Context Assembly Semantic Foundation** and its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and no blocking review-evidence limitations.
+`v0.0.10rc01` established the representation-neutral **Controlled Context Assembly Semantic Foundation** and `v0.0.10rc02` established the **Canonical Controlled Context Package Logical Model**. Both independent reviews returned clean `PASS / GATE YES` with zero candidate-source findings and no blocking review-evidence limitations.
 
-The post-rc01 dependency/value assessment identified one material pre-serialization ambiguity: different package implementations could preserve materially different authority, association-accounting and provenance models even while agreeing with the rc01 high-level semantics.
+The post-rc02 dependency/value assessment found the logical model sufficiently stable that one shared machine-readable package representation is now materially required before schema, validator or builder work can proceed without incompatible serialization assumptions.
 
-`v0.0.10rc02` therefore defines the **Canonical Controlled Context Package Logical Model** before any machine-readable representation or builder is introduced.
+`v0.0.10rc03` therefore adds the deterministic canonical YAML fixture:
 
-The governing logical shape is:
+```text
+examples/controlled-context-package.yaml
+```
+
+The governing representation chain is:
 
 ```text
 exact validated Consumption Selection
         ↓
 exact validated Context Source Association Set
         ↓
-Controlled Context Package
-        ├─ exact upstream binding
+Canonical Controlled Context Package YAML
+        ├─ exact upstream bindings
         ├─ one Assembly Objective
-        ├─ one Authority Context Entry per validated I authority
+        ├─ one Authority Context Entry per validated I
         │    ├─ exact accepted Association Envelope
         │    └─ one Materialization Decision per association
-        └─ 0..n traceable Materialized Context Items
+        └─ 0..n package-local Materialized Context Items
+             └─ 1..n controlled provenance bases
 ```
 
-The central package rule is that consumer-facing materialization may vary while validated authority and controlled association truth remain preserved. Package omission is explicit downstream accounting, not applicability or association removal; package conformance is not engineering sufficiency; derived context is not source authority; and context presented to AI does not grant engineering authority.
+The fixture serializes both explicit zero association and explicit zero materialization. Package-local association handles are only deterministic reference handles and do not create upstream association identities. The initial payload boundary is deliberately reference-only, avoiding inline source copying, fragment/chunk semantics or transformation algorithms.
 
-The RC remains representation-neutral. It adds no Context Package YAML/JSON, schema, validator, builder, loader, fragment/chunk policy, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, CI gate, authority-registry change, new PAO/FNI or L4 guidance. A clean review authorizes only a new dependency/value assessment. See [`docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md) and [`docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md).
+The central distinctions remain:
+
+```text
+package representation != schema validity != source-aware package consistency
+package conformance != engineering-context sufficiency
+controlled association truth != package materialization truth != runtime observation
+not_materialized != not_applicable / v0.0.7 O / waiver / closure
+derived context != authoritative source truth
+context presented to AI != authority granted to AI
+machine-readable != machine-decided
+```
+
+rc03 adds no package schema, production validator, builder, content loader, inline source payload, fragment syntax, chunking, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI gate, authority-registry change, new PAO/FNI or L4 guidance. A clean review authorizes only a new dependency/value assessment. See [`docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](docs/executable-governance/56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md), [`docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](docs/executable-governance/57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md) and [`docs/executable-governance/58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](docs/executable-governance/58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md).
 
 ## Frozen v0.0.6 Milestone
 

@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.0.10rc03 — Canonical Controlled Context Package Machine-Readable Representation Foundation
+
+- Continue only after the independent rc02 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one canonical package serialization materially necessary before schema/validator work.
+- Add `examples/controlled-context-package.yaml` as the deterministic canonical YAML representation of the accepted rc02 Controlled Context Package logical model.
+- Bind the package to the exact current Consumption Selection and Context Source Association Set bytes, kind/release metadata and exact opaque project scope.
+- Serialize exactly one Authority Context Entry per validated `I` authority, including the explicit zero-association entry for `SCAF-AK-002`.
+- Preserve each accepted Controlled Source Association through a package-local association handle plus source-fidelity association projection; the handle is package-local and is not a new upstream association identity.
+- Require exactly one Materialization Decision per accepted association and serialize both `materialized` and explicit `not_materialized` outcomes without converting omission into applicability, source validity, waiver, risk acceptance or closure.
+- Add package-local Materialized Context Item identity, controlled provenance bases, bidirectional decision/provenance correspondence and the initial `source_preserving` / `derived` context-semantic vocabulary.
+- Keep the initial payload boundary reference-only (`source_reference`) so rc03 introduces no inline source copying, fragment syntax, content loader or transformation algorithm.
+- Define deterministic canonical member/list ordering and future strict-YAML validation direction without adding a production schema or validator.
+- Preserve `package representation != schema validity != source-aware package consistency != engineering-context sufficiency`, `controlled association truth != package materialization truth != runtime observation`, and `machine-readable != machine-decided`.
+- Add no package schema, validator, builder, loader, chunking, summarization algorithm, ranking/token-budget policy, prompt/model integration, Source Resolver/currentness behavior, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc03 review leads only to a new dependency/value assessment, not automatic rc04.
+
 ## v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation
 
 - Continue only after the independent rc01 review returned clean `PASS / GATE YES` with zero candidate-source findings and no blocking review-evidence limitations, and a separate dependency/value assessment found the representation-neutral package model materially necessary before serialization/builder work.

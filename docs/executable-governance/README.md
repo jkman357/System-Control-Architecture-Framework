@@ -8,49 +8,54 @@
 
 `v0.0.10rc01 — Controlled Context Assembly Semantic Foundation` defined the downstream semantic boundary between validated authority/source-association truth and bounded consumer context. Its independent review returned clean `PASS / GATE YES` with zero findings and no blocking evidence limitations.
 
-`v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation` fixes the representation-neutral package aggregate before any serialization or executable builder.
+`v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation` fixed the representation-neutral package aggregate, authority/association totality, per-association materialization accounting, package-local item identity and controlled provenance. Its independent review also returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
 
-Canonical logical chain:
+`v0.0.10rc03 — Canonical Controlled Context Package Machine-Readable Representation Foundation` serializes that accepted logical model as one deterministic YAML representation before any package schema, validator or builder.
+
+Canonical representation chain:
 
 ```text
 exact validated Consumption Selection
         ↓
 exact validated Context Source Association Set
         ↓
-Controlled Context Package
-        ├─ exact upstream binding
-        ├─ Assembly Objective
-        ├─ Authority Context Entries [exactly one per validated I]
-        │    ├─ exact Association Envelope
-        │    └─ one Materialization Decision per association
-        └─ Materialized Context Item Catalog [0..n]
-             └─ each item has 1..n exact controlled provenance bases
+examples/controlled-context-package.yaml
+        ├─ upstream_binding
+        ├─ assembly_objective
+        ├─ authority_context_entries [exactly one per validated I]
+        │    ├─ association_envelope
+        │    └─ materialization_decisions [exactly one per association]
+        └─ materialized_context_items [0..n]
+             └─ controlled provenance bases [1..n]
 ```
 
-Key rc02 invariants include:
+Key rc03 invariants include:
 
 ```text
+association_handle = package-local reference only, not upstream association identity
 Authority Context Entry domain = validated I exactly
-missing authority entry != zero associations != zero materialized content
-Association Envelope = exact accepted association truth
-one accepted association -> exactly one Materialization Decision
-zero materialized items != association removal / not_applicable / v0.0.7 O
-Materialized Context Item != Source Unit / Source Association
-traceable derived item != authoritative source truth
-logical package conformance != engineering-context sufficiency
-context presented to AI != authority granted to AI
-controlled association truth != runtime resolution/materialization observation
+association envelope = exact accepted upstream association truth
+accepted association -> exactly one Materialization Decision
+not_materialized -> [] item refs + explicit controlled basis
+Materialized Context Item != Source Unit / Controlled Source Association
+item provenance <-> referencing Materialization Decision correspondence
+source_preserving != derived; derived != authoritative source truth
+payload boundary = source_reference only in rc03
+package representation != schema validity != source-aware package consistency
+package conformance != engineering-context sufficiency
+controlled association truth != package materialization truth != runtime observation
 machine-readable != machine-decided
 ```
 
-The RC introduces no package YAML/JSON, schema, validator, builder, content loader, chunking, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+The RC introduces no package schema, production validator, builder, content loader, inline source content, fragment/chunk syntax, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
 
 See:
 
 - [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md)
 - [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md)
+- [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md)
 
-A clean rc02 review authorizes only a new dependency/value assessment; it does not pre-authorize rc03 or a machine-readable package representation.
+A clean rc03 review authorizes only a new dependency/value assessment; it does not pre-authorize rc04 or a package schema.
 
 ## Frozen v0.0.9 Milestone
 

@@ -1,0 +1,73 @@
+# SCAF v0.0.10rc03 Controlled Context Package canonical representation fixture.
+# Illustrative bounded consumer package only; it does not confer engineering authority or prove context sufficiency.
+# The fixture binds the exact bytes of examples/consumption-selection.yaml and examples/context-source-associations.yaml in this candidate.
+package_kind: "controlled_context_package"
+representation_release: "v0.0.10rc03"
+upstream_binding:
+  consumption_selection:
+    source_sha256: "0a99e3d38b0b14129ab922966c757c17509ca91d7d2601dfd35805ffa2628ede"
+    selection_kind: "consumption_selection"
+    representation_release: "v0.0.7rc03"
+    project_scope_ref: "example:scope:system"
+  context_source_association_set:
+    source_sha256: "01ab6a5b151a366f8acc4ddaf666b915ac1ddbd327522c43b6af2485c8cb4ccc"
+    association_set_kind: "context_source_association_set"
+    representation_release: "v0.0.9rc03"
+    consumption_selection_source_sha256: "0a99e3d38b0b14129ab922966c757c17509ca91d7d2601dfd35805ffa2628ede"
+    project_scope_ref: "example:scope:system"
+assembly_objective:
+  objective_id: "CTX-OBJ-EXAMPLE-001"
+  objective_statement: "Illustrative bounded context for reviewing the selected authority/source relationship model."
+authority_context_entries:
+  - scaf_authority_id: "SCAF-AK-001"
+    association_envelope:
+      - association_handle: "ASSOC-SCAF-AK-001-001"
+        controlled_association:
+          source_unit_ref: "SRC-SCAF-AK-KERNEL"
+          relationship_semantic: "framework_obligation_source"
+          relationship_scope_ref: "authority:SCAF-AK-001"
+          association_provenance:
+            assertion_kind: "framework_declared"
+            basis_refs:
+              - "SCAF-AK-001"
+          authority_qualification:
+            qualification_kind: "authoritative_for_relationship_scope"
+            authority_scope_ref: "authority:SCAF-AK-001"
+            authority_basis_refs:
+              - "SCAF-AK-001"
+          instance_constraint:
+            constraint_kind: "sha256"
+            value: "8049bbc9297bf517deb391070f504b4eefba023fb64164f854c34371bee99c4f"
+      - association_handle: "ASSOC-SCAF-AK-001-002"
+        controlled_association:
+          source_unit_ref: "SRC-SCAF-V008-GOV"
+          relationship_semantic: "supporting_context_source"
+          relationship_scope_ref: "governance:lifecycle-proportionality"
+          association_provenance:
+            assertion_kind: "framework_declared"
+            basis_refs:
+              - "docs/executable-governance/49_SCAF_v0.0.8_Formal_Freeze_Decision.md"
+          instance_constraint:
+            constraint_kind: "sha256"
+            value: "be4c24fb5815be16779bb8b4ccd9a96050878d60b9f30294c3413a222a8f072f"
+    materialization_decisions:
+      - association_handle: "ASSOC-SCAF-AK-001-001"
+        outcome: "materialized"
+        materialized_context_item_refs:
+          - "CTX-ITEM-001"
+      - association_handle: "ASSOC-SCAF-AK-001-002"
+        outcome: "not_materialized"
+        materialized_context_item_refs: []
+        non_materialization_basis: "Not required for this illustrative bounded assembly objective."
+  - scaf_authority_id: "SCAF-AK-002"
+    association_envelope: []
+    materialization_decisions: []
+materialized_context_items:
+  - materialized_context_item_id: "CTX-ITEM-001"
+    context_semantic: "source_preserving"
+    controlled_provenance_bases:
+      - scaf_authority_id: "SCAF-AK-001"
+        association_handle: "ASSOC-SCAF-AK-001-001"
+    payload:
+      payload_kind: "source_reference"
+      source_identity_ref: "repo:docs/normative/00_SCAF_Authority_Kernel.md"
