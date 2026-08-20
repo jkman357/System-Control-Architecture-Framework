@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.1.0 — Frozen Minimum L4 Construction Guidance Baseline
+
+- Formally freeze the cleanly reviewed `v0.1.0rc03` source state as the first SCAF L4 construction-guidance baseline after an explicit post-rc03 dependency/value `STOP` assessment.
+- Freeze the accepted rc01 L4 semantic/layer contract together with exactly two representative Construction-Ready guidance identities: `SCAF-L4-001 — Bounded Queue / Backpressure / Overload Construction Guidance` and `SCAF-L4-002 — Runtime Health Supervision and Watchdog Construction Guidance`.
+- Record cross-problem generalization evidence across materially different capacity/exhaustion and runtime-supervision/lifecycle/independence problem classes without claiming catalog completeness.
+- Preserve the many-to-many L3↔L4 trace model, Project Design Authority ownership, Construction Constraint / Recommended Practice / Example Realization / Required Project Decision separation, no-hidden-default behavior, Construction Invariants/Assumptions, observability, Verification Intent and Construction Readiness semantics.
+- Preserve `L4 guidance != new framework authority`, `L4 recommendation != Project Design Decision`, `L4 example != canonical implementation`, `L4 Verification Intent != verification result`, and `Construction Ready != buildable / complete / correct / verified / compliant / closed`.
+- Preserve the layer-evolution strategy: L1/L2 stable normative core, L3 moderate Pattern/Mechanism evolution, L4 expected higher-frequency construction-guidance evolution.
+- Record the post-rc03 decision that no `v0.1.0rc04`, third representative L4, broad catalog fill, registry, schema, validator, executable L3↔L4 trace, project adoption/pinning mechanism, platform-specific realization guidance, reference implementation, generator or CI gate is currently justified.
+- Preserve the frozen v0.0.10 Controlled Context Package builder/materialization-policy STOP decision and all earlier frozen baselines unchanged.
+- Formal freeze adds no semantic or executable capability beyond reviewed rc03.
+
 ## v0.1.0rc03 — Second Representative L4 Construction Guidance
 
 - Continue only after the independent rc02 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one materially different representative necessary to test L4 generalization beyond capacity/queue construction.

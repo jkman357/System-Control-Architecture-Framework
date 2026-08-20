@@ -4,25 +4,34 @@
 **Status:** Frozen Executable Governance Baseline
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
-## Active v0.1.0 Development
+## Frozen v0.1.0 Milestone
 
-`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the accepted L4 construction/verification semantic contract and layer boundary.
+`v0.1.0 — Frozen Minimum L4 Construction Guidance Baseline` is promoted from the cleanly reviewed `v0.1.0rc03` state after explicit governance approval and a post-review dependency/value `STOP` decision.
 
-`v0.1.0rc02 — First Representative L4 Construction Guidance` introduced `SCAF-L4-001` for bounded queue/backpressure/overload construction. Its independent review returned clean `PASS / GATE YES`, zero candidate-source findings, zero blocking review-evidence limitations, and confirmed local Construction Readiness.
+Accepted chain:
 
-The post-rc02 dependency/value assessment justified exactly one second, materially different representative before deciding whether the v0.1.0 milestone is already sufficient.
+```text
+rc01  L4 semantic / layer-boundary contract
+  ↓
+rc02  SCAF-L4-001 bounded queue / overload representative
+  ↓
+rc03  SCAF-L4-002 runtime supervision / watchdog representative
+  ↓
+v0.1.0 formal freeze
+```
 
-Current controlled records:
+The rc03 independent review reported clean `PASS / GATE YES`, zero candidate-source findings, zero blocking review-evidence limitations, `106 / 106 PASS` review objectives and `24 / 24 PASS` bounded negative conditions. Required repository-owned production checks and `git diff --check HEAD` passed.
 
-- [`62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md) — accepted L4 purpose, authority boundary, construction semantics, evolution strategy and non-goals.
+The two representatives provide cross-problem evidence across materially different construction classes while preserving the same rc01 contract. The freeze therefore records the first L4 milestone as progression-sufficient without requiring catalog completeness.
+
+v0.1.0 controlled records:
+
+- [`62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md`](62_SCAF_v0.1.0rc01_L4_Minimum_Construction_Guidance_Semantic_and_Layer_Boundary_Foundation.md) — accepted L4 semantic / authority / construction contract.
 - [`63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md`](63_SCAF_v0.1.0rc02_First_Representative_L4_Construction_Guidance.md) — accepted first representative `SCAF-L4-001` decision record.
-- [`64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md`](64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md) — current decision record for candidate `SCAF-L4-002`, composing Heartbeat/Liveness Supervision and Independent Watchdog with Escalation to test cross-problem L4 generalization.
+- [`64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md`](64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md) — accepted second representative `SCAF-L4-002` decision record and cross-problem generalization evidence.
+- [`65_SCAF_v0.1.0_Formal_Freeze_Decision.md`](65_SCAF_v0.1.0_Formal_Freeze_Decision.md) — formal freeze decision, post-rc03 STOP disposition and immutable v0.1.0 boundary.
 
-Canonical L4 content is under [`../l4/`](../l4/). rc03 still adds no L4 executable-governance mechanism: no registry, schema, validator, machine-readable trace engine, project adoption record, code generator or CI gate.
-
-The frozen v0.0.10 Controlled Context Package builder STOP decision remains intact; representative L4 work does not reopen builder/materialization policy.
-
-A clean rc03 review authorizes only a new dependency/value assessment, with milestone consolidation/freeze preferred over automatic catalog growth if the two representative entries are progression-sufficient.
+The formal freeze adds no L4 registry, representation/schema/validator, executable L3↔L4 trace, project adoption/pinning record, platform-specific realization, reference implementation, code generator or CI gate. It also preserves the frozen v0.0.10 Controlled Context Package builder/materialization-policy STOP decision.
 
 ## Frozen v0.0.10 Milestone
 

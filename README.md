@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-**Current Formal Release:** v0.0.10
-**Active Development RC:** v0.1.0rc03
-**Status:** Second Representative L4 Construction Guidance / Review Candidate
+**Current Formal Release:** v0.1.0
+**Active Development RC:** None
+**Status:** Frozen Minimum L4 Construction Guidance Baseline
 **Date:** 2026-08-20
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -29,8 +29,9 @@ Formal frozen baselines:
 | `v0.0.8` | Frozen Lifecycle-Proportional Governance Semantic baseline |
 | `v0.0.9` | Frozen Context Source Association and Source-Aware Validation baseline |
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
+| `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.0.10 baseline is now frozen and immutable. It promotes the independently reviewed `v0.0.10rc05` Controlled Context Package source-aware validation state after the required post-review dependency/value STOP assessment. The freeze adds no builder, content loader, ranking/token-budget policy, prompt/model integration, Source Resolver/currentness behavior, CI package gate, authority expansion, or L4 guidance, and does not reopen earlier frozen baselines.
+The formal v0.1.0 baseline is now frozen and immutable. It adds the first minimum L4 construction-guidance baseline above the already frozen v0.0.10 controlled-context foundation without reopening that package builder/materialization-policy STOP decision or any earlier frozen baseline.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -47,45 +48,56 @@ L4 — Construction / Verification Guidance
   How can an accepted architecture mechanism be made construction-ready without replacing Project Design Authority?
 ```
 
-The frozen L1/L2 and L3 layers remain canonical for their accepted scope. v0.1.0rc01 introduces no modification to either frozen layer.
+The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.1.0 Development
+## Frozen v0.1.0 Milestone
 
-`v0.1.0rc01 — L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation` established the accepted construction-facing L4 semantic/layer contract downstream of frozen v0.0.10.
+`v0.1.0 — Frozen Minimum L4 Construction Guidance Baseline` is the formal baseline promoted from the cleanly reviewed `v0.1.0rc03` source state after the required post-review dependency/value STOP assessment.
 
-`v0.1.0rc02 — First Representative L4 Construction Guidance` then exercised that contract with `SCAF-L4-001 — Bounded Queue / Backpressure / Overload Construction Guidance`. Its independent review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and found the entry locally Construction Ready for its declared scope.
-
-The post-rc02 dependency/value assessment identified one bounded remaining question before considering the first L4 milestone sufficient: whether the same contract generalizes to a materially different runtime supervision / lifecycle / escalation problem.
-
-`v0.1.0rc03 — Second Representative L4 Construction Guidance` therefore introduces exactly one additional candidate guidance:
+The accepted development chain is:
 
 ```text
-SCAF-PAT-SUP-001 — Heartbeat / Liveness Supervision ─┐
-                                                     ├─> SCAF-L4-002
-SCAF-PAT-SUP-002 — Independent Watchdog with Escalation ┘
-
+v0.1.0rc01
+L4 Minimum Construction Guidance Semantic and Layer Boundary Foundation
+        ↓
+v0.1.0rc02
+SCAF-L4-001 — Bounded Queue / Backpressure / Overload Construction Guidance
+        ↓
+v0.1.0rc03
 SCAF-L4-002 — Runtime Health Supervision and Watchdog Construction Guidance
+        ↓
+v0.1.0
+formal frozen baseline
 ```
 
-The representative entry makes progress/liveness evidence, supervisor ownership, watchdog service eligibility, supervisor/watchdog independence, timing/deadline/expiry relationships, startup/maintenance/degraded supervision, incarnation/session freshness, escalation/reset consequence, retained evidence and Verification Intent construction-visible without selecting project values or platform APIs.
+The milestone establishes a deliberately coarse but usable L4 layer so an engineer or AI consumer can move from accepted architecture Pattern context toward responsible implementation without transferring Project Design Authority or inventing hidden project defaults.
 
-The governing distinctions include:
+The two accepted representative identities are intentionally different in construction character:
 
 ```text
-liveness evidence != complete system health proof
-execution activity != useful progress proof
-watchdog expiry != root-cause proof
-hardware watchdog != automatic independence proof
-example timing value != project timing value
-L4 guidance != Project Design Authority
-Construction Ready != buildable / verified / compliant / closed
+SCAF-L4-001
+capacity / overload / concurrency / bounded-exhaustion construction
+
+SCAF-L4-002
+progress / supervision / independence / lifecycle / escalation construction
 ```
 
-rc03 adds no third L4 entry, L4 registry/schema/validator, executable L3↔L4 trace, project adoption record, platform-specific watchdog/RTOS/MCU implementation, reference code, code generator, project Test Procedure or CI gate. The frozen v0.0.10 Controlled Context Package builder STOP decision remains unchanged.
+Their clean independent reviews provide bounded cross-problem evidence that the rc01 L4 contract generalizes beyond one problem type. This is sufficient for the first L4 milestone; it is not a claim that the L4 catalog is complete.
 
-See [`docs/l4/README.md`](docs/l4/README.md), [`docs/l4/catalog/SCAF-L4-002_Runtime_Health_Supervision_and_Watchdog_Construction_Guidance.md`](docs/l4/catalog/SCAF-L4-002_Runtime_Health_Supervision_and_Watchdog_Construction_Guidance.md), and [`docs/executable-governance/64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md`](docs/executable-governance/64_SCAF_v0.1.0rc03_Second_Representative_L4_Construction_Guidance.md).
+The frozen distinctions include:
 
-A clean rc03 review authorizes only a new dependency/value assessment. The preferred next question is whether two materially different representative L4 entries are sufficient for v0.1.0 milestone consolidation/freeze rather than automatic rc04/catalog/tooling expansion.
+```text
+L4 guidance != new framework authority
+L4 recommendation != Project Design Decision
+L4 example != canonical implementation
+L4 Verification Intent != verification result
+Construction Ready != buildable / complete / correct / verified / compliant / closed
+no L4 guidance != upstream concern not applicable
+```
+
+The post-rc03 dependency/value assessment concluded **STOP**: no current material ambiguity or construction dependency justifies `v0.1.0rc04`, a third representative entry, broad catalog population, L4 registry/schema/validator, executable L3↔L4 trace, project adoption/pinning machinery, platform-specific realization guidance, reference implementation/code generation, or CI enforcement.
+
+The formal freeze adds no semantic or executable capability beyond reviewed rc03 and does not reopen the frozen v0.0.10 Controlled Context Package builder/materialization-policy decision. See [`docs/executable-governance/65_SCAF_v0.1.0_Formal_Freeze_Decision.md`](docs/executable-governance/65_SCAF_v0.1.0_Formal_Freeze_Decision.md).
 
 ## Frozen v0.0.10 Milestone
 
