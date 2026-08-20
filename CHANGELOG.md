@@ -1,5 +1,18 @@
 # Changelog
 
+## v0.0.10rc04 — Controlled Context Package Schema Foundation
+
+- Continue only after the independent rc03 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one repository-owned structural contract materially necessary before source-aware package validation or builder work.
+- Add `schemas/controlled-context-package.schema.json` as the JSON Schema Draft 2020-12 structural contract for the accepted `v0.0.10rc03` Controlled Context Package representation.
+- Preserve `v0.0.10rc03` as the representation release while identifying the rc04 schema independently as `urn:scaf:schema:controlled-context-package:v0.0.10rc04`.
+- Enforce closed parsed-object shapes, exact required/optional members, representation constants, bounded token vocabularies, non-empty strings/lists and lowercase SHA-256 syntax.
+- Encode non-overlapping `materialized` and `not_materialized` decision shapes, including non-empty item references for materialized outcomes and explicit empty refs plus non-empty basis for not-materialized outcomes.
+- Preserve the exact rc03 Controlled Source Association projection shape and the initial reference-only `source_reference` payload boundary.
+- Preserve `package representation != parsed-instance structural validity != source-aware package consistency != engineering-context sufficiency`.
+- Keep exact upstream byte proof, validated-`I` coverage, Association Envelope fidelity, semantic/reference uniqueness, one-decision-per-association accounting, decision/provenance correspondence, canonical raw-YAML ordering, source loading/currentness, engineering sufficiency and consumer/model authority outside schema ownership.
+- Add no production package validator, builder/generator, loader, inline source content, fragment/chunk syntax, summarization, ranking/token-budget policy, prompt/model integration, Source Resolver/currentness behavior, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
+- Apply frozen v0.0.8 proportional governance: a clean rc04 review leads only to a new dependency/value assessment, not automatic rc05.
+
 ## v0.0.10rc03 — Canonical Controlled Context Package Machine-Readable Representation Foundation
 
 - Continue only after the independent rc02 review returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations, and a separate dependency/value assessment found one canonical package serialization materially necessary before schema/validator work.

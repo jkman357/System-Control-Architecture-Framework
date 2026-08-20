@@ -6,56 +6,80 @@
 
 ## Active v0.0.10 Development
 
-`v0.0.10rc01 — Controlled Context Assembly Semantic Foundation` defined the downstream semantic boundary between validated authority/source-association truth and bounded consumer context. Its independent review returned clean `PASS / GATE YES` with zero findings and no blocking evidence limitations.
+`v0.0.10rc01 — Controlled Context Assembly Semantic Foundation`, `v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation`, and `v0.0.10rc03 — Canonical Controlled Context Package Machine-Readable Representation Foundation` are accepted bases with clean independent `PASS / GATE YES` reviews and zero candidate-source findings.
 
-`v0.0.10rc02 — Canonical Controlled Context Package Logical Model Foundation` fixed the representation-neutral package aggregate, authority/association totality, per-association materialization accounting, package-local item identity and controlled provenance. Its independent review also returned clean `PASS / GATE YES` with zero candidate-source findings and zero blocking review-evidence limitations.
-
-`v0.0.10rc03 — Canonical Controlled Context Package Machine-Readable Representation Foundation` serializes that accepted logical model as one deterministic YAML representation before any package schema, validator or builder.
-
-Canonical representation chain:
+`v0.0.10rc04 — Controlled Context Package Schema Foundation` adds the repository-owned JSON Schema Draft 2020-12 structural contract for the accepted rc03 package representation:
 
 ```text
-exact validated Consumption Selection
-        ↓
-exact validated Context Source Association Set
-        ↓
-examples/controlled-context-package.yaml
-        ├─ upstream_binding
-        ├─ assembly_objective
-        ├─ authority_context_entries [exactly one per validated I]
-        │    ├─ association_envelope
-        │    └─ materialization_decisions [exactly one per association]
-        └─ materialized_context_items [0..n]
-             └─ controlled provenance bases [1..n]
+schemas/controlled-context-package.schema.json
 ```
 
-Key rc03 invariants include:
+The governing chain is:
 
 ```text
-association_handle = package-local reference only, not upstream association identity
-Authority Context Entry domain = validated I exactly
-association envelope = exact accepted upstream association truth
-accepted association -> exactly one Materialization Decision
-not_materialized -> [] item refs + explicit controlled basis
-Materialized Context Item != Source Unit / Controlled Source Association
-item provenance <-> referencing Materialization Decision correspondence
-source_preserving != derived; derived != authoritative source truth
-payload boundary = source_reference only in rc03
-package representation != schema validity != source-aware package consistency
-package conformance != engineering-context sufficiency
-controlled association truth != package materialization truth != runtime observation
-machine-readable != machine-decided
+rc01 semantics
+  ↓
+rc02 canonical logical model
+  ↓
+rc03 canonical YAML representation
+  ↓
+rc04 parsed-instance JSON Schema
+  ↓
+future source-aware package validator only if separately justified
 ```
 
-The RC introduces no package schema, production validator, builder, content loader, inline source content, fragment/chunk syntax, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI gate, authority-registry change, new PAO/FNI or L4 guidance.
+The rc04 schema owns:
+
+```text
+exact parsed object/list shapes
+required / optional members
+additionalProperties closure
+representation identity constants
+bounded enum/const vocabularies
+non-empty strings and provenance lists
+lowercase SHA-256 syntax
+materialized vs not_materialized branch shape
+source_preserving / derived context semantic tokens
+source_reference-only payload shape
+```
+
+It does not own or prove:
+
+```text
+exact upstream source bytes
+accepted upstream validator PASS
+validated I exact coverage
+Association Envelope fidelity
+association-handle or item-ID semantic uniqueness/reference resolution
+one decision per accepted upstream association
+no orphan item
+Controlled Provenance Basis resolution
+decision/provenance bidirectional correspondence
+canonical physical/raw YAML ordering
+source loading/currentness
+engineering-context sufficiency
+verification/compliance/risk/release/closure
+```
+
+The accepted separation remains:
+
+```text
+package representation
+!= parsed-instance structural validity
+!= source-aware package consistency
+!= engineering-context sufficiency
+```
+
+The initial payload boundary remains reference-only. rc04 introduces no production package validator, builder/generator, content loader, inline content, fragment/chunk policy, summarization algorithm, ranking/token-budget policy, prompt/model integration, general Source Resolver, currentness model, CI package gate, authority-registry change, new PAO/FNI or L4 guidance.
 
 See:
 
 - [`56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md`](56_SCAF_v0.0.10rc01_Controlled_Context_Assembly_Semantic_Foundation.md)
 - [`57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md`](57_SCAF_v0.0.10rc02_Canonical_Controlled_Context_Package_Logical_Model_Foundation.md)
 - [`58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md`](58_SCAF_v0.0.10rc03_Canonical_Controlled_Context_Package_Machine_Readable_Representation_Foundation.md)
+- [`59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md`](59_SCAF_v0.0.10rc04_Controlled_Context_Package_Schema_Foundation.md)
 
-A clean rc03 review authorizes only a new dependency/value assessment; it does not pre-authorize rc04 or a package schema.
+A clean rc04 review authorizes only a new dependency/value assessment; it does not pre-authorize rc05 or a package validator.
 
 ## Frozen v0.0.9 Milestone
 
