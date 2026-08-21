@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.0rc06 — Candidate Authority-Set Binding and Project Application Consumption Semantic Foundation
+
+- Continue only after rc05 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
+- Base rc06 on committed rc05 Git predecessor `0868bb911b9c1f71463ca195498d6cf1fbe45381`.
+- Define **Authority Set Identity != Authority Record Semantic Provenance** as the semantic prerequisite for mixed-source candidate Project Application consumption.
+- Define one Project Application consumption context as bound to exactly one complete validated authority set; do not infer the set from sparse record IDs or record-level `scaf_source_release` values.
+- Preserve empty/sparse Project Application semantics: zero or partial disposition records do not mean zero authority universe, `not_applicable`, or formal authority by default.
+- Require future candidate Project Application target IDs to resolve as Project-Applicable Obligations within the bound validated candidate set while preserving each authority record's semantic source provenance.
+- Preserve candidate authority as development-only `299 / 223 / 76` with `218 × v0.0.2 + 5 × v0.2.0rc01`; preserve formal authority `294 / 218 / 76` unchanged.
+- Preserve existing Project Application applicability/disposition semantics and formal-only production validator behavior; candidate binding does not transfer project engineering judgment to tooling.
+- Establish the future Effective Project Profile consequence that a complete candidate PAO domain must derive from the bound authority set rather than one record-level source-release token, while **DEFER**ing all EPP implementation changes.
+- **DEFER** exact authority-set identity token/field/hash, candidate Project Application serialization/schema/validator, query/view migration, Effective Project Profile and all later consumers pending a post-semantic dependency/value assessment.
+- **STOP** in-place formal Project Application relaxation, arbitrary caller-selected registry paths, L3/L4 expansion, code generation and generic runtime-instrumentation CI.
+- Carry deletion of seven tracked Python cache artifacts retained by the committed rc05 predecessor as non-semantic source-package hygiene; no Python source semantics change.
+
 ## v0.2.0rc05 — Candidate Authority Downstream Consumption Dependency & Value Assessment
 
 - Continue only after rc04 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings and closed `RC03-01`.

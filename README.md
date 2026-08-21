@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** v0.2.0rc05
-**Status:** Candidate Authority Downstream Consumption Dependency & Value Assessment
+**Active Development RC:** v0.2.0rc06
+**Status:** Candidate Authority-Set Binding and Project Application Consumption Semantic Foundation
 **Date:** 2026-08-21
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc05`. The rc04 candidate-authority fail-stop closure passed clean review; rc05 now evaluates whether and how candidate authority should enter the Project Application / downstream chain without modifying any consumer implementation.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc06`. The rc05 downstream dependency/value assessment passed clean review and established that candidate Project Application consumption has value but requires an explicit authority-set binding semantic boundary before any representation or tooling migration.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -50,34 +50,32 @@ L4 — Construction / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.2.0rc05 Downstream Consumption Assessment
+## Active v0.2.0rc06 Authority-Set Binding Semantic Foundation
 
-The v0.2.0rc01-to-rc04 development line established and validated five candidate Project-Applicable Obligations (`SCAF-OBS-041..045`) together with a separate `299 / 223 / 76` candidate authority representation and a formal-prerequisite fail-stop validator boundary.
+The v0.2.0rc01-to-rc04 development line established and validated five candidate Project-Applicable Obligations (`SCAF-OBS-041..045`) together with a separate `299 / 223 / 76` candidate authority representation and a formal-prerequisite fail-stop validator boundary. The clean v0.2.0rc05 review then confirmed that candidate Project Application consumption has material governance value but that the existing one-`scaf_source_release` domain model cannot safely represent the mixed candidate PAO universe.
 
-`v0.2.0rc05` performs the required downstream dependency/value assessment only. It does not modify Project Application, Effective Project Profile, later consumers, L3, L4, code generation or generic instrumentation CI.
-
-The key finding is that candidate Project Application consumption has real value, but direct implementation is not yet semantically safe. Existing Project Application and Effective Project Profile semantics use one `scaf_source_release` as the authority-domain binding. The validated candidate PAO set is mixed-source:
+`v0.2.0rc06` defines the missing semantic distinction:
 
 ```text
-218 PAOs  source_release: v0.0.2
-  5 PAOs  source_release: v0.2.0rc01
----------------------------------
-223 candidate PAOs in one validated authority set
+Authority Set Identity
+!=
+Authority Record Semantic Provenance
 ```
 
-Therefore:
+The current candidate PAO universe remains:
 
 ```text
-GO    candidate Project Application consumption has material value
-GO    next step: authority-set binding + Project Application consumption semantic foundation
-STOP  direct switch of the existing formal SCAF-APP validator to candidate authority
-STOP  simple scaf_source_release enum relaxation as a complete solution
-DEFER candidate Project Application serialization/schema/validator
-DEFER Effective Project Profile and all later consumption/context consumers
-STOP  L3/L4/codegen/generic instrumentation CI expansion
+218 PAOs  semantic source_release: v0.0.2
+  5 PAOs  semantic source_release: v0.2.0rc01
+--------------------------------------------
+223 PAOs  in one validated candidate authority set
 ```
 
-The next justified RC after a clean rc05 review is a semantic-only foundation that separates **authority-set identity** from each authority record's **semantic source release**. See `docs/executable-governance/68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md`.
+A future candidate Project Application context must therefore bind explicitly to one complete validated authority set. That binding must remain meaningful for sparse and even empty Project Application record populations; it cannot be inferred from the IDs or release values present in individual records.
+
+rc06 preserves existing applicability/disposition semantics and the formal Project Application path. It introduces no candidate Project Application YAML/schema/validator, Effective Project Profile migration, later consumer migration, L3/L4 change, code generation or generic instrumentation CI.
+
+A clean rc06 review authorizes only a new dependency/value assessment for the minimum machine-readable representation/validation boundary needed to preserve these semantics. See `docs/executable-governance/69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md`.
 
 ## Frozen v0.1.0 Milestone
 

@@ -5,21 +5,28 @@
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 
-## Active v0.2.0rc05 Downstream Consumption Dependency & Value Assessment
+## Active v0.2.0rc06 Candidate Authority-Set Binding Semantic Foundation
 
-`v0.2.0rc03` established the separate `299 / 223 / 76` candidate authority representation. `v0.2.0rc04` cleanly closed the candidate validator formal-prerequisite fail-stop finding.
+`v0.2.0rc03` established the separate `299 / 223 / 76` candidate authority representation, `v0.2.0rc04` closed its formal-prerequisite fail-stop finding, and `v0.2.0rc05` cleanly confirmed that candidate Project Application consumption has value but that the existing single-source-release domain model is insufficient.
 
-`v0.2.0rc05` performs the next required dependency/value assessment without implementing downstream candidate consumption.
+`v0.2.0rc06` defines the missing semantic contract:
 
-The assessment finds real value in allowing `SCAF-OBS-041..045` to participate in Project Application because they are Project-Applicable Obligations. It also identifies that the existing single-`scaf_source_release` downstream domain model cannot truthfully represent the mixed candidate PAO set (`218 × v0.0.2` plus `5 × v0.2.0rc01`).
+```text
+Authority Set Identity
+!=
+Authority Record Semantic Provenance
+```
 
-The next justified step after a clean rc05 review is therefore a semantic-only **authority-set binding and Project Application consumption foundation**. Existing formal Project Application, candidate Project Application serialization/tooling, Effective Project Profile, later consumers, L3, L4, code generation and generic instrumentation CI remain unchanged/deferred.
+One Project Application consumption context must bind to one complete validated authority set independently of sparse or empty Project Application records. Individual authority records retain their semantic source provenance. The current candidate set therefore remains one 223-PAO domain composed of `218 × v0.0.2` plus `5 × v0.2.0rc01` PAOs.
+
+The semantic foundation preserves the formal Project Application path, accepted applicability/disposition meanings, project engineering judgment ownership, and SCAF-APP's obligation/scope granularity. Candidate Project Application serialization/schema/validator, Effective Project Profile, later consumers, L3, L4, code generation and generic instrumentation CI remain unchanged/deferred.
 
 Controlled records:
 
 - [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — candidate registry/schema/source-aware validation foundation.
 - [`67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`](67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md) — `RC03-01` fail-stop closure.
 - [`68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md`](68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md) — downstream dependency/value decision and authority-set semantic prerequisite.
+- [`69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md`](69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md) — authority-set identity/binding and candidate Project Application consumption semantic contract.
 
 ## Frozen v0.1.0 Milestone
 
