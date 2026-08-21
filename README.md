@@ -1,9 +1,9 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** None
-**Status:** Frozen Minimum L4 Construction Guidance Baseline
-**Date:** 2026-08-20
+**Active Development RC:** v0.2.0rc01
+**Status:** L2 Diagnostic Instrumentation Lifecycle Candidate
+**Date:** 2026-08-21
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
 
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is now frozen and immutable. It adds the first minimum L4 construction-guidance baseline above the already frozen v0.0.10 controlled-context foundation without reopening that package builder/materialization-policy STOP decision or any earlier frozen baseline.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc01`, which opens a controlled L2 observability candidate without modifying the frozen canonical `docs/normative/` source in place.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -49,6 +49,34 @@ L4 — Construction / Verification Guidance
 ```
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
+
+## Active v0.2.0rc01 Candidate
+
+`v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation` opens the first post-v0.1.0 normative-evolution candidate.
+
+The candidate addresses one missing lifecycle distinction in `SCAF-OBS`:
+
+```text
+retained diagnostic instrumentation
+!=
+development-scoped instrumentation
+```
+
+It proposes five new L2 Project-Applicable Obligations covering lifecycle intent, bounded temporary-instrumentation purpose/removal criteria, explicit remove-or-retain closure disposition, instrumented-build evidence identity/cleanup re-evaluation, and operational non-dependence plus accepted observer-effect/resource cost for retained diagnostics.
+
+The candidate intentionally remains mechanism-neutral. It does not mandate RAM rings, Flash, SD, USB, a logging task, a recorder API, compile-time macro names, task priorities or continuous logging.
+
+To preserve frozen-release immutability and keep the existing executable-governance chain usable, the rc01 candidate is carried under `docs/normative-evolution/` as a complete proposed replacement for the affected OBS source. The formal `docs/normative/` tree, `authority-registry.yaml`, the frozen `294 / 218 / 76` inventory, L3 trace, Project Application chain, controlled-context chain and L4 guidance are unchanged.
+
+This means:
+
+```text
+v0.1.0 formal authority remains canonical
+v0.2.0rc01 candidate authority is under review
+candidate semantic acceptance != automatic registry/L3/L4/tooling migration
+```
+
+A clean independent rc01 review authorizes only a new dependency/value assessment for the smallest justified next step.
 
 ## Frozen v0.1.0 Milestone
 
@@ -349,7 +377,8 @@ The production CI gate still requires the repository-external trust input define
 
 | Path | Purpose |
 |---|---|
-| `docs/normative/` | Frozen v0.0.2 L1/L2 semantic authority |
+| `docs/normative/` | Frozen v0.0.2 L1/L2 semantic authority used by the formal v0.1.0 release |
+| `docs/normative-evolution/` | Active post-freeze L1/L2 candidate overlays; not canonical until explicit promotion |
 | `docs/l3/` | Frozen v0.0.3 L3 Pattern / Mechanism Catalog |
 | `docs/executable-governance/` | Machine-readable/executable-governance contracts and controlled development records |
 | `authority-registry.yaml` | Frozen v0.0.4 authority representation |

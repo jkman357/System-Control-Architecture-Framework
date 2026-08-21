@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation
+
+- Open the first post-v0.1.0 controlled normative-evolution line from formal predecessor `v0.1.0` / commit `813d722e92cd329b1a4e457304913ae9ec056731`.
+- Preserve frozen-release immutability by leaving the canonical `docs/normative/` tree unchanged and introducing a reviewable candidate overlay under `docs/normative-evolution/`.
+- Propose one complete candidate replacement for `SCAF-OBS` while preserving frozen IDs `SCAF-OBS-001` through `SCAF-OBS-040` and reserving five candidate Project-Applicable Obligation IDs `SCAF-OBS-041` through `SCAF-OBS-045`.
+- Define `retained diagnostic instrumentation != development-scoped instrumentation` as an L2 lifecycle distinction without requiring projects to use universal monitor/probe naming.
+- Require development-scoped instrumentation to have a bounded engineering purpose plus a removal point/criterion or controlled disposition trigger.
+- Require explicit change-closure disposition of material development instrumentation as remove or intentionally retain/promote; a disabled build switch alone is not accepted as cleanup when the closure decision is removal.
+- Require retained/promoted instrumentation to establish continuing diagnostic value and re-evaluate observer effect, TIME/resource/capacity, evidence-volume, ROB/failure-isolation, retention/accessibility and verification consequences.
+- Require instrumented-build/configuration identity where temporary instrumentation can materially affect verification-relevant properties, and require cleanup-sensitive regression/timing/resource re-evaluation according to affected source obligations and proportional project governance.
+- Require observation/persistence/export paths that are not themselves source Function/Service behavior to avoid silently becoming operational prerequisites; observation-path loss should degrade evidence rather than redefine source functionality unless the applicable source authority intentionally establishes that dependency.
+- Preserve mechanism neutrality: add no universal RAM ring, Flash/SD/USB policy, background writer task, task priority, file format, recorder API, instrumentation macro or zero-overhead claim.
+- Record the user-supplied `Embedded-Incident-Crash-Recorder-Framework-main.zip` SHA-256 `b96da3ba5baa8b946ed916d9dbb76b9f7a51552b39d8a11f7d27d3adf78a392b` (README `v1.0.0rc05`, MIT) as controlled supplemental concept input; do not copy/promote donor code, APIs, record layouts, memory budgets or implementation constants.
+- Preserve the frozen machine-readable authority inventory at `294 / 218 / 76`, `authority-registry.yaml`, authority schema/validator, frozen L3 catalog/trace, SCAF-APP/effective-profile/consumption/context machinery, L4 guidance and all prior formal release records unchanged.
+- A clean independent review authorizes only a new dependency/value assessment; it does not automatically authorize authority-registry migration, L3/L4 expansion, code generation or CI changes.
+
 ## v0.1.0 — Frozen Minimum L4 Construction Guidance Baseline
 
 - Formally freeze the cleanly reviewed `v0.1.0rc03` source state as the first SCAF L4 construction-guidance baseline after an explicit post-rc03 dependency/value `STOP` assessment.
