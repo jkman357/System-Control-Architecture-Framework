@@ -4,6 +4,19 @@
 **Status:** Frozen Executable Governance Baseline
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
+
+## Active v0.2.0rc03 Candidate Authority Representation
+
+`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` is the active executable-governance development candidate. It consumes the clean rc02 dependency/value gate and adds a development-only `candidate-authority-registry.yaml`, candidate schema, and separate source-aware candidate validator.
+
+The candidate representation proves `299 / 223 / 76` while preserving all 294 formal records exactly and adding only `SCAF-OBS-041..045` as candidate Project-Applicable Obligations. Formal `authority-registry.yaml`, its frozen schema/validator, Project Application, L3 and L4 remain unchanged.
+
+Candidate machine-readable authority is **not** formal authority and is **not** yet a Project Application input. A clean rc03 review authorizes only a new dependency/value assessment for any downstream consumer migration.
+
+Controlled record:
+
+- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — candidate registry/schema/source-aware validation boundary and downstream STOP contract.
+
 ## Frozen v0.1.0 Milestone
 
 `v0.1.0 — Frozen Minimum L4 Construction Guidance Baseline` is promoted from the cleanly reviewed `v0.1.0rc03` state after explicit governance approval and a post-review dependency/value `STOP` decision.

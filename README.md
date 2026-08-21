@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** v0.2.0rc02
-**Status:** Diagnostic Instrumentation Dependency & Applicability Assessment
+**Active Development RC:** v0.2.0rc03
+**Status:** Candidate Machine-Readable Authority Representation Foundation
 **Date:** 2026-08-21
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc02`. The rc01 L2 observability candidate passed independent semantic review; rc02 performs the required downstream dependency/value assessment without modifying the frozen canonical `docs/normative/` source in place.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc03`. The rc01 L2 observability candidate passed semantic review, rc02 passed the required dependency/value assessment, and rc03 now establishes a separately controlled candidate machine-readable authority representation without modifying the frozen canonical authority chain.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -50,33 +50,42 @@ L4 — Construction / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.2.0rc02 Assessment
+## Active v0.2.0rc03 Candidate Authority Representation
 
-`v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation` introduced the post-v0.1.0 candidate distinction:
+`v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation` introduced and cleanly passed review for `SCAF-OBS-041..045`. `v0.2.0rc02 — Diagnostic Instrumentation Dependency & Applicability Assessment` then cleanly justified one bounded next migration: candidate machine-readable L1/L2 authority representation.
+
+`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` implements only that migration.
+
+The formal authority chain remains:
 
 ```text
-retained diagnostic instrumentation
-!=
-development-scoped instrumentation
+authority-registry.yaml
+294 total / 218 PAO / 76 FNI
+formal v0.1.0 authority
 ```
 
-It proposed `SCAF-OBS-041..045` for lifecycle intent, bounded temporary-instrumentation purpose/removal criteria, explicit remove-or-retain closure disposition, instrumented-build evidence identity/cleanup re-evaluation, and operational non-dependence plus accepted observer-effect/resource cost for retained diagnostics. The independent rc01 review returned **PASS / GATE YES with zero findings**.
-
-`v0.2.0rc02 — Diagnostic Instrumentation Dependency & Applicability Assessment` consumes that clean semantic gate and asks what should actually change next. It performs no downstream migration.
-
-The rc02 decision is:
+The new development-only representation is:
 
 ```text
-GO    candidate machine-readable L1/L2 authority representation
-DEFER Project Application / Effective Profile / consumption consumers
-STOP  new L3 Pattern or immediate L3 trace migration
+candidate-authority-registry.yaml
+299 total / 223 PAO / 76 FNI
+294 frozen records reproduced exactly
++ SCAF-OBS-041..045 candidate PAOs
+```
+
+The candidate registry is bound to the formal registry bytes and the accepted rc01 OBS overlay bytes by SHA-256. `schemas/candidate-authority-registry.schema.json` and `tools/scaf_candidate_authority_validator/` provide a separate candidate structural/source-aware validation boundary. They do not replace or relax the frozen authority schema/validator.
+
+The rc03 boundary remains:
+
+```text
+GO    candidate authority representation + candidate source-aware validation
+DEFER Project Application / Effective Profile / consumption/context consumers
+STOP  immediate L3 trace/new Pattern migration
 STOP  L4 construction guidance
-STOP  generic code generation / generic instrumentation CI enforcement
+STOP  generic probe/log code generation or generic runtime-instrumentation CI
 ```
 
-The reason for the representation GO is concrete: the frozen authority schema/validator are intentionally bound to 294 records, frozen `v0.0.2` sources and `docs/normative/`, while SCAF-APP resolves only against a validated authority registry. If the five accepted candidate PAOs are later represented without any other authority change, the candidate inventory becomes **299 / 223 / 76**. That migration must be separately reviewed; the five IDs must not simply be appended to frozen `authority-registry.yaml`.
-
-The rc01 candidate OBS overlay remains unchanged under `docs/normative-evolution/`. Formal `v0.1.0` authority remains canonical until an explicit later promotion/freeze decision. See `docs/normative-evolution/02_SCAF_v0.2.0rc02_Diagnostic_Instrumentation_Dependency_and_Applicability_Assessment.md`.
+Candidate machine-readable authority is not formal authority and is not yet consumable by SCAF-APP. A clean rc03 review authorizes only another dependency/value assessment. See `docs/executable-governance/66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`.
 
 ## Frozen v0.1.0 Milestone
 

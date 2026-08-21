@@ -44,3 +44,9 @@ The independent rc01 review returned clean `PASS / GATE YES` with zero findings.
 - `02_SCAF_v0.2.0rc02_Diagnostic_Instrumentation_Dependency_and_Applicability_Assessment.md`
 
 The rc02 assessment leaves the rc01 OBS overlay text unchanged and concludes that the smallest justified next migration is candidate machine-readable L1/L2 authority representation. Project Application, L3, L4, code generation and generic CI expansion remain deferred/STOP pending separate value gates.
+
+## v0.2.0rc03 Representation Status
+
+The accepted rc01 semantic overlay remains unchanged. rc03 does not promote it into `docs/normative/`. Instead, the separately controlled executable-governance layer now carries a candidate machine-readable authority representation under `candidate-authority-registry.yaml`, with its own candidate schema and source-aware validator.
+
+Formal v0.1.0 authority remains canonical. Candidate machine-readable representation does not by itself authorize Project Application, L3, L4 or formal-promotion migration. See `docs/executable-governance/66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`.

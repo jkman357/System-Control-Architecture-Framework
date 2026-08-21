@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation
+
+- Continue only after rc02 independent review returned clean `PASS / GATE YES` with zero findings and the corrected source-identity/Git-lineage supplement returned bounded `PASS`.
+- Base the rc03 source package directly on accepted rc02 Git commit `d35789a642569ac9ea0be1938857c47e12198d33`.
+- Add development-only `candidate-authority-registry.yaml` with exactly `299 / 223 / 76` records.
+- Preserve all 294 formal authority records field-for-field and add only `SCAF-OBS-041..045` as candidate Project-Applicable Obligations.
+- Bind the candidate registry to the formal `authority-registry.yaml` bytes and the accepted rc01 OBS candidate-source bytes by SHA-256.
+- Add `schemas/candidate-authority-registry.schema.json` as a separate candidate-only structural contract rather than relaxing the frozen formal authority schema.
+- Add `tools/scaf_candidate_authority_validator/` to require a valid frozen authority input first, prove exact frozen-record projection, resolve the five candidate IDs against the accepted rc01 OBS overlay, verify Target/source-anchor fidelity and reconstruct `299 / 223 / 76`.
+- Keep formal `authority-registry.yaml`, `schemas/authority-registry.schema.json`, `tools/scaf_validator/`, `docs/normative/`, SCAF-APP/effective-profile/consumption/context consumers, L3 trace/catalog and L4 guidance unchanged.
+- Preserve `candidate machine-readable authority != formal authority` and `candidate representation != downstream consumer authorization`.
+- Continue the rc02 `DEFER/STOP` decisions for Project Application consumers, L3, L4, generic probe/log code generation and generic runtime-instrumentation CI enforcement.
+- Close the rc02 non-blocking source-package hygiene observation by removing tracked Python `__pycache__` / `.pyc` artifacts and adding `.gitignore` entries for generated Python cache and common local virtual environments; no Python source semantics change.
+- Require a new dependency/value assessment after a clean rc03 review before any downstream candidate-consumption or formal-promotion step.
+
 ## v0.2.0rc02 — Diagnostic Instrumentation Dependency & Applicability Assessment
 
 - Continue only after the independent rc01 semantic review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
