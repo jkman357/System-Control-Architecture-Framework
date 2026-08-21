@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.2.0rc04 — Candidate Authority Validator Formal-Prerequisite Fail-Stop Hardening
+
+- Continue only after rc03 independent review returned `PASS / GATE YES` with zero Critical/Major findings and one Minor finding, `RC03-01`.
+- Base rc04 directly on committed rc03 Git parent `ea070585b7721ed3bf0411e2cd60d19d49e65500`.
+- Close `RC03-01` by making frozen formal-authority validation a true fail-stop prerequisite for candidate reasoning.
+- Return immediately when the frozen validator fails; do not load/use invalid formal authority for candidate projection, source reconstruction or inventory reasoning.
+- Add regression coverage proving all candidate-derived counters remain uncomputed/default after a synthetic formal-prerequisite failure.
+- Preserve candidate registry/schema semantics and the successful `299 / 223 / 76` candidate result unchanged.
+- Preserve formal `294 / 218 / 76`, Project Application formal-only resolution, L3 `12 / 119`, L4 and downstream DEFER/STOP boundaries unchanged.
+- Re-apply deletion of seven tracked Python cache/bytecode artifacts retained by the committed rc03 parent; keep existing `.gitignore`; no Python source semantics change.
+- Require a new dependency/value assessment after clean rc04 review before any candidate downstream-consumer migration.
+
 ## v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation
 
 - Continue only after rc02 independent review returned clean `PASS / GATE YES` with zero findings and the corrected source-identity/Git-lineage supplement returned bounded `PASS`.

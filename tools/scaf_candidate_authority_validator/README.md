@@ -1,12 +1,12 @@
 # SCAF Candidate Authority Validator
 
-This tool validates the **v0.2.0rc03 development candidate** machine-readable L1/L2 authority representation.
+This tool validates the **v0.2.0rc03 development candidate** machine-readable L1/L2 authority representation. v0.2.0rc04 hardens its formal-prerequisite control flow without changing that representation.
 
 It is intentionally separate from `tools/scaf_validator/`, which remains the validator for the frozen formal authority registry.
 
 The candidate validator checks that:
 
-- the frozen `authority-registry.yaml` first passes its existing source-aware validator;
+- the frozen `authority-registry.yaml` first passes its existing source-aware validator; if it fails, validation stops before candidate-specific reasoning;
 - the candidate registry contains exactly `299 / 223 / 76` records;
 - all 294 frozen records are reproduced exactly, field-for-field;
 - the only candidate-only IDs are `SCAF-OBS-041..045`;

@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** v0.2.0rc03
-**Status:** Candidate Machine-Readable Authority Representation Foundation
+**Active Development RC:** v0.2.0rc04
+**Status:** Candidate Authority Validator Formal-Prerequisite Fail-Stop Hardening
 **Date:** 2026-08-21
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc03`. The rc01 L2 observability candidate passed semantic review, rc02 passed the required dependency/value assessment, and rc03 now establishes a separately controlled candidate machine-readable authority representation without modifying the frozen canonical authority chain.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc04`. The rc03 candidate authority representation passed its foundation gate with one non-blocking Minor finding; rc04 closes that validator fail-stop finding before any new downstream dependency/value assessment.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -50,11 +50,11 @@ L4 — Construction / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.2.0rc03 Candidate Authority Representation
+## Active v0.2.0rc04 Fail-Stop Hardening
 
 `v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation` introduced and cleanly passed review for `SCAF-OBS-041..045`. `v0.2.0rc02 — Diagnostic Instrumentation Dependency & Applicability Assessment` then cleanly justified one bounded next migration: candidate machine-readable L1/L2 authority representation.
 
-`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` implements only that migration.
+`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` implemented only that migration and passed review with one Minor finding, `RC03-01`, concerning candidate processing after a failed formal-authority prerequisite. `v0.2.0rc04` closes that finding without changing the candidate registry/schema semantics.
 
 The formal authority chain remains:
 
@@ -75,7 +75,7 @@ candidate-authority-registry.yaml
 
 The candidate registry is bound to the formal registry bytes and the accepted rc01 OBS overlay bytes by SHA-256. `schemas/candidate-authority-registry.schema.json` and `tools/scaf_candidate_authority_validator/` provide a separate candidate structural/source-aware validation boundary. They do not replace or relax the frozen authority schema/validator.
 
-The rc03 boundary remains:
+The rc04 boundary remains:
 
 ```text
 GO    candidate authority representation + candidate source-aware validation
@@ -85,7 +85,7 @@ STOP  L4 construction guidance
 STOP  generic probe/log code generation or generic runtime-instrumentation CI
 ```
 
-Candidate machine-readable authority is not formal authority and is not yet consumable by SCAF-APP. A clean rc03 review authorizes only another dependency/value assessment. See `docs/executable-governance/66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`.
+Candidate machine-readable authority is not formal authority and is not yet consumable by SCAF-APP. rc04 makes the frozen formal validator a true fail-stop prerequisite: if formal authority validation fails, candidate projection/source/inventory reasoning does not run. A clean rc04 review authorizes only another dependency/value assessment. See `docs/executable-governance/67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`.
 
 ## Frozen v0.1.0 Milestone
 

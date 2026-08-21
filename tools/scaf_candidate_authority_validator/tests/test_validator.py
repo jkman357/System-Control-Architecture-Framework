@@ -4,6 +4,8 @@ import copy
 import json
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest.mock import patch
 
 import yaml
 
@@ -97,6 +99,29 @@ class CandidateAuthorityValidatorTests(unittest.TestCase):
         report = self.validate(data)
         self.assertFalse(report.passed)
         self.assertTrue(any("candidate_source_sha256" in e for e in report.errors))
+
+    def test_frozen_validation_failure_stops_candidate_processing(self):
+        data = copy.deepcopy(self.registry)
+        frozen_failure = SimpleNamespace(
+            passed=False,
+            errors=["synthetic frozen prerequisite failure"],
+        )
+        with patch(
+            "tools.scaf_candidate_authority_validator.validator.frozen_validator.validate_registry",
+            return_value=frozen_failure,
+        ):
+            report = self.validate(data)
+
+        self.assertFalse(report.passed)
+        self.assertFalse(report.frozen_input_valid)
+        self.assertTrue(any("synthetic frozen prerequisite failure" in e for e in report.errors))
+        self.assertEqual(0, report.record_count)
+        self.assertEqual(0, report.unique_id_count)
+        self.assertEqual(0, report.frozen_projection_count)
+        self.assertEqual(0, report.candidate_record_count)
+        self.assertEqual(0, report.candidate_source_count)
+        self.assertEqual(0, report.project_applicable_count)
+        self.assertEqual(0, report.framework_invariant_count)
 
 
 if __name__ == "__main__":

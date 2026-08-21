@@ -5,17 +5,18 @@
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 
-## Active v0.2.0rc03 Candidate Authority Representation
+## Active v0.2.0rc04 Candidate Validator Fail-Stop Hardening
 
-`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` is the active executable-governance development candidate. It consumes the clean rc02 dependency/value gate and adds a development-only `candidate-authority-registry.yaml`, candidate schema, and separate source-aware candidate validator.
+`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` established the development-only `299 / 223 / 76` representation and passed its foundation gate with one Minor finding, `RC03-01`.
 
-The candidate representation proves `299 / 223 / 76` while preserving all 294 formal records exactly and adding only `SCAF-OBS-041..045` as candidate Project-Applicable Obligations. Formal `authority-registry.yaml`, its frozen schema/validator, Project Application, L3 and L4 remain unchanged.
+`v0.2.0rc04` closes only that finding. The candidate validator now treats frozen formal-authority validation as a true prerequisite: a failed formal validator result is reported and returned immediately before candidate schema/binding/projection/source/inventory reasoning. A regression test requires all candidate-derived result counters to remain at their uncomputed defaults on that path.
 
-Candidate machine-readable authority is **not** formal authority and is **not** yet a Project Application input. A clean rc03 review authorizes only a new dependency/value assessment for any downstream consumer migration.
+The candidate registry/schema and formal authority are unchanged. Candidate authority remains **not** formal authority and **not** yet a Project Application input. L3, L4, downstream consumers, code generation and generic instrumentation CI remain deferred/stopped.
 
-Controlled record:
+Controlled records:
 
-- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — candidate registry/schema/source-aware validation boundary and downstream STOP contract.
+- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — accepted candidate registry/schema/source-aware validation foundation.
+- [`67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`](67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md) — `RC03-01` fail-stop finding closure.
 
 ## Frozen v0.1.0 Milestone
 

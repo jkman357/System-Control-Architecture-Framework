@@ -165,20 +165,21 @@ def validate_candidate_data(
     repo_root = repo_root.resolve()
     report = ValidationReport()
 
+    frozen_registry_path = repo_root / EXPECTED_FROZEN_REGISTRY
+    frozen_schema_path = repo_root / EXPECTED_FROZEN_SCHEMA
+    frozen_report = frozen_validator.validate_registry(repo_root, frozen_registry_path, frozen_schema_path)
+    if not frozen_report.passed:
+        for error in frozen_report.errors:
+            report.errors.append(f"frozen authority input invalid: {error}")
+        return report
+
+    report.frozen_input_valid = True
+
     for error in sorted(
         Draft202012Validator(schema).iter_errors(candidate_data),
         key=lambda err: (_format_schema_path(err), err.message),
     ):
         report.errors.append(f"schema {_format_schema_path(error)}: {error.message}")
-
-    frozen_registry_path = repo_root / EXPECTED_FROZEN_REGISTRY
-    frozen_schema_path = repo_root / EXPECTED_FROZEN_SCHEMA
-    frozen_report = frozen_validator.validate_registry(repo_root, frozen_registry_path, frozen_schema_path)
-    if frozen_report.passed:
-        report.frozen_input_valid = True
-    else:
-        for error in frozen_report.errors:
-            report.errors.append(f"frozen authority input invalid: {error}")
 
     try:
         frozen_data = frozen_validator.load_registry(frozen_registry_path)
