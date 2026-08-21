@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.0rc02 — Diagnostic Instrumentation Dependency & Applicability Assessment
+
+- Continue only after the independent rc01 semantic review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
+- Consume the accepted `SCAF-OBS-041..045` candidate semantics without modifying the rc01 OBS overlay text or the formal frozen v0.1.0 canonical sources.
+- Perform the required post-semantic dependency/value assessment before any registry, L3, L4, Project Application, tooling or CI expansion.
+- Conclude **GO** for a separately reviewed candidate machine-readable L1/L2 authority-representation migration because SCAF-APP cannot resolve candidate IDs that exist only in Markdown authority.
+- Record the expected candidate inventory consequence as `299 / 223 / 76` if the frozen 294 records are preserved and only the five accepted Project-Applicable Obligations are added.
+- Explicitly reject simple append to frozen `authority-registry.yaml`: the frozen schema/validator are intentionally hard-bound to 294 records, v0.0.2 sources and canonical `docs/normative/` reconstruction.
+- **DEFER** Project Application / Effective Project Profile / consumption / controlled-context migration until a validated candidate authority representation exists.
+- **STOP** immediate L3 trace expansion and **STOP** any new L3 Pattern: `SCAF-OBS-041..044` are lifecycle/governance semantics, while `SCAF-OBS-045` is primarily a constraint/boundary; no current Pattern gap blocks their use.
+- **STOP** L4 guidance, logging/probe APIs, storage topology, code generation and generic runtime-instrumentation CI enforcement; none is justified by the accepted L2 semantics alone.
+- Clarify that SCAF-APP records obligation/scope disposition and must not be overloaded into a per-probe/per-instrumentation-item inventory.
+- Classify executability by fact type: authority identity/resolution can become structurally executable, while purpose adequacy, cleanup correctness, evidence equivalence and operational non-dependence remain project-evidence/judgment problems unless a concrete project contract makes part of them machine-checkable.
+- Close the rc01 supplemental-source evidence limitation for preparation purposes by independently confirming the supplied EICRF ZIP SHA-256 `b96da3ba5baa8b946ed916d9dbb76b9f7a51552b39d8a11f7d27d3adf78a392b`, README `v1.0.0rc05` and MIT license identity; no donor implementation content is promoted.
+- Recommend only one next step after a clean rc02 review: a bounded candidate authority-representation migration foundation; keep Project Application, L3, L4 and generic tooling changes behind later dependency/value gates.
+
 ## v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation
 
 - Open the first post-v0.1.0 controlled normative-evolution line from formal predecessor `v0.1.0` / commit `813d722e92cd329b1a4e457304913ae9ec056731`.

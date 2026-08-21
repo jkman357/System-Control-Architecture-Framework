@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** v0.2.0rc01
-**Status:** L2 Diagnostic Instrumentation Lifecycle Candidate
+**Active Development RC:** v0.2.0rc02
+**Status:** Diagnostic Instrumentation Dependency & Applicability Assessment
 **Date:** 2026-08-21
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc01`, which opens a controlled L2 observability candidate without modifying the frozen canonical `docs/normative/` source in place.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc02`. The rc01 L2 observability candidate passed independent semantic review; rc02 performs the required downstream dependency/value assessment without modifying the frozen canonical `docs/normative/` source in place.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -50,11 +50,9 @@ L4 — Construction / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.2.0rc01 Candidate
+## Active v0.2.0rc02 Assessment
 
-`v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation` opens the first post-v0.1.0 normative-evolution candidate.
-
-The candidate addresses one missing lifecycle distinction in `SCAF-OBS`:
+`v0.2.0rc01 — L2 Diagnostic Instrumentation Lifecycle Semantic Foundation` introduced the post-v0.1.0 candidate distinction:
 
 ```text
 retained diagnostic instrumentation
@@ -62,21 +60,23 @@ retained diagnostic instrumentation
 development-scoped instrumentation
 ```
 
-It proposes five new L2 Project-Applicable Obligations covering lifecycle intent, bounded temporary-instrumentation purpose/removal criteria, explicit remove-or-retain closure disposition, instrumented-build evidence identity/cleanup re-evaluation, and operational non-dependence plus accepted observer-effect/resource cost for retained diagnostics.
+It proposed `SCAF-OBS-041..045` for lifecycle intent, bounded temporary-instrumentation purpose/removal criteria, explicit remove-or-retain closure disposition, instrumented-build evidence identity/cleanup re-evaluation, and operational non-dependence plus accepted observer-effect/resource cost for retained diagnostics. The independent rc01 review returned **PASS / GATE YES with zero findings**.
 
-The candidate intentionally remains mechanism-neutral. It does not mandate RAM rings, Flash, SD, USB, a logging task, a recorder API, compile-time macro names, task priorities or continuous logging.
+`v0.2.0rc02 — Diagnostic Instrumentation Dependency & Applicability Assessment` consumes that clean semantic gate and asks what should actually change next. It performs no downstream migration.
 
-To preserve frozen-release immutability and keep the existing executable-governance chain usable, the rc01 candidate is carried under `docs/normative-evolution/` as a complete proposed replacement for the affected OBS source. The formal `docs/normative/` tree, `authority-registry.yaml`, the frozen `294 / 218 / 76` inventory, L3 trace, Project Application chain, controlled-context chain and L4 guidance are unchanged.
-
-This means:
+The rc02 decision is:
 
 ```text
-v0.1.0 formal authority remains canonical
-v0.2.0rc01 candidate authority is under review
-candidate semantic acceptance != automatic registry/L3/L4/tooling migration
+GO    candidate machine-readable L1/L2 authority representation
+DEFER Project Application / Effective Profile / consumption consumers
+STOP  new L3 Pattern or immediate L3 trace migration
+STOP  L4 construction guidance
+STOP  generic code generation / generic instrumentation CI enforcement
 ```
 
-A clean independent rc01 review authorizes only a new dependency/value assessment for the smallest justified next step.
+The reason for the representation GO is concrete: the frozen authority schema/validator are intentionally bound to 294 records, frozen `v0.0.2` sources and `docs/normative/`, while SCAF-APP resolves only against a validated authority registry. If the five accepted candidate PAOs are later represented without any other authority change, the candidate inventory becomes **299 / 223 / 76**. That migration must be separately reviewed; the five IDs must not simply be appended to frozen `authority-registry.yaml`.
+
+The rc01 candidate OBS overlay remains unchanged under `docs/normative-evolution/`. Formal `v0.1.0` authority remains canonical until an explicit later promotion/freeze decision. See `docs/normative-evolution/02_SCAF_v0.2.0rc02_Diagnostic_Instrumentation_Dependency_and_Applicability_Assessment.md`.
 
 ## Frozen v0.1.0 Milestone
 
