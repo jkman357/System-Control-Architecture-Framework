@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.0rc05 — Candidate Authority Downstream Consumption Dependency & Value Assessment
+
+- Continue only after rc04 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings and closed `RC03-01`.
+- Base rc05 on committed rc04 Git predecessor `5df3a13003f69124fb56fb9605819068ed496b7a`.
+- Perform assessment only; make no Project Application, Effective Project Profile, consumption/context, L3, L4, code-generation or generic instrumentation-CI implementation change.
+- Conclude **GO** that candidate Project Application consumption has material value because `SCAF-OBS-041..045` are Project-Applicable Obligations whose project dispositions should be exercisable before formal promotion.
+- Identify a blocking semantic mismatch in the current downstream model: the candidate PAO set contains `218` PAOs sourced from `v0.0.2` plus `5` PAOs sourced from `v0.2.0rc01`, while existing Project Application / Effective Project Profile use one `scaf_source_release` as the authority-domain binding.
+- **STOP** direct replacement of the formal Project Application authority input with `candidate-authority-registry.yaml`.
+- **STOP** treating a two-value `scaf_source_release` enum as a complete candidate-consumption solution.
+- **GO** the next migration target as a semantic-only authority-set binding / Project Application consumption foundation that separates complete authority-set identity from per-record semantic source provenance.
+- Preserve existing applicability/disposition semantics; SCAF-APP remains obligation/scope disposition rather than a per-probe/per-log-item inventory.
+- **DEFER** candidate Project Application serialization/schema/validator and all Effective Project Profile / later consumer migration until the authority-set semantic boundary is accepted.
+- Preserve formal authority `294 / 218 / 76`, candidate authority `299 / 223 / 76`, L3 `12 / 119`, frozen protected trees, and formal-only Project Application validation behavior.
+- Record that the committed rc04 predecessor still contains seven tracked generated Python cache objects; rc05 again carries their deletion only as non-semantic source-package hygiene.
+
 ## v0.2.0rc04 — Candidate Authority Validator Formal-Prerequisite Fail-Stop Hardening
 
 - Continue only after rc03 independent review returned `PASS / GATE YES` with zero Critical/Major findings and one Minor finding, `RC03-01`.

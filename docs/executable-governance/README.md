@@ -5,18 +5,21 @@
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 
-## Active v0.2.0rc04 Candidate Validator Fail-Stop Hardening
+## Active v0.2.0rc05 Downstream Consumption Dependency & Value Assessment
 
-`v0.2.0rc03 — Candidate Machine-Readable Authority Representation Foundation` established the development-only `299 / 223 / 76` representation and passed its foundation gate with one Minor finding, `RC03-01`.
+`v0.2.0rc03` established the separate `299 / 223 / 76` candidate authority representation. `v0.2.0rc04` cleanly closed the candidate validator formal-prerequisite fail-stop finding.
 
-`v0.2.0rc04` closes only that finding. The candidate validator now treats frozen formal-authority validation as a true prerequisite: a failed formal validator result is reported and returned immediately before candidate schema/binding/projection/source/inventory reasoning. A regression test requires all candidate-derived result counters to remain at their uncomputed defaults on that path.
+`v0.2.0rc05` performs the next required dependency/value assessment without implementing downstream candidate consumption.
 
-The candidate registry/schema and formal authority are unchanged. Candidate authority remains **not** formal authority and **not** yet a Project Application input. L3, L4, downstream consumers, code generation and generic instrumentation CI remain deferred/stopped.
+The assessment finds real value in allowing `SCAF-OBS-041..045` to participate in Project Application because they are Project-Applicable Obligations. It also identifies that the existing single-`scaf_source_release` downstream domain model cannot truthfully represent the mixed candidate PAO set (`218 × v0.0.2` plus `5 × v0.2.0rc01`).
+
+The next justified step after a clean rc05 review is therefore a semantic-only **authority-set binding and Project Application consumption foundation**. Existing formal Project Application, candidate Project Application serialization/tooling, Effective Project Profile, later consumers, L3, L4, code generation and generic instrumentation CI remain unchanged/deferred.
 
 Controlled records:
 
-- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — accepted candidate registry/schema/source-aware validation foundation.
-- [`67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`](67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md) — `RC03-01` fail-stop finding closure.
+- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — candidate registry/schema/source-aware validation foundation.
+- [`67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`](67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md) — `RC03-01` fail-stop closure.
+- [`68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md`](68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md) — downstream dependency/value decision and authority-set semantic prerequisite.
 
 ## Frozen v0.1.0 Milestone
 
