@@ -1,25 +1,5 @@
 # Changelog
 
-## v0.3.0
-
-- Freeze first L4 executable governance release.
-- Complete release identity synchronization.
-- Complete evidence lineage closure.
-- Close L4 release preparation cycle from v0.3.0rc01 to v0.3.0rc07.
-
-## v0.3.0rc07
-
-- Complete final L4 release closure cleanup.
-- Synchronize release identity and evidence lineage metadata.
-- Consolidate release preparation artifacts.
-
-## v0.3.0rc06
-
-- Consolidate final L4 release preparation metadata.
-- Add canonical README release status structure.
-- Add v0.3.0rc05 synchronization closure history.
-- Prepare candidate for final L4 release review.
-
 ## v0.3.0rc04
 
 - Complete L4 final candidate cleanup.
