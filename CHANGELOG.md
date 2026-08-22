@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1rc08
+
+- Add release evidence execution records.
+- Add validation execution record artifact.
+- Add test execution record artifact.
+- Improve release status presentation.
+
 ## v0.2.1rc07
 
 - Refine release evidence metadata.
