@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.0rc13
+
+- Align Evidence-Driven Engineering Pattern terminology.
+- Clarify Compare Evidence and Probe Evidence relationship.
+
 ## v0.2.0rc12 rev6
 
 -   Preserve reviewed Pattern artifact identity.
