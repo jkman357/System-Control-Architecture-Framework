@@ -2,56 +2,95 @@
 
 ## L3 Pattern Catalog Fit
 
-The pattern is a reusable, domain-neutral L3 engineering pattern candidate.
-It defines engineering method and lifecycle concepts rather than a product
-workflow or implementation guide.
+The pattern is suitable as an L3 candidate because it defines a reusable
+engineering method, not a product workflow or implementation guide.
+
+Characteristics:
+- reusable
+- domain-neutral
+- mechanism-independent
+- traceable
 
 ## Applicability Assessment
 
-Applicable to systems requiring observable behavior understanding,
-evidence-based analysis, controlled verification, and traceable closure.
+Applicable when systems require:
+- observable behavior understanding;
+- evidence-based analysis;
+- controlled verification;
+- traceable closure.
 
-Not bound to specific hardware, operating systems, tools, or implementation
-mechanisms.
+Not bound to hardware, operating system, toolchain or implementation method.
 
 ## Dependency Model
 
-The pattern relates to evidence obligations, verification concepts, and
-closure concepts. Implementation frameworks are realization options and are
-not mandatory dependencies.
+Dependency classes:
+
+1. Semantic dependency
+- Evidence-related engineering obligations
+- Verification concepts
+- Closure concepts
+
+2. Realization relationship
+- Implementation frameworks may realize the pattern.
+- They are not mandatory pattern dependencies.
+
+Dependency status handling:
+- Formal dependency: required and validated.
+- Candidate dependency: under evaluation.
+- Optional relationship: explanatory or realization guidance.
 
 ## Trace Model
 
-SCAF L2 Requirements
--> L3 Pattern
--> Implementation Framework
--> Specific System Application
+Trace relationships:
 
-Relationships represent semantic, applicability, and realization links.
+L2 Requirement
+  |
+  | supports
+  v
+L3 Pattern
+  |
+  | realized by
+  v
+Implementation Framework
+  |
+  | applied by
+  v
+Specific System Application
+
+Relationship types:
+- semantic relationship
+- applicability relationship
+- realization relationship
+
+Trace does not create mandatory implementation coupling.
 
 ## Maturity Readiness
 
-Current status: Candidate Pattern.
+Current status:
+
+Candidate Pattern
 
 Completed:
-- semantic foundation;
-- domain neutrality;
-- layer separation.
+- semantic foundation review
+- domain neutrality review
+- layer separation review
 
 Pending:
 - controlled L3 catalog integration.
 
 ## Integration Recommendation
 
-Recommendation: CONDITIONAL GO.
+Recommendation:
 
-Future integration requires controlled registry entry, trace registration,
-and maturity classification.
+CONDITIONAL GO
+
+Next permitted step:
+- controlled L3 catalog entry evaluation.
 
 Excluded:
-- authority registry migration;
-- Project Application migration;
-- EPP migration;
-- L4 expansion;
-- code generation;
-- implementation binding.
+- authority registry migration
+- Project Application migration
+- EPP migration
+- L4 expansion
+- code generation
+- implementation binding

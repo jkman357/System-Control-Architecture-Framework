@@ -1,105 +1,50 @@
-# Evidence-Driven Engineering Pattern Candidate Semantic Foundation
+# Evidence-Driven Engineering Pattern
 
 ## Purpose
 
-This L3 pattern candidate defines a reusable engineering approach for
-improving system understanding, diagnosis, verification and closure
-through controlled evidence lifecycle management.
-
-The pattern is domain-neutral and is not bound to a specific product,
-hardware platform, operating system, or implementation framework.
+A domain-neutral L3 pattern candidate for controlled evidence lifecycle,
+analysis, verification and engineering closure.
 
 ## Evidence Model
-
-The pattern uses four evidence categories:
 
 - Source Evidence
 - Change Evidence
 - Runtime Evidence
 - Probe Evidence
 
-## Evidence Lifecycle
+## Lifecycle
 
 Baseline
-
 -> Evidence Collection
-
 -> Behavioral Analysis
-
--> First Behavioral Divergence Identification
-
--> Hypothesis Formation
-
+-> First Behavioral Divergence
+-> Hypothesis
 -> Targeted Probe
-
 -> Additional Evidence
-
 -> Verification
-
 -> Closure
 
-## Observability Lifecycle
+## Probe and Diagnostic Lifecycle
 
 Temporary Probe:
-
-Exploratory observability introduced to answer a bounded engineering
-question.
+exploratory observability for a bounded engineering question.
 
 Diagnostic:
-
-Operational observability intentionally retained for ongoing system
-understanding.
-
-Lifecycle:
-
-Temporary Probe
-
-- Remove
-- Retain temporarily
-- Promote or redesign
-
-Promoted observability becomes Diagnostic.
+retained operational observability.
 
 Probe is not automatically a Diagnostic.
 
-## AI Assistance Boundary
-
-AI may assist:
-
-- source navigation
-- evidence correlation
-- hypothesis generation
-- probe suggestion
-- review assistance
-
-AI does not obtain:
-
-- design authority
-- verification authority
-- closure authority
-- release authority
-
-## Layer Separation
+## Boundary
 
 SCAF:
-
-Defines engineering principles and reusable patterns.
+reusable principles and patterns.
 
 Implementation Framework:
-
-Provides concrete evidence capture, retention, and export mechanisms.
+evidence capture, retention and export realization.
 
 Specific System Application:
+downstream application.
 
-Applies the pattern to a particular system realization.
+## AI Boundary
 
-## Scope Exclusions
-
-This candidate does not introduce:
-
-- authority registry migration
-- Project Application migration
-- Effective Project Profile migration
-- L4 expansion
-- code generation
-- generic instrumentation CI
+AI may assist analysis activities but does not obtain engineering authority.
