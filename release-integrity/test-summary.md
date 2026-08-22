@@ -1,7 +1,12 @@
 # Test Summary
 
-## v0.2.1rc06
+## v0.2.1rc07
 
-Release-level test evidence summary.
+Test evidence metadata:
 
-Result: PASS
+- test command identifier
+- test suite version
+- execution environment
+- execution result
+
+This artifact records test evidence for release traceability.

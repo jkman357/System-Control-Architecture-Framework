@@ -1,10 +1,18 @@
 # Release Evidence Index
 
-## v0.2.1rc06
+## v0.2.1rc07
 
-Evidence bundle:
+Release evidence structure:
 
-- validation summary
-- test summary
-- build summary
-- release metadata
+Build Evidence
+    |
+    v
+Test Evidence
+    |
+    v
+Validation Evidence
+    |
+    v
+Review Evidence
+
+The index provides navigation of release evidence artifacts.

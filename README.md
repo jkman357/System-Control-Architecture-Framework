@@ -26,3 +26,15 @@ v0.2.1rc06
 
 Review Target:
 v0.2.1rc06
+
+
+## Release Hierarchy
+
+Frozen Baseline:
+v0.2.0
+
+Current Development Release:
+v0.2.1rc07
+
+Review Target:
+v0.2.1rc07

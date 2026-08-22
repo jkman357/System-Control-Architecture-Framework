@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1rc07
+
+- Refine release evidence metadata.
+- Add validation execution metadata structure.
+- Add test evidence metadata structure.
+- Improve release evidence index organization.
+
 ## v0.2.1rc05
 
 - Add governance evidence and validation closure artifacts.
