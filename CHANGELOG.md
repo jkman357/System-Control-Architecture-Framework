@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0rc04
+
+- Complete L4 final candidate cleanup.
+- Consolidate reviewer navigation metadata.
+- Add governance contract trace verification documentation.
+
 ## v0.3.0rc02
 
 - Harden L4 executable governance candidate.
