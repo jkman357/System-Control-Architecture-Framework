@@ -1,30 +1,15 @@
 # Release Evidence Index
 
-## v0.2.1rc09
+## v0.3.0rc03
 
-Release Evidence Closure Candidate
+Current candidate evidence:
+- Build evidence
+- Test evidence
+- Validation evidence
+- Review evidence
 
-Evidence chain:
+Inherited historical evidence:
+- v0.2.1 frozen baseline
+- Previous L4 candidate lineage
 
-Build Evidence
-        |
-        v
-Test Evidence
-        |
-        v
-Validation Evidence
-        |
-        v
-Review Evidence
-        |
-        v
-Release Identity
-
-Included artifacts:
-
-- build summary
-- test summary
-- test execution record
-- validation summary
-- validation execution record
-- review index
+All current release identity references shall resolve to v0.3.0rc03.

@@ -1,14 +1,13 @@
 # Validator Responsibility Matrix
 
-## v0.3.0rc02
+## v0.3.0rc03
 
-| Layer | Purpose |
+| Area | Responsibility |
 | --- | --- |
 | Schema validation | Structural correctness |
-| Registry validation | Relationship integrity |
-| Governance validation | Governance rule compliance |
-| Release validation | Candidate acceptance evaluation |
+| Trace validation | Relationship integrity |
+| Governance validation | Rule evaluation |
+| Release validation | Candidate readiness evidence |
 
-Boundary:
-Validator evaluates defined governance conditions.
-It does not create authority or replace engineering decisions.
+Validator output is evidence only.
+It does not replace authority decisions.

@@ -1,7 +1,5 @@
 # Build Summary
 
-## v0.2.1rc06
+## v0.3.0rc03
 
-Release-level build evidence summary.
-
-Result: PASS
+Build evidence identity synchronized with current candidate.
