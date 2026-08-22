@@ -60,3 +60,25 @@ The assessment is recorded in:
 - `03_SCAF_v0.2.0rc07_Engineering_Evidence_Binding_Change_Applicability_and_Closure_Gap_Assessment.md`
 
 It classifies existing authority coverage and identifies three material L2 gaps: generic evidence-to-realization applicability binding, baseline/change evidence relationship, and before/after verification-closure evidence relationship. Analysis methods such as first behavioral divergence and Evidence→Hypothesis→Probe remain deferred to a future L3 pattern after the L2 evidence foundation stabilizes.
+
+## v0.2.0rc08 Evidence Relationship Semantic Candidate
+
+After the clean rc07 gap-assessment review, rc08 adds a new complete OBS candidate overlay:
+
+- `80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md`
+
+and the semantic-foundation record:
+
+- `04_SCAF_v0.2.0rc08_Engineering_Evidence_Applicability_Change_Relationship_and_Closure_Semantic_Foundation.md`
+
+The overlay preserves `SCAF-OBS-001..040` and the accepted rc01 candidate wording for `SCAF-OBS-041..045`, then adds only:
+
+```text
+SCAF-OBS-046  Evidence realization applicability binding
+SCAF-OBS-047  Baseline and change relationship for comparative evidence
+SCAF-OBS-048  Before/after evidence relationship for verification and closure
+```
+
+These three IDs are semantic candidates only. The existing machine-readable `candidate-authority-registry.yaml` remains bound to the accepted rc01 overlay and still represents only five candidate records at `299 / 223 / 76`. No candidate-registry/schema/validator, Project Application, Effective Project Profile, L3/L4 or later-consumer migration is performed by rc08.
+
+A clean rc08 review authorizes only a new dependency/value assessment before any representation migration or L3 Pattern decision.

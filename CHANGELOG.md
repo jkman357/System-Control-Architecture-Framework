@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.0rc08 — Engineering Evidence Applicability, Change Relationship and Closure Semantic Foundation
+
+- Continue only after rc07 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
+- Base rc08 on committed rc07 Git predecessor `510bdc1c936d870444da1052e0cd3159cc50b6af`.
+- Add a new complete OBS normative-evolution overlay while preserving frozen `SCAF-OBS-001..040` and accepted candidate `SCAF-OBS-041..045` semantics.
+- Reserve exactly three new Project-Applicable Obligation IDs: `SCAF-OBS-046` Evidence realization applicability binding; `SCAF-OBS-047` Baseline and change relationship for comparative evidence; `SCAF-OBS-048` Before/after evidence relationship for verification and closure.
+- Require material evidence to remain attributable to the realization context needed for valid interpretation without requiring every evidence item to carry every possible identity.
+- Require controlled baseline and relevant change scope where comparative diagnosis/regression/verification materially depends on them, while preserving `SCAF-OBS-009`: change membership or proximity does not establish causality.
+- Require controlled before/after evidence attribution where verification/closure materially relies on comparison, while preserving `SCAF-AK-007` evidence-sufficiency authority and `SCAF-AK-012/013` underlying closure/trace separation.
+- Preserve mechanism neutrality: no mandatory Git/commit hash, build-ID syntax, board-ID format, runtime log, RAM/Flash/SD/USB/DAT mechanism, test procedure, CI provider or AI provider.
+- Keep the machine-readable candidate authority registry unchanged at `299 / 223 / 76`; a future representation migration to an expected `302 / 226 / 76` is not authorized by rc08 itself.
+- Keep Project Application / Effective Project Profile and later consumers **PARKED**; keep L3 Pattern, L4, code generation and generic runtime-instrumentation CI deferred/STOP pending separate value gates.
+- Carry deletion of the seven generated Python cache objects still present in the committed rc07 predecessor as non-semantic package hygiene.
+
 ## v0.2.0rc07 — Engineering Evidence Binding, Change Applicability and Closure Gap Assessment
 
 - Continue only after rc06 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
