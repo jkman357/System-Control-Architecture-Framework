@@ -1,20 +1,38 @@
 # SCAF candidate machine-readable L1/L2 authority representation
-# Development release: v0.2.0rc03
-# Candidate-only representation. Formal v0.1.0 authority remains authority-registry.yaml.
-# The 294 frozen records are reproduced exactly; only SCAF-OBS-041..045 are candidate additions.
+# Development release: v0.2.0rc10
+# Candidate-only multi-source representation. Formal v0.1.0 authority remains authority-registry.yaml.
+# The 294 frozen records are reproduced exactly; SCAF-OBS-041..048 are candidate additions.
+# Candidate semantic provenance is source-aware: OBS-041..045 -> rc01; OBS-046..048 -> rc08.
 # This file is not yet an input to SCAF-APP or downstream consumers.
 registry_kind: scaf_candidate_l1_l2_authority_registry
-development_release: v0.2.0rc03
+development_release: v0.2.0rc10
 candidate_status: development_candidate
+authority_set_id: scaf_candidate_l1_l2_authority_set_v0.2.0rc10
 formal_release: v0.1.0
 formal_registry_path: authority-registry.yaml
 formal_registry_sha256: b6ca00b44ffc280098e9feff7c7bbffa068ea3a98835fc76fa6cd13af8657692
-candidate_source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
-candidate_source_release: v0.2.0rc01
-candidate_source_sha256: 9fe22a3a6a7e64eac7ed8d1fb80ea95ae63c3d9a43957e8013c1daf3aa07d008
+candidate_sources:
+- source_id: scaf_obs_v0.2.0rc01
+  source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
+  source_release: v0.2.0rc01
+  source_sha256: 9fe22a3a6a7e64eac7ed8d1fb80ea95ae63c3d9a43957e8013c1daf3aa07d008
+  candidate_ids:
+  - SCAF-OBS-041
+  - SCAF-OBS-042
+  - SCAF-OBS-043
+  - SCAF-OBS-044
+  - SCAF-OBS-045
+- source_id: scaf_obs_v0.2.0rc08
+  source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md
+  source_release: v0.2.0rc08
+  source_sha256: eecd923e22f0466564473e5c2a6d32002cabd133d7fdc912033c777a8a12fbff
+  candidate_ids:
+  - SCAF-OBS-046
+  - SCAF-OBS-047
+  - SCAF-OBS-048
 expected_inventory:
-  total: 299
-  project_applicable: 223
+  total: 302
+  project_applicable: 226
   framework_invariant: 76
 records:
 - id: SCAF-AK-001
@@ -2961,49 +2979,87 @@ records:
   record_kind: normative_requirement
   layer: l1_l2_normative_authority
   authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc01
   source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
   source_anchor: SCAF-OBS-041
   source_release: v0.2.0rc01
-  representation_release: v0.2.0rc03
+  representation_release: v0.2.0rc10
   status: candidate_represented
   relations: []
 - id: SCAF-OBS-042
   record_kind: normative_requirement
   layer: l1_l2_normative_authority
   authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc01
   source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
   source_anchor: SCAF-OBS-042
   source_release: v0.2.0rc01
-  representation_release: v0.2.0rc03
+  representation_release: v0.2.0rc10
   status: candidate_represented
   relations: []
 - id: SCAF-OBS-043
   record_kind: normative_requirement
   layer: l1_l2_normative_authority
   authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc01
   source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
   source_anchor: SCAF-OBS-043
   source_release: v0.2.0rc01
-  representation_release: v0.2.0rc03
+  representation_release: v0.2.0rc10
   status: candidate_represented
   relations: []
 - id: SCAF-OBS-044
   record_kind: normative_requirement
   layer: l1_l2_normative_authority
   authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc01
   source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
   source_anchor: SCAF-OBS-044
   source_release: v0.2.0rc01
-  representation_release: v0.2.0rc03
+  representation_release: v0.2.0rc10
   status: candidate_represented
   relations: []
 - id: SCAF-OBS-045
   record_kind: normative_requirement
   layer: l1_l2_normative_authority
   authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc01
   source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md
   source_anchor: SCAF-OBS-045
   source_release: v0.2.0rc01
-  representation_release: v0.2.0rc03
+  representation_release: v0.2.0rc10
+  status: candidate_represented
+  relations: []
+- id: SCAF-OBS-046
+  record_kind: normative_requirement
+  layer: l1_l2_normative_authority
+  authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc08
+  source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md
+  source_anchor: SCAF-OBS-046
+  source_release: v0.2.0rc08
+  representation_release: v0.2.0rc10
+  status: candidate_represented
+  relations: []
+- id: SCAF-OBS-047
+  record_kind: normative_requirement
+  layer: l1_l2_normative_authority
+  authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc08
+  source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md
+  source_anchor: SCAF-OBS-047
+  source_release: v0.2.0rc08
+  representation_release: v0.2.0rc10
+  status: candidate_represented
+  relations: []
+- id: SCAF-OBS-048
+  record_kind: normative_requirement
+  layer: l1_l2_normative_authority
+  authority_class: Project-Applicable Obligation
+  source_ref: scaf_obs_v0.2.0rc08
+  source_path: docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md
+  source_anchor: SCAF-OBS-048
+  source_release: v0.2.0rc08
+  representation_release: v0.2.0rc10
   status: candidate_represented
   relations: []

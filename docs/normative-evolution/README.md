@@ -103,3 +103,15 @@ SCAF-OBS-046..048 -> v0.2.0rc08
 and the exact 294-record formal projection.
 
 rc09 also concludes that L2 is semantically ready to support a future Evidence-Driven Engineering L3 Pattern, but immediate L3 creation remains stopped until the full reviewed candidate L2 set is machine-readably represented and validated. Candidate Project Application / Effective Project Profile downstream migration remains parked.
+
+
+## v0.2.0rc10 Multi-Source Candidate Representation
+
+After the clean rc09 dependency/value review, rc10 does not add or alter L2 semantic IDs. Instead it moves all eight reviewed OBS candidates into the candidate executable-governance representation while preserving their accepted semantic sources:
+
+```text
+SCAF-OBS-041..045 -> v0.2.0rc01 overlay
+SCAF-OBS-046..048 -> v0.2.0rc08 overlay
+```
+
+The representation/schema/validator work is documented in `docs/executable-governance/70_SCAF_v0.2.0rc10_Candidate_Authority_Multi_Source_Representation_Foundation.md`. The formal normative baseline remains unchanged; candidate authority remains development-only.

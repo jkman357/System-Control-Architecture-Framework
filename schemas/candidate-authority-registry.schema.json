@@ -1,163 +1,350 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "urn:scaf:schema:candidate-authority-registry:v0.2.0rc03",
-  "title": "SCAF v0.2.0rc03 Candidate L1/L2 Authority Registry",
-  "description": "Candidate-only structural contract for the 299-record development authority representation. Formal v0.1.0 authority remains authority-registry.yaml and its frozen schema/validator.",
+  "$id": "urn:scaf:schema:candidate-authority-registry:v0.2.0rc10",
+  "title": "SCAF v0.2.0rc10 Candidate Multi-Source L1/L2 Authority Registry",
+  "description": "Candidate-only structural contract for the 302-record multi-source development authority representation. Formal v0.1.0 authority remains authority-registry.yaml and its frozen schema/validator.",
   "type": "object",
   "additionalProperties": false,
   "required": [
     "registry_kind",
     "development_release",
     "candidate_status",
+    "authority_set_id",
     "formal_release",
     "formal_registry_path",
     "formal_registry_sha256",
-    "candidate_source_path",
-    "candidate_source_release",
-    "candidate_source_sha256",
+    "candidate_sources",
     "expected_inventory",
     "records"
   ],
   "properties": {
-    "registry_kind": { "const": "scaf_candidate_l1_l2_authority_registry" },
-    "development_release": { "const": "v0.2.0rc03" },
-    "candidate_status": { "const": "development_candidate" },
-    "formal_release": { "const": "v0.1.0" },
-    "formal_registry_path": { "const": "authority-registry.yaml" },
+    "registry_kind": {
+      "const": "scaf_candidate_l1_l2_authority_registry"
+    },
+    "development_release": {
+      "const": "v0.2.0rc10"
+    },
+    "candidate_status": {
+      "const": "development_candidate"
+    },
+    "authority_set_id": {
+      "const": "scaf_candidate_l1_l2_authority_set_v0.2.0rc10"
+    },
+    "formal_release": {
+      "const": "v0.1.0"
+    },
+    "formal_registry_path": {
+      "const": "authority-registry.yaml"
+    },
     "formal_registry_sha256": {
       "const": "b6ca00b44ffc280098e9feff7c7bbffa068ea3a98835fc76fa6cd13af8657692"
     },
-    "candidate_source_path": {
-      "const": "docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md"
-    },
-    "candidate_source_release": { "const": "v0.2.0rc01" },
-    "candidate_source_sha256": {
-      "const": "9fe22a3a6a7e64eac7ed8d1fb80ea95ae63c3d9a43957e8013c1daf3aa07d008"
+    "candidate_sources": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "prefixItems": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_id",
+            "source_path",
+            "source_release",
+            "source_sha256",
+            "candidate_ids"
+          ],
+          "properties": {
+            "source_id": {
+              "const": "scaf_obs_v0.2.0rc01"
+            },
+            "source_path": {
+              "const": "docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md"
+            },
+            "source_release": {
+              "const": "v0.2.0rc01"
+            },
+            "source_sha256": {
+              "const": "9fe22a3a6a7e64eac7ed8d1fb80ea95ae63c3d9a43957e8013c1daf3aa07d008"
+            },
+            "candidate_ids": {
+              "const": [
+                "SCAF-OBS-041",
+                "SCAF-OBS-042",
+                "SCAF-OBS-043",
+                "SCAF-OBS-044",
+                "SCAF-OBS-045"
+              ]
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "source_id",
+            "source_path",
+            "source_release",
+            "source_sha256",
+            "candidate_ids"
+          ],
+          "properties": {
+            "source_id": {
+              "const": "scaf_obs_v0.2.0rc08"
+            },
+            "source_path": {
+              "const": "docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md"
+            },
+            "source_release": {
+              "const": "v0.2.0rc08"
+            },
+            "source_sha256": {
+              "const": "eecd923e22f0466564473e5c2a6d32002cabd133d7fdc912033c777a8a12fbff"
+            },
+            "candidate_ids": {
+              "const": [
+                "SCAF-OBS-046",
+                "SCAF-OBS-047",
+                "SCAF-OBS-048"
+              ]
+            }
+          }
+        }
+      ],
+      "items": false
     },
     "expected_inventory": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["total", "project_applicable", "framework_invariant"],
+      "required": [
+        "total",
+        "project_applicable",
+        "framework_invariant"
+      ],
       "properties": {
-        "total": { "const": 299 },
-        "project_applicable": { "const": 223 },
-        "framework_invariant": { "const": 76 }
+        "total": {
+          "const": 302
+        },
+        "project_applicable": {
+          "const": 226
+        },
+        "framework_invariant": {
+          "const": 76
+        }
       }
     },
     "records": {
       "type": "array",
-      "minItems": 299,
-      "maxItems": 299,
+      "minItems": 302,
+      "maxItems": 302,
       "uniqueItems": true,
       "items": {
         "oneOf": [
-          { "$ref": "#/$defs/frozenRecord" },
-          { "$ref": "#/$defs/candidateRecord" }
+          {
+            "$ref": "#/$defs/frozenRecord"
+          },
+          {
+            "$ref": "#/$defs/rc01CandidateRecord"
+          },
+          {
+            "$ref": "#/$defs/rc08CandidateRecord"
+          }
         ]
       }
     }
   },
   "$defs": {
-    "commonRecordProperties": {
+    "frozenRecord": {
       "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_kind",
+        "layer",
+        "authority_class",
+        "source_path",
+        "source_anchor",
+        "source_release",
+        "representation_release",
+        "status",
+        "relations"
+      ],
       "properties": {
         "id": {
           "type": "string",
           "pattern": "^SCAF-(AK|CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
         },
-        "record_kind": { "const": "normative_requirement" },
-        "layer": { "const": "l1_l2_normative_authority" },
+        "record_kind": {
+          "const": "normative_requirement"
+        },
+        "layer": {
+          "const": "l1_l2_normative_authority"
+        },
         "authority_class": {
-          "enum": ["Project-Applicable Obligation", "Framework Normative Invariant"]
+          "enum": [
+            "Project-Applicable Obligation",
+            "Framework Normative Invariant"
+          ]
+        },
+        "source_path": {
+          "enum": [
+            "docs/normative/00_SCAF_Authority_Kernel.md",
+            "docs/normative/10_SCAF_CTX_System_Context_Obligations.md",
+            "docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md",
+            "docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md",
+            "docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md",
+            "docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md",
+            "docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md",
+            "docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md",
+            "docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md",
+            "docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md",
+            "docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md"
+          ]
         },
         "source_anchor": {
           "type": "string",
           "pattern": "^SCAF-(AK|CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
         },
-        "relations": { "type": "array", "maxItems": 0 }
+        "source_release": {
+          "const": "v0.0.2"
+        },
+        "representation_release": {
+          "const": "v0.0.4rc03"
+        },
+        "status": {
+          "const": "represented"
+        },
+        "relations": {
+          "type": "array",
+          "maxItems": 0
+        }
       }
     },
-    "frozenRecord": {
-      "allOf": [
-        { "$ref": "#/$defs/commonRecordProperties" },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "id", "record_kind", "layer", "authority_class", "source_path",
-            "source_anchor", "source_release", "representation_release", "status", "relations"
-          ],
-          "properties": {
-            "id": {
-              "type": "string",
-              "pattern": "^SCAF-(AK|CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
-            },
-            "record_kind": { "const": "normative_requirement" },
-            "layer": { "const": "l1_l2_normative_authority" },
-            "authority_class": {
-              "enum": ["Project-Applicable Obligation", "Framework Normative Invariant"]
-            },
-            "source_path": {
-              "enum": [
-                "docs/normative/00_SCAF_Authority_Kernel.md",
-                "docs/normative/10_SCAF_CTX_System_Context_Obligations.md",
-                "docs/normative/20_SCAF_ARCH_System_Architecture_Obligations.md",
-                "docs/normative/30_SCAF_INT_Interface_Interaction_Data_Contract_Obligations.md",
-                "docs/normative/40_SCAF_TIME_Timing_Concurrency_Capacity_Obligations.md",
-                "docs/normative/50_SCAF_RUN_Runtime_State_Operational_Lifecycle_Obligations.md",
-                "docs/normative/60_SCAF_ROB_Robustness_Resilience_Obligations.md",
-                "docs/normative/70_SCAF_LIFE_Boot_Power_Reset_Update_Lifecycle_Obligations.md",
-                "docs/normative/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations.md",
-                "docs/normative/90_SCAF_CFG_Configuration_Persistent_Operational_State_Obligations.md",
-                "docs/normative/100_SCAF_SEC_Security_Architecture_Interface_Robustness_Obligations.md"
-              ]
-            },
-            "source_anchor": {
-              "type": "string",
-              "pattern": "^SCAF-(AK|CTX|ARCH|INT|TIME|RUN|ROB|LIFE|OBS|CFG|SEC)-[0-9]{3}$"
-            },
-            "source_release": { "const": "v0.0.2" },
-            "representation_release": { "const": "v0.0.4rc03" },
-            "status": { "const": "represented" },
-            "relations": { "type": "array", "maxItems": 0 }
-          }
+    "rc01CandidateRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_kind",
+        "layer",
+        "authority_class",
+        "source_ref",
+        "source_path",
+        "source_anchor",
+        "source_release",
+        "representation_release",
+        "status",
+        "relations"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "SCAF-OBS-041",
+            "SCAF-OBS-042",
+            "SCAF-OBS-043",
+            "SCAF-OBS-044",
+            "SCAF-OBS-045"
+          ]
+        },
+        "record_kind": {
+          "const": "normative_requirement"
+        },
+        "layer": {
+          "const": "l1_l2_normative_authority"
+        },
+        "authority_class": {
+          "const": "Project-Applicable Obligation"
+        },
+        "source_ref": {
+          "const": "scaf_obs_v0.2.0rc01"
+        },
+        "source_path": {
+          "const": "docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md"
+        },
+        "source_anchor": {
+          "enum": [
+            "SCAF-OBS-041",
+            "SCAF-OBS-042",
+            "SCAF-OBS-043",
+            "SCAF-OBS-044",
+            "SCAF-OBS-045"
+          ]
+        },
+        "source_release": {
+          "const": "v0.2.0rc01"
+        },
+        "representation_release": {
+          "const": "v0.2.0rc10"
+        },
+        "status": {
+          "const": "candidate_represented"
+        },
+        "relations": {
+          "type": "array",
+          "maxItems": 0
         }
-      ]
+      }
     },
-    "candidateRecord": {
-      "allOf": [
-        { "$ref": "#/$defs/commonRecordProperties" },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "id", "record_kind", "layer", "authority_class", "source_path",
-            "source_anchor", "source_release", "representation_release", "status", "relations"
-          ],
-          "properties": {
-            "id": {
-              "enum": [
-                "SCAF-OBS-041", "SCAF-OBS-042", "SCAF-OBS-043", "SCAF-OBS-044", "SCAF-OBS-045"
-              ]
-            },
-            "record_kind": { "const": "normative_requirement" },
-            "layer": { "const": "l1_l2_normative_authority" },
-            "authority_class": { "const": "Project-Applicable Obligation" },
-            "source_path": {
-              "const": "docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc01.md"
-            },
-            "source_anchor": {
-              "enum": [
-                "SCAF-OBS-041", "SCAF-OBS-042", "SCAF-OBS-043", "SCAF-OBS-044", "SCAF-OBS-045"
-              ]
-            },
-            "source_release": { "const": "v0.2.0rc01" },
-            "representation_release": { "const": "v0.2.0rc03" },
-            "status": { "const": "candidate_represented" },
-            "relations": { "type": "array", "maxItems": 0 }
-          }
+    "rc08CandidateRecord": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "record_kind",
+        "layer",
+        "authority_class",
+        "source_ref",
+        "source_path",
+        "source_anchor",
+        "source_release",
+        "representation_release",
+        "status",
+        "relations"
+      ],
+      "properties": {
+        "id": {
+          "enum": [
+            "SCAF-OBS-046",
+            "SCAF-OBS-047",
+            "SCAF-OBS-048"
+          ]
+        },
+        "record_kind": {
+          "const": "normative_requirement"
+        },
+        "layer": {
+          "const": "l1_l2_normative_authority"
+        },
+        "authority_class": {
+          "const": "Project-Applicable Obligation"
+        },
+        "source_ref": {
+          "const": "scaf_obs_v0.2.0rc08"
+        },
+        "source_path": {
+          "const": "docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md"
+        },
+        "source_anchor": {
+          "enum": [
+            "SCAF-OBS-046",
+            "SCAF-OBS-047",
+            "SCAF-OBS-048"
+          ]
+        },
+        "source_release": {
+          "const": "v0.2.0rc08"
+        },
+        "representation_release": {
+          "const": "v0.2.0rc10"
+        },
+        "status": {
+          "const": "candidate_represented"
+        },
+        "relations": {
+          "type": "array",
+          "maxItems": 0
         }
-      ]
+      }
     }
   }
 }

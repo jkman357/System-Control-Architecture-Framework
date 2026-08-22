@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.0rc10 — Candidate Authority Multi-Source Representation Foundation
+
+- Continue only after rc09 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
+- Base rc10 on committed rc09 Git predecessor `57aa72a4e434fbcb8511c33e9a26e2cdf57e4e8a`.
+- Evolve only candidate executable governance; do not modify formal authority, frozen L3, Project Application, Effective Project Profile or later consumers.
+- Replace the singular candidate-source assumption with one controlled candidate authority-set identity plus exactly two candidate semantic-source definitions.
+- Preserve semantic provenance as `SCAF-OBS-041..045 -> v0.2.0rc01` and `SCAF-OBS-046..048 -> v0.2.0rc08`; do not rewrite the earlier five IDs merely because rc08 reproduces their text.
+- Add per-candidate-record `source_ref` binding while retaining source path/release consistency checks.
+- Byte-bind both controlled candidate source artifacts and reconstruct each source-owned candidate ID/Target against its declared source.
+- Require exact 294-record formal projection and preserve frozen formal validation as a fail-stop prerequisite.
+- Move the executable candidate inventory from `299 / 223 / 76` to `302 / 226 / 76`, with exactly eight candidate PAOs and two controlled candidate-source artifacts.
+- Reject unknown/misassigned source references, source ownership overlap/missing IDs, arbitrary additional sources, source hash/path/release mismatch, frozen projection changes and invalid inventory.
+- Keep candidate authority development-only; keep candidate Project Application / EPP / later consumers **PARKED**.
+- Create no Evidence-Driven Engineering L3 Pattern yet; preserve L3 `12 / 119` and frozen `docs/l3/` pending the next explicit gate.
+- Keep L4, code generation and generic runtime-instrumentation CI deferred/STOP.
+
 ## v0.2.0rc09 — Engineering Evidence Candidate Representation and L3 Readiness Dependency & Value Assessment
 
 - Continue only after rc08 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.

@@ -5,11 +5,11 @@
 **Upstream Baselines:** frozen v0.0.2 L1/L2; frozen v0.0.3 L3
 
 
-## Active v0.2.0rc06 Candidate Authority-Set Binding Semantic Foundation
+## Active v0.2.0rc10 Candidate Multi-Source Representation Foundation
 
-`v0.2.0rc03` established the separate `299 / 223 / 76` candidate authority representation, `v0.2.0rc04` closed its formal-prerequisite fail-stop finding, and `v0.2.0rc05` cleanly confirmed that candidate Project Application consumption has value but that the existing single-source-release domain model is insufficient.
+The candidate authority line progressed from the initial single-source `299 / 223 / 76` representation through fail-stop hardening, downstream-consumption assessment and Authority-Set Binding semantics. The reviewed rc08/rc09 evidence tranche now requires eight candidate PAOs from two controlled semantic sources.
 
-`v0.2.0rc06` defines the missing semantic contract:
+rc10 makes the accepted distinction executable:
 
 ```text
 Authority Set Identity
@@ -17,16 +17,24 @@ Authority Set Identity
 Authority Record Semantic Provenance
 ```
 
-One Project Application consumption context must bind to one complete validated authority set independently of sparse or empty Project Application records. Individual authority records retain their semantic source provenance. The current candidate set therefore remains one 223-PAO domain composed of `218 × v0.0.2` plus `5 × v0.2.0rc01` PAOs.
+The candidate registry now binds one complete candidate authority set to two controlled source artifacts:
 
-The semantic foundation preserves the formal Project Application path, accepted applicability/disposition meanings, project engineering judgment ownership, and SCAF-APP's obligation/scope granularity. Candidate Project Application serialization/schema/validator, Effective Project Profile, later consumers, L3, L4, code generation and generic instrumentation CI remain unchanged/deferred.
+```text
+scaf_obs_v0.2.0rc01 -> SCAF-OBS-041..045
+scaf_obs_v0.2.0rc08 -> SCAF-OBS-046..048
+```
+
+Each candidate record has a controlled `source_ref`; source bytes are SHA-256 bound; record path/release must agree with the referenced source; each owned ID/Target is reconstructed from the bound source; the 294 formal records remain exact projections; and frozen formal validation remains a fail-stop prerequisite. The resulting candidate target is `302 / 226 / 76`.
+
+Candidate authority remains development-only. Formal Project Application / Effective Project Profile behavior is unchanged, and no L3 Pattern, L4 expansion, code generation or generic instrumentation CI is introduced by rc10.
 
 Controlled records:
 
-- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — candidate registry/schema/source-aware validation foundation.
-- [`67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`](67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md) — `RC03-01` fail-stop closure.
-- [`68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md`](68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md) — downstream dependency/value decision and authority-set semantic prerequisite.
-- [`69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md`](69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md) — authority-set identity/binding and candidate Project Application consumption semantic contract.
+- [`66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`](66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md) — initial candidate registry/schema/source-aware validation foundation.
+- [`67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md`](67_SCAF_v0.2.0rc04_Candidate_Authority_Validator_Formal_Prerequisite_Fail_Stop_Hardening.md) — fail-stop closure.
+- [`68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md`](68_SCAF_v0.2.0rc05_Candidate_Authority_Downstream_Consumption_Dependency_and_Value_Assessment.md) — downstream dependency/value assessment.
+- [`69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md`](69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md) — Authority-Set Binding semantic contract.
+- [`70_SCAF_v0.2.0rc10_Candidate_Authority_Multi_Source_Representation_Foundation.md`](70_SCAF_v0.2.0rc10_Candidate_Authority_Multi_Source_Representation_Foundation.md) — multi-source candidate representation/schema/validator foundation.
 
 ## Frozen v0.1.0 Milestone
 
