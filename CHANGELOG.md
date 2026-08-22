@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.0rc02
+
+- Harden L4 executable governance candidate.
+- Add evidence lineage distinction.
+- Add validator responsibility matrix.
+- Add reviewer navigation guidance.
+
 ## v0.3.0rc01
 
 - Introduce L4 executable governance foundation.

@@ -69,3 +69,18 @@ Release History:
 - v0.2.1rc07
 - v0.2.1rc08
 - v0.2.1rc09
+
+
+## Release Status
+
+Frozen Baseline:
+v0.2.1
+
+Current Candidate:
+v0.3.0rc02
+
+Review Target:
+v0.3.0rc02
+
+Development Focus:
+L4 Executable Governance Hardening
