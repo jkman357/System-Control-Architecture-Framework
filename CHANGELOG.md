@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.1rc01
+
+- Start L4 release hardening development line from v0.3.0 frozen baseline.
+- Align release documentation and validation consistency requirements.
+- Prepare iterative review and correction cycle for v0.3.1 stabilization.
+
 ## v0.3.0rc04
 
 - Complete L4 final candidate cleanup.
