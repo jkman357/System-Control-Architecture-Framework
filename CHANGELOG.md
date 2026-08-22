@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.3.0rc07
+
+- Complete final L4 release closure cleanup.
+- Synchronize release identity and evidence lineage metadata.
+- Consolidate release preparation artifacts.
+
 ## v0.3.0rc06
 
 - Consolidate final L4 release preparation metadata.
