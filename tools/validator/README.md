@@ -1,15 +1,16 @@
-# SCAF Validator Prototype
+# SCAF Validator
 
 ## v0.3.0rc01
 
-Purpose:
-Provide the first L4 executable governance validation foundation.
+Validation scope:
 
-Scope:
-- Validate required governance artifacts.
-- Validate evidence presence.
-- Validate trace references.
+- Schema validation
+- Trace validation
+- Governance artifact validation
+
+Output:
+Validation result and evidence reference.
 
 Boundary:
-The validator checks governance conditions.
-It does not define authority or make engineering decisions.
+Validator checks defined governance conditions and does not make
+engineering decisions.

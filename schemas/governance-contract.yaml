@@ -1,15 +1,16 @@
 # SCAF Governance Contract
-# v0.3.0rc01 - L4 Executable Governance Foundation
+# v0.3.0rc01 L4 Complete Candidate
 
 project:
   domain: example
   realtime: false
 
-requirements:
+governance:
   trace_required: true
   evidence_required: true
 
 validation:
   required:
-    - schema_check
-    - trace_check
+    - schema_validation
+    - trace_validation
+    - governance_validation
