@@ -96,3 +96,15 @@ v0.2.1rc12
 
 Purpose:
 Final Release Closure
+
+
+## Release Status
+
+Frozen Baseline:
+v0.2.0
+
+Current Release Candidate:
+v0.2.1rc13
+
+Release Purpose:
+Final Release Synchronization

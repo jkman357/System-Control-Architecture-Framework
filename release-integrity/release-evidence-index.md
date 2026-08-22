@@ -1,8 +1,8 @@
 # Release Evidence Index
 
-## v0.2.1rc11
+## v0.2.1rc13
 
-## Final Evidence Closure Candidate
+## Final Release Synchronization
 
 Evidence chain:
 
@@ -28,4 +28,8 @@ Included artifacts:
 - validation summary
 - validation execution record
 - execution metadata template
+- release closure summary
 - review index
+
+Evidence lineage:
+- v0.2.1rc12
