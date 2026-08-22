@@ -14,3 +14,15 @@ and preserves SCAF authority model and layering separation.
 ## Current Development Release
 
 v0.2.1rc05 - Governance Evidence & Validation Closure
+
+
+## Release Information
+
+Frozen Baseline:
+v0.2.0
+
+Current Development Release:
+v0.2.1rc06
+
+Review Target:
+v0.2.1rc06
