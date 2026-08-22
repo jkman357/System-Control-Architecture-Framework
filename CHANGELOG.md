@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.1
+
+- Freeze executable governance maturity baseline.
+- Consolidate release evidence chain.
+- Preserve authority model and governance boundaries.
+- Establish foundation for future L4 development.
+
+
 ## v0.2.1rc13
 
 - Synchronize release evidence index with final closure candidate.
