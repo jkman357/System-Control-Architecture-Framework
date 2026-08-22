@@ -1,8 +1,8 @@
 # Release Evidence Index
 
-## v0.2.1rc09
+## v0.2.1rc11
 
-Release Evidence Closure Candidate
+## Final Evidence Closure Candidate
 
 Evidence chain:
 
@@ -27,4 +27,5 @@ Included artifacts:
 - test execution record
 - validation summary
 - validation execution record
+- execution metadata template
 - review index

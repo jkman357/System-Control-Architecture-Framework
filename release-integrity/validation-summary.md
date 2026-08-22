@@ -1,6 +1,6 @@
 # Validation Summary
 
-## v0.2.1rc09
+## v0.2.1rc11
 
 ## Validation Scope
 
@@ -9,13 +9,13 @@
 - Validation execution evidence
 - Release evidence completeness
 
-## Evidence Relationship
+## Evidence Lineage
 
-Inherited evidence:
-- v0.2.1rc08 execution evidence foundation
+Inherited evidence lineage:
+- v0.2.1rc10
 
-Current release:
-- v0.2.1rc09 closure candidate
+Current release candidate:
+- v0.2.1rc11
 
 Result:
 PASS
