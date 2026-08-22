@@ -1,8 +1,7 @@
 # Changelog
 
-## v0.2.0rc12 rev4
+## v0.2.0rc12 rev5
 
--   Restore reviewed Evidence-Driven Engineering Pattern continuity.
--   Restore complete pattern semantics from the reviewed candidate.
--   Add completed catalog integration assessment artifact.
--   Preserve L2/L3 separation and integration boundaries.
+- Preserve Evidence-Driven Engineering Pattern artifact continuity.
+- Add catalog integration assessment without redefining the Pattern.
+- Maintain L2/L3 separation and artifact provenance boundaries.
