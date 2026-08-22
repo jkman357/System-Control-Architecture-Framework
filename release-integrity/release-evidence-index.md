@@ -1,18 +1,30 @@
 # Release Evidence Index
 
-## v0.2.1rc07
+## v0.2.1rc09
 
-Release evidence structure:
+Release Evidence Closure Candidate
+
+Evidence chain:
 
 Build Evidence
-    |
-    v
+        |
+        v
 Test Evidence
-    |
-    v
+        |
+        v
 Validation Evidence
-    |
-    v
+        |
+        v
 Review Evidence
+        |
+        v
+Release Identity
 
-The index provides navigation of release evidence artifacts.
+Included artifacts:
+
+- build summary
+- test summary
+- test execution record
+- validation summary
+- validation execution record
+- review index

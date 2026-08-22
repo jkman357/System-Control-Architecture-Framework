@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1rc09
+
+- Synchronize release evidence artifacts.
+- Align validation summary with current release candidate.
+- Update release evidence index for closure candidate review.
+- Refine release status presentation.
+
 ## v0.2.1rc08
 
 - Add release evidence execution records.
