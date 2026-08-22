@@ -1,3 +1,9 @@
+# v0.3.1rc02
+
+- Added canonical release status documentation.
+- Added document authority classification guidance.
+- Continued L4 release hardening cleanup after rc01 review.
+
 # Changelog
 
 ## v0.3.1rc01
