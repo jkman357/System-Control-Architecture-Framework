@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1rc05
+
+- Add governance evidence and validation closure artifacts.
+- Add validation summary artifact.
+- Add governance artifact relationship map.
+- Add review lifecycle index.
+
 ## v0.2.1rc04
 
 - Add release governance and sanitization foundation.
