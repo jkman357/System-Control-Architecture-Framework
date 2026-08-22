@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.0rc07 — Engineering Evidence Binding, Change Applicability and Closure Gap Assessment
+
+- Continue only after rc06 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
+- Base rc07 on committed rc06 Git predecessor `e5cece52a02fbf2eddd989ae4a26af3b3a54ca4f`.
+- Perform L1/L2 gap assessment only; add no new authority ID and do not modify the accepted `SCAF-OBS-041..045` candidate overlay.
+- Confirm existing coverage for generic evidence identity/provenance, time/correlation/causal limitation, missingness/loss, observer effect/non-dependence, temporary-instrumentation lifecycle, evidence sufficiency and closure-authority separation.
+- Identify three **REAL L2 GAPS**: generic Evidence Applicability Binding, Baseline/Change Evidence Relationship, and Before/After Verification-Closure Evidence Relationship.
+- Distinguish evidence applicability from source-authority semantics: OBS may associate evidence with source/build/configuration/target/instrumentation identities but does not redefine CFG/CTX/ARCH/RUN/LIFE/TIME/ROB meanings.
+- Keep Git, build-ID format, board-ID format, logger/storage/export mechanism and test procedure outside L2 mandatory realization.
+- Keep first-behavioral-divergence search, Evidence→Hypothesis→Probe iteration and AI-assisted source/diff/runtime correlation as future L3/pattern-level method concepts.
+- Record **PARK** for candidate Project Application / Effective Project Profile downstream implementation while the upstream L2 evidence authority set is still evolving.
+- Recommend the next bounded step as an rc08 semantic candidate addressing only the three confirmed L2 evidence relationships; do not simultaneously create L3/L4/codegen/generic instrumentation CI.
+- Preserve formal `294 / 218 / 76`, candidate `299 / 223 / 76`, L3 `12 / 119`, frozen normative/L3 trees and formal-only Project Application behavior unchanged.
+- Carry deletion of seven tracked Python cache artifacts retained by the committed rc06 predecessor as non-semantic source-package hygiene.
+
 ## v0.2.0rc06 — Candidate Authority-Set Binding and Project Application Consumption Semantic Foundation
 
 - Continue only after rc05 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.

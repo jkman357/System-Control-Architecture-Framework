@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** v0.2.0rc06
-**Status:** Candidate Authority-Set Binding and Project Application Consumption Semantic Foundation
+**Active Development RC:** v0.2.0rc07
+**Status:** Engineering Evidence Binding, Change Applicability and Closure Gap Assessment
 **Date:** 2026-08-21
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc06`. The rc05 downstream dependency/value assessment passed clean review and established that candidate Project Application consumption has value but requires an explicit authority-set binding semantic boundary before any representation or tooling migration.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc07`. The rc06 authority-set binding semantic foundation passed clean review; rc07 temporarily parks downstream candidate-consumer implementation and assesses whether the active L2 observability/evidence authority is sufficient for evidence applicability, change comparison and before/after closure use.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -50,32 +50,23 @@ L4 — Construction / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.2.0rc06 Authority-Set Binding Semantic Foundation
+## Active v0.2.0rc07 Engineering Evidence Gap Assessment
 
-The v0.2.0rc01-to-rc04 development line established and validated five candidate Project-Applicable Obligations (`SCAF-OBS-041..045`) together with a separate `299 / 223 / 76` candidate authority representation and a formal-prerequisite fail-stop validator boundary. The clean v0.2.0rc05 review then confirmed that candidate Project Application consumption has material governance value but that the existing one-`scaf_source_release` domain model cannot safely represent the mixed candidate PAO universe.
+The v0.2.0rc01-to-rc06 development line established five candidate diagnostic-instrumentation lifecycle obligations, a separate `299 / 223 / 76` candidate authority representation, formal-prerequisite fail-stop validation, and the semantic distinction between complete Authority Set Identity and per-record Semantic Provenance. The rc06 independent review returned clean `PASS / GATE YES` with zero findings.
 
-`v0.2.0rc06` defines the missing semantic distinction:
-
-```text
-Authority Set Identity
-!=
-Authority Record Semantic Provenance
-```
-
-The current candidate PAO universe remains:
+`v0.2.0rc07` does not add another authority ID or consumer implementation. It assesses whether the existing L2 authority is sufficient for three evidence relationships exposed by evidence-driven engineering practice:
 
 ```text
-218 PAOs  semantic source_release: v0.0.2
-  5 PAOs  semantic source_release: v0.2.0rc01
---------------------------------------------
-223 PAOs  in one validated candidate authority set
+Evidence Applicability Binding
+Baseline / Change Evidence Relationship
+Before / After Verification-Closure Evidence Relationship
 ```
 
-A future candidate Project Application context must therefore bind explicitly to one complete validated authority set. That binding must remain meaningful for sparse and even empty Project Application record populations; it cannot be inferred from the IDs or release values present in individual records.
+The assessment concludes that existing OBS and Authority Kernel content already covers generic provenance, time/correlation, missingness, observer effect, temporary-instrumentation lifecycle, evidence sufficiency and closure-authority separation, but the three relationships above remain materially under-specified.
 
-rc06 preserves existing applicability/disposition semantics and the formal Project Application path. It introduces no candidate Project Application YAML/schema/validator, Effective Project Profile migration, later consumer migration, L3/L4 change, code generation or generic instrumentation CI.
+Accordingly, candidate Project Application / Effective Project Profile downstream migration is parked while this upstream L2 evidence foundation is still evolving. A future Evidence-Driven AI-Assisted Engineering Pattern remains deferred until the L2 evidence relationships are semantically stable.
 
-A clean rc06 review authorizes only a new dependency/value assessment for the minimum machine-readable representation/validation boundary needed to preserve these semantics. See `docs/executable-governance/69_SCAF_v0.2.0rc06_Candidate_Authority_Set_Binding_and_Project_Application_Consumption_Semantic_Foundation.md`.
+See `docs/normative-evolution/03_SCAF_v0.2.0rc07_Engineering_Evidence_Binding_Change_Applicability_and_Closure_Gap_Assessment.md`.
 
 ## Frozen v0.1.0 Milestone
 

@@ -50,3 +50,13 @@ The rc02 assessment leaves the rc01 OBS overlay text unchanged and concludes tha
 The accepted rc01 semantic overlay remains unchanged. rc03 does not promote it into `docs/normative/`. Instead, the separately controlled executable-governance layer now carries a candidate machine-readable authority representation under `candidate-authority-registry.yaml`, with its own candidate schema and source-aware validator.
 
 Formal v0.1.0 authority remains canonical. Candidate machine-readable representation does not by itself authorize Project Application, L3, L4 or formal-promotion migration. See `docs/executable-governance/66_SCAF_v0.2.0rc03_Candidate_Authority_Representation_Foundation.md`.
+
+## v0.2.0rc07 Engineering Evidence Gap Assessment
+
+After the clean rc06 semantic-foundation review, downstream candidate-consumer implementation is temporarily parked while the active L2 evidence authority is re-evaluated. rc07 adds no new authority identity and does not modify the accepted rc01 OBS overlay.
+
+The assessment is recorded in:
+
+- `03_SCAF_v0.2.0rc07_Engineering_Evidence_Binding_Change_Applicability_and_Closure_Gap_Assessment.md`
+
+It classifies existing authority coverage and identifies three material L2 gaps: generic evidence-to-realization applicability binding, baseline/change evidence relationship, and before/after verification-closure evidence relationship. Analysis methods such as first behavioral divergence and Evidence→Hypothesis→Probe remain deferred to a future L3 pattern after the L2 evidence foundation stabilizes.
