@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1rc10
+
+- Align test evidence identity with current release candidate.
+- Consolidate final release evidence presentation.
+- Add execution metadata completeness template.
+
 ## v0.2.1rc09
 
 - Synchronize release evidence artifacts.
