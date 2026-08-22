@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.2.0rc09 — Engineering Evidence Candidate Representation and L3 Readiness Dependency & Value Assessment
+
+- Continue only after rc08 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.
+- Base rc09 on committed rc08 Git predecessor `bf6daf55730266eaa4159c4a8256e3c211b48b5c`.
+- Perform dependency/value assessment only; add no L2 ID and make no registry/schema/validator/L3/L4/downstream-consumer implementation change.
+- Conclude **GO** for machine-readable representation of reviewed `SCAF-OBS-046..048`, with expected complete candidate inventory `302 / 226 / 76` if only those three PAOs are added to the exact 294 formal projection plus the existing five candidate PAOs.
+- Identify the current candidate registry/schema/validator as single-candidate-source constrained to the rc01 OBS overlay; **STOP** a simple three-record append that would misstate source provenance or weaken source-aware validation.
+- Preserve candidate semantic provenance as `SCAF-OBS-041..045 -> v0.2.0rc01` and `SCAF-OBS-046..048 -> v0.2.0rc08`; **STOP** rewriting the five earlier candidate records to rc08 merely because their text is reproduced in the rc08 complete overlay.
+- **GO** the next migration target as a candidate-only multi-source authority representation/schema/validator foundation preserving exact 294 formal projection and formal-prerequisite fail-stop behavior.
+- Conclude **GO — semantically ready** that the L2 evidence/observability foundation can support a future Evidence-Driven Engineering L3 Pattern, while **STOP** immediate L3 creation until all eight reviewed candidate PAOs are machine-readably represented and validated.
+- Keep first-behavioral-divergence analysis, Source/Change/Runtime/Probe composition, Evidence→Hypothesis→Probe iteration and AI-assisted evidence correlation as future L3 method concepts rather than L2 authority.
+- Keep candidate Project Application / Effective Project Profile and later consumers **PARKED**; keep L4, code generation and generic runtime-instrumentation CI deferred/STOP.
+- Preserve formal `294 / 218 / 76`, current executable candidate `299 / 223 / 76`, L3 `12 / 119`, frozen protected trees and formal-only Project Application behavior unchanged.
+
 ## v0.2.0rc08 — Engineering Evidence Applicability, Change Relationship and Closure Semantic Foundation
 
 - Continue only after rc07 independent review returned clean `PASS / GATE YES` with zero Critical/Major/Minor/Trivial findings.

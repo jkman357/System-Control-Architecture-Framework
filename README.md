@@ -1,8 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
 **Current Formal Release:** v0.1.0
-**Active Development RC:** v0.2.0rc08
-**Status:** Engineering Evidence Applicability, Change Relationship and Closure Semantic Foundation
+**Active Development RC:** v0.2.0rc09
+**Status:** Engineering Evidence Candidate Representation and L3 Readiness Dependency & Value Assessment
 **Date:** 2026-08-22
 
 System Control Architecture Framework (**SCAF**) is a system-level architecture and engineering-governance framework for making responsibilities, interfaces, runtime behavior, failure handling, lifecycle behavior, observability, evidence, and project decisions explicit and reviewable.
@@ -31,7 +31,7 @@ Formal frozen baselines:
 | `v0.0.10` | Frozen Controlled Context Assembly and Source-Aware Package Validation baseline |
 | `v0.1.0` | Frozen Minimum L4 Construction Guidance baseline |
 
-The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc08`. The rc07 engineering-evidence gap assessment passed clean review and confirmed three bounded L2 gaps; rc08 proposes only the corresponding evidence-applicability, baseline/change and before/after comparison semantics while downstream candidate-consumer implementation remains parked.
+The formal v0.1.0 baseline is frozen and immutable. Active development now continues on `v0.2.0rc09`. The rc08 evidence-relationship semantic candidate passed clean review with zero findings; rc09 assesses the minimum executable representation needed for the complete reviewed candidate set and whether the L2 evidence foundation is ready to support a later Evidence-Driven Engineering L3 Pattern.
 
 Frozen releases are not modified in place. Detailed release history, review gates and finding closure are maintained in [`CHANGELOG.md`](CHANGELOG.md).
 
@@ -50,23 +50,31 @@ L4 — Construction / Verification Guidance
 
 The frozen L1/L2 and L3 layers remain canonical for their accepted scope. Formal v0.1.0 introduces no modification to either frozen layer.
 
-## Active v0.2.0rc08 Engineering Evidence Semantic Foundation
+## Active v0.2.0rc09 Candidate Representation and L3 Readiness Assessment
 
-The v0.2.0rc01-to-rc06 development line established five candidate diagnostic-instrumentation lifecycle obligations, a separate `299 / 223 / 76` candidate authority representation, formal-prerequisite fail-stop validation, and Authority-Set Binding semantics. The clean rc07 assessment then confirmed three evidence relationships as bounded real L2 gaps.
-
-`v0.2.0rc08` proposes exactly three new Project-Applicable Obligations in a new complete OBS candidate overlay:
+The v0.2.0rc01-to-rc08 development line now contains eight reviewed candidate OBS obligations:
 
 ```text
-SCAF-OBS-046  Evidence realization applicability binding
-SCAF-OBS-047  Baseline and change relationship for comparative evidence
-SCAF-OBS-048  Before/after evidence relationship for verification and closure
+SCAF-OBS-041..045  diagnostic-instrumentation / probe lifecycle foundation
+SCAF-OBS-046       evidence realization applicability binding
+SCAF-OBS-047       baseline / change relationship for comparative evidence
+SCAF-OBS-048       before/after verification-closure evidence relationship
 ```
 
-The requirements are materiality-bounded and mechanism-neutral. They do not require Git, universal build metadata, runtime logging, a particular target identity format or a universal before/after test procedure. Change membership/proximity does not establish causality, and before/after evidence does not itself establish evidence sufficiency or underlying closure.
+The machine-readable candidate authority intentionally still represents only `SCAF-OBS-041..045` at `299 / 223 / 76`. rc09 concludes that representing the three reviewed rc08 PAOs now has real executable-governance value, with an expected complete candidate inventory of `302 / 226 / 76`.
 
-The current machine-readable candidate registry remains unchanged at `299 / 223 / 76`, representing only accepted candidate `SCAF-OBS-041..045`; rc08 does not yet migrate the three new semantic IDs into executable governance. Project Application / Effective Project Profile candidate migration remains parked, and a future Evidence-Driven Engineering L3 Pattern remains deferred until a separate value gate.
+The representation cannot safely be a simple three-record append under the current rc01-only candidate-source contract. Correct provenance is now multi-source:
 
-See `docs/normative-evolution/04_SCAF_v0.2.0rc08_Engineering_Evidence_Applicability_Change_Relationship_and_Closure_Semantic_Foundation.md` and `docs/normative-evolution/80_SCAF_OBS_Observability_Diagnostics_Incident_Evidence_Obligations_v0.2.0rc08.md`.
+```text
+SCAF-OBS-041..045 -> v0.2.0rc01 semantic source
+SCAF-OBS-046..048 -> v0.2.0rc08 semantic source
+```
+
+Therefore the next justified migration is a candidate-only multi-source authority representation/schema/validator foundation that preserves the exact 294 formal projection, per-record semantic provenance and formal-prerequisite fail-stop behavior.
+
+rc09 also concludes that the L2 evidence/observability semantics are now sufficient to support a future **Evidence-Driven Engineering** L3 Pattern. Immediate L3 creation remains stopped until the full reviewed L2 candidate set is machine-readably represented and validated. Candidate Project Application / Effective Project Profile migration remains parked.
+
+See `docs/normative-evolution/05_SCAF_v0.2.0rc09_Engineering_Evidence_Candidate_Representation_and_L3_Readiness_Dependency_and_Value_Assessment.md`.
 
 ## Frozen v0.1.0 Milestone
 

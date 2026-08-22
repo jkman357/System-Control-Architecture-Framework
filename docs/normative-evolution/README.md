@@ -82,3 +82,24 @@ SCAF-OBS-048  Before/after evidence relationship for verification and closure
 These three IDs are semantic candidates only. The existing machine-readable `candidate-authority-registry.yaml` remains bound to the accepted rc01 overlay and still represents only five candidate records at `299 / 223 / 76`. No candidate-registry/schema/validator, Project Application, Effective Project Profile, L3/L4 or later-consumer migration is performed by rc08.
 
 A clean rc08 review authorizes only a new dependency/value assessment before any representation migration or L3 Pattern decision.
+
+## v0.2.0rc09 Candidate Representation and L3 Readiness Assessment
+
+After the clean rc08 semantic-candidate review, rc09 adds no new authority identity. It assesses the executable-governance consequence of the reviewed `SCAF-OBS-046..048` tranche and whether the L2 evidence foundation is now sufficient for a later Evidence-Driven Engineering L3 Pattern.
+
+The assessment is recorded in:
+
+- `05_SCAF_v0.2.0rc09_Engineering_Evidence_Candidate_Representation_and_L3_Readiness_Dependency_and_Value_Assessment.md`
+
+rc09 concludes that the three rc08 PAOs should become machine-readably represented, producing an expected `302 / 226 / 76` candidate authority. The current candidate registry/schema/validator cannot safely reach that state through a simple append because it owns one candidate semantic source (`v0.2.0rc01`), while the reviewed set now requires controlled provenance from both rc01 and rc08.
+
+The next justified migration is therefore a candidate-only multi-source representation foundation preserving:
+
+```text
+SCAF-OBS-041..045 -> v0.2.0rc01
+SCAF-OBS-046..048 -> v0.2.0rc08
+```
+
+and the exact 294-record formal projection.
+
+rc09 also concludes that L2 is semantically ready to support a future Evidence-Driven Engineering L3 Pattern, but immediate L3 creation remains stopped until the full reviewed candidate L2 set is machine-readably represented and validated. Candidate Project Application / Effective Project Profile downstream migration remains parked.
