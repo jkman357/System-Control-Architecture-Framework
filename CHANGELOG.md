@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.2.1rc01
+
+- Add executable governance foundation artifacts.
+- Introduce dependency relationship schema foundation.
+- Introduce Pattern trace registry foundation.
+- Add release manifest separation foundation.
+
 ## v0.2.0
 
 - Frozen baseline release derived from v0.2.0rc14.

@@ -1,0 +1,7 @@
+# Pattern Trace Registry
+version: v0.2.1rc01
+
+patterns: []
+
+# Trace relationship foundation:
+# L2 Requirement -> L3 Pattern -> Implementation Framework -> Application

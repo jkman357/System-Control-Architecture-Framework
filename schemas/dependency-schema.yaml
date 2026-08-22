@@ -1,0 +1,11 @@
+# Dependency Relationship Schema
+version: v0.2.1rc01
+
+dependency:
+  source: pattern-or-requirement-id
+  target: related-artifact-id
+  relationship:
+    allowed:
+      - semantic
+      - realization
+      - application
