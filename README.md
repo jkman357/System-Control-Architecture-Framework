@@ -138,3 +138,18 @@ v0.3.0rc07
 
 Review Target:
 v0.3.0rc07
+
+
+## Release Status
+
+Frozen Baseline:
+v0.2.1
+
+Current Release:
+v0.3.0
+
+Status:
+L4 First Release Frozen
+
+Historical Milestones:
+v0.3.0rc01 ~ v0.3.0rc07

@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.3.0
+
+- Freeze first L4 executable governance release.
+- Complete release identity synchronization.
+- Complete evidence lineage closure.
+- Close L4 release preparation cycle from v0.3.0rc01 to v0.3.0rc07.
+
 ## v0.3.0rc07
 
 - Complete final L4 release closure cleanup.
