@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1rc02
+
+- Clarify frozen baseline manifest scope.
+- Separate historical integrity metadata from active release identity.
+- Preserve executable governance release model.
+
 ## v0.2.1rc01
 
 - Add executable governance foundation artifacts.
