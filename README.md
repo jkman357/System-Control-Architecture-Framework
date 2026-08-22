@@ -1,8 +1,9 @@
 # System Control Architecture Framework (SCAF)
 
-v0.2.0rc12 rev3
+v0.2.0rc12 rev4
 
-Evidence-Driven Engineering Pattern Candidate Catalog Integration Assessment.
+Evidence-Driven Engineering Pattern Candidate Catalog Integration
+Assessment.
 
-This revision restores Pattern review continuity and completes catalog
-assessment supporting information.
+This revision restores reviewed Pattern continuity and completes the
+catalog assessment artifact.
