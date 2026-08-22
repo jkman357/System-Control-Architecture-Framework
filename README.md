@@ -1,112 +1,134 @@
 # System Control Architecture Framework (SCAF)
 
-v0.3.1rc01
-
-Development release line derived from v0.3.0 L4 First Release Frozen baseline.
-
-Evidence-Driven Engineering Pattern Candidate Catalog Integration Assessment.
-
-This revision strengthens L3 Pattern trace relationships,
-clarifies dependency relationship and maturity evaluation,
-and preserves SCAF authority model and layering separation.
-
-
-## Current Development Release
-
-v0.2.1rc05 - Governance Evidence & Validation Closure
-
-
-## Release Information
-
-Frozen Baseline:
-v0.2.0
+## Current Release Status
 
 Current Development Release:
-v0.2.1rc06
 
-Review Target:
-v0.2.1rc06
+**v0.3.1rc03**
 
+Release Line:
 
-## Release Hierarchy
+    v0.3.0
+      |
+      +-- L4 First Release Frozen
+              |
+              +-- v0.3.1rc01
+              |
+              +-- v0.3.1rc02
+              |
+              +-- v0.3.1rc03
 
-Frozen Baseline:
-v0.2.0
+Current Development Focus:
 
-Current Development Release:
-v0.2.1rc07
+**L4 Release Hardening and Release Identity Normalization**
 
-Review Target:
-v0.2.1rc07
+The v0.3.1 development line focuses on improving release consistency,
+documentation authority, navigation clarity, and validation readiness
+while preserving the frozen v0.3.0 L4 architecture baseline.
 
+------------------------------------------------------------------------
 
-## Release Status
+## Frozen Baseline
 
-Frozen Baseline:
-v0.2.0
+**v0.3.0 --- L4 First Release Frozen**
 
-Current Review Target:
-v0.2.1rc08
+The v0.3.0 release establishes the first frozen L4 executable governance
+baseline.
 
-Historical Milestones:
-- v0.2.1rc05
-- v0.2.1rc06
-- v0.2.1rc07
-- v0.2.1rc08
+Frozen baseline rules:
 
+-   The frozen baseline is not modified directly.
+-   New improvements are developed in new release lines.
+-   All changes maintain traceable release lineage.
 
-## Release Status
+------------------------------------------------------------------------
 
-Frozen Baseline:
-v0.2.0
+## Project Overview
 
-Current Review Target:
-v0.2.1rc09
+System Control Architecture Framework (SCAF) is an architecture
+governance framework designed to support controlled system development,
+traceability, validation, and lifecycle management.
 
-Release History:
-- v0.2.1rc05
-- v0.2.1rc06
-- v0.2.1rc07
-- v0.2.1rc08
-- v0.2.1rc09
+SCAF provides:
 
+-   architecture authority management;
+-   machine-readable governance artifacts;
+-   traceability between decisions and implementation;
+-   validation-oriented engineering workflow;
+-   evidence-driven development support.
 
-## Release Status
+------------------------------------------------------------------------
 
-Frozen Baseline:
-v0.2.1
+## Repository Structure
 
-Current Candidate:
-v0.3.0rc02
+    System-Control-Architecture-Framework
 
-Review Target:
-v0.3.0rc02
+    ├── docs/
+    ├── schemas/
+    ├── trace/
+    ├── release-integrity/
+    ├── review/
+    ├── engine/
+    ├── tools/
+    └── examples/
 
-Development Focus:
-L4 Executable Governance Hardening
+------------------------------------------------------------------------
 
+## Governance Model
 
-## Release Status
+SCAF separates:
 
-Frozen Baseline:
-v0.2.1
+-   authority definition;
+-   governance rules;
+-   validation responsibility;
+-   evidence records;
+-   release state management.
 
-Current Candidate:
-v0.3.0rc04
+The objective is to maintain consistent engineering decisions across
+projects and development stages.
 
-Review Target:
-v0.3.0rc04
+------------------------------------------------------------------------
 
-Focus:
-L4 Final Candidate Cleanup
+## Release Documentation Authority
 
-## Release Status
+Release identity is maintained through:
 
-Frozen Baseline:
-v0.2.1
+-   canonical release metadata documentation;
+-   CHANGELOG.md historical records;
+-   validation and review records.
 
-Current Candidate:
-v0.3.0rc05
+Historical release information should remain in release history records
+and should not override the current release status.
 
-Review Target:
-v0.3.0rc05
+------------------------------------------------------------------------
+
+## Development Workflow
+
+SCAF follows an iterative verification cycle:
+
+    Implementation
+          |
+          v
+    Validation
+          |
+          v
+    Review
+          |
+          v
+    Correction
+          |
+          v
+    Release Candidate
+
+Each release candidate maintains:
+
+-   source lineage;
+-   change description;
+-   review record;
+-   validation evidence.
+
+------------------------------------------------------------------------
+
+## License and Notice
+
+See LICENSE for applicable terms.

@@ -1,115 +1,89 @@
-# v0.3.1rc02
-
-- Added canonical release status documentation.
-- Added document authority classification guidance.
-- Continued L4 release hardening cleanup after rc01 review.
-
 # Changelog
 
-## v0.3.1rc01
+All notable changes to this project are documented in this file.
 
-- Start L4 release hardening development line from v0.3.0 frozen baseline.
-- Align release documentation and validation consistency requirements.
-- Prepare iterative review and correction cycle for v0.3.1 stabilization.
+------------------------------------------------------------------------
 
-## v0.3.0rc04
+# v0.3.1rc03
 
-- Complete L4 final candidate cleanup.
-- Consolidate reviewer navigation metadata.
-- Add governance contract trace verification documentation.
+## Release Identity Normalization
 
-## v0.3.0rc02
+Changes:
 
-- Harden L4 executable governance candidate.
-- Add evidence lineage distinction.
-- Add validator responsibility matrix.
-- Add reviewer navigation guidance.
+-   Normalize README release identity information.
+-   Establish canonical release metadata authority documentation.
+-   Add reviewer navigation entry point.
+-   Improve release documentation consistency.
 
-## v0.3.0rc01
+Purpose:
 
-- Introduce L4 executable governance foundation.
-- Add governance contract schema prototype.
-- Add validator prototype boundary.
-- Preserve SCAF authority model.
+Improve release clarity and maintainability after v0.3.1rc02 review
+findings while preserving the SCAF L4 executable governance
+architecture.
 
-## v0.2.1rc09
+------------------------------------------------------------------------
 
-- Synchronize release evidence artifacts.
-- Align validation summary with current release candidate.
-- Update release evidence index for closure candidate review.
-- Refine release status presentation.
+# v0.3.1rc02
 
-## v0.2.1rc08
+## L4 Release Hardening Cleanup
 
-- Add release evidence execution records.
-- Add validation execution record artifact.
-- Add test execution record artifact.
-- Improve release status presentation.
+Changes:
 
-## v0.2.1rc07
+-   Add canonical release status documentation.
+-   Add document authority classification guidance.
+-   Improve release governance documentation structure.
+-   Continue L4 executable governance stabilization.
 
-- Refine release evidence metadata.
-- Add validation execution metadata structure.
-- Add test evidence metadata structure.
-- Improve release evidence index organization.
+Purpose:
 
-## v0.2.1rc05
+Address v0.3.1rc01 review findings related to release metadata
+consistency and documentation authority.
 
-- Add governance evidence and validation closure artifacts.
-- Add validation summary artifact.
-- Add governance artifact relationship map.
-- Add review lifecycle index.
+------------------------------------------------------------------------
 
-## v0.2.1rc04
+# v0.3.1rc01
 
-- Add release governance and sanitization foundation.
-- Define development package and public release package separation.
-- Add release sanitization policy and tooling foundation.
+## L4 Release Hardening Development Baseline
 
-## v0.2.1rc03
+Changes:
 
-- Add governance artifact validation foundation.
-- Define validation scope for dependency and trace registry consistency.
-- Preserve SCAF authority model and implementation separation.
+-   Start v0.3.1 development line from v0.3.0 frozen baseline.
+-   Preserve L4 First Release architecture.
+-   Begin documentation consistency and governance refinement.
 
-## v0.2.1rc02
+Purpose:
 
-- Clarify frozen baseline manifest scope.
-- Separate historical integrity metadata from active release identity.
-- Preserve executable governance release model.
+Establish the stabilization line after v0.3.0 L4 First Release Frozen.
 
-## v0.2.1rc01
+------------------------------------------------------------------------
 
-- Add executable governance foundation artifacts.
-- Introduce dependency relationship schema foundation.
-- Introduce Pattern trace registry foundation.
-- Add release manifest separation foundation.
+# v0.3.0
 
-## v0.2.0
+## L4 First Release Frozen
 
-- Frozen baseline release derived from v0.2.0rc14.
-- Preserve authority model, L3 Pattern model, Evidence-Driven Engineering Pattern, and trace/dependency governance.
+Changes:
 
-## v0.2.0rc14
+-   Complete first L4 executable governance release.
+-   Freeze L4 architecture baseline.
+-   Establish executable governance foundation.
 
-- Strengthen L3 Pattern trace relationship representation.
-- Clarify dependency relationship and maturity evaluation.
-- Preserve SCAF authority model and layering separation.
+Purpose:
 
-## v0.2.0rc13
+Provide the first stable architecture governance baseline.
 
-- Align Evidence-Driven Engineering Pattern terminology.
-- Clarify Compare Evidence and Probe Evidence relationship.
+------------------------------------------------------------------------
 
-## v0.2.0rc12 rev6
+# v0.2.1
 
--   Preserve reviewed Pattern artifact identity.
--   Separate Pattern definition from catalog integration assessment.
--   Add controlled assessment reference without redefining the Pattern.
+## Governance Baseline Frozen
 
-## v0.2.0rc12 rev7
+Changes:
 
--   Preserve the reviewed Pattern artifact identity.
--   Add catalog integration assessment bound to the Pattern artifact
-    hash.
--   Separate Pattern definition from catalog assessment evolution.
+-   Freeze initial governance baseline.
+-   Establish authority and traceability foundation.
+
+------------------------------------------------------------------------
+
+# Previous Releases
+
+Historical release records are maintained as development history.
