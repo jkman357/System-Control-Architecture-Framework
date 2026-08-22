@@ -1,110 +1,32 @@
 # System Control Architecture Framework (SCAF)
 
-v0.2.0
+## v0.2.1
 
-Frozen baseline release derived from v0.2.0rc14.
+Frozen Release Baseline.
 
-Evidence-Driven Engineering Pattern Candidate Catalog Integration Assessment.
+v0.2.1 completes executable governance maturity, including:
 
-This revision strengthens L3 Pattern trace relationships,
-clarifies dependency relationship and maturity evaluation,
-and preserves SCAF authority model and layering separation.
-
-
-## Current Development Release
-
-v0.2.1rc05 - Governance Evidence & Validation Closure
-
-
-## Release Information
-
-Frozen Baseline:
-v0.2.0
-
-Current Development Release:
-v0.2.1rc06
-
-Review Target:
-v0.2.1rc06
-
-
-## Release Hierarchy
-
-Frozen Baseline:
-v0.2.0
-
-Current Development Release:
-v0.2.1rc07
-
-Review Target:
-v0.2.1rc07
-
+- governance artifacts
+- trace and dependency relationships
+- release integrity controls
+- validation evidence
+- release closure evidence
 
 ## Release Status
 
 Frozen Baseline:
+
 v0.2.0
 
-Current Review Target:
-v0.2.1rc08
+Current Frozen Release:
 
-Historical Milestones:
-- v0.2.1rc05
-- v0.2.1rc06
-- v0.2.1rc07
-- v0.2.1rc08
+v0.2.1
 
+Previous Development Line:
 
-## Release Status
+v0.2.1rc01 ~ v0.2.1rc13
 
-Frozen Baseline:
-v0.2.0
+Next Development Line:
 
-Current Review Target:
-v0.2.1rc09
-
-Release History:
-- v0.2.1rc05
-- v0.2.1rc06
-- v0.2.1rc07
-- v0.2.1rc08
-- v0.2.1rc09
-
-
-## Final Review Candidate
-
-Current Review Target:
-v0.2.1rc10
-
-Release Purpose:
-Final Evidence Closure Candidate
-
-
-## Final Evidence Closure Candidate
-
-Current Review Target:
-v0.2.1rc11
-
-Purpose:
-Final Evidence Closure Candidate
-
-
-## Release Closure Candidate
-
-Current Review Target:
-v0.2.1rc12
-
-Purpose:
-Final Release Closure
-
-
-## Release Status
-
-Frozen Baseline:
-v0.2.0
-
-Current Release Candidate:
-v0.2.1rc13
-
-Release Purpose:
-Final Release Synchronization
+v0.3.0
+L4 Executable Governance
