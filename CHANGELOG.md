@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.2.0
+
+- Frozen baseline release derived from v0.2.0rc14.
+- Preserve authority model, L3 Pattern model, Evidence-Driven Engineering Pattern, and trace/dependency governance.
+
 ## v0.2.0rc14
 
 - Strengthen L3 Pattern trace relationship representation.

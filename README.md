@@ -1,6 +1,8 @@
 # System Control Architecture Framework (SCAF)
 
-v0.2.0rc14
+v0.2.0
+
+Frozen baseline release derived from v0.2.0rc14.
 
 Evidence-Driven Engineering Pattern Candidate Catalog Integration Assessment.
 
