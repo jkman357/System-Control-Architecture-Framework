@@ -1,8 +1,8 @@
-# Evidence-Driven Engineering Pattern
+# Evidence-Driven Engineering Pattern Candidate
 
 ## Purpose
 
-A domain-neutral L3 pattern candidate for controlled evidence lifecycle,
+A reusable, domain-neutral L3 pattern for controlled evidence lifecycle,
 analysis, verification and engineering closure.
 
 ## Evidence Model
@@ -12,39 +12,73 @@ analysis, verification and engineering closure.
 - Runtime Evidence
 - Probe Evidence
 
-## Lifecycle
+## Evidence Lifecycle
 
 Baseline
+
 -> Evidence Collection
+
 -> Behavioral Analysis
--> First Behavioral Divergence
--> Hypothesis
+
+-> First Behavioral Divergence Identification
+
+-> Hypothesis Formation
+
 -> Targeted Probe
+
 -> Additional Evidence
+
 -> Verification
+
 -> Closure
 
-## Probe and Diagnostic Lifecycle
+## Observability Lifecycle
 
 Temporary Probe:
-exploratory observability for a bounded engineering question.
 
-Diagnostic:
-retained operational observability.
+Exploratory observability introduced to answer a bounded engineering question.
+
+Lifecycle:
+- Remove
+- Retain temporarily
+- Promote or redesign
+
+Promoted observability may become Diagnostic.
 
 Probe is not automatically a Diagnostic.
 
-## Boundary
+## AI Assistance Boundary
+
+AI may assist:
+- source navigation
+- evidence correlation
+- hypothesis generation
+- probe suggestion
+- review assistance
+
+AI does not obtain:
+- design authority
+- verification authority
+- closure authority
+- release authority
+
+## Scope Boundary
+
+This pattern does not introduce:
+- authority registry migration
+- Project Application migration
+- Effective Project Profile migration
+- L4 expansion
+- code generation
+- generic instrumentation CI
+
+## Layer Separation
 
 SCAF:
-reusable principles and patterns.
+Reusable engineering principles and patterns.
 
 Implementation Framework:
-evidence capture, retention and export realization.
+Concrete evidence capture, retention and export realization.
 
 Specific System Application:
-downstream application.
-
-## AI Boundary
-
-AI may assist analysis activities but does not obtain engineering authority.
+Downstream application of the pattern.
