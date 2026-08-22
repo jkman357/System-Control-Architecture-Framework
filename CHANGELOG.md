@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.0rc14
+
+- Strengthen L3 Pattern trace relationship representation.
+- Clarify dependency relationship and maturity evaluation.
+- Preserve SCAF authority model and layering separation.
+
 ## v0.2.0rc13
 
 - Align Evidence-Driven Engineering Pattern terminology.
