@@ -110,3 +110,19 @@ v0.3.0rc05
 
 Review Target:
 v0.3.0rc05
+
+
+## Release Status
+
+Frozen Baseline:
+v0.2.1
+
+Current Release Candidate:
+v0.3.0rc06
+
+Review Target:
+v0.3.0rc06
+
+Historical Milestones:
+- v0.2.x
+- v0.3.0rc01 ~ v0.3.0rc05
