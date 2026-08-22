@@ -1,0 +1,4 @@
+project:
+  name: sample-project
+  domain: embedded
+  realtime: true

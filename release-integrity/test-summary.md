@@ -1,20 +1,12 @@
 # Test Summary
 
-## v0.2.1rc12
+## v0.2.1rc07
 
-## Test Evidence Scope
+Test evidence metadata:
 
-- Test command identifier
-- Test suite version
-- Execution environment
-- Execution result
+- test command identifier
+- test suite version
+- execution environment
+- execution result
 
-## Evidence Lineage
-
-Inherited evidence lineage:
-- v0.2.1rc11
-
-Current release candidate:
-- v0.2.1rc12
-
-This artifact records test evidence and does not define authority.
+This artifact records test evidence for release traceability.

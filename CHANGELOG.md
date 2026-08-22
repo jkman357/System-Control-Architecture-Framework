@@ -1,36 +1,11 @@
 # Changelog
 
-## v0.2.1
+## v0.3.0rc01
 
-- Freeze executable governance maturity baseline.
-- Consolidate release evidence chain.
-- Preserve authority model and governance boundaries.
-- Establish foundation for future L4 development.
-
-
-## v0.2.1rc13
-
-- Synchronize release evidence index with final closure candidate.
-- Align validation summary release identity.
-- Refine final release status presentation.
-
-## v0.2.1rc12
-
-- Align test evidence identity with final closure candidate.
-- Add release closure summary artifact.
-- Refine final release presentation.
-
-## v0.2.1rc11
-
-- Synchronize final validation evidence identity.
-- Update release evidence index for final closure candidate.
-- Refine final release evidence presentation.
-
-## v0.2.1rc10
-
-- Align test evidence identity with current release candidate.
-- Consolidate final release evidence presentation.
-- Add execution metadata completeness template.
+- Introduce L4 executable governance foundation.
+- Add governance contract schema prototype.
+- Add validator prototype boundary.
+- Preserve SCAF authority model.
 
 ## v0.2.1rc09
 
