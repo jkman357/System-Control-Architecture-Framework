@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1rc04
+
+- Add release governance and sanitization foundation.
+- Define development package and public release package separation.
+- Add release sanitization policy and tooling foundation.
+
 ## v0.2.1rc03
 
 - Add governance artifact validation foundation.
