@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1rc03
+
+- Add governance artifact validation foundation.
+- Define validation scope for dependency and trace registry consistency.
+- Preserve SCAF authority model and implementation separation.
+
 ## v0.2.1rc02
 
 - Clarify frozen baseline manifest scope.
