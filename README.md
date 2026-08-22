@@ -99,3 +99,14 @@ v0.3.0rc04
 
 Focus:
 L4 Final Candidate Cleanup
+
+## Release Status
+
+Frozen Baseline:
+v0.2.1
+
+Current Candidate:
+v0.3.0rc05
+
+Review Target:
+v0.3.0rc05
