@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.2.1rc12
+
+- Align test evidence identity with final closure candidate.
+- Add release closure summary artifact.
+- Refine final release presentation.
+
 ## v0.2.1rc11
 
 - Synchronize final validation evidence identity.

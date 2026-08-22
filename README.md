@@ -87,3 +87,12 @@ v0.2.1rc11
 
 Purpose:
 Final Evidence Closure Candidate
+
+
+## Release Closure Candidate
+
+Current Review Target:
+v0.2.1rc12
+
+Purpose:
+Final Release Closure

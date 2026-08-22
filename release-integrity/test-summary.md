@@ -1,6 +1,6 @@
 # Test Summary
 
-## v0.2.1rc10
+## v0.2.1rc12
 
 ## Test Evidence Scope
 
@@ -11,11 +11,10 @@
 
 ## Evidence Lineage
 
-Inherited execution evidence foundation:
-- v0.2.1rc08
-- v0.2.1rc09
+Inherited evidence lineage:
+- v0.2.1rc11
 
 Current release candidate:
-- v0.2.1rc10
+- v0.2.1rc12
 
 This artifact records test evidence and does not define authority.
